@@ -1,22 +1,7 @@
 import type { Metadata } from 'next';
-import { Plus_Jakarta_Sans, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { ALDERTON_BRAND } from '../config/brand';
 import { Header, Footer, MobileStickyBar, generateLocalBusinessSchema } from '@mediation/core';
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  variable: '--font-jakarta',
-  display: 'swap',
-  weight: ['400', '500', '600', '700'],
-});
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
-  weight: ['600', '700', '800'],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(ALDERTON_BRAND.siteUrl),
@@ -74,8 +59,14 @@ export default function RootLayout({
   const businessSchema = generateLocalBusinessSchema(ALDERTON_BRAND);
 
   return (
-    <html lang="en-GB" className={`${jakarta.variable} ${playfair.variable} scroll-smooth`}>
+    <html lang="en-GB" className="scroll-smooth">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
         {ALDERTON_BRAND.googleSiteVerification && (
           <meta name="google-site-verification" content={ALDERTON_BRAND.googleSiteVerification} />
         )}
