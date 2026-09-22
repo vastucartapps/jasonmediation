@@ -102,36 +102,36 @@ export default function AboutPage() {
 
           {/* Core Principles */}
           <div className="pt-8 border-t border-slate-200">
-            <h3 className="text-2xl font-serif font-bold text-slate-900 mb-8 text-center">
+            <h2 className="text-2xl font-serif font-bold text-slate-900 mb-8 text-center">
               Our Guiding Principles
-            </h3>
+            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-slate-50 rounded-xl p-6 border-2 border-slate-200">
-                <ShieldCheckIcon className="w-8 h-8 text-amber-600 mb-3" />
-                <h4 className="font-serif font-bold text-slate-950 text-base mb-2">
+                <ShieldCheckIcon className="w-8 h-8 text-amber-800 mb-3" />
+                <h3 className="font-serif font-bold text-slate-950 text-base mb-2">
                   Absolute Impartiality
-                </h4>
+                </h3>
                 <p className="text-xs text-slate-800 font-medium leading-relaxed">
                   Our mediators do not take sides, judge past actions, or impose decisions. We facilitate fair, balanced negotiations where both voices are respected equally.
                 </p>
               </div>
 
               <div className="bg-slate-50 rounded-xl p-6 border-2 border-slate-200">
-                <ScalesOfJusticeIcon className="w-8 h-8 text-amber-600 mb-3" />
-                <h4 className="font-serif font-bold text-slate-950 text-base mb-2">
+                <ScalesOfJusticeIcon className="w-8 h-8 text-amber-800 mb-3" />
+                <h3 className="font-serif font-bold text-slate-950 text-base mb-2">
                   Legal & Court Alignment
-                </h4>
+                </h3>
                 <p className="text-xs text-slate-800 font-medium leading-relaxed">
                   Our documentation adheres strictly to Family Procedure Rules Part 3 and Section 10 of the Children and Families Act 2014, facilitating seamless Consent Orders.
                 </p>
               </div>
 
               <div className="bg-slate-50 rounded-xl p-6 border-2 border-slate-200">
-                <CalendarClockIcon className="w-8 h-8 text-amber-600 mb-3" />
-                <h4 className="font-serif font-bold text-slate-950 text-base mb-2">
+                <CalendarClockIcon className="w-8 h-8 text-amber-800 mb-3" />
+                <h3 className="font-serif font-bold text-slate-950 text-base mb-2">
                   Rapid Accessibility
-                </h4>
+                </h3>
                 <p className="text-xs text-slate-800 font-medium leading-relaxed">
                   Family crises cannot wait months. We provide individual MIAM appointments within 24 to 48 hours across our East Midlands practice centres and online.
                 </p>
@@ -142,9 +142,9 @@ export default function AboutPage() {
           {/* CTA Box */}
           <div className="bg-slate-900 text-white rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-xl sm:text-2xl font-serif font-bold mb-2 text-white">
+              <h2 className="text-xl sm:text-2xl font-serif font-bold mb-2 text-white">
                 Speak With an Accredited Mediator in Confidence
-              </h3>
+              </h2>
               <p className="text-xs sm:text-sm text-slate-100 font-medium">
                 Appointments available this week via secure video or by arrangement across our East Midlands centres.
               </p>

@@ -266,9 +266,9 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
             isAlderton ? 'bg-slate-900 border-slate-800 text-white' : 'bg-emerald-950 border-emerald-900 text-white'
           }`}>
             <div>
-              <h3 className="text-lg sm:text-xl font-serif font-bold mb-1 text-white">
+              <p className="text-lg sm:text-xl font-serif font-bold mb-1 text-white">
                 Facing an Urgent Standoff on This Issue?
-              </h3>
+              </p>
               <p className="text-xs text-slate-200 max-w-md">
                 Fast-track confidential MIAM sessions available within 24–48 hours. Accredited court form sign-off provided.
               </p>
@@ -386,9 +386,9 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           {/* In-Line Contextual Links to Services and Local Landing Pages */}
           {relatedService && (
             <section className="bg-slate-50 rounded-2xl p-6 sm:p-8 border-2 border-slate-200 space-y-4">
-              <h3 className="font-serif font-bold text-slate-950 text-lg">
+              <h2 className="font-serif font-bold text-slate-950 text-lg sm:text-xl">
                 Explore Accredited {relatedService.title} in Your Practice Hub:
-              </h3>
+              </h2>
               <p className="text-xs sm:text-sm text-slate-700 font-medium">
                 Our accredited mediators deliver fast-track video appointments and in-person sessions across regional family court districts:
               </p>
@@ -422,9 +422,9 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
               <div className="flex items-center justify-between">
                 <div>
                   <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Recommended Dispute Guides</span>
-                  <h3 className="text-xl font-serif font-bold text-slate-950 mt-0.5">
+                  <h2 className="text-xl font-serif font-bold text-slate-950 mt-0.5">
                     Related Family Law Articles &amp; Practical Advice
-                  </h3>
+                  </h2>
                 </div>
                 <Link href="/blog" className="text-xs font-bold text-amber-700 hover:underline">
                   Browse All Family Law Guides &rarr;
@@ -441,9 +441,9 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
                       <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700 group-hover:bg-amber-100 group-hover:text-amber-900 transition">
                         {relPost.clusterName}
                       </span>
-                      <h4 className="font-bold text-xs text-slate-950 leading-snug group-hover:text-amber-800 transition">
+                      <h3 className="font-bold text-xs text-slate-950 leading-snug group-hover:text-amber-800 transition">
                         {relPost.title}
-                      </h4>
+                      </h3>
                     </div>
                     <div className="flex items-center justify-between text-[11px] text-slate-500 pt-2 border-t border-slate-100">
                       <span>{relPost.readingTime}</span>
@@ -460,9 +460,9 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
             isAlderton ? 'bg-slate-950 text-white' : 'bg-emerald-950 text-white'
           }`}>
             <div className="space-y-2">
-              <h3 className="text-2xl font-serif font-bold text-white">
+              <h2 className="text-2xl font-serif font-bold text-white">
                 Book Your Confidential MIAM Consultation
-              </h3>
+              </h2>
               <p className="text-xs sm:text-sm text-slate-200 font-medium max-w-lg leading-relaxed">
                 Take the first constructive step toward resolution. Individual pre-court assessment meetings conducted remotely or at regional centres.
               </p>

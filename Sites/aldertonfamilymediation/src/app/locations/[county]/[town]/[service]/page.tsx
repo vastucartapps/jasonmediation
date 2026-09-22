@@ -346,9 +346,9 @@ export default async function LocationServicePage({ params }: LocationServicePag
                   ))}
                 </div>
 
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                  Travel & Digital Convenience
-                </h4>
+                <p className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                  Travel &amp; Digital Convenience
+                </p>
                 <p className="text-xs text-slate-800 font-medium leading-relaxed">
                   {town.transportAndAccess}
                 </p>
@@ -356,9 +356,9 @@ export default async function LocationServicePage({ params }: LocationServicePag
 
               {/* Other Services in this town */}
               <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-3">
+                <p className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-3">
                   Other Mediation Services in {town.name}:
-                </h4>
+                </p>
                 <div className="space-y-2">
                   {CORE_SERVICES.filter((s) => s.slug !== service.slug).map((other) => (
                     <Link
@@ -397,9 +397,9 @@ export default async function LocationServicePage({ params }: LocationServicePag
               <span className="text-amber-400 font-bold text-xs uppercase tracking-wider">
                 Official Statutory Pathway
               </span>
-              <h3 className="font-serif font-bold text-white text-xl sm:text-2xl">
+              <h2 className="font-serif font-bold text-white text-xl sm:text-2xl">
                 Statutory Standards &amp; Judicial Rules for {service.title}
-              </h3>
+              </h2>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-medium">
                 Learn about the statutory legal basis under {service.statutoryBasis}, required court forms, and full mediation session frameworks.
               </p>
@@ -523,9 +523,9 @@ export default async function LocationServicePage({ params }: LocationServicePag
       {/* Same Service in Other Towns */}
       <section className="py-10 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-3 text-center">
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-3 text-center">
             {service.title} in Other {county.name} Locations:
-          </h3>
+          </p>
           <div className="flex flex-wrap justify-center gap-2">
             {county.towns
               .filter((t) => t.slug !== town.slug)

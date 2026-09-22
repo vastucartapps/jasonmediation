@@ -32,9 +32,9 @@ export const CourtAuthorityCard: React.FC<CourtAuthorityCardProps> = ({
       </div>
 
       <div className="p-6 sm:p-8">
-        <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-950 mb-2.5">
+        <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-950 mb-2.5">
           Statutory MIAM Guidelines &amp; Legal Procedure for {townName}
-        </h3>
+        </h2>
         <p className="text-xs sm:text-sm text-slate-700 mb-6 leading-relaxed">
           Under Section 10 of the Children and Families Act 2014, separating parents and couples in <strong>{townName}</strong> must attend an accredited Mediation Information and Assessment Meeting (MIAM) before making private family law applications, unless an official exemption applies.
         </p>

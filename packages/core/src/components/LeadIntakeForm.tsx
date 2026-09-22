@@ -74,9 +74,9 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
         <div className="w-16 h-16 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center mx-auto mb-4 border border-emerald-300">
           <CheckCircleIcon className="w-10 h-10" />
         </div>
-        <h3 className="text-2xl font-serif font-bold text-slate-950 mb-2">
+        <h2 className="text-2xl font-serif font-bold text-slate-950 mb-2">
           Enquiry Received in Confidence
-        </h3>
+        </h2>
         <p className="text-slate-800 mb-6 text-sm leading-relaxed max-w-md mx-auto font-medium">
           Thank you. A specialist mediator at {brandName} will review your details and contact you privately within 24 hours.
         </p>
@@ -115,9 +115,9 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
         </span>
       </div>
 
-      <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-950 mb-2">
+      <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-950 mb-2">
         Request a Confidential Consultation
-      </h3>
+      </h2>
       <p className="text-slate-800 text-xs sm:text-sm mb-6 leading-relaxed font-medium">
         Speak privately with an accredited family mediator. We explain your rights and never contact your former partner without your permission.
       </p>

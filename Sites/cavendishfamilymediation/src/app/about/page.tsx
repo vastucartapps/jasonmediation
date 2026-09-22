@@ -102,9 +102,9 @@ export default function AboutPage() {
           {/* CTA Box */}
           <div className="bg-emerald-950 text-white rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-xl sm:text-2xl font-serif font-bold mb-2">
+              <h2 className="text-xl sm:text-2xl font-serif font-bold mb-2">
                 Speak With an Accredited Mediator in Confidence
-              </h3>
+              </h2>
               <p className="text-xs sm:text-sm text-emerald-100 font-medium">
                 Appointments available this week via secure video and across our South East and East Anglia practice centres.
               </p>

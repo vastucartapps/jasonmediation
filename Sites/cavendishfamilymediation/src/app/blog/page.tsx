@@ -167,10 +167,10 @@ export default function BlogIndexPage() {
           </div>
 
           {/* Regional Family Court Towns Directory */}
-          <div className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-stone-200">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-stone-800 mb-2 text-center">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200">
+            <p className="text-sm font-bold uppercase tracking-wider text-stone-800 mb-2 text-center">
               Regional Family Court Districts &amp; Local Centres Served:
-            </h3>
+            </p>
             <p className="text-xs text-stone-600 text-center mb-5 max-w-xl mx-auto">
               Our accredited family mediators serve separating parents and couples across all South East and East Anglia county court areas:
             </p>
@@ -180,7 +180,7 @@ export default function BlogIndexPage() {
                   <Link
                     key={town.slug}
                     href={`/locations/${c.slug}/${town.slug}`}
-                    className="px-3 py-1.5 rounded-lg bg-stone-50 hover:bg-emerald-50 text-stone-800 hover:text-emerald-900 border border-stone-200 hover:border-emerald-300 font-semibold transition"
+                    className="px-3 py-1.5 rounded-lg bg-stone-50 hover:bg-emerald-50 text-stone-800 hover:text-emerald-950 border border-stone-200 hover:border-emerald-400 font-semibold transition"
                   >
                     Family Mediation {town.name}
                   </Link>
@@ -196,9 +196,9 @@ export default function BlogIndexPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-emerald-950 text-white rounded-3xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-2">
-              <h3 className="font-serif text-2xl font-bold text-white">
-                Require Discrete, High-Trust Financial Mediation?
-              </h3>
+              <h2 className="font-serif text-2xl font-bold text-white">
+                Facing an Active Family Dispute in the South East?
+              </h2>
               <p className="text-sm text-emerald-100 font-medium max-w-xl">
                 Our accredited FMC practitioners arrange confidential MIAM assessments within 24 to 48 hours across Ipswich, Chelmsford, Brighton, and Canterbury.
               </p>

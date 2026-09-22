@@ -360,7 +360,7 @@ export default function HomePage() {
               <span className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">
                 01
               </span>
-              <h4 className="font-serif font-bold text-white text-lg">Fast Resolution</h4>
+              <h3 className="font-serif font-bold text-white text-lg">Fast Resolution</h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
                 Most mediation processes conclude in 2 to 4 sessions over a matter of weeks, compared to 12 to 18 months of court litigation backlogs.
               </p>
@@ -370,7 +370,7 @@ export default function HomePage() {
               <span className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">
                 02
               </span>
-              <h4 className="font-serif font-bold text-white text-lg">Strict Confidentiality</h4>
+              <h3 className="font-serif font-bold text-white text-lg">Strict Confidentiality</h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
                 Discussions are legally privileged and without prejudice. Personal finances and sensitive family matters remain completely private.
               </p>
@@ -380,7 +380,7 @@ export default function HomePage() {
               <span className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">
                 03
               </span>
-              <h4 className="font-serif font-bold text-white text-lg">Children at the Centre</h4>
+              <h3 className="font-serif font-bold text-white text-lg">Children at the Centre</h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
                 Plans are designed around your children’s practical emotional needs, school calendars, and routine stability.
               </p>
@@ -390,7 +390,7 @@ export default function HomePage() {
               <span className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center font-bold text-sm">
                 04
               </span>
-              <h4 className="font-serif font-bold text-white text-lg">Financial Savings</h4>
+              <h3 className="font-serif font-bold text-white text-lg">Financial Savings</h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
                 Preserve your family home equity and savings rather than expending tens of thousands on adversarial solicitor bills.
               </p>

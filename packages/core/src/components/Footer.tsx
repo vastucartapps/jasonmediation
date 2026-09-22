@@ -117,10 +117,11 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
           </div>
 
           {/* Col 2: Core Services */}
+          {/* Col 2: Core Services */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
+            <p className="text-xs font-bold uppercase tracking-wider text-white mb-4">
               Mediation Services
-            </h4>
+            </p>
             <ul className="space-y-2.5 text-xs sm:text-sm font-medium">
               {CORE_SERVICES.map((service) => (
                 <li key={service.slug}>
@@ -143,9 +144,9 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
 
           {/* Col 3: County Coverage */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
+            <p className="text-xs font-bold uppercase tracking-wider text-white mb-4">
               Regional Locations
-            </h4>
+            </p>
             <ul className="space-y-2.5 text-xs sm:text-sm font-medium">
               {brand.counties.map((county) => (
                 <li key={county.slug}>
@@ -168,9 +169,9 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
 
           {/* Col 4: Resources & Practical Guidance */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
+            <p className="text-xs font-bold uppercase tracking-wider text-white mb-4">
               Practical Guidance
-            </h4>
+            </p>
             <ul className="space-y-2.5 text-xs sm:text-sm font-medium">
               <li>
                 <Link href="/blog" className="text-slate-300 hover:text-white transition block">

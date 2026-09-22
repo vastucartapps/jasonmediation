@@ -356,7 +356,7 @@ export default function CavendishHomePage() {
               <span className="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/30 text-amber-300 flex items-center justify-center font-bold text-sm">
                 01
               </span>
-              <h4 className="font-serif font-bold text-white text-lg">Rapid Resolution</h4>
+              <h3 className="font-serif font-bold text-white text-lg">Rapid Resolution</h3>
               <p className="text-xs sm:text-sm text-emerald-100 leading-relaxed font-normal">
                 Most cases settle within 2 to 4 structured sessions, compared to 12 to 18 months of adversarial court proceedings.
               </p>
@@ -366,7 +366,7 @@ export default function CavendishHomePage() {
               <span className="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/30 text-amber-300 flex items-center justify-center font-bold text-sm">
                 02
               </span>
-              <h4 className="font-serif font-bold text-white text-lg">Complete Privacy</h4>
+              <h3 className="font-serif font-bold text-white text-lg">Complete Privacy</h3>
               <p className="text-xs sm:text-sm text-emerald-100 leading-relaxed font-normal">
                 All discussions are protected by legal without-prejudice privilege. Personal disclosures remain strictly confidential.
               </p>
@@ -376,7 +376,7 @@ export default function CavendishHomePage() {
               <span className="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/30 text-amber-300 flex items-center justify-center font-bold text-sm">
                 03
               </span>
-              <h4 className="font-serif font-bold text-white text-lg">Children First</h4>
+              <h3 className="font-serif font-bold text-white text-lg">Children First</h3>
               <p className="text-xs sm:text-sm text-emerald-100 leading-relaxed font-normal">
                 Arrangements are crafted around real schooling routines, holidays, and living needs rather than rigid court-imposed orders.
               </p>
@@ -386,7 +386,7 @@ export default function CavendishHomePage() {
               <span className="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/30 text-amber-300 flex items-center justify-center font-bold text-sm">
                 04
               </span>
-              <h4 className="font-serif font-bold text-white text-lg">Financial Savings</h4>
+              <h3 className="font-serif font-bold text-white text-lg">Financial Savings</h3>
               <p className="text-xs sm:text-sm text-emerald-100 leading-relaxed font-normal">
                 Save tens of thousands of pounds in solicitor and barrister fees, keeping your family assets intact.
               </p>

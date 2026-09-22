@@ -247,9 +247,9 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       {/* Regional Practice Connections */}
       <section className="py-12 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-sm font-bold uppercase tracking-wider text-slate-800 mb-4 text-center">
+          <p className="text-sm font-bold uppercase tracking-wider text-slate-800 mb-4 text-center">
             {service.title} Available Across East Midlands Locations:
-          </h3>
+          </p>
           <div className="flex flex-wrap justify-center gap-2 text-xs">
             {SITE1_COUNTIES.flatMap((c) =>
               c.towns.map((town) => (
@@ -331,9 +331,9 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       <section className="py-12 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-8">
-            <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2">
+            <h2 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2">
               Explore Our Other Accredited Mediation Pathways
-            </h3>
+            </h2>
             <p className="text-xs sm:text-sm text-slate-300">
               Specialized dispute resolution services delivered by accredited Family Mediation Council practitioners.
             </p>
@@ -350,9 +350,9 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   <span className="inline-block text-[10px] font-bold text-amber-400 uppercase tracking-wider mb-1">
                     {other.badge}
                   </span>
-                  <h4 className="font-serif font-bold text-white text-base group-hover:text-amber-300 transition mb-2">
+                  <h3 className="font-serif font-bold text-white text-base group-hover:text-amber-300 transition mb-2">
                     {other.title}
-                  </h4>
+                  </h3>
                   <p className="text-xs text-slate-300 leading-relaxed line-clamp-2">
                     {other.summary}
                   </p>

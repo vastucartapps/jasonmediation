@@ -1,3 +1,8 @@
+---
+name: uk-family-mediation-engine
+description: End-to-end framework and automated engine for building enterprise FMC-accredited UK Family Mediation multi-brand site portfolios with anti-doorway legal enrichment, geo-schema, strict UX guardrails, and one-command deployment.
+---
+
 # UK Family Mediation Portfolio Engine (Enterprise SOP & Master Skill)
 
 This skill document defines the complete architectural blueprint, design standards, regulatory compliance measures, technical SEO specifications, and single-command deployment pipeline for developing high-converting, Google-compliant UK Family Mediation websites.
@@ -25,7 +30,7 @@ The portfolio utilizes a monorepo architecture managed via **pnpm workspaces**:
 ```
 
 ### 1.1 Single Source of Truth (SSOT) Principle
-- **All contact information** (telephone numbers, email addresses, webhook endpoints, physical office centres) MUST originate strictly from `packages/core/src/config/global-contact.ts`.
+- **All contact information** (telephone numbers, email addresses, webhook endpoints, physical office centres) MUST originate strictly from [`packages/core/src/config/global-contact.ts`](file:///mnt/d/Jason%20Local%20Sites/mediation%20new/gemini/packages/core/src/config/global-contact.ts).
 - No hardcoded numbers (`0000 000 000` or arbitrary strings) are permitted in page templates or components.
 - Brand numbers map directly to regional area codes:
   - **Alderton Family Mediation**: `0116 497 4555` (`tel:01164974555`)
@@ -69,7 +74,7 @@ Incorporate legal requirements updated by the Ministry of Justice in April 2024:
 
 ### 3.2 Zero Unicode Emojis
 - **ZERO Unicode Emojis** are permitted in user-facing code, headlines, body copy, list items, buttons, or badges.
-- Use only scalable SVG vector icons from the centralized `Icons.tsx` component:
+- Use only scalable SVG vector icons from the centralized [`Icons.tsx`](file:///mnt/d/Jason%20Local%20Sites/mediation%20new/gemini/packages/core/src/components/Icons.tsx) component:
   - `ScalesOfJusticeIcon`, `PhoneCallIcon`, `CalendarCheckIcon`, `ShieldLockIcon`, `CourtBuildingIcon`, `AwardSealIcon`, `ClockIcon`, `MailIcon`, `BuildingOfficeIcon`, `AlertTriangleIcon`, `CheckCircleIcon`, `XCircleIcon`.
 
 ### 3.3 Flawless Responsiveness Across All Viewports
@@ -166,9 +171,7 @@ The portfolio enforces a circular internal link graph across all page hierarchie
 - **HTML Sitemap (`/sitemap`) & XML Sitemap (`/sitemap.xml`)**:
   - Lists 100% of indexable pages (Home, Services, Locations, Towns, Town+Services, Blog Index, all Blog Articles, About, Contact, Privacy, Terms).
 
----
-
-#### 3.6 Semantic Anchor Text & Domain Authority Consolidation
+### 3.9 Semantic Anchor Text & Domain Authority Consolidation
 > [!IMPORTANT]
 > **Generic anchor texts are strictly banned across all portfolio sites.**
 > 
@@ -184,7 +187,7 @@ The portfolio enforces a circular internal link graph across all page hierarchie
 > 
 > This consolidates domain authority, provides explicit contextual signals to search engines and users, and eliminates doorway penalty triggers.
 
-### 3.7 Strict Topical Guide Relevance & Adaptive Layout Architecture
+### 3.10 Strict Topical Guide Relevance & Adaptive Layout Architecture
 Guides appearing on location and service pages MUST maintain strict contextual relevance without arbitrary padding:
 1. **Town Location Hubs**:
    - Filter strictly by `p.relatedTownSlugs?.includes(town.slug)`.
@@ -197,6 +200,29 @@ Guides appearing on location and service pages MUST maintain strict contextual r
    - **1 Matching Guide**: Render as a **Featured Statutory Authority Banner** (full-width 2-column flex/grid container with "Essential Statutory Guidance for {town.name} Applicants" badge, reading time, detailed overview, and prominent CTA). Never render a lonely 1/3 card inside an empty 3-column grid.
    - **2 Matching Guides**: Render in a balanced 2-column grid (`grid grid-cols-1 md:grid-cols-2 gap-6`).
    - **3 Matching Guides**: Render in a balanced 3-column grid (`grid grid-cols-1 md:grid-cols-3 gap-6`).
+
+### 3.11 Inviolable Heading Hierarchy & Accessibility (WCAG AA/AAA Standards)
+Lighthouse and modern accessibility validators enforce strict sequentially-descending heading outlines:
+1. **Sequential Heading Descent (`<h1>` → `<h2>` → `<h3>`)**:
+   - Heading elements MUST follow a strict descending order without skipping levels:
+     - Page Title: Exactly one `<h1>` per page.
+     - Major Content Sections: `<h2>` tags (e.g. Services, Procedures, Statutory Guidance, Blog posts, Bottom CTAs).
+     - Component Cards & Sub-items: `<h3>` tags nested strictly within their parent `<h2>` section.
+   - **BANNED**: Skipping from `<h1>` to `<h3>`, or `<h2>` to `<h4>`.
+   - **BANNED**: Using `<h4>`, `<h5>`, or `<h6>` for auxiliary labels, transit notes, sister town directory titles, or footer column headings.
+2. **Semantic Paragraph Styling for Non-Heading Micro-Labels**:
+   - All directory headers, sidebar auxiliary titles, and micro-labels must use styled paragraph elements instead of heading tags:
+     ```tsx
+     <p className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+       Transport &amp; Accessibility
+     </p>
+     ```
+   - **Footer Isolation**: Footer column headers MUST use `<p className="text-xs font-bold uppercase tracking-wider text-white mb-4">` to avoid polluting the document heading hierarchy.
+3. **WCAG AA/AAA Color Contrast Ratios**:
+   - Badge text, pill tags, and alert boxes must exceed a minimum contrast ratio of **4.5:1** (WCAG AA) or **7:1** (WCAG AAA):
+     - Amber Badges: `bg-amber-100 text-amber-950 border border-amber-300` (Never `text-amber-600` on light background).
+     - Emerald Badges: `bg-emerald-100 text-emerald-950 border border-emerald-300` (Never low-contrast light greens).
+     - Dark Sections: Text must use solid high-contrast tones (`text-white`, `text-slate-100`, `text-amber-300`), avoiding translucent low-contrast text (`text-white/50`).
 
 ---
 
@@ -237,11 +263,60 @@ Every site outputs an `/llms.txt` file at build time providing a structured Mark
 
 ---
 
-## 5. Core Web Vitals & Production Performance
+## 5. Core Web Vitals & Production Performance (100/100 Lighthouse Target)
 
-1. **Static HTML Generation**: Configured with Next.js `output: 'export'` for sub-millisecond edge delivery.
-2. **Font Strategy**: Preloaded Google Fonts (`Plus Jakarta Sans` and `Playfair Display`) using `display: 'swap'` and CSS variables to eliminate Cumulative Layout Shift (CLS = 0).
-3. **Image Optimization**: WebP format with explicit `width`, `height`, and responsive `sizes` attributes for sub-second Largest Contentful Paint (LCP < 1.0s).
+### 5.1 Non-Blocking Web Font Architecture
+Synchronous `<link rel="stylesheet">` tags in `<head>` block the main browser thread for 1.5–2.5s on mobile throttled connections. All fonts MUST load asynchronously with zero render-blocking penalties:
+```html
+<!-- DNS Prefetch & Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+<!-- Non-Blocking Asynchronous Stylesheet -->
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+  media="print"
+  onLoad="this.media='all'"
+/>
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+  />
+</noscript>
+```
+
+### 5.2 Hero LCP Image Preloading
+To achieve sub-second Largest Contentful Paint (LCP < 1.0s), the primary above-the-fold hero image MUST be preloaded directly in `<head>` with maximum fetch priority:
+```html
+<link
+  rel="preload"
+  as="image"
+  href="/images/hero-mediation.webp"
+  fetchPriority="high"
+/>
+```
+
+### 5.3 WebP Image Compression & Zero Dead Assets
+1. **Format Constraint**: 100% of images MUST be WebP (`.webp`).
+2. **Dimension & Payload Limits**:
+   - Hero / Full-Width Images: Max 1400px width, quality 82, payload sub-40KB.
+   - Editorial & Article Graphics: Max 1000px width, quality 80, payload sub-35KB.
+   - Accreditation & Regulatory Logos: Scaled to 300px width, quality 80, payload sub-12KB.
+3. **Purge Unreferenced Legacy Files**:
+   - Never store legacy `.jpg` or `.png` files in `public/images/`.
+   - Run automated purge scripts (`scripts/optimize-images.py`) before deployment to prevent multi-megabyte bundle bloat.
+
+### 5.4 Static HTML Export & Performance Checklist
+1. **Next.js Config**: `output: 'export'` with `trailingSlash: true` and `images: { unoptimized: true }`.
+2. **Cumulative Layout Shift (CLS = 0)**: Explicit `aspect-ratio` or `width`/`height` on all image containers.
+3. **First Contentful Paint (FCP < 0.8s)**: Non-blocking CSS and minimal inline critical scripts.
 
 ---
 
@@ -265,7 +340,7 @@ Inject verification meta tags via `BrandConfig.googleSiteVerification` or direct
 To launch an entirely new brand (e.g. Brand #3: *Kingsley Family Mediation*):
 
 ### Step 1: Add Contact Details to SSOT
-In `packages/core/src/config/global-contact.ts`:
+In [`packages/core/src/config/global-contact.ts`](file:///mnt/d/Jason%20Local%20Sites/mediation%20new/gemini/packages/core/src/config/global-contact.ts):
 ```typescript
 export const KINGSLEY_CONTACT = {
   phone: '0121XXXXXXX',
@@ -276,7 +351,7 @@ export const KINGSLEY_CONTACT = {
 ```
 
 ### Step 2: Define County & Town Data
-Create or import the regional data in `packages/core/src/data/site3-locations.ts`. Ensure each town defines its designated HMCTS family court centre, local road links, and all 10 localized statutory FAQs.
+Create or import the regional data in [`packages/core/src/data/site3-locations.ts`](file:///mnt/d/Jason%20Local%20Sites/mediation%20new/gemini/packages/core/src/data/). Ensure each town defines its designated HMCTS family court centre, local road links, and all 10 localized statutory FAQs.
 
 ### Step 3: Scaffold New Site Directory
 Run the automated scaffolding script:

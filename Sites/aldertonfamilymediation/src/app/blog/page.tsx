@@ -169,9 +169,9 @@ export default function BlogIndexPage() {
 
           {/* Regional Family Court Towns Directory */}
           <div className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-slate-200">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-800 mb-2 text-center">
+            <p className="text-sm font-bold uppercase tracking-wider text-slate-800 mb-2 text-center">
               Regional Family Court Districts &amp; Local Centres Served:
-            </h3>
+            </p>
             <p className="text-xs text-slate-600 text-center mb-5 max-w-xl mx-auto">
               Our accredited family mediators serve separating parents and couples across all East Midlands county court areas:
             </p>
@@ -197,9 +197,9 @@ export default function BlogIndexPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-2">
-              <h3 className="font-serif text-2xl font-bold text-white">
+              <h2 className="font-serif text-2xl font-bold text-white">
                 Facing an Active Family Dispute in the East Midlands?
-              </h3>
+              </h2>
               <p className="text-sm text-slate-100 font-medium max-w-xl">
                 Our accredited mediators conduct confidential MIAM assessments within 24 to 48 hours across Leicester, Nottingham, Lincoln, and Rutland.
               </p>

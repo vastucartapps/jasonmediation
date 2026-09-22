@@ -49,8 +49,8 @@ export const AccreditationTrustBar: React.FC<AccreditationTrustBarProps> = ({
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 bg-amber-500/10 text-amber-600 border border-amber-500/20">
-            <ShieldCheckIcon className="w-4 h-4 text-amber-500" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 bg-amber-100 text-amber-950 border border-amber-300">
+            <ShieldCheckIcon className="w-4 h-4 text-amber-700" />
             <span>Professional Credentials & Standards</span>
           </div>
           <h2 className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? 'text-white' : 'text-slate-950'}`}>
@@ -83,7 +83,7 @@ export const AccreditationTrustBar: React.FC<AccreditationTrustBarProps> = ({
               <h3 className={`font-serif font-bold text-base sm:text-lg leading-snug ${isDark ? 'text-white' : 'text-slate-950'}`}>
                 {item.name}
               </h3>
-              <span className="inline-block px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold text-amber-700 bg-amber-50 border border-amber-200/80 uppercase tracking-wider mt-2 mb-3">
+              <span className="inline-block px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold text-amber-950 bg-amber-100 border border-amber-300 uppercase tracking-wider mt-2 mb-3">
                 {item.role}
               </span>
               <p className={`text-xs sm:text-sm leading-relaxed mb-6 font-normal ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>

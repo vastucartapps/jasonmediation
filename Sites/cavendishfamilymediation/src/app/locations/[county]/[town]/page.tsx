@@ -276,9 +276,9 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
                   ))}
                 </div>
 
-                <h4 className="text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+                <p className="text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
                   Transport &amp; Accessibility
-                </h4>
+                </p>
                 <p className="text-xs text-stone-800 font-medium leading-relaxed">
                   {town.transportAndAccess}
                 </p>
@@ -416,9 +416,9 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
       {county.towns.filter((t) => t.slug !== town.slug).length > 0 && (
         <section className="py-10 bg-stone-50 border-b border-stone-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-stone-700 mb-3 text-center">
+            <p className="text-xs font-bold uppercase tracking-wider text-stone-700 mb-3 text-center">
               Other Family Mediation Practice Centres in {county.name}:
-            </h3>
+            </p>
             <div className="flex flex-wrap justify-center gap-2">
               {county.towns
                 .filter((t) => t.slug !== town.slug)
