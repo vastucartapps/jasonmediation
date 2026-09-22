@@ -1,0 +1,266 @@
+import { ServiceItem } from '../types';
+
+export const CORE_SERVICES: ServiceItem[] = [
+  {
+    slug: 'miam-assessment',
+    title: 'MIAM (Mediation Information & Assessment Meeting)',
+    navLabel: 'MIAM Assessment',
+    badge: 'Statutory Requirement',
+    summary: 'The statutory court-mandated assessment required before initiating court applications for children or financial orders. Fast, confidential, and FMC-accredited.',
+    heroHeadline: 'Official FMC-Accredited MIAM Assessments for Family Court',
+    heroSubheadline: 'Secure your individual assessment meeting within 48 hours. Receive your certified Form C100 or Form A promptly if court proceedings are necessary.',
+    statutoryBasis: 'Section 10, Children and Families Act 2014 & Family Procedure Rules 2010 Part 3',
+    legalFramework: 'Under UK law, anyone wishing to apply to family court for a child arrangements order or financial settlement must first attend a Mediation Information and Assessment Meeting (MIAM) with an authorized FMC-accredited mediator, unless an official statutory exemption applies.',
+    courtFormRequired: 'Form C100 (Page 9) or Form A (Page 2)',
+    typicalDuration: '45 to 60 minutes per individual',
+    keyBenefits: [
+      'Strictly individual and confidential — you do not attend with your former partner',
+      'Prompt certification: signed Form C100 or Form A provided within 24 to 48 hours if mediation is not appropriate',
+      'Conducted via secure encrypted video from home or in-person by appointment',
+      'Thorough screening for domestic abuse, safety concerns, and eligibility for statutory vouchers',
+      'Significantly less stressful and vastly cheaper than immediate solicitor court action',
+      'Clear explanation of alternative pathways to resolve parenting and financial matters amicably',
+    ],
+    processSteps: [
+      {
+        stepNumber: '01',
+        title: 'Confidential Individual Booking',
+        description: 'Book your private assessment. You attend this initial meeting alone to discuss your circumstances in complete confidence without any pressure.',
+        duration: 'Booked within 24–48 hours',
+      },
+      {
+        stepNumber: '02',
+        title: 'Exploration & Options Appraisal',
+        description: 'Your accredited mediator explains the mediation process, evaluates suitability, and screens for any safety, legal aid, or exemption requirements.',
+        duration: '45–60 minutes',
+      },
+      {
+        stepNumber: '03',
+        title: 'Next Steps or Court Certification',
+        description: 'If you choose to proceed, we invite the other party with care. If mediation is not suitable or declined, your mediator signs the official court forms immediately.',
+        duration: 'Issued within 24 hours',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is a MIAM and is it legally compulsory in England and Wales?',
+        answer: 'A MIAM stands for Mediation Information and Assessment Meeting. Under Section 10 of the Children and Families Act 2014, attending a MIAM is a legal requirement before you can apply to a family court for a Child Arrangements Order (Form C100) or Financial Order (Form A), unless you meet specific statutory exemptions.',
+      },
+      {
+        question: 'Do I have to attend the MIAM in the same room as my ex-partner?',
+        answer: 'No. The MIAM is strictly an individual meeting. You attend alone with the mediator. Your ex-partner will be offered their own separate, confidential appointment.',
+      },
+      {
+        question: 'What happens if my ex-partner refuses to attend mediation?',
+        answer: 'Mediation is a voluntary process. If the other party declines to participate or fails to respond, your mediator will sign and certify your court application (Form C100 or Form A), enabling you to submit your matter to court.',
+      },
+      {
+        question: 'How quickly can I receive my signed Form C100 or Form A?',
+        answer: 'Once your individual assessment is completed and it is determined that mediation cannot proceed, our accredited mediator will sign and send your certified court form within 24 to 48 hours.',
+      },
+      {
+        question: 'What are the official exemptions from attending a MIAM?',
+        answer: 'Statutory exemptions include documented evidence of domestic abuse, urgent child protection risks, bankruptcy proceedings, or where neither party resides in England or Wales. During your consultation, we can evaluate whether you qualify for an exemption.',
+      },
+    ],
+    heroImage: '/images/mediator-consultation.webp',
+    cardImage: '/images/mediator-consultation.webp',
+  },
+  {
+    slug: 'child-arrangements',
+    title: 'Child Arrangements Mediation',
+    navLabel: 'Child Arrangements',
+    badge: 'Child-Focused Resolution',
+    summary: 'Constructive, child-centred mediation to agree parenting schedules, living arrangements, holiday rotas, and schooling following separation.',
+    heroHeadline: 'Pragmatic, Child-Centred Solutions for Separated Parents',
+    heroSubheadline: 'Build a durable, practical Parenting Plan that keeps your children safe, happy, and supported—without painful courtroom disputes.',
+    statutoryBasis: 'Section 8, Children Act 1989 & Parental Responsibility Principles',
+    legalFramework: 'The Children Act 1989 establishes that children’s welfare is the court’s paramount consideration. Mediation empowers parents to retain decision-making control over their children’s upbringing, establishing cooperative parenting routines that adapt as children grow.',
+    courtFormRequired: 'Form C100 (Child Arrangements Order)',
+    typicalDuration: '2 to 3 structured 90-minute joint sessions',
+    keyBenefits: [
+      'Children are kept out of adversarial courtroom conflict',
+      'Tailored arrangements: flexible 50/50 care, alternate weekends, and school holiday rotas',
+      'Clear agreements on school choices, passport custody, and international travel',
+      'Child-Inclusive Mediation available to give older children an independent voice',
+      'Produces a comprehensive written Parenting Plan respected by family courts',
+      'Improves parental communication and establishes sustainable co-parenting routines',
+    ],
+    processSteps: [
+      {
+        stepNumber: '01',
+        title: 'Individual Intake Consultations',
+        description: 'Each parent attends an individual MIAM session to outline concerns, share routines, and identify priorities for the children.',
+        duration: '45 mins each',
+      },
+      {
+        stepNumber: '02',
+        title: 'Structured Joint or Shuttle Sessions',
+        description: 'Guided by an accredited mediator, parents discuss term-time schedules, holiday rotas, handovers, and communication protocols.',
+        duration: '2–3 sessions of 90 mins',
+      },
+      {
+        stepNumber: '03',
+        title: 'Agreed Parenting Plan Delivery',
+        description: 'Your mediator drafts a detailed Parenting Plan documenting all agreed terms, which can be followed voluntarily or formalized into a Consent Order.',
+        duration: 'Finalized within 5 days',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is covered in a Child Arrangements Mediation session?',
+        answer: 'Sessions cover where children will live, weekday and weekend routines, school holidays, Christmas and birthday schedules, passport possession, foreign travel, introductions to new partners, and shared communication rules.',
+      },
+      {
+        question: 'Can mediation help if communication between parents has completely broken down?',
+        answer: 'Yes. Our mediators are specifically trained in high-conflict de-escalation. If sitting together is not possible, we use shuttle mediation where the mediator alternates between separate virtual or physical rooms.',
+      },
+      {
+        question: 'Who keeps the children’s passports after separation?',
+        answer: 'Passports are frequently mediated. Typical agreements designate one primary residence parent to hold the passports securely and supply them with a specified notice period before agreed international trips, or place them in an agreed neutral deposit.',
+      },
+      {
+        question: 'Can our children be consulted in the mediation process?',
+        answer: 'Yes. Through Child-Inclusive Mediation, an accredited specialist can speak separately to children aged 10 and older with both parents’ written consent, allowing their feelings to be heard without placing any burden of decision-making upon them.',
+      },
+      {
+        question: 'Is an agreed Parenting Plan legally binding?',
+        answer: 'A Parenting Plan is a clear moral and practical agreement. If both parents wish to make it legally binding, a family solicitor can convert its terms into a draft Consent Order and submit it to court for judicial approval without any contested hearings.',
+      },
+    ],
+    heroImage: '/images/parenting-schedule-plan.webp',
+    cardImage: '/images/parenting-schedule-plan.webp',
+  },
+  {
+    slug: 'financial-mediation',
+    title: 'Financial Settlements & Clean Break Mediation',
+    navLabel: 'Financial Settlements',
+    badge: 'Fair Financial Resolution',
+    summary: 'Transparent, structured resolution of property, mortgages, pensions, savings, and maintenance following divorce or separation.',
+    heroHeadline: 'Fair Financial Settlements & Clean Break Mediation',
+    heroSubheadline: 'Navigate property equity, mortgage borrowing capacity, and pension sharing openly and fairly without exhausting your savings on litigation.',
+    statutoryBasis: 'Matrimonial Causes Act 1973 Section 25 & Civil Partnership Act 2004',
+    legalFramework: 'Under Section 25 of the Matrimonial Causes Act 1973, courts assess financial remedy based on housing needs, financial resources, earning capacity, standard of living, and contributions. Mediation applies these exact principles in a private, collaborative setting.',
+    courtFormRequired: 'Form A (Notice of Intention to Proceed with Financial Dispute)',
+    typicalDuration: '2 to 4 structured sessions following full disclosure',
+    keyBenefits: [
+      'Complete, transparent exchange of financial documentation without court subpoenas',
+      'Realistic appraisal of the family home: buy-outs, transfers, or structured sale timings',
+      'Expert review of pension Cash Equivalent Values (CEVs) and sharing percentages',
+      'Fair budgeting for spousal maintenance and child maintenance (CMS benchmarking)',
+      'Results in a formal Memorandum of Understanding ready for an uncontested Consent Order',
+      'Substantial cost savings compared to contested court applications and adversarial solicitor correspondence',
+    ],
+    processSteps: [
+      {
+        stepNumber: '01',
+        title: 'Open Financial Disclosure',
+        description: 'Both parties complete a structured disclosure schedule detailing property valuations, mortgage statements, bank balances, debts, and pension CEVs.',
+        duration: 'Prepared over 1–2 weeks',
+      },
+      {
+        stepNumber: '02',
+        title: 'Options Analysis & Reality Testing',
+        description: 'In joint sessions, the mediator helps both parties explore viable financial solutions: affordability of housing, mortgage capacity, and pension equalization.',
+        duration: '2–3 sessions of 90 mins',
+      },
+      {
+        stepNumber: '03',
+        title: 'Memorandum of Understanding (MOU)',
+        description: 'Your mediator drafts the Open Financial Summary and MOU. Your solicitors review these documents to draft an uncontested legally binding Consent Order.',
+        duration: 'Delivered within 7 days',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What financial documents are required during mediation?',
+        answer: 'Both parties provide standard financial disclosure: 12 months of bank statements, mortgage redemption statements, property market appraisals, pension Cash Equivalent Transfer Values (CETVs), proof of income, and credit card/debt statements.',
+      },
+      {
+        question: 'What happens to the family home in mediation?',
+        answer: 'Mediators help you explore all realistic scenarios: one partner buying out the other’s equity with a new mortgage, selling the property and dividing proceeds, or deferring the sale until children finish full-time education (Mesher arrangements).',
+      },
+      {
+        question: 'How are pensions divided in family mediation?',
+        answer: 'Pensions are often a family’s most valuable asset alongside property. Mediation reviews pension Cash Equivalent Values (CEVs) to negotiate fair Pension Sharing Orders, pension offsetting, or earmarking.',
+      },
+      {
+        question: 'Is financial mediation confidential?',
+        answer: 'Financial discussions and negotiation proposals are strictly without prejudice (confidential). However, the factual financial disclosure schedule (assets and debts) is open and can be relied upon legally.',
+      },
+      {
+        question: 'How does our mediation agreement become legally binding?',
+        answer: 'Upon concluding mediation, your mediator issues a Memorandum of Understanding and Open Financial Summary. A family solicitor transforms these into a Consent Order, which a judge signs in court chambers without either party needing to appear.',
+      },
+    ],
+    heroImage: '/images/financial-mediation-assets.webp',
+    cardImage: '/images/financial-mediation-assets.webp',
+  },
+  {
+    slug: 'all-issues-mediation',
+    title: 'All-Issues Family Mediation',
+    navLabel: 'All-Issues Mediation',
+    badge: 'Comprehensive Package',
+    summary: 'A unified, seamless mediation process resolving child arrangements, housing, and financial settlements together in one coordinated pathway.',
+    heroHeadline: 'Complete Conflict Resolution: Children, Property & Finances',
+    heroSubheadline: 'Save thousands in legal fees by resolving every aspect of your separation under one coordinated, compassionate mediation framework.',
+    statutoryBasis: 'Children Act 1989 & Matrimonial Causes Act 1973',
+    legalFramework: 'Separation disputes rarely exist in isolation; housing decisions dictate parenting schedules, and child routines influence financial needs. All-Issues Mediation treats these interconnected elements as a coherent whole, ensuring balanced solutions.',
+    courtFormRequired: 'Form C100 and Form A',
+    typicalDuration: '3 to 5 structured joint sessions',
+    keyBenefits: [
+      'Comprehensive resolution: parenting routines, property division, and pensions coordinated together',
+      'Reduces total separation costs by up to 80% compared to separate solicitor negotiations',
+      'Single mediator continuity throughout the entire separation journey',
+      'Provides both a Parenting Plan and a Financial Memorandum of Understanding',
+      'Eliminates the emotional fatigue of prolonged multi-track court battles',
+      'Streamlined timeline allowing separating couples to reach finality months faster than litigated proceedings',
+    ],
+    processSteps: [
+      {
+        stepNumber: '01',
+        title: 'Initial Individual MIAMs',
+        description: 'Both parties attend separate confidential intake assessments to identify child and financial priorities.',
+        duration: 'Individual 50-minute sessions',
+      },
+      {
+        stepNumber: '02',
+        title: 'Co-Parenting & Living Routines',
+        description: 'First joint phase focuses on establishing immediate stability for the children, day-to-day routines, and holiday schedules.',
+        duration: '1–2 sessions',
+      },
+      {
+        stepNumber: '03',
+        title: 'Financial Disclosure & Asset Division',
+        description: 'Second joint phase examines property, pensions, maintenance, and debt allocations based on verified financial disclosures.',
+        duration: '2 sessions',
+      },
+      {
+        stepNumber: '04',
+        title: 'Unified Outcome Documentation',
+        description: 'Your mediator issues a complete Parenting Plan and formal Financial Memorandum of Understanding for fast solicitor sign-off.',
+        duration: 'Issued within 7 working days',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Why choose All-Issues Mediation over separate proceedings?',
+        answer: 'Children arrangements and finances are fundamentally connected. Where children live directly impacts housing needs and maintenance obligations. Resolving them simultaneously avoids contradictory outcomes and saves thousands in duplicate legal fees.',
+      },
+      {
+        question: 'How much money can couples save through All-Issues Mediation?',
+        answer: 'Contested court litigation for both children and finances routinely costs over £20,000 to £40,000 per person in legal fees. All-Issues Mediation typically costs a small fraction of this, preserving family assets for your future.',
+      },
+      {
+        question: 'Can All-Issues Mediation be completed entirely online?',
+        answer: 'Yes. Our secure, encrypted video conference facilities enable you to complete the entire sequence from home, regardless of where either party resides in England.',
+      },
+      {
+        question: 'What if we agree on children but get stuck on finances?',
+        answer: 'Any agreements reached on children are documented immediately into a Parenting Plan so your children enjoy routine stability, while remaining financial points can be explored further or referred for specific expert actuarial advice.',
+      },
+    ],
+    heroImage: '/images/sincere-mediation-session.webp',
+    cardImage: '/images/sincere-mediation-session.webp',
+  },
+];

@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: clip;
+    color: #0f172a;
+    background-color: #ffffff;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* Fluid responsive typography helpers */
+.text-fluid-hero {
+  font-size: clamp(2rem, 4vw + 0.5rem, 3.75rem);
+  line-height: 1.15;
+}
+
+.text-fluid-section {
+  font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);
+  line-height: 1.2;
+}
+
+/* Custom pattern & subtle card gradients */
+.bg-subtle-pattern {
+  background-color: #f8fafc;
+  background-image: radial-gradient(#cbd5e1 0.75px, transparent 0.75px);
+  background-size: 20px 20px;
+}
+
+.bg-hero-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(217, 119, 6, 0.08) 0%, rgba(11, 25, 44, 0.03) 50%, transparent 80%);
+}

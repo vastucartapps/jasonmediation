@@ -1,0 +1,16 @@
+{
+  "name": "uk-family-mediation-network",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:alderton": "pnpm --filter alderton-family-mediation dev",
+    "dev:cavendish": "pnpm --filter cavendish-family-mediation dev",
+    "build": "pnpm -r --filter \"./Sites/*\" run build",
+    "build:alderton": "pnpm --filter alderton-family-mediation build",
+    "build:cavendish": "pnpm --filter cavendish-family-mediation build",
+    "lint": "pnpm -r run lint"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
