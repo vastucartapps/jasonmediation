@@ -1,0 +1,51 @@
+name: Deploy Alderton Family Mediation to cPanel
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Sites/aldertonfamilymediation/**'
+      - 'packages/**'
+      - '.github/workflows/deploy-alderton.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy-alderton:
+    name: Build & FTPS Deploy Alderton
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Monorepo
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install Workspace Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Alderton Static Export
+        run: pnpm --filter aldertonfamilymediation run build
+
+      - name: Copy .htaccess to Output
+        run: cp Sites/aldertonfamilymediation/public/.htaccess Sites/aldertonfamilymediation/out/.htaccess
+
+      - name: Sync Static Export to cPanel via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          server-dir: /
+          local-dir: ./Sites/aldertonfamilymediation/out/
+          dangerous-clean-slate: false
