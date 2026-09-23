@@ -14,6 +14,7 @@ export const CAVENDISH_BRAND: BrandConfig = {
   primaryServiceArea: 'Suffolk, Essex, Kent & Sussex',
   fmcAccreditationText: 'Family Mediation Council (FMC) Accredited Practice',
   leadWebhookUrl: CAVENDISH_CONTACT.leadWebhookEndpoint,
+  leadRecipientEmail: CAVENDISH_CONTACT.leadRecipientEmail,
   counties: SITE2_COUNTIES,
   theme: {
     primaryHex: '#064E3B',

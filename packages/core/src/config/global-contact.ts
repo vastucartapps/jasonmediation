@@ -33,8 +33,10 @@ export const GLOBAL_CONTACT = {
   regulatoryStandards: 'FMC Code of Professional Conduct',
   courtStandardsCitation: 'Section 10 of the Children and Families Act 2014 & Family Procedure Rules 2010 Part 3',
 
-  // Form Submission Destinations
-  leadWebhookEndpoint: 'https://api.formspree.io/f/placeholder-or-custom-webhook', // Fallback endpoint
+  // Form Submission & Lead Notification Destination (SSOT for all brands)
+  leadRecipientEmail: 'venturevidyahindi@gmail.com',
+  leadSubmitEndpoint: 'https://formsubmit.co/ajax/venturevidyahindi@gmail.com',
+  leadWebhookEndpoint: 'https://formsubmit.co/ajax/venturevidyahindi@gmail.com',
 };
 
 export const ALDERTON_CONTACT = {

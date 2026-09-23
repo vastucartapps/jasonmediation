@@ -14,6 +14,7 @@ export const ALDERTON_BRAND: BrandConfig = {
   primaryServiceArea: 'Leicestershire, Rutland, Lincolnshire & Nottinghamshire',
   fmcAccreditationText: 'Family Mediation Council (FMC) Accredited Practice',
   leadWebhookUrl: ALDERTON_CONTACT.leadWebhookEndpoint,
+  leadRecipientEmail: ALDERTON_CONTACT.leadRecipientEmail,
   counties: SITE1_COUNTIES,
   theme: {
     primaryHex: '#0B192C',

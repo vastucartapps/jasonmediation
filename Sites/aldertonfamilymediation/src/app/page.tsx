@@ -92,12 +92,12 @@ export default function HomePage() {
 
               {/* Executive Dual Action Buttons */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-4">
-                <Link
-                  href="/contact"
+                <a
+                  href="#book-assessment"
                   className="inline-flex items-center justify-center px-7 py-4 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition transform active:scale-95"
                 >
                   Book Confidential Assessment
-                </Link>
+                </a>
                 <a
                   href={`tel:${ALDERTON_BRAND.phone}`}
                   className="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-full bg-slate-800 hover:bg-slate-700 border-2 border-slate-600 text-amber-300 font-bold text-sm transition shadow-sm whitespace-nowrap"
@@ -141,13 +141,13 @@ export default function HomePage() {
                       Mediators Available
                     </span>
                   </div>
-                  <Link
-                    href="/contact"
+                  <a
+                    href="#book-assessment"
                     className="w-full py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-sm"
                   >
                     <span>Request Callback in Confidence</span>
                     <ArrowRightIcon className="w-3.5 h-3.5" />
-                  </Link>
+                  </a>
                   <p className="text-xs text-slate-200 text-center mt-2.5 font-medium">
                     We never contact your former partner without prior agreement.
                   </p>
@@ -412,6 +412,31 @@ export default function HomePage() {
               <span className="whitespace-nowrap tracking-wide">{ALDERTON_BRAND.formattedPhone}</span>
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* CONFIDENTIAL LEAD INTAKE ASSESSMENT SECTION */}
+      <section id="book-assessment" className="py-16 sm:py-24 bg-slate-50 border-t border-slate-200 scroll-mt-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-bold tracking-wider uppercase text-amber-700 block mb-2">
+              Confidential Client Bookings
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 mb-3">
+              Request Your Confidential Family Mediation Consultation
+            </h2>
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium">
+              Appointments conducted privately via secure video or at our regional East Midlands practice centres. No ex-partner contact without prior agreement.
+            </p>
+          </div>
+
+          <LeadIntakeForm
+            brandName={ALDERTON_BRAND.brandName}
+            phone={ALDERTON_BRAND.phone}
+            formattedPhone={ALDERTON_BRAND.formattedPhone}
+            buttonBgClass="bg-amber-600 hover:bg-amber-700 text-white"
+            headingLevel="h3"
+          />
         </div>
       </section>
 

@@ -167,6 +167,8 @@ export interface BrandConfig {
   primaryServiceArea: string;
   fmcAccreditationText: string;
   leadWebhookUrl: string;
+  leadRecipientEmail?: string;
+  leadSubmitEndpoint?: string;
   counties: CountyRegion[];
   theme: {
     primaryHex: string;

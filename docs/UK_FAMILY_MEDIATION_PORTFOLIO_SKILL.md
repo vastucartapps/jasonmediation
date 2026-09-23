@@ -320,22 +320,62 @@ To achieve sub-second Largest Contentful Paint (LCP < 1.0s), the primary above-t
 
 ---
 
-## 6. Tracking, Analytics & Search Console Integration
+## 6. Enterprise Lead Capture & Automated Dispatch Architecture (Single Source of Truth)
 
-### 6.1 Google Analytics 4 (GA4)
+### 6.1 Reusable LeadIntakeForm Architecture
+All lead capture across every site, page, and directory is powered exclusively by `@mediation/core`: `<LeadIntakeForm>`:
+- **Placements Across Every Site**:
+  1. **Home Page (`/`)**: Dedicated `#book-assessment` section with smooth-scroll hero anchor triggers.
+  2. **Contact Portal (`/contact`)**: Primary intake form accompanied by physical head office credentials and crisis safeguarding lines.
+  3. **Town Practice Hubs (`/locations/[county]/[town]`)**: Embedded in hero grid column with `defaultTown` pre-selected.
+  4. **Town + Service Pages (`/locations/[county]/[town]/[service]`)**: Pre-populated with specific town and statutory service category.
+  5. **Core Service Hubs (`/services/[slug]`)**: Pre-selected for immediate procedural assessment.
+
+### 6.2 SSOT Dispatch Pipeline & Email Delivery Guarantee
+1. **Dynamic Target Resolution**:
+   Form submissions dynamically resolve their delivery endpoint from `GLOBAL_CONTACT.leadSubmitEndpoint` or brand config:
+   ```typescript
+   const targetUrl =
+     leadSubmitUrl ||
+     (leadRecipientEmail
+       ? `https://formsubmit.co/ajax/${leadRecipientEmail}`
+       : GLOBAL_CONTACT.leadSubmitEndpoint);
+   ```
+2. **Standardized Lead Payload Schema**:
+   Every submission delivers a rich, structured table containing:
+   - Full Client Name
+   - Contact Telephone (UK validated)
+   - Email Address (`_replyto` header so mediators can reply directly)
+   - Town / Catchment Area
+   - Service Pathway Requested (MIAM, Child Arrangements, Financial Remedy, All-Issues)
+   - Preferred Contact Window (Morning, Afternoon, Evening, Anytime)
+   - Confidential Background Notes
+   - Originating Brand Entity Name
+   - Exact Page URL and Timestamp
+3. **Anti-Spam & Bot Shield**:
+   - Hidden honeypot field (`website_url_check`) traps automated crawlers silently without interrupting genuine users or triggering CAPTCHA friction.
+   - Zero CAPTCHA friction (`_captcha: 'false'`) ensures maximum conversion rate for distressed family clients.
+4. **Analytics Integration**:
+   - Dispatches `lead_form_submission` event into Google Tag Manager / GA4 `window.dataLayer` with rich custom dimensions.
+
+---
+
+## 7. Tracking, Analytics & Search Console Integration
+
+### 7.1 Google Analytics 4 (GA4)
 Inject the GA4 measurement tag dynamically via `BrandConfig.googleAnalyticsId`:
 - Automatic page-view tracking on client route changes.
 - Custom event tracking:
   - `phone_call_click` (placement: desktop_header, mobile_sticky_bar, lead_form, footer).
-  - `form_submission` (lead intake form completion).
+  - `lead_form_submission` (lead intake form completion with service and town dimensions).
   - `court_guide_click` (designated court information interaction).
 
-### 6.2 Google Search Console (GSC)
+### 7.2 Google Search Console (GSC)
 Inject verification meta tags via `BrandConfig.googleSiteVerification` or direct DNS TXT records.
 
 ---
 
-## 7. One-Command Site Deployment Playbook
+## 8. One-Command Site Deployment Playbook
 
 To launch an entirely new brand (e.g. Brand #3: *Kingsley Family Mediation*):
 

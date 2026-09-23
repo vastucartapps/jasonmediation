@@ -88,12 +88,12 @@ export default function CavendishHomePage() {
 
               {/* Executive Dual Action Buttons */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-4">
-                <Link
-                  href="/contact"
+                <a
+                  href="#book-assessment"
                   className="inline-flex items-center justify-center px-7 py-4 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-stone-950 font-bold text-sm shadow-lg shadow-amber-400/20 transition transform active:scale-95"
                 >
                   Book Confidential Assessment
-                </Link>
+                </a>
                 <a
                   href={`tel:${CAVENDISH_BRAND.phone}`}
                   className="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-full bg-emerald-900 hover:bg-emerald-850 border-2 border-emerald-700 text-amber-300 font-bold text-sm transition shadow-sm whitespace-nowrap"
@@ -137,13 +137,13 @@ export default function CavendishHomePage() {
                       Mediators Available
                     </span>
                   </div>
-                  <Link
-                    href="/contact"
+                  <a
+                    href="#book-assessment"
                     className="w-full py-3 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-sm"
                   >
                     <span>Request Callback in Confidence</span>
                     <ArrowRightIcon className="w-3.5 h-3.5" />
-                  </Link>
+                  </a>
                   <p className="text-xs text-emerald-100 text-center mt-2.5 font-medium">
                     We never contact your former partner without prior agreement.
                   </p>
@@ -408,6 +408,31 @@ export default function CavendishHomePage() {
               <span className="whitespace-nowrap tracking-wide">{CAVENDISH_BRAND.formattedPhone}</span>
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* CONFIDENTIAL LEAD INTAKE ASSESSMENT SECTION */}
+      <section id="book-assessment" className="py-16 sm:py-24 bg-stone-100/70 border-t border-stone-200 scroll-mt-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-bold tracking-wider uppercase text-emerald-800 block mb-2">
+              Confidential Client Bookings
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-stone-900 mb-3">
+              Request Your Initial Family Mediation Consultation
+            </h2>
+            <p className="text-stone-600 text-xs sm:text-sm leading-relaxed font-medium">
+              Appointments conducted privately via secure video or at our regional South East &amp; East Anglia practice chambers. No ex-partner contact without prior agreement.
+            </p>
+          </div>
+
+          <LeadIntakeForm
+            brandName={CAVENDISH_BRAND.brandName}
+            phone={CAVENDISH_BRAND.phone}
+            formattedPhone={CAVENDISH_BRAND.formattedPhone}
+            buttonBgClass="bg-emerald-800 hover:bg-emerald-900 text-white"
+            headingLevel="h3"
+          />
         </div>
       </section>
 
