@@ -54,9 +54,10 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
 
     const targetUrl =
       leadSubmitUrl ||
+      GLOBAL_CONTACT.leadSubmitEndpoint ||
       (leadRecipientEmail
         ? `https://formsubmit.co/ajax/${leadRecipientEmail}`
-        : GLOBAL_CONTACT.leadSubmitEndpoint);
+        : 'https://formsubmit.co/ajax/abdf15fb72b87ae3039219a094638be0');
 
     const payload = {
       name: formData.fullName,

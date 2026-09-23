@@ -35,8 +35,9 @@ export const GLOBAL_CONTACT = {
 
   // Form Submission & Lead Notification Destination (SSOT for all brands)
   leadRecipientEmail: 'venturevidyahindi@gmail.com',
-  leadSubmitEndpoint: 'https://formsubmit.co/ajax/venturevidyahindi@gmail.com',
-  leadWebhookEndpoint: 'https://formsubmit.co/ajax/venturevidyahindi@gmail.com',
+  formSubmitToken: 'abdf15fb72b87ae3039219a094638be0',
+  leadSubmitEndpoint: 'https://formsubmit.co/ajax/abdf15fb72b87ae3039219a094638be0',
+  leadWebhookEndpoint: 'https://formsubmit.co/ajax/abdf15fb72b87ae3039219a094638be0',
 };
 
 export const ALDERTON_CONTACT = {

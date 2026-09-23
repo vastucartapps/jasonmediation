@@ -332,14 +332,19 @@ All lead capture across every site, page, and directory is powered exclusively b
   5. **Core Service Hubs (`/services/[slug]`)**: Pre-selected for immediate procedural assessment.
 
 ### 6.2 SSOT Dispatch Pipeline & Email Delivery Guarantee
-1. **Dynamic Target Resolution**:
-   Form submissions dynamically resolve their delivery endpoint from `GLOBAL_CONTACT.leadSubmitEndpoint` or brand config:
+1. **Dynamic Target Resolution & Masked Token Privacy**:
+   Form submissions dynamically resolve their delivery endpoint from `GLOBAL_CONTACT.leadSubmitEndpoint` using a privacy-masked token (`formSubmitToken`), permanently shielding destination email addresses from scrapers and harvesting bots:
    ```typescript
+   export const GLOBAL_CONTACT = {
+     leadRecipientEmail: 'venturevidyahindi@gmail.com',
+     formSubmitToken: 'abdf15fb72b87ae3039219a094638be0',
+     leadSubmitEndpoint: 'https://formsubmit.co/ajax/abdf15fb72b87ae3039219a094638be0',
+   };
+
    const targetUrl =
      leadSubmitUrl ||
-     (leadRecipientEmail
-       ? `https://formsubmit.co/ajax/${leadRecipientEmail}`
-       : GLOBAL_CONTACT.leadSubmitEndpoint);
+     GLOBAL_CONTACT.leadSubmitEndpoint ||
+     'https://formsubmit.co/ajax/abdf15fb72b87ae3039219a094638be0';
    ```
 2. **Standardized Lead Payload Schema**:
    Every submission delivers a rich, structured table containing:
