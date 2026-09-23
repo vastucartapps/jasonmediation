@@ -37,6 +37,15 @@ The portfolio utilizes a monorepo architecture managed via **pnpm workspaces**:
   - **Cavendish Family Mediation**: `01473 943 933` (`tel:01473943933`)
   - **Portfolio National Direct Line**: `0800 861 1050` (`tel:08008611050`)
 
+### 1.2 Zero-Scattering Governance: Single Unified Repository (`jasonmediation`)
+- **Strict Inviolable Rule**: The entire multi-site network, all 10 brand sites, shared packages, build tools, and automated deployment pipelines MUST reside exclusively within the single master repository: **`jasonmediation`** (`vastucartapps/jasonmediation`).
+- **Banned**: Creating separate, disconnected child repositories on GitHub or scattering brand code across independent repos.
+- **Unified Directory Hierarchy**:
+  - `Sites/<brand-slug>/`: Each brand site lives as an isolated workspace under `Sites/` within `jasonmediation`.
+  - `packages/core/`: The shared component library, types, content registry, and contact SSOT.
+  - `.github/workflows/deploy-<brand-slug>.yml`: Brand-specific automated deployment pipelines located in `.github/workflows/` of `jasonmediation`.
+- **One Push, Automated Deployment**: Pushing to `jasonmediation` triggers path-filtered workflows (e.g., changes to `Sites/aldertonfamilymediation/**` trigger `.github/workflows/deploy-alderton.yml`), ensuring single-command atomic merges, uniform dependency upgrades, and zero repository fragmentation.
+
 ---
 
 ## 2. Anti-Doorway & Anti-Commodity Legal Enrichment (Google Penalty Shield)
