@@ -8,8 +8,8 @@ export const CAVENDISH_BRAND: BrandConfig = {
   domain: 'cavendishfamilymediation.co.uk',
   tagline: 'Premier FMC-Accredited Family Mediation across the South East & East Anglia',
   strapline: 'Discreet, high-empathy dispute resolution protecting family assets, children’s futures, and emotional well-being.',
-  phone: CAVENDISH_CONTACT.phone, // SSOT: 01473943933
-  formattedPhone: CAVENDISH_CONTACT.formattedPhone, // SSOT: 01473 943 933
+  phone: CAVENDISH_CONTACT.phone, // SSOT: 03300100217
+  formattedPhone: CAVENDISH_CONTACT.formattedPhone, // SSOT: 03300 100 217
   contactEmail: CAVENDISH_CONTACT.email,
   primaryServiceArea: 'Suffolk, Essex, Kent & Sussex',
   fmcAccreditationText: 'Family Mediation Council (FMC) Accredited Practice',

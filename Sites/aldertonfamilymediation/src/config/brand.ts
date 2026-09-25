@@ -8,8 +8,8 @@ export const ALDERTON_BRAND: BrandConfig = {
   domain: 'aldertonfamilymediation.co.uk',
   tagline: 'Accredited Family Mediation & Fast MIAM Assessments in the East Midlands',
   strapline: 'Resolving children arrangements and financial settlements calmly, affordably, and confidentially without painful court battles.',
-  phone: ALDERTON_CONTACT.phone, // SSOT: 01164974555
-  formattedPhone: ALDERTON_CONTACT.formattedPhone, // SSOT: 0116 497 4555
+  phone: ALDERTON_CONTACT.phone, // SSOT: 03300100199
+  formattedPhone: ALDERTON_CONTACT.formattedPhone, // SSOT: 03300 100 199
   contactEmail: ALDERTON_CONTACT.email,
   primaryServiceArea: 'Leicestershire, Rutland, Lincolnshire & Nottinghamshire',
   fmcAccreditationText: 'Family Mediation Council (FMC) Accredited Practice',

@@ -33,8 +33,8 @@ The portfolio utilizes a monorepo architecture managed via **pnpm workspaces**:
 - **All contact information** (telephone numbers, email addresses, webhook endpoints, physical office centres) MUST originate strictly from [`packages/core/src/config/global-contact.ts`](file:///mnt/d/Jason%20Local%20Sites/mediation%20new/gemini/packages/core/src/config/global-contact.ts).
 - No hardcoded numbers (`0000 000 000` or arbitrary strings) are permitted in page templates or components.
 - Brand numbers map directly to regional area codes:
-  - **Alderton Family Mediation**: `0116 497 4555` (`tel:01164974555`)
-  - **Cavendish Family Mediation**: `01473 943 933` (`tel:01473943933`)
+  - **Alderton Family Mediation**: `03300 100 199` (`tel:03300100199`)
+  - **Cavendish Family Mediation**: `03300 100 217` (`tel:03300100217`)
   - **Portfolio National Direct Line**: `0800 861 1050` (`tel:08008611050`)
 
 ### 1.2 Zero-Scattering Governance: Single Unified Repository (`jasonmediation`)
