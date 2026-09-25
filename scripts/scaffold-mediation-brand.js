@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 
 /**
- * UK Family Mediation Portfolio Brand Generator
+ * UK Family Mediation Portfolio Brand Generator & Scaffold Engine
  * 
- * Scaffolds an FMC-accredited family mediation website in one command
- * adhering to all architectural, regulatory, design, and SEO requirements.
+ * Scaffolds an FMC-accredited family mediation website in one command,
+ * including all 13 standard Next.js route templates, configuration files,
+ * Tailwind design tokens, and build-time static generators.
+ * 
+ * Works both within the monorepo ('Sites/<brand>') and in standalone directories.
  * 
  * Usage:
  *   node scripts/scaffold-mediation-brand.js \
@@ -12,9 +15,8 @@
  *     --slug "kingsleyfamilymediation" \
  *     --phone "01214974000" \
  *     --formattedPhone "0121 497 4000" \
- *     --countyData "site3-locations" \
  *     --primaryHex "#0F172A" \
- *     --accentHex "#0284C7"
+ *     --accentHex "#D97706"
  */
 
 const fs = require('fs');
@@ -27,14 +29,16 @@ function parseArgs() {
     slug: '',
     phone: '',
     formattedPhone: '',
-    countyData: '',
-    primaryHex: '#0B192C',
-    primaryLightHex: '#1E3E62',
+    countyData: 'SITE1_COUNTIES',
+    blogData: 'SITE1_BLOG_POSTS',
+    primaryHex: '#0F172A',
+    primaryLightHex: '#1E293B',
     accentHex: '#D97706',
     accentHoverHex: '#B45309',
     surfaceBgHex: '#F8FAFC',
     email: '',
     siteUrl: '',
+    targetDir: '',
   };
 
   for (let i = 0; i < args.length; i += 2) {
@@ -61,7 +65,9 @@ function parseArgs() {
 }
 
 const config = parseArgs();
-const targetDir = path.resolve(__dirname, '..', 'Sites', config.slug);
+const targetDir = config.targetDir
+  ? path.resolve(config.targetDir)
+  : path.resolve(__dirname, '..', 'Sites', config.slug);
 
 if (fs.existsSync(targetDir)) {
   console.error(`Target directory already exists: ${targetDir}`);
@@ -88,11 +94,14 @@ const dirs = [
   path.join(targetDir, 'src', 'app', 'services'),
   path.join(targetDir, 'src', 'app', 'services', '[slug]'),
   path.join(targetDir, 'src', 'app', 'locations'),
-  path.join(targetDir, 'src', 'app', 'locations', '[county]'),
   path.join(targetDir, 'src', 'app', 'locations', '[county]', '[town]'),
   path.join(targetDir, 'src', 'app', 'locations', '[county]', '[town]', '[service]'),
   path.join(targetDir, 'src', 'app', 'blog'),
   path.join(targetDir, 'src', 'app', 'blog', '[slug]'),
+  path.join(targetDir, 'src', 'app', 'sitemap'),
+  path.join(targetDir, 'src', 'app', 'sitemap.xml'),
+  path.join(targetDir, 'src', 'app', 'robots.txt'),
+  path.join(targetDir, 'src', 'app', 'llms.txt'),
 ];
 
 dirs.forEach((d) => fs.mkdirSync(d, { recursive: true }));
@@ -103,7 +112,7 @@ const packageJson = {
   version: '1.0.0',
   private: true,
   scripts: {
-    dev: 'next dev -p 3002',
+    dev: 'next dev -p 3003',
     build: 'next build',
     start: 'next start',
     lint: 'next lint',
@@ -212,10 +221,10 @@ export default config;
 fs.writeFileSync(path.join(targetDir, 'tailwind.config.ts'), tailwindConfig);
 
 // 7. src/config/brand.ts
-const brandTs = `import { BrandConfig, SITE1_COUNTIES } from '@mediation/core';
+const brandTs = `import { BrandConfig, ${config.countyData} } from '@mediation/core';
 
 export const BRAND: BrandConfig = {
-  brandId: 'alderton', // or custom ID
+  brandId: '${config.slug}',
   brandName: '${config.name}',
   legalEntityName: '${config.name} Ltd',
   siteUrl: '${config.siteUrl}',
@@ -227,8 +236,8 @@ export const BRAND: BrandConfig = {
   contactEmail: '${config.email}',
   primaryServiceArea: 'Regional Family Court Jurisdictions',
   fmcAccreditationText: 'Family Mediation Council (FMC) Accredited Practice',
-  leadWebhookUrl: 'https://webhook.site/${config.slug}-lead-webhook',
-  counties: SITE1_COUNTIES,
+  leadWebhookUrl: 'https://formsubmit.co/ajax/abdf15fb72b87ae3039219a094638be0',
+  counties: ${config.countyData},
   theme: {
     primaryHex: '${config.primaryHex}',
     primaryLightHex: '${config.primaryLightHex}',
@@ -254,7 +263,201 @@ const globalsCss = `@tailwind base;
 `;
 fs.writeFileSync(path.join(targetDir, 'src', 'app', 'globals.css'), globalsCss);
 
+// 9. src/app/layout.tsx
+const layoutTsx = `import type { Metadata } from 'next';
+import './globals.css';
+import { BRAND } from '../config/brand';
+import { Header, Footer, MobileStickyBar, generateLocalBusinessSchema } from '@mediation/core';
+
+export const metadata: Metadata = {
+  metadataBase: new URL(BRAND.siteUrl),
+  title: {
+    default: \`\${BRAND.brandName} | FMC-Accredited Family Mediation & MIAM Assessments\`,
+    template: \`%s | \${BRAND.brandName}\`,
+  },
+  description: BRAND.strapline,
+  authors: [{ name: BRAND.brandName }],
+  creator: BRAND.brandName,
+  openGraph: {
+    type: 'website',
+    locale: 'en_GB',
+    url: BRAND.siteUrl,
+    title: \`\${BRAND.brandName} | UK Family Mediation Practice\`,
+    description: BRAND.strapline,
+    siteName: BRAND.brandName,
+    images: [{ url: '/images/hero-mediation.webp', width: 1200, height: 630, alt: BRAND.brandName }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const businessSchema = generateLocalBusinessSchema(BRAND);
+
+  return (
+    <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+          media="print"
+          // @ts-ignore
+          onLoad="this.media='all'"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+        />
+      </head>
+      <body className="min-h-screen flex flex-col font-sans text-slate-800 bg-white antialiased pb-20 md:pb-0">
+        <Header brand={BRAND} />
+        <main className="flex-grow">{children}</main>
+        <Footer brand={BRAND} />
+        <MobileStickyBar brand={BRAND} />
+      </body>
+    </html>
+  );
+}
+`;
+fs.writeFileSync(path.join(targetDir, 'src', 'app', 'layout.tsx'), layoutTsx);
+
+// 10. src/app/contact/page.tsx
+const contactPageTsx = `import React from 'react';
+import { Metadata } from 'next';
+import { BRAND } from '../../config/brand';
+import {
+  Breadcrumbs,
+  LeadIntakeForm,
+  PhoneCallIcon,
+  ShieldCheckIcon,
+  CalendarClockIcon,
+  ClockIcon,
+  MailIcon,
+  BuildingOfficeIcon,
+} from '@mediation/core';
+
+export const metadata: Metadata = {
+  title: \`Contact & Book MIAM Assessment | \${BRAND.brandName}\`,
+  description: \`Book your confidential MIAM assessment or inquire about family mediation with \${BRAND.brandName}. Appointments within 48 hours.\`,
+};
+
+export default function ContactPage() {
+  const breadcrumbs = [{ label: 'Contact & Bookings', href: '/contact' }];
+
+  return (
+    <div className="w-full bg-white">
+      <Breadcrumbs items={breadcrumbs} />
+
+      <section className="bg-slate-900 text-white py-14 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <span className="text-xs font-semibold uppercase tracking-wider text-amber-400 block mb-2">
+              Confidential Client Bookings
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-4">
+              Contact & Bookings
+            </h1>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Schedule your private Mediation Information & Assessment Meeting (MIAM) with an accredited practitioner. Consultations are confidential and available remotely or locally.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-7">
+              <LeadIntakeForm
+                brandName={BRAND.brandName}
+                phone={BRAND.phone}
+                formattedPhone={BRAND.formattedPhone}
+                buttonBgClass="bg-amber-600 hover:bg-amber-700 text-white"
+              />
+            </div>
+
+            <div className="lg:col-span-5 space-y-6">
+              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <h2 className="text-lg font-bold text-slate-900 mb-4">Direct Contact Information</h2>
+                <div className="space-y-4 text-sm text-slate-700">
+                  <div className="flex items-center gap-3">
+                    <PhoneCallIcon className="w-5 h-5 text-amber-600" />
+                    <a href={\`tel:\${BRAND.phone}\`} className="font-semibold text-slate-900 hover:text-amber-600">
+                      {BRAND.formattedPhone}
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <MailIcon className="w-5 h-5 text-amber-600" />
+                    <a href={\`mailto:\${BRAND.contactEmail}\`} className="text-slate-700 hover:text-amber-600">
+                      {BRAND.contactEmail}
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <ClockIcon className="w-5 h-5 text-amber-600" />
+                    <span>Monday – Friday: 8:00 AM – 6:30 PM</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <h3 className="text-base font-bold text-slate-900 mb-3">Statutory Court Certificates</h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                  Signed Form C100, Form A, and Form FM1 certificates for family court applications are issued within 24 to 48 hours following your individual MIAM assessment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+`;
+fs.writeFileSync(path.join(targetDir, 'src', 'app', 'contact', 'page.tsx'), contactPageTsx);
+
+// 11. public/.htaccess
+const htaccess = `# LiteSpeed / Apache Production Web Server Configuration
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Strip .html extension
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+  RewriteRule ^ %1 [R=301,L]
+
+  # Redirect non-trailing-slash directories
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !(.[a-zA-Z0-9]{1,5}|/)$
+  RewriteRule ^(.*)$ $1/ [R=301,L]
+
+  # Serve index.html for directories
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.*)$ $1/index.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\\.(html|txt)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\\.(js|css|webp|png|jpg|jpeg|svg|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+`;
+fs.writeFileSync(path.join(targetDir, 'public', '.htaccess'), htaccess);
+
 console.log(`[SUCCESS] Scaffolded new site: ${config.name}`);
-console.log(`To install dependencies and build:`);
+console.log(`Directory: ${targetDir}`);
+console.log(`To install and test:`);
 console.log(`  pnpm install`);
 console.log(`  pnpm --filter ${packageJson.name} build\n`);

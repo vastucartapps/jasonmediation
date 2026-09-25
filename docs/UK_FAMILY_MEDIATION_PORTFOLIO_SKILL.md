@@ -1,109 +1,148 @@
 ---
 name: uk-family-mediation-engine
-description: End-to-end framework and automated engine for building enterprise FMC-accredited UK Family Mediation multi-brand site portfolios with anti-doorway legal enrichment, geo-schema, strict UX guardrails, and one-command deployment.
+description: End-to-end framework, master SOP, and automated engine for building enterprise FMC-accredited UK Family Mediation multi-brand site portfolios with anti-doorway legal enrichment, geo-schema, strict UX guardrails, single-source lead capture, and turnkey deployment.
 ---
 
 # UK Family Mediation Portfolio Engine (Enterprise SOP & Master Skill)
 
-This skill document defines the complete architectural blueprint, design standards, regulatory compliance measures, technical SEO specifications, and single-command deployment pipeline for developing high-converting, Google-compliant UK Family Mediation websites.
+This skill document defines the complete architectural blueprint, design standards, regulatory compliance measures, technical SEO specifications, lead generation engine, and automated deployment pipeline for developing high-converting, Google-compliant UK Family Mediation websites.
+
+It is designed to be executed **within the primary monorepo (`jasonmediation`)** or **independently in any directory from absolute scratch**.
 
 ---
 
-## 1. System Architecture & Monorepo Design
+## 1. System Architecture & Repository Governance
 
-The portfolio utilizes a monorepo architecture managed via **pnpm workspaces**:
+### 1.1 Zero-Scattering Governance: Single Unified Repository (`jasonmediation`)
+- **Strict Inviolable Rule**: The entire multi-site network, all 10 brand sites, shared packages, build tools, and automated deployment pipelines MUST reside exclusively within the single master repository: **`jasonmediation`** (`vastucartapps/jasonmediation`).
+- **Banned**: Creating separate, disconnected child repositories on GitHub or scattering brand code across independent repos.
+- **Unified Directory Hierarchy**:
+  ```text
+  ├── packages/
+  │   └── core/                     # Shared single source of truth (SSOT)
+  │       ├── src/
+  │       │   ├── components/       # Header, Footer, Hero, Forms, Cards, Icons
+  │       │   ├── config/           # SSOT Global Contact & Brand registry
+  │       │   ├── data/             # County, Town, Court, Service & Blog data
+  │       │   ├── seo/              # LocalBusiness, Service, ImageObject schemas
+  │       │   └── types.ts          # Strongly typed domain models
+  ├── Sites/
+  │   ├── aldertonfamilymediation/  # Site 1 (East Midlands)
+  │   ├── cavendishfamilymediation/ # Site 2 (South East / East Anglia)
+  │   └── [brand3..10]/             # Additional portfolio brands
+  ├── scripts/                      # Build, verification & deployment automation
+  ├── .github/workflows/            # Automated CI/CD deployment pipelines
+  └── pnpm-workspace.yaml
+  ```
 
-```text
-├── packages/
-│   └── core/                     # Shared single source of truth (SSOT)
-│       ├── src/
-│       │   ├── components/       # Header, Footer, Hero, Forms, Cards, Icons
-│       │   ├── config/           # SSOT Global Contact & Brand registry
-│       │   ├── data/             # County, Town, Court, Service & Blog data
-│       │   ├── seo/              # LocalBusiness, Service, ImageObject schemas
-│       │   └── types.ts          # Strongly typed domain models
-├── Sites/
-│   ├── aldertonfamilymediation/  # Site 1 (East Midlands)
-│   ├── cavendishfamilymediation/ # Site 2 (South East / East Anglia)
-│   └── [brand3..10]/             # Additional portfolio brands
-└── pnpm-workspace.yaml
-```
-
-### 1.1 Single Source of Truth (SSOT) Principle
-- **All contact information** (telephone numbers, email addresses, webhook endpoints, physical office centres) MUST originate strictly from [`packages/core/src/config/global-contact.ts`](file:///mnt/d/Jason%20Local%20Sites/mediation%20new/gemini/packages/core/src/config/global-contact.ts).
+### 1.2 Single Source of Truth (SSOT) Contact Principle
+- **All contact information** (telephone numbers, email addresses, webhook endpoints, physical office centres) MUST originate strictly from `packages/core/src/config/global-contact.ts`.
 - No hardcoded numbers (`0000 000 000` or arbitrary strings) are permitted in page templates or components.
 - Brand numbers map directly to regional area codes:
   - **Alderton Family Mediation**: `03300 100 199` (`tel:03300100199`)
   - **Cavendish Family Mediation**: `03300 100 217` (`tel:03300100217`)
   - **Portfolio National Direct Line**: `0800 861 1050` (`tel:08008611050`)
 
-### 1.2 Zero-Scattering Governance: Single Unified Repository (`jasonmediation`)
-- **Strict Inviolable Rule**: The entire multi-site network, all 10 brand sites, shared packages, build tools, and automated deployment pipelines MUST reside exclusively within the single master repository: **`jasonmediation`** (`vastucartapps/jasonmediation`).
-- **Banned**: Creating separate, disconnected child repositories on GitHub or scattering brand code across independent repos.
-- **Unified Directory Hierarchy**:
-  - `Sites/<brand-slug>/`: Each brand site lives as an isolated workspace under `Sites/` within `jasonmediation`.
-  - `packages/core/`: The shared component library, types, content registry, and contact SSOT.
-  - `.github/workflows/deploy-<brand-slug>.yml`: Brand-specific automated deployment pipelines located in `.github/workflows/` of `jasonmediation`.
-- **One Push, Automated Deployment**: Pushing to `jasonmediation` triggers path-filtered workflows (e.g., changes to `Sites/aldertonfamilymediation/**` trigger `.github/workflows/deploy-alderton.yml`), ensuring single-command atomic merges, uniform dependency upgrades, and zero repository fragmentation.
+---
+
+## 2. Autonomous Bootstrap & Independent Directory Usage
+
+This skill is 100% self-contained. If invoked in an empty directory or on a new machine, follow this bootstrap blueprint to create and launch any mediation brand site without external dependencies:
+
+### 2.1 Workspace Initialization
+In any empty directory:
+```bash
+# 1. Initialize pnpm workspace
+pnpm init
+
+# 2. Create pnpm-workspace.yaml
+cat << 'EOF' > pnpm-workspace.yaml
+packages:
+  - 'packages/*'
+  - 'Sites/*'
+EOF
+```
+
+### 2.2 Core Package & SSOT Structure (`packages/core`)
+`packages/core` provides the shared domain logic, UI component library, and contact single-source-of-truth. It requires:
+1. `src/types.ts`: Strongly typed models (`BrandConfig`, `CountyData`, `TownData`, `CourtAuthority`, `ServiceItem`, `BlogPost`, `FAQItem`).
+2. `src/config/global-contact.ts`: Centralized telephone numbers, direct emails, and FormSubmit tokens.
+3. `src/components/`:
+   - `Header.tsx`: Responsive navigation with active indicators and strict call CTA button.
+   - `Footer.tsx`: 5-tier luxury footer with crisis banner, 5 navigation columns, and trust bar.
+   - `MobileStickyBar.tsx`: Fixed bottom mobile bar (`[📞 {brand.formattedPhone}]` + `[📅 Book Assessment]`).
+   - `LeadIntakeForm.tsx`: Single-source lead capture form with FormSubmit token dispatch.
+   - `CourtAuthorityCard.tsx`: HMCTS designated family court center and filing guidance.
+   - `ArticleView.tsx`: Authoritative legal article view with table of contents and AEO summary.
+   - `FAQSection.tsx`: Interactive FAQ accordions outputting `FAQPage` schema.
+   - `Icons.tsx`: Centralized SVG vector icons (Zero Unicode emojis).
+4. `src/seo/schema.ts`: JSON-LD structured data generators (`LocalBusiness`, `Service`, `BreadcrumbList`).
+
+### 2.3 Bundled Automation Tooling
+The skill includes pre-packaged automation scripts located in the skill's `scripts/` directory:
+- `scaffold-mediation-brand.js`: Generates a complete brand site with all 13 standard Next.js route templates, configurations, and `.htaccess` in one command.
+- `verify-internal-links.js`: Pre-PR and build auditor scanning all HTML exports to guarantee zero broken links, zero orphan pages, and valid anchor texts.
+- `optimize-images.py`: Image optimizer that converts assets to high-density WebP, enforces dimension caps, and purges legacy files.
+- `deploy-ftp.py`: Automated cPanel FTPS deployment script with TLS authentication and retry logic.
 
 ---
 
-## 2. Anti-Doorway & Anti-Commodity Legal Enrichment (Google Penalty Shield)
+## 3. Anti-Doorway & Anti-Commodity Legal Enrichment (Google Penalty Shield)
 
 To completely protect regional landing pages from Google's **Doorway Page Abuse**, **Commodity Content**, and **Thin Page Penalties**, every county and town page MUST deliver substantial, unique local utility:
 
-### 2.1 Designated UK Family Court Authority
+### 3.1 Designated UK Family Court Authority
 Every town location object MUST specify its designated physical court centre:
 - **Court Name**: Full official HMCTS title (e.g., *Leicester County Court and Family Court*, *Ipswich County Court and Family Court*).
 - **Physical Address & Postcode**: Verified court registry street address and postcode.
 - **Jurisdiction Tier**: Designated Family Centre, Financial Remedies Court (FRC), or Magistrates Family Hearing Centre.
 - **Filing Guidance**: Specific court filing rules for Form C100 (Child Arrangements) and Form A / Form FM1 (Financial Remedy).
 
-### 2.2 Family Procedure Rules (FPR 2024) Compliance Callouts
+### 3.2 Family Procedure Rules (FPR 2024) Compliance Callouts
 Incorporate legal requirements updated by the Ministry of Justice in April 2024:
 - Mandatory pre-action dispute resolution consideration.
 - Elimination of procedural loopholes for self-certification exemptions.
 - Court powers under FPR Part 3.4(1A) to order cost sanctions against parties unreasonably refusing mediation.
 
-### 2.3 Local Transit, Geography & Catchment Data
+### 3.3 Local Transit, Geography & Catchment Data
 - Physical arterial roads (e.g., A12, A14, M1, A46, A52).
 - Proximity to mainline train stations and public transit hubs.
 - High-density neighbouring area micro-tags for natural semantic geographic context.
 
 ---
 
-## 3. Strict UI/UX Guardrails & Inviolable Design Standards
+## 4. Strict UI/UX Guardrails & Inviolable Design Standards
 
-### 3.1 Strict Call Button Formatting
+### 4.1 Strict Call Button Formatting
 > [!IMPORTANT]
 > **Every user-facing call button across the entire site MUST consist of the phone icon and the phone number ONLY: `[📞 {brand.formattedPhone}]`.**
 > 
 > - **FORBIDDEN**: "Call:", "Call Team:", "Call Our Mediators:", "Direct Line:", or any text prefix.
 > - **MANDATORY**: An SVG phone icon followed immediately by `{brand.formattedPhone}`.
 
-### 3.2 Zero Unicode Emojis
+### 4.2 Zero Unicode Emojis
 - **ZERO Unicode Emojis** are permitted in user-facing code, headlines, body copy, list items, buttons, or badges.
-- Use only scalable SVG vector icons from the centralized [`Icons.tsx`](file:///mnt/d/Jason%20Local%20Sites/mediation%20new/gemini/packages/core/src/components/Icons.tsx) component:
+- Use only scalable SVG vector icons from the centralized `Icons.tsx` component:
   - `ScalesOfJusticeIcon`, `PhoneCallIcon`, `CalendarCheckIcon`, `ShieldLockIcon`, `CourtBuildingIcon`, `AwardSealIcon`, `ClockIcon`, `MailIcon`, `BuildingOfficeIcon`, `AlertTriangleIcon`, `CheckCircleIcon`, `XCircleIcon`.
 
-### 3.3 Flawless Responsiveness Across All Viewports
-Layouts must undergo zero-collision testing across all five standard viewports:
+### 4.3 Flawless Responsiveness Across All Viewports
+Layouts must undergo zero-collision testing across all standard viewports:
 
 | Viewport Width | Device Target | Header Configuration | Call CTA Placement |
 | :--- | :--- | :--- | :--- |
 | **320px – 430px** | Mobile Smartphones (iPhone, Pixel) | Logo (`shrink-0`, no truncation) + Hamburger button. Desktop nav hidden. | Fixed bottom `MobileStickyBar` with `[📞 {brand.formattedPhone}]` + `[📅 Book Consultation]`. |
 | **640px – 767px** | Large Mobile / Phablet | Logo + `[📞 {brand.formattedPhone}]` + Hamburger button. | Header pill + Bottom sticky bar. |
-| **768px – 1023px** | Tablets (iPad Portrait, Tablets) | Logo + `[📞 {brand.formattedPhone}]` + Hamburger button (`xl:hidden`). | Header pill button. |
+| **768px – 1023px** | Tablets (iPad Portrait) | Logo + `[📞 {brand.formattedPhone}]` + Hamburger button (`xl:hidden`). | Header pill button. |
 | **1024px – 1279px** | Small Laptops / iPad Pro Landscape | Logo + `[📞 {brand.formattedPhone}]` + Hamburger button (`xl:hidden`). Zero collision. | Header pill button. |
-| **1280px+** | Standard Desktop / Monitors | Full 6-link desktop nav with active route indicator pills + `[📞 {brand.formattedPhone}]`. | Header luxury pill button. |
+| **1280px+** | Standard Desktop / Large Monitors | Full 6-link desktop nav with active route indicator pills + `[📞 {brand.formattedPhone}]`. | Header luxury pill button. |
 
-### 3.4 Modern Card Architecture (Eliminate Dull Card-in-Card Nesting)
+### 4.4 Modern Card Architecture (Eliminate Dull Card-in-Card Nesting)
 - **Eliminate flat wireframe boxes**: Replace nested light-gray borders with elevated surface cards.
 - **Accented Left Borders**: Utilize `border-l-4 border-amber-500` or `border-l-4 border-emerald-600` with subtle ambient backgrounds (`bg-amber-50/20` or `bg-slate-50/70`).
 - **Dedicated Icon Medallions**: Prepend every statutory card or process stage with a circular gradient badge holding a dedicated vector SVG.
 - **Interactive Micro-Pills**: Render neighbouring towns and geographical tags as interactive pill badges with animated accent dots (`group-hover:scale-110`).
 
-### 3.5 Executive Luxury Footer
+### 4.5 Executive Luxury Footer
 Every site must include the unified 5-tier luxury footer:
 1. **Safeguarding Emergency Signposting Banner**: High-contrast, responsive flex banner (`flex-col lg:flex-row items-start lg:items-center justify-between gap-5`) with direct crisis support links.
 2. **5-Column Navigation Grid**:
@@ -119,126 +158,66 @@ Every site must include the unified 5-tier luxury footer:
 4. **Responsive Micro-Tag Town Directory**: SEO-crawlable internal link index connecting local town pages without visual clutter.
 5. **Copyright & Legal Disclaimers**: Professional regulatory notices and data privacy assurances.
 
-### 3.6 Emotionally Aligned Visual Direction & 10-Brand Asset Distribution Strategy
+### 4.6 Emotionally Aligned Visual Direction & 10-Brand Asset Distribution Strategy
 - **Image Formats**: Exclusively modern **WebP** (`.webp`) format for instant loading and sub-50KB payload.
 - **Emotional Resonance**: Images must portray sincere, thoughtful, respectful mediation rooms, neutral conference spaces, and confidential legal consultations.
 - **Strict Rule**: NEVER display laughing or smiling couples in separation or divorce contexts.
-- **Portfolio-Wide Asset Distribution (10-Brand Portfolio Strategy)**:
-  - The master media library comprises **15 specialized legal infographics** and **24 topical/photographic assets** (39 total assets).
-  - **DO NOT deploy all 39 assets onto a single brand website.**
-  - Partition and curate non-overlapping, topically tailored subsets of 8–12 assets per site matching each brand's domain:
-    - *Site 1 (Alderton - East Midlands)*: Focuses on Child Arrangements, 50/50 Rotas, School Holidays, Passports, Remote Shuttle Mediation (`parenting-plan-living-arrangements.webp`, `dividing-school-holidays-calendar.webp`, `shared-parenting-two-homes-rota.webp`, `miam-explained-step-by-step.webp`, `mediation-vs-court-comparison.webp`, `separate-rooms-shuttle-mediation.webp`).
-    - *Site 2 (Cavendish - South East / East Anglia)*: Focuses on High-Net-Worth Financial Settlements, Parental House Deposits, Inherited Money, Final Salary Pensions, Family Businesses, Form E Disclosure (`financial-mediation-overview.webp`, `the-family-home-separation-options.webp`, `pensions-long-term-financial-planning.webp`, `property-mediation-equity-division.webp`, `after-mediation-next-steps.webp`, `what-happens-if-no-agreement-mediation.webp`).
-    - *Sites 3 through 10*: Deploy remaining assets and generate targeted WebP variations aligned with the core messaging of those regional markets.
 - **Brand-Enriched Alt Tag Architecture (Mandatory SEO Formula)**:
   - Every image `alt` attribute MUST embed the specific subject description AND the brand entity name:
-    - *Editorial / Blog / Infographic Images*: `"[Specific Subject Description] from [Brand Name]"` (e.g. `"Parent reviewing travel consent letter and child passport for holiday approval from Alderton Family Mediation"`, `"The family home options and parental deposit equity division from Cavendish Family Mediation"`).
+    - *Editorial / Blog / Infographic Images*: `"[Specific Subject Description] from [Brand Name]"` (e.g. `"Parent reviewing travel consent letter and child passport for holiday approval from Alderton Family Mediation"`).
     - *Local Service & Location Images*: `"[Service / Topic Description] in [Town Name], [County Name] from [Brand Name]"` (e.g. `"Child Arrangements Mediation session in Leicester, Leicestershire from Alderton Family Mediation"`).
-  - This ensures rich entity-level contextual signals in Google Image Search and eliminates generic stock image penalties.
 
-### 3.7 In-Depth Legal Articles & Dispute Guides Standard (Zero Fluff & Anti-Commodity)
+---
+
+## 5. In-Depth Legal Articles & Dispute Guides Standard (Zero Fluff & Anti-Commodity)
+
 To establish unbeatable topical authority, satisfy Google EEAT, and avoid commodity content flags, every legal article and dispute guide MUST adhere to the following architecture:
 1. **Article Volume Constraint**: Maximum **10 articles per site** (8–10 highly authoritative guides covering core topical search clusters).
 2. **Minimum 3 Contextual WebP Images**:
    - Curated blend of authentic photography and structured infographics.
    - Descriptive figure captions below each image providing genuine editorial context.
-   - Mandatory brand-enriched alt tags following the formula in Section 3.6.
+   - Mandatory brand-enriched alt tags following the formula in Section 4.6.
 3. **Minimum 10 Exhaustive, Scenario-Specific FAQs**:
    - Answers must address real financial and parenting complexities (e.g. non-disclosure remedies under *Sharland*, Form D81, CEV pension vs actuarial true value, Deeds of Trust, 28-day overseas travel rules, airport Border Force protocols).
    - Rendered with interactive schema-ready accordions (`FAQPage` JSON-LD).
 4. **Structured Editorial Layout (`ArticleView.tsx`)**:
    - **Interactive Table of Contents**: 6 quick-jump anchor links.
    - **Direct Answer / AEO Executive Summary Box**: Highlighting core question and direct authoritative answer upfront for Google AI Overviews and Perplexity.
-   - **Statutory Legal Framework Cards**: Explicit citations of English legislation (e.g. Children Act 1989, Matrimonial Causes Act 1973, FPR 2024 amendments).
+   - **Statutory Legal Framework Cards**: Explicit citations of English legislation (Children Act 1989, Matrimonial Causes Act 1973, FPR 2024 amendments).
    - **Step-by-Step Resolution Roadmap**: Actionable, numbered cards with clear takeaways.
    - **Tactical Pitfalls & Common Mistakes**: Contrast cards outlining risks of unilateral actions or bypassing MIAMs.
    - **Limits of Mediation Callout**: Plain explanation of when mediation cannot proceed and urgent court injunctions (Prohibited Steps, Freezing Injunctions) are required.
 5. **SSOT Consultation Callouts**:
    - Mid-article and bottom booking cards with strictly formatted call button `[📞 {brand.formattedPhone}]`.
 
-### 3.8 Zero-Orphan & Zero-Dead-End Internal Linking Architecture (Inviolable Standard)
+### 5.1 Zero-Orphan & Zero-Dead-End Internal Linking Architecture
 > [!IMPORTANT]
 > **NO URL SHOULD BE AN ORPHAN. NO URL SHOULD BE A DEAD END.**
 > Every single indexable page across the website MUST receive multiple inbound internal links and provide multiple contextual outbound links.
 
-The portfolio enforces a circular internal link graph across all page hierarchies:
-- **Core Services (`/services/[slug]`)**:
-  - *Receives links from*: Header Nav, Footer, Home, HTML Sitemap, Location pages, Town+Service pages, Blog articles.
-  - *Gives links to*: Related blog articles matching `p.relatedServiceSlug === service.slug`, all regional Town+Service landing pages (`/locations/{county}/{town}/{service}`), sibling services grid, and `/contact`.
-- **Town Location Pages (`/locations/[county]/[town]`)**:
-  - *Receives links from*: Locations index, County sections, Home top towns, Footer directory, HTML Sitemap, Blog articles.
-  - *Gives links to*: 4 town service landing pages (`/locations/{county}/{town}/{service}`), designated HMCTS family court centre, local dispute advice articles matching `relatedTownSlugs`, sister towns in the county, and `/services`.
-- **Town + Service Pages (`/locations/[county]/[town]/[service]`)**:
-  - *Receives links from*: Town overview page, Parent service page, Blog articles practice hub links, HTML Sitemap, Footer micro-directory.
-  - *Gives links to*: Parent service specification (`/services/{service.slug}`), other 3 mediation services in that town, related legal guides for that service, sister towns for that service, and `/locations/{county}/{town}`.
-- **Blog Index (`/blog`)**:
-  - *Receives links from*: Header Nav ("Guides & Advice"), Footer, Home, Service pages, Town pages, HTML Sitemap.
-  - *Gives links to*: All individual articles (`/blog/{slug}`), Core Services showcase (`/services/{slug}`), and Regional Family Court Districts directory (`/locations/{county}/{town}`).
-- **Blog Articles (`/blog/[slug]`)**:
-  - *Receives links from*: Blog index, Parent service page, Town location pages, Town+Service pages, Sibling related articles (`relatedPostSlugs`), HTML Sitemap.
-  - *Gives links to*: Parent service page (`/services/{relatedServiceSlug}`), Designated Family Court centres with verified street addresses, Local practice hub landing pages (`/locations/{county}/{town}/{service}`), 3 related dispute guides, and `/blog`.
-- **HTML Sitemap (`/sitemap`) & XML Sitemap (`/sitemap.xml`)**:
-  - Lists 100% of indexable pages (Home, Services, Locations, Towns, Town+Services, Blog Index, all Blog Articles, About, Contact, Privacy, Terms).
+- **Core Services (`/services/[slug]`)**: Links to related blog articles, all regional Town+Service landing pages (`/locations/{county}/{town}/{service}`), sibling services grid, and `/contact`.
+- **Town Location Pages (`/locations/[county]/[town]`)**: Links to 4 town service landing pages, designated HMCTS family court centre, local dispute advice articles, sister towns, and `/services`.
+- **Town + Service Pages (`/locations/[county]/[town]/[service]`)**: Links to parent service specification, other 3 mediation services in that town, related legal guides, sister towns, and `/locations/{county}/{town}`.
+- **Blog Articles (`/blog/[slug]`)**: Links to parent service page, designated family court centres, local practice hubs, 3 related dispute guides, and `/blog`.
+- **HTML Sitemap (`/sitemap`) & XML Sitemap (`/sitemap.xml`)**: Lists 100% of indexable pages.
 
-### 3.9 Semantic Anchor Text & Domain Authority Consolidation
+### 5.2 Semantic Anchor Text & Domain Authority Consolidation
 > [!IMPORTANT]
 > **Generic anchor texts are strictly banned across all portfolio sites.**
-> 
-> - **BANNED**: "View local centre details", "View Details", "Read Full Guide", "Read Practical Guide", "Click here", "Learn more", "View All Locations".
-> - **MANDATORY**: Anchor texts MUST be descriptive, high-intent, and semantically rich—combining location + practice area + statutory context without spammy `{name}` token replacement:
->   - **Location Directory Links**: `Explore {town.name} Practice Hub & Court Guidance →`
->   - **Town Service Cards**: `Schedule {service.title} in {town.name} →`
->   - **Location Guide Cards**: `Read Full Legal Analysis for {town.name} →`
->   - **Parent Hub Statutory Links**: `Statutory Guidelines & Protocols for {service.title} →`
->   - **Service Guide Cards**: `Read Complete Guidance on {article.clusterName} →`
->   - **Footer Practice Navigation**: `Find Your Local Family Mediation Practice →`
->   - **County Hub Navigation**: `Explore All {county.name} Practice Hubs & Family Courts →`
-> 
-> This consolidates domain authority, provides explicit contextual signals to search engines and users, and eliminates doorway penalty triggers.
-
-### 3.10 Strict Topical Guide Relevance & Adaptive Layout Architecture
-Guides appearing on location and service pages MUST maintain strict contextual relevance without arbitrary padding:
-1. **Town Location Hubs**:
-   - Filter strictly by `p.relatedTownSlugs?.includes(town.slug)`.
-   - Curate a **topically diverse 3-pillar mix**: exactly 1 MIAM/Court guide, 1 Financial/Property guide, and 1 Child Arrangements guide.
-   - Zero arbitrary fallbacks to random articles.
-2. **Location-Service Hubs**:
-   - Filter strictly by `relatedServiceSlug === service.slug` (or for `all-issues-mediation`, include both financial and child arrangements).
-   - Priority sort: guides referencing `town.slug` rank highest.
-3. **Adaptive Visual Grid**:
-   - **1 Matching Guide**: Render as a **Featured Statutory Authority Banner** (full-width 2-column flex/grid container with "Essential Statutory Guidance for {town.name} Applicants" badge, reading time, detailed overview, and prominent CTA). Never render a lonely 1/3 card inside an empty 3-column grid.
-   - **2 Matching Guides**: Render in a balanced 2-column grid (`grid grid-cols-1 md:grid-cols-2 gap-6`).
-   - **3 Matching Guides**: Render in a balanced 3-column grid (`grid grid-cols-1 md:grid-cols-3 gap-6`).
-
-### 3.11 Inviolable Heading Hierarchy & Accessibility (WCAG AA/AAA Standards)
-Lighthouse and modern accessibility validators enforce strict sequentially-descending heading outlines:
-1. **Sequential Heading Descent (`<h1>` → `<h2>` → `<h3>`)**:
-   - Heading elements MUST follow a strict descending order without skipping levels:
-     - Page Title: Exactly one `<h1>` per page.
-     - Major Content Sections: `<h2>` tags (e.g. Services, Procedures, Statutory Guidance, Blog posts, Bottom CTAs).
-     - Component Cards & Sub-items: `<h3>` tags nested strictly within their parent `<h2>` section.
-   - **BANNED**: Skipping from `<h1>` to `<h3>`, or `<h2>` to `<h4>`.
-   - **BANNED**: Using `<h4>`, `<h5>`, or `<h6>` for auxiliary labels, transit notes, sister town directory titles, or footer column headings.
-2. **Semantic Paragraph Styling for Non-Heading Micro-Labels**:
-   - All directory headers, sidebar auxiliary titles, and micro-labels must use styled paragraph elements instead of heading tags:
-     ```tsx
-     <p className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-       Transport &amp; Accessibility
-     </p>
-     ```
-   - **Footer Isolation**: Footer column headers MUST use `<p className="text-xs font-bold uppercase tracking-wider text-white mb-4">` to avoid polluting the document heading hierarchy.
-3. **WCAG AA/AAA Color Contrast Ratios**:
-   - Badge text, pill tags, and alert boxes must exceed a minimum contrast ratio of **4.5:1** (WCAG AA) or **7:1** (WCAG AAA):
-     - Amber Badges: `bg-amber-100 text-amber-950 border border-amber-300` (Never `text-amber-600` on light background).
-     - Emerald Badges: `bg-emerald-100 text-emerald-950 border border-emerald-300` (Never low-contrast light greens).
-     - Dark Sections: Text must use solid high-contrast tones (`text-white`, `text-slate-100`, `text-amber-300`), avoiding translucent low-contrast text (`text-white/50`).
+> - **BANNED**: "View local centre details", "View Details", "Read Full Guide", "Click here", "Learn more".
+> - **MANDATORY**: Anchor texts MUST be descriptive and high-intent:
+>   - `Explore {town.name} Practice Hub & Court Guidance →`
+>   - `Schedule {service.title} in {town.name} →`
+>   - `Read Full Legal Analysis for {town.name} →`
+>   - `Statutory Guidelines & Protocols for {service.title} →`
+>   - `Read Complete Guidance on {article.clusterName} →`
 
 ---
 
-## 4. Technical SEO, Rich Schemas & FAQ Statutory Depth
+## 6. Technical SEO, Rich Schemas & FAQ Statutory Depth
 
-### 4.1 Location Hub FAQ Statutory Depth (8–10+ FAQs Non-Negotiable)
-To permanently shield against Google's **Doorway Page Abuse**, **Commodity Content**, and **Thin Page** algorithms, every town and location-service page MUST provide deep, practical, localized utility:
+### 6.1 Location Hub FAQ Statutory Depth (8–10+ FAQs Non-Negotiable)
+Every town and location-service page MUST provide deep, practical, localized utility:
 - **Town Location Hubs (`/locations/[county]/[town]`)**: MUST contain **10 comprehensive, localized FAQs** addressing:
   1. Remote video MIAMs vs in-person meetings in that town.
   2. Designated Family Court requirements under Section 10 Children and Families Act 2014 & FPR Part 3.
@@ -250,88 +229,22 @@ To permanently shield against Google's **Doorway Page Abuse**, **Commodity Conte
   8. Shuttle mediation in separate physical / virtual breakout rooms.
   9. Tailored child arrangements accounting for local county school term dates and holiday rotas.
   10. Property equity, mortgage borrowing capacities, and pension division (CETVs).
-- **Location-Service Pages (`/locations/[county]/[town]/[service]`)**: MUST combine all 5 statutory service FAQs with 5 localized town-court FAQs, presenting **10 in-depth FAQs** combining statutory authority with local court application realities.
+- **Location-Service Pages (`/locations/[county]/[town]/[service]`)**: MUST combine statutory service FAQs with localized town-court FAQs (10 total).
 
-### 4.2 Comprehensive JSON-LD Schema Graphs
-Every page renders structured data via Next.js script tags:
-- **LocalBusiness Schema**:
-  - Exact `name`, `legalName`, `telephone`, `email`, `url`.
-  - GeoCoordinates (`latitude`, `longitude`) for local mapping signals.
-  - FMC regulatory accreditations and membership numbers.
-- **Service Schema**:
-  - `serviceType`, `provider`, `areaServed`, and statutory court application applicability (`Form C100`, `Form A`).
-- **ImageObject Geo-Schema**:
-  - Embed geo-coordinates, IPTC copyright notices, and descriptive captions directly into image metadata.
-- **FAQPage Schema**:
-  - County-specific and service-specific FAQ questions and answers formatted for Google SERP rich snippets.
-- **BreadcrumbList Schema**:
-  - Semantic navigational hierarchy (`Home > Locations > County > Town > Service`).
+### 6.2 Comprehensive JSON-LD Schema Graphs
+- **LocalBusiness Schema**: Exact `name`, `legalName`, `telephone`, `email`, `url`, GeoCoordinates (`latitude`, `longitude`), FMC regulatory accreditations.
+- **Service Schema**: `serviceType`, `provider`, `areaServed`, court application applicability (`Form C100`, `Form A`).
+- **FAQPage Schema**: County-specific and service-specific FAQ questions and answers formatted for Google SERP rich snippets.
+- **BreadcrumbList Schema**: Semantic hierarchy (`Home > Locations > County > Town > Service`).
 
-### 4.3 Next-Generation AI Search Engine Readiness (`llms.txt`)
-Every site outputs an `/llms.txt` file at build time providing a structured Markdown manifest of legal frameworks, court jurisdictions, and service offerings for retrieval-augmented generation (Perplexity, ChatGPT Search, Claude).
+### 6.3 Next-Generation AI Search Engine Readiness (`llms.txt`)
+Every site outputs an `/llms.txt` file providing a structured Markdown manifest of legal frameworks, court jurisdictions, and service offerings for retrieval-augmented generation (Perplexity, ChatGPT Search, Claude).
 
 ---
 
-## 5. Core Web Vitals & Production Performance (100/100 Lighthouse Target)
+## 7. Enterprise Lead Capture & Automated Dispatch Architecture (Single Source of Truth)
 
-### 5.1 Non-Blocking Web Font Architecture
-Synchronous `<link rel="stylesheet">` tags in `<head>` block the main browser thread for 1.5–2.5s on mobile throttled connections. All fonts MUST load asynchronously with zero render-blocking penalties:
-```html
-<!-- DNS Prefetch & Preconnect -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-<!-- Non-Blocking Asynchronous Stylesheet -->
-<link
-  rel="preload"
-  as="style"
-  href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-/>
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-  media="print"
-  onLoad="this.media='all'"
-/>
-<noscript>
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-  />
-</noscript>
-```
-
-### 5.2 Hero LCP Image Preloading
-To achieve sub-second Largest Contentful Paint (LCP < 1.0s), the primary above-the-fold hero image MUST be preloaded directly in `<head>` with maximum fetch priority:
-```html
-<link
-  rel="preload"
-  as="image"
-  href="/images/hero-mediation.webp"
-  fetchPriority="high"
-/>
-```
-
-### 5.3 WebP Image Compression & Zero Dead Assets
-1. **Format Constraint**: 100% of images MUST be WebP (`.webp`).
-2. **Dimension & Payload Limits**:
-   - Hero / Full-Width Images: Max 1400px width, quality 82, payload sub-40KB.
-   - Editorial & Article Graphics: Max 1000px width, quality 80, payload sub-35KB.
-   - Accreditation & Regulatory Logos: Scaled to 300px width, quality 80, payload sub-12KB.
-3. **Purge Unreferenced Legacy Files**:
-   - Never store legacy `.jpg` or `.png` files in `public/images/`.
-   - Run automated purge scripts (`scripts/optimize-images.py`) before deployment to prevent multi-megabyte bundle bloat.
-
-### 5.4 Static HTML Export & Performance Checklist
-1. **Next.js Config**: `output: 'export'` with `trailingSlash: true` and `images: { unoptimized: true }`.
-2. **Cumulative Layout Shift (CLS = 0)**: Explicit `aspect-ratio` or `width`/`height` on all image containers.
-3. **First Contentful Paint (FCP < 0.8s)**: Non-blocking CSS and minimal inline critical scripts.
-
----
-
-## 6. Enterprise Lead Capture & Automated Dispatch Architecture (Single Source of Truth)
-
-### 6.1 Reusable LeadIntakeForm Architecture
+### 7.1 Reusable `<LeadIntakeForm>` Architecture
 All lead capture across every site, page, and directory is powered exclusively by `@mediation/core`: `<LeadIntakeForm>`:
 - **Placements Across Every Site**:
   1. **Home Page (`/`)**: Dedicated `#book-assessment` section with smooth-scroll hero anchor triggers.
@@ -340,7 +253,7 @@ All lead capture across every site, page, and directory is powered exclusively b
   4. **Town + Service Pages (`/locations/[county]/[town]/[service]`)**: Pre-populated with specific town and statutory service category.
   5. **Core Service Hubs (`/services/[slug]`)**: Pre-selected for immediate procedural assessment.
 
-### 6.2 SSOT Dispatch Pipeline & Email Delivery Guarantee
+### 7.2 SSOT Dispatch Pipeline & Email Delivery Guarantee
 1. **Dynamic Target Resolution & Masked Token Privacy**:
    Form submissions dynamically resolve their delivery endpoint from `GLOBAL_CONTACT.leadSubmitEndpoint` using a privacy-masked token (`formSubmitToken`), permanently shielding destination email addresses from scrapers and harvesting bots:
    ```typescript
@@ -349,14 +262,9 @@ All lead capture across every site, page, and directory is powered exclusively b
      formSubmitToken: 'abdf15fb72b87ae3039219a094638be0',
      leadSubmitEndpoint: 'https://formsubmit.co/ajax/abdf15fb72b87ae3039219a094638be0',
    };
-
-   const targetUrl =
-     leadSubmitUrl ||
-     GLOBAL_CONTACT.leadSubmitEndpoint ||
-     'https://formsubmit.co/ajax/abdf15fb72b87ae3039219a094638be0';
    ```
 2. **Standardized Lead Payload Schema**:
-   Every submission delivers a rich, structured table containing:
+   Delivers a structured submission containing:
    - Full Client Name
    - Contact Telephone (UK validated)
    - Email Address (`_replyto` header so mediators can reply directly)
@@ -367,45 +275,150 @@ All lead capture across every site, page, and directory is powered exclusively b
    - Originating Brand Entity Name
    - Exact Page URL and Timestamp
 3. **Anti-Spam & Bot Shield**:
-   - Hidden honeypot field (`website_url_check`) traps automated crawlers silently without interrupting genuine users or triggering CAPTCHA friction.
-   - Zero CAPTCHA friction (`_captcha: 'false'`) ensures maximum conversion rate for distressed family clients.
-4. **Analytics Integration**:
-   - Dispatches `lead_form_submission` event into Google Tag Manager / GA4 `window.dataLayer` with rich custom dimensions.
+   - Hidden honeypot field (`website_url_check`) traps automated bots silently.
+   - Zero CAPTCHA friction (`_captcha: 'false'`) ensures maximum conversion for distressed family clients.
+
+### 7.3 Responsive Lead Form UX Standards
+- **Mobile First (320px–640px)**: 100% full-width inputs, touch-friendly 48px tap targets, legible 16px input font size to prevent iOS Safari auto-zoom.
+- **Desktop (1024px+)**: Elevated two-column grid layout, high-contrast labels, clear visual focus states, and instant submit feedback.
 
 ---
 
-## 7. Tracking, Analytics & Search Console Integration
+## 8. Hosting, CI/CD & Deployment Engine
 
-### 7.1 Google Analytics 4 (GA4)
-Inject the GA4 measurement tag dynamically via `BrandConfig.googleAnalyticsId`:
-- Automatic page-view tracking on client route changes.
-- Custom event tracking:
-  - `phone_call_click` (placement: desktop_header, mobile_sticky_bar, lead_form, footer).
-  - `lead_form_submission` (lead intake form completion with service and town dimensions).
-  - `court_guide_click` (designated court information interaction).
+### 8.1 Shared Hosting & Environment Constraints
+- **Target Host Type**: Shared PHP / LiteSpeed Web Server.
+- **Server Rule**: No Node.js / SSR persistent runtime is permitted on production servers. Sites MUST be exported as static HTML/CSS/JS (`output: 'export'`).
+- **Document Root**: Remote root `/` serves as the public docroot.
+- **Trailing Slash Enforcement**: All routes must output directory-style URLs (`/about/index.html`, `/services/miam/index.html`) via `trailingSlash: true` in `next.config.ts`.
 
-### 7.2 Google Search Console (GSC)
-Inject verification meta tags via `BrandConfig.googleSiteVerification` or direct DNS TXT records.
+### 8.2 Production Web Server Configuration (`.htaccess`)
+A production `.htaccess` file MUST be placed in `public/.htaccess` and copied into `out/.htaccess` during build:
+```apache
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Strip .html extension
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+  RewriteRule ^ %1 [R=301,L]
+
+  # Redirect non-trailing-slash directories
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !(.[a-zA-Z0-9]{1,5}|/)$
+  RewriteRule ^(.*)$ $1/ [R=301,L]
+
+  # Serve index.html for directories
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.*)$ $1/index.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|txt)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(js|css|webp|png|jpg|jpeg|svg|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+```
+
+### 8.3 Automated GitHub Actions CI/CD (`deploy-<brand>.yml`)
+Automated deployments run on every git push affecting that brand:
+```yaml
+name: Deploy Alderton Family Mediation to cPanel
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Sites/aldertonfamilymediation/**'
+      - 'packages/**'
+      - '.github/workflows/deploy-alderton.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy-alderton:
+    name: Build & FTPS Deploy Alderton
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Monorepo
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install Workspace Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Alderton Static Export
+        run: pnpm --filter aldertonfamilymediation run build
+
+      - name: Copy .htaccess to Output
+        run: cp Sites/aldertonfamilymediation/public/.htaccess Sites/aldertonfamilymediation/out/.htaccess
+
+      - name: Sync Static Export to cPanel via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          server-dir: /
+          local-dir: ./Sites/aldertonfamilymediation/out/
+          dangerous-clean-slate: false
+```
+
+### 8.4 Turnkey Deployment Script (`deploy-ftp.py`)
+Direct terminal deployments use `python3 scripts/deploy-ftp.py`:
+```bash
+python3 scripts/deploy-ftp.py \
+  --host "s688.lon1.mysecurecloudhost.com" \
+  --user "alderton@mediationdirect.co.uk" \
+  --password "eOfia5JLHt6D2qNhdgmLw35z" \
+  --source "Sites/aldertonfamilymediation/out"
+```
+
+### 8.5 Pre-DNS Live Verification
+Before updating DNS records, verify live responses directly against the hosting IP using `curl --resolve`:
+```bash
+# Verify HTTP Port 80
+curl -s --resolve aldertonfamilymediation.co.uk:80:77.95.113.13 http://aldertonfamilymediation.co.uk/ | grep "03300 100 199"
+
+# Verify HTTPS Port 443 (LiteSpeed HTTP/2)
+curl -s -k --resolve aldertonfamilymediation.co.uk:443:77.95.113.13 https://aldertonfamilymediation.co.uk/ | grep "03300 100 199"
+```
 
 ---
 
-## 8. One-Command Site Deployment Playbook
+## 9. One-Command Brand Launch Playbook
 
 To launch an entirely new brand (e.g. Brand #3: *Kingsley Family Mediation*):
 
 ### Step 1: Add Contact Details to SSOT
-In [`packages/core/src/config/global-contact.ts`](file:///mnt/d/Jason%20Local%20Sites/mediation%20new/gemini/packages/core/src/config/global-contact.ts):
+In `packages/core/src/config/global-contact.ts`:
 ```typescript
 export const KINGSLEY_CONTACT = {
-  phone: '0121XXXXXXX',
-  formattedPhone: '0121 XXX XXXX',
+  phone: '01214974000',
+  formattedPhone: '0121 497 4000',
   email: 'enquiries@kingsleyfamilymediation.co.uk',
-  leadWebhookEndpoint: 'https://webhook.site/kingsley-lead-webhook',
+  telUri: 'tel:01214974000',
 };
 ```
 
 ### Step 2: Define County & Town Data
-Create or import the regional data in [`packages/core/src/data/site3-locations.ts`](file:///mnt/d/Jason%20Local%20Sites/mediation%20new/gemini/packages/core/src/data/). Ensure each town defines its designated HMCTS family court centre, local road links, and all 10 localized statutory FAQs.
+Create or import the regional data in `packages/core/src/data/site3-locations.ts`. Ensure each town defines its designated HMCTS family court centre, local road links, and all 10 localized statutory FAQs.
 
 ### Step 3: Scaffold New Site Directory
 Run the automated scaffolding script:
@@ -413,17 +426,24 @@ Run the automated scaffolding script:
 node scripts/scaffold-mediation-brand.js \
   --name "Kingsley Family Mediation" \
   --slug "kingsleyfamilymediation" \
-  --phone "0121XXXXXXX" \
-  --formattedPhone "0121 XXX XXXX" \
-  --countyData "site3-locations" \
+  --phone "01214974000" \
+  --formattedPhone "0121 497 4000" \
+  --countyData "SITE3_COUNTIES" \
   --primaryHex "#1E293B" \
   --accentHex "#0284C7"
 ```
 
 ### Step 4: Build, Verify Links & Export
 ```bash
-pnpm --filter kingsley-family-mediation build
+pnpm install
+pnpm --filter kingsleyfamilymediation run build
 node scripts/verify-internal-links.js
+```
+
+### Step 5: Deploy & Verify
+```bash
+python3 scripts/deploy-ftp.py --source "Sites/kingsleyfamilymediation/out"
+curl -s --resolve kingsleyfamilymediation.co.uk:80:<HOST_IP> http://kingsleyfamilymediation.co.uk/
 ```
 
 ---
