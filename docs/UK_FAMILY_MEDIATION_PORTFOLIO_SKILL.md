@@ -468,14 +468,28 @@ jobs:
           dangerous-clean-slate: false
 ```
 
-### 8.4 Turnkey Deployment Script (`deploy-ftp.py`)
-Direct terminal deployments use `python3 scripts/deploy-ftp.py`:
+### 8.4 Multi-Brand cPanel Architecture & Master FTP (`portfolio@mediationdirect.co.uk`)
+All regional mediation brands live in independent document roots under `/home/mediatio/domains/` on the central cPanel hosting server:
+- **Alderton Family Mediation**: `/home/mediatio/domains/aldertonfamilymediation.co.uk`
+- **Cavendish Family Mediation**: `/home/mediatio/domains/cavendishfamilymediation.co.uk`
+- **Master Portfolio FTP User**: `portfolio@mediationdirect.co.uk` (isolated to `/home/mediatio/domains/`)
+- **Strict Boundary Guardrail**: `mediationdirect.co.uk` lives exclusively in `/home/mediatio/public_html/` and is strictly isolated and never touched.
+
+Direct deployments can use the dedicated account or the master portfolio account:
 ```bash
+# Deploy Alderton Family Mediation
 python3 scripts/deploy-ftp.py \
   --host "s688.lon1.mysecurecloudhost.com" \
   --user "alderton@mediationdirect.co.uk" \
   --password "eOfia5JLHt6D2qNhdgmLw35z" \
   --source "Sites/aldertonfamilymediation/out"
+
+# Deploy Cavendish Family Mediation
+python3 scripts/deploy-ftp.py \
+  --host "s688.lon1.mysecurecloudhost.com" \
+  --user "cavendish@mediationdirect.co.uk" \
+  --password "eOfia5JLHt6D2qNhdgmLw35z" \
+  --source "Sites/cavendishfamilymediation/out"
 ```
 
 ### 8.5 Pre-DNS Live Verification

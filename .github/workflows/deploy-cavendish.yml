@@ -1,18 +1,18 @@
-name: Deploy Alderton Family Mediation to cPanel
+name: Deploy Cavendish Family Mediation to cPanel
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'Sites/aldertonfamilymediation/**'
+      - 'Sites/cavendishfamilymediation/**'
       - 'packages/**'
-      - '.github/workflows/deploy-alderton.yml'
+      - '.github/workflows/deploy-cavendish.yml'
   workflow_dispatch:
 
 jobs:
-  deploy-alderton:
-    name: Build & FTPS Deploy Alderton
+  deploy-cavendish:
+    name: Build & FTPS Deploy Cavendish
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Monorepo
@@ -32,20 +32,20 @@ jobs:
       - name: Install Workspace Dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build Alderton Static Export
-        run: pnpm --filter "./Sites/aldertonfamilymediation" run build
+      - name: Build Cavendish Static Export
+        run: pnpm --filter "./Sites/cavendishfamilymediation" run build
 
       - name: Copy .htaccess to Output
-        run: cp Sites/aldertonfamilymediation/public/.htaccess Sites/aldertonfamilymediation/out/.htaccess
+        run: cp Sites/cavendishfamilymediation/public/.htaccess Sites/cavendishfamilymediation/out/.htaccess
 
       - name: Sync Static Export to cPanel via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ secrets.FTP_SERVER || 's688.lon1.mysecurecloudhost.com' }}
+          username: ${{ secrets.FTP_CAVENDISH_USERNAME || 'cavendish@mediationdirect.co.uk' }}
+          password: ${{ secrets.FTP_CAVENDISH_PASSWORD || 'eOfia5JLHt6D2qNhdgmLw35z' }}
           protocol: ftps
           port: 21
           server-dir: /
-          local-dir: ./Sites/aldertonfamilymediation/out/
+          local-dir: ./Sites/cavendishfamilymediation/out/
           dangerous-clean-slate: false
