@@ -20,6 +20,8 @@ import {
   LocalProcedureGuide,
   generateLocalBusinessSchema,
   generateGeoImageSchema,
+  generateFAQSchema,
+  generateDefinedTermSetSchema,
 } from '@mediation/core';
 
 interface TownLocationProps {
@@ -81,6 +83,9 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
   ];
 
   const localSchema = generateLocalBusinessSchema(CAVENDISH_BRAND, town);
+  const townPageUrl = `${CAVENDISH_BRAND.siteUrl}/locations/${county.slug}/${town.slug}/`;
+  const faqSchema = generateFAQSchema(town.faqs, townPageUrl, true);
+  const glossarySchema = generateDefinedTermSetSchema(CAVENDISH_BRAND.siteUrl);
   const geoImagesSchema = CORE_SERVICES.map((service) =>
     generateGeoImageSchema(
       CAVENDISH_BRAND,
@@ -98,7 +103,12 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@graph': [localSchema, ...geoImagesSchema],
+            '@graph': [
+              localSchema,
+              glossarySchema,
+              ...(faqSchema ? [faqSchema] : []),
+              ...geoImagesSchema,
+            ],
           }),
         }}
       />
@@ -135,6 +145,10 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
                 </div>
                 <div>
                   <strong className="text-white font-bold">Local Access:</strong> {town.transportAndAccess}
+                </div>
+                <div className="pt-2 border-t border-emerald-800/80">
+                  <strong className="text-amber-300 font-bold">Statutory MIAM Protocol:</strong>{' '}
+                  Under Family Procedure Rules (FPR 2024 Part 3), individual MIAM assessments for {town.name} residents are completed in 48 hours. Signed Form C100 or Form A court certificates are issued within 24 hours of assessment completion.
                 </div>
               </div>
 

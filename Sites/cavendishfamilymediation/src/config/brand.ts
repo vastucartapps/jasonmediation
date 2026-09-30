@@ -17,6 +17,8 @@ export const CAVENDISH_BRAND: BrandConfig = {
   leadWebhookUrl: CAVENDISH_CONTACT.leadWebhookEndpoint,
   leadRecipientEmail: CAVENDISH_CONTACT.leadRecipientEmail,
   counties: SITE2_COUNTIES,
+  matomoSiteId: CAVENDISH_CONTACT.matomoSiteId,
+  matomoBaseUrl: CAVENDISH_CONTACT.matomoBaseUrl,
   theme: {
     primaryHex: '#064E3B',
     primaryLightHex: '#047857',

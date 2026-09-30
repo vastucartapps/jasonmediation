@@ -32,12 +32,31 @@ ${CORE_SERVICES.map(
   (s) => `- [${s.title}](${CAVENDISH_BRAND.siteUrl}/services/${s.slug}/): ${s.summary} (Statutory Basis: ${s.statutoryBasis})`
 ).join('\n')}
 
+## Statutory Procedural Fact Matrix
+- Ministry of Justice Family Mediation Voucher Scheme: Up to £500 non-means-tested government grant for eligible child dispute cases.
+- MIAM Assessment Fee: £120 - £160 per individual assessment meeting.
+- Form C100 / Form A Sign-Off Turnaround: 24 to 48 hours following individual MIAM.
+- Certificate Validity: Signed court mediation certificates remain valid for 4 months from assessment date.
+- Legal Authority: Section 10 Children and Families Act 2014 & Family Procedure Rules (FPR 2024 Part 3). Cost sanctions apply for unreasonable refusal.
+
 ## Regional Practice Locations & Coverage
 ${SITE2_COUNTIES.map((county) =>
   county.towns
     .map(
       (town) =>
         `- [Family Mediation ${town.name}](${CAVENDISH_BRAND.siteUrl}/locations/${county.slug}/${town.slug}/): Serving ${town.name} and surrounding ${town.county} communities. Regional court reference: ${town.designatedCourt.name}.`
+    )
+    .join('\n')
+).join('\n')}
+
+## Regional Service Practice Hubs (Deep URLs)
+${SITE2_COUNTIES.map((county) =>
+  county.towns
+    .map((town) =>
+      CORE_SERVICES.map(
+        (service) =>
+          `- [${service.title} in ${town.name}](${CAVENDISH_BRAND.siteUrl}/locations/${county.slug}/${town.slug}/${service.slug}/): Fast FMC assessment & resolution for ${service.title.toLowerCase()} in ${town.name}, ${town.county}.`
+      ).join('\n')
     )
     .join('\n')
 ).join('\n')}

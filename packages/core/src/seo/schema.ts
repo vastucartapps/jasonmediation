@@ -108,6 +108,40 @@ export function generateLocalBusinessSchema(
           '@type': 'AdministrativeArea',
           name: c.name,
         })),
+    sameAs: [
+      'https://www.familymediationcouncil.org.uk/',
+      'https://www.gov.uk/looking-after-children-divorce',
+      'https://www.wikidata.org/wiki/Q1048835', // Family mediation
+      'https://www.wikidata.org/wiki/Q1519789', // Ministry of Justice (United Kingdom)
+      'https://www.wikidata.org/wiki/Q5818968', // HMCTS
+      'https://www.wikidata.org/wiki/Q5098319', // Children Act 1989
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Accredited UK Family Dispute Resolution Services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          name: 'Mediation Information and Assessment Meeting (MIAM)',
+          description: 'Statutory individual assessment meeting with accredited FMC mediator for court certificate sign-off (Form C100 / Form A).',
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            priceCurrency: 'GBP',
+            minPrice: 120,
+            maxPrice: 160,
+          },
+          availability: 'https://schema.org/InStock',
+        },
+        {
+          '@type': 'Offer',
+          name: 'MoJ £500 Family Mediation Voucher Scheme',
+          description: 'Ministry of Justice non-means-tested £500 grant applied directly toward mediation sessions for eligible child arrangements.',
+          price: '0.00',
+          priceCurrency: 'GBP',
+          availability: 'https://schema.org/InStock',
+        },
+      ],
+    },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -123,22 +157,60 @@ export function generateLocalBusinessSchema(
       },
     ],
     knowsAbout: [
-      'Family Mediation Council Standards',
+      'Family Mediation Council (FMC) Accreditation Standards',
       'Mediation Information and Assessment Meeting (MIAM)',
-      'Children Act 1989 Section 8 Orders',
+      'Children and Families Act 2014 Section 10',
+      'Family Procedure Rules (FPR 2024 Part 3)',
+      'Children Act 1989 Section 8 Child Arrangements Orders',
       'Matrimonial Causes Act 1973 Section 25 Financial Remedy',
-      'Parenting Plans and Child Arrangements',
-      'Pension Sharing Orders on Divorce',
+      'Parenting Plans and Holiday Rotas',
+      'Pension Sharing Orders and CETV Division',
+      'Ministry of Justice £500 Family Mediation Voucher Scheme',
     ],
   };
 }
 
-export function generateFAQSchema(faqs: FAQItem[]) {
+export function generateDefinedTermSetSchema(siteUrl: string) {
+  return {
+    '@type': 'DefinedTermSet',
+    '@id': `${siteUrl}/#glossary`,
+    name: 'UK Family Mediation Statutory Lexicon',
+    hasDefinedTerm: [
+      {
+        '@type': 'DefinedTerm',
+        name: 'MIAM (Mediation Information and Assessment Meeting)',
+        description: 'A statutory pre-action dispute assessment required by Section 10 of the Children and Families Act 2014 prior to court application.',
+        inDefinedTermSet: `${siteUrl}/#glossary`,
+      },
+      {
+        '@type': 'DefinedTerm',
+        name: 'Family Procedure Rules (FPR 2024)',
+        description: 'Court rules empowering judges in England and Wales to order cost sanctions against parties unreasonably refusing non-court dispute resolution.',
+        inDefinedTermSet: `${siteUrl}/#glossary`,
+      },
+      {
+        '@type': 'DefinedTerm',
+        name: 'Family Mediation Voucher Scheme',
+        description: 'Ministry of Justice financial grant contributing up to £500 towards accredited mediation costs for qualifying disputes involving children.',
+        inDefinedTermSet: `${siteUrl}/#glossary`,
+      },
+      {
+        '@type': 'DefinedTerm',
+        name: 'Consent Order',
+        description: 'A legally binding court order drafted from a mediated Memorandum of Understanding, approved by a judge without contentious hearings.',
+        inDefinedTermSet: `${siteUrl}/#glossary`,
+      },
+    ],
+  };
+}
+
+export function generateFAQSchema(faqs: FAQItem[], pageUrl?: string, inGraph = false) {
   if (!faqs || faqs.length === 0) return null;
 
   return {
-    '@context': 'https://schema.org',
+    ...(inGraph ? {} : { '@context': 'https://schema.org' }),
     '@type': 'FAQPage',
+    ...(pageUrl ? { '@id': `${pageUrl}#faq` } : {}),
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
@@ -189,6 +261,17 @@ export function generateServiceSchema(
       name: brand.brandName,
       url: brand.siteUrl,
       telephone: brand.phone,
+    },
+    offers: {
+      '@type': 'Offer',
+      name: town ? `${service.title} in ${town.name}` : service.title,
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'GBP',
+        minPrice: 120,
+        maxPrice: 180,
+      },
+      availability: 'https://schema.org/InStock',
     },
     image: {
       '@type': 'ImageObject',

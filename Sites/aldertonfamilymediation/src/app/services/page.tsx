@@ -12,6 +12,9 @@ import {
   ScalesOfJusticeIcon,
   AwardSealIcon,
   AccreditationTrustBar,
+  MediationCalculator,
+  generateFAQSchema,
+  generateDefinedTermSetSchema,
 } from '@mediation/core';
 
 export const metadata: Metadata = {
@@ -41,8 +44,24 @@ export default function ServicesPage() {
     },
   ];
 
+  const pageUrl = `${ALDERTON_BRAND.siteUrl}/services/`;
+  const faqSchema = generateFAQSchema(servicesFaqs, pageUrl, true);
+  const glossarySchema = generateDefinedTermSetSchema(ALDERTON_BRAND.siteUrl);
+
   return (
     <div className="w-full bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              glossarySchema,
+              ...(faqSchema ? [faqSchema] : []),
+            ],
+          }),
+        }}
+      />
       <Breadcrumbs items={breadcrumbItems} />
 
       {/* Header */}
@@ -203,6 +222,13 @@ export default function ServicesPage() {
               </tbody>
             </table>
           </div>
+        </div>
+      </section>
+
+      {/* Interactive Mediation Cost & Voucher Calculator */}
+      <section className="py-12 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <MediationCalculator brand={ALDERTON_BRAND} brandVariant="alderton" />
         </div>
       </section>
 

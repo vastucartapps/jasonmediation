@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { CAVENDISH_BRAND } from '../config/brand';
-import { Header, Footer, MobileStickyBar, generateLocalBusinessSchema } from '@mediation/core';
+import { Header, Footer, MobileStickyBar, generateLocalBusinessSchema, MatomoTracker } from '@mediation/core';
 
 export const metadata: Metadata = {
   metadataBase: new URL(CAVENDISH_BRAND.siteUrl),
@@ -117,6 +117,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+        />
+        <MatomoTracker
+          siteId={CAVENDISH_BRAND.matomoSiteId}
+          baseUrl={CAVENDISH_BRAND.matomoBaseUrl}
         />
         <meta name="theme-color" content="#064E3B" />
       </head>

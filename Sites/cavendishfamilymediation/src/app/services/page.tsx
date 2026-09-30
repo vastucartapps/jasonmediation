@@ -10,6 +10,9 @@ import {
   CheckCircleIcon,
   ArrowRightIcon,
   AccreditationTrustBar,
+  MediationCalculator,
+  generateFAQSchema,
+  generateDefinedTermSetSchema,
 } from '@mediation/core';
 
 export const metadata: Metadata = {
@@ -39,8 +42,24 @@ export default function ServicesPage() {
     },
   ];
 
+  const pageUrl = `${CAVENDISH_BRAND.siteUrl}/services/`;
+  const faqSchema = generateFAQSchema(servicesFaqs, pageUrl, true);
+  const glossarySchema = generateDefinedTermSetSchema(CAVENDISH_BRAND.siteUrl);
+
   return (
     <div className="w-full bg-[#FAF9F5]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              glossarySchema,
+              ...(faqSchema ? [faqSchema] : []),
+            ],
+          }),
+        }}
+      />
       <Breadcrumbs items={breadcrumbs} />
 
       {/* Header */}
@@ -148,6 +167,13 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Interactive Mediation Cost & Voucher Calculator */}
+      <section className="py-12 bg-stone-100 border-t border-stone-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <MediationCalculator brand={CAVENDISH_BRAND} brandVariant="cavendish" />
         </div>
       </section>
 

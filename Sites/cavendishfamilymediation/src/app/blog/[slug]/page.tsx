@@ -8,6 +8,8 @@ import {
   CORE_SERVICES,
   ArticleView,
   generateArticleSchema,
+  generateFAQSchema,
+  generateDefinedTermSetSchema,
 } from '@mediation/core';
 
 interface BlogPostProps {
@@ -61,12 +63,24 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
   }
 
   const articleSchema = generateArticleSchema(CAVENDISH_BRAND, post);
+  const pageUrl = `${CAVENDISH_BRAND.siteUrl}/blog/${post.slug}/`;
+  const faqSchema = generateFAQSchema(post.faqs, pageUrl, true);
+  const glossarySchema = generateDefinedTermSetSchema(CAVENDISH_BRAND.siteUrl);
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              articleSchema,
+              glossarySchema,
+              ...(faqSchema ? [faqSchema] : []),
+            ],
+          }),
+        }}
       />
       <ArticleView
         brand={CAVENDISH_BRAND}

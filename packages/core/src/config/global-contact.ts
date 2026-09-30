@@ -38,6 +38,9 @@ export const GLOBAL_CONTACT = {
   formSubmitToken: 'venturevidyahindi@gmail.com',
   leadSubmitEndpoint: 'https://formsubmit.co/ajax/venturevidyahindi@gmail.com',
   leadWebhookEndpoint: 'https://formsubmit.co/ajax/venturevidyahindi@gmail.com',
+
+  // Matomo Analytics Infrastructure (Client Cluster: analytics.1str.co.uk)
+  matomoBaseUrl: '//analytics.1str.co.uk/',
 };
 
 export const ALDERTON_CONTACT = {
@@ -56,6 +59,7 @@ export const ALDERTON_CONTACT = {
     postalCode: 'LE1 5QQ',
     country: 'GB',
   },
+  matomoSiteId: '', // To be filled once client assigns distinct site ID
 };
 
 export const CAVENDISH_CONTACT = {
@@ -74,4 +78,5 @@ export const CAVENDISH_CONTACT = {
     postalCode: 'IP1 1HE',
     country: 'GB',
   },
+  matomoSiteId: '', // To be filled once client assigns distinct site ID
 };

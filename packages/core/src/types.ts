@@ -185,4 +185,6 @@ export interface BrandConfig {
   };
   googleAnalyticsId?: string;
   googleSiteVerification?: string;
+  matomoSiteId?: string;
+  matomoBaseUrl?: string;
 }

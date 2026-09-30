@@ -23,6 +23,8 @@ import {
   generateLocalBusinessSchema,
   generateServiceSchema,
   generateGeoImageSchema,
+  generateFAQSchema,
+  generateDefinedTermSetSchema,
 } from '@mediation/core';
 
 interface LocationServicePageProps {
@@ -104,6 +106,10 @@ export default async function LocationServicePage({ params }: LocationServicePag
     ...town.faqs.slice(0, 5),
   ];
 
+  const townServiceUrl = `${ALDERTON_BRAND.siteUrl}/locations/${county.slug}/${town.slug}/${service.slug}/`;
+  const faqSchema = generateFAQSchema(combinedFaqs, townServiceUrl, true);
+  const glossarySchema = generateDefinedTermSetSchema(ALDERTON_BRAND.siteUrl);
+
   return (
     <div className="w-full bg-white">
       <script
@@ -111,7 +117,13 @@ export default async function LocationServicePage({ params }: LocationServicePag
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@graph': [localSchema, serviceSchema, geoImageSchema],
+            '@graph': [
+              localSchema,
+              serviceSchema,
+              glossarySchema,
+              ...(faqSchema ? [faqSchema] : []),
+              geoImageSchema,
+            ],
           }),
         }}
       />

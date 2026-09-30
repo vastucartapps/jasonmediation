@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { ShieldCheckIcon, PhoneCallIcon, CalendarClockIcon, CheckCircleIcon } from './Icons';
 import { GLOBAL_CONTACT } from '../config/global-contact';
+import { trackMatomoEvent } from './MatomoTracker';
 
 interface LeadIntakeFormProps {
   brandName: string;
@@ -83,7 +84,8 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
     };
 
     try {
-      // Dispatch dataLayer event for GA4 / GTM
+      // Dispatch custom events for Matomo and GA4 / GTM
+      trackMatomoEvent('Leads', 'Lead Intake Form Submitted', formData.service);
       if (typeof window !== 'undefined') {
         ((window as unknown as { dataLayer: unknown[] }).dataLayer =
           (window as unknown as { dataLayer: unknown[] }).dataLayer || []).push({

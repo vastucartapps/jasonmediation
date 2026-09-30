@@ -17,6 +17,8 @@ export const ALDERTON_BRAND: BrandConfig = {
   leadWebhookUrl: ALDERTON_CONTACT.leadWebhookEndpoint,
   leadRecipientEmail: ALDERTON_CONTACT.leadRecipientEmail,
   counties: SITE1_COUNTIES,
+  matomoSiteId: ALDERTON_CONTACT.matomoSiteId,
+  matomoBaseUrl: ALDERTON_CONTACT.matomoBaseUrl,
   theme: {
     primaryHex: '#0B192C',
     primaryLightHex: '#1E3E62',

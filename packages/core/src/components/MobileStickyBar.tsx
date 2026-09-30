@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { PhoneCallIcon, CalendarIcon } from './Icons';
 import { BrandConfig } from '../types';
+import { trackMatomoEvent } from './MatomoTracker';
 
 interface MobileStickyBarProps {
   brand: BrandConfig;
@@ -28,6 +29,7 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ brand, brandVa
         <a
           href={`tel:${brand.phone}`}
           onClick={() => {
+            trackMatomoEvent('Contact', 'Phone Call Click', brand.formattedPhone);
             if (typeof window !== 'undefined') {
               const win = window as unknown as { dataLayer?: unknown[] };
               win.dataLayer = win.dataLayer || [];
@@ -49,6 +51,7 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ brand, brandVa
         <Link
           href="/contact"
           onClick={() => {
+            trackMatomoEvent('Engagement', 'Book Consultation Click', 'mobile_sticky_bar');
             if (typeof window !== 'undefined') {
               const win = window as unknown as { dataLayer?: unknown[] };
               win.dataLayer = win.dataLayer || [];
