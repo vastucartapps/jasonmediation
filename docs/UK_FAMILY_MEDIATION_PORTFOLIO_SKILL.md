@@ -304,6 +304,24 @@ Every site outputs an `/llms.txt` file providing a structured Markdown manifest 
 > 3. **Dual Geo Coordinates (JSON-LD + HTML)**:
 >    Never rely on JSON-LD alone. Search engines and map bots parse both `<meta name="geo.position">` and JSON-LD `GeoCoordinates` (`latitude`, `longitude`) to index local catchment boundaries.
 
+### 6.8 Enterprise Snagging Audit & Discovery Standards (`robots.txt`, `sitemap.xml`, `llms.txt`, Visible HTML Sitemap)
+> [!IMPORTANT]
+> **Zero-Defect Snagging Protocol Prior to Deployment:**
+> 
+> 1. **Dynamic `robots.txt`**:
+>    - Root route handler `src/app/robots.txt/route.ts` dynamically emits `User-agent: *`, `Allow: /`, and `Sitemap: ${BRAND.siteUrl}/sitemap.xml`.
+> 2. **Dynamic `sitemap.xml`**:
+>    - Root route handler `src/app/sitemap.xml/route.ts` generates standard sitemaps.org XML covering 100% of indexable routes (core, services, county/town hubs, town/service hubs, blog posts).
+>    - Every single `<loc>` MUST end with a trailing slash to prevent crawler redirects.
+> 3. **Dynamic `llms.txt`**:
+>    - Root route handler `src/app/llms.txt/route.ts` exports structured Markdown with practice identity, FMC accreditation, telephone, contact email, and all service/location/blog links with trailing slashes.
+> 4. **Visible HTML Sitemap (`/sitemap/`)**:
+>    - Accessible directly at `/sitemap/` with single H1, section H2s, and child H3s. Contains links to all 81 routes.
+> 5. **Self-Referencing Canonical Tags**:
+>    - Root `layout.tsx` MUST configure `alternates: { canonical: './' }` with `metadataBase: new URL(BRAND.siteUrl)`. Next.js resolves exact trailing-slash canonical URLs across all pages.
+> 6. **Automated Snagging Suite**:
+>    - Execute `node scripts/snagging-audit.js` to ensure zero missing H1s, zero hierarchy skips, zero mailto links, zero broken links, zero non-trailed URLs, zero broken anchors, zero missing alt tags, and zero invalid canonicals.
+
 ---
 
 ## 7. Enterprise Lead Capture & Automated Dispatch Architecture (Single Source of Truth)

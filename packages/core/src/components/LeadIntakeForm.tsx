@@ -171,7 +171,16 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
         Speak privately with an accredited family mediator. We explain your rights and never contact your former partner without your permission.
       </p>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form
+        onSubmit={handleSubmit}
+        action={leadSubmitUrl || GLOBAL_CONTACT.leadSubmitEndpoint || 'https://formsubmit.co/ajax/venturevidyahindi@gmail.com'}
+        method="POST"
+        className="space-y-4"
+      >
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="Originating Brand" value={brandName} />
+
         {/* Hidden Honeypot for Spam Protection */}
         <input
           type="text"

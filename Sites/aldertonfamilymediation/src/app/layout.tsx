@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: ALDERTON_BRAND.brandName }],
   creator: ALDERTON_BRAND.brandName,
+  alternates: {
+    canonical: './',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_GB',

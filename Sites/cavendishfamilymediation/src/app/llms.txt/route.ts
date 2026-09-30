@@ -10,16 +10,26 @@ export async function GET() {
 
 ## Overview & Regulatory Accreditation
 - Practice Name: ${CAVENDISH_BRAND.brandName} (${CAVENDISH_BRAND.legalEntityName})
-- Primary URL: ${CAVENDISH_BRAND.siteUrl}
+- Primary URL: ${CAVENDISH_BRAND.siteUrl}/
 - Accreditation: Family Mediation Council (FMC)
 - Core Statutory Mandate: Section 10, Children and Families Act 2014 & Family Procedure Rules 2010 Part 3
 - Service Area: South East England & East Anglia (Suffolk, Essex, Kent, Sussex)
 - Telephone: ${CAVENDISH_BRAND.formattedPhone} (${CAVENDISH_BRAND.phone})
 - Email: ${CAVENDISH_BRAND.contactEmail}
 
+## Practice Directory & Key Portals
+- [Home](${CAVENDISH_BRAND.siteUrl}/): FMC Accredited Family Mediation & Fast MIAM Assessments
+- [All Mediation Services](${CAVENDISH_BRAND.siteUrl}/services/): Overview of accredited dispute resolution pathways
+- [Regional Practice Locations](${CAVENDISH_BRAND.siteUrl}/locations/): Comprehensive South East catchment directory
+- [Practice Background & Ethics](${CAVENDISH_BRAND.siteUrl}/about/): FMC professional code of conduct and mediator credentials
+- [Book Assessment & Contact](${CAVENDISH_BRAND.siteUrl}/contact/): Confidential booking intake and crisis lines
+- [Complete Site Sitemap](${CAVENDISH_BRAND.siteUrl}/sitemap/): Full architectural page index and navigation directory
+- [Privacy Policy](${CAVENDISH_BRAND.siteUrl}/privacy/): GDPR compliance and statutory mediation confidentiality
+- [Terms of Engagement](${CAVENDISH_BRAND.siteUrl}/terms/): Practice standards and fee transparency
+
 ## Core Mediation Services
 ${CORE_SERVICES.map(
-  (s) => `- [${s.title}](${CAVENDISH_BRAND.siteUrl}/services/${s.slug}): ${s.summary} (Statutory Basis: ${s.statutoryBasis})`
+  (s) => `- [${s.title}](${CAVENDISH_BRAND.siteUrl}/services/${s.slug}/): ${s.summary} (Statutory Basis: ${s.statutoryBasis})`
 ).join('\n')}
 
 ## Regional Practice Locations & Coverage
@@ -27,14 +37,14 @@ ${SITE2_COUNTIES.map((county) =>
   county.towns
     .map(
       (town) =>
-        `- [Family Mediation ${town.name}](${CAVENDISH_BRAND.siteUrl}/locations/${county.slug}/${town.slug}): Serving ${town.name} and surrounding ${town.county} communities. Regional court reference: ${town.designatedCourt.name}.`
+        `- [Family Mediation ${town.name}](${CAVENDISH_BRAND.siteUrl}/locations/${county.slug}/${town.slug}/): Serving ${town.name} and surrounding ${town.county} communities. Regional court reference: ${town.designatedCourt.name}.`
     )
     .join('\n')
 ).join('\n')}
 
 ## Practical Guidance & Family Law Knowledge Bank
 ${SITE2_BLOG_POSTS.map(
-  (g) => `- [${g.title}](${CAVENDISH_BRAND.siteUrl}/blog/${g.slug}): ${g.summary}`
+  (g) => `- [${g.title}](${CAVENDISH_BRAND.siteUrl}/blog/${g.slug}/): ${g.summary}`
 ).join('\n')}
 `;
 

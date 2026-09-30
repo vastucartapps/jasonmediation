@@ -425,25 +425,149 @@ export default function ContactPage() {
 \`;
 fs.writeFileSync(path.join(targetDir, 'src', 'app', 'contact', 'page.tsx'), contactPageTsx);
 
-// 11. public/.htaccess
+// 11. src/app/robots.txt/route.ts
+const robotsTs = `import { NextResponse } from 'next/server';
+import { BRAND } from '../../config/brand';
+
+export const dynamic = 'force-static';
+
+export async function GET() {
+  const robots = \`User-agent: *
+Allow: /
+
+Sitemap: \${BRAND.siteUrl}/sitemap.xml
+\`;
+
+  return new NextResponse(robots, {
+    headers: {
+      'Content-Type': 'text/plain',
+      'Cache-Control': 'public, max-age=86400',
+    },
+  });
+}
+`;
+fs.writeFileSync(path.join(targetDir, 'src', 'app', 'robots.txt', 'route.ts'), robotsTs);
+
+// 12. src/app/sitemap.xml/route.ts
+const sitemapXmlTs = `import { NextResponse } from 'next/server';
+import { BRAND } from '../../config/brand';
+import { CORE_SERVICES } from '@mediation/core';
+
+export const dynamic = 'force-static';
+
+export async function GET() {
+  const baseUrl = BRAND.siteUrl;
+  const lastmod = new Date().toISOString().split('T')[0];
+
+  const urls: { loc: string; lastmod: string; changefreq: string; priority: string }[] = [];
+
+  urls.push(
+    { loc: \`\${baseUrl}/\`, lastmod, changefreq: 'daily', priority: '1.0' },
+    { loc: \`\${baseUrl}/services/\`, lastmod, changefreq: 'weekly', priority: '0.9' },
+    { loc: \`\${baseUrl}/locations/\`, lastmod, changefreq: 'weekly', priority: '0.9' },
+    { loc: \`\${baseUrl}/blog/\`, lastmod, changefreq: 'weekly', priority: '0.85' },
+    { loc: \`\${baseUrl}/about/\`, lastmod, changefreq: 'monthly', priority: '0.7' },
+    { loc: \`\${baseUrl}/contact/\`, lastmod, changefreq: 'weekly', priority: '0.9' },
+    { loc: \`\${baseUrl}/privacy/\`, lastmod, changefreq: 'monthly', priority: '0.3' },
+    { loc: \`\${baseUrl}/terms/\`, lastmod, changefreq: 'monthly', priority: '0.3' },
+    { loc: \`\${baseUrl}/sitemap/\`, lastmod, changefreq: 'weekly', priority: '0.5' }
+  );
+
+  CORE_SERVICES.forEach((service) => {
+    urls.push({
+      loc: \`\${baseUrl}/services/\${service.slug}/\`,
+      lastmod,
+      changefreq: 'weekly',
+      priority: '0.9',
+    });
+  });
+
+  const xml = \`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+\${urls
+  .map(
+    (u) => \`  <url>
+    <loc>\${u.loc}</loc>
+    <lastmod>\${u.lastmod}</lastmod>
+    <changefreq>\${u.changefreq}</changefreq>
+    <priority>\${u.priority}</priority>
+  </url>\`
+  )
+  .join('\\n')}
+</urlset>\`;
+
+  return new NextResponse(xml, {
+    headers: {
+      'Content-Type': 'application/xml',
+      'Cache-Control': 'public, max-age=86400',
+    },
+  });
+}
+`;
+fs.writeFileSync(path.join(targetDir, 'src', 'app', 'sitemap.xml', 'route.ts'), sitemapXmlTs);
+
+// 13. src/app/llms.txt/route.ts
+const llmsTs = `import { NextResponse } from 'next/server';
+import { BRAND } from '../../config/brand';
+import { CORE_SERVICES } from '@mediation/core';
+
+export const dynamic = 'force-static';
+
+export async function GET() {
+  const content = \`# \${BRAND.brandName}
+> \${BRAND.tagline}
+
+## Overview & Regulatory Accreditation
+- Practice Name: \${BRAND.brandName} (\${BRAND.legalEntityName})
+- Primary URL: \${BRAND.siteUrl}/
+- Accreditation: Family Mediation Council (FMC)
+- Core Statutory Mandate: Section 10, Children and Families Act 2014 & Family Procedure Rules 2010 Part 3
+- Service Area: \${BRAND.region}
+- Telephone: \${BRAND.formattedPhone} (\${BRAND.phone})
+- Email: \${BRAND.contactEmail}
+
+## Practice Directory & Key Portals
+- [Home](\${BRAND.siteUrl}/): FMC Accredited Family Mediation & Fast MIAM Assessments
+- [All Mediation Services](\${BRAND.siteUrl}/services/): Dispute resolution pathways
+- [Regional Practice Locations](\${BRAND.siteUrl}/locations/): Comprehensive regional catchment directory
+- [Practice Background & Ethics](\${BRAND.siteUrl}/about/): FMC code of conduct
+- [Book Assessment & Contact](\${BRAND.siteUrl}/contact/): Confidential booking intake
+- [Complete Site Sitemap](\${BRAND.siteUrl}/sitemap/): Full architectural page index
+
+## Core Mediation Services
+\${CORE_SERVICES.map(
+  (s) => \`- [\${s.title}](\${BRAND.siteUrl}/services/\${s.slug}/): \${s.summary} (Statutory Basis: \${s.statutoryBasis})\`
+).join('\\n')}
+\`;
+
+  return new NextResponse(content, {
+    headers: {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'Cache-Control': 'public, max-age=86400',
+    },
+  });
+}
+`;
+fs.writeFileSync(path.join(targetDir, 'src', 'app', 'llms.txt', 'route.ts'), llmsTs);
+
+// 14. public/.htaccess
 const htaccess = `# LiteSpeed / Apache Production Web Server Configuration
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+  DirectorySlash On
 
-  # Strip .html extension
-  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
-  RewriteRule ^ %1 [R=301,L]
-
-  # Redirect non-trailing-slash directories
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_URI} !(.[a-zA-Z0-9]{1,5}|/)$
-  RewriteRule ^(.*)$ $1/ [R=301,L]
-
-  # Serve index.html for directories
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteCond %{REQUEST_FILENAME}/index.html -f
   RewriteRule ^(.*)$ $1/index.html [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.*)/?$ $1/index.html [L]
 </IfModule>
 
 <IfModule mod_headers.c>
@@ -461,4 +585,4 @@ console.log(`[SUCCESS] Scaffolded new site: ${config.name}`);
 console.log(`Directory: ${targetDir}`);
 console.log(`To install and test:`);
 console.log(`  pnpm install`);
-console.log(`  pnpm --filter ${packageJson.name} build\n`);
+console.log(`  pnpm --filter ${packageJson.name} build\\n`);

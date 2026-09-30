@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: CAVENDISH_BRAND.brandName }],
   creator: CAVENDISH_BRAND.brandName,
+  alternates: {
+    canonical: './',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
