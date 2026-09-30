@@ -177,7 +177,7 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
                 phone={ALDERTON_BRAND.phone}
                 formattedPhone={ALDERTON_BRAND.formattedPhone}
                 defaultTown={town.name}
-                buttonBgClass="bg-amber-600 hover:bg-amber-700 text-white"
+                buttonBgClass="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold border border-amber-600 shadow-md"
               />
             </div>
           </div>
@@ -444,11 +444,11 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
 
       {/* Sister Towns Directory in County */}
       {county.towns.filter((t) => t.slug !== town.slug).length > 0 && (
-        <section className="py-10 bg-slate-50 border-b border-slate-200">
+        <div className="py-10 bg-slate-50 border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-3 text-center">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-3 text-center">
               Other Family Mediation Practice Centres in {county.name}:
-            </p>
+            </h2>
             <div className="flex flex-wrap justify-center gap-2">
               {county.towns
                 .filter((t) => t.slug !== town.slug)
@@ -463,7 +463,7 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
                 ))}
             </div>
           </div>
-        </section>
+        </div>
       )}
 
       {/* Accreditations Trust Bar */}

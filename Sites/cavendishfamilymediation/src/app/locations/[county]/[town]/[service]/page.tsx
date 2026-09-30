@@ -192,7 +192,7 @@ export default async function LocationServicePage({ params }: LocationServicePag
                 formattedPhone={CAVENDISH_BRAND.formattedPhone}
                 defaultTown={town.name}
                 defaultService={service.slug}
-                buttonBgClass="bg-emerald-700 hover:bg-emerald-800 text-white"
+                buttonBgClass="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold border border-amber-600 shadow-md"
               />
             </div>
           </div>
@@ -276,7 +276,7 @@ export default async function LocationServicePage({ params }: LocationServicePag
                     <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-950 to-slate-950 text-amber-300 flex items-center justify-center font-bold text-base shadow-md ring-4 ring-emerald-600/15 group-hover:scale-105 transition-transform duration-200">
                       {step.stepNumber}
                     </div>
-                    <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider">
+                    <span className="text-[11px] font-bold text-stone-600 uppercase tracking-wider">
                       Stage {idx + 1}
                     </span>
                   </div>
@@ -546,11 +546,11 @@ export default async function LocationServicePage({ params }: LocationServicePag
       })()}
 
       {/* Same Service in Other Towns */}
-      <section className="py-10 bg-stone-50 border-b border-stone-200">
+      <div className="py-10 bg-stone-50 border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold uppercase tracking-wider text-stone-700 mb-3 text-center">
+          <h2 className="text-xs font-bold uppercase tracking-wider text-stone-700 mb-3 text-center">
             {service.title} in Other {county.name} Locations:
-          </p>
+          </h2>
           <div className="flex flex-wrap justify-center gap-2">
             {county.towns
               .filter((t) => t.slug !== town.slug)
@@ -565,7 +565,7 @@ export default async function LocationServicePage({ params }: LocationServicePag
               ))}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Accreditations Trust Bar */}
       <AccreditationTrustBar />

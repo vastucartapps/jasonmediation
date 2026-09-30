@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useId } from 'react';
 import { ShieldCheckIcon, PhoneCallIcon, CalendarClockIcon, CheckCircleIcon } from './Icons';
 import { GLOBAL_CONTACT } from '../config/global-contact';
 import { trackMatomoEvent } from './MatomoTracker';
@@ -24,11 +24,21 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
   formattedPhone,
   defaultTown = '',
   defaultService = 'miam-assessment',
-  buttonBgClass = 'bg-amber-600 hover:bg-amber-700 text-white',
+  buttonBgClass = 'bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold border border-amber-600 shadow-md',
   leadSubmitUrl,
   leadRecipientEmail,
   headingLevel = 'h2',
 }) => {
+  const uid = useId().replace(/:/g, '');
+  const fullNameId = `lead-name-${uid}`;
+  const phoneId = `lead-phone-${uid}`;
+  const emailId = `lead-email-${uid}`;
+  const townId = `lead-town-${uid}`;
+  const serviceId = `lead-service-${uid}`;
+  const preferredTimeId = `lead-time-${uid}`;
+  const notesId = `lead-notes-${uid}`;
+  const honeypotId = `lead-security-${uid}`;
+
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -186,7 +196,9 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
         {/* Hidden Honeypot for Spam Protection */}
         <input
           type="text"
+          id={honeypotId}
           name="website_url_check"
+          aria-hidden="true"
           value={formData.securityHoneypot}
           onChange={(e) => setFormData({ ...formData, securityHoneypot: e.target.value })}
           className="hidden"
@@ -196,10 +208,12 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
           <div>
-            <label className="block text-xs font-bold text-slate-900 mb-1.5">
+            <label htmlFor={fullNameId} className="block text-xs font-bold text-slate-900 mb-1.5">
               Your Full Name <span className="text-rose-700">*</span>
             </label>
             <input
+              id={fullNameId}
+              name="fullName"
               type="text"
               required
               placeholder="e.g. Sarah Jenkins"
@@ -210,10 +224,12 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-slate-900 mb-1.5">
+            <label htmlFor={phoneId} className="block text-xs font-bold text-slate-900 mb-1.5">
               Contact Telephone <span className="text-rose-700">*</span>
             </label>
             <input
+              id={phoneId}
+              name="phone"
               type="tel"
               required
               placeholder="e.g. 07700 900123"
@@ -226,10 +242,12 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
           <div>
-            <label className="block text-xs font-bold text-slate-900 mb-1.5">
+            <label htmlFor={emailId} className="block text-xs font-bold text-slate-900 mb-1.5">
               Email Address <span className="text-rose-700">*</span>
             </label>
             <input
+              id={emailId}
+              name="email"
               type="email"
               required
               placeholder="e.g. sarah@example.co.uk"
@@ -240,10 +258,12 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-slate-900 mb-1.5">
+            <label htmlFor={townId} className="block text-xs font-bold text-slate-900 mb-1.5">
               Your Town / Postcode District
             </label>
             <input
+              id={townId}
+              name="town"
               type="text"
               placeholder="e.g. Leicester / LE1"
               value={formData.town}
@@ -255,10 +275,13 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
           <div>
-            <label className="block text-xs font-bold text-slate-900 mb-1.5">
+            <label htmlFor={serviceId} className="block text-xs font-bold text-slate-900 mb-1.5">
               Service Area Required
             </label>
             <select
+              id={serviceId}
+              name="service"
+              aria-label="Service Area Required"
               value={formData.service}
               onChange={(e) => setFormData({ ...formData, service: e.target.value })}
               className="w-full px-3.5 py-2.5 min-h-[44px] rounded-lg border-2 border-slate-300 text-base sm:text-sm text-slate-950 font-medium focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition bg-white"
@@ -271,10 +294,13 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-slate-900 mb-1.5">
+            <label htmlFor={preferredTimeId} className="block text-xs font-bold text-slate-900 mb-1.5">
               Preferred Contact Window
             </label>
             <select
+              id={preferredTimeId}
+              name="preferredTime"
+              aria-label="Preferred Contact Window"
               value={formData.preferredTime}
               onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
               className="w-full px-3.5 py-2.5 min-h-[44px] rounded-lg border-2 border-slate-300 text-base sm:text-sm text-slate-950 font-medium focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition bg-white"
@@ -288,10 +314,12 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
         </div>
 
         <div>
-          <label className="block text-xs font-bold text-slate-900 mb-1.5">
+          <label htmlFor={notesId} className="block text-xs font-bold text-slate-900 mb-1.5">
             Brief Overview (Optional & Strictly Confidential)
           </label>
           <textarea
+            id={notesId}
+            name="notes"
             rows={2}
             placeholder="Share any key context (e.g. urgent deadline, children’s ages, or property concerns)..."
             value={formData.notes}

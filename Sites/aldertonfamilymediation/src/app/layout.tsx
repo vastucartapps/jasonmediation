@@ -76,8 +76,6 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className="scroll-smooth">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           rel="preload"
           as="style"

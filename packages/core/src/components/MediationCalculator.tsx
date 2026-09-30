@@ -69,9 +69,9 @@ export const MediationCalculator: React.FC<MediationCalculatorProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Dispute Type */}
           <div className="space-y-2">
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700">
+            <span className="block text-xs font-bold uppercase tracking-wider text-slate-700">
               1. Matter in Dispute
-            </label>
+            </span>
             <div className="grid grid-cols-3 gap-2">
               <button
                 type="button"
@@ -124,9 +124,9 @@ export const MediationCalculator: React.FC<MediationCalculatorProps> = ({
           {/* Number of Joint Sessions */}
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700">
+              <span className="block text-xs font-bold uppercase tracking-wider text-slate-700">
                 2. Estimated Joint Sessions
-              </label>
+              </span>
               <span className="text-xs font-bold text-slate-900">
                 {sessions} Sessions {sessions === 2 ? '(Typical for parenting)' : sessions === 3 ? '(Average for finances)' : '(Complex assets)'}
               </span>

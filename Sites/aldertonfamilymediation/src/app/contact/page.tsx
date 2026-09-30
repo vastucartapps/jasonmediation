@@ -54,7 +54,7 @@ export default function ContactPage() {
                 brandName={ALDERTON_BRAND.brandName}
                 phone={ALDERTON_BRAND.phone}
                 formattedPhone={ALDERTON_BRAND.formattedPhone}
-                buttonBgClass="bg-amber-600 hover:bg-amber-700 text-white"
+                buttonBgClass="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold border border-amber-600 shadow-md"
               />
             </div>
 
@@ -124,7 +124,7 @@ export default function ContactPage() {
                       </div>
                       <div className="flex items-center justify-between gap-4">
                         <span className="text-slate-600 font-medium">Sunday &amp; Holidays:</span>
-                        <span className="text-slate-400 font-normal">Closed (Urgent MIAM on Request)</span>
+                        <span className="text-slate-600 font-medium">Closed (Urgent MIAM on Request)</span>
                       </div>
                     </div>
                   </div>

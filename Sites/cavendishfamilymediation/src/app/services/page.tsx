@@ -172,11 +172,11 @@ export default function ServicesPage() {
       </section>
 
       {/* Interactive Mediation Cost & Voucher Calculator */}
-      <section className="py-12 bg-stone-100 border-t border-stone-200">
+      <div className="py-12 bg-stone-100 border-t border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MediationCalculator brand={CAVENDISH_BRAND} brandVariant="cavendish" />
         </div>
-      </section>
+      </div>
 
       {/* Accreditation Trust Bar */}
       <AccreditationTrustBar />

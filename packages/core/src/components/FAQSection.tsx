@@ -46,9 +46,11 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                 className="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden transition-all duration-200"
               >
                 <button
+                  id={`faq-trigger-${index}`}
                   onClick={() => toggle(index)}
                   className="w-full py-4 sm:py-5 px-5 sm:px-6 text-left flex items-center justify-between gap-4 font-bold text-slate-950 hover:text-slate-800 transition"
                   aria-expanded={isOpen}
+                  aria-controls={`faq-panel-${index}`}
                 >
                   <span className="text-sm sm:text-base leading-snug">
                     {faq.question}
@@ -63,6 +65,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
+                      aria-hidden="true"
                     >
                       <path
                         strokeLinecap="round"
@@ -74,7 +77,12 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                   </span>
                 </button>
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-5 pt-2 text-slate-900 text-sm sm:text-base leading-relaxed border-t border-slate-200">
+                  <div
+                    id={`faq-panel-${index}`}
+                    role="region"
+                    aria-labelledby={`faq-trigger-${index}`}
+                    className="px-5 sm:px-6 pb-5 pt-2 text-slate-900 text-sm sm:text-base leading-relaxed border-t border-slate-200"
+                  >
                     <p>{faq.answer}</p>
                   </div>
                 )}

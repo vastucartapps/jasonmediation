@@ -145,7 +145,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 phone={CAVENDISH_BRAND.phone}
                 formattedPhone={CAVENDISH_BRAND.formattedPhone}
                 defaultService={service.slug}
-                buttonBgClass="bg-emerald-700 hover:bg-emerald-800 text-white"
+                buttonBgClass="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold border border-amber-600 shadow-md"
               />
             </div>
           </div>
@@ -258,11 +258,11 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       </section>
 
       {/* Regional Practice Connections */}
-      <section className="py-12 bg-stone-100/60 border-t border-stone-200">
+      <div className="py-12 bg-stone-100/60 border-t border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-bold uppercase tracking-wider text-stone-800 mb-4 text-center">
+          <h2 className="text-sm font-bold uppercase tracking-wider text-stone-800 mb-4 text-center">
             {service.title} Available Across South East &amp; East Anglia Locations:
-          </p>
+          </h2>
           <div className="flex flex-wrap justify-center gap-2 text-xs">
             {SITE2_COUNTIES.flatMap((c) =>
               c.towns.map((town) => (
@@ -277,7 +277,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             )}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Related Legal Guides & Case Studies */}
       {(() => {
@@ -382,11 +382,11 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
       {/* Interactive Mediation Cost & Voucher Calculator on MIAM page */}
       {service.slug === 'miam-assessment' && (
-        <section className="py-12 bg-stone-100 border-t border-stone-200">
+        <div className="py-12 bg-stone-100 border-t border-stone-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <MediationCalculator brand={CAVENDISH_BRAND} brandVariant="cavendish" />
           </div>
-        </section>
+        </div>
       )}
 
       {/* Accreditation Trust Bar */}

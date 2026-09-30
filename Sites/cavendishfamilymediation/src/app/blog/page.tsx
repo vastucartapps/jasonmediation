@@ -48,7 +48,7 @@ export default function BlogIndexPage() {
       </section>
 
       {/* Cluster Navigation Tags */}
-      <section className="py-6 bg-stone-100 border-b border-stone-200">
+      <nav aria-label="Topic Clusters" className="py-6 bg-stone-100 border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-xs font-bold uppercase text-stone-700 mr-2">
@@ -64,7 +64,7 @@ export default function BlogIndexPage() {
             ))}
           </div>
         </div>
-      </section>
+      </nav>
 
       {/* Blog Articles Grid */}
       <section className="py-16 sm:py-20 bg-stone-50">

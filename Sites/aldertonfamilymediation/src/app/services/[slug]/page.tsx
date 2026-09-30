@@ -148,7 +148,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 phone={ALDERTON_BRAND.phone}
                 formattedPhone={ALDERTON_BRAND.formattedPhone}
                 defaultService={service.slug}
-                buttonBgClass="bg-amber-600 hover:bg-amber-700 text-white"
+                buttonBgClass="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold border border-amber-600 shadow-md"
               />
             </div>
           </div>
@@ -261,11 +261,11 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       </section>
 
       {/* Regional Practice Connections */}
-      <section className="py-12 bg-slate-50 border-t border-slate-200">
+      <div className="py-12 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-bold uppercase tracking-wider text-slate-800 mb-4 text-center">
+          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-800 mb-4 text-center">
             {service.title} Available Across East Midlands Locations:
-          </p>
+          </h2>
           <div className="flex flex-wrap justify-center gap-2 text-xs">
             {SITE1_COUNTIES.flatMap((c) =>
               c.towns.map((town) => (
@@ -280,7 +280,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             )}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Related Legal Guides & Case Studies */}
       {(() => {
@@ -385,11 +385,11 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
       {/* Interactive Mediation Cost & Voucher Calculator on MIAM page */}
       {service.slug === 'miam-assessment' && (
-        <section className="py-12 bg-slate-50 border-t border-slate-200">
+        <div className="py-12 bg-slate-50 border-t border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <MediationCalculator brand={ALDERTON_BRAND} brandVariant="alderton" />
           </div>
-        </section>
+        </div>
       )}
 
       {/* Accreditation Trust Bar */}

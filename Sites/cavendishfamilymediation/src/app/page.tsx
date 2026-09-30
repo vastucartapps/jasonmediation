@@ -156,7 +156,7 @@ export default function CavendishHomePage() {
       </section>
 
       {/* STATS BAR */}
-      <section className="bg-emerald-950 text-white py-10 border-y border-emerald-900">
+      <div className="bg-emerald-950 text-white py-10 border-y border-emerald-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
@@ -177,7 +177,7 @@ export default function CavendishHomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* REGULATED ACCREDITATIONS TRUST BAR */}
       <AccreditationTrustBar />
@@ -432,7 +432,7 @@ export default function CavendishHomePage() {
             brandName={CAVENDISH_BRAND.brandName}
             phone={CAVENDISH_BRAND.phone}
             formattedPhone={CAVENDISH_BRAND.formattedPhone}
-            buttonBgClass="bg-emerald-800 hover:bg-emerald-900 text-white"
+            buttonBgClass="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold border border-amber-600 shadow-md"
             headingLevel="h3"
           />
         </div>

@@ -160,7 +160,7 @@ export default function HomePage() {
       </section>
 
       {/* STATS & IMPACT BAR */}
-      <section className="bg-slate-950 text-white py-10 border-y border-slate-800">
+      <div className="bg-slate-950 text-white py-10 border-y border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
@@ -181,7 +181,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* REGULATED ACCREDITATIONS TRUST BAR */}
       <AccreditationTrustBar />
@@ -436,7 +436,7 @@ export default function HomePage() {
             brandName={ALDERTON_BRAND.brandName}
             phone={ALDERTON_BRAND.phone}
             formattedPhone={ALDERTON_BRAND.formattedPhone}
-            buttonBgClass="bg-amber-600 hover:bg-amber-700 text-white"
+            buttonBgClass="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold border border-amber-600 shadow-md"
             headingLevel="h3"
           />
         </div>

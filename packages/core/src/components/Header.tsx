@@ -160,6 +160,8 @@ export const Header: React.FC<HeaderProps> = ({ brand, brandVariant = 'alderton'
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="p-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 transition"
                 aria-label="Toggle Navigation Menu"
+                aria-expanded={mobileMenuOpen}
+                aria-controls="mobile-navigation-menu"
               >
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   {mobileMenuOpen ? (
@@ -176,7 +178,7 @@ export const Header: React.FC<HeaderProps> = ({ brand, brandVariant = 'alderton'
 
       {/* Mobile Luxury Sheet Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-white border-b border-slate-200 px-5 pt-4 pb-8 space-y-3 shadow-xl">
+        <div id="mobile-navigation-menu" className="xl:hidden bg-white border-b border-slate-200 px-5 pt-4 pb-8 space-y-3 shadow-xl">
           <div className="flex items-center justify-between pb-3 border-b border-slate-200 text-xs text-slate-700 font-bold">
             <span className="flex items-center gap-1.5">
               <AwardSealIcon className="w-4 h-4 text-amber-500" />

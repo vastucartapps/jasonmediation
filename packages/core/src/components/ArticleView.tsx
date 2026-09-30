@@ -337,15 +337,15 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           </section>
 
           {/* Limits of Mediation */}
-          <section className="bg-stone-50 rounded-2xl p-6 sm:p-8 border-2 border-stone-200 space-y-2">
-            <div className="flex items-center gap-2 text-stone-900 font-serif font-bold text-base">
+          <div className="bg-stone-50 rounded-2xl p-6 sm:p-8 border-2 border-stone-200 space-y-2">
+            <h3 className="flex items-center gap-2 text-stone-900 font-serif font-bold text-base">
               <BuildingOfficeIcon className="w-4 h-4 text-stone-600" />
               <span>Limits of Mediation &amp; When Court Injunctions Are Essential</span>
-            </div>
+            </h3>
             <p className="text-xs sm:text-sm text-stone-700 font-medium leading-relaxed">
               {post.limitsOfMediation}
             </p>
-          </section>
+          </div>
 
           {/* Section 5: Local Family Court Centers & Catchment Areas */}
           {matchedTowns.length > 0 && (
@@ -488,13 +488,13 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
       </article>
 
       {/* Section 6: 10+ Comprehensive FAQs */}
-      <section id="faqs" className="scroll-mt-24">
+      <div id="faqs" className="scroll-mt-24">
         <FAQSection
           title={`Frequently Asked Questions: ${post.title}`}
           subtitle="Practical, legally sound answers from accredited UK family mediators on court procedures, rights, and negotiation strategies."
           faqs={post.faqs}
         />
-      </section>
+      </div>
     </div>
   );
 };
