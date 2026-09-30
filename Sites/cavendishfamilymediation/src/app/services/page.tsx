@@ -13,13 +13,13 @@ import {
 } from '@mediation/core';
 
 export const metadata: Metadata = {
-  title: 'Accredited Family Mediation Services | MIAM, Child Arrangements & Finance',
+  title: `Family Mediation Services & MIAM | ${CAVENDISH_BRAND.shortName}`,
   description:
-    'FMC-accredited mediation services across Suffolk, Essex, Kent, and Sussex. Court-authorized MIAM certificates, child arrangements, and financial clean breaks.',
+    'Explore our FMC-accredited mediation services across the South East. Statutory MIAM certificates, child arrangements, and fair financial settlements.',
 };
 
 export default function ServicesPage() {
-  const breadcrumbs = [{ label: 'Mediation Services', href: '/services' }];
+  const breadcrumbs = [{ label: 'Mediation Services', href: '/services/' }];
 
   const servicesFaqs = [
     {
@@ -95,7 +95,7 @@ export default function ServicesPage() {
                   <div>
                     <h2 className="text-2xl font-serif font-bold text-stone-950 mb-3">
                       <Link
-                        href={`/services/${service.slug}`}
+                        href={`/services/${service.slug}/`}
                         className="hover:text-emerald-800 transition"
                       >
                         {service.title}
@@ -131,14 +131,14 @@ export default function ServicesPage() {
                 <div className="p-6 sm:p-8 pt-0">
                   <div className="pt-4 border-t border-stone-200 flex items-center justify-between">
                     <Link
-                      href={`/services/${service.slug}`}
+                      href={`/services/${service.slug}/`}
                       className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-emerald-800 hover:text-emerald-950 transition"
                     >
                       <span>Explore Pathway Details</span>
                       <ArrowRightIcon className="w-4 h-4" />
                     </Link>
                     <Link
-                      href="/contact"
+                      href="/contact/"
                       className="text-xs font-bold text-stone-900 hover:text-emerald-800 transition"
                     >
                       Book Consultation

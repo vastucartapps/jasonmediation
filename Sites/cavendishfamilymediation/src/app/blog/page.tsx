@@ -13,13 +13,13 @@ import {
 } from '@mediation/core';
 
 export const metadata: Metadata = {
-  title: 'Family Law & Separation Blog | South East & East Anglia Legal Insights',
+  title: `Family Law & Separation Blog | ${CAVENDISH_BRAND.shortName}`,
   description:
     'Authoritative, solicitor-reviewed guides on UK parental relocation, parental house deposits, final salary pension sharing, and Form E financial disclosure.',
 };
 
 export default function BlogIndexPage() {
-  const breadcrumbs = [{ label: 'Family Law Blog', href: '/blog' }];
+  const breadcrumbs = [{ label: 'Family Law Blog', href: '/blog/' }];
 
   // Unique clusters
   const clusters = Array.from(
@@ -94,7 +94,7 @@ export default function BlogIndexPage() {
                   </div>
 
                   <h2 className="text-xl sm:text-2xl font-serif font-bold text-stone-950 mb-3">
-                    <Link href={`/blog/${post.slug}`} className="hover:text-emerald-800 transition">
+                    <Link href={`/blog/${post.slug}/`} className="hover:text-emerald-800 transition">
                       {post.title}
                     </Link>
                   </h2>
@@ -112,7 +112,7 @@ export default function BlogIndexPage() {
                 <div className="pt-4 border-t border-stone-200 flex items-center justify-between">
                   <span className="text-xs font-semibold text-stone-700">Published {post.publishedDate}</span>
                   <Link
-                    href={`/blog/${post.slug}`}
+                    href={`/blog/${post.slug}/`}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-800 hover:text-emerald-950 transition group"
                   >
                     <span>Read Complete Legal Analysis</span>
@@ -144,7 +144,7 @@ export default function BlogIndexPage() {
             {CORE_SERVICES.map((s) => (
               <Link
                 key={s.slug}
-                href={`/services/${s.slug}`}
+                href={`/services/${s.slug}/`}
                 className="p-5 rounded-2xl bg-white border-2 border-stone-200 hover:border-emerald-700 transition shadow-xs hover:shadow-sm group flex flex-col justify-between"
               >
                 <div>
@@ -179,7 +179,7 @@ export default function BlogIndexPage() {
                 c.towns.map((town) => (
                   <Link
                     key={town.slug}
-                    href={`/locations/${c.slug}/${town.slug}`}
+                    href={`/locations/${c.slug}/${town.slug}/`}
                     className="px-3 py-1.5 rounded-lg bg-stone-50 hover:bg-emerald-50 text-stone-800 hover:text-emerald-950 border border-stone-200 hover:border-emerald-400 font-semibold transition"
                   >
                     Family Mediation {town.name}
@@ -204,7 +204,7 @@ export default function BlogIndexPage() {
               </p>
             </div>
             <Link
-              href="/contact"
+              href="/contact/"
               className="flex-shrink-0 px-6 py-3.5 rounded-full bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-sm shadow-md transition"
             >
               Book Confidential Assessment

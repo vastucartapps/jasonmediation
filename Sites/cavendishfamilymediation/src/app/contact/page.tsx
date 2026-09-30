@@ -12,13 +12,13 @@ import {
 } from '@mediation/core';
 
 export const metadata: Metadata = {
-  title: `Contact & Book MIAM Assessment | ${CAVENDISH_BRAND.brandName}`,
+  title: `Book MIAM Assessment & Contact | ${CAVENDISH_BRAND.shortName}`,
   description:
     'Book your confidential MIAM assessment or inquire about family mediation across Suffolk, Essex, Kent, and Sussex. Appointments within 48 hours.',
 };
 
 export default function ContactPage() {
-  const breadcrumbs = [{ label: 'Contact & Bookings', href: '/contact' }];
+  const breadcrumbs = [{ label: 'Contact & Bookings', href: '/contact/' }];
 
   return (
     <div className="w-full bg-[#FAF9F5]">
@@ -58,6 +58,10 @@ export default function ContactPage() {
             {/* Direct Contact Info Column (Ultimate Card with Rich SVG Medallions & Colors) */}
             <div className="lg:col-span-5 space-y-6">
               <div className="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200 border-t-4 border-t-emerald-700 shadow-lg space-y-6">
+                <h2 className="text-xl font-serif font-bold text-stone-950 pb-2 border-b border-stone-100">
+                  Direct Practice Information
+                </h2>
+
                 {/* Telephone */}
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-emerald-700/15 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-700/25 shadow-xs">
@@ -88,12 +92,9 @@ export default function ContactPage() {
                     <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500 block">
                       Email Correspondence
                     </span>
-                    <a
-                      href={`mailto:${CAVENDISH_BRAND.contactEmail}`}
-                      className="text-sm sm:text-base font-bold text-stone-950 hover:text-emerald-700 transition block mt-0.5"
-                    >
+                    <span className="select-all text-sm sm:text-base font-bold text-stone-950 block mt-0.5 font-mono">
                       {CAVENDISH_BRAND.contactEmail}
-                    </a>
+                    </span>
                     <p className="text-xs text-stone-600 mt-1 leading-relaxed">
                       All communications handled under strict legal without-prejudice privilege.
                     </p>

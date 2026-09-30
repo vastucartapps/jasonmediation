@@ -15,13 +15,13 @@ import {
 } from '@mediation/core';
 
 export const metadata: Metadata = {
-  title: 'Accredited Family Mediation Services | MIAM, Child Arrangements & Finance',
+  title: `Family Mediation Services & MIAM | ${ALDERTON_BRAND.shortName}`,
   description:
-    'Explore our FMC-accredited mediation services across Leicestershire, Rutland, Lincolnshire, and Nottinghamshire. MIAM court certificates, child arrangements, and financial settlements.',
+    'Explore our FMC-accredited mediation services across the East Midlands. Statutory MIAM certificates, child arrangements, and fair financial settlements.',
 };
 
 export default function ServicesPage() {
-  const breadcrumbItems = [{ label: 'Mediation Services', href: '/services' }];
+  const breadcrumbItems = [{ label: 'Mediation Services', href: '/services/' }];
 
   const servicesFaqs = [
     {
@@ -97,7 +97,7 @@ export default function ServicesPage() {
                   <div>
                     <h2 className="text-2xl font-serif font-bold text-slate-950 mb-3">
                       <Link
-                        href={`/services/${service.slug}`}
+                        href={`/services/${service.slug}/`}
                         className="hover:text-amber-700 transition"
                       >
                         {service.title}
@@ -133,14 +133,14 @@ export default function ServicesPage() {
                 <div className="p-6 sm:p-8 pt-0">
                   <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
                     <Link
-                      href={`/services/${service.slug}`}
+                      href={`/services/${service.slug}/`}
                       className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-amber-700 hover:text-amber-900 transition"
                     >
                       <span>Explore Pathway Details</span>
                       <ArrowRightIcon className="w-4 h-4" />
                     </Link>
                     <Link
-                      href="/contact"
+                      href="/contact/"
                       className="text-xs font-bold text-slate-900 hover:text-amber-700 transition"
                     >
                       Book MIAM

@@ -10,13 +10,13 @@ import {
 } from '@mediation/core';
 
 export const metadata: Metadata = {
-  title: `Site Directory & Sitemap | ${ALDERTON_BRAND.brandName}`,
+  title: `Site Directory & Sitemap | ${ALDERTON_BRAND.shortName}`,
   description:
     'Complete directory of all family mediation services, regional practices, local court information, and separation guides across the East Midlands.',
 };
 
 export default function SitemapPage() {
-  const breadcrumbs = [{ label: 'Site Directory', href: '/sitemap' }];
+  const breadcrumbs = [{ label: 'Site Directory', href: '/sitemap/' }];
 
   return (
     <div className="w-full bg-white">
@@ -44,25 +44,25 @@ export default function SitemapPage() {
               <Link href="/" className="text-amber-800 hover:underline">
                 Home
               </Link>
-              <Link href="/services" className="text-amber-800 hover:underline">
+              <Link href="/services/" className="text-amber-800 hover:underline">
                 All Mediation Services
               </Link>
-              <Link href="/locations" className="text-amber-800 hover:underline">
+              <Link href="/locations/" className="text-amber-800 hover:underline">
                 Regional Locations Directory
               </Link>
-              <Link href="/blog" className="text-amber-800 hover:underline">
+              <Link href="/blog/" className="text-amber-800 hover:underline">
                 Family Law & Mediation Guides
               </Link>
-              <Link href="/about" className="text-amber-800 hover:underline">
+              <Link href="/about/" className="text-amber-800 hover:underline">
                 About FMC Practice
               </Link>
-              <Link href="/contact" className="text-amber-800 hover:underline">
+              <Link href="/contact/" className="text-amber-800 hover:underline">
                 Book Consultation & Contact
               </Link>
-              <Link href="/privacy" className="text-amber-800 hover:underline">
+              <Link href="/privacy/" className="text-amber-800 hover:underline">
                 Privacy & Confidentiality
               </Link>
-              <Link href="/terms" className="text-amber-800 hover:underline">
+              <Link href="/terms/" className="text-amber-800 hover:underline">
                 Terms of Engagement
               </Link>
             </div>
@@ -76,7 +76,7 @@ export default function SitemapPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
               {CORE_SERVICES.map((s) => (
                 <div key={s.slug} className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                  <Link href={`/services/${s.slug}`} className="font-bold text-slate-900 hover:text-amber-700 block mb-1">
+                  <Link href={`/services/${s.slug}/`} className="font-bold text-slate-900 hover:text-amber-700 block mb-1">
                     {s.title}
                   </Link>
                   <p className="text-xs text-slate-600 leading-relaxed">{s.summary}</p>
@@ -101,7 +101,7 @@ export default function SitemapPage() {
                     {county.towns.map((town) => (
                       <div key={town.slug} className="bg-white rounded-xl p-4 border border-slate-200/80">
                         <Link
-                          href={`/locations/${county.slug}/${town.slug}`}
+                          href={`/locations/${county.slug}/${town.slug}/`}
                           className="font-bold text-slate-900 hover:text-amber-700 block mb-2 text-sm"
                         >
                           Family Mediation {town.name} &rarr;
@@ -113,7 +113,7 @@ export default function SitemapPage() {
                           {CORE_SERVICES.map((s) => (
                             <li key={s.slug}>
                               <Link
-                                href={`/locations/${county.slug}/${town.slug}/${s.slug}`}
+                                href={`/locations/${county.slug}/${town.slug}/${s.slug}/`}
                                 className="hover:text-amber-800 hover:underline"
                               >
                                 • {s.navLabel} in {town.name}
@@ -137,7 +137,7 @@ export default function SitemapPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
               {SITE1_BLOG_POSTS.map((g) => (
                 <div key={g.slug} className="p-4 rounded-xl bg-slate-50 border-2 border-slate-200">
-                  <Link href={`/blog/${g.slug}`} className="font-bold text-slate-950 hover:text-amber-700 block mb-1">
+                  <Link href={`/blog/${g.slug}/`} className="font-bold text-slate-950 hover:text-amber-700 block mb-1">
                     {g.title} &rarr;
                   </Link>
                   <p className="text-xs text-slate-800 font-medium leading-relaxed">{g.summary}</p>

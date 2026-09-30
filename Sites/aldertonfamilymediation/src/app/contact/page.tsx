@@ -15,13 +15,13 @@ import {
 } from '@mediation/core';
 
 export const metadata: Metadata = {
-  title: `Contact & Book MIAM Assessment | ${ALDERTON_BRAND.brandName}`,
+  title: `Book MIAM Assessment & Contact | ${ALDERTON_BRAND.shortName}`,
   description:
-    'Book your confidential MIAM assessment or inquire about family mediation across Leicestershire, Rutland, Lincolnshire, and Nottinghamshire. Appointments within 48 hours.',
+    'Book your confidential MIAM assessment or inquire about family mediation across Leicestershire, Rutland, and Nottinghamshire. Appointments within 48 hours.',
 };
 
 export default function ContactPage() {
-  const breadcrumbs = [{ label: 'Contact & Bookings', href: '/contact' }];
+  const breadcrumbs = [{ label: 'Contact & Bookings', href: '/contact/' }];
 
   return (
     <div className="w-full bg-white">
@@ -61,6 +61,10 @@ export default function ContactPage() {
             {/* Direct Contact Info Column (Ultimate Card with Rich SVG Medallions & Colors) */}
             <div className="lg:col-span-5 space-y-6">
               <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 border-t-4 border-t-amber-500 shadow-lg space-y-6">
+                <h2 className="text-xl font-serif font-bold text-slate-950 pb-2 border-b border-slate-100">
+                  Direct Practice Information
+                </h2>
+
                 {/* Telephone */}
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-600 flex items-center justify-center shrink-0 border border-amber-500/25 shadow-xs">
@@ -91,12 +95,9 @@ export default function ContactPage() {
                     <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">
                       Email Correspondence
                     </span>
-                    <a
-                      href={`mailto:${ALDERTON_BRAND.contactEmail}`}
-                      className="text-sm sm:text-base font-bold text-slate-950 hover:text-amber-600 transition block mt-0.5"
-                    >
+                    <span className="select-all text-sm sm:text-base font-bold text-slate-950 block mt-0.5 font-mono">
                       {ALDERTON_BRAND.contactEmail}
-                    </a>
+                    </span>
                     <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                       All correspondence handled under strict legal without-prejudice privilege.
                     </p>

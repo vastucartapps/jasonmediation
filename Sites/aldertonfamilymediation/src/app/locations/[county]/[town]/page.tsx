@@ -49,8 +49,8 @@ export async function generateMetadata({ params }: TownLocationProps): Promise<M
   if (!town) return { title: 'Location Not Found' };
 
   return {
-    title: `Family Mediation in ${town.name} Near Me | FMC Accredited Practice`,
-    description: `FMC-accredited family mediation practice in ${town.name}, ${town.county}. Rapid MIAM assessments, child arrangements, and financial settlements. Serving families across ${town.name} and surrounding communities.`,
+    title: `Family Mediation in ${town.name} | ${ALDERTON_BRAND.shortName}`,
+    description: `FMC-accredited family mediation in ${town.name}, ${town.county}. Professional MIAM assessments, child rotas & financial clean breaks. Book in 48 hours.`,
     keywords: [
       `family mediation ${town.name}`,
       `family mediation near me ${town.name}`,
@@ -59,6 +59,12 @@ export async function generateMetadata({ params }: TownLocationProps): Promise<M
       `child arrangements ${town.name}`,
       `family court mediation ${town.county}`,
     ],
+    other: {
+      'geo.region': 'GB-ENG',
+      'geo.placename': `${town.name}, ${town.county}`,
+      'geo.position': `${town.coordinates.latitude};${town.coordinates.longitude}`,
+      'ICBM': `${town.coordinates.latitude}, ${town.coordinates.longitude}`,
+    },
   };
 }
 
@@ -72,8 +78,8 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
   }
 
   const breadcrumbs = [
-    { label: 'Locations', href: '/locations' },
-    { label: town.name, href: `/locations/${county.slug}/${town.slug}` },
+    { label: 'Locations', href: '/locations/' },
+    { label: town.name, href: `/locations/${county.slug}/${town.slug}/` },
   ];
 
   const localSchema = generateLocalBusinessSchema(ALDERTON_BRAND, town);
@@ -136,7 +142,7 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 w-full sm:w-auto">
                 <Link
-                  href="/contact"
+                  href="/contact/"
                   className="px-6 py-3.5 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-md transition text-center"
                 >
                   Book Assessment in {town.name}
@@ -212,7 +218,7 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
                   <div>
                     <h3 className="text-xl font-serif font-bold text-slate-950 mb-2">
                       <Link
-                        href={`/locations/${county.slug}/${town.slug}/${service.slug}`}
+                        href={`/locations/${county.slug}/${town.slug}/${service.slug}/`}
                         className="hover:text-amber-700 transition"
                       >
                         {service.title} in {town.name}
@@ -226,14 +232,14 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
 
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                     <Link
-                      href={`/locations/${county.slug}/${town.slug}/${service.slug}`}
+                      href={`/locations/${county.slug}/${town.slug}/${service.slug}/`}
                       className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-700 hover:text-amber-900 transition"
                     >
                       <span>Schedule {service.title} in {town.name}</span>
                       <ArrowRightIcon className="w-3.5 h-3.5" />
                     </Link>
                     <Link
-                      href="/contact"
+                      href="/contact/"
                       className="text-xs font-bold text-slate-900 hover:text-amber-700 transition"
                     >
                       Book Assessment
@@ -249,6 +255,14 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
       {/* Designated Family Court & Local Authority Details */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-10">
+            <span className="text-xs font-bold uppercase tracking-wider text-amber-800 block mb-2">
+              Court Authority &amp; Regional Catchment
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-950">
+              Designated Family Court Authority &amp; Local Catchment for {town.name}
+            </h2>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-7">
               <CourtAuthorityCard
@@ -338,7 +352,7 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
                   </h2>
                 </div>
                 <Link
-                  href="/blog"
+                  href="/blog/"
                   className="inline-flex items-center gap-1 text-xs font-bold text-amber-700 hover:text-amber-900 hover:underline"
                 >
                   <span>Browse Family Law &amp; Mediation Guides</span>
@@ -359,7 +373,7 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
                         </span>
                       </div>
                       <h3 className="font-serif font-bold text-slate-950 text-xl sm:text-2xl hover:text-amber-800 transition">
-                        <Link href={`/blog/${displayArticles[0].slug}`}>
+                        <Link href={`/blog/${displayArticles[0].slug}/`}>
                           {displayArticles[0].title}
                         </Link>
                       </h3>
@@ -369,7 +383,7 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
                     </div>
                     <div className="lg:col-span-4 flex flex-col justify-center items-start lg:items-end">
                       <Link
-                        href={`/blog/${displayArticles[0].slug}`}
+                        href={`/blog/${displayArticles[0].slug}/`}
                         className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm shadow-sm transition group"
                       >
                         <span>Read Full Legal Analysis for {town.name}</span>
@@ -393,7 +407,7 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
                           <span className="text-[11px] font-semibold text-slate-600">{article.readingTime}</span>
                         </div>
                         <h3 className="font-serif font-bold text-slate-950 text-base mb-2 group-hover:text-amber-800 transition">
-                          <Link href={`/blog/${article.slug}`}>
+                          <Link href={`/blog/${article.slug}/`}>
                             {article.title}
                           </Link>
                         </h3>
@@ -427,7 +441,7 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
                 .map((sister) => (
                   <Link
                     key={sister.slug}
-                    href={`/locations/${county.slug}/${sister.slug}`}
+                    href={`/locations/${county.slug}/${sister.slug}/`}
                     className="px-3 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-800 text-xs font-bold hover:border-amber-500 hover:text-amber-900 transition shadow-2xs"
                   >
                     Family Mediation in {sister.name} &rarr;

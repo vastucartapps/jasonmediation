@@ -240,6 +240,70 @@ Every town and location-service page MUST provide deep, practical, localized uti
 ### 6.3 Next-Generation AI Search Engine Readiness (`llms.txt`)
 Every site outputs an `/llms.txt` file providing a structured Markdown manifest of legal frameworks, court jurisdictions, and service offerings for retrieval-augmented generation (Perplexity, ChatGPT Search, Claude).
 
+### 6.4 Strict Heading Hierarchy (Ahrefs & Mangools Auditor Compliant)
+> [!IMPORTANT]
+> **Strict Semantic Heading Hierarchy is Inviolable Across 100% of Pages.**
+> SEO crawlers (Ahrefs, Mangools, Screaming Frog) flag pages with missing H1s, multiple H1s, or skipped heading levels as structural defects:
+> 
+> 1. **Exactly One `<h1>` Per Page**:
+>    - Every page template must contain precisely one `<h1>` defining the primary subject entity.
+> 2. **Zero Skipped Heading Levels**:
+>    - `<h1>` MUST be followed by `<h2>` for section groupings.
+>    - `<h2>` sections MAY contain `<h3>` child cards or sub-sections.
+>    - Never jump from `<h1>` directly to `<h3>`, nor from `<h2>` directly to `<h4>`.
+> 3. **Sub-Component Heading Nesting**:
+>    - If a card or modular block (e.g. `<CourtAuthorityCard>`, `<LeadIntakeForm>`) renders an `<h3>`, the enclosing section container MUST define an overarching `<h2>` (e.g. `<h2>Designated Family Court Authority & Local Catchment for {town.name}</h2>`).
+>    - Right-column contact cards in `/contact/` MUST define an `<h2>Direct Practice Information</h2>` to maintain strict hierarchy alongside the intake form's `<h2>`.
+
+### 6.5 Zero `mailto:` & Link Hygiene Standards
+> [!IMPORTANT]
+> **ZERO `mailto:` Anchors Across the Entire Codebase.**
+> Many SEO crawlers (including Ahrefs) flag `mailto:` links as broken links or crawl-traps:
+> 
+> 1. **No `<a href="mailto:...">` Anchors**:
+>    - Render email addresses as selectable text: `<span className="select-all font-mono font-bold ...">{brand.contactEmail}</span>`.
+> 2. **Telephone Links**:
+>    - Telephone numbers remain click-to-call `<a href="tel:03300...">` with mandatory `[📞 {brand.formattedPhone}]` formatting.
+> 3. **Strict Trailing Slashes**:
+>    - All internal routes (`Link href` and anchors) MUST have trailing slashes (e.g. `/services/`, `/services/miam-assessment/`, `/locations/`, `/contact/`, `/sitemap/`) to match Next.js `trailingSlash: true`. This prevents 308 redirects and ensures perfect crawler efficiency.
+> 4. **Zero Broken Links, 404s, or Orphan Pages**:
+>    - Every page must be linked from the HTML sitemap (`/sitemap/`), XML sitemap (`/sitemap.xml`), header/footer navigation, and reciprocal cross-links.
+
+### 6.6 Strict Meta Title & Meta Description Constraints
+> [!IMPORTANT]
+> **Character Limits & Geographic Targeting Standards:**
+> 
+> 1. **Meta Title (<= 60 Characters Maximum)**:
+>    - Root layout `template` MUST be configured as `template: '%s'` (NEVER append `| Brand Name` in the template, as this causes unexpected string inflation).
+>    - Every page must explicitly define a complete title `<= 60 characters`.
+>    - Location pages MUST include `{town.name}`:
+>      - Town page: `Family Mediation in ${town.name} | ${brand.shortName}` (<= 52 chars).
+>      - Town + Service page: `${service.navLabel} in ${town.name} | ${brand.shortName}` (<= 56 chars).
+> 2. **Meta Description (<= 160 Characters Maximum)**:
+>    - Every page must define a high-intent, click-worthy description `<= 160 characters`.
+>    - Location pages MUST include both `{town.name}` and `{town.county}`:
+>      - Town page: `FMC-accredited family mediation & fast MIAMs in ${town.name}, ${town.county}. Avoid contentious court hearings. Individual appointments available in 48 hours.` (154–156 chars).
+> 3. **Automated Verification**:
+>    - Run `node scripts/audit-seo-headings.js` to empirically verify that 0 pages violate title length, description length, heading hierarchy, or contain `mailto:` links.
+
+### 6.7 Geographic HTML Meta Tagging & Location Page Hygiene
+> [!IMPORTANT]
+> **Native Geotagging & Geo-Coordinates Across All Localized Assets:**
+> 
+> 1. **HTML Geo Meta Tags in `<head>`**:
+>    Every localized page template (`/locations/[county]/[town]/` and `/locations/[county]/[town]/[service]/`) must emit native HTML geo meta tags alongside OpenGraph:
+>    ```html
+>    <meta name="geo.region" content="GB-ENG" />
+>    <meta name="geo.placename" content="{town.name}, {town.county}" />
+>    <meta name="geo.position" content="{lat};{lng}" />
+>    <meta name="ICBM" content="{lat}, {lng}" />
+>    ```
+> 2. **Localized Image Alt Attributes & Metadata**:
+>    All imagery served on town and service-location hubs must include precise geo-contextual alt tags formatted as:
+>    `{Service} consultation room in {town.name}, {town.county} - FMC Accredited Family Mediation`
+> 3. **Dual Geo Coordinates (JSON-LD + HTML)**:
+>    Never rely on JSON-LD alone. Search engines and map bots parse both `<meta name="geo.position">` and JSON-LD `GeoCoordinates` (`latitude`, `longitude`) to index local catchment boundaries.
+
 ---
 
 ## 7. Enterprise Lead Capture & Automated Dispatch Architecture (Single Source of Truth)
@@ -253,25 +317,31 @@ All lead capture across every site, page, and directory is powered exclusively b
   4. **Town + Service Pages (`/locations/[county]/[town]/[service]`)**: Pre-populated with specific town and statutory service category.
   5. **Core Service Hubs (`/services/[slug]`)**: Pre-selected for immediate procedural assessment.
 
-### 7.2 SSOT Dispatch Pipeline & Email Delivery Guarantee
-1. **Dynamic Target Resolution & Masked Token Privacy**:
-   Form submissions dynamically resolve their delivery endpoint from `GLOBAL_CONTACT.leadSubmitEndpoint` using a privacy-masked token (`formSubmitToken`), permanently shielding destination email addresses from scrapers and harvesting bots:
+### 7.2 SSOT Dispatch Pipeline & Themed Email Delivery
+1. **Dynamic Target Resolution & Delivery Endpoint**:
+   Form submissions dynamically resolve their delivery endpoint from `GLOBAL_CONTACT.leadSubmitEndpoint`. During testing and production, lead enquiries route to the central destination mailbox:
    ```typescript
    export const GLOBAL_CONTACT = {
      leadRecipientEmail: 'venturevidyahindi@gmail.com',
-     formSubmitToken: 'abdf15fb72b87ae3039219a094638be0',
-     leadSubmitEndpoint: 'https://formsubmit.co/ajax/abdf15fb72b87ae3039219a094638be0',
+     formSubmitToken: 'venturevidyahindi@gmail.com',
+     leadSubmitEndpoint: 'https://formsubmit.co/ajax/venturevidyahindi@gmail.com',
+     leadWebhookEndpoint: 'https://formsubmit.co/ajax/venturevidyahindi@gmail.com',
    };
    ```
-2. **Standardized Lead Payload Schema**:
-   Delivers a structured submission containing:
-   - Full Client Name
-   - Contact Telephone (UK validated)
-   - Email Address (`_replyto` header so mediators can reply directly)
-   - Town / Catchment Area
-   - Service Pathway Requested (MIAM, Child Arrangements, Financial Remedy, All-Issues)
-   - Preferred Contact Window (Morning, Afternoon, Evening, Anytime)
-   - Confidential Background Notes
+2. **Beautiful Themed HTML Email Delivery (`_template: 'box'`)**:
+   Leads are formatted using FormSubmit's structured box template (`_template: 'box'`) delivering a clean, branded email with clearly demarcated rows for:
+   - Client Full Name (`Client Full Name`)
+   - Direct Contact Phone (`Client Contact Phone`)
+   - Email Address (`Client Email Address` & `_replyto`)
+   - Catchment / Town (`Nearest Practice Town`)
+   - Statutory Service Pathway (`Mediation Service Requested`)
+   - Preferred Contact Window (`Preferred Callback Window`)
+   - Confidential Family Summary (`Confidential Enquiry Notes`)
+   - Originating Brand Entity (`Originating Brand`)
+   - Referral Page & London Timestamp (`Submission Source URL` & `Submission Timestamp (UK)`)
+3. **Anti-Spam & Bot Shield**:
+   - Hidden honeypot field (`website_url_check`) traps automated bots silently.
+   - Zero CAPTCHA friction (`_captcha: 'false'`) ensures maximum conversion for distressed family clients.
    - Originating Brand Entity Name
    - Exact Page URL and Timestamp
 3. **Anti-Spam & Bot Shield**:

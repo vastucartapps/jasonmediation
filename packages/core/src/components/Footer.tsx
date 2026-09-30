@@ -97,12 +97,9 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
               </div>
               <div className="flex items-center gap-2.5">
                 <MailIcon className="w-4 h-4 text-slate-400 shrink-0" />
-                <a
-                  href={`mailto:${brand.contactEmail}`}
-                  className="text-slate-300 hover:text-amber-400 transition"
-                >
+                <span className="text-slate-300 font-medium select-all">
                   {brand.contactEmail}
-                </a>
+                </span>
               </div>
               <div className="flex items-center gap-2.5 pt-1">
                 <PhoneCallIcon className="w-4 h-4 text-amber-400 shrink-0" />
@@ -117,7 +114,6 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
           </div>
 
           {/* Col 2: Core Services */}
-          {/* Col 2: Core Services */}
           <div>
             <p className="text-xs font-bold uppercase tracking-wider text-white mb-4">
               Mediation Services
@@ -126,7 +122,7 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
               {CORE_SERVICES.map((service) => (
                 <li key={service.slug}>
                   <Link
-                    href={`/services/${service.slug}`}
+                    href={`/services/${service.slug}/`}
                     className="text-slate-300 hover:text-white transition block"
                   >
                     {service.navLabel}
@@ -134,7 +130,7 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
                 </li>
               ))}
               <li>
-                <Link href="/services" className="text-amber-400 font-bold hover:underline inline-flex items-center gap-1">
+                <Link href="/services/" className="text-amber-400 font-bold hover:underline inline-flex items-center gap-1">
                   <span>All Mediation Pathways</span>
                   <ArrowRightIcon className="w-3.5 h-3.5" />
                 </Link>
@@ -151,7 +147,7 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
               {brand.counties.map((county) => (
                 <li key={county.slug}>
                   <Link
-                    href={`/locations#${county.slug}`}
+                    href={`/locations/#${county.slug}`}
                     className="text-slate-300 hover:text-white transition block"
                   >
                     {county.name}
@@ -159,7 +155,7 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
                 </li>
               ))}
               <li>
-                <Link href="/locations" className="text-amber-400 font-bold hover:underline inline-flex items-center gap-1">
+                <Link href="/locations/" className="text-amber-400 font-bold hover:underline inline-flex items-center gap-1">
                   <span>Find Your Local Family Mediation Practice</span>
                   <ArrowRightIcon className="w-3.5 h-3.5" />
                 </Link>
@@ -174,27 +170,27 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
             </p>
             <ul className="space-y-2.5 text-xs sm:text-sm font-medium">
               <li>
-                <Link href="/blog" className="text-slate-300 hover:text-white transition block">
+                <Link href="/blog/" className="text-slate-300 hover:text-white transition block">
                   Family Law &amp; Dispute Blog
                 </Link>
               </li>
               <li>
-                <Link href="/services/miam-assessment" className="text-slate-300 hover:text-white transition block">
+                <Link href="/services/miam-assessment/" className="text-slate-300 hover:text-white transition block">
                   Statutory MIAM Guidelines
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-slate-300 hover:text-white transition block">
+                <Link href="/about/" className="text-slate-300 hover:text-white transition block">
                   Our FMC Mediators
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-slate-300 hover:text-white transition block">
+                <Link href="/contact/" className="text-slate-300 hover:text-white transition block">
                   Contact &amp; Bookings
                 </Link>
               </li>
               <li>
-                <Link href="/sitemap" className="text-slate-300 hover:text-white transition block">
+                <Link href="/sitemap/" className="text-slate-300 hover:text-white transition block">
                   HTML Site Directory
                 </Link>
               </li>
@@ -288,7 +284,7 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
               c.towns.map((town) => (
                 <Link
                   key={town.slug}
-                  href={`/locations/${town.countySlug}/${town.slug}`}
+                  href={`/locations/${town.countySlug}/${town.slug}/`}
                   className="px-2.5 py-1 rounded-md bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-amber-300 border border-slate-800 hover:border-amber-400/40 transition"
                 >
                   Family Mediation {town.name}
@@ -304,10 +300,10 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
             &copy; {new Date().getFullYear()} {brand.legalEntityName}. All rights reserved. Registered in England &amp; Wales.
           </p>
           <div className="flex items-center gap-4 flex-wrap">
-            <Link href="/privacy" className="hover:text-white transition underline">
+            <Link href="/privacy/" className="hover:text-white transition underline">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-white transition underline">
+            <Link href="/terms/" className="hover:text-white transition underline">
               Terms of Engagement
             </Link>
             <Link href="/sitemap.xml" className="hover:text-white transition underline">

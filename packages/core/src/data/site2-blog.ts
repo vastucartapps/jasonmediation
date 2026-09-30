@@ -4,6 +4,8 @@ export const SITE2_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "house-deposit-provided-by-parents-divorce-mediation",
     "title": "What Happens to a House Deposit Provided by Parents in Divorce? UK Family Law Guide",
+    "metaTitle": "Parental House Deposit in Divorce | UK Law & Rights",
+    "metaDescription": "How family courts and mediation treat Bank of Mum and Dad deposits in divorce. Gifts vs loans, Deeds of Trust, and ring-fencing family wealth under Section 25.",
     "clusterNumber": "07",
     "clusterName": "Deposits, Inheritance & Family Money",
     "summary": "How English family courts and mediation treat \"Bank of Mum and Dad\" deposit contributions, gifts vs loans, Deeds of Trust, and ring-fencing non-matrimonial wealth.",
@@ -114,6 +116,8 @@ export const SITE2_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "inherited-money-used-for-mortgage-separation-mediation",
     "title": "I Used My Inheritance to Pay Off Our Mortgage: What Happens When We Separate?",
+    "metaTitle": "Inheritance Used for Mortgage: Separation Rules UK",
+    "metaDescription": "Protecting inherited money used to repay a matrimonial mortgage. How to establish non-matrimonial property and negotiate fair clean break orders in mediation.",
     "clusterNumber": "07",
     "clusterName": "Deposits, Inheritance & Family Money",
     "summary": "Non-matrimonial property, mingling of inherited capital into the matrimonial home, and how mediation constructs fair financial clean breaks.",
@@ -224,6 +228,8 @@ export const SITE2_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "can-parent-relocate-with-child-uk-internal-relocation",
     "title": "Can a Parent Relocate with a Child Within the UK? Internal Relocation Law",
+    "metaTitle": "Can a Parent Relocate with Child in UK? Law Guide",
+    "metaDescription": "UK internal relocation laws, Prohibited Steps Orders, and distance co-parenting. How to reach sustainable relocation agreements through accredited mediation.",
     "clusterNumber": "04",
     "clusterName": "Relocation & Long-Distance Parenting",
     "summary": "Legal rules governing internal relocation within England, Scotland, and Wales, Section 8 Specific Issue Orders, Prohibited Steps Orders, and mediated travel solutions.",
@@ -334,6 +340,8 @@ export const SITE2_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "who-pays-child-travel-costs-after-parental-relocation",
     "title": "Who Pays Child Travel Costs After Parental Relocation? Mediation Protocols",
+    "metaTitle": "Who Pays Child Travel Costs After UK Relocation?",
+    "metaDescription": "Fair cost-sharing formulas for long-distance child contact after parental relocation. Settle fuel, train fares, and transit handovers in family mediation.",
     "clusterNumber": "04",
     "clusterName": "Relocation & Long-Distance Parenting",
     "summary": "How separated parents divide travel expenses, train fares, petrol costs, and motorway handovers after one parent relocates across the UK.",
@@ -443,6 +451,8 @@ export const SITE2_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "final-salary-pension-sharing-divorce-mediation",
     "title": "Final Salary Pension Sharing in Divorce: CEV vs True Capital Value in Mediation",
+    "metaTitle": "Final Salary Pension Sharing in Divorce | CEV Guide",
+    "metaDescription": "Why Cash Equivalent Values (CEV) mislead in defined benefit pensions. Protect your true retirement capital with specialist PODE pension reports in mediation.",
     "clusterNumber": "06",
     "clusterName": "Pensions, CEVs & Actuarial Splitting",
     "summary": "A critical UK guide on defined benefit (final salary) pensions in divorce, why Cash Equivalent Values (CEVs) are misleading, and how mediation structures Pension Sharing Orders.",
@@ -553,6 +563,8 @@ export const SITE2_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "offsetting-pension-against-house-equity-mediation",
     "title": "Offsetting a Pension Against House Equity: Risks & Valuation Rules in Mediation",
+    "metaTitle": "Pension Offsetting vs House Equity | UK Divorce Law",
+    "metaDescription": "The risks and calculation rules of trading pension rights for home equity. Achieve a balanced, court-approved financial clean break without costly litigation.",
     "clusterNumber": "06",
     "clusterName": "Pensions, CEVs & Actuarial Splitting",
     "summary": "How to calculate pension offsetting against property equity, avoiding unfair valuations, and structuring clean breaks through family mediation.",
@@ -663,6 +675,8 @@ export const SITE2_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "statutory-miam-exemptions-court-scrutiny-rules",
     "title": "Statutory MIAM Exemptions & Court Scrutiny Rules: The April 2024 Legal Crackdown",
+    "metaTitle": "2024 MIAM Exemption Rules & Family Court Scrutiny",
+    "metaDescription": "April 2024 FPR legal reforms targeting fraudulent MIAM exemptions. Avoid court strike-outs and adverse cost sanctions with accredited mediator certification.",
     "clusterNumber": "08",
     "clusterName": "MIAM, Court Forms & Procedures",
     "summary": "The strict rules for claiming a MIAM exemption in England and Wales, how courts audit Form C100 and Form A, and avoiding adverse cost orders.",
@@ -773,6 +787,8 @@ export const SITE2_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "financial-disclosure-form-e-mediation-consent-orders",
     "title": "Financial Disclosure & Form E in Mediation: Steps to a Binding Consent Order",
+    "metaTitle": "Form E Financial Disclosure in Mediation | UK Guide",
+    "metaDescription": "Complete guide to voluntary financial disclosure in mediation. Collate assets, pensions, and debts to draft an enforceable clean break court Consent Order.",
     "clusterNumber": "05",
     "clusterName": "Legal Aid, Fees, MIAM & Financial Orders",
     "summary": "Mastering voluntary financial disclosure in mediation, exchanging Form E, preventing hidden assets, and drafting legally binding clean break Consent Orders.",

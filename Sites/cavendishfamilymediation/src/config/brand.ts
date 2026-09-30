@@ -3,6 +3,7 @@ import { BrandConfig, SITE2_COUNTIES, CAVENDISH_CONTACT } from '@mediation/core'
 export const CAVENDISH_BRAND: BrandConfig = {
   brandId: 'cavendish',
   brandName: 'Cavendish Family Mediation',
+  shortName: 'Cavendish Mediation',
   legalEntityName: 'Cavendish Family Mediation Practice Ltd',
   siteUrl: 'https://www.cavendishfamilymediation.co.uk',
   domain: 'cavendishfamilymediation.co.uk',

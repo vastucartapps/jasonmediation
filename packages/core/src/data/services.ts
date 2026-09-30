@@ -13,6 +13,8 @@ export const CORE_SERVICES: ServiceItem[] = [
     legalFramework: 'Under UK law, anyone wishing to apply to family court for a child arrangements order or financial settlement must first attend a Mediation Information and Assessment Meeting (MIAM) with an authorized FMC-accredited mediator, unless an official statutory exemption applies.',
     courtFormRequired: 'Form C100 (Page 9) or Form A (Page 2)',
     typicalDuration: '45 to 60 minutes per individual',
+    metaTitle: 'MIAM Assessment & Court Certification',
+    metaDescription: 'Statutory FMC-accredited MIAM assessments for family court. Secure online appointments within 48h. Fast C100 & Form A signed certificates.',
     keyBenefits: [
       'Strictly individual and confidential — you do not attend with your former partner',
       'Prompt certification: signed Form C100 or Form A provided within 24 to 48 hours if mediation is not appropriate',
@@ -78,6 +80,8 @@ export const CORE_SERVICES: ServiceItem[] = [
     legalFramework: 'The Children Act 1989 establishes that children’s welfare is the court’s paramount consideration. Mediation empowers parents to retain decision-making control over their children’s upbringing, establishing cooperative parenting routines that adapt as children grow.',
     courtFormRequired: 'Form C100 (Child Arrangements Order)',
     typicalDuration: '2 to 3 structured 90-minute joint sessions',
+    metaTitle: 'Child Arrangements & Parenting Plans',
+    metaDescription: 'FMC-accredited child mediation for parenting plans, holiday rotas, and child arrangements. Child-first solutions without court battles.',
     keyBenefits: [
       'Children are kept out of adversarial courtroom conflict',
       'Tailored arrangements: flexible 50/50 care, alternate weekends, and school holiday rotas',
@@ -143,6 +147,8 @@ export const CORE_SERVICES: ServiceItem[] = [
     legalFramework: 'Under Section 25 of the Matrimonial Causes Act 1973, courts assess financial remedy based on housing needs, financial resources, earning capacity, standard of living, and contributions. Mediation applies these exact principles in a private, collaborative setting.',
     courtFormRequired: 'Form A (Notice of Intention to Proceed with Financial Dispute)',
     typicalDuration: '2 to 4 structured sessions following full disclosure',
+    metaTitle: 'Financial Settlements & Clean Breaks',
+    metaDescription: 'Comprehensive financial mediation for divorce & separation. Settle property equity, pensions, and maintenance for a binding Consent Order.',
     keyBenefits: [
       'Complete, transparent exchange of financial documentation without court subpoenas',
       'Realistic appraisal of the family home: buy-outs, transfers, or structured sale timings',
@@ -208,6 +214,8 @@ export const CORE_SERVICES: ServiceItem[] = [
     legalFramework: 'Separation disputes rarely exist in isolation; housing decisions dictate parenting schedules, and child routines influence financial needs. All-Issues Mediation treats these interconnected elements as a coherent whole, ensuring balanced solutions.',
     courtFormRequired: 'Form C100 and Form A',
     typicalDuration: '3 to 5 structured joint sessions',
+    metaTitle: 'All-Issues Family Mediation Pathways',
+    metaDescription: 'Unified family mediation resolving child parenting rotas, property division, and pensions together. Save legal fees with an accredited mediator.',
     keyBenefits: [
       'Comprehensive resolution: parenting routines, property division, and pensions coordinated together',
       'Reduces total separation costs by up to 80% compared to separate solicitor negotiations',

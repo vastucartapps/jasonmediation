@@ -226,6 +226,7 @@ const brandTs = `import { BrandConfig, ${config.countyData} } from '@mediation/c
 export const BRAND: BrandConfig = {
   brandId: '${config.slug}',
   brandName: '${config.name}',
+  shortName: '${config.name.replace(/Family Mediation/, 'Mediation').trim()}',
   legalEntityName: '${config.name} Ltd',
   siteUrl: '${config.siteUrl}',
   domain: '${config.slug}.co.uk',
@@ -272,8 +273,8 @@ import { Header, Footer, MobileStickyBar, generateLocalBusinessSchema } from '@m
 export const metadata: Metadata = {
   metadataBase: new URL(BRAND.siteUrl),
   title: {
-    default: \`\${BRAND.brandName} | FMC-Accredited Family Mediation & MIAM Assessments\`,
-    template: \`%s | \${BRAND.brandName}\`,
+    default: \`\${BRAND.brandName} | FMC Family Mediation & MIAM\`,
+    template: '%s',
   },
   description: BRAND.strapline,
   authors: [{ name: BRAND.brandName }],
@@ -327,11 +328,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-`;
+\`;
 fs.writeFileSync(path.join(targetDir, 'src', 'app', 'layout.tsx'), layoutTsx);
 
 // 10. src/app/contact/page.tsx
-const contactPageTsx = `import React from 'react';
+const contactPageTsx = \`import React from 'react';
 import { Metadata } from 'next';
 import { BRAND } from '../../config/brand';
 import {
@@ -347,11 +348,11 @@ import {
 
 export const metadata: Metadata = {
   title: \`Contact & Book MIAM Assessment | \${BRAND.brandName}\`,
-  description: \`Book your confidential MIAM assessment or inquire about family mediation with \${BRAND.brandName}. Appointments within 48 hours.\`,
+  description: \`Book your confidential MIAM assessment or inquire about family mediation with \${BRAND.brandName}. Appointments available within 48 hours.\`,
 };
 
 export default function ContactPage() {
-  const breadcrumbs = [{ label: 'Contact & Bookings', href: '/contact' }];
+  const breadcrumbs = [{ label: 'Contact & Bookings', href: '/contact/' }];
 
   return (
     <div className="w-full bg-white">
@@ -387,29 +388,29 @@ export default function ContactPage() {
 
             <div className="lg:col-span-5 space-y-6">
               <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
-                <h2 className="text-lg font-bold text-slate-900 mb-4">Direct Contact Information</h2>
+                <h2 className="text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">Direct Practice Information</h2>
                 <div className="space-y-4 text-sm text-slate-700">
                   <div className="flex items-center gap-3">
-                    <PhoneCallIcon className="w-5 h-5 text-amber-600" />
+                    <PhoneCallIcon className="w-5 h-5 text-amber-600 shrink-0" />
                     <a href={\`tel:\${BRAND.phone}\`} className="font-semibold text-slate-900 hover:text-amber-600">
                       {BRAND.formattedPhone}
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MailIcon className="w-5 h-5 text-amber-600" />
-                    <a href={\`mailto:\${BRAND.contactEmail}\`} className="text-slate-700 hover:text-amber-600">
+                    <MailIcon className="w-5 h-5 text-amber-600 shrink-0" />
+                    <span className="select-all font-mono font-bold text-slate-900">
                       {BRAND.contactEmail}
-                    </a>
+                    </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <ClockIcon className="w-5 h-5 text-amber-600" />
+                    <ClockIcon className="w-5 h-5 text-amber-600 shrink-0" />
                     <span>Monday – Friday: 8:00 AM – 6:30 PM</span>
                   </div>
                 </div>
               </div>
 
               <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
-                <h3 className="text-base font-bold text-slate-900 mb-3">Statutory Court Certificates</h3>
+                <h2 className="text-base font-bold text-slate-900 mb-3">Statutory Court Certificates</h2>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
                   Signed Form C100, Form A, and Form FM1 certificates for family court applications are issued within 24 to 48 hours following your individual MIAM assessment.
                 </p>
@@ -421,7 +422,7 @@ export default function ContactPage() {
     </div>
   );
 }
-`;
+\`;
 fs.writeFileSync(path.join(targetDir, 'src', 'app', 'contact', 'page.tsx'), contactPageTsx);
 
 // 11. public/.htaccess

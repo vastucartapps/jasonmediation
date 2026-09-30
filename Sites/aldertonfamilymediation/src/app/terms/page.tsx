@@ -4,13 +4,13 @@ import { ALDERTON_BRAND } from '../../config/brand';
 import { Breadcrumbs } from '@mediation/core';
 
 export const metadata: Metadata = {
-  title: `Terms of Engagement | ${ALDERTON_BRAND.brandName}`,
+  title: `Terms of Engagement | ${ALDERTON_BRAND.shortName}`,
   description:
     'Terms of engagement, FMC mediation code of conduct, assessment cancellation policies, and fee arrangements.',
 };
 
 export default function TermsPage() {
-  const breadcrumbs = [{ label: 'Terms of Engagement', href: '/terms' }];
+  const breadcrumbs = [{ label: 'Terms of Engagement', href: '/terms/' }];
 
   return (
     <div className="w-full bg-white">

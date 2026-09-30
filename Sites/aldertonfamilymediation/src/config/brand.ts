@@ -3,6 +3,7 @@ import { BrandConfig, SITE1_COUNTIES, ALDERTON_CONTACT } from '@mediation/core';
 export const ALDERTON_BRAND: BrandConfig = {
   brandId: 'alderton',
   brandName: 'Alderton Family Mediation',
+  shortName: 'Alderton Mediation',
   legalEntityName: 'Alderton Family Mediation Services Ltd',
   siteUrl: 'https://www.aldertonfamilymediation.co.uk',
   domain: 'aldertonfamilymediation.co.uk',

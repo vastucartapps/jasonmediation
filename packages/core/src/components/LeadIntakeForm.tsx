@@ -57,21 +57,27 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
       GLOBAL_CONTACT.leadSubmitEndpoint ||
       (leadRecipientEmail
         ? `https://formsubmit.co/ajax/${leadRecipientEmail}`
-        : 'https://formsubmit.co/ajax/abdf15fb72b87ae3039219a094638be0');
+        : 'https://formsubmit.co/ajax/venturevidyahindi@gmail.com');
+
+    const ukTimeString = new Date().toLocaleString('en-GB', {
+      timeZone: 'Europe/London',
+      dateStyle: 'full',
+      timeStyle: 'medium',
+    });
 
     const payload = {
-      name: formData.fullName,
-      phone: formData.phone,
-      email: formData.email,
-      town: formData.town || 'General Catchment',
-      service: formData.service,
-      preferredTime: formData.preferredTime,
-      notes: formData.notes || 'None provided',
-      brand: brandName,
-      submittedAt: new Date().toISOString(),
-      pageUrl: typeof window !== 'undefined' ? window.location.href : '',
-      _subject: `[New Lead - ${brandName}] ${formData.service} (${formData.town || 'General Catchment'})`,
-      _template: 'table',
+      'Client Full Name': formData.fullName,
+      'Contact Telephone': formData.phone,
+      'Email Address': formData.email,
+      'Town / Location Hub': formData.town || 'General Practice Catchment',
+      'Mediation Service Pathway': formData.service,
+      'Preferred Contact Window': formData.preferredTime,
+      'Case Notes & Background': formData.notes || 'None provided',
+      'Practice Brand Entity': brandName,
+      'Submission Timestamp (UK)': ukTimeString,
+      'Originating Page URL': typeof window !== 'undefined' ? window.location.href : '',
+      _subject: `⚖️ Direct MIAM Booking: ${formData.fullName} (${formData.town || 'General'}) [${brandName}]`,
+      _template: 'box',
       _captcha: 'false',
       _replyto: formData.email,
     };

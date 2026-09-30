@@ -66,6 +66,8 @@ export interface ServiceItem {
   faqs: FAQItem[];
   heroImage: string;
   cardImage?: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 export interface ArticleImage {
@@ -100,6 +102,8 @@ export interface CommonPitfall {
 export interface BlogPost {
   slug: string;
   title: string;
+  metaTitle?: string;
+  metaDescription?: string;
   clusterNumber: string;
   clusterName: string;
   summary: string;
@@ -154,8 +158,9 @@ export interface GuideArticle {
 }
 
 export interface BrandConfig {
-  brandId: 'alderton' | 'cavendish';
+  brandId: 'alderton' | 'cavendish' | string;
   brandName: string;
+  shortName: string;
   legalEntityName: string;
   siteUrl: string;
   domain: string;

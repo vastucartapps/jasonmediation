@@ -6,11 +6,11 @@ import { Header, Footer, MobileStickyBar, generateLocalBusinessSchema } from '@m
 export const metadata: Metadata = {
   metadataBase: new URL(CAVENDISH_BRAND.siteUrl),
   title: {
-    default: `${CAVENDISH_BRAND.brandName} | FMC-Accredited Family Mediation & MIAM Assessments`,
-    template: `%s | ${CAVENDISH_BRAND.brandName}`,
+    default: `${CAVENDISH_BRAND.brandName} | FMC-Accredited Mediation`,
+    template: '%s',
   },
   description:
-    'Premier FMC-accredited family mediation practice serving Suffolk, Essex, Kent, and Sussex. Discrete MIAM assessment certification, child arrangements, and financial clean breaks.',
+    'FMC-accredited family mediation practice serving the South East. Rapid MIAM assessments, financial clean breaks & child arrangements. Book in 48 hours.',
   keywords: [
     'family mediation Suffolk',
     'MIAM certificate Ipswich',

@@ -6,11 +6,11 @@ import { Header, Footer, MobileStickyBar, generateLocalBusinessSchema } from '@m
 export const metadata: Metadata = {
   metadataBase: new URL(ALDERTON_BRAND.siteUrl),
   title: {
-    default: `${ALDERTON_BRAND.brandName} | FMC-Accredited Family Mediation & MIAM Assessments`,
-    template: `%s | ${ALDERTON_BRAND.brandName}`,
+    default: `${ALDERTON_BRAND.brandName} | FMC-Accredited Mediation`,
+    template: '%s',
   },
   description:
-    'FMC-accredited family mediation practice serving Leicestershire, Rutland, Lincolnshire, and Nottinghamshire. Rapid MIAM court certificates, child arrangements, and financial clean breaks.',
+    'FMC-accredited family mediation practice serving the East Midlands. Rapid MIAM assessments, child rotas & financial clean breaks. Book online in 48 hours.',
   keywords: [
     'family mediation Leicestershire',
     'MIAM certificate Leicester',

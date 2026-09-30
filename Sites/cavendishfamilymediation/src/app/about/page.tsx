@@ -13,13 +13,13 @@ import {
 } from '@mediation/core';
 
 export const metadata: Metadata = {
-  title: `About Our FMC-Accredited Practice | ${CAVENDISH_BRAND.brandName}`,
+  title: `About Our FMC Practice | ${CAVENDISH_BRAND.brandName}`,
   description:
-    'Learn about our Family Mediation Council (FMC) accreditation, regulatory compliance, professional mediation ethics, and child-focused dispute resolution standards across the South East.',
+    'Learn about our FMC accreditation, regulatory compliance, professional mediation ethics, and child-focused dispute resolution standards across the South East.',
 };
 
 export default function AboutPage() {
-  const breadcrumbs = [{ label: 'About Practice', href: '/about' }];
+  const breadcrumbs = [{ label: 'About Practice', href: '/about/' }];
 
   return (
     <div className="w-full bg-[#FAF9F5]">
@@ -110,7 +110,7 @@ export default function AboutPage() {
               </p>
             </div>
             <Link
-              href="/contact"
+              href="/contact/"
               className="flex-shrink-0 px-6 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-xs shadow-md transition"
             >
               Book Confidential Assessment

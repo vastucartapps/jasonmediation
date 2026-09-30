@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
   if (!post) return { title: 'Article Not Found' };
 
   return {
-    title: `${post.title} | ${ALDERTON_BRAND.brandName}`,
-    description: post.summary,
+    title: post.metaTitle || post.title.slice(0, 55),
+    description: post.metaDescription || post.summary.slice(0, 155),
     keywords: [
       post.targetKeyword,
       'family mediation East Midlands',
@@ -36,9 +36,9 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
       'MIAM assessment',
     ],
     openGraph: {
-      title: post.title,
-      description: post.summary,
-      url: `${ALDERTON_BRAND.siteUrl}/blog/${post.slug}`,
+      title: post.metaTitle || post.title.slice(0, 55),
+      description: post.metaDescription || post.summary.slice(0, 155),
+      url: `${ALDERTON_BRAND.siteUrl}/blog/${post.slug}/`,
       type: 'article',
       images: [
         {

@@ -14,13 +14,13 @@ import {
 } from '@mediation/core';
 
 export const metadata: Metadata = {
-  title: 'Regional Locations & Family Courts | Leicestershire, Rutland, Lincs & Notts',
+  title: `Mediation Practice Locations | ${ALDERTON_BRAND.shortName}`,
   description:
-    'Comprehensive regional directory of our 12 family mediation practice centres and designated Family Courts across Leicestershire, Rutland, Lincolnshire, and Nottinghamshire.',
+    'Regional directory of our accredited family mediation centres and designated Family Courts across the East Midlands. Book confidential MIAM appointments.',
 };
 
 export default function LocationsPage() {
-  const breadcrumbs = [{ label: 'Regional Locations', href: '/locations' }];
+  const breadcrumbs = [{ label: 'Regional Locations', href: '/locations/' }];
 
   const locationFaqs = [
     {
@@ -98,7 +98,7 @@ export default function LocationsPage() {
 
                       <h3 className="text-xl font-serif font-bold text-slate-950 mb-2">
                         <Link
-                          href={`/locations/${county.slug}/${town.slug}`}
+                          href={`/locations/${county.slug}/${town.slug}/`}
                           className="hover:text-amber-700 transition"
                         >
                           Family Mediation {town.name}
@@ -126,14 +126,14 @@ export default function LocationsPage() {
 
                     <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
                       <Link
-                        href={`/locations/${county.slug}/${town.slug}`}
+                        href={`/locations/${county.slug}/${town.slug}/`}
                         className="inline-flex items-center gap-1 text-xs font-bold text-amber-700 hover:text-amber-900 transition group"
                       >
                         <span>Explore {town.name} Practice Hub &amp; Court Guidance</span>
                         <ArrowRightIcon className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                       </Link>
                       <Link
-                        href="/contact"
+                        href="/contact/"
                         className="text-xs font-bold text-slate-900 hover:text-amber-700 underline"
                       >
                         Book MIAM

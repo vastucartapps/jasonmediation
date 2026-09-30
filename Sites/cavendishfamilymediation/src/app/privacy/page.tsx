@@ -4,13 +4,13 @@ import { CAVENDISH_BRAND } from '../../config/brand';
 import { Breadcrumbs } from '@mediation/core';
 
 export const metadata: Metadata = {
-  title: `Privacy & Confidentiality Policy | ${CAVENDISH_BRAND.brandName}`,
+  title: `Privacy & Confidentiality Policy | ${CAVENDISH_BRAND.shortName}`,
   description:
     'Our commitment to professional confidentiality, GDPR compliance, and without-prejudice legal privilege in UK family mediation.',
 };
 
 export default function PrivacyPage() {
-  const breadcrumbs = [{ label: 'Privacy Policy', href: '/privacy' }];
+  const breadcrumbs = [{ label: 'Privacy Policy', href: '/privacy/' }];
 
   return (
     <div className="w-full bg-[#FAF9F5]">

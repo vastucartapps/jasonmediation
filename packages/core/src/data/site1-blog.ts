@@ -4,6 +4,8 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "who-keeps-childrens-passports-after-separation",
     "title": "Who Keeps the Children's Passports After Separation? UK Family Law & Mediation Guide",
+    "metaTitle": "Who Keeps Child Passports After Separation? UK Guide",
+    "metaDescription": "UK family law breakdown on child passport retention, travel consent letters, and resolving holiday disputes out of court through FMC-accredited mediation.",
     "clusterNumber": "01",
     "clusterName": "Children – Holidays, Passports & Travel",
     "summary": "A definitive UK legal breakdown for separated parents regarding child passport retention, international travel consent rules, and avoiding emergency court applications under the Child Abduction Act 1984.",
@@ -114,6 +116,8 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "dividing-six-week-summer-holiday-separated-parents",
     "title": "Dividing the Six-Week Summer Holiday: Practical Solutions for Separated Parents",
+    "metaTitle": "Dividing Six-Week Summer Holidays | Separated Parents",
+    "metaDescription": "Practical co-parenting rotas and schedules for the six-week school summer break. Create a fair parenting plan without court battles via accredited mediation.",
     "clusterNumber": "01",
     "clusterName": "Children – Holidays, Passports & Travel",
     "summary": "How separated parents in England negotiate fair, stress-free summer holiday schedules, annual leave rotas, and handover protocols through mediation.",
@@ -224,6 +228,8 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "parents-disagree-taking-child-abroad-holiday-mediation",
     "title": "When Separated Parents Disagree on Taking a Child Abroad: Mediation & Court Rules",
+    "metaTitle": "Dispute Taking Child Abroad on Holiday | UK Mediation",
+    "metaDescription": "Legal rules under Child Abduction Act 1984 for foreign travel with children. How to resolve holiday consent disputes and obtain signed MIAM certificates.",
     "clusterNumber": "01",
     "clusterName": "Children – Holidays, Passports & Travel",
     "summary": "Navigating parental disputes over foreign travel, destination safety concerns, vaccination requirements, and obtaining a Specific Issue Order in England & Wales.",
@@ -333,6 +339,8 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "neither-partner-can-afford-to-buy-out-house-mediation",
     "title": "Neither Partner Can Afford to Buy Out the House: Solutions in Family Mediation",
+    "metaTitle": "Neither Partner Can Afford House Buyout | UK Options",
+    "metaDescription": "What happens when neither spouse can afford to buy out the matrimonial home. Explore Mesher orders, deferred sales, and equity division in family mediation.",
     "clusterNumber": "02",
     "clusterName": "Property, Mortgages & Negative Equity",
     "summary": "Practical legal pathways when separating spouses cannot afford a mortgage buyout: deferred sale orders, Mesher orders, property downsizing, and clean breaks.",
@@ -443,6 +451,8 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "who-pays-mortgage-while-separated-before-divorce",
     "title": "Who Pays the Mortgage While Separated Before Divorce? Legal Rights & Mediation Rules",
+    "metaTitle": "Who Pays Mortgage While Separated? UK Law & Rights",
+    "metaDescription": "UK legal rights on joint mortgage payments during separation. Protect credit scores, agree interim occupation arrangements, and settle marital finances fairly.",
     "clusterNumber": "02",
     "clusterName": "Property, Mortgages & Negative Equity",
     "summary": "Clarifying joint and several mortgage liability, occupation rent claims, maintaining credit ratings, and structuring interim financial agreements during separation.",
@@ -552,6 +562,8 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "delay-selling-family-home-mesher-agreement-mediation",
     "title": "Delaying the Sale of the Family Home: Mesher Agreements & Mediation in the UK",
+    "metaTitle": "Delaying Family Home Sale: Mesher Agreements UK",
+    "metaDescription": "How Mesher orders and Martin orders defer family home sales until children finish education. Safeguard housing security through structured family mediation.",
     "clusterNumber": "02",
     "clusterName": "Property, Mortgages & Negative Equity",
     "summary": "Everything you need to know about Mesher Orders, Martin Orders, deferred sale trusts, trigger events, and preserving children’s stability through mediation.",
@@ -662,6 +674,8 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "how-to-agree-50-50-parenting-rota-mediation",
     "title": "How to Agree a 50/50 Shared Parenting Rota: Mediation Protocols & Schedules",
+    "metaTitle": "50/50 Shared Parenting Rota: UK Mediation Protocols",
+    "metaDescription": "How to build a realistic 50/50 equal-shared parenting schedule. Practical 2-2-3 and alternate week rotas that put children first and avoid family court.",
     "clusterNumber": "03",
     "clusterName": "Shared Care, Rotas & Scheduling",
     "summary": "A complete practical guide to negotiating equal shared care arrangements, 2-2-3 vs 7-7 schedules, school logistics, and child wellbeing.",
@@ -771,6 +785,8 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "when-is-miam-legally-required-c100-form-a",
     "title": "When is a MIAM Legally Required? Court Exemptions, Form C100 & Form A Rules",
+    "metaTitle": "When is a MIAM Compulsory? C100 & Form A Court Rules",
+    "metaDescription": "Statutory MIAM rules under Children and Families Act 2014. Understand court exemptions, mediator sign-offs, and urgent C100 / Form A procedures.",
     "clusterNumber": "08",
     "clusterName": "MIAM, Court Forms & Procedures",
     "summary": "Everything you need to know about statutory MIAM requirements, the April 2024 Family Procedure Rules crackdown, and accredited mediator certification.",

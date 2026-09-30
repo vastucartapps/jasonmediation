@@ -18,18 +18,20 @@ export const Header: React.FC<HeaderProps> = ({ brand, brandVariant = 'alderton'
   const isAlderton = brandVariant === 'alderton';
 
   const navLinks = [
-    { href: '/services', label: 'Mediation Services' },
-    { href: '/services/miam-assessment', label: 'MIAM Assessments' },
-    { href: '/locations', label: 'Locations' },
-    { href: '/blog', label: 'Guides & Advice' },
-    { href: '/about', label: 'About Practice' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/services/', label: 'Mediation Services' },
+    { href: '/services/miam-assessment/', label: 'MIAM Assessments' },
+    { href: '/locations/', label: 'Locations' },
+    { href: '/blog/', label: 'Guides & Advice' },
+    { href: '/about/', label: 'About Practice' },
+    { href: '/contact/', label: 'Contact' },
   ];
 
   const isLinkActive = (href: string) => {
-    if (href === '/') return pathname === '/';
-    if (href === '/services') return pathname === '/services';
-    return pathname === href || pathname.startsWith(href + '/');
+    const cleanPath = pathname.endsWith('/') ? pathname : pathname + '/';
+    const cleanHref = href.endsWith('/') ? href : href + '/';
+    if (cleanHref === '/') return cleanPath === '/';
+    if (cleanHref === '/services/') return cleanPath === '/services/';
+    return cleanPath === cleanHref || cleanPath.startsWith(cleanHref);
   };
 
   return (
@@ -185,42 +187,42 @@ export const Header: React.FC<HeaderProps> = ({ brand, brandVariant = 'alderton'
 
           <div className="space-y-1">
             <Link
-              href="/services"
+              href="/services/"
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50 transition"
             >
               Mediation Services &amp; Pathways
             </Link>
             <Link
-              href="/services/miam-assessment"
+              href="/services/miam-assessment/"
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50 transition"
             >
               MIAM Assessment &amp; Court Forms
             </Link>
             <Link
-              href="/locations"
+              href="/locations/"
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50 transition"
             >
               Regional Practice Locations
             </Link>
             <Link
-              href="/blog"
+              href="/blog/"
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50 transition"
             >
               Dispute Resolution Guides &amp; Blog
             </Link>
             <Link
-              href="/about"
+              href="/about/"
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50 transition"
             >
               About Practice &amp; Mediators
             </Link>
             <Link
-              href="/contact"
+              href="/contact/"
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50 transition"
             >

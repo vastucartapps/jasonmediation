@@ -36,12 +36,12 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   if (!service) return { title: 'Service Not Found' };
 
   return {
-    title: `${service.title} | ${ALDERTON_BRAND.brandName}`,
-    description: service.summary,
+    title: `${service.navLabel} | ${ALDERTON_BRAND.brandName}`,
+    description: service.metaDescription || service.summary.slice(0, 155),
     openGraph: {
-      title: `${service.title} | ${ALDERTON_BRAND.brandName}`,
-      description: service.summary,
-      url: `${ALDERTON_BRAND.siteUrl}/services/${service.slug}`,
+      title: `${service.navLabel} | ${ALDERTON_BRAND.brandName}`,
+      description: service.metaDescription || service.summary.slice(0, 155),
+      url: `${ALDERTON_BRAND.siteUrl}/services/${service.slug}/`,
       type: 'website',
       images: [
         {
@@ -64,8 +64,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   }
 
   const breadcrumbs = [
-    { label: 'Services', href: '/services' },
-    { label: service.navLabel, href: `/services/${service.slug}` },
+    { label: 'Services', href: '/services/' },
+    { label: service.navLabel, href: `/services/${service.slug}/` },
   ];
 
   const serviceSchema = generateServiceSchema(ALDERTON_BRAND, service);
@@ -112,7 +112,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 w-full sm:w-auto">
                 <Link
-                  href="/contact"
+                  href="/contact/"
                   className="px-6 py-3.5 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-md transition text-center"
                 >
                   Book Assessment
@@ -255,7 +255,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               c.towns.map((town) => (
                 <Link
                   key={town.slug}
-                  href={`/locations/${town.countySlug}/${town.slug}/${service.slug}`}
+                  href={`/locations/${town.countySlug}/${town.slug}/${service.slug}/`}
                   className="px-3 py-1.5 rounded-lg bg-white border-2 border-slate-200 text-slate-900 font-bold hover:border-amber-500 hover:text-amber-900 transition"
                 >
                   {service.navLabel} in {town.name}
@@ -285,7 +285,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   </h2>
                 </div>
                 <Link
-                  href="/blog"
+                  href="/blog/"
                   className="inline-flex items-center gap-1 text-xs font-bold text-amber-700 hover:text-amber-900 hover:underline"
                 >
                   <span>Browse Family Law &amp; Mediation Guides</span>
@@ -307,7 +307,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                         <span className="text-[11px] font-semibold text-slate-600">{article.readingTime}</span>
                       </div>
                       <h3 className="font-serif font-bold text-slate-950 text-base mb-2 group-hover:text-amber-800 transition">
-                        <Link href={`/blog/${article.slug}`}>
+                        <Link href={`/blog/${article.slug}/`}>
                           {article.title}
                         </Link>
                       </h3>
@@ -343,7 +343,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             {CORE_SERVICES.filter((s) => s.slug !== service.slug).map((other) => (
               <Link
                 key={other.slug}
-                href={`/services/${other.slug}`}
+                href={`/services/${other.slug}/`}
                 className="p-5 rounded-2xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700 hover:border-amber-400 transition group flex flex-col justify-between"
               >
                 <div>

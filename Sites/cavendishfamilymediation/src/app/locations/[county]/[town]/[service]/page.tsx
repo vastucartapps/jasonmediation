@@ -54,8 +54,8 @@ export async function generateMetadata({ params }: LocationServicePageProps): Pr
   if (!town || !service) return { title: 'Page Not Found' };
 
   return {
-    title: `${service.title} in ${town.name} Near Me | FMC Accredited Practice`,
-    description: `FMC-accredited ${service.title} in ${town.name}, ${town.county}. Rapid appointments, statutory certification paperwork, and expert mediation. Serving families across ${town.name} and surrounding communities.`,
+    title: `${service.navLabel} in ${town.name} | Cavendish`,
+    description: `Accredited ${service.navLabel} in ${town.name}, ${town.county}. Fast MIAM certificates, fair agreements & court forms. Book consultation in 48 hours.`,
     keywords: [
       `${service.title} in ${town.name}`,
       `${service.title} near me ${town.name}`,
@@ -64,6 +64,12 @@ export async function generateMetadata({ params }: LocationServicePageProps): Pr
       `${town.name} ${service.navLabel}`,
       `${town.name} family dispute resolution`,
     ],
+    other: {
+      'geo.region': 'GB-ENG',
+      'geo.placename': `${town.name}, ${town.county}`,
+      'geo.position': `${town.coordinates.latitude};${town.coordinates.longitude}`,
+      'ICBM': `${town.coordinates.latitude}, ${town.coordinates.longitude}`,
+    },
   };
 }
 
@@ -78,9 +84,9 @@ export default async function LocationServicePage({ params }: LocationServicePag
   }
 
   const breadcrumbs = [
-    { label: 'Locations', href: '/locations' },
-    { label: town.name, href: `/locations/${county.slug}/${town.slug}` },
-    { label: service.navLabel, href: `/locations/${county.slug}/${town.slug}/${service.slug}` },
+    { label: 'Locations', href: '/locations/' },
+    { label: town.name, href: `/locations/${county.slug}/${town.slug}/` },
+    { label: service.navLabel, href: `/locations/${county.slug}/${town.slug}/${service.slug}/` },
   ];
 
   const localSchema = generateLocalBusinessSchema(CAVENDISH_BRAND, town, service);
@@ -152,7 +158,7 @@ export default async function LocationServicePage({ params }: LocationServicePag
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 w-full sm:w-auto">
                 <Link
-                  href="/contact"
+                  href="/contact/"
                   className="px-6 py-3.5 rounded-full bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-sm shadow-md transition text-center"
                 >
                   Book Assessment in {town.name}
@@ -220,7 +226,7 @@ export default async function LocationServicePage({ params }: LocationServicePag
               </p>
               <div className="pt-2 flex items-center gap-4">
                 <Link
-                  href="/contact"
+                  href="/contact/"
                   className="inline-flex items-center gap-2 text-sm font-bold text-emerald-800 hover:text-emerald-950 transition"
                 >
                   <span>Book confidential {service.navLabel.toLowerCase()} session</span>
@@ -318,6 +324,14 @@ export default async function LocationServicePage({ params }: LocationServicePag
       {/* Local Court Authority */}
       <section className="py-16 sm:py-20 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-10">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 block mb-2">
+              Court Authority &amp; Regional Catchment
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-950">
+              Designated Family Court Authority &amp; Local Catchment for {town.name}
+            </h2>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-7">
               <CourtAuthorityCard
@@ -330,7 +344,7 @@ export default async function LocationServicePage({ params }: LocationServicePag
             <div className="lg:col-span-5 space-y-6">
               <div className="bg-stone-50 rounded-2xl p-6 sm:p-8 border border-stone-200 shadow-sm">
                 <h3 className="text-lg font-serif font-bold text-stone-900 mb-3">
-                  Serving {town.name} & Surrounding Communities
+                  Serving {town.name} &amp; Surrounding Communities
                 </h3>
                 <p className="text-xs text-stone-800 font-medium mb-4 leading-relaxed">
                   Our FMC-accredited practitioners support separating parents and couples across {town.name} and nearby areas:
@@ -362,7 +376,7 @@ export default async function LocationServicePage({ params }: LocationServicePag
                   {CORE_SERVICES.filter((s) => s.slug !== service.slug).map((other) => (
                     <Link
                       key={other.slug}
-                      href={`/locations/${county.slug}/${town.slug}/${other.slug}`}
+                      href={`/locations/${county.slug}/${town.slug}/${other.slug}/`}
                       className="group flex items-center justify-between p-3 rounded-xl bg-stone-50 hover:bg-emerald-50/70 border border-stone-200 hover:border-emerald-300 transition"
                     >
                       <span className="text-xs font-bold text-stone-900 group-hover:text-emerald-950 transition">
@@ -443,7 +457,7 @@ export default async function LocationServicePage({ params }: LocationServicePag
                   </h2>
                 </div>
                 <Link
-                  href="/blog"
+                  href="/blog/"
                   className="inline-flex items-center gap-1 text-xs font-bold text-emerald-800 hover:text-emerald-950 hover:underline"
                 >
                   <span>Browse Family Law &amp; Mediation Guides</span>
@@ -464,7 +478,7 @@ export default async function LocationServicePage({ params }: LocationServicePag
                         </span>
                       </div>
                       <h3 className="font-serif font-bold text-stone-950 text-xl sm:text-2xl hover:text-emerald-800 transition">
-                        <Link href={`/blog/${serviceArticles[0].slug}`}>
+                        <Link href={`/blog/${serviceArticles[0].slug}/`}>
                           {serviceArticles[0].title}
                         </Link>
                       </h3>
@@ -474,7 +488,7 @@ export default async function LocationServicePage({ params }: LocationServicePag
                     </div>
                     <div className="lg:col-span-4 flex flex-col justify-center items-start lg:items-end">
                       <Link
-                        href={`/blog/${serviceArticles[0].slug}`}
+                        href={`/blog/${serviceArticles[0].slug}/`}
                         className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs sm:text-sm shadow-sm transition group"
                       >
                         <span>Read Complete Guidance on {serviceArticles[0].clusterName}</span>
@@ -498,7 +512,7 @@ export default async function LocationServicePage({ params }: LocationServicePag
                           <span className="text-[11px] font-semibold text-stone-600">{article.readingTime}</span>
                         </div>
                         <h3 className="font-serif font-bold text-stone-950 text-base mb-2 group-hover:text-emerald-900 transition">
-                          <Link href={`/blog/${article.slug}`}>
+                          <Link href={`/blog/${article.slug}/`}>
                             {article.title}
                           </Link>
                         </h3>
@@ -531,7 +545,7 @@ export default async function LocationServicePage({ params }: LocationServicePag
               .map((sister) => (
                 <Link
                   key={sister.slug}
-                  href={`/locations/${county.slug}/${sister.slug}/${service.slug}`}
+                  href={`/locations/${county.slug}/${sister.slug}/${service.slug}/`}
                   className="px-3 py-1.5 rounded-lg bg-white border border-stone-300 text-stone-800 text-xs font-bold hover:border-emerald-700 hover:text-emerald-950 transition shadow-2xs"
                 >
                   {service.title} in {sister.name} &rarr;

@@ -232,7 +232,7 @@ export default function HomePage() {
                   <div>
                     <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-950 mb-3">
                       <Link
-                        href={`/services/${service.slug}`}
+                        href={`/services/${service.slug}/`}
                         className="hover:text-amber-800 transition"
                       >
                         {service.title}
@@ -259,7 +259,7 @@ export default function HomePage() {
                     {service.courtFormRequired || 'Legally binding options'}
                   </span>
                   <Link
-                    href={`/services/${service.slug}`}
+                    href={`/services/${service.slug}/`}
                     className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-amber-800 hover:text-amber-950 transition"
                   >
                     <span>Full service details</span>
@@ -311,7 +311,7 @@ export default function HomePage() {
                     {county.towns.map((town) => (
                       <Link
                         key={town.slug}
-                        href={`/locations/${county.slug}/${town.slug}`}
+                        href={`/locations/${county.slug}/${town.slug}/`}
                         className="group flex items-center justify-between py-2 px-2.5 rounded-lg hover:bg-slate-100 text-xs sm:text-sm font-bold text-slate-900 transition"
                       >
                         <span className="group-hover:text-amber-800 font-bold">
@@ -327,7 +327,7 @@ export default function HomePage() {
 
                 <div className="pt-4 mt-4 border-t border-slate-200">
                   <Link
-                    href={`/locations#${county.slug}`}
+                    href={`/locations/#${county.slug}`}
                     className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-amber-800 hover:text-amber-950 transition group"
                   >
                     <span>Explore All {county.name} Practice Hubs &amp; Family Courts</span>
@@ -399,7 +399,7 @@ export default function HomePage() {
 
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
-              href="/contact"
+              href="/contact/"
               className="px-7 py-4 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-md transition"
             >
               Book Your Confidential Assessment
