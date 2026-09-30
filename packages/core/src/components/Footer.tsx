@@ -216,7 +216,8 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
               <div className="w-12 h-12 rounded-lg bg-white p-1.5 shadow-sm flex items-center justify-center shrink-0">
                 <Image
                   src="/images/family-mediation-council.webp"
-                  alt="Family Mediation Council Accredited"
+                  alt="Family Mediation Council (FMC) Regulatory Accreditation Crest"
+                  title="Family Mediation Council (FMC) - Regulated Practice"
                   width={40}
                   height={40}
                   className="max-h-full max-w-full object-contain"
@@ -236,7 +237,8 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
               <div className="w-12 h-12 rounded-lg bg-white p-1.5 shadow-sm flex items-center justify-center shrink-0">
                 <Image
                   src="/images/college-of-mediators.webp"
-                  alt="College of Mediators Approved Member"
+                  alt="College of Mediators Approved Practice Member Logo"
+                  title="College of Mediators - Approved Practice Member"
                   width={40}
                   height={40}
                   className="max-h-full max-w-full object-contain"
@@ -256,7 +258,8 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
               <div className="w-12 h-12 rounded-lg bg-white p-1.5 shadow-sm flex items-center justify-center shrink-0">
                 <Image
                   src="/images/resolution.webp"
-                  alt="Resolution First for Family Law"
+                  alt="Resolution First for Family Law Accredited Member Logo"
+                  title="Resolution - First for Family Law Accredited Practice"
                   width={40}
                   height={40}
                   className="max-h-full max-w-full object-contain"

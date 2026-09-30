@@ -58,6 +58,15 @@ export function generateLocalBusinessSchema(
     email: brand.contactEmail,
     priceRange: '££',
     description,
+    logo: {
+      '@type': 'ImageObject',
+      '@id': `${brand.siteUrl}/#logo`,
+      url: `${brand.siteUrl}/icon.svg`,
+      contentUrl: `${brand.siteUrl}/icon.svg`,
+      caption: `${brand.brandName} - FMC Accredited Practice Crest`,
+      width: 512,
+      height: 512,
+    },
     image: {
       '@type': 'ImageObject',
       '@id': `${pageUrl}#primaryimage`,
@@ -400,9 +409,9 @@ export function generateArticleSchema(brand: BrandConfig, article: GuideArticle)
       name: brand.brandName,
       logo: {
         '@type': 'ImageObject',
-        url: `${brand.siteUrl}/images/sincere-mediation-session.webp`,
-        width: 1200,
-        height: 675,
+        url: `${brand.siteUrl}/icon.svg`,
+        width: 512,
+        height: 512,
       },
     },
     datePublished: '2026-09-15T09:00:00+01:00',

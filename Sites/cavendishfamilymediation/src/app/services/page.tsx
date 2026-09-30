@@ -92,7 +92,8 @@ export default function ServicesPage() {
                 <div className="relative h-52 w-full overflow-hidden bg-emerald-950">
                   <Image
                     src={service.cardImage || service.heroImage}
-                    alt={service.title}
+                    alt={`${service.title} - Accredited Family Mediation Services from ${CAVENDISH_BRAND.brandName}`}
+                    title={`${service.title} - ${CAVENDISH_BRAND.brandName}`}
                     fill
                     sizes="(max-width: 768px) 100vw, 600px"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-300"

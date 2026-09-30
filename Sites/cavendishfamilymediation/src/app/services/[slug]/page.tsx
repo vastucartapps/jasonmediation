@@ -159,7 +159,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             <div className="lg:col-span-6 relative aspect-video rounded-2xl overflow-hidden border-2 border-stone-200 shadow-md bg-stone-100">
               <Image
                 src={service.heroImage}
-                alt={service.title}
+                alt={`${service.title} - FMC Accredited UK Mediation Practice - ${CAVENDISH_BRAND.brandName}`}
+                title={`${service.title} - ${CAVENDISH_BRAND.brandName}`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 600px"
                 className="object-cover object-center"

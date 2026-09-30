@@ -206,8 +206,8 @@ export default async function LocationServicePage({ params }: LocationServicePag
             <div className="lg:col-span-6 relative aspect-video rounded-2xl overflow-hidden border-2 border-slate-200 shadow-md bg-slate-900 group">
               <Image
                 src={service.cardImage || service.heroImage}
-                alt={`FMC accredited ${service.title} session for separating parents and couples in ${town.name}, ${town.county}`}
-                title={`FMC Accredited ${service.title} in ${town.name} - Official Family Mediation`}
+                alt={`${service.title} in ${town.name}, ${town.county} - FMC Accredited ${ALDERTON_BRAND.brandName}`}
+                title={`${service.title} in ${town.name} - ${ALDERTON_BRAND.brandName}`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 600px"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-300"

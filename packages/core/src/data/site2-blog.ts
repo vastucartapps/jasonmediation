@@ -389,17 +389,17 @@ export const SITE2_BLOG_POSTS: BlogPost[] = [
     "images": [
       {
         "url": "/images/child-arrangements-plan.webp",
-        "alt": "Parents reviewing transit map and travel expenses schedule",
+        "alt": "Parents reviewing transit map and travel expenses schedule from Cavendish Family Mediation",
         "caption": "Calculating travel mileage and midpoint handover stations in family mediation."
       },
       {
         "url": "/images/parenting-schedule-plan.webp",
-        "alt": "Calendar illustrating long-distance weekend handover arrangements",
+        "alt": "Calendar illustrating long-distance weekend handover arrangements from Cavendish Family Mediation",
         "caption": "Structuring travel timelines and weekend collection protocols in a Parenting Plan."
       },
       {
         "url": "/images/mediator-consultation.webp",
-        "alt": "Mediator assisting parents with co-parenting budget and travel agreements",
+        "alt": "Mediator assisting parents with co-parenting budget and travel agreements from Cavendish Family Mediation",
         "caption": "Mediating fair financial contributions toward travel costs after parental relocation."
       }
     ],
@@ -446,7 +446,7 @@ export const SITE2_BLOG_POSTS: BlogPost[] = [
       }
     ],
     "image": "/images/child-arrangements-plan.webp",
-    "imageAlt": "Parents reviewing transit map and travel expenses schedule"
+    "imageAlt": "Parents reviewing transit map and travel expenses schedule from Cavendish Family Mediation"
   },
   {
     "slug": "final-salary-pension-sharing-divorce-mediation",
@@ -613,17 +613,17 @@ export const SITE2_BLOG_POSTS: BlogPost[] = [
     "images": [
       {
         "url": "/images/home-mortgage-equity.webp",
-        "alt": "Property equity statement and mortgage calculations for pension trade-off",
+        "alt": "Property equity statement and mortgage calculations for pension trade-off from Cavendish Family Mediation",
         "caption": "Balancing property equity against pension values in financial mediation."
       },
       {
         "url": "/images/pension-sharing-divorce.webp",
-        "alt": "Actuarial pension valuation report compared with house equity appraisal",
+        "alt": "Actuarial pension valuation report compared with house equity appraisal from Cavendish Family Mediation",
         "caption": "Applying tax and liquidity discounts to pension pots during offsetting negotiations."
       },
       {
         "url": "/images/financial-mediation-assets.webp",
-        "alt": "Mediator explaining financial trade-offs between property and pensions",
+        "alt": "Mediator explaining financial trade-offs between property and pensions from Cavendish Family Mediation",
         "caption": "Structuring clean break financial settlements avoiding future retirement poverty."
       }
     ],
@@ -670,7 +670,7 @@ export const SITE2_BLOG_POSTS: BlogPost[] = [
       }
     ],
     "image": "/images/home-mortgage-equity.webp",
-    "imageAlt": "Property equity statement and mortgage calculations for pension trade-off"
+    "imageAlt": "Property equity statement and mortgage calculations for pension trade-off from Cavendish Family Mediation"
   },
   {
     "slug": "statutory-miam-exemptions-court-scrutiny-rules",
@@ -725,17 +725,17 @@ export const SITE2_BLOG_POSTS: BlogPost[] = [
     "images": [
       {
         "url": "/images/miam-individual-assessment.webp",
-        "alt": "Accredited mediator conducting a statutory MIAM suitability and safeguarding assessment",
+        "alt": "Accredited mediator conducting a statutory MIAM suitability and safeguarding assessment from Cavendish Family Mediation",
         "caption": "Undergoing confidential safeguarding and exemption screening with an FMC mediator."
       },
       {
         "url": "/images/financial-settlement-papers.webp",
-        "alt": "Court Form C100 and Form A exemption section reviewed by legal specialist",
+        "alt": "Court Form C100 and Form A exemption section reviewed by legal specialist from Cavendish Family Mediation",
         "caption": "Scrutinizing statutory exemption criteria on Page 9 of Form C100."
       },
       {
         "url": "/images/mediator-consultation.webp",
-        "alt": "Mediator explaining the April 2024 Family Procedure Rules amendments",
+        "alt": "Mediator explaining the April 2024 Family Procedure Rules amendments from Cavendish Family Mediation",
         "caption": "Understanding judicial cost sanctions and pre-action dispute resolution rules."
       }
     ],
@@ -782,7 +782,7 @@ export const SITE2_BLOG_POSTS: BlogPost[] = [
       }
     ],
     "image": "/images/miam-individual-assessment.webp",
-    "imageAlt": "Accredited mediator conducting a statutory MIAM suitability and safeguarding assessment"
+    "imageAlt": "Accredited mediator conducting a statutory MIAM suitability and safeguarding assessment from Cavendish Family Mediation"
   },
   {
     "slug": "financial-disclosure-form-e-mediation-consent-orders",

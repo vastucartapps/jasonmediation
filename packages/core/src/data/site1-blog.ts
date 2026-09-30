@@ -389,17 +389,17 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
     "images": [
       {
         "url": "/images/home-mortgage-equity.webp",
-        "alt": "Financial mediation documents showing property valuation and mortgage redemption statement",
+        "alt": "Financial mediation documents showing property valuation and mortgage redemption statement from Alderton Family Mediation",
         "caption": "Calculating net equity and individual mortgage borrowing capacities during financial mediation."
       },
       {
         "url": "/images/financial-settlement-papers.webp",
-        "alt": "Drafting financial disclosure Form E and property division proposals",
+        "alt": "Drafting financial disclosure Form E and property division proposals from Alderton Family Mediation",
         "caption": "Reviewing housing needs and mortgage broker borrowing assessments in mediation."
       },
       {
         "url": "/images/financial-mediation-assets.webp",
-        "alt": "Mediator analyzing property equity and pension sharing assets",
+        "alt": "Mediator analyzing property equity and pension sharing assets from Alderton Family Mediation",
         "caption": "Structuring equitable property clean breaks and Mesher deferred sale mechanisms."
       }
     ],
@@ -446,7 +446,7 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
       }
     ],
     "image": "/images/home-mortgage-equity.webp",
-    "imageAlt": "Financial mediation documents showing property valuation and mortgage redemption statement"
+    "imageAlt": "Financial mediation documents showing property valuation and mortgage redemption statement from Alderton Family Mediation"
   },
   {
     "slug": "who-pays-mortgage-while-separated-before-divorce",
@@ -500,17 +500,17 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
     "images": [
       {
         "url": "/images/home-mortgage-equity.webp",
-        "alt": "Mortgage statement and bank records reviewed during divorce mediation",
+        "alt": "Mortgage statement and bank records reviewed during divorce mediation from Alderton Family Mediation",
         "caption": "Reviewing mortgage liability and interim living expenses in financial mediation."
       },
       {
         "url": "/images/financial-settlement-papers.webp",
-        "alt": "Financial disclosure forms showing ongoing mortgage payments",
+        "alt": "Financial disclosure forms showing ongoing mortgage payments from Alderton Family Mediation",
         "caption": "Documenting post-separation mortgage contributions for credit in final financial clean breaks."
       },
       {
         "url": "/images/mediator-consultation.webp",
-        "alt": "Financial mediator discussing interim budget allocation with couple",
+        "alt": "Financial mediator discussing interim budget allocation with couple from Alderton Family Mediation",
         "caption": "Negotiating an interim budget agreement to protect joint credit scores during separation."
       }
     ],
@@ -557,7 +557,7 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
       }
     ],
     "image": "/images/home-mortgage-equity.webp",
-    "imageAlt": "Mortgage statement and bank records reviewed during divorce mediation"
+    "imageAlt": "Mortgage statement and bank records reviewed during divorce mediation from Alderton Family Mediation"
   },
   {
     "slug": "delay-selling-family-home-mesher-agreement-mediation",
@@ -612,17 +612,17 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
     "images": [
       {
         "url": "/images/home-mortgage-equity.webp",
-        "alt": "Reviewing deed of trust and property equity calculation records",
+        "alt": "Reviewing deed of trust and property equity calculation records from Alderton Family Mediation",
         "caption": "Structuring fair deferred sale trigger events in financial mediation."
       },
       {
         "url": "/images/financial-mediation-assets.webp",
-        "alt": "Financial settlement paperwork showing Mesher order equity distribution",
+        "alt": "Financial settlement paperwork showing Mesher order equity distribution from Alderton Family Mediation",
         "caption": "Documenting future capital division percentages in a court-approved Consent Order."
       },
       {
         "url": "/images/mediator-consultation.webp",
-        "alt": "Family mediator discussing long-term housing arrangements for children",
+        "alt": "Family mediator discussing long-term housing arrangements for children from Alderton Family Mediation",
         "caption": "Accredited mediator ensuring children’s housing stability until secondary school completion."
       }
     ],
@@ -669,7 +669,7 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
       }
     ],
     "image": "/images/home-mortgage-equity.webp",
-    "imageAlt": "Reviewing deed of trust and property equity calculation records"
+    "imageAlt": "Reviewing deed of trust and property equity calculation records from Alderton Family Mediation"
   },
   {
     "slug": "how-to-agree-50-50-parenting-rota-mediation",
@@ -835,17 +835,17 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
     "images": [
       {
         "url": "/images/miam-individual-assessment.webp",
-        "alt": "Client meeting privately with an accredited FMC mediator for a MIAM assessment",
+        "alt": "Client meeting privately with an accredited FMC mediator for a MIAM assessment from Alderton Family Mediation",
         "caption": "Conducting an individual, confidential pre-court MIAM assessment."
       },
       {
         "url": "/images/financial-settlement-papers.webp",
-        "alt": "Official court Form C100 and Form A with mediator sign-off section",
+        "alt": "Official court Form C100 and Form A with mediator sign-off section from Alderton Family Mediation",
         "caption": "Obtaining an FMCA-accredited signature on Page 9 of Form C100 for court filing."
       },
       {
         "url": "/images/mediator-consultation.webp",
-        "alt": "Mediator explaining court alternatives and Family Procedure Rules",
+        "alt": "Mediator explaining court alternatives and Family Procedure Rules from Alderton Family Mediation",
         "caption": "Exploring constructive dispute resolution pathways to avoid courtroom backlogs."
       }
     ],
@@ -892,6 +892,6 @@ export const SITE1_BLOG_POSTS: BlogPost[] = [
       }
     ],
     "image": "/images/miam-individual-assessment.webp",
-    "imageAlt": "Client meeting privately with an accredited FMC mediator for a MIAM assessment"
+    "imageAlt": "Client meeting privately with an accredited FMC mediator for a MIAM assessment from Alderton Family Mediation"
   }
 ];

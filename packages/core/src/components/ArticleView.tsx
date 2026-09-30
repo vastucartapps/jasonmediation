@@ -58,17 +58,17 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
     : [
         {
           url: post.image || '/images/hero-mediation.webp',
-          alt: post.imageAlt || post.title,
+          alt: post.imageAlt || `${post.title} - FMC Accredited Family Mediation from ${brand.brandName}`,
           caption: `Professional accredited family dispute resolution session focusing on ${post.clusterName}.`,
         },
         {
           url: isAlderton ? '/images/parenting-schedule-plan.webp' : '/images/financial-settlement-papers.webp',
-          alt: `${post.title} - Documentation and Legal Agreement`,
+          alt: `${post.title} - Documentation and Legal Agreement - ${brand.brandName}`,
           caption: `Official paperwork, parenting schedules, and financial disclosure records structured during confidential mediation.`,
         },
         {
           url: '/images/mediator-consultation.webp',
-          alt: `${post.title} - Mediator Consultation`,
+          alt: `${post.title} - FMC Accredited Mediator Consultation - ${brand.brandName}`,
           caption: `Accredited mediator conducting a private, without-prejudice assessment for separating parties.`,
         },
       ];

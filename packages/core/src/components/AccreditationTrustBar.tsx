@@ -21,21 +21,21 @@ export const AccreditationTrustBar: React.FC<AccreditationTrustBarProps> = ({
       role: 'Regulatory Standards & FMCA Certification',
       detail: 'Accredited mediators qualified to issue and sign statutory MIAM court certificates (Form C100 & Form A).',
       badgeSrc: '/images/family-mediation-council.webp',
-      alt: 'Family Mediation Council Accredited Logo',
+      alt: 'Family Mediation Council (FMC) Regulatory Accreditation Crest - UK Family Mediation Regulatory Body',
     },
     {
       name: 'College of Mediators',
       role: 'Approved Membership Body',
       detail: 'Dedicated to ethical standards, professional supervision, and rigorous continuous practice quality.',
       badgeSrc: '/images/college-of-mediators.webp',
-      alt: 'College of Mediators Approved Member Logo',
+      alt: 'College of Mediators Approved Practice Member Badge - Dispute Resolution Standards',
     },
     {
       name: 'Resolution',
       role: 'Constructive Family Resolution',
       detail: 'Adhering to the non-confrontational Code of Practice prioritizing the welfare and best interests of children.',
       badgeSrc: '/images/resolution.webp',
-      alt: 'Resolution First for Family Law Member Logo',
+      alt: 'Resolution First for Family Law Accredited Practice Membership Badge',
     },
   ];
 

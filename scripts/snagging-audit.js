@@ -137,7 +137,25 @@ function runSnaggingAudit() {
       }
     }
 
-    // 4. Audit HTML Pages
+    // 4. Audit Brand Favicon Ecosystem & Manifest
+    const favIcoPath = path.join(site.dir, 'favicon.ico');
+    const iconSvgPath = path.join(site.dir, 'icon.svg');
+    const appleTouchPath = path.join(site.dir, 'apple-touch-icon.png');
+    const manifestPath = path.join(site.dir, 'site.webmanifest');
+
+    const favIcoExists = fs.existsSync(favIcoPath) && fs.statSync(favIcoPath).size > 1000;
+    const iconSvgExists = fs.existsSync(iconSvgPath) && fs.readFileSync(iconSvgPath, 'utf8').includes('<svg');
+    const appleTouchExists = fs.existsSync(appleTouchPath) && fs.statSync(appleTouchPath).size > 1000;
+    const manifestExists = fs.existsSync(manifestPath) && fs.readFileSync(manifestPath, 'utf8').includes('icons');
+
+    if (!favIcoExists || !iconSvgExists || !appleTouchExists || !manifestExists) {
+      console.error(`  [FAIL] Favicon ecosystem incomplete! (ico:${favIcoExists}, svg:${iconSvgExists}, apple:${appleTouchExists}, manifest:${manifestExists})`);
+      siteErrors++;
+    } else {
+      console.log('  [PASS] Favicon Ecosystem: Multi-res favicon.ico, vector icon.svg, apple-touch-icon.png & site.webmanifest verified.');
+    }
+
+    // 5. Audit HTML Pages
     const htmlFiles = getAllFiles(site.dir, ['.html']);
     console.log(`  Discovered ${htmlFiles.length} HTML files for deep snagging.`);
 

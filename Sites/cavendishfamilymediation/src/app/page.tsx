@@ -110,7 +110,8 @@ export default function CavendishHomePage() {
                 <div className="relative h-64 sm:h-72 w-full">
                   <Image
                     src="/images/hero-mediation.webp"
-                    alt="Accredited Family Mediation Meeting"
+                    alt={`FMC Accredited Family Mediation Consultation - ${CAVENDISH_BRAND.brandName}`}
+                    title={`Accredited Family Dispute Resolution - ${CAVENDISH_BRAND.brandName}`}
                     fill
                     sizes="(max-width: 768px) 100vw, 500px"
                     className="object-cover object-center"
@@ -206,7 +207,8 @@ export default function CavendishHomePage() {
                 <div className="relative h-52 w-full overflow-hidden bg-emerald-950">
                   <Image
                     src={service.cardImage || service.heroImage}
-                    alt={service.title}
+                    alt={`${service.title} - FMC Accredited Dispute Resolution from ${CAVENDISH_BRAND.brandName}`}
+                    title={`${service.title} - ${CAVENDISH_BRAND.brandName}`}
                     fill
                     sizes="(max-width: 768px) 100vw, 600px"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-300"

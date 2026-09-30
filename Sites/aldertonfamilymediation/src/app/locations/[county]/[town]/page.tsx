@@ -209,8 +209,8 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
                 <div className="relative h-48 w-full overflow-hidden bg-slate-900">
                   <Image
                     src={service.cardImage || service.heroImage}
-                    alt={`FMC accredited ${service.title} session for separating couples in ${town.name}, ${town.county}`}
-                    title={`FMC Accredited ${service.title} - ${town.name} Family Mediation Practice`}
+                    alt={`${service.title} consultation for separating couples in ${town.name}, ${town.county} - FMC Accredited ${ALDERTON_BRAND.brandName}`}
+                    title={`${service.title} in ${town.name} - ${ALDERTON_BRAND.brandName}`}
                     fill
                     sizes="(max-width: 768px) 100vw, 600px"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
