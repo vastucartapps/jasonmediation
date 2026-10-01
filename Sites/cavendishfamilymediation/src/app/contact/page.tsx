@@ -117,9 +117,10 @@ export default function ContactPage() {
                     <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500 block">
                       Email Correspondence
                     </span>
-                    <span className="select-all text-sm sm:text-base font-bold text-stone-950 block mt-0.5 font-mono">
-                      {CAVENDISH_BRAND.contactEmail}
-                    </span>
+                    <span
+                      className="select-all text-sm sm:text-base font-bold text-stone-950 block mt-0.5 font-mono"
+                      dangerouslySetInnerHTML={{ __html: `<!--email_off-->${CAVENDISH_BRAND.contactEmail}<!--/email_off-->` }}
+                    />
                     <p className="text-xs text-stone-600 mt-1 leading-relaxed">
                       All communications handled under strict legal without-prejudice privilege.
                     </p>

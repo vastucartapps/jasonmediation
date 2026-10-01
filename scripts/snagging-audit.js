@@ -155,6 +155,16 @@ function runSnaggingAudit() {
       console.log('  [PASS] Favicon Ecosystem: Multi-res favicon.ico, vector icon.svg, apple-touch-icon.png & site.webmanifest verified.');
     }
 
+    // 4b. Audit IndexNow Key File
+    const indexNowKey = 'e3f9a72b4c1d6805bf81e4c92a7d3f10';
+    const indexNowPath = path.join(site.dir, `${indexNowKey}.txt`);
+    if (!fs.existsSync(indexNowPath) || fs.readFileSync(indexNowPath, 'utf8').trim() !== indexNowKey) {
+      console.error(`  [FAIL] IndexNow verification key file missing or invalid: ${indexNowKey}.txt`);
+      siteErrors++;
+    } else {
+      console.log(`  [PASS] IndexNow: Key verification file present and matches ${indexNowKey}.txt.`);
+    }
+
     // 5. Audit HTML Pages
     const htmlFiles = getAllFiles(site.dir, ['.html']);
     console.log(`  Discovered ${htmlFiles.length} HTML files for deep snagging.`);
@@ -174,6 +184,8 @@ function runSnaggingAudit() {
     let missingAlt = 0;
     let missingGeoTags = 0;
     let leadFormEndpointErrors = 0;
+    let emailProtectionLeaks = 0;
+    let schemaValidationErrors = 0;
 
     for (const filePath of htmlFiles) {
       const content = fs.readFileSync(filePath, 'utf8');
@@ -311,6 +323,56 @@ function runSnaggingAudit() {
           }
         }
       }
+
+      // Check Cloudflare email protection leak
+      if (content.includes('/cdn-cgi/l/email-protection') || content.includes('__cf_email__')) {
+        console.error(`  [FAIL] ${relPath} contains Cloudflare email-protection markup!`);
+        emailProtectionLeaks++;
+      }
+
+      // JSON-LD Schema Validation
+      const ldJsonMatches = [...content.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi)];
+      for (const m of ldJsonMatches) {
+        try {
+          const parsed = JSON.parse(m[1]);
+          const checkEntity = (entity) => {
+            if (!entity || typeof entity !== 'object') return;
+            const type = entity['@type'];
+            if (type === 'LegalService' || type === 'LocalBusiness') {
+              if (!entity.name) {
+                console.error(`  [FAIL] ${relPath}: ${type} missing name!`);
+                schemaValidationErrors++;
+              }
+              if (!entity.address || typeof entity.address !== 'object') {
+                console.error(`  [FAIL] ${relPath}: ${type} missing PostalAddress!`);
+                schemaValidationErrors++;
+              } else {
+                const a = entity.address;
+                if (!a.streetAddress || !a.addressLocality || !a.postalCode || !a.addressCountry) {
+                  console.error(`  [FAIL] ${relPath}: ${type} PostalAddress incomplete! (street:${!!a.streetAddress}, loc:${!!a.addressLocality}, post:${!!a.postalCode}, country:${!!a.addressCountry})`);
+                  schemaValidationErrors++;
+                }
+              }
+            }
+            for (const key of Object.keys(entity)) {
+              if (Array.isArray(entity[key])) {
+                entity[key].forEach(checkEntity);
+              } else if (typeof entity[key] === 'object') {
+                checkEntity(entity[key]);
+              }
+            }
+          };
+
+          if (parsed['@graph'] && Array.isArray(parsed['@graph'])) {
+            parsed['@graph'].forEach(checkEntity);
+          } else {
+            checkEntity(parsed);
+          }
+        } catch (e) {
+          console.error(`  [FAIL] ${relPath}: Invalid JSON in ld+json script!`);
+          schemaValidationErrors++;
+        }
+      }
     }
 
     console.log(`  ---------------- Snagging Results ----------------`);
@@ -326,6 +388,8 @@ function runSnaggingAudit() {
     console.log(`  [Broken Anchors]    Count: ${brokenAnchors}`);
     console.log(`  [Geo Tagging]       Missing: ${missingGeoTags}`);
     console.log(`  [Lead Form Config]  Errors: ${leadFormEndpointErrors}`);
+    console.log(`  [CF Email Leak]     Errors: ${emailProtectionLeaks}`);
+    console.log(`  [Schema Rich Result]Errors: ${schemaValidationErrors}`);
 
     const subTotal =
       missingH1 +
@@ -341,7 +405,9 @@ function runSnaggingAudit() {
       nonTrailedLinks +
       brokenAnchors +
       missingGeoTags +
-      leadFormEndpointErrors;
+      leadFormEndpointErrors +
+      emailProtectionLeaks +
+      schemaValidationErrors;
 
     if (subTotal === 0) {
       console.log(`  >>> [PERFECT SCORE] Brand passed 100% of snagging tests! Zero defects found.`);

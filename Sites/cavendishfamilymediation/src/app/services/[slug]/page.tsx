@@ -16,6 +16,7 @@ import {
   PhoneCallIcon,
   ArrowRightIcon,
   AccreditationTrustBar,
+  generateLocalBusinessSchema,
   generateServiceSchema,
   generateFAQSchema,
   generateDefinedTermSetSchema,
@@ -80,6 +81,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   ];
 
   const pageUrl = `${CAVENDISH_BRAND.siteUrl}/services/${service.slug}/`;
+  const localSchema = generateLocalBusinessSchema(CAVENDISH_BRAND, undefined, service, true);
   const serviceSchema = generateServiceSchema(CAVENDISH_BRAND, service, undefined, true);
   const faqSchema = generateFAQSchema(service.faqs, pageUrl, true);
   const glossarySchema = generateDefinedTermSetSchema(CAVENDISH_BRAND.siteUrl);
@@ -92,6 +94,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
+              localSchema,
               serviceSchema,
               glossarySchema,
               ...(faqSchema ? [faqSchema] : []),

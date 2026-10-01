@@ -103,7 +103,7 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
                   className="text-slate-300 hover:text-white transition select-all"
                   title="Contact our practice"
                 >
-                  {brand.contactEmail}
+                  <span dangerouslySetInnerHTML={{ __html: `<!--email_off-->${brand.contactEmail}<!--/email_off-->` }} />
                 </Link>
               </div>
               <div className="flex items-center gap-2.5 pt-1">

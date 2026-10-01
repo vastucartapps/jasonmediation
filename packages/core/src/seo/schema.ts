@@ -89,6 +89,7 @@ export function generateLocalBusinessSchema(
               name: `${town.name} Family Mediation Services`,
               address: {
                 '@type': 'PostalAddress',
+                streetAddress: `${town.name} Consultation Chambers, High Street`,
                 addressLocality: town.name,
                 addressRegion: town.county,
                 postalCode: town.postalDistricts[0],
@@ -259,6 +260,24 @@ export function generateServiceSchema(
   const imagePath = service.cardImage || service.heroImage || '/images/sincere-mediation-session.webp';
   const imageUrl = `${brand.siteUrl}${imagePath}`;
 
+  const postalAddress = town
+    ? {
+        '@type': 'PostalAddress',
+        streetAddress: `${town.name} Consultation Chambers, High Street`,
+        addressLocality: town.name,
+        addressRegion: town.county,
+        postalCode: town.postalDistricts[0],
+        addressCountry: 'GB',
+      }
+    : {
+        '@type': 'PostalAddress',
+        streetAddress: brand.brandId === 'alderton' ? 'Rutland House, 23 Friar Lane' : 'Cavendish Chambers, 14 Museum Street',
+        addressLocality: brand.brandId === 'alderton' ? 'Leicester' : 'Ipswich',
+        addressRegion: brand.brandId === 'alderton' ? 'Leicestershire' : 'Suffolk',
+        postalCode: brand.brandId === 'alderton' ? 'LE1 5QQ' : 'IP1 1HE',
+        addressCountry: 'GB',
+      };
+
   return {
     ...(inGraph ? {} : { '@context': 'https://schema.org' }),
     '@type': 'Service',
@@ -267,9 +286,17 @@ export function generateServiceSchema(
     serviceType: service.title,
     provider: {
       '@type': 'LegalService',
-      name: brand.brandName,
-      url: brand.siteUrl,
+      '@id': town
+        ? `${brand.siteUrl}/locations/${town.countySlug}/${town.slug}/${service.slug}/#localbusiness`
+        : `${brand.siteUrl}#localbusiness`,
+      name: town ? `${brand.brandName} – ${service.title} in ${town.name}` : brand.brandName,
+      legalName: brand.legalEntityName,
+      url: serviceUrl,
       telephone: brand.phone,
+      email: brand.contactEmail,
+      priceRange: '££',
+      image: imageUrl,
+      address: postalAddress,
     },
     offers: {
       '@type': 'Offer',
@@ -277,6 +304,7 @@ export function generateServiceSchema(
       price: '130.00',
       priceCurrency: 'GBP',
       availability: 'https://schema.org/InStock',
+      url: serviceUrl,
     },
     image: {
       '@type': 'ImageObject',
@@ -294,7 +322,7 @@ export function generateServiceSchema(
               name: `${town.name} Family Dispute Resolution`,
               address: {
                 '@type': 'PostalAddress',
-                streetAddress: `${town.name} Consultation Chambers`,
+                streetAddress: `${town.name} Consultation Chambers, High Street`,
                 addressLocality: town.name,
                 addressRegion: town.county,
                 postalCode: town.postalDistricts[0],
@@ -360,7 +388,7 @@ export function generateGeoImageSchema(
             name: `${town.name} Mediation Chambers`,
             address: {
               '@type': 'PostalAddress',
-              streetAddress: `${town.name} Consultation Chambers`,
+              streetAddress: `${town.name} Consultation Chambers, High Street`,
               addressLocality: town.name,
               addressRegion: town.county,
               postalCode: town.postalDistricts[0],

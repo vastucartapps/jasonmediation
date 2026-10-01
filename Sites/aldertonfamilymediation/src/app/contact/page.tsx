@@ -120,9 +120,10 @@ export default function ContactPage() {
                     <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">
                       Email Correspondence
                     </span>
-                    <span className="select-all text-sm sm:text-base font-bold text-slate-950 block mt-0.5 font-mono">
-                      {ALDERTON_BRAND.contactEmail}
-                    </span>
+                    <span
+                      className="select-all text-sm sm:text-base font-bold text-slate-950 block mt-0.5 font-mono"
+                      dangerouslySetInnerHTML={{ __html: `<!--email_off-->${ALDERTON_BRAND.contactEmail}<!--/email_off-->` }}
+                    />
                     <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                       All correspondence handled under strict legal without-prejudice privilege.
                     </p>

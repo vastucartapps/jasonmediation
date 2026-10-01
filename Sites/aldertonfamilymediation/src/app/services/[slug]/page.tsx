@@ -19,6 +19,7 @@ import {
   MapPinLocationIcon,
   ArrowRightIcon,
   AccreditationTrustBar,
+  generateLocalBusinessSchema,
   generateServiceSchema,
   generateFAQSchema,
   generateDefinedTermSetSchema,
@@ -83,6 +84,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   ];
 
   const pageUrl = `${ALDERTON_BRAND.siteUrl}/services/${service.slug}/`;
+  const localSchema = generateLocalBusinessSchema(ALDERTON_BRAND, undefined, service, true);
   const serviceSchema = generateServiceSchema(ALDERTON_BRAND, service, undefined, true);
   const faqSchema = generateFAQSchema(service.faqs, pageUrl, true);
   const glossarySchema = generateDefinedTermSetSchema(ALDERTON_BRAND.siteUrl);
@@ -95,6 +97,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
+              localSchema,
               serviceSchema,
               glossarySchema,
               ...(faqSchema ? [faqSchema] : []),

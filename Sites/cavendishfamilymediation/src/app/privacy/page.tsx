@@ -89,7 +89,7 @@ export default function PrivacyPage() {
             <p>
               For data protection inquiries or requests regarding your personal records, please contact our Data Protection Officer at{' '}
               <Link href="/contact/" className="text-emerald-700 hover:underline">
-                {CAVENDISH_BRAND.contactEmail}
+                <span dangerouslySetInnerHTML={{ __html: `<!--email_off-->${CAVENDISH_BRAND.contactEmail}<!--/email_off-->` }} />
               </Link>{' '}
               or by telephone on {CAVENDISH_BRAND.formattedPhone}.
             </p>

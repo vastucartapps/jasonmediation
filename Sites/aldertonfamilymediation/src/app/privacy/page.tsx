@@ -89,7 +89,7 @@ export default function PrivacyPage() {
             <p>
               For data protection inquiries or requests regarding your personal records, please contact our Data Protection Officer at{' '}
               <Link href="/contact/" className="text-blue-600 hover:underline">
-                {ALDERTON_BRAND.contactEmail}
+                <span dangerouslySetInnerHTML={{ __html: `<!--email_off-->${ALDERTON_BRAND.contactEmail}<!--/email_off-->` }} />
               </Link>{' '}
               or by telephone on {ALDERTON_BRAND.formattedPhone}.
             </p>
