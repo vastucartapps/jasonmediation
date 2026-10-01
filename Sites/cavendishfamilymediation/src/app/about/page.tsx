@@ -16,6 +16,31 @@ export const metadata: Metadata = {
   title: `About Our FMC Practice | ${CAVENDISH_BRAND.brandName}`,
   description:
     'Learn about our FMC accreditation, regulatory compliance, professional mediation ethics, and child-focused dispute resolution standards across the South East.',
+  alternates: {
+    canonical: `${CAVENDISH_BRAND.siteUrl}/about/`,
+  },
+  openGraph: {
+    title: `About Our FMC Practice | ${CAVENDISH_BRAND.brandName}`,
+    description:
+      'Learn about our FMC accreditation, regulatory compliance, professional mediation ethics, and child-focused dispute resolution standards across the South East.',
+    url: `${CAVENDISH_BRAND.siteUrl}/about/`,
+    type: 'website',
+    images: [
+      {
+        url: `${CAVENDISH_BRAND.siteUrl}/images/hero-mediation.webp`,
+        width: 1200,
+        height: 630,
+        alt: `About ${CAVENDISH_BRAND.brandName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `About Our FMC Practice | ${CAVENDISH_BRAND.brandName}`,
+    description:
+      'Learn about our FMC accreditation, regulatory compliance, professional mediation ethics, and child-focused dispute resolution standards across the South East.',
+    images: [`${CAVENDISH_BRAND.siteUrl}/images/hero-mediation.webp`],
+  },
 };
 
 export default function AboutPage() {

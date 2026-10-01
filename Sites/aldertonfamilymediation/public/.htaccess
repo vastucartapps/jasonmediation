@@ -13,6 +13,18 @@ ErrorDocument 404 /404.html
   RewriteEngine On
   RewriteBase /
 
+  # 1. Cloudflare Email Protection 404 Fallback
+  RewriteRule ^cdn-cgi/l/email-protection.*$ /contact/ [R=301,L]
+
+  # 2. Force Canonical www Hostname (301 Permanent Redirect)
+  RewriteCond %{HTTP_HOST} ^aldertonfamilymediation\.co\.uk$ [NC]
+  RewriteRule ^(.*)$ https://www.aldertonfamilymediation.co.uk/$1 [L,R=301]
+
+  # 3. Force HTTPS (301 Permanent Redirect)
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://www.aldertonfamilymediation.co.uk/$1 [L,R=301]
+
   # Ensure DirectorySlash is on for clean directory URLs
   DirectorySlash On
 

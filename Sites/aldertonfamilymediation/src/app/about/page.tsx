@@ -17,6 +17,31 @@ export const metadata: Metadata = {
   title: `About Our FMC Practice | ${ALDERTON_BRAND.brandName}`,
   description:
     'Learn about our FMC accreditation, regulatory compliance, professional mediation ethics, and child-focused dispute resolution standards across the UK.',
+  alternates: {
+    canonical: `${ALDERTON_BRAND.siteUrl}/about/`,
+  },
+    openGraph: {
+    title: `About Our FMC Practice | ${ALDERTON_BRAND.brandName}`,
+    description:
+      'Learn about our FMC accreditation, regulatory compliance, professional mediation ethics, and child-focused dispute resolution standards across the UK.',
+    url: `${ALDERTON_BRAND.siteUrl}/about/`,
+    type: 'website',
+    images: [
+      {
+        url: `${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`,
+        width: 1200,
+        height: 630,
+        alt: `About ${ALDERTON_BRAND.brandName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `About Our FMC Practice | ${ALDERTON_BRAND.brandName}`,
+    description:
+      'Learn about our FMC accreditation, regulatory compliance, professional mediation ethics, and child-focused dispute resolution standards across the UK.',
+    images: [`${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`],
+  },
 };
 
 export default function AboutPage() {

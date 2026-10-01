@@ -17,6 +17,31 @@ export const metadata: Metadata = {
   title: `Mediation Practice Locations | ${ALDERTON_BRAND.shortName}`,
   description:
     'Regional directory of our accredited family mediation centres and designated Family Courts across the East Midlands. Book confidential MIAM appointments.',
+  alternates: {
+    canonical: `${ALDERTON_BRAND.siteUrl}/locations/`,
+  },
+  openGraph: {
+    title: `Mediation Practice Locations | ${ALDERTON_BRAND.shortName}`,
+    description:
+      'Regional directory of our accredited family mediation centres and designated Family Courts across the East Midlands. Book confidential MIAM appointments.',
+    url: `${ALDERTON_BRAND.siteUrl}/locations/`,
+    type: 'website',
+    images: [
+      {
+        url: `${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Mediation Locations | ${ALDERTON_BRAND.brandName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Mediation Practice Locations | ${ALDERTON_BRAND.shortName}`,
+    description:
+      'Regional directory of our accredited family mediation centres and designated Family Courts across the East Midlands. Book confidential MIAM appointments.',
+    images: [`${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`],
+  },
 };
 
 export default function LocationsPage() {

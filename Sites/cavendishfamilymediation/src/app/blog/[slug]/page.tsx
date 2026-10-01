@@ -28,9 +28,16 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
 
   if (!post) return { title: 'Article Not Found' };
 
+  const postImageUrl = post.images?.[0]?.url || post.image || '/images/hero-mediation.webp';
+  const fullImageUrl = `${CAVENDISH_BRAND.siteUrl}${postImageUrl.startsWith('/') ? postImageUrl : `/${postImageUrl}`}`;
+  const canonicalUrl = `${CAVENDISH_BRAND.siteUrl}/blog/${post.slug}/`;
+
   return {
     title: post.metaTitle || post.title.slice(0, 55),
     description: post.metaDescription || post.summary.slice(0, 155),
+    alternates: {
+      canonical: canonicalUrl,
+    },
     keywords: [
       post.targetKeyword,
       'family mediation South East',
@@ -40,16 +47,22 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
     openGraph: {
       title: post.metaTitle || post.title.slice(0, 55),
       description: post.metaDescription || post.summary.slice(0, 155),
-      url: `${CAVENDISH_BRAND.siteUrl}/blog/${post.slug}/`,
+      url: canonicalUrl,
       type: 'article',
       images: [
         {
-          url: `${CAVENDISH_BRAND.siteUrl}${post.images?.[0]?.url || post.image}`,
+          url: fullImageUrl,
           width: 1200,
           height: 675,
-          alt: post.images?.[0]?.alt || post.imageAlt,
+          alt: post.images?.[0]?.alt || post.imageAlt || post.title,
         },
       ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.metaTitle || post.title.slice(0, 55),
+      description: post.metaDescription || post.summary.slice(0, 155),
+      images: [fullImageUrl],
     },
   };
 }

@@ -19,6 +19,31 @@ export const metadata: Metadata = {
   title: `Family Mediation Services & MIAM | ${CAVENDISH_BRAND.shortName}`,
   description:
     'Explore our FMC-accredited mediation services across the South East. Statutory MIAM certificates, child arrangements, and fair financial settlements.',
+  alternates: {
+    canonical: `${CAVENDISH_BRAND.siteUrl}/services/`,
+  },
+  openGraph: {
+    title: `Family Mediation Services & MIAM | ${CAVENDISH_BRAND.shortName}`,
+    description:
+      'Explore our FMC-accredited mediation services across the South East. Statutory MIAM certificates, child arrangements, and fair financial settlements.',
+    url: `${CAVENDISH_BRAND.siteUrl}/services/`,
+    type: 'website',
+    images: [
+      {
+        url: `${CAVENDISH_BRAND.siteUrl}/images/hero-mediation.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Mediation Services | ${CAVENDISH_BRAND.brandName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Family Mediation Services & MIAM | ${CAVENDISH_BRAND.shortName}`,
+    description:
+      'Explore our FMC-accredited mediation services across the South East. Statutory MIAM certificates, child arrangements, and fair financial settlements.',
+    images: [`${CAVENDISH_BRAND.siteUrl}/images/hero-mediation.webp`],
+  },
 };
 
 export default function ServicesPage() {

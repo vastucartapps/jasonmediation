@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { ALDERTON_BRAND } from '../config/brand';
-import { Header, Footer, MobileStickyBar, generateLocalBusinessSchema, MatomoTracker } from '@mediation/core';
+import { Header, Footer, MobileStickyBar, generateLocalBusinessSchema, MatomoTracker, CookieConsentBanner } from '@mediation/core';
 
 export const metadata: Metadata = {
   metadataBase: new URL(ALDERTON_BRAND.siteUrl),
@@ -39,19 +39,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: ALDERTON_BRAND.siteUrl,
+    url: './',
     title: `${ALDERTON_BRAND.brandName} | UK Family Mediation Practice`,
     description:
       'Accredited family dispute resolution across the East Midlands. Resolve parenting routines and financial settlements without court litigation.',
     siteName: ALDERTON_BRAND.brandName,
     images: [
       {
-        url: '/images/hero-mediation.webp',
+        url: `${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`,
         width: 1200,
         height: 630,
         alt: `${ALDERTON_BRAND.brandName} - Professional Family Mediation`,
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${ALDERTON_BRAND.brandName} | UK Family Mediation Practice`,
+    description:
+      'Accredited family dispute resolution across the East Midlands. Resolve parenting routines and financial settlements without court litigation.',
+    images: [`${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`],
   },
   robots: {
     index: true,
@@ -139,6 +146,7 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer brand={ALDERTON_BRAND} brandVariant="alderton" />
         <MobileStickyBar brand={ALDERTON_BRAND} brandVariant="alderton" />
+        <CookieConsentBanner privacyHref="/privacy/" brandPrimaryColor={ALDERTON_BRAND.theme.primaryHex} />
       </body>
     </html>
   );

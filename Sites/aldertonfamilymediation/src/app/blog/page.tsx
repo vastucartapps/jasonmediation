@@ -17,6 +17,31 @@ export const metadata: Metadata = {
   title: `Family Law & Separation Blog | ${ALDERTON_BRAND.shortName}`,
   description:
     'Search-led, solicitor-reviewed guides on UK child arrangements, passport custody, 50/50 parenting rotas, mortgage buy-outs, and family home equity division.',
+  alternates: {
+    canonical: `${ALDERTON_BRAND.siteUrl}/blog/`,
+  },
+  openGraph: {
+    title: `Family Law & Separation Blog | ${ALDERTON_BRAND.shortName}`,
+    description:
+      'Search-led, solicitor-reviewed guides on UK child arrangements, passport custody, 50/50 parenting rotas, mortgage buy-outs, and family home equity division.',
+    url: `${ALDERTON_BRAND.siteUrl}/blog/`,
+    type: 'website',
+    images: [
+      {
+        url: `${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Family Law Blog | ${ALDERTON_BRAND.brandName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Family Law & Separation Blog | ${ALDERTON_BRAND.shortName}`,
+    description:
+      'Search-led, solicitor-reviewed guides on UK child arrangements, passport custody, 50/50 parenting rotas, mortgage buy-outs, and family home equity division.',
+    images: [`${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`],
+  },
 };
 
 export default function BlogIndexPage() {

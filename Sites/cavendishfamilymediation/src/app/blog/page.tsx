@@ -16,6 +16,31 @@ export const metadata: Metadata = {
   title: `Family Law & Separation Blog | ${CAVENDISH_BRAND.shortName}`,
   description:
     'Authoritative, solicitor-reviewed guides on UK parental relocation, parental house deposits, final salary pension sharing, and Form E financial disclosure.',
+  alternates: {
+    canonical: `${CAVENDISH_BRAND.siteUrl}/blog/`,
+  },
+  openGraph: {
+    title: `Family Law & Separation Blog | ${CAVENDISH_BRAND.shortName}`,
+    description:
+      'Authoritative, solicitor-reviewed guides on UK parental relocation, parental house deposits, final salary pension sharing, and Form E financial disclosure.',
+    url: `${CAVENDISH_BRAND.siteUrl}/blog/`,
+    type: 'website',
+    images: [
+      {
+        url: `${CAVENDISH_BRAND.siteUrl}/images/hero-mediation.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Family Law Blog | ${CAVENDISH_BRAND.brandName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Family Law & Separation Blog | ${CAVENDISH_BRAND.shortName}`,
+    description:
+      'Authoritative, solicitor-reviewed guides on UK parental relocation, parental house deposits, final salary pension sharing, and Form E financial disclosure.',
+    images: [`${CAVENDISH_BRAND.siteUrl}/images/hero-mediation.webp`],
+  },
 };
 
 export default function BlogIndexPage() {

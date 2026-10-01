@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Metadata } from 'next';
 import { ALDERTON_BRAND } from '../../config/brand';
 import { Breadcrumbs } from '@mediation/core';
@@ -7,6 +8,31 @@ export const metadata: Metadata = {
   title: `Privacy & Confidentiality Policy | ${ALDERTON_BRAND.shortName}`,
   description:
     'Our commitment to professional confidentiality, GDPR compliance, and without-prejudice legal privilege in UK family mediation.',
+  alternates: {
+    canonical: `${ALDERTON_BRAND.siteUrl}/privacy/`,
+  },
+  openGraph: {
+    title: `Privacy & Confidentiality Policy | ${ALDERTON_BRAND.shortName}`,
+    description:
+      'Our commitment to professional confidentiality, GDPR compliance, and without-prejudice legal privilege in UK family mediation.',
+    url: `${ALDERTON_BRAND.siteUrl}/privacy/`,
+    type: 'website',
+    images: [
+      {
+        url: `${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Privacy Policy | ${ALDERTON_BRAND.brandName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Privacy & Confidentiality Policy | ${ALDERTON_BRAND.shortName}`,
+    description:
+      'Our commitment to professional confidentiality, GDPR compliance, and without-prejudice legal privilege in UK family mediation.',
+    images: [`${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`],
+  },
 };
 
 export default function PrivacyPage() {
@@ -61,7 +87,11 @@ export default function PrivacyPage() {
               4. Contacting the Practice
             </h2>
             <p>
-              For data protection inquiries or requests regarding your personal records, please contact our Data Protection Officer at {ALDERTON_BRAND.contactEmail} or by telephone on {ALDERTON_BRAND.formattedPhone}.
+              For data protection inquiries or requests regarding your personal records, please contact our Data Protection Officer at{' '}
+              <Link href="/contact/" className="text-blue-600 hover:underline">
+                {ALDERTON_BRAND.contactEmail}
+              </Link>{' '}
+              or by telephone on {ALDERTON_BRAND.formattedPhone}.
             </p>
           </div>
         </div>

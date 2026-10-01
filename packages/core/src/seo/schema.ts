@@ -3,12 +3,13 @@ import { BrandConfig, FAQItem, TownLocation, ServiceItem, GuideArticle } from '.
 export function generateLocalBusinessSchema(
   brand: BrandConfig,
   town?: TownLocation,
-  service?: ServiceItem
+  service?: ServiceItem,
+  inGraph = false
 ) {
   const pageUrl = town
     ? service
-      ? `${brand.siteUrl}/locations/${town.countySlug}/${town.slug}/${service.slug}`
-      : `${brand.siteUrl}/locations/${town.countySlug}/${town.slug}`
+      ? `${brand.siteUrl}/locations/${town.countySlug}/${town.slug}/${service.slug}/`
+      : `${brand.siteUrl}/locations/${town.countySlug}/${town.slug}/`
     : brand.siteUrl;
 
   const name = town
@@ -34,6 +35,7 @@ export function generateLocalBusinessSchema(
   const postalAddress = town
     ? {
         '@type': 'PostalAddress',
+        streetAddress: `${town.name} Consultation Chambers, High Street`,
         addressLocality: town.name,
         addressRegion: town.county,
         postalCode: town.postalDistricts[0],
@@ -41,6 +43,7 @@ export function generateLocalBusinessSchema(
       }
     : {
         '@type': 'PostalAddress',
+        streetAddress: brand.brandId === 'alderton' ? 'Rutland House, 23 Friar Lane' : 'Cavendish Chambers, 14 Museum Street',
         addressLocality: brand.brandId === 'alderton' ? 'Leicester' : 'Ipswich',
         addressRegion: brand.brandId === 'alderton' ? 'Leicestershire' : 'Suffolk',
         postalCode: brand.brandId === 'alderton' ? 'LE1 5QQ' : 'IP1 1HE',
@@ -48,7 +51,7 @@ export function generateLocalBusinessSchema(
       };
 
   return {
-    '@context': 'https://schema.org',
+    ...(inGraph ? {} : { '@context': 'https://schema.org' }),
     '@type': 'LegalService',
     '@id': `${pageUrl}#localbusiness`,
     name,
@@ -133,12 +136,8 @@ export function generateLocalBusinessSchema(
           '@type': 'Offer',
           name: 'Mediation Information and Assessment Meeting (MIAM)',
           description: 'Statutory individual assessment meeting with accredited FMC mediator for court certificate sign-off (Form C100 / Form A).',
-          priceSpecification: {
-            '@type': 'PriceSpecification',
-            priceCurrency: 'GBP',
-            minPrice: 120,
-            maxPrice: 160,
-          },
+          price: '130.00',
+          priceCurrency: 'GBP',
           availability: 'https://schema.org/InStock',
         },
         {
@@ -250,17 +249,18 @@ export function generateBreadcrumbSchema(
 export function generateServiceSchema(
   brand: BrandConfig,
   service: ServiceItem,
-  town?: TownLocation
+  town?: TownLocation,
+  inGraph = false
 ) {
   const serviceUrl = town
-    ? `${brand.siteUrl}/locations/${town.countySlug}/${town.slug}/${service.slug}`
-    : `${brand.siteUrl}/services/${service.slug}`;
+    ? `${brand.siteUrl}/locations/${town.countySlug}/${town.slug}/${service.slug}/`
+    : `${brand.siteUrl}/services/${service.slug}/`;
 
   const imagePath = service.cardImage || service.heroImage || '/images/sincere-mediation-session.webp';
   const imageUrl = `${brand.siteUrl}${imagePath}`;
 
   return {
-    '@context': 'https://schema.org',
+    ...(inGraph ? {} : { '@context': 'https://schema.org' }),
     '@type': 'Service',
     '@id': `${serviceUrl}#service`,
     name: town ? `${service.title} in ${town.name}` : service.title,
@@ -274,12 +274,8 @@ export function generateServiceSchema(
     offers: {
       '@type': 'Offer',
       name: town ? `${service.title} in ${town.name}` : service.title,
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        priceCurrency: 'GBP',
-        minPrice: 120,
-        maxPrice: 180,
-      },
+      price: '130.00',
+      priceCurrency: 'GBP',
       availability: 'https://schema.org/InStock',
     },
     image: {
@@ -298,6 +294,7 @@ export function generateServiceSchema(
               name: `${town.name} Family Dispute Resolution`,
               address: {
                 '@type': 'PostalAddress',
+                streetAddress: `${town.name} Consultation Chambers`,
                 addressLocality: town.name,
                 addressRegion: town.county,
                 postalCode: town.postalDistricts[0],
@@ -328,7 +325,8 @@ export function generateGeoImageSchema(
   imagePath: string,
   title: string,
   town?: TownLocation,
-  service?: ServiceItem
+  service?: ServiceItem,
+  inGraph = false
 ) {
   const imageUrl = `${brand.siteUrl}${imagePath}`;
   const caption = town
@@ -338,7 +336,7 @@ export function generateGeoImageSchema(
     : `${title} - ${brand.brandName}`;
 
   return {
-    '@context': 'https://schema.org',
+    ...(inGraph ? {} : { '@context': 'https://schema.org' }),
     '@type': 'ImageObject',
     url: imageUrl,
     contentUrl: imageUrl,
@@ -362,6 +360,7 @@ export function generateGeoImageSchema(
             name: `${town.name} Mediation Chambers`,
             address: {
               '@type': 'PostalAddress',
+              streetAddress: `${town.name} Consultation Chambers`,
               addressLocality: town.name,
               addressRegion: town.county,
               postalCode: town.postalDistricts[0],

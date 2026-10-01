@@ -182,6 +182,154 @@ export default function CavendishHomePage() {
       {/* REGULATED ACCREDITATIONS TRUST BAR */}
       <AccreditationTrustBar />
 
+      {/* TRANSPARENT PRACTITIONER FEE SCHEDULE & VOUCHER SCHEME (Inspired by real UK practices) */}
+      <section className="py-14 sm:py-20 bg-stone-100/80 border-b border-stone-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <span className="text-xs font-bold tracking-widest uppercase text-emerald-800 block mb-2">
+              Transparent Pricing &amp; Government Funding
+            </span>
+            <h2 className="text-fluid-section font-serif font-bold text-stone-950 mb-3">
+              Clear Fixed Fees With No Hidden Legal Extras
+            </h2>
+            <p className="text-stone-700 text-sm sm:text-base leading-relaxed">
+              Unlike traditional solicitor litigation with open-ended hourly billing, accredited family mediation offers transparent fixed costs. Eligible families discussing child arrangements can also receive up to £500 in non-means-tested government funding.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Card 1 */}
+            <div className="bg-white rounded-2xl p-6 border-2 border-stone-200 shadow-xs flex flex-col justify-between hover:border-emerald-600 transition">
+              <div>
+                <div className="text-xs font-bold text-emerald-800 uppercase tracking-wider mb-2">Individual Meeting</div>
+                <h3 className="font-serif text-xl font-bold text-stone-950 mb-1">Statutory MIAM</h3>
+                <div className="flex items-baseline gap-1 my-3">
+                  <span className="text-3xl font-bold text-stone-950 font-serif">£130</span>
+                  <span className="text-xs text-stone-500 font-medium">per person</span>
+                </div>
+                <ul className="space-y-2 text-xs text-stone-700 font-medium mt-4">
+                  <li className="flex items-start gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>45-minute confidential private consultation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Court Certificate (Form C100 / Form A) signed</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Free voucher eligibility assessment</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="pt-6 mt-6 border-t border-stone-100">
+                <a href="#book-assessment" className="block text-center py-2.5 px-4 rounded-xl bg-stone-100 hover:bg-emerald-900 hover:text-white text-stone-900 font-bold text-xs transition">
+                  Book MIAM
+                </a>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white rounded-2xl p-6 border-2 border-stone-200 shadow-xs flex flex-col justify-between hover:border-emerald-600 transition">
+              <div>
+                <div className="text-xs font-bold text-emerald-800 uppercase tracking-wider mb-2">Joint Discussion</div>
+                <h3 className="font-serif text-xl font-bold text-stone-950 mb-1">Mediation Session</h3>
+                <div className="flex items-baseline gap-1 my-3">
+                  <span className="text-3xl font-bold text-stone-950 font-serif">£150</span>
+                  <span className="text-xs text-stone-500 font-medium">/hr per person</span>
+                </div>
+                <ul className="space-y-2 text-xs text-stone-700 font-medium mt-4">
+                  <li className="flex items-start gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Calm, child-focused facilitated dialogue</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Shuttle mediation available at no surcharge</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Average 2 to 3 sessions to full agreement</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="pt-6 mt-6 border-t border-stone-100">
+                <a href="#book-assessment" className="block text-center py-2.5 px-4 rounded-xl bg-stone-100 hover:bg-emerald-900 hover:text-white text-stone-900 font-bold text-xs transition">
+                  Enquire Now
+                </a>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white rounded-2xl p-6 border-2 border-stone-200 shadow-xs flex flex-col justify-between hover:border-emerald-600 transition">
+              <div>
+                <div className="text-xs font-bold text-emerald-800 uppercase tracking-wider mb-2">Formal Agreement</div>
+                <h3 className="font-serif text-xl font-bold text-stone-950 mb-1">Outcome Documents</h3>
+                <div className="flex items-baseline gap-1 my-3">
+                  <span className="text-3xl font-bold text-stone-950 font-serif">£300</span>
+                  <span className="text-xs text-stone-500 font-medium">total package</span>
+                </div>
+                <ul className="space-y-2 text-xs text-stone-700 font-medium mt-4">
+                  <li className="flex items-start gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Full Memorandum of Understanding (MOU)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Open Financial Summary &amp; Parenting Schedule</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Direct submission to solicitor for Consent Order</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="pt-6 mt-6 border-t border-stone-100">
+                <Link href="/services/all-issues-mediation/" className="block text-center py-2.5 px-4 rounded-xl bg-stone-100 hover:bg-emerald-900 hover:text-white text-stone-900 font-bold text-xs transition">
+                  Document Details
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 4 - Voucher Highlight */}
+            <div className="bg-gradient-to-br from-emerald-950 to-emerald-900 rounded-2xl p-6 border-2 border-amber-400/40 shadow-lg text-white flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-3 right-3">
+                <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase bg-amber-400 text-stone-950 tracking-wider">
+                  MoJ Funded
+                </span>
+              </div>
+              <div>
+                <div className="text-xs font-bold text-amber-300 uppercase tracking-wider mb-2">Government Scheme</div>
+                <h3 className="font-serif text-xl font-bold text-white mb-1">£500 Voucher</h3>
+                <div className="flex items-baseline gap-1 my-3">
+                  <span className="text-3xl font-bold text-amber-300 font-serif">£0.00</span>
+                  <span className="text-xs text-emerald-200 font-medium">up to £500 grant</span>
+                </div>
+                <ul className="space-y-2 text-xs text-emerald-100 font-medium mt-4">
+                  <li className="flex items-start gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
+                    <span>Non-means-tested (no legal aid test required)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
+                    <span>Covers disputes involving child arrangements</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
+                    <span>We handle the government paperwork directly</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="pt-6 mt-6 border-t border-emerald-800">
+                <a href="#book-assessment" className="block text-center py-2.5 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-xs transition shadow-xs">
+                  Check Eligibility
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 4 CORE SERVICES */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -334,6 +482,28 @@ export default function CavendishHomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PRACTITIONER ETHOS & HUMAN COMMITMENT NOTE */}
+      <section className="py-12 bg-white border-y border-stone-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-stone-50 rounded-2xl p-6 sm:p-10 border border-stone-200 flex flex-col md:flex-row items-center gap-8 shadow-xs">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-emerald-900/10 border-2 border-emerald-700/30 text-emerald-800 flex items-center justify-center shrink-0">
+              <ScalesOfJusticeIcon className="w-8 h-8 sm:w-10 sm:h-10" />
+            </div>
+            <div className="space-y-3 text-center md:text-left">
+              <span className="text-xs font-bold uppercase tracking-wider text-emerald-800">
+                Our Practice Ethos &bull; South East Resolution Chambers
+              </span>
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-stone-950">
+                &ldquo;Families make far better decisions for their children than a courtroom judge ever could.&rdquo;
+              </h3>
+              <p className="text-stone-700 text-sm leading-relaxed">
+                At Cavendish Family Mediation, our practitioners are accredited dispute specialists living and working across East Anglia and the South East. When you call our practice, you speak directly with experienced dispute professionals who treat your family’s situation with warmth, confidentiality, and respect.
+              </p>
+            </div>
           </div>
         </div>
       </section>

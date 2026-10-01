@@ -16,7 +16,6 @@ interface MatomoTrackerProps {
 export const MatomoTracker: React.FC<MatomoTrackerProps> = ({
   siteId,
   baseUrl = '//analytics.1str.co.uk/',
-  disableCookies = true,
 }) => {
   if (!siteId) return null;
 
@@ -24,15 +23,15 @@ export const MatomoTracker: React.FC<MatomoTrackerProps> = ({
 
   const scriptContent = `
     var _paq = window._paq = window._paq || [];
-    ${disableCookies ? "_paq.push(['disableCookies']);" : ''}
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     (function() {
-      var u = "${cleanBaseUrl}";
-      _paq.push(['setTrackerUrl', u + 'matomo.php']);
-      _paq.push(['setSiteId', "${siteId}"]);
-      var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-      g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+      var u="${cleanBaseUrl}";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '${siteId}']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
     })();
   `;
 

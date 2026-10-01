@@ -16,6 +16,31 @@ export const metadata: Metadata = {
   title: `Mediation Practice Locations | ${CAVENDISH_BRAND.shortName}`,
   description:
     'Regional directory of our accredited family mediation centres and designated Family Courts across the South East. Book confidential MIAM appointments.',
+  alternates: {
+    canonical: `${CAVENDISH_BRAND.siteUrl}/locations/`,
+  },
+  openGraph: {
+    title: `Mediation Practice Locations | ${CAVENDISH_BRAND.shortName}`,
+    description:
+      'Regional directory of our accredited family mediation centres and designated Family Courts across the South East. Book confidential MIAM appointments.',
+    url: `${CAVENDISH_BRAND.siteUrl}/locations/`,
+    type: 'website',
+    images: [
+      {
+        url: `${CAVENDISH_BRAND.siteUrl}/images/hero-mediation.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Mediation Locations | ${CAVENDISH_BRAND.brandName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Mediation Practice Locations | ${CAVENDISH_BRAND.shortName}`,
+    description:
+      'Regional directory of our accredited family mediation centres and designated Family Courts across the South East. Book confidential MIAM appointments.',
+    images: [`${CAVENDISH_BRAND.siteUrl}/images/hero-mediation.webp`],
+  },
 };
 
 export default function LocationsPage() {

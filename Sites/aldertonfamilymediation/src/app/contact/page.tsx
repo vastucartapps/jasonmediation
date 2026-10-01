@@ -18,6 +18,31 @@ export const metadata: Metadata = {
   title: `Book MIAM Assessment & Contact | ${ALDERTON_BRAND.shortName}`,
   description:
     'Book your confidential MIAM assessment or inquire about family mediation across Leicestershire, Rutland, and Nottinghamshire. Appointments within 48 hours.',
+  alternates: {
+    canonical: `${ALDERTON_BRAND.siteUrl}/contact/`,
+  },
+  openGraph: {
+    title: `Book MIAM Assessment & Contact | ${ALDERTON_BRAND.shortName}`,
+    description:
+      'Book your confidential MIAM assessment or inquire about family mediation across Leicestershire, Rutland, and Nottinghamshire. Appointments within 48 hours.',
+    url: `${ALDERTON_BRAND.siteUrl}/contact/`,
+    type: 'website',
+    images: [
+      {
+        url: `${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Contact & Bookings | ${ALDERTON_BRAND.brandName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Book MIAM Assessment & Contact | ${ALDERTON_BRAND.shortName}`,
+    description:
+      'Book your confidential MIAM assessment or inquire about family mediation across Leicestershire, Rutland, and Nottinghamshire. Appointments within 48 hours.',
+    images: [`${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`],
+  },
 };
 
 export default function ContactPage() {

@@ -14,6 +14,7 @@ import {
   ClockIcon,
   CheckCircleIcon,
 } from './Icons';
+import { CookieSettingsButton } from './CookieSettingsButton';
 
 interface FooterProps {
   brand: BrandConfig;
@@ -97,9 +98,13 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
               </div>
               <div className="flex items-center gap-2.5">
                 <MailIcon className="w-4 h-4 text-slate-400 shrink-0" />
-                <span className="text-slate-300 font-medium select-all">
+                <Link
+                  href="/contact/"
+                  className="text-slate-300 hover:text-white transition select-all"
+                  title="Contact our practice"
+                >
                   {brand.contactEmail}
-                </span>
+                </Link>
               </div>
               <div className="flex items-center gap-2.5 pt-1">
                 <PhoneCallIcon className="w-4 h-4 text-amber-400 shrink-0" />
@@ -309,6 +314,7 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
             <Link href="/terms/" className="hover:text-white transition underline">
               Terms of Engagement
             </Link>
+            <CookieSettingsButton />
             <Link href="/sitemap.xml" className="hover:text-white transition underline">
               XML Sitemap
             </Link>

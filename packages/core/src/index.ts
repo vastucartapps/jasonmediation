@@ -21,4 +21,6 @@ export * from './components/LocalProcedureGuide';
 export * from './components/ArticleView';
 export * from './components/MatomoTracker';
 export * from './components/MediationCalculator';
+export * from './components/CookieConsentBanner';
+export * from './components/CookieSettingsButton';
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Metadata } from 'next';
 import { CAVENDISH_BRAND } from '../../config/brand';
 import { Breadcrumbs } from '@mediation/core';
@@ -7,6 +8,31 @@ export const metadata: Metadata = {
   title: `Privacy & Confidentiality Policy | ${CAVENDISH_BRAND.shortName}`,
   description:
     'Our commitment to professional confidentiality, GDPR compliance, and without-prejudice legal privilege in UK family mediation.',
+  alternates: {
+    canonical: `${CAVENDISH_BRAND.siteUrl}/privacy/`,
+  },
+  openGraph: {
+    title: `Privacy & Confidentiality Policy | ${CAVENDISH_BRAND.shortName}`,
+    description:
+      'Our commitment to professional confidentiality, GDPR compliance, and without-prejudice legal privilege in UK family mediation.',
+    url: `${CAVENDISH_BRAND.siteUrl}/privacy/`,
+    type: 'website',
+    images: [
+      {
+        url: `${CAVENDISH_BRAND.siteUrl}/images/hero-mediation.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Privacy Policy | ${CAVENDISH_BRAND.brandName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Privacy & Confidentiality Policy | ${CAVENDISH_BRAND.shortName}`,
+    description:
+      'Our commitment to professional confidentiality, GDPR compliance, and without-prejudice legal privilege in UK family mediation.',
+    images: [`${CAVENDISH_BRAND.siteUrl}/images/hero-mediation.webp`],
+  },
 };
 
 export default function PrivacyPage() {
@@ -61,7 +87,11 @@ export default function PrivacyPage() {
               4. Contacting the Practice
             </h2>
             <p>
-              For data protection inquiries or requests regarding your personal records, please contact our Data Protection Officer at {CAVENDISH_BRAND.contactEmail} or by telephone on {CAVENDISH_BRAND.formattedPhone}.
+              For data protection inquiries or requests regarding your personal records, please contact our Data Protection Officer at{' '}
+              <Link href="/contact/" className="text-emerald-700 hover:underline">
+                {CAVENDISH_BRAND.contactEmail}
+              </Link>{' '}
+              or by telephone on {CAVENDISH_BRAND.formattedPhone}.
             </p>
           </div>
         </div>

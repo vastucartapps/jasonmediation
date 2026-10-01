@@ -48,11 +48,36 @@ export async function generateMetadata({ params }: TownLocationProps): Promise<M
   const county = SITE1_COUNTIES.find((c) => c.slug === countySlug);
   const town = county?.towns.find((t) => t.slug === townSlug);
 
-  if (!town) return { title: 'Location Not Found' };
+  if (!town || !county) return { title: 'Location Not Found' };
+
+  const canonicalUrl = `${ALDERTON_BRAND.siteUrl}/locations/${countySlug}/${townSlug}/`;
 
   return {
     title: `Family Mediation in ${town.name} | ${ALDERTON_BRAND.shortName}`,
     description: `FMC-accredited family mediation in ${town.name}, ${town.county}. Professional MIAM assessments, child rotas & financial clean breaks. Book in 48 hours.`,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `Family Mediation in ${town.name} | ${ALDERTON_BRAND.shortName}`,
+      description: `FMC-accredited family mediation in ${town.name}, ${town.county}. Professional MIAM assessments, child rotas & financial clean breaks. Book in 48 hours.`,
+      url: canonicalUrl,
+      type: 'website',
+      images: [
+        {
+          url: `${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`,
+          width: 1200,
+          height: 630,
+          alt: `Family Mediation in ${town.name} - ${ALDERTON_BRAND.brandName}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Family Mediation in ${town.name} | ${ALDERTON_BRAND.shortName}`,
+      description: `FMC-accredited family mediation in ${town.name}, ${town.county}. Professional MIAM assessments, child rotas & financial clean breaks. Book in 48 hours.`,
+      images: [`${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`],
+    },
     keywords: [
       `family mediation ${town.name}`,
       `family mediation near me ${town.name}`,
@@ -84,7 +109,7 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
     { label: town.name, href: `/locations/${county.slug}/${town.slug}/` },
   ];
 
-  const localSchema = generateLocalBusinessSchema(ALDERTON_BRAND, town);
+  const localSchema = generateLocalBusinessSchema(ALDERTON_BRAND, town, undefined, true);
   const townPageUrl = `${ALDERTON_BRAND.siteUrl}/locations/${county.slug}/${town.slug}/`;
   const faqSchema = generateFAQSchema(town.faqs, townPageUrl, true);
   const glossarySchema = generateDefinedTermSetSchema(ALDERTON_BRAND.siteUrl);
@@ -94,7 +119,8 @@ export default async function TownLocationPage({ params }: TownLocationProps) {
       service.cardImage || service.heroImage,
       `${service.title} in ${town.name}`,
       town,
-      service
+      service,
+      true
     )
   );
 

@@ -21,6 +21,31 @@ export const metadata: Metadata = {
   title: `Family Mediation Services & MIAM | ${ALDERTON_BRAND.shortName}`,
   description:
     'Explore our FMC-accredited mediation services across the East Midlands. Statutory MIAM certificates, child arrangements, and fair financial settlements.',
+  alternates: {
+    canonical: `${ALDERTON_BRAND.siteUrl}/services/`,
+  },
+  openGraph: {
+    title: `Family Mediation Services & MIAM | ${ALDERTON_BRAND.shortName}`,
+    description:
+      'Explore our FMC-accredited mediation services across the East Midlands. Statutory MIAM certificates, child arrangements, and fair financial settlements.',
+    url: `${ALDERTON_BRAND.siteUrl}/services/`,
+    type: 'website',
+    images: [
+      {
+        url: `${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Mediation Services | ${ALDERTON_BRAND.brandName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Family Mediation Services & MIAM | ${ALDERTON_BRAND.shortName}`,
+    description:
+      'Explore our FMC-accredited mediation services across the East Midlands. Statutory MIAM certificates, child arrangements, and fair financial settlements.',
+    images: [`${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`],
+  },
 };
 
 export default function ServicesPage() {

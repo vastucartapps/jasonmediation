@@ -53,11 +53,37 @@ export async function generateMetadata({ params }: LocationServicePageProps): Pr
   const town = county?.towns.find((t) => t.slug === townSlug);
   const service = CORE_SERVICES.find((s) => s.slug === serviceSlug);
 
-  if (!town || !service) return { title: 'Page Not Found' };
+  if (!town || !county || !service) return { title: 'Page Not Found' };
+
+  const canonicalUrl = `${ALDERTON_BRAND.siteUrl}/locations/${countySlug}/${townSlug}/${serviceSlug}/`;
+  const imageUrl = `${ALDERTON_BRAND.siteUrl}${service.heroImage || '/images/hero-mediation.webp'}`;
 
   return {
     title: `${service.navLabel} in ${town.name} | Alderton`,
     description: `Accredited ${service.navLabel} in ${town.name}, ${town.county}. Fast MIAM certificates, fair agreements & court forms. Book consultation in 48 hours.`,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `${service.navLabel} in ${town.name} | Alderton`,
+      description: `Accredited ${service.navLabel} in ${town.name}, ${town.county}. Fast MIAM certificates, fair agreements & court forms. Book consultation in 48 hours.`,
+      url: canonicalUrl,
+      type: 'website',
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${service.title} in ${town.name} - ${ALDERTON_BRAND.brandName}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${service.navLabel} in ${town.name} | Alderton`,
+      description: `Accredited ${service.navLabel} in ${town.name}, ${town.county}. Fast MIAM certificates, fair agreements & court forms. Book consultation in 48 hours.`,
+      images: [imageUrl],
+    },
     keywords: [
       `${service.title} in ${town.name}`,
       `${service.title} near me ${town.name}`,
@@ -91,14 +117,15 @@ export default async function LocationServicePage({ params }: LocationServicePag
     { label: service.navLabel, href: `/locations/${county.slug}/${town.slug}/${service.slug}/` },
   ];
 
-  const localSchema = generateLocalBusinessSchema(ALDERTON_BRAND, town, service);
-  const serviceSchema = generateServiceSchema(ALDERTON_BRAND, service, town);
+  const localSchema = generateLocalBusinessSchema(ALDERTON_BRAND, town, service, true);
+  const serviceSchema = generateServiceSchema(ALDERTON_BRAND, service, town, true);
   const geoImageSchema = generateGeoImageSchema(
     ALDERTON_BRAND,
     service.cardImage || service.heroImage,
     `${service.title} in ${town.name}`,
     town,
-    service
+    service,
+    true
   );
 
   const combinedFaqs = [

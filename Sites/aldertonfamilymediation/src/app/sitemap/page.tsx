@@ -13,6 +13,31 @@ export const metadata: Metadata = {
   title: `Site Directory & Sitemap | ${ALDERTON_BRAND.shortName}`,
   description:
     'Complete directory of all family mediation services, regional practices, local court information, and separation guides across the East Midlands.',
+  alternates: {
+    canonical: `${ALDERTON_BRAND.siteUrl}/sitemap/`,
+  },
+  openGraph: {
+    title: `Site Directory & Sitemap | ${ALDERTON_BRAND.shortName}`,
+    description:
+      'Complete directory of all family mediation services, regional practices, local court information, and separation guides across the East Midlands.',
+    url: `${ALDERTON_BRAND.siteUrl}/sitemap/`,
+    type: 'website',
+    images: [
+      {
+        url: `${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Site Directory & Sitemap | ${ALDERTON_BRAND.brandName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Site Directory & Sitemap | ${ALDERTON_BRAND.shortName}`,
+    description:
+      'Complete directory of all family mediation services, regional practices, local court information, and separation guides across the East Midlands.',
+    images: [`${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`],
+  },
 };
 
 export default function SitemapPage() {

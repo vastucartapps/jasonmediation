@@ -38,13 +38,18 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   const service = CORE_SERVICES.find((s) => s.slug === slug);
   if (!service) return { title: 'Service Not Found' };
 
+  const serviceCanonical = `${ALDERTON_BRAND.siteUrl}/services/${service.slug}/`;
+
   return {
     title: `${service.navLabel} | ${ALDERTON_BRAND.brandName}`,
     description: service.metaDescription || service.summary.slice(0, 155),
+    alternates: {
+      canonical: serviceCanonical,
+    },
     openGraph: {
       title: `${service.navLabel} | ${ALDERTON_BRAND.brandName}`,
       description: service.metaDescription || service.summary.slice(0, 155),
-      url: `${ALDERTON_BRAND.siteUrl}/services/${service.slug}/`,
+      url: serviceCanonical,
       type: 'website',
       images: [
         {
@@ -54,6 +59,12 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
           alt: service.title,
         },
       ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${service.navLabel} | ${ALDERTON_BRAND.brandName}`,
+      description: service.metaDescription || service.summary.slice(0, 155),
+      images: [`${ALDERTON_BRAND.siteUrl}${service.heroImage}`],
     },
   };
 }
@@ -72,7 +83,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   ];
 
   const pageUrl = `${ALDERTON_BRAND.siteUrl}/services/${service.slug}/`;
-  const serviceSchema = generateServiceSchema(ALDERTON_BRAND, service);
+  const serviceSchema = generateServiceSchema(ALDERTON_BRAND, service, undefined, true);
   const faqSchema = generateFAQSchema(service.faqs, pageUrl, true);
   const glossarySchema = generateDefinedTermSetSchema(ALDERTON_BRAND.siteUrl);
 

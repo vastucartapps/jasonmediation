@@ -7,6 +7,31 @@ export const metadata: Metadata = {
   title: `Terms of Engagement | ${CAVENDISH_BRAND.shortName}`,
   description:
     'Terms of engagement, FMC mediation code of conduct, assessment cancellation policies, and fee arrangements.',
+  alternates: {
+    canonical: `${CAVENDISH_BRAND.siteUrl}/terms/`,
+  },
+  openGraph: {
+    title: `Terms of Engagement | ${CAVENDISH_BRAND.shortName}`,
+    description:
+      'Terms of engagement, FMC mediation code of conduct, assessment cancellation policies, and fee arrangements.',
+    url: `${CAVENDISH_BRAND.siteUrl}/terms/`,
+    type: 'website',
+    images: [
+      {
+        url: `${CAVENDISH_BRAND.siteUrl}/images/hero-mediation.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Terms of Engagement | ${CAVENDISH_BRAND.brandName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Terms of Engagement | ${CAVENDISH_BRAND.shortName}`,
+    description:
+      'Terms of engagement, FMC mediation code of conduct, assessment cancellation policies, and fee arrangements.',
+    images: [`${CAVENDISH_BRAND.siteUrl}/images/hero-mediation.webp`],
+  },
 };
 
 export default function TermsPage() {

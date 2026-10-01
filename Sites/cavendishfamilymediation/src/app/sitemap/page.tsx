@@ -13,6 +13,31 @@ export const metadata: Metadata = {
   title: `Site Directory & Sitemap | ${CAVENDISH_BRAND.shortName}`,
   description:
     'Complete directory of all family mediation services, regional practices, local court information, and separation guides across the South East.',
+  alternates: {
+    canonical: `${CAVENDISH_BRAND.siteUrl}/sitemap/`,
+  },
+  openGraph: {
+    title: `Site Directory & Sitemap | ${CAVENDISH_BRAND.shortName}`,
+    description:
+      'Complete directory of all family mediation services, regional practices, local court information, and separation guides across the South East.',
+    url: `${CAVENDISH_BRAND.siteUrl}/sitemap/`,
+    type: 'website',
+    images: [
+      {
+        url: `${CAVENDISH_BRAND.siteUrl}/images/hero-mediation.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Site Directory & Sitemap | ${CAVENDISH_BRAND.brandName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Site Directory & Sitemap | ${CAVENDISH_BRAND.shortName}`,
+    description:
+      'Complete directory of all family mediation services, regional practices, local court information, and separation guides across the South East.',
+    images: [`${CAVENDISH_BRAND.siteUrl}/images/hero-mediation.webp`],
+  },
 };
 
 export default function SitemapPage() {

@@ -7,6 +7,31 @@ export const metadata: Metadata = {
   title: `Terms of Engagement | ${ALDERTON_BRAND.shortName}`,
   description:
     'Terms of engagement, FMC mediation code of conduct, assessment cancellation policies, and fee arrangements.',
+  alternates: {
+    canonical: `${ALDERTON_BRAND.siteUrl}/terms/`,
+  },
+  openGraph: {
+    title: `Terms of Engagement | ${ALDERTON_BRAND.shortName}`,
+    description:
+      'Terms of engagement, FMC mediation code of conduct, assessment cancellation policies, and fee arrangements.',
+    url: `${ALDERTON_BRAND.siteUrl}/terms/`,
+    type: 'website',
+    images: [
+      {
+        url: `${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Terms of Engagement | ${ALDERTON_BRAND.brandName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Terms of Engagement | ${ALDERTON_BRAND.shortName}`,
+    description:
+      'Terms of engagement, FMC mediation code of conduct, assessment cancellation policies, and fee arrangements.',
+    images: [`${ALDERTON_BRAND.siteUrl}/images/hero-mediation.webp`],
+  },
 };
 
 export default function TermsPage() {
