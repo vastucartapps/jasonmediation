@@ -34,10 +34,10 @@ export const GLOBAL_CONTACT = {
   courtStandardsCitation: 'Section 10 of the Children and Families Act 2014 & Family Procedure Rules 2010 Part 3',
 
   // Form Submission & Lead Notification Destination (SSOT for all brands)
-  leadRecipientEmail: 'venturevidyahindi@gmail.com',
-  formSubmitToken: 'venturevidyahindi@gmail.com',
-  leadSubmitEndpoint: 'https://formsubmit.co/ajax/venturevidyahindi@gmail.com',
-  leadWebhookEndpoint: 'https://formsubmit.co/ajax/venturevidyahindi@gmail.com',
+  leadRecipientEmail: 'comms@1str.co.uk',
+  formSubmitToken: 'comms@1str.co.uk',
+  leadSubmitEndpoint: 'https://formsubmit.co/ajax/comms@1str.co.uk',
+  leadWebhookEndpoint: 'https://formsubmit.co/ajax/comms@1str.co.uk',
 
   // Matomo Analytics Infrastructure (Client Cluster: analytics.1str.co.uk)
   matomoBaseUrl: '//analytics.1str.co.uk/',

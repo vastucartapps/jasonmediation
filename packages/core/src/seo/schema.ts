@@ -1,5 +1,52 @@
 import { BrandConfig, FAQItem, TownLocation, ServiceItem, GuideArticle } from '../types';
 
+export interface ImageObjectOptions {
+  id?: string;
+  url: string;
+  caption?: string;
+  width?: number;
+  height?: number;
+  contentLocation?: any;
+  name?: string;
+  description?: string;
+}
+
+export function createStandardImageObject(
+  brand: BrandConfig,
+  options: ImageObjectOptions
+) {
+  const imageUrl = options.url.startsWith('http')
+    ? options.url
+    : `${brand.siteUrl}${options.url.startsWith('/') ? options.url : `/${options.url}`}`;
+
+  return {
+    '@type': 'ImageObject',
+    ...(options.id ? { '@id': options.id } : {}),
+    url: imageUrl,
+    contentUrl: imageUrl,
+    ...(options.name ? { name: options.name } : {}),
+    caption: options.caption || `${brand.brandName} - FMC Accredited Practice`,
+    ...(options.description ? { description: options.description } : {}),
+    ...(options.width ? { width: options.width } : {}),
+    ...(options.height ? { height: options.height } : {}),
+    license: `${brand.siteUrl}/terms/`,
+    acquireLicensePage: `${brand.siteUrl}/contact/`,
+    copyrightNotice: `© 2026 ${brand.legalEntityName}. All rights reserved.`,
+    creditText: `${brand.brandName} Family Mediation Practice`,
+    creator: {
+      '@type': 'Organization',
+      name: brand.brandName,
+      url: brand.siteUrl,
+    },
+    copyrightHolder: {
+      '@type': 'Organization',
+      name: brand.legalEntityName,
+      url: brand.siteUrl,
+    },
+    ...(options.contentLocation ? { contentLocation: options.contentLocation } : {}),
+  };
+}
+
 export function generateLocalBusinessSchema(
   brand: BrandConfig,
   town?: TownLocation,
@@ -61,20 +108,16 @@ export function generateLocalBusinessSchema(
     email: brand.contactEmail,
     priceRange: '££',
     description,
-    logo: {
-      '@type': 'ImageObject',
-      '@id': `${brand.siteUrl}/#logo`,
-      url: `${brand.siteUrl}/icon.svg`,
-      contentUrl: `${brand.siteUrl}/icon.svg`,
+    logo: createStandardImageObject(brand, {
+      id: `${brand.siteUrl}/#logo`,
+      url: '/icon.svg',
       caption: `${brand.brandName} - FMC Accredited Practice Crest`,
       width: 512,
       height: 512,
-    },
-    image: {
-      '@type': 'ImageObject',
-      '@id': `${pageUrl}#primaryimage`,
-      url: `${brand.siteUrl}${service?.cardImage || service?.heroImage || '/images/sincere-mediation-session.webp'}`,
-      contentUrl: `${brand.siteUrl}${service?.cardImage || service?.heroImage || '/images/sincere-mediation-session.webp'}`,
+    }),
+    image: createStandardImageObject(brand, {
+      id: `${pageUrl}#primaryimage`,
+      url: service?.cardImage || service?.heroImage || '/images/sincere-mediation-session.webp',
       width: 1200,
       height: 675,
       caption: town
@@ -82,28 +125,26 @@ export function generateLocalBusinessSchema(
           ? `FMC-accredited ${service.title} session serving ${town.name}, ${town.county}`
           : `Accredited Family Mediation Practice serving ${town.name}, ${town.county}`
         : `${brand.brandName} - Accredited Family Mediation Practice`,
-      ...(town
+      contentLocation: town
         ? {
-            contentLocation: {
-              '@type': 'Place',
-              name: `${town.name} Family Mediation Services`,
-              address: {
-                '@type': 'PostalAddress',
-                streetAddress: `${town.name} Consultation Chambers, High Street`,
-                addressLocality: town.name,
-                addressRegion: town.county,
-                postalCode: town.postalDistricts[0],
-                addressCountry: 'GB',
-              },
-              geo: {
-                '@type': 'GeoCoordinates',
-                latitude: town.coordinates.latitude,
-                longitude: town.coordinates.longitude,
-              },
+            '@type': 'Place',
+            name: `${town.name} Family Mediation Services`,
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: `${town.name} Consultation Chambers, High Street`,
+              addressLocality: town.name,
+              addressRegion: town.county,
+              postalCode: town.postalDistricts[0],
+              addressCountry: 'GB',
+            },
+            geo: {
+              '@type': 'GeoCoordinates',
+              latitude: town.coordinates.latitude,
+              longitude: town.coordinates.longitude,
             },
           }
-        : {}),
-    },
+        : undefined,
+    }),
     address: postalAddress,
     geo: coordinates,
     areaServed: town
@@ -306,37 +347,33 @@ export function generateServiceSchema(
       availability: 'https://schema.org/InStock',
       url: serviceUrl,
     },
-    image: {
-      '@type': 'ImageObject',
-      url: imageUrl,
-      contentUrl: imageUrl,
+    image: createStandardImageObject(brand, {
+      url: imagePath,
       width: 1200,
       height: 675,
       caption: town
         ? `FMC-accredited ${service.title} in ${town.name}, ${town.county}`
         : service.title,
-      ...(town
+      contentLocation: town
         ? {
-            contentLocation: {
-              '@type': 'Place',
-              name: `${town.name} Family Dispute Resolution`,
-              address: {
-                '@type': 'PostalAddress',
-                streetAddress: `${town.name} Consultation Chambers, High Street`,
-                addressLocality: town.name,
-                addressRegion: town.county,
-                postalCode: town.postalDistricts[0],
-                addressCountry: 'GB',
-              },
-              geo: {
-                '@type': 'GeoCoordinates',
-                latitude: town.coordinates.latitude,
-                longitude: town.coordinates.longitude,
-              },
+            '@type': 'Place',
+            name: `${town.name} Family Dispute Resolution`,
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: `${town.name} Consultation Chambers, High Street`,
+              addressLocality: town.name,
+              addressRegion: town.county,
+              postalCode: town.postalDistricts[0],
+              addressCountry: 'GB',
+            },
+            geo: {
+              '@type': 'GeoCoordinates',
+              latitude: town.coordinates.latitude,
+              longitude: town.coordinates.longitude,
             },
           }
-        : {}),
-    },
+        : undefined,
+    }),
     description: service.summary,
     url: serviceUrl,
     areaServed: town
@@ -356,52 +393,41 @@ export function generateGeoImageSchema(
   service?: ServiceItem,
   inGraph = false
 ) {
-  const imageUrl = `${brand.siteUrl}${imagePath}`;
   const caption = town
     ? service
       ? `FMC-accredited ${service.title} consultation serving ${town.name}, ${town.county}`
       : `Accredited Family Mediation Centre serving ${town.name}, ${town.county}`
     : `${title} - ${brand.brandName}`;
 
-  return {
-    ...(inGraph ? {} : { '@context': 'https://schema.org' }),
-    '@type': 'ImageObject',
-    url: imageUrl,
-    contentUrl: imageUrl,
+  const imageObj = createStandardImageObject(brand, {
+    url: imagePath,
     name: title,
     caption,
     description: `${caption}. Delivered in accordance with Family Procedure Rules (FPR) Part 3 standards.`,
-    creditText: `${brand.brandName} Dispute Resolution`,
-    creator: {
-      '@type': 'Organization',
-      name: brand.brandName,
-      url: brand.siteUrl,
-    },
-    copyrightHolder: {
-      '@type': 'Organization',
-      name: brand.legalEntityName,
-    },
-    ...(town
+    contentLocation: town
       ? {
-          contentLocation: {
-            '@type': 'Place',
-            name: `${town.name} Mediation Chambers`,
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: `${town.name} Consultation Chambers, High Street`,
-              addressLocality: town.name,
-              addressRegion: town.county,
-              postalCode: town.postalDistricts[0],
-              addressCountry: 'GB',
-            },
-            geo: {
-              '@type': 'GeoCoordinates',
-              latitude: town.coordinates.latitude,
-              longitude: town.coordinates.longitude,
-            },
+          '@type': 'Place',
+          name: `${town.name} Mediation Chambers`,
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: `${town.name} Consultation Chambers, High Street`,
+            addressLocality: town.name,
+            addressRegion: town.county,
+            postalCode: town.postalDistricts[0],
+            addressCountry: 'GB',
+          },
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: town.coordinates.latitude,
+            longitude: town.coordinates.longitude,
           },
         }
-      : {}),
+      : undefined,
+  });
+
+  return {
+    ...(inGraph ? {} : { '@context': 'https://schema.org' }),
+    ...imageObj,
   };
 }
 
@@ -418,13 +444,12 @@ export function generateArticleSchema(brand: BrandConfig, article: GuideArticle)
     },
     headline: article.title,
     description: article.summary,
-    image: {
-      '@type': 'ImageObject',
-      url: imageUrl,
+    image: createStandardImageObject(brand, {
+      url: article.image || '/images/sincere-mediation-session.webp',
       width: 1200,
       height: 675,
       caption: article.imageAlt || article.title,
-    },
+    }),
     thumbnailUrl: imageUrl,
     author: {
       '@type': 'Organization',
@@ -434,14 +459,15 @@ export function generateArticleSchema(brand: BrandConfig, article: GuideArticle)
     publisher: {
       '@type': 'Organization',
       name: brand.brandName,
-      logo: {
-        '@type': 'ImageObject',
-        url: `${brand.siteUrl}/icon.svg`,
+      logo: createStandardImageObject(brand, {
+        url: '/icon.svg',
         width: 512,
         height: 512,
-      },
+        caption: `${brand.brandName} Crest`,
+      }),
     },
     datePublished: '2026-09-15T09:00:00+01:00',
     dateModified: '2026-09-21T10:00:00+01:00',
   };
 }
+

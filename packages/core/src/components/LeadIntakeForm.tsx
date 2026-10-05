@@ -68,7 +68,7 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
       GLOBAL_CONTACT.leadSubmitEndpoint ||
       (leadRecipientEmail
         ? `https://formsubmit.co/ajax/${leadRecipientEmail}`
-        : 'https://formsubmit.co/ajax/venturevidyahindi@gmail.com');
+        : 'https://formsubmit.co/ajax/comms@1str.co.uk');
 
     const ukTimeString = new Date().toLocaleString('en-GB', {
       timeZone: 'Europe/London',
@@ -185,7 +185,7 @@ export const LeadIntakeForm: React.FC<LeadIntakeFormProps> = ({
 
       <form
         onSubmit={handleSubmit}
-        action={leadSubmitUrl || GLOBAL_CONTACT.leadSubmitEndpoint || 'https://formsubmit.co/ajax/venturevidyahindi@gmail.com'}
+        action={leadSubmitUrl || GLOBAL_CONTACT.leadSubmitEndpoint || 'https://formsubmit.co/ajax/comms@1str.co.uk'}
         method="POST"
         className="space-y-4"
       >

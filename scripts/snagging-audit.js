@@ -270,7 +270,7 @@ function runSnaggingAudit() {
 
       // Lead form check
       if (content.includes('<form') && content.includes('formsubmit.co')) {
-        if (!content.includes('formsubmit.co/ajax/venturevidyahindi@gmail.com') || !content.includes('name="_template" value="box"')) {
+        if (!content.includes('formsubmit.co/ajax/comms@1str.co.uk') || !content.includes('name="_template" value="box"')) {
           leadFormEndpointErrors++;
         }
       }
@@ -352,6 +352,20 @@ function runSnaggingAudit() {
                   console.error(`  [FAIL] ${relPath}: ${type} PostalAddress incomplete! (street:${!!a.streetAddress}, loc:${!!a.addressLocality}, post:${!!a.postalCode}, country:${!!a.addressCountry})`);
                   schemaValidationErrors++;
                 }
+              }
+            }
+            if (type === 'ImageObject') {
+              if (!entity.license || typeof entity.license !== 'string' || !entity.license.startsWith('http')) {
+                console.error(`  [FAIL] ${relPath}: ImageObject missing valid license URL!`);
+                schemaValidationErrors++;
+              }
+              if (!entity.acquireLicensePage || typeof entity.acquireLicensePage !== 'string' || !entity.acquireLicensePage.startsWith('http')) {
+                console.error(`  [FAIL] ${relPath}: ImageObject missing valid acquireLicensePage URL!`);
+                schemaValidationErrors++;
+              }
+              if (!entity.copyrightNotice || typeof entity.copyrightNotice !== 'string' || entity.copyrightNotice.trim() === '') {
+                console.error(`  [FAIL] ${relPath}: ImageObject missing copyrightNotice!`);
+                schemaValidationErrors++;
               }
             }
             for (const key of Object.keys(entity)) {
