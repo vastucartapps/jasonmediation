@@ -16,6 +16,9 @@ import {
   Atom,
   FileCheck2,
   ArrowDown,
+  Sparkles,
+  HelpCircle,
+  BookOpen,
 } from 'lucide-react';
 
 interface PageProps {
@@ -38,9 +41,26 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const pageUrl = `https://trustlypharma.co.uk/peptides/${compound.slug}/`;
+
   return {
     title: `${compound.name} Chemical Profile, CAS ${compound.casNumber} & Research Sourcing`,
     description: `Academic chemical profile for ${compound.name} (${compound.systematicName}). Chemical formula ${compound.molecularFormula}, MW ${compound.molecularWeight}, PubChem CID, PubMed citations, and laboratory sourcing links.`,
+    alternates: {
+      canonical: pageUrl,
+    },
+    openGraph: {
+      title: `${compound.name} (${compound.systematicName}) Chemical Profile & Research Directory`,
+      description: compound.shortOverview,
+      url: pageUrl,
+      type: 'article',
+      siteName: 'Trustly Pharma',
+    },
+    twitter: {
+      card: 'summary',
+      title: `${compound.name} Chemical Reference Profile`,
+      description: compound.shortOverview,
+    },
     keywords: [
       `${compound.name} peptide`,
       `${compound.name} CAS ${compound.casNumber}`,
@@ -48,6 +68,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       `${compound.name} laboratory supplier catalogues`,
       `${compound.name} dilution calculator`,
       `${compound.name} PubMed studies`,
+      `${compound.name} category hub`,
     ],
   };
 }
@@ -61,27 +82,123 @@ export default async function PeptideDetailPage({ params }: PageProps) {
   }
 
   const lvl = evidenceLevels[compound.evidenceLevel];
+  const pageUrl = `https://trustlypharma.co.uk/peptides/${compound.slug}/`;
+  const categoryUrl = `https://trustlypharma.co.uk/category/${compound.categorySlug}/`;
 
-  // Structured Data
+  // FAQ Data for Schema and On-Page Rendering
+  const faqs = [
+    {
+      question: `What is ${compound.name} and what is its systematic chemical classification?`,
+      answer: `${compound.name} (${compound.systematicName}) is an analytically characterized peptide compound with empirical molecular formula ${compound.molecularFormula} and molecular weight ${compound.molecularWeight}. It is indexed under CAS Registry Number ${compound.casNumber} and categorized in research literature under ${compound.categoryName}.`,
+    },
+    {
+      question: `What are the documented molecular mechanisms and in vitro signaling pathways for ${compound.name}?`,
+      answer: `Preclinical in vitro and in vivo studies indicate that ${compound.name} interacts with primary cellular signaling cascades: ${compound.mechanismOfAction.slice(0, 2).join(' ')} Additional investigations focus on cellular migration and microvascular homeostasis in explanted tissue assays.`,
+    },
+    {
+      question: `Is ${compound.name} approved for human medicinal consumption or clinical prescription?`,
+      answer: `No. ${compound.name} is classified strictly as an analytical reference standard and laboratory research reagent for in vitro laboratory investigations. It is not approved by the UK MHRA, European EMA, or US FDA for human administration, diagnosis, therapy, or dietary supplementation.`,
+    },
+    {
+      question: `What are the standard laboratory handling and reconstitution parameters for ${compound.name}?`,
+      answer: `Lyophilized ${compound.name} is stored desiccated at ${compound.reconstitution.storageLyophilized}. Solution reconstitution is typically prepared using ${compound.reconstitution.recommendedDiluent}, with post-dilution storage maintained at ${compound.reconstitution.storageReconstituted}. ${compound.reconstitution.stabilityWindow}.`,
+    },
+  ];
+
+  // Comprehensive Schema.org @graph
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'ScholarlyArticle',
-    name: `${compound.name} (${compound.systematicName}) Chemical Reference & Evidence Analysis`,
-    headline: `${compound.name} Chemical Specifications and Laboratory Sourcing Matrix`,
-    description: compound.shortOverview,
-    about: {
-      '@type': 'ChemicalSubstance',
-      name: compound.name,
-      chemicalFormula: compound.molecularFormula,
-      molecularWeight: compound.molecularWeight,
-      identifier: compound.casNumber,
-      alternateName: compound.systematicName,
-    },
-    author: {
-      '@type': 'Organization',
-      name: 'Trustly Pharma Analytical Board',
-      url: 'https://trustlypharma.co.uk',
-    },
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': 'https://trustlypharma.co.uk/#website',
+        url: 'https://trustlypharma.co.uk',
+        name: 'Trustly Pharma',
+        description: 'Academic Peptide Chemical Index & Independent Sourcing Matrix',
+      },
+      {
+        '@type': 'MedicalWebPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: `${compound.name} Chemical Profile & Research Sourcing Matrix`,
+        description: compound.shortOverview,
+        isPartOf: { '@id': 'https://trustlypharma.co.uk/#website' },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
+        mainEntity: { '@id': `${pageUrl}#chemical` },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://trustlypharma.co.uk/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: compound.categoryName,
+            item: categoryUrl,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: compound.name,
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        '@type': 'ChemicalSubstance',
+        '@id': `${pageUrl}#chemical`,
+        name: compound.name,
+        alternateName: compound.systematicName,
+        identifier: compound.casNumber,
+        chemicalFormula: compound.molecularFormula,
+        molecularWeight: compound.molecularWeight,
+        sameAs: compound.pubchemCid
+          ? `https://pubchem.ncbi.nlm.nih.gov/compound/${compound.pubchemCid}`
+          : undefined,
+      },
+      {
+        '@type': 'ScholarlyArticle',
+        '@id': `${pageUrl}#article`,
+        headline: `${compound.name} (${compound.systematicName}) Chemical Reference & Evidence Analysis`,
+        description: compound.shortOverview,
+        about: { '@id': `${pageUrl}#chemical` },
+        author: {
+          '@type': 'Organization',
+          name: 'Trustly Pharma Analytical Board',
+          url: 'https://trustlypharma.co.uk',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Trustly Pharma',
+          url: 'https://trustlypharma.co.uk',
+        },
+        citation: compound.citations.map((c) =>
+          c.pubmedId
+            ? `https://pubmed.ncbi.nlm.nih.gov/${c.pubmedId}/`
+            : c.doi
+            ? `https://doi.org/${c.doi}`
+            : c.title
+        ),
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': `${pageUrl}#faq`,
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
+      },
+    ],
   };
 
   return (
@@ -170,12 +287,79 @@ export default async function PeptideDetailPage({ params }: PageProps) {
             >
               <span>PubMed Citations ({compound.citations.length})</span>
             </a>
+
+            <a
+              href="#faq"
+              className="px-5 py-3 rounded-full font-mono text-xs font-semibold text-slate-400 hover:text-white transition-colors"
+            >
+              <span>Scientific FAQ</span>
+            </a>
           </div>
         </div>
       </section>
 
       {/* Main Content Layout */}
       <div className="container-wide mt-12 space-y-12">
+        {/* AEO Quick Scientific Synopsis (Answer Engine Optimization Card) */}
+        <section className="rounded-3xl p-6 sm:p-8 card-paper border border-sky-500/25 bg-gradient-to-br from-[#02102b] via-[#041638] to-[#0a2149] shadow-xl space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[rgba(141,168,195,0.18)]">
+            <div className="flex items-center gap-2.5">
+              <div className="p-2 rounded-xl bg-sky-500/15 text-sky-400 border border-sky-400/20">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-sky-400 font-bold block">
+                  AEO Scientific Synopsis
+                </span>
+                <h2 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+                  Executive Research Summary & Verified Biochemical Profile
+                </h2>
+              </div>
+            </div>
+            <span className="text-xs font-mono text-slate-400 self-start sm:self-auto bg-[#020e24] px-3 py-1 rounded-full border border-[rgba(141,168,195,0.2)]">
+              Fact-Checked Peer-Reviewed Data
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs leading-relaxed">
+            <div className="p-4 rounded-2xl bg-[#020e24]/80 border border-[rgba(141,168,195,0.15)] space-y-1.5">
+              <h3 className="font-mono font-semibold text-sky-300 uppercase text-[11px] tracking-wide">
+                1. Chemical Identity & Sequence Architecture
+              </h3>
+              <p className="text-slate-300">
+                {compound.name} ({compound.systematicName}) is an analytically characterized peptide with empirical formula {compound.molecularFormula} (MW {compound.molecularWeight}). CAS Registry: {compound.casNumber}.
+              </p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-[#020e24]/80 border border-[rgba(141,168,195,0.15)] space-y-1.5">
+              <h3 className="font-mono font-semibold text-sky-300 uppercase text-[11px] tracking-wide">
+                2. Primary Preclinical Signaling Axis
+              </h3>
+              <p className="text-slate-300">
+                Investigated in preclinical assays for cellular signaling: {compound.mechanismOfAction[0]}
+              </p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-[#020e24]/80 border border-[rgba(141,168,195,0.15)] space-y-1.5">
+              <h3 className="font-mono font-semibold text-sky-300 uppercase text-[11px] tracking-wide">
+                3. Regulatory Classification & Scope
+              </h3>
+              <p className="text-slate-300">
+                Strictly restricted to in vitro laboratory research and biochemical evaluation. Not approved as a drug, diagnostic tool, or human cosmetic ingredient by the MHRA or FDA.
+              </p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-[#020e24]/80 border border-[rgba(141,168,195,0.15)] space-y-1.5">
+              <h3 className="font-mono font-semibold text-sky-300 uppercase text-[11px] tracking-wide">
+                4. Reconstitution & Analytical Handling
+              </h3>
+              <p className="text-slate-300">
+                Recommended reconstitution with {compound.reconstitution.recommendedDiluent}. Lyophilized cake stored at {compound.reconstitution.storageLyophilized}. Solution stable at {compound.reconstitution.storageReconstituted}.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Chemical Specifications & Sequence Ribbon */}
         <div className="space-y-6">
           <ChemicalFormulaBadge
@@ -285,7 +469,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
           />
         </section>
 
-        {/* Audited Suppliers Matrix */}
+        {/* Commercial Suppliers Matrix */}
         <section id="suppliers" className="scroll-mt-24">
           <TopSuppliersMatrix
             compoundName={compound.name}
@@ -299,6 +483,42 @@ export default async function PeptideDetailPage({ params }: PageProps) {
             compoundName={compound.name}
             citations={compound.citations}
           />
+        </section>
+
+        {/* Frequently Addressed Scientific & Regulatory Inquiries (FAQ Section) */}
+        <section id="faq" className="scroll-mt-24 rounded-3xl p-6 sm:p-8 card-paper border border-[rgba(141,168,195,0.25)] space-y-6">
+          <div className="flex items-center gap-2 pb-4 border-b border-[rgba(141,168,195,0.18)]">
+            <div className="p-1.5 rounded-lg bg-sky-500/10 text-sky-400">
+              <HelpCircle className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold block">
+                Semantic Reference Q&A
+              </span>
+              <h3 className="text-xl font-bold text-white tracking-tight">
+                Frequently Addressed Scientific & Regulatory Inquiries
+              </h3>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, idx) => (
+              <div
+                key={idx}
+                className="p-5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.15)] space-y-2"
+              >
+                <h4 className="text-sm font-semibold text-white flex items-start gap-2.5">
+                  <span className="w-5 h-5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-400/20 font-mono text-xs flex items-center justify-center shrink-0 mt-0.5">
+                    {idx + 1}
+                  </span>
+                  <span>{faq.question}</span>
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pl-7.5">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
         </section>
       </div>
     </div>

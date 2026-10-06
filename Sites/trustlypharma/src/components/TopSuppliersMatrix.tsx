@@ -102,13 +102,24 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
                     </span>
                   </div>
                   <div className="flex flex-wrap items-center gap-2 mt-1">
-                    <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[#02102b] text-sky-300 border border-[rgba(141,168,195,0.2)]">
-                      {fmtProfile ? fmtProfile.label : link.format}
-                    </span>
+                    {link.linkType === 'category' ? (
+                      <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-400/40">
+                        Category Hub (All Formats)
+                      </span>
+                    ) : (
+                      <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[#02102b] text-sky-300 border border-[rgba(141,168,195,0.2)]">
+                        {fmtProfile ? fmtProfile.label : link.format}
+                      </span>
+                    )}
                     <span className="text-[11px] text-slate-400 font-mono">
                       {link.dispatchRegion}
                     </span>
                   </div>
+                  {link.notes && (
+                    <p className="text-[11px] text-slate-300/90 mt-1.5 max-w-sm line-clamp-1">
+                      {link.notes}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -127,7 +138,7 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
                     Product Format
                   </span>
                   <span className="text-slate-200 font-mono text-[11px] flex items-center gap-1">
-                    <FileText className="w-3 h-3 text-sky-400" /> {fmtProfile ? fmtProfile.label : link.format}
+                    <FileText className="w-3 h-3 text-sky-400" /> {link.linkType === 'category' ? 'All Available Formats' : (fmtProfile ? fmtProfile.label : link.format)}
                   </span>
                 </div>
                 <div className="col-span-2 sm:col-span-1">
@@ -148,7 +159,7 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-xs gradient-bg shadow-md hover:scale-[1.02] active:scale-[0.98] transition-transform"
                 >
-                  <span>Order Research Batch</span>
+                  <span>{link.linkType === 'category' ? 'Browse Supplier Hub' : 'View Reagent Batch'}</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>

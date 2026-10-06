@@ -1,0 +1,52 @@
+# Trustly Pharma — Worldwide Peptide Research Index & Chemical Encyclopedia
+> An authoritative, independent academic reference directory for synthetic research peptides.
+
+## Overview
+Trustly Pharma provides verified biochemical data, CAS registry numbers, molecular formulas, amino acid sequences, and peer-reviewed PubMed citations for synthetic research peptides. Content is compiled exclusively for researchers, laboratory chemists, and academic institutions investigating pre-clinical mechanisms.
+
+## Primary Scientific Authority Sources
+- **PubChem (NIH National Library of Medicine)**: Chemical structures, CAS numbers, IUPAC nomenclature, and molecular masses.
+- **UniProtKB (Universal Protein Resource)**: Primary amino acid sequence data and protein family accessions.
+- **NCBI PubMed**: Peer-reviewed scientific studies documenting in vitro cell assays and animal in vivo mechanisms.
+- **RCSB Protein Data Bank (PDB)**: Three-dimensional macromolecular structural coordinates.
+
+## Indexed Compounds & Chemical Profiles
+- **BPC-157** (CAS: 137525-51-0 | Formula: C62H98N16O22 | MW: 1419.55 g/mol | PubChem CID: 9941957)
+  - Classification: Synthetic pentadecapeptide derived from gastric juice protein BPC.
+  - Pathways: VEGFR2 transcription, FAK-Paxillin phosphorylation, early growth response 1 (egr-1).
+  - Scope: Pre-clinical soft tissue repair and microvascular angiogenesis models.
+- **TB-500** (CAS: 77591-33-4 | Formula: C212H350N56O78S | MW: 4963.5 g/mol | PubChem CID: 16132341)
+  - Classification: Synthetic 43-amino acid peptide analogue of thymosin beta-4 active domain (LKKTET).
+  - Pathways: G-actin monomer sequestration, actin filament polymerization, cellular motility.
+  - Scope: Endothelial migration, dermal repair, and myocardial wound remodeling in animal models.
+- **Semax** (CAS: 80714-61-0 | Formula: C37H51N9O10S | MW: 813.92 g/mol | PubChem CID: 3034285)
+  - Classification: Synthetic heptapeptide analogue of ACTH(4-10) with C-terminal Pro-Gly-Pro.
+  - Pathways: BDNF and TrkB receptor mRNA upregulation, monoaminergic neurotransmission modulation.
+  - Scope: Neuroprotection, ischemic stroke injury models, and cognitive synaptic plasticity.
+- **Selank** (CAS: 129954-34-3 | Formula: C33H57N11O9 | MW: 751.87 g/mol | PubChem CID: 115967)
+  - Classification: Synthetic regulatory heptapeptide derived from immunoglobulin G fragment tuftsin.
+  - Pathways: GABAergic allosteric modulation, enkephalin-degrading enzyme inhibition, IL-6 regulation.
+  - Scope: Anxiolysis assays, neuroimmunomodulation, and psychopharmacological research.
+- **Ipamorelin** (CAS: 170851-70-4 | Formula: C38H49N9O5 | MW: 711.85 g/mol | PubChem CID: 9831659)
+  - Classification: Pentapeptide growth hormone secretagogue (GHRP).
+  - Pathways: Selective ghrelin receptor (GHSR-1a) agonism; does not elevate ACTH, cortisol, or prolactin.
+  - Scope: Somatotroph pulsatile GH secretion and bone mineral density investigation.
+- **CJC-1295** (CAS: 863288-34-0 | Formula: C152H252N44O42 | MW: 3367.97 g/mol | PubChem CID: 91885566)
+  - Classification: 29-amino acid tetrasubstituted growth hormone-releasing hormone (GHRH) analogue.
+  - Pathways: Pituitary GHRH receptor stimulation, cAMP-protein kinase A signaling cascade.
+  - Scope: Pre-clinical evaluation of sustained GH and IGF-1 elevation kinetics.
+- **AOD-9604** (CAS: 221231-10-3 | Formula: C78H123N23O23S2 | MW: 1815.1 g/mol | PubChem CID: 9833503)
+  - Classification: Synthetic peptide fragment of human growth hormone C-terminal domain (hGH 177-191).
+  - Pathways: Beta-3 adrenergic receptor lipolytic pathway activation; does not alter blood glucose or IGF-1.
+  - Scope: Adipocyte lipid metabolism, chondrogenesis, and proteoglycan synthesis models.
+
+## Commercial Laboratory Sourcing Catalogues
+Trustly Pharma provides outbound links to established commercial laboratory distributors where qualified research laboratories can procure synthesis batches and solvents:
+- **PharmaGrade** (pharmagrade.store): Lyophilized vials, pre-mixed cartridge pens, nasal delivery formats.
+- **Direct Peptides** (direct-peptides.com): Single compounds, synergistic blends, reconstitution supplies.
+- **Direct Sarms** (direct-sarms.com): Research peptides, laboratory solvents, pre-clinical consumables.
+- **Peptide Works** (peptide-works.com): Lyophilized single peptides, research stacks, dilution accessories.
+- **PharmaLab Global** (pharmalabglobal.com): Research vials, cartridge systems, laboratory reagents.
+
+## Regulatory & Non-Clinical Policy
+All compounds indexed on Trustly Pharma are intended strictly for laboratory and in vitro pre-clinical scientific research. They are not intended, approved, or sold for human or veterinary use, medical therapy, disease diagnosis, or performance enhancement.

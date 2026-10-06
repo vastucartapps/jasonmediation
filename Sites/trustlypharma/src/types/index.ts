@@ -20,6 +20,7 @@ export interface SupplierProductLink {
   dispatchRegion: string;
   notes?: string;
   batchAssayVerification?: boolean;
+  linkType?: 'category' | 'product';
 }
 
 export interface ReconstitutionSpecifications {
