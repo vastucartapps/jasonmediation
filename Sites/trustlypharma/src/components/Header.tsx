@@ -122,6 +122,33 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+
+            <div className="pt-4 border-t border-slate-800 space-y-2">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 block px-2">
+                Institutional & Scientific
+              </span>
+              <Link
+                href="/about/"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-2.5 rounded-xl text-xs font-mono text-slate-300 hover:text-white bg-[#071b3e]"
+              >
+                About & Methodology
+              </Link>
+              <Link
+                href="/safety/"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-2.5 rounded-xl text-xs font-mono text-emerald-400 hover:text-emerald-300 bg-[#071b3e]"
+              >
+                Research Safety Policy
+              </Link>
+              <Link
+                href="/contact/"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-2.5 rounded-xl text-xs font-mono text-sky-400 hover:text-sky-300 bg-[#071b3e]"
+              >
+                Institutional Contact Desk
+              </Link>
+            </div>
           </nav>
         </div>
       )}

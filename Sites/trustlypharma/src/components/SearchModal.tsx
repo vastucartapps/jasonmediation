@@ -44,11 +44,11 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
           <div className="flex items-start justify-between">
             <div>
               <p className="text-[11px] font-mono font-bold uppercase tracking-widest text-sky-400">
-                Independent Search Portal
+                Chemical Directory Search
               </p>
               <h3 className="text-xl font-bold text-white mt-1">Search Trustly Pharma</h3>
               <p className="text-xs text-slate-400 mt-0.5">
-                Search synthetic chemical compounds, CAS numbers, or commercial retailer COA ratings.
+                Search synthetic chemical compounds, CAS numbers, or commercial reagent distributors.
               </p>
             </div>
             <button

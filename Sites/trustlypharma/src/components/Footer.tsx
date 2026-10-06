@@ -63,6 +63,16 @@ export function Footer() {
                   Delivery Formats Standards
                 </Link>
               </li>
+              <li>
+                <Link href="/safety/" className="hover:text-sky-400 transition-colors">
+                  Research Safety Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact/" className="hover:text-sky-400 transition-colors">
+                  Institutional Contact Desk
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -113,12 +123,24 @@ export function Footer() {
           <div>
             © {new Date().getFullYear()} Trustly Pharma. All rights reserved. Registered UK Biotech Reference Directory.
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <Link href="/about/" className="hover:text-slate-300 transition-colors">
               About & Methodology
             </Link>
+            <Link href="/contact/" className="hover:text-slate-300 transition-colors">
+              Institutional Contact
+            </Link>
+            <Link href="/safety/" className="hover:text-slate-300 transition-colors">
+              Research Safety
+            </Link>
             <Link href="/verification/" className="hover:text-slate-300 transition-colors">
               Verification Standards
+            </Link>
+            <Link href="/privacy/" className="hover:text-slate-300 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms/" className="hover:text-slate-300 transition-colors">
+              Terms of Service
             </Link>
             <a href="/sitemap.xml" className="hover:text-slate-300 transition-colors">
               Sitemap

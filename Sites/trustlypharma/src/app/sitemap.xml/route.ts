@@ -15,8 +15,12 @@ export async function GET() {
     { loc: `${baseUrl}/`, lastmod, changefreq: 'daily', priority: '1.0' },
     { loc: `${baseUrl}/suppliers/`, lastmod, changefreq: 'weekly', priority: '0.85' },
     { loc: `${baseUrl}/formats/`, lastmod, changefreq: 'weekly', priority: '0.8' },
-    { loc: `${baseUrl}/about/`, lastmod, changefreq: 'monthly', priority: '0.6' },
-    { loc: `${baseUrl}/verification/`, lastmod, changefreq: 'monthly', priority: '0.5' }
+    { loc: `${baseUrl}/about/`, lastmod, changefreq: 'monthly', priority: '0.7' },
+    { loc: `${baseUrl}/contact/`, lastmod, changefreq: 'monthly', priority: '0.7' },
+    { loc: `${baseUrl}/safety/`, lastmod, changefreq: 'monthly', priority: '0.7' },
+    { loc: `${baseUrl}/privacy/`, lastmod, changefreq: 'monthly', priority: '0.5' },
+    { loc: `${baseUrl}/terms/`, lastmod, changefreq: 'monthly', priority: '0.5' },
+    { loc: `${baseUrl}/verification/`, lastmod, changefreq: 'monthly', priority: '0.6' }
   );
 
   // Dynamic compound detail pages

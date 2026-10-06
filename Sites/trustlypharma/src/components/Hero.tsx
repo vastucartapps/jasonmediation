@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { hero } from '../data/site';
 import { Database, BookOpen, Dna, Atom, ExternalLink, ArrowRight } from 'lucide-react';
+import { HeroHelix } from './HeroHelix';
 
 export const POPULAR_PEPTIDES = [
   { name: 'BPC-157', cas: '137525-51-0', slug: 'bpc-157', formula: 'C62H98N16O22' },
@@ -15,8 +16,15 @@ export function Hero() {
   const { card } = hero;
 
   return (
-    <section className="border-b border-[rgba(141,168,195,0.18)] bg-gradient-to-b from-[#02102b] to-[#041638] py-14 md:py-20">
-      <div className="container-wide">
+    <section className="relative overflow-hidden border-b border-[rgba(141,168,195,0.18)] bg-gradient-to-b from-[#02102b] via-[#03153b] to-[#041638] py-14 md:py-20">
+      {/* Dynamic 3D drifting peptide chain animation */}
+      <HeroHelix />
+
+      {/* Ambient glowing radial lights */}
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+
+      <div className="container-wide relative z-10">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-14 items-center">
           {/* Left Column: Authoritative Academic Encyclopedia Positioning */}
           <div>
