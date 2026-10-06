@@ -137,9 +137,9 @@ export function Footer() {
             <Link href="/verification" className="hover:text-slate-300 transition-colors">
               Supplier Verification Standard
             </Link>
-            <Link href="/sitemap.xml" className="hover:text-slate-300 transition-colors">
+            <a href="/sitemap.xml" className="hover:text-slate-300 transition-colors">
               Sitemap
-            </Link>
+            </a>
           </div>
         </div>
       </div>
