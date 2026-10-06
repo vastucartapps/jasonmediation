@@ -6,7 +6,6 @@ import {
   ExternalLink,
   Truck,
   ChevronRight,
-  ShieldAlert,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -46,13 +45,6 @@ export default function SuppliersPage() {
           <p className="text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
             Direct catalogue links to independent commercial vendors providing laboratory-grade research chemicals, lyophilized peptide vials, and reconstitution solvents for in vitro experimentation.
           </p>
-
-          <div className="p-4 rounded-xl bg-[#0a2149] border border-[rgba(141,168,195,0.2)] text-xs text-slate-300 max-w-3xl flex items-start gap-3 mt-4">
-            <ShieldAlert className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-            <p>
-              <strong>Scientific Notice:</strong> Commercial retail vendors are commercial sourcing outlets and do not constitute scientific regulatory authorities. Primary chemical data and scientific evidence are sourced from PubChem (NIH), UniProt, and peer-reviewed journals.
-            </p>
-          </div>
         </div>
       </section>
 

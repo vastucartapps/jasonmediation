@@ -6,15 +6,6 @@ import { SUPPLIER_PROFILES } from '../data/suppliers';
 export function Footer() {
   return (
     <footer className="border-t border-[rgba(141,168,195,0.18)] bg-[#020e24] text-slate-400">
-      {/* Discreet Professional Safety Banner */}
-      <div className="border-b border-[rgba(141,168,195,0.12)] bg-[#03132e]/60 py-6">
-        <div className="container-wide">
-          <p className="text-xs text-slate-400 leading-relaxed max-w-4xl">
-            <strong className="text-slate-300 font-semibold">Scientific & Non-Clinical Notice:</strong> Trustly Pharma is an independent biochemical encyclopedia, analytical testing index, and research reference. Primary scientific validation data are retrieved directly from PubChem, UniProt, and peer-reviewed journals. Commercial store links are provided solely for laboratory sourcing. Peptides cataloged are intended exclusively for in vitro and preclinical laboratory research, not for human or animal consumption, diagnostics, or direct therapeutic use.
-          </p>
-        </div>
-      </div>
-
       {/* Main Footer Links */}
       <div className="container-wide py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
@@ -29,7 +20,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed pr-6">
-              The independent UK and global peptide index, testing transparency benchmark, and chemical sequence catalog. Built to uphold laboratory standards through third-party HPLC assay auditing and academic peer-reviewed citations.
+              The independent peptide chemical index and analytical sequence catalog. Curated molecular profiles and peer-reviewed citations for laboratory research and analytical chemistry.
             </p>
             <div className="flex items-center gap-4 text-xs font-mono text-slate-400 pt-1">
               <span className="flex items-center gap-1 text-emerald-400">
@@ -123,8 +114,8 @@ export function Footer() {
             © {new Date().getFullYear()} Trustly Pharma. All rights reserved. Registered UK Biotech Reference Directory.
           </div>
           <div className="flex items-center gap-6">
-            <Link href="/compliance/" className="hover:text-slate-300 transition-colors">
-              Editorial Policy
+            <Link href="/about/" className="hover:text-slate-300 transition-colors">
+              About & Methodology
             </Link>
             <Link href="/verification/" className="hover:text-slate-300 transition-colors">
               Verification Standards

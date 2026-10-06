@@ -31,14 +31,14 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
               <Store className="w-4 h-4" />
             </span>
             <span className="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">
-              Commercial Laboratory Sourcing
+              Supplier Catalogues & Availability
             </span>
           </div>
           <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-            Where to Source {compoundName} for Laboratory Research
+            Distributor Catalogues for {compoundName}
           </h3>
           <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">
-            Direct catalogue links to independent commercial vendors supplying laboratory-grade synthesis batches, lyophilized vials, and reconstitution solvents.
+            Independent supplier directory providing research-grade lyophilized vials, cartridges, sprays, and reconstitution media.
           </p>
         </div>
 
@@ -166,14 +166,6 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
             </div>
           );
         })}
-      </div>
-
-      {/* Sourcing Transparency Note */}
-      <div className="p-4 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.15)] text-[11px] text-slate-400 leading-relaxed flex items-center gap-2">
-        <Beaker className="w-4 h-4 text-sky-400 shrink-0" />
-        <span>
-          <strong>Commercial Sourcing Notice:</strong> Outbound retailer links connect directly to third-party commercial store catalogues for research procurement. Scientific validation standards belong strictly to peer-reviewed literature and chemical databases (PubChem, UniProt, PubMed).
-        </span>
       </div>
     </div>
   );

@@ -43,7 +43,7 @@ export const hero = {
   quote:
     'Synthesized reference directory for laboratory researchers. Indexed with verified PubChem CIDs, UniProt entries, peer-reviewed PubMed citations, amino acid sequences, and commercial laboratory sourcing links.',
   lede:
-    'Academic chemical data, molecular formulas, and receptor mechanisms cataloged strictly for laboratory and pre-clinical research. Zero therapeutic or consumer claims.',
+    'Curated molecular formulas, chemical structures, receptor signaling pathways, and verified literature citations for scientific analysis.',
   cta: { label: 'Explore Compound Directory →', href: '/#peptides-catalog' },
   secondary: { label: 'Dilution Calculator →', href: '/#calculator' },
   card: {
@@ -62,7 +62,7 @@ export const hero = {
       { value: '5', label: 'sourcing outlets' },
     ],
     cta: { label: 'Browse All Compounds A–Z →', href: '/#peptides-catalog' },
-    footnote: 'Academic reference repository · laboratory research materials only',
+    footnote: 'Academic reference repository · Chemical structure database',
   },
 };
 
@@ -120,24 +120,24 @@ export const evidenceLevels: Record<'human' | 'mixed' | 'animal', EvidenceLevel>
 };
 
 export const governance = {
-  tag: 'Academic Governance & Non-Clinical Notice',
+  tag: 'Scientific Standards & Editorial Methodology',
   lede:
-    'Trustly Pharma serves as an independent biochemical index and research directory for scientific investigation.',
+    'Trustly Pharma curates biochemical data, molecular structures, and peer-reviewed literature for researchers and analytical chemists.',
   columns: [
     {
       heading: 'Authoritative Scientific Citations',
       text:
-        'All primary data originate from verified scientific databases: PubChem (National Library of Medicine), UniProt, and PubMed. Commercial distributors have no role in editorial scientific data.',
+        'All primary chemical identifiers, molecular weights, and sequences originate from verified databases: PubChem (National Library of Medicine), UniProt, and PubMed.',
     },
     {
-      heading: 'Laboratory Sourcing Links Only',
+      heading: 'Independent Distributor Directory',
       text:
-        'Outbound links to commercial retailers (such as PharmaGrade, Direct Peptides, Direct Sarms, Peptide Works, and PharmaLab Global) are provided solely as procurement resources for laboratory materials.',
+        'Outbound catalog links direct researchers to established chemical vendors (PharmaGrade, Direct Peptides, Direct Sarms, Peptide Works, and PharmaLab Global) for laboratory material procurement.',
     },
     {
-      heading: 'Strict Preclinical Research Scope',
+      heading: 'Biochemical Data Integrity',
       text:
-        'All molecular mechanisms and cellular pathways describe biochemical interactions in academic models. No compounds are presented for human or animal consumption, treatment, or therapeutic intervention.',
+        'All molecular mechanisms and signaling cascades detail documented interactions across cell cultures, receptor assays, and published academic literature.',
     },
   ],
 };

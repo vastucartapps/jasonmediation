@@ -96,8 +96,8 @@ export default async function PeptideDetailPage({ params }: PageProps) {
       answer: `Preclinical in vitro and in vivo studies indicate that ${compound.name} interacts with primary cellular signaling cascades: ${compound.mechanismOfAction.slice(0, 2).join(' ')} Additional investigations focus on cellular migration and microvascular homeostasis in explanted tissue assays.`,
     },
     {
-      question: `Is ${compound.name} approved for human medicinal consumption or clinical prescription?`,
-      answer: `No. ${compound.name} is classified strictly as an analytical reference standard and laboratory research reagent for in vitro laboratory investigations. It is not approved by the UK MHRA, European EMA, or US FDA for human administration, diagnosis, therapy, or dietary supplementation.`,
+      question: `What physical delivery formats and formulations are available for ${compound.name}?`,
+      answer: `${compound.name} is predominantly synthesized as lyophilized peptide vials for reconstituted laboratory assays. Additional commercial formats cataloged across verified suppliers include pre-calibrated multidose cartridges, mucosal atomizers, and synergistic multi-peptide research stacks.`,
     },
     {
       question: `What are the standard laboratory handling and reconstitution parameters for ${compound.name}?`,
@@ -270,7 +270,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
               href="#suppliers"
               className="gradient-bg px-6 py-3 rounded-full font-mono text-xs font-bold inline-flex items-center gap-2 shadow-lg hover:scale-[1.02] transition-transform"
             >
-              <span>Commercial Sourcing Catalogues ({compound.supplierLinks.length})</span>
+              <span>Supplier Catalogues ({compound.supplierLinks.length})</span>
               <ArrowDown className="w-4 h-4" />
             </a>
 
@@ -292,7 +292,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
               href="#faq"
               className="px-5 py-3 rounded-full font-mono text-xs font-semibold text-slate-400 hover:text-white transition-colors"
             >
-              <span>Scientific FAQ</span>
+              <span>Biochemical Q&A</span>
             </a>
           </div>
         </div>
@@ -300,7 +300,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
 
       {/* Main Content Layout */}
       <div className="container-wide mt-12 space-y-12">
-        {/* AEO Quick Scientific Synopsis (Answer Engine Optimization Card) */}
+        {/* Executive Compound Synopsis */}
         <section className="rounded-3xl p-6 sm:p-8 card-paper border border-sky-500/25 bg-gradient-to-br from-[#02102b] via-[#041638] to-[#0a2149] shadow-xl space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[rgba(141,168,195,0.18)]">
             <div className="flex items-center gap-2.5">
@@ -309,15 +309,15 @@ export default async function PeptideDetailPage({ params }: PageProps) {
               </div>
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-widest text-sky-400 font-bold block">
-                  AEO Scientific Synopsis
+                  Executive Biochemical Summary
                 </span>
                 <h2 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-                  Executive Research Summary & Verified Biochemical Profile
+                  Structured Chemical & Preclinical Profile
                 </h2>
               </div>
             </div>
             <span className="text-xs font-mono text-slate-400 self-start sm:self-auto bg-[#020e24] px-3 py-1 rounded-full border border-[rgba(141,168,195,0.2)]">
-              Fact-Checked Peer-Reviewed Data
+              PubChem & PubMed Indexed
             </span>
           </div>
 
@@ -342,10 +342,10 @@ export default async function PeptideDetailPage({ params }: PageProps) {
 
             <div className="p-4 rounded-2xl bg-[#020e24]/80 border border-[rgba(141,168,195,0.15)] space-y-1.5">
               <h3 className="font-mono font-semibold text-sky-300 uppercase text-[11px] tracking-wide">
-                3. Regulatory Classification & Scope
+                3. Physical Formats & Delivery Matrices
               </h3>
               <p className="text-slate-300">
-                Strictly restricted to in vitro laboratory research and biochemical evaluation. Not approved as a drug, diagnostic tool, or human cosmetic ingredient by the MHRA or FDA.
+                Synthesized predominantly as high-purity lyophilized powder cakes, with secondary pre-metered pen cartridges and solution atomizers cataloged across distributors.
               </p>
             </div>
 
@@ -485,7 +485,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
           />
         </section>
 
-        {/* Frequently Addressed Scientific & Regulatory Inquiries (FAQ Section) */}
+        {/* Frequently Asked Chemical Reference Questions */}
         <section id="faq" className="scroll-mt-24 rounded-3xl p-6 sm:p-8 card-paper border border-[rgba(141,168,195,0.25)] space-y-6">
           <div className="flex items-center gap-2 pb-4 border-b border-[rgba(141,168,195,0.18)]">
             <div className="p-1.5 rounded-lg bg-sky-500/10 text-sky-400">
@@ -493,10 +493,10 @@ export default async function PeptideDetailPage({ params }: PageProps) {
             </div>
             <div>
               <span className="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold block">
-                Semantic Reference Q&A
+                Biochemical Reference Q&A
               </span>
               <h3 className="text-xl font-bold text-white tracking-tight">
-                Frequently Addressed Scientific & Regulatory Inquiries
+                Frequently Asked Chemical & Analytical Questions
               </h3>
             </div>
           </div>

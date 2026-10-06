@@ -49,19 +49,19 @@ export function WhatThisIs() {
           })}
         </div>
 
-        {/* Commercial Sourcing Notice Banner */}
+        {/* Commercial Supplier Directory Banner */}
         <div className="rounded-3xl p-6 sm:p-8 bg-[#0a2149]/80 border border-sky-500/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="space-y-1.5 max-w-2xl">
             <div className="flex items-center gap-2">
               <span className="text-xs font-mono uppercase tracking-wider text-sky-400 font-bold">
-                Commercial Sourcing Outlets
+                Independent Supplier Directory
               </span>
             </div>
             <h4 className="text-base sm:text-lg font-bold text-white">
-              Where Researchers Procure Laboratory Batches
+              Commercial Supplier Catalogues
             </h4>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Trustly Pharma catalogs compounds with direct reference links to commercial retailers (PharmaGrade, Direct Peptides, Direct Sarms, Peptide Works, PharmaLab Global) so research teams can view availability for in vitro experimentation.
+              Direct catalog listings for established peptide distributors (PharmaGrade, Direct Peptides, Direct Sarms, Peptide Works, PharmaLab Global) providing research-grade materials, lyophilized vials, and solvent reagents.
             </p>
           </div>
 
@@ -69,7 +69,7 @@ export function WhatThisIs() {
             href="/suppliers/"
             className="shrink-0 px-6 py-3 rounded-full font-mono text-xs font-bold text-sky-300 bg-[#103059] border border-sky-500/30 hover:bg-[#123a6b] transition-colors"
           >
-            Explore Sourcing Outlets →
+            Explore Supplier Directory →
           </Link>
         </div>
       </div>
