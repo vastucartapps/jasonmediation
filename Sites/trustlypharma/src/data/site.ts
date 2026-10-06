@@ -28,7 +28,8 @@ export const navItems: NavItem[] = [
   { label: 'Evidence Map', href: '/#evidence-map' },
   { label: 'Dilution Calculator', href: '/#calculator' },
   { label: 'Delivery Formats', href: '/formats/' },
-  { label: 'Commercial Sourcing', href: '/suppliers/' },
+  { label: 'Commercial Vendors', href: '/vendors/' },
+  { label: 'Regulatory Hub', href: '/regulatory/' },
 ];
 
 export const searchTabs = [

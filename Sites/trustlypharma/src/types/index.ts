@@ -54,7 +54,12 @@ export interface PeptideCompound {
   citations: AcademicCitation[];
 }
 
-export interface SupplierProfile {
+export interface VendorCategoryLink {
+  categoryName: string;
+  url: string;
+}
+
+export interface VendorProfile {
   id: 'pharmagrade' | 'direct-peptides' | 'direct-sarms' | 'peptide-works' | 'pharmalab-global';
   name: string;
   domain: string;
@@ -62,7 +67,15 @@ export interface SupplierProfile {
   establishedYear: number;
   dispatchLocations: string[];
   productCatalogSummary: string;
+  headquarters: string;
+  labTestingStandards: string[];
+  packagingStandards: string;
+  catalogCategories: string[];
+  officialCategoryLinks: VendorCategoryLink[];
+  supportedCompoundSlugs: string[];
 }
+
+export type SupplierProfile = VendorProfile;
 
 export interface ResearchCategory {
   slug: string;

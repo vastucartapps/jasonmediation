@@ -3,22 +3,22 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { PEPTIDE_COMPOUNDS, getCompoundBySlug } from '../../../data';
 import { evidenceLevels } from '../../../data/site';
-import { ChemicalFormulaBadge } from '../../../components/ChemicalFormulaBadge';
+import { ChemicalIdentityCard } from '../../../components/ChemicalIdentityCard';
 import { SequenceStrip } from '../../../components/SequenceStrip';
 import { TopSuppliersMatrix } from '../../../components/TopSuppliersMatrix';
 import { LiteratureTable } from '../../../components/LiteratureTable';
 import { ReconstitutionCalculator } from '../../../components/ReconstitutionCalculator';
+import { BiochemicalFaqAccordion } from '../../../components/BiochemicalFaqAccordion';
 import {
   ChevronRight,
   ShieldCheck,
-  Beaker,
-  Dna,
   Atom,
+  Activity,
+  PackageCheck,
+  ThermometerSnowflake,
   FileCheck2,
   ArrowDown,
   Sparkles,
-  HelpCircle,
-  BookOpen,
 } from 'lucide-react';
 
 interface PageProps {
@@ -228,72 +228,83 @@ export default async function PeptideDetailPage({ params }: PageProps) {
 
       {/* Hero Compound Header */}
       <section className="py-12 sm:py-16 border-b border-[rgba(141,168,195,0.18)] bg-gradient-to-b from-[#02102b] to-[#041638]">
-        <div className="container-wide space-y-6">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#103059] text-sky-400 border border-sky-500/30">
-              {compound.categoryName}
-            </span>
-            <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#0a2149] text-slate-300 border border-[rgba(141,168,195,0.25)]">
-              CAS: {compound.casNumber}
-            </span>
-            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0a2149] border border-[rgba(141,168,195,0.25)] text-xs font-mono font-bold" style={{ color: lvl.color }}>
-              <span className="flex items-center gap-1">
-                {[1, 2, 3].map((n) => (
-                  <span
-                    key={n}
-                    className="w-2 h-2 rounded-full inline-block"
-                    style={{
-                      background: n <= compound.evidencePips ? lvl.color : 'rgba(141,168,195,0.2)',
-                    }}
-                  />
-                ))}
-              </span>
-              <span>{lvl.label}</span>
+        <div className="container-wide">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Left Column: Dossier Header, Identity & Nav */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#103059] text-sky-400 border border-sky-500/30">
+                  {compound.categoryName}
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#0a2149] text-slate-200 border border-[rgba(141,168,195,0.25)]">
+                  CAS: {compound.casNumber}
+                </span>
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0a2149] border border-[rgba(141,168,195,0.25)] text-xs font-mono font-bold" style={{ color: lvl.color }}>
+                  <span className="flex items-center gap-1">
+                    {[1, 2, 3].map((n) => (
+                      <span
+                        key={n}
+                        className="w-2 h-2 rounded-full inline-block"
+                        style={{
+                          background: n <= compound.evidencePips ? lvl.color : 'rgba(141,168,195,0.2)',
+                        }}
+                      />
+                    ))}
+                  </span>
+                  <span>{lvl.label}</span>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+                  {compound.name}
+                </h1>
+                <p className="text-sm sm:text-base text-slate-300 font-mono">
+                  {compound.systematicName}
+                </p>
+              </div>
+
+              <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
+                {compound.shortOverview}
+              </p>
+
+              {/* Unified Jump Pill Bar */}
+              <div className="pt-2 flex flex-wrap items-center gap-2.5">
+                <a
+                  href="#vendor-catalogues"
+                  className="gradient-bg px-4 py-2.5 rounded-full font-mono text-xs font-bold inline-flex items-center gap-2 shadow-lg hover:scale-[1.02] transition-transform text-white"
+                >
+                  <span>Vendor Catalogues ({compound.supplierLinks.length})</span>
+                  <ArrowDown className="w-3.5 h-3.5" />
+                </a>
+
+                <a
+                  href="#calculator"
+                  className="px-4 py-2.5 rounded-full font-mono text-xs font-semibold text-sky-200 bg-[#0a2347] hover:bg-[#103059] border border-sky-400/40 hover:border-sky-300 transition-colors inline-flex items-center gap-1.5"
+                >
+                  <span>Dilution Calculator ↓</span>
+                </a>
+
+                <a
+                  href="#literature"
+                  className="px-4 py-2.5 rounded-full font-mono text-xs font-semibold text-slate-200 bg-[#061a38] hover:bg-[#0a2347] border border-[rgba(141,168,195,0.25)] transition-colors inline-flex items-center gap-1.5"
+                >
+                  <span>PubMed Studies ({compound.citations.length}) ↓</span>
+                </a>
+
+                <a
+                  href="#faq"
+                  className="px-4 py-2.5 rounded-full font-mono text-xs font-semibold text-slate-200 bg-[#061a38] hover:bg-[#0a2347] border border-[rgba(141,168,195,0.25)] transition-colors inline-flex items-center gap-1.5"
+                >
+                  <span>Biochemical Q&A ↓</span>
+                </a>
+              </div>
             </div>
-          </div>
 
-          <div className="space-y-2 max-w-4xl">
-            <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
-              {compound.name}
-            </h1>
-            <p className="text-base sm:text-lg text-slate-300 font-mono">
-              {compound.systematicName}
-            </p>
-          </div>
-
-          <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-3xl">
-            {compound.shortOverview}
-          </p>
-
-          <div className="pt-2 flex flex-wrap items-center gap-4">
-            <a
-              href="#suppliers"
-              className="gradient-bg px-6 py-3 rounded-full font-mono text-xs font-bold inline-flex items-center gap-2 shadow-lg hover:scale-[1.02] transition-transform"
-            >
-              <span>Supplier Catalogues ({compound.supplierLinks.length})</span>
-              <ArrowDown className="w-4 h-4" />
-            </a>
-
-            <a
-              href="#calculator"
-              className="px-5 py-3 rounded-full font-mono text-xs font-semibold text-sky-300 bg-[#103059] hover:bg-[#123a6b] border border-[rgba(141,168,195,0.25)] transition-colors"
-            >
-              <span>Dilution Calculator</span>
-            </a>
-
-            <a
-              href="#literature"
-              className="px-5 py-3 rounded-full font-mono text-xs font-semibold text-slate-400 hover:text-white transition-colors"
-            >
-              <span>PubMed Citations ({compound.citations.length})</span>
-            </a>
-
-            <a
-              href="#faq"
-              className="px-5 py-3 rounded-full font-mono text-xs font-semibold text-slate-400 hover:text-white transition-colors"
-            >
-              <span>Biochemical Q&A</span>
-            </a>
+            {/* Right Column: Chemical Identity Card (utilizing blank hero space) */}
+            <div className="lg:col-span-5">
+              <ChemicalIdentityCard compound={compound} />
+            </div>
           </div>
         </div>
       </section>
@@ -308,7 +319,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
                 <Sparkles className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-sky-400 font-bold block">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-sky-300 font-bold block">
                   Executive Biochemical Summary
                 </span>
                 <h2 className="text-lg sm:text-xl font-bold text-white tracking-tight">
@@ -316,66 +327,77 @@ export default async function PeptideDetailPage({ params }: PageProps) {
                 </h2>
               </div>
             </div>
-            <span className="text-xs font-mono text-slate-400 self-start sm:self-auto bg-[#020e24] px-3 py-1 rounded-full border border-[rgba(141,168,195,0.2)]">
+            <span className="text-xs font-mono text-slate-200 self-start sm:self-auto bg-[#020e24] px-3.5 py-1.5 rounded-full border border-[rgba(141,168,195,0.25)]">
               PubChem & PubMed Indexed
             </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs leading-relaxed">
-            <div className="p-4 rounded-2xl bg-[#020e24]/80 border border-[rgba(141,168,195,0.15)] space-y-1.5">
-              <h3 className="font-mono font-semibold text-sky-300 uppercase text-[11px] tracking-wide">
-                1. Chemical Identity & Sequence Architecture
-              </h3>
-              <p className="text-slate-300">
+            <div className="p-4.5 rounded-2xl bg-[#02102b]/90 border border-sky-500/25 hover:border-sky-400/50 transition-colors space-y-2">
+              <div className="flex items-center gap-2">
+                <div className="p-1 rounded-lg bg-sky-500/10 text-sky-400">
+                  <Atom className="w-4 h-4" />
+                </div>
+                <h3 className="font-mono font-bold text-sky-300 uppercase text-[11px] tracking-wide">
+                  1. Chemical Identity & Sequence Architecture
+                </h3>
+              </div>
+              <p className="text-slate-200">
                 {compound.name} ({compound.systematicName}) is an analytically characterized peptide with empirical formula {compound.molecularFormula} (MW {compound.molecularWeight}). CAS Registry: {compound.casNumber}.
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#020e24]/80 border border-[rgba(141,168,195,0.15)] space-y-1.5">
-              <h3 className="font-mono font-semibold text-sky-300 uppercase text-[11px] tracking-wide">
-                2. Primary Preclinical Signaling Axis
-              </h3>
-              <p className="text-slate-300">
+            <div className="p-4.5 rounded-2xl bg-[#02102b]/90 border border-emerald-500/25 hover:border-emerald-400/50 transition-colors space-y-2">
+              <div className="flex items-center gap-2">
+                <div className="p-1 rounded-lg bg-emerald-500/10 text-emerald-400">
+                  <Activity className="w-4 h-4" />
+                </div>
+                <h3 className="font-mono font-bold text-emerald-300 uppercase text-[11px] tracking-wide">
+                  2. Primary Preclinical Signaling Axis
+                </h3>
+              </div>
+              <p className="text-slate-200">
                 Investigated in preclinical assays for cellular signaling: {compound.mechanismOfAction[0]}
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#020e24]/80 border border-[rgba(141,168,195,0.15)] space-y-1.5">
-              <h3 className="font-mono font-semibold text-sky-300 uppercase text-[11px] tracking-wide">
-                3. Physical Formats & Delivery Matrices
-              </h3>
-              <p className="text-slate-300">
-                Synthesized predominantly as high-purity lyophilized powder cakes, with secondary pre-metered pen cartridges and solution atomizers cataloged across distributors.
+            <div className="p-4.5 rounded-2xl bg-[#02102b]/90 border border-purple-500/25 hover:border-purple-400/50 transition-colors space-y-2">
+              <div className="flex items-center gap-2">
+                <div className="p-1 rounded-lg bg-purple-500/10 text-purple-400">
+                  <PackageCheck className="w-4 h-4" />
+                </div>
+                <h3 className="font-mono font-bold text-purple-300 uppercase text-[11px] tracking-wide">
+                  3. Physical Formats & Delivery Matrices
+                </h3>
+              </div>
+              <p className="text-slate-200">
+                Synthesized predominantly as high-purity lyophilized powder cakes, with secondary pre-metered pen cartridges and solution atomizers cataloged across vendors.
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#020e24]/80 border border-[rgba(141,168,195,0.15)] space-y-1.5">
-              <h3 className="font-mono font-semibold text-sky-300 uppercase text-[11px] tracking-wide">
-                4. Reconstitution & Analytical Handling
-              </h3>
-              <p className="text-slate-300">
+            <div className="p-4.5 rounded-2xl bg-[#02102b]/90 border border-amber-500/25 hover:border-amber-400/50 transition-colors space-y-2">
+              <div className="flex items-center gap-2">
+                <div className="p-1 rounded-lg bg-amber-500/10 text-amber-400">
+                  <ThermometerSnowflake className="w-4 h-4" />
+                </div>
+                <h3 className="font-mono font-bold text-amber-300 uppercase text-[11px] tracking-wide">
+                  4. Reconstitution & Analytical Handling
+                </h3>
+              </div>
+              <p className="text-slate-200">
                 Recommended reconstitution with {compound.reconstitution.recommendedDiluent}. Lyophilized cake stored at {compound.reconstitution.storageLyophilized}. Solution stable at {compound.reconstitution.storageReconstituted}.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Chemical Specifications & Sequence Ribbon */}
-        <div className="space-y-6">
-          <ChemicalFormulaBadge
-            formula={compound.molecularFormula}
-            molecularWeight={compound.molecularWeight}
-            casNumber={compound.casNumber}
-            pubchemCid={compound.pubchemCid}
+        {/* Sequence Ribbon */}
+        {compound.sequence && (
+          <SequenceStrip
+            sequence={compound.sequence}
+            systematicName={compound.systematicName}
           />
-
-          {compound.sequence && (
-            <SequenceStrip
-              sequence={compound.sequence}
-              systematicName={compound.systematicName}
-            />
-          )}
-        </div>
+        )}
 
         {/* Biological Mechanism & Preclinical Data */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -469,8 +491,8 @@ export default async function PeptideDetailPage({ params }: PageProps) {
           />
         </section>
 
-        {/* Commercial Suppliers Matrix */}
-        <section id="suppliers" className="scroll-mt-24">
+        {/* Commercial Vendors & Partners Matrix */}
+        <section id="vendor-catalogues" className="scroll-mt-24">
           <TopSuppliersMatrix
             compoundName={compound.name}
             supplierLinks={compound.supplierLinks}
@@ -486,39 +508,8 @@ export default async function PeptideDetailPage({ params }: PageProps) {
         </section>
 
         {/* Frequently Asked Chemical Reference Questions */}
-        <section id="faq" className="scroll-mt-24 rounded-3xl p-6 sm:p-8 card-paper border border-[rgba(141,168,195,0.25)] space-y-6">
-          <div className="flex items-center gap-2 pb-4 border-b border-[rgba(141,168,195,0.18)]">
-            <div className="p-1.5 rounded-lg bg-sky-500/10 text-sky-400">
-              <HelpCircle className="w-5 h-5" />
-            </div>
-            <div>
-              <span className="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold block">
-                Biochemical Reference Q&A
-              </span>
-              <h3 className="text-xl font-bold text-white tracking-tight">
-                Frequently Asked Chemical & Analytical Questions
-              </h3>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, idx) => (
-              <div
-                key={idx}
-                className="p-5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.15)] space-y-2"
-              >
-                <h4 className="text-sm font-semibold text-white flex items-start gap-2.5">
-                  <span className="w-5 h-5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-400/20 font-mono text-xs flex items-center justify-center shrink-0 mt-0.5">
-                    {idx + 1}
-                  </span>
-                  <span>{faq.question}</span>
-                </h4>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pl-7.5">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
-          </div>
+        <section id="faq" className="scroll-mt-24">
+          <BiochemicalFaqAccordion faqs={faqs} compoundName={compound.name} />
         </section>
       </div>
     </div>

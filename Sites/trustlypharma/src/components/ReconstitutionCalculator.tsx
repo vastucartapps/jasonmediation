@@ -1,13 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { Droplets, Calculator, HelpCircle, CheckCircle2, RotateCcw } from 'lucide-react';
+import { Droplets, Calculator, CheckCircle2, RotateCcw, Syringe, Sparkles, Scale } from 'lucide-react';
 
 interface ReconstitutionCalculatorProps {
   initialVialMg?: number;
   initialDoseMcg?: number;
   className?: string;
 }
+
+type SyringeCapacity = 0.3 | 0.5 | 1.0;
 
 export function ReconstitutionCalculator({
   initialVialMg = 5,
@@ -17,62 +19,64 @@ export function ReconstitutionCalculator({
   const [vialMg, setVialMg] = useState<number>(initialVialMg);
   const [waterMl, setWaterMl] = useState<number>(2);
   const [doseMcg, setDoseMcg] = useState<number>(initialDoseMcg);
-  const [syringeType, setSyringeType] = useState<number>(100); // 100 units per mL (standard U-100)
+  const [syringeCapacity, setSyringeCapacity] = useState<SyringeCapacity>(1.0);
 
   // Calculations
   const concentrationMcgPerMl = waterMl > 0 ? (vialMg * 1000) / waterMl : 0;
   const volumeMlPerDose = concentrationMcgPerMl > 0 ? doseMcg / concentrationMcgPerMl : 0;
-  const unitsPerDose = volumeMlPerDose * syringeType;
+  // Standard U-100 syringe has 100 units per mL
+  const unitsPerDose = volumeMlPerDose * 100;
+  const maxUnitsForSyringe = syringeCapacity * 100;
+  const fillPercentage = Math.min(100, Math.max(0, (unitsPerDose / maxUnitsForSyringe) * 100));
   const totalDoses = doseMcg > 0 ? (vialMg * 1000) / doseMcg : 0;
 
   const handleReset = () => {
     setVialMg(5);
     setWaterMl(2);
     setDoseMcg(250);
-    setSyringeType(100);
+    setSyringeCapacity(1.0);
   };
 
   return (
     <div
       id="calculator"
-      className={`rounded-3xl p-6 sm:p-8 card-paper border border-[rgba(141,168,195,0.25)] shadow-2xl space-y-6 scroll-mt-20 ${className}`}
+      className={`rounded-3xl p-6 sm:p-8 card-paper border border-[rgba(141,168,195,0.25)] shadow-2xl space-y-6 scroll-mt-24 ${className}`}
     >
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-[rgba(141,168,195,0.18)]">
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-[rgba(141,168,195,0.2)]">
         <div>
-          <div className="flex items-center gap-2 mb-1">
-            <span className="p-1 rounded bg-sky-500/10 text-sky-400">
-              <Calculator className="w-4 h-4" />
-            </span>
-            <span className="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">
-              Interactive Laboratory Tool
-            </span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a2347] border border-sky-400/40 text-xs font-mono font-bold text-sky-300 mb-2">
+            <Calculator className="w-3.5 h-3.5" />
+            <span>INTERACTIVE LABORATORY DILUTION TOOL</span>
           </div>
           <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-            Laboratory Solution Dilution & Reconstitution Calculator
+            Peptide Dilution & Reconstitution Calculator
           </h3>
-          <p className="text-xs text-slate-300 mt-0.5">
-            Calculate stock concentration, aliquot volumes, and calibrated micro-pipette/syringe units for laboratory solutions.
+          <p className="text-xs sm:text-sm text-slate-200 mt-0.5">
+            Compute stock concentrations, micro-pipetting draw volumes, and U-100 syringe units with zero procedural guesswork.
           </p>
         </div>
 
         <button
           type="button"
           onClick={handleReset}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono text-slate-400 hover:text-white bg-[#103059] border border-slate-700 self-start sm:self-auto transition-colors"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold text-slate-200 hover:text-white bg-[#0a2347] hover:bg-[#103059] border border-sky-400/30 self-start sm:self-auto transition-colors"
         >
-          <RotateCcw className="w-3.5 h-3.5" />
-          <span>Reset</span>
+          <RotateCcw className="w-3.5 h-3.5 text-sky-400" />
+          <span>Reset Calculator</span>
         </button>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-        {/* Input Parameters */}
-        <div className="space-y-5">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Left Column: 4 Input Parameters + Formula Equation Box (balanced height!) */}
+        <div className="lg:col-span-6 space-y-5">
           {/* 1. Vial Amount */}
-          <div className="space-y-2">
+          <div className="p-4.5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] space-y-2.5">
             <div className="flex justify-between items-center text-xs">
-              <label className="font-semibold text-slate-200">1. Peptide Vial Quantity (mg)</label>
-              <span className="font-mono text-sky-400 font-bold">{vialMg} mg</span>
+              <label className="font-semibold text-white flex items-center gap-1.5">
+                <span>1. Lyophilized Vial Mass</span>
+              </label>
+              <span className="font-mono text-sky-300 font-bold text-sm">{vialMg} mg</span>
             </div>
             <div className="grid grid-cols-4 gap-2">
               {[2, 5, 10, 15].map((mg) => (
@@ -82,8 +86,8 @@ export function ReconstitutionCalculator({
                   onClick={() => setVialMg(mg)}
                   className={`py-2 rounded-xl text-xs font-mono font-bold transition-all ${
                     vialMg === mg
-                      ? 'bg-sky-500 text-obsidian-950 shadow-md'
-                      : 'bg-[#103059] text-slate-300 border border-[rgba(141,168,195,0.2)] hover:border-sky-400'
+                      ? 'bg-sky-500 text-slate-950 shadow-md'
+                      : 'bg-[#0a2347] text-slate-200 border border-[rgba(141,168,195,0.25)] hover:border-sky-400'
                   }`}
                 >
                   {mg} mg
@@ -102,10 +106,12 @@ export function ReconstitutionCalculator({
           </div>
 
           {/* 2. Bacteriostatic Water Added */}
-          <div className="space-y-2">
+          <div className="p-4.5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] space-y-2.5">
             <div className="flex justify-between items-center text-xs">
-              <label className="font-semibold text-slate-200">2. Bacteriostatic Water Added (mL)</label>
-              <span className="font-mono text-sky-400 font-bold">{waterMl} mL</span>
+              <label className="font-semibold text-white flex items-center gap-1.5">
+                <span>2. Reconstitution Solvent Added</span>
+              </label>
+              <span className="font-mono text-sky-300 font-bold text-sm">{waterMl} mL</span>
             </div>
             <div className="grid grid-cols-4 gap-2">
               {[1, 2, 2.5, 3].map((ml) => (
@@ -115,8 +121,8 @@ export function ReconstitutionCalculator({
                   onClick={() => setWaterMl(ml)}
                   className={`py-2 rounded-xl text-xs font-mono font-bold transition-all ${
                     waterMl === ml
-                      ? 'bg-sky-500 text-obsidian-950 shadow-md'
-                      : 'bg-[#103059] text-slate-300 border border-[rgba(141,168,195,0.2)] hover:border-sky-400'
+                      ? 'bg-sky-500 text-slate-950 shadow-md'
+                      : 'bg-[#0a2347] text-slate-200 border border-[rgba(141,168,195,0.25)] hover:border-sky-400'
                   }`}
                 >
                   {ml} mL
@@ -135,10 +141,12 @@ export function ReconstitutionCalculator({
           </div>
 
           {/* 3. Target Aliquot */}
-          <div className="space-y-2">
+          <div className="p-4.5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] space-y-2.5">
             <div className="flex justify-between items-center text-xs">
-              <label className="font-semibold text-slate-200">3. Target Aliquot Mass (mcg)</label>
-              <span className="font-mono text-amber-400 font-bold">{doseMcg} mcg</span>
+              <label className="font-semibold text-white flex items-center gap-1.5">
+                <span>3. Target Aliquot / Test Mass</span>
+              </label>
+              <span className="font-mono text-amber-300 font-bold text-sm">{doseMcg} mcg</span>
             </div>
             <div className="grid grid-cols-4 gap-2">
               {[100, 250, 500, 1000].map((mcg) => (
@@ -148,8 +156,8 @@ export function ReconstitutionCalculator({
                   onClick={() => setDoseMcg(mcg)}
                   className={`py-2 rounded-xl text-xs font-mono font-bold transition-all ${
                     doseMcg === mcg
-                      ? 'bg-amber-400 text-obsidian-950 shadow-md'
-                      : 'bg-[#103059] text-slate-300 border border-[rgba(141,168,195,0.2)] hover:border-amber-400'
+                      ? 'bg-amber-400 text-slate-950 shadow-md'
+                      : 'bg-[#0a2347] text-slate-200 border border-[rgba(141,168,195,0.25)] hover:border-amber-400'
                   }`}
                 >
                   {mcg} mcg
@@ -166,47 +174,140 @@ export function ReconstitutionCalculator({
               className="w-full accent-amber-400 cursor-pointer"
             />
           </div>
+
+          {/* 4. Syringe Barrel Specification (Eliminates the empty void!) */}
+          <div className="p-4.5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] space-y-2.5">
+            <div className="flex justify-between items-center text-xs">
+              <label className="font-semibold text-white flex items-center gap-1.5">
+                <Syringe className="w-3.5 h-3.5 text-sky-400" />
+                <span>4. Syringe Barrel Calibration (U-100)</span>
+              </label>
+              <span className="font-mono text-emerald-300 font-bold text-sm">
+                {maxUnitsForSyringe} Units Capacity
+              </span>
+            </div>
+            <div className="grid grid-cols-3 gap-2">
+              {[
+                { cap: 0.3 as SyringeCapacity, label: '0.3 mL (30 U)', sub: '0.5U precision' },
+                { cap: 0.5 as SyringeCapacity, label: '0.5 mL (50 U)', sub: '1.0U standard' },
+                { cap: 1.0 as SyringeCapacity, label: '1.0 mL (100 U)', sub: 'High volume' },
+              ].map((item) => (
+                <button
+                  key={item.cap}
+                  type="button"
+                  onClick={() => setSyringeCapacity(item.cap)}
+                  className={`py-2 px-2 rounded-xl text-xs font-mono text-center transition-all ${
+                    syringeCapacity === item.cap
+                      ? 'bg-emerald-500 text-slate-950 font-bold shadow-md'
+                      : 'bg-[#0a2347] text-slate-200 border border-[rgba(141,168,195,0.25)] hover:border-emerald-400'
+                  }`}
+                >
+                  <div className="font-bold text-[11px]">{item.label}</div>
+                  <div className="text-[9px] opacity-80">{item.sub}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* 5. Live Mathematical Equation Box (Fills space with high utility) */}
+          <div className="p-4 rounded-2xl bg-[#031433] border border-sky-500/25 space-y-1.5 text-xs font-mono">
+            <span className="text-[10px] uppercase text-sky-300 font-bold tracking-wider block">
+              Dilution Formula Derivation:
+            </span>
+            <div className="text-slate-200 text-[11px] space-y-1">
+              <div>
+                Concentration = {(vialMg * 1000).toLocaleString()} mcg ÷ {waterMl} mL ={' '}
+                <strong className="text-sky-300">{concentrationMcgPerMl.toFixed(0)} mcg/mL</strong>
+              </div>
+              <div>
+                Draw Volume = {doseMcg} mcg ÷ {concentrationMcgPerMl.toFixed(0)} mcg/mL ={' '}
+                <strong className="text-emerald-300">{volumeMlPerDose.toFixed(3)} mL</strong> (
+                <strong className="text-emerald-300">{unitsPerDose.toFixed(1)} Units</strong>)
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Calculated Output Card */}
-        <div className="p-6 rounded-3xl bg-[#103059] border border-[rgba(141,168,195,0.3)] space-y-5">
-          <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block font-bold">
-            Volumetric Pipetting / Draw Calibration
-          </span>
-
-          <div className="p-5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] text-center space-y-1">
-            <span className="text-xs font-mono text-slate-400 uppercase">
-              Draw to on U-100 Syringe:
+        {/* Right Column: Calculated Output, Visual Syringe Fill & Handling Protocols */}
+        <div className="lg:col-span-6 p-6 sm:p-7 rounded-3xl bg-gradient-to-br from-[#071d42] to-[#03112c] border border-[rgba(141,168,195,0.3)] shadow-2xl space-y-6">
+          <div className="flex items-center justify-between pb-3 border-b border-[rgba(141,168,195,0.2)]">
+            <span className="text-xs font-mono uppercase tracking-wider text-sky-300 font-bold">
+              Volumetric Dispensing Calibration
             </span>
-            <div className="text-4xl sm:text-5xl font-extrabold font-mono text-emerald-400 tracking-tight">
+            <span className="text-[11px] font-mono text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
+              U-100 Standard
+            </span>
+          </div>
+
+          {/* Primary Result Box */}
+          <div className="p-6 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.25)] text-center space-y-2">
+            <span className="text-xs font-mono text-slate-300 uppercase tracking-wider block font-semibold">
+              Draw to on {syringeCapacity} mL U-100 Syringe:
+            </span>
+            <div className="text-5xl sm:text-6xl font-extrabold font-mono text-emerald-300 tracking-tight">
               {unitsPerDose.toFixed(1)}{' '}
-              <span className="text-xl font-normal text-slate-300">Units</span>
+              <span className="text-2xl font-normal text-slate-300">Units</span>
             </div>
-            <div className="text-xs font-mono text-slate-400 pt-1">
-              Volume: {volumeMlPerDose.toFixed(3)} mL ({unitsPerDose.toFixed(0)} tick marks)
+            <div className="text-xs font-mono text-slate-300 pt-1">
+              Exact Liquid Volume:{' '}
+              <strong className="text-white">{volumeMlPerDose.toFixed(3)} mL</strong> (approx.{' '}
+              {unitsPerDose.toFixed(0)} tick marks)
+            </div>
+
+            {/* Visual Syringe Barrel Gauge Bar */}
+            <div className="pt-3 space-y-1">
+              <div className="w-full h-3 rounded-full bg-[#0a2347] border border-[rgba(141,168,195,0.2)] overflow-hidden p-0.5">
+                <div
+                  className="h-full rounded-full bg-gradient-to-r from-sky-400 to-emerald-400 transition-all duration-300"
+                  style={{ width: `${fillPercentage}%` }}
+                />
+              </div>
+              <div className="flex justify-between text-[10px] font-mono text-slate-400">
+                <span>0 U</span>
+                <span>Barrel Fill: {fillPercentage.toFixed(0)}%</span>
+                <span>{maxUnitsForSyringe} U</span>
+              </div>
             </div>
           </div>
 
+          {/* Metrics Grid */}
           <div className="grid grid-cols-2 gap-3 text-xs font-mono">
-            <div className="p-3.5 rounded-xl bg-[#0a2149] border border-[rgba(141,168,195,0.15)]">
-              <span className="text-slate-400 text-[10px] block">Concentration</span>
-              <span className="text-sky-300 font-bold text-sm">
+            <div className="p-4 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.2)]">
+              <span className="text-slate-400 text-[10px] uppercase block font-semibold">
+                Stock Concentration
+              </span>
+              <span className="text-sky-300 font-bold text-base block mt-0.5">
                 {(concentrationMcgPerMl / 1000).toFixed(2)} mg/mL
               </span>
+              <span className="text-[10px] text-slate-400">
+                ({concentrationMcgPerMl.toFixed(0)} mcg/mL)
+              </span>
             </div>
-            <div className="p-3.5 rounded-xl bg-[#0a2149] border border-[rgba(141,168,195,0.15)]">
-              <span className="text-slate-400 text-[10px] block">Yield Per Vial</span>
-              <span className="text-amber-300 font-bold text-sm">
-                {Math.floor(totalDoses)} Aliquots
+
+            <div className="p-4 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.2)]">
+              <span className="text-slate-400 text-[10px] uppercase block font-semibold">
+                Aliquot Yield Per Vial
+              </span>
+              <span className="text-amber-300 font-bold text-base block mt-0.5">
+                {Math.floor(totalDoses)} Doses
+              </span>
+              <span className="text-[10px] text-slate-400">
+                ({(vialMg * 1000).toLocaleString()} mcg total)
               </span>
             </div>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-[#0a2149]/60 text-[11px] text-slate-300 leading-relaxed flex items-start gap-2">
+          {/* Scientific Handling Advisory */}
+          <div className="p-4 rounded-2xl bg-[#02102b]/90 border border-sky-500/20 text-xs text-slate-200 leading-relaxed flex items-start gap-3">
             <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-            <span>
-              <strong>Laboratory standard:</strong> Slowly introduce bacteriostatic diluent against the internal glass vial wall. Swirl gently in circular motion; avoid vigorous agitation to prevent mechanical shearing of delicate peptide bonds.
-            </span>
+            <div>
+              <strong className="text-sky-300 block mb-0.5 font-mono text-[11px] uppercase">
+                Laboratory Reconstitution Protocol:
+              </strong>
+              <span>
+                Slowly introduce bacteriostatic diluent against the internal glass vial wall. Swirl gently in a circular horizontal rotation. Never shake or vortex vigorously to prevent mechanical shearing of delicate peptide bonds. Store reconstituted stock at 2°C–8°C.
+              </span>
+            </div>
           </div>
         </div>
       </div>

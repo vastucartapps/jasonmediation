@@ -39,8 +39,8 @@ export function Footer() {
             </h5>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/suppliers/" className="hover:text-amber-400 transition-colors font-semibold text-amber-300">
-                  ★ Commercial Sourcing Outlets
+                <Link href="/vendors/" className="hover:text-amber-400 transition-colors font-semibold text-amber-300">
+                  ★ Commercial Vendors & Partners
                 </Link>
               </li>
               <li>
@@ -61,6 +61,21 @@ export function Footer() {
               <li>
                 <Link href="/formats/" className="hover:text-sky-400 transition-colors">
                   Delivery Formats Standards
+                </Link>
+              </li>
+              <li>
+                <Link href="/regulatory/" className="hover:text-sky-400 transition-colors">
+                  Regulatory Intelligence Hub
+                </Link>
+              </li>
+              <li>
+                <Link href="/regulatory/mhra-tracker/" className="hover:text-sky-400 transition-colors">
+                  MHRA Enforcement Tracker
+                </Link>
+              </li>
+              <li>
+                <Link href="/regulatory/uk-legal-status/" className="hover:text-sky-400 transition-colors">
+                  UK Legal Status Matrix
                 </Link>
               </li>
               <li>
@@ -95,23 +110,21 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Commercial Store Network */}
+          {/* Verified Vendor Network */}
           <div>
             <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-3 flex items-center gap-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-sky-400" /> Commercial Stores
+              <ShieldCheck className="w-3.5 h-3.5 text-sky-400" /> Verified Partners
             </h5>
             <ul className="space-y-2 text-xs">
               {Object.values(SUPPLIER_PROFILES).map((sup) => (
                 <li key={sup.id}>
-                  <a
-                    href={sup.baseUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-sky-300 transition-colors flex items-center gap-1 group text-slate-300"
+                  <Link
+                    href={`/vendors/${sup.id}/`}
+                    className="hover:text-sky-300 transition-colors flex items-center justify-between group text-slate-300"
                   >
                     <span>{sup.name}</span>
-                    <ExternalLink className="w-2.5 h-2.5 text-slate-600 group-hover:text-sky-300" />
-                  </a>
+                    <span className="text-[10px] text-sky-400 font-mono opacity-80 group-hover:opacity-100">Dossier →</span>
+                  </Link>
                 </li>
               ))}
             </ul>
