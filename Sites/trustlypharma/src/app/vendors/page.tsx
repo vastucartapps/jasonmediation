@@ -85,9 +85,20 @@ export default function VendorsDirectoryPage() {
                     <span className="text-xs font-mono text-sky-400 block">{vendor.domain}</span>
                   </div>
 
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-500/20 to-emerald-500/20 border border-[rgba(141,168,195,0.3)] flex items-center justify-center font-bold text-white font-mono text-base shrink-0">
-                    {vendor.name.slice(0, 2).toUpperCase()}
-                  </div>
+                  {vendor.logoUrl ? (
+                    <div className="h-14 px-3 py-1.5 rounded-xl bg-white/95 border border-white/20 flex items-center justify-center shrink-0 shadow-md max-w-[150px]">
+                      <img
+                        src={vendor.logoUrl}
+                        alt={`${vendor.name} logo`}
+                        className="max-h-9 max-w-[130px] object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-500/20 to-emerald-500/20 border border-[rgba(141,168,195,0.3)] flex items-center justify-center font-bold text-white font-mono text-base shrink-0">
+                      {vendor.name.slice(0, 2).toUpperCase()}
+                    </div>
+                  )}
                 </div>
 
                 {/* Summary */}

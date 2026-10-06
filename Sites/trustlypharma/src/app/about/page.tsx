@@ -5,7 +5,7 @@ import { Database, ChevronRight, CheckCircle2, BookOpen, Layers } from 'lucide-r
 export const metadata: Metadata = {
   title: 'About Trustly Pharma | Scientific Methodology & Chemical Indexing',
   description:
-    'Overview of Trustly Pharma, chemical indexing methodology, peer-reviewed PubMed citations, and independent supplier catalog directory.',
+    'Overview of Trustly Pharma, chemical indexing methodology, peer-reviewed PubMed citations, and independent commercial vendor directory.',
   alternates: {
     canonical: 'https://trustlypharma.co.uk/about/',
   },
@@ -65,10 +65,10 @@ export default function AboutPage() {
           <div className="rounded-3xl p-6 sm:p-7 bg-[#0a2149] border border-[rgba(141,168,195,0.25)] space-y-3">
             <h3 className="text-base font-bold text-white flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-amber-400" />
-              3. Independent Supplier Catalog Directory
+              3. Independent Commercial Vendor Directory
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Trustly Pharma catalogs third-party chemical distributors (PharmaGrade, Direct Peptides, Direct Sarms, Peptide Works, PharmaLab Global) to allow laboratories to inspect product availability, batch purity specifications, and physical delivery formats.
+              Trustly Pharma catalogs third-party chemical vendors and distributors (PharmaGrade, Direct Peptides, Direct Sarms, Peptide Works, PharmaLab Global) to allow laboratories to inspect product availability, batch purity specifications, and physical delivery formats.
             </p>
           </div>
         </div>

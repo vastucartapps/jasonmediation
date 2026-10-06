@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ShieldCheck, X } from 'lucide-react';
 
 export function CookieBanner() {
   const [mounted, setMounted] = useState(false);
@@ -21,7 +20,7 @@ export function CookieBanner() {
     setVisible(false);
   };
 
-  const handleEssentialOnly = () => {
+  const handleDecline = () => {
     localStorage.setItem('trustly_cookie_consent', 'essential');
     setVisible(false);
   };
@@ -29,64 +28,40 @@ export function CookieBanner() {
   if (!mounted || !visible) return null;
 
   return (
-    <div
-      role="dialog"
-      aria-label="Cookie Consent Banner"
-      className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-lg z-50 rounded-3xl p-5 sm:p-6 bg-[#03132e]/95 backdrop-blur-xl border border-sky-500/30 shadow-2xl space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-300"
+    <aside
+      aria-label="Cookie and Privacy Consent"
+      className="fixed bottom-0 left-0 right-0 z-50 border-t border-[rgba(141,168,195,0.22)] bg-[#020e24]/95 backdrop-blur-md py-3.5 px-4 sm:px-8 shadow-2xl animate-in fade-in slide-in-from-bottom-2 duration-200"
     >
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex items-center gap-2.5">
-          <div className="p-1.5 rounded-xl bg-sky-500/15 text-sky-400 border border-sky-400/30">
-            <ShieldCheck className="w-5 h-5" />
-          </div>
-          <div>
-            <h4 className="text-sm font-bold text-white tracking-tight">
-              UK GDPR Privacy & Cookie Governance
-            </h4>
-            <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">
-              PECR & Data Protection Compliance
-            </span>
-          </div>
+      <div className="container-wide flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 sm:gap-6">
+        <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
+          We use essential cookies plus optional analytics cookies (Google Analytics 4) to measure and improve TrustlyPharma. Read our{' '}
+          <Link
+            href="/privacy/"
+            className="text-white underline underline-offset-2 hover:text-amber-300 font-medium transition-colors"
+          >
+            cookie policy
+          </Link>
+          .
+        </p>
+
+        <div className="flex items-center gap-2.5 shrink-0 self-end sm:self-auto">
+          <button
+            type="button"
+            onClick={handleDecline}
+            className="px-4 py-1.5 rounded-full text-xs font-semibold text-slate-200 bg-[#061c42] hover:bg-[#0a2c68] border border-[rgba(141,168,195,0.3)] hover:text-white transition-colors"
+          >
+            Decline
+          </button>
+
+          <button
+            type="button"
+            onClick={handleAcceptAll}
+            className="px-5 py-1.5 rounded-full text-xs font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 transition-colors shadow-md"
+          >
+            Accept all
+          </button>
         </div>
-
-        <button
-          type="button"
-          onClick={handleEssentialOnly}
-          aria-label="Close cookie banner"
-          className="p-1 rounded-lg text-slate-400 hover:text-white transition-colors"
-        >
-          <X className="w-4 h-4" />
-        </button>
       </div>
-
-      <p className="text-xs text-slate-200 leading-relaxed">
-        We use essential cookies to maintain platform operation and privacy-compliant analytics to evaluate scientific resource usage. No marketing or behavioral profiling cookies are deployed. Review our{' '}
-        <Link
-          href="/privacy/"
-          className="text-sky-300 hover:text-white underline underline-offset-2 transition-colors font-medium"
-        >
-          Privacy Policy
-        </Link>
-        .
-      </p>
-
-      <div className="flex flex-wrap items-center gap-2.5 pt-1">
-        <button
-          type="button"
-          onClick={handleAcceptAll}
-          className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-sky-500 hover:bg-sky-400 text-slate-950 transition-colors shadow-sm"
-        >
-          Accept All Cookies
-        </button>
-
-        <button
-          type="button"
-          onClick={handleEssentialOnly}
-          className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-[#02102b] hover:bg-[#071d42] text-slate-200 border border-[rgba(141,168,195,0.25)] transition-colors"
-        >
-          Essential Only
-        </button>
-      </div>
-    </div>
+    </aside>
   );
 }

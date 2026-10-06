@@ -7,11 +7,11 @@ import { CookieBanner } from '../components/CookieBanner';
 export const metadata: Metadata = {
   metadataBase: new URL('https://trustlypharma.co.uk'),
   title: {
-    template: '%s | Trustly Pharma — Worldwide Peptide Research Index',
-    default: 'Trustly Pharma | Worldwide Peptide Research Index & Chemical Directory',
+    template: '%s | Trustly Pharma — UK & International Peptide Index',
+    default: 'Trustly Pharma | UK & International Peptide Index & Analytical Chemical Directory',
   },
   description:
-    'Academic reference directory for synthetic research peptides. Features verified chemical formulas, CAS numbers, amino acid sequence profiles, HPLC purity standards, and commercial laboratory supplier sourcing catalogues.',
+    'Academic reference directory for synthetic research peptides. Features verified chemical formulas, CAS numbers, amino acid sequence profiles, HPLC purity standards, and commercial laboratory vendor sourcing catalogues.',
   keywords: [
     'peptide research index',
     'chemical sequence encyclopedia',
@@ -38,14 +38,14 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     url: 'https://trustlypharma.co.uk',
     siteName: 'Trustly Pharma',
-    title: 'Trustly Pharma | Worldwide Peptide Research Index & Chemical Directory',
+    title: 'Trustly Pharma | UK & International Peptide Index & Analytical Chemical Directory',
     description:
-      'Academic reference directory for synthetic research peptides. Features verified chemical formulas, CAS numbers, amino acid sequence profiles, HPLC purity standards, and commercial laboratory supplier sourcing catalogues.',
+      'Academic reference directory for synthetic research peptides. Features verified chemical formulas, CAS numbers, amino acid sequence profiles, HPLC purity standards, and commercial laboratory vendor sourcing catalogues.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Trustly Pharma | Worldwide Peptide Research Index',
-    description: 'Academic peptide reference catalog and commercial laboratory supplier sourcing catalogues.',
+    title: 'Trustly Pharma | UK & International Peptide Index',
+    description: 'Academic peptide reference catalog and commercial laboratory vendor sourcing catalogues.',
   },
 };
 

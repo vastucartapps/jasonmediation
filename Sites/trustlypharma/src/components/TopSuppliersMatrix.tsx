@@ -89,10 +89,21 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
               className="rounded-2xl p-5 bg-[#061c42] border border-[rgba(141,168,195,0.22)] hover:border-sky-400 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-5 shadow-md"
             >
               {/* Left Column: Vendor Identity */}
-              <div className="flex items-start sm:items-center gap-4 min-w-[260px]">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02102b] to-[#0a2149] border border-[rgba(141,168,195,0.3)] flex items-center justify-center font-bold text-white font-mono text-base shrink-0 shadow-inner">
-                  {profile ? profile.name.slice(0, 2).toUpperCase() : 'TP'}
-                </div>
+              <div className="flex items-start sm:items-center gap-4 min-w-[280px]">
+                {profile?.logoUrl ? (
+                  <div className="h-12 w-28 px-2 py-1 rounded-xl bg-white/95 border border-white/20 flex items-center justify-center shrink-0 shadow-sm">
+                    <img
+                      src={profile.logoUrl}
+                      alt={`${link.supplierName} logo`}
+                      className="max-h-8 max-w-[100px] object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02102b] to-[#0a2149] border border-[rgba(141,168,195,0.3)] flex items-center justify-center font-bold text-white font-mono text-base shrink-0 shadow-inner">
+                    {profile ? profile.name.slice(0, 2).toUpperCase() : 'TP'}
+                  </div>
+                )}
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="font-bold text-white text-base">

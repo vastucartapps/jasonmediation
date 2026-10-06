@@ -17,8 +17,8 @@ export interface EvidenceLevel {
 
 export const topBanner = {
   href: '/#peptides-catalog',
-  desktop: 'Worldwide Peptide Index: academic chemical profiles, verified PubMed citations, and laboratory sourcing links.',
-  mobile: 'Worldwide Peptide Index & Citations',
+  desktop: 'UK & International Peptide Index: verified chemical structures, PubMed citations, and commercial vendor directories.',
+  mobile: 'UK & International Peptide Index & Citations',
   highlight: '45+ synthetic compounds · 300+ PubMed studies indexed',
 };
 
@@ -39,12 +39,12 @@ export const searchTabs = [
 ] as const;
 
 export const hero = {
-  titleLine1: 'The Worldwide Peptide Index &',
-  titleLine2: 'Chemical Encyclopedia.',
+  titleLine1: 'The UK & International Peptide Index &',
+  titleLine2: 'Analytical Chemical Directory.',
   quote:
-    'Synthesized reference directory for laboratory researchers. Indexed with verified PubChem CIDs, UniProt entries, peer-reviewed PubMed citations, amino acid sequences, and commercial laboratory sourcing links.',
+    'Curated PubChem molecular profiles, peer-reviewed PubMed citations, verified laboratory preparation standards, and independent commercial vendor directories for scientific research.',
   lede:
-    'Curated molecular formulas, chemical structures, receptor signaling pathways, and verified literature citations for scientific analysis.',
+    'Synthesized reference repository for analytical laboratories, educational institutions, and research scientists evaluating synthetic peptides.',
   cta: { label: 'Explore Compound Directory →', href: '/#peptides-catalog' },
   secondary: { label: 'Dilution Calculator →', href: '/#calculator' },
   card: {
@@ -60,7 +60,7 @@ export const hero = {
     stats: [
       { value: '45+', label: 'compounds' },
       { value: '304', label: 'PubMed citations' },
-      { value: '5', label: 'sourcing outlets' },
+      { value: '5', label: 'partner vendors' },
     ],
     cta: { label: 'Browse All Compounds A–Z →', href: '/#peptides-catalog' },
     footnote: 'Academic reference repository · Chemical structure database',

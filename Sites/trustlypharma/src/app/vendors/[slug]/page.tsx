@@ -162,13 +162,29 @@ export default async function VendorDetailPage({ params }: PageProps) {
                 </span>
               </div>
 
-              <div className="space-y-2">
-                <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-                  {vendor.name}
-                </h1>
-                <p className="text-sm sm:text-base text-sky-300 font-mono">
-                  Official Domain: {vendor.domain}
-                </p>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-5">
+                {vendor.logoUrl && (
+                  <div className="h-16 px-4 py-2 rounded-2xl bg-white/95 border border-white/20 flex items-center justify-center shrink-0 shadow-lg max-w-[200px]">
+                    <img
+                      src={vendor.logoUrl}
+                      alt={`${vendor.name} logo`}
+                      className="max-h-10 max-w-[170px] object-contain"
+                    />
+                  </div>
+                )}
+                <div className="space-y-1.5">
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+                    {vendor.name}
+                  </h1>
+                  <div className="flex items-center gap-2">
+                    {vendor.faviconUrl && (
+                      <img src={vendor.faviconUrl} alt="" className="w-4 h-4 rounded object-contain" />
+                    )}
+                    <span className="text-sm font-mono text-sky-300 font-semibold">
+                      {vendor.domain}
+                    </span>
+                  </div>
+                </div>
               </div>
 
               <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-3xl">

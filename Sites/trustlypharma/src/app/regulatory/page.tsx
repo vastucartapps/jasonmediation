@@ -1,27 +1,47 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { REGULATORS } from '../../data/regulatory';
+import {
+  REGULATORS,
+  UK_REGULATOR_STATEMENTS_2026,
+  OFFICIAL_REGULATORY_SOURCES,
+} from '../../data/regulatory';
 import {
   ShieldAlert,
   Scale,
-  FileText,
   ExternalLink,
   ChevronRight,
   ArrowRight,
-  AlertTriangle,
   Building2,
   CheckCircle2,
-  BookOpen,
+  FileCheck2,
+  AlertTriangle,
+  FileText,
+  HelpCircle,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'UK & Global Peptide Regulatory Intelligence Hub | MHRA, WADA & ASA Compliance',
+  title: 'UK Regulatory Framework for Peptides | Live Tracker & Intelligence Hub',
   description:
-    'Authoritative regulatory intelligence hub examining UK Human Medicines Regulations 2012, MHRA enforcement notices, WADA S0/S2 anti-doping policies, and laboratory research compliance.',
+    'Five regulators set the rules for peptides, collagen and GLP-1 medicines in the UK: MHRA, WADA, FDA, EMA, and ASA. Live intelligence tracker and primary source links.',
   alternates: {
     canonical: 'https://trustlypharma.co.uk/regulatory/',
   },
 };
+
+const COMPOUND_LEGAL_PAGES = [
+  { name: 'BPC-157', slug: 'bpc-157' },
+  { name: 'TB-500', slug: 'tb-500' },
+  { name: 'MOTS-c', slug: 'mots-c' },
+  { name: 'Ipamorelin', slug: 'ipamorelin' },
+  { name: 'CJC-1295', slug: 'cjc-1295-dac' },
+  { name: 'GHK-Cu', slug: 'ghk-cu' },
+  { name: 'Tirzepatide', slug: 'tirzepatide' },
+  { name: 'Semaglutide', slug: 'semaglutide' },
+  { name: 'Retatrutide', slug: 'retatrutide' },
+  { name: 'Epitalon', slug: 'epitalon' },
+  { name: 'Semax', slug: 'semax' },
+  { name: 'Selank', slug: 'selank' },
+];
 
 export default function RegulatoryHubPage() {
   const jsonLd = {
@@ -57,7 +77,7 @@ export default function RegulatoryHubPage() {
           {
             '@type': 'ListItem',
             position: 2,
-            name: 'Regulatory Intelligence',
+            name: 'Regulatory Hub',
             item: 'https://trustlypharma.co.uk/regulatory/',
           },
         ],
@@ -81,40 +101,46 @@ export default function RegulatoryHubPage() {
               Index
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
-            <span className="text-white font-semibold">Regulatory Intelligence</span>
+            <span className="text-white font-semibold">Regulatory Hub</span>
           </nav>
         </div>
       </div>
 
-      {/* Hero Section */}
-      <section className="py-14 sm:py-16 border-b border-[rgba(141,168,195,0.18)] bg-gradient-to-b from-[#02102b] to-[#041638]">
+      {/* Hero Section matching reference style */}
+      <section className="py-12 sm:py-16 border-b border-[rgba(141,168,195,0.18)] bg-gradient-to-b from-[#02102b] to-[#041638]">
         <div className="container-wide space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-[#103059] text-sky-400 border border-sky-500/30">
-            <Scale className="w-3.5 h-3.5" />
-            <span>Statutory Governance & Compliance</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-[#103059] text-sky-300 border border-sky-400/35 font-bold">
+            <Scale className="w-3.5 h-3.5 text-sky-400" />
+            <span>REGULATORY HUB</span>
           </div>
 
           <div className="space-y-3 max-w-4xl">
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-              UK & International Peptide Regulatory Intelligence
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1]">
+              UK regulatory framework for peptides. Live tracker.
             </h1>
             <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-sans">
-              Authoritative statutory analysis of synthetic research peptides under UK medicines law, anti-doping conventions, and commercial advertising standards. Track regulatory positions across MHRA, WADA, ASA, and European authorities.
+              Five regulators set the rules for peptides, collagen and GLP-1 medicines in the UK. We track what they are saying, in plain English, and link to the primary sources.
+            </p>
+            <p className="text-xs font-mono text-slate-400 pt-1">
+              Last updated: 06 October 2026. Editorial commentary, not legal advice.
             </p>
           </div>
 
-          {/* Quick Action Navigation Cards */}
+          {/* Quick Hub Navigation Cards */}
           <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
             <Link
               href="/regulatory/mhra-tracker/"
-              className="p-5 rounded-2xl bg-gradient-to-br from-[#071d42] to-[#03112c] border border-sky-500/30 hover:border-sky-400 transition-all group flex items-center justify-between"
+              className="p-5 rounded-2xl bg-[#061c42] border border-sky-500/35 hover:border-sky-300 transition-all group flex items-center justify-between shadow-lg"
             >
               <div>
-                <span className="text-[10px] font-mono uppercase text-sky-400 font-bold block">
-                  Enforcement Timeline
+                <span className="text-[10px] font-mono uppercase text-sky-300 font-bold block">
+                  Live Action Tracker
                 </span>
                 <span className="text-base font-bold text-white group-hover:text-sky-300 transition-colors">
-                  Live MHRA & UK Enforcement Tracker
+                  MHRA Enforcement & Safety Tracker →
+                </span>
+                <span className="text-xs text-slate-300 block mt-0.5">
+                  Rolling 90-day archive of UK notices & seizures
                 </span>
               </div>
               <ArrowRight className="w-5 h-5 text-sky-400 group-hover:translate-x-1 transition-transform shrink-0" />
@@ -122,14 +148,17 @@ export default function RegulatoryHubPage() {
 
             <Link
               href="/regulatory/uk-legal-status/"
-              className="p-5 rounded-2xl bg-gradient-to-br from-[#071d42] to-[#03112c] border border-emerald-500/30 hover:border-emerald-400 transition-all group flex items-center justify-between"
+              className="p-5 rounded-2xl bg-[#061c42] border border-emerald-500/35 hover:border-emerald-300 transition-all group flex items-center justify-between shadow-lg"
             >
               <div>
-                <span className="text-[10px] font-mono uppercase text-emerald-400 font-bold block">
+                <span className="text-[10px] font-mono uppercase text-emerald-300 font-bold block">
                   Statutory Classification
                 </span>
                 <span className="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">
-                  12-Compound UK Legal Status Matrix
+                  12-Compound UK Legal Status Matrix →
+                </span>
+                <span className="text-xs text-slate-300 block mt-0.5">
+                  HMR 2012, MDA 1971, PSA 2016 & WADA rulings
                 </span>
               </div>
               <ArrowRight className="w-5 h-5 text-emerald-400 group-hover:translate-x-1 transition-transform shrink-0" />
@@ -138,34 +167,24 @@ export default function RegulatoryHubPage() {
         </div>
       </section>
 
-      {/* Main Content Layout */}
-      <div className="container-wide mt-12 space-y-12">
-        {/* Core Statutory Regulators */}
+      {/* Main Content Sections */}
+      <div className="container-wide mt-12 space-y-16">
+        {/* Section 1: The Five Jurisdictions We Track */}
         <section className="space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[rgba(141,168,195,0.18)]">
-            <div className="flex items-center gap-2.5">
-              <div className="p-2 rounded-xl bg-sky-500/15 text-sky-400 border border-sky-400/20">
-                <Building2 className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-sky-300 font-bold block">
-                  Jurisdictional Authorities
-                </span>
-                <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                  5 Key Regulatory Agencies & Statutory Mandates
-                </h2>
-              </div>
-            </div>
-            <span className="text-xs font-mono text-slate-300 bg-[#020e24] px-3 py-1 rounded-full border border-[rgba(141,168,195,0.2)]">
-              UK, EU & Global Scope
-            </span>
+          <div className="space-y-1.5 pb-4 border-b border-[rgba(141,168,195,0.18)]">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              The five jurisdictions we track
+            </h2>
+            <p className="text-sm text-slate-300 max-w-3xl leading-relaxed">
+              Each regulator below has a separate remit. We summarise what each one covers, link to our existing deep-dive where it exists, and link directly to official agency sources.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {REGULATORS.map((reg) => (
               <div
                 key={reg.id}
-                className="rounded-3xl p-6 card-paper border border-[rgba(141,168,195,0.25)] flex flex-col justify-between space-y-5 bg-gradient-to-br from-[#02102b] to-[#041638] shadow-xl hover:border-sky-400/40 transition-colors"
+                className="rounded-3xl p-6 sm:p-7 card-paper border border-[rgba(141,168,195,0.25)] flex flex-col justify-between space-y-5 bg-gradient-to-br from-[#02102b] to-[#041638] shadow-xl hover:border-sky-400/40 transition-colors"
               >
                 <div className="space-y-3.5">
                   <div className="flex items-center justify-between pb-3 border-b border-[rgba(141,168,195,0.18)]">
@@ -207,15 +226,76 @@ export default function RegulatoryHubPage() {
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-[rgba(141,168,195,0.18)]">
+                <div className="pt-3 border-t border-[rgba(141,168,195,0.18)] flex items-center justify-between">
+                  {reg.id === 'mhra' ? (
+                    <Link
+                      href="/regulatory/mhra-tracker/"
+                      className="text-xs font-mono font-bold text-sky-300 hover:text-white transition-colors flex items-center gap-1"
+                    >
+                      MHRA medicines tracker →
+                    </Link>
+                  ) : (
+                    <a
+                      href={reg.officialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-mono font-bold text-sky-300 hover:text-white transition-colors flex items-center gap-1"
+                    >
+                      <span>Visit agency portal</span>
+                      <ExternalLink className="w-3 h-3 text-slate-400" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Section 2: What UK regulators are saying about peptides and GLP-1 medicines */}
+        <section className="space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[rgba(141,168,195,0.18)]">
+            <div>
+              <div className="inline-flex items-center gap-1.5 text-xs font-mono text-sky-400 uppercase font-bold tracking-wider mb-1">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                LIVE REGULATORY TRACKER
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                What UK regulators are saying about peptides and GLP-1 medicines
+              </h2>
+            </div>
+            <span className="text-xs font-mono text-slate-400 self-start sm:self-auto">
+              Newest entry: 2026-09-24
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {UK_REGULATOR_STATEMENTS_2026.map((st) => (
+              <div
+                key={st.id}
+                className="rounded-2xl p-5 bg-[#031535] border border-[rgba(141,168,195,0.22)] hover:border-sky-400/50 transition-all flex flex-col justify-between space-y-4 shadow-lg group"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-xs font-mono">
+                    <span className="px-2.5 py-0.5 rounded bg-[#0a2347] text-sky-300 font-bold border border-sky-400/30">
+                      {st.regulator}
+                    </span>
+                    <span className="text-slate-400">{st.date}</span>
+                  </div>
+
+                  <p className="text-sm font-semibold text-white leading-snug group-hover:text-sky-300 transition-colors">
+                    {st.title}
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-[rgba(141,168,195,0.15)]">
                   <a
-                    href={reg.officialUrl}
+                    href={st.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-mono font-bold text-sky-400 hover:text-white flex items-center justify-between transition-colors"
+                    className="text-xs font-mono text-sky-400 hover:text-white flex items-center justify-between transition-colors"
                   >
-                    <span>Visit Agency Portal</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <span>Read context →</span>
+                    <ExternalLink className="w-3 h-3 text-slate-500 group-hover:text-sky-300" />
                   </a>
                 </div>
               </div>
@@ -223,93 +303,137 @@ export default function RegulatoryHubPage() {
           </div>
         </section>
 
-        {/* Verification & Official Sources Desk */}
-        <section className="rounded-3xl p-6 sm:p-8 card-paper border border-sky-500/25 bg-gradient-to-br from-[#02102b] via-[#041638] to-[#0a2149] shadow-xl space-y-6">
-          <div className="flex items-center gap-2.5 pb-4 border-b border-[rgba(141,168,195,0.18)]">
-            <div className="p-2 rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-400/20">
-              <CheckCircle2 className="w-5 h-5" />
-            </div>
-            <div>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-300 font-bold block">
-                Primary References
-              </span>
-              <h2 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-                Official Government & Scientific Sources Desk
-              </h2>
-            </div>
+        {/* Section 3: Per-Compound UK Legal Status Pages */}
+        <section className="space-y-6">
+          <div className="space-y-1.5 pb-4 border-b border-[rgba(141,168,195,0.18)]">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              Per-compound UK legal status pages
+            </h2>
+            <p className="text-sm text-slate-300 max-w-3xl leading-relaxed">
+              Dedicated UK regulatory status summaries for the most-indexed synthetic research peptides and GLP-1 compounds. Each one reviews the Misuse of Drugs Act position, Psychoactive Substances Act status, and MHRA marketing authorization requirements.
+            </p>
           </div>
 
-          <p className="text-xs sm:text-sm text-slate-200 leading-relaxed max-w-3xl">
-            We urge all researchers to consult primary statutory databases and official reporting portals before acquiring synthetic chemical items. Trustly Pharma indexes public records directly from these portals.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-mono">
-            <a
-              href="https://www.legislation.gov.uk/uksi/2012/1916/contents/made"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-4 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-colors space-y-1.5 group"
-            >
-              <span className="text-[10px] uppercase text-sky-400 block font-bold">Legislation.gov.uk</span>
-              <h4 className="text-sm font-bold text-white group-hover:text-sky-300 transition-colors">
-                Human Medicines Regs 2012
-              </h4>
-              <p className="text-slate-300 text-[11px] font-sans">Full statutory instrument text for SI 2012/1916.</p>
-            </a>
-
-            <a
-              href="https://yellowcard.mhra.gov.uk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-4 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-colors space-y-1.5 group"
-            >
-              <span className="text-[10px] uppercase text-amber-400 block font-bold">MHRA Portal</span>
-              <h4 className="text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
-                Yellow Card Reporting
-              </h4>
-              <p className="text-slate-300 text-[11px] font-sans">Report defective or counterfeit medical products.</p>
-            </a>
-
-            <a
-              href="https://www.wada-ama.org/en/prohibited-list"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-4 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-colors space-y-1.5 group"
-            >
-              <span className="text-[10px] uppercase text-emerald-400 block font-bold">WADA Directory</span>
-              <h4 className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">
-                Anti-Doping Prohibited List
-              </h4>
-              <p className="text-slate-300 text-[11px] font-sans">Official S0 and S2 prohibited substance registry.</p>
-            </a>
-
-            <a
-              href="https://pubchem.ncbi.nlm.nih.gov/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-4 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-colors space-y-1.5 group"
-            >
-              <span className="text-[10px] uppercase text-sky-400 block font-bold">NIH / NLM</span>
-              <h4 className="text-sm font-bold text-white group-hover:text-sky-300 transition-colors">
-                PubChem Chemical Database
-              </h4>
-              <p className="text-slate-300 text-[11px] font-sans">Empirical molecular formula & CAS verification.</p>
-            </a>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            {COMPOUND_LEGAL_PAGES.map((comp) => (
+              <Link
+                key={comp.slug}
+                href={`/peptides/${comp.slug}/`}
+                className="p-4 rounded-xl bg-[#031535] border border-[rgba(141,168,195,0.22)] hover:border-sky-400 hover:bg-[#071f49] transition-all group shadow-sm text-center"
+              >
+                <span className="text-sm font-bold text-white group-hover:text-sky-300 block">
+                  {comp.name}
+                </span>
+                <span className="text-[11px] font-mono text-slate-400 block mt-1">
+                  UK legal status →
+                </span>
+              </Link>
+            ))}
           </div>
         </section>
 
-        {/* Regulatory Advisory Notice */}
-        <div className="rounded-2xl p-5 bg-[#0a1b38] border border-amber-500/30 text-xs text-slate-200 leading-relaxed flex items-start gap-3.5">
-          <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-          <div>
-            <span className="font-mono uppercase font-bold text-amber-300 block mb-1">
-              Statutory Research Warning
-            </span>
-            <p>
-              In the United Kingdom, selling unlicensed medicinal substances for human consumption constitutes a criminal offence under Regulation 46 of the Human Medicines Regulations 2012. Synthetic peptides cataloged on Trustly Pharma are permitted exclusively for legitimate in vitro biochemical analysis, cell culture assays, and chemical characterization in controlled laboratory environments.
+        {/* Section 4: The data behind this hub */}
+        <section className="space-y-6">
+          <div className="space-y-1.5 pb-4 border-b border-[rgba(141,168,195,0.18)]">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              The data behind this hub
+            </h2>
+            <p className="text-sm text-slate-300 max-w-3xl leading-relaxed">
+              Trustly Pharma maintains these as refreshable datasets rather than one-off static articles. Each carries its own source, methodology, and last-updated date.
             </p>
           </div>
-        </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Link
+              href="/regulatory/mhra-tracker/"
+              className="p-6 rounded-2xl bg-[#031535] border border-[rgba(141,168,195,0.25)] hover:border-sky-400 transition-all group space-y-3 shadow-xl"
+            >
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-sky-400 font-bold uppercase tracking-wider">
+                <ShieldAlert className="w-4 h-4 text-sky-400" />
+                LIVE DATA TRACKER
+              </div>
+              <h3 className="text-xl font-bold text-white group-hover:text-sky-300 transition-colors">
+                MHRA enforcement and safety tracker →
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                Every MHRA safety alert, enforcement action, and drug safety update relevant to synthetic peptides and weight-loss medicines, dated and linked back to the gov.uk original.
+              </p>
+              <span className="text-xs font-mono text-slate-400 block pt-1">
+                Source: gov.uk / MHRA · 23 items indexed in rolling 90 days
+              </span>
+            </Link>
+
+            <Link
+              href="/regulatory/uk-legal-status/"
+              className="p-6 rounded-2xl bg-[#031535] border border-[rgba(141,168,195,0.25)] hover:border-emerald-400 transition-all group space-y-3 shadow-xl"
+            >
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">
+                <Scale className="w-4 h-4 text-emerald-400" />
+                STATUTORY REFERENCE MATRIX
+              </div>
+              <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
+                UK peptide legal classification matrix →
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                Comprehensive statutory matrix cross-referencing synthetic peptides across HMR 2012, Misuse of Drugs Act 1971, Psychoactive Substances Act 2016, and WADA S0/S2 categories.
+              </p>
+              <span className="text-xs font-mono text-slate-400 block pt-1">
+                Source: UK Statutory Instruments · WADA Prohibited List
+              </span>
+            </Link>
+          </div>
+        </section>
+
+        {/* Section 5: Check it yourself: the official sources */}
+        <section className="rounded-3xl p-6 sm:p-9 bg-[#041433] border border-[rgba(141,168,195,0.25)] shadow-2xl space-y-6">
+          <div className="space-y-2">
+            <h2 className="text-2xl font-bold text-white">
+              Check it yourself: the official sources
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
+              Trustly Pharma is editorial commentary. Nothing here replaces the statutory authority of the UK regulator, and you should not take our word for any of it. These are the official UK destinations where the underlying position is published, free to read and open to anyone.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {OFFICIAL_REGULATORY_SOURCES.map((src, idx) => (
+              <a
+                key={idx}
+                href={src.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-5 rounded-2xl bg-[#020e24] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/50 transition-all flex flex-col justify-between group space-y-3"
+              >
+                <div className="space-y-1.5">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-sky-400 block">
+                    {src.authority}
+                  </span>
+                  <h4 className="text-base font-bold text-white group-hover:text-sky-300 transition-colors flex items-center justify-between">
+                    <span>{src.title}</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover:text-sky-300 shrink-0" />
+                  </h4>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    {src.desc}
+                  </p>
+                </div>
+                <span className="text-[11px] font-mono text-sky-400 pt-2 border-t border-slate-800 flex items-center gap-1">
+                  Visit Official Register →
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* Section 6: How We Build This Hub */}
+        <section className="rounded-3xl p-6 sm:p-8 bg-[#02102b] border border-[rgba(141,168,195,0.22)] space-y-4 shadow-xl">
+          <h2 className="text-xl font-bold text-white">How we build this hub</h2>
+          <p className="text-sm text-slate-200 leading-relaxed">
+            We pull primary-source statements from MHRA, FDA, WADA, EMA and ASA directly. We do not paraphrase secondary reporting. Where a position has shifted, we date the entry and link to the regulator&apos;s own page so the reader can verify. Items still pending source confirmation are held back from the ticker until an editor verifies them against the regulator&apos;s own published record.
+          </p>
+          <p className="text-xs text-slate-400 leading-relaxed border-t border-slate-800 pt-3">
+            This page is editorial commentary. It is not legal advice. For binding interpretation of any regulator&apos;s position, consult the regulator directly or a qualified UK medicines lawyer.
+          </p>
+        </section>
       </div>
     </div>
   );

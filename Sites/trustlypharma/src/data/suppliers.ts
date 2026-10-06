@@ -55,6 +55,8 @@ export const VENDOR_PROFILES: Record<string, VendorProfile> = {
       'ghk-cu',
       'mots-c',
     ],
+    logoUrl: '/images/vendors/pharmagrade-logo.webp',
+    faviconUrl: '/images/vendors/pharmagrade-favicon.png',
   },
   'direct-peptides': {
     id: 'direct-peptides',
@@ -109,6 +111,8 @@ export const VENDOR_PROFILES: Record<string, VendorProfile> = {
       'tirzepatide',
       'aod-9604',
     ],
+    logoUrl: '/images/vendors/direct-peptides-logo.webp',
+    faviconUrl: '/images/vendors/direct-peptides-favicon.png',
   },
   'direct-sarms': {
     id: 'direct-sarms',
@@ -156,6 +160,8 @@ export const VENDOR_PROFILES: Record<string, VendorProfile> = {
       'aod-9604',
       'tirzepatide',
     ],
+    logoUrl: '/images/vendors/direct-sarms-logo.webp',
+    faviconUrl: '/images/vendors/direct-sarms-favicon.png',
   },
   'peptide-works': {
     id: 'peptide-works',
@@ -200,6 +206,8 @@ export const VENDOR_PROFILES: Record<string, VendorProfile> = {
       'semaglutide',
       'pt-141',
     ],
+    logoUrl: '/images/vendors/peptide-works-logo.webp',
+    faviconUrl: '/images/vendors/peptide-works-favicon.png',
   },
   'pharmalab-global': {
     id: 'pharmalab-global',
@@ -252,6 +260,8 @@ export const VENDOR_PROFILES: Record<string, VendorProfile> = {
       'pt-141',
       'semax',
     ],
+    logoUrl: '/images/vendors/pharmalab-global-logo.webp',
+    faviconUrl: '/images/vendors/pharmalab-global-favicon.png',
   },
 };
 

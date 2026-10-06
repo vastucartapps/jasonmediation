@@ -73,6 +73,8 @@ export interface VendorProfile {
   catalogCategories: string[];
   officialCategoryLinks: VendorCategoryLink[];
   supportedCompoundSlugs: string[];
+  logoUrl: string;
+  faviconUrl: string;
 }
 
 export type SupplierProfile = VendorProfile;

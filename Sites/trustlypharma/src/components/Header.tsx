@@ -49,15 +49,15 @@ export function Header() {
           </Link>
 
           {/* Desktop Nav Items */}
-          <nav className="hidden md:flex items-center gap-2 text-xs font-semibold">
+          <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2 text-xs font-semibold">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={
                   item.primary
-                    ? 'gold-pill px-4 py-2 rounded-full shadow-sm transition-all whitespace-nowrap'
-                    : 'nav-pill px-3.5 py-1.5 rounded-full transition-colors whitespace-nowrap'
+                    ? 'gold-pill px-3.5 xl:px-4 py-2 rounded-full shadow-sm transition-all whitespace-nowrap'
+                    : 'nav-pill px-3 xl:px-3.5 py-1.5 rounded-full transition-colors whitespace-nowrap'
                 }
               >
                 {item.label}
@@ -79,7 +79,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-[rgba(141,168,195,0.25)] text-slate-300 hover:text-white transition-colors"
+              className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-[rgba(141,168,195,0.25)] text-slate-300 hover:text-white transition-colors"
               aria-label="Toggle Navigation"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -93,7 +93,7 @@ export function Header() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-50 bg-[#02102b] p-6 overflow-y-auto border-t border-slate-800">
+        <div className="lg:hidden fixed inset-0 z-50 bg-[#02102b] p-6 overflow-y-auto border-t border-slate-800">
           <div className="flex items-center justify-between pb-6 border-b border-slate-800">
             <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2">
               <Beaker className="w-6 h-6 text-sky-400" />

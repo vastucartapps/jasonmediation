@@ -115,14 +115,19 @@ export function Footer() {
             <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-3 flex items-center gap-1">
               <ShieldCheck className="w-3.5 h-3.5 text-sky-400" /> Verified Partners
             </h5>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2.5 text-xs">
               {Object.values(SUPPLIER_PROFILES).map((sup) => (
                 <li key={sup.id}>
                   <Link
                     href={`/vendors/${sup.id}/`}
                     className="hover:text-sky-300 transition-colors flex items-center justify-between group text-slate-300"
                   >
-                    <span>{sup.name}</span>
+                    <span className="flex items-center gap-2">
+                      {sup.faviconUrl && (
+                        <img src={sup.faviconUrl} alt="" className="w-3.5 h-3.5 rounded object-contain shrink-0" />
+                      )}
+                      <span>{sup.name}</span>
+                    </span>
                     <span className="text-[10px] text-sky-400 font-mono opacity-80 group-hover:opacity-100">Dossier →</span>
                   </Link>
                 </li>

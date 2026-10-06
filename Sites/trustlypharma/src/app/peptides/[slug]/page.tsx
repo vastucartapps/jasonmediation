@@ -19,6 +19,8 @@ import {
   FileCheck2,
   ArrowDown,
   Sparkles,
+  FlaskConical,
+  CheckCircle2,
 } from 'lucide-react';
 
 interface PageProps {
@@ -65,7 +67,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       `${compound.name} peptide`,
       `${compound.name} CAS ${compound.casNumber}`,
       `${compound.name} PubChem`,
-      `${compound.name} laboratory supplier catalogues`,
+      `${compound.name} laboratory vendor catalogues`,
       `${compound.name} dilution calculator`,
       `${compound.name} PubMed studies`,
       `${compound.name} category hub`,
@@ -97,7 +99,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
     },
     {
       question: `What physical delivery formats and formulations are available for ${compound.name}?`,
-      answer: `${compound.name} is predominantly synthesized as lyophilized peptide vials for reconstituted laboratory assays. Additional commercial formats cataloged across verified suppliers include pre-calibrated multidose cartridges, mucosal atomizers, and synergistic multi-peptide research stacks.`,
+      answer: `${compound.name} is predominantly synthesized as lyophilized peptide vials for reconstituted laboratory assays. Additional commercial formats cataloged across verified partner vendors include pre-calibrated multidose cartridges, mucosal atomizers, and synergistic multi-peptide research stacks.`,
     },
     {
       question: `What are the standard laboratory handling and reconstitution parameters for ${compound.name}?`,
@@ -299,9 +301,65 @@ export default async function PeptideDetailPage({ params }: PageProps) {
                   <span>Biochemical Q&A ↓</span>
                 </a>
               </div>
+
+              {/* Preclinical & Assay Specification Snapshot (Eliminates Hero Empty Space) */}
+              <div className="rounded-2xl bg-[#031535]/95 border border-[rgba(141,168,195,0.25)] p-5 sm:p-6 space-y-4 shadow-xl">
+                <div className="flex items-center justify-between pb-3 border-b border-[rgba(141,168,195,0.18)]">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-sky-300 flex items-center gap-2">
+                    <FlaskConical className="w-4 h-4 text-sky-400" />
+                    Key Preclinical & Chemical Parameters
+                  </span>
+                  <span className="text-[11px] font-mono text-emerald-300 bg-emerald-950/70 px-2.5 py-0.5 rounded-full border border-emerald-500/30 font-semibold">
+                    Analytical Baseline
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-1">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block font-semibold">
+                      Primary Target Axis
+                    </span>
+                    <span className="text-xs sm:text-sm font-semibold text-white block line-clamp-2">
+                      {compound.mechanismOfAction[0]?.split(':')[0] || compound.categoryName}
+                    </span>
+                  </div>
+
+                  <div className="space-y-1">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block font-semibold">
+                      Lyophilized Storage
+                    </span>
+                    <span className="text-xs sm:text-sm font-semibold text-white block">
+                      {compound.reconstitution.storageLyophilized}
+                    </span>
+                  </div>
+
+                  <div className="space-y-1">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block font-semibold">
+                      Purity Assay Baseline
+                    </span>
+                    <span className="text-xs sm:text-sm font-mono font-bold text-emerald-300 flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      RP-HPLC ≥98.0% · ESI-MS
+                    </span>
+                  </div>
+
+                  <div className="space-y-1">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block font-semibold">
+                      Standard Diluent
+                    </span>
+                    <span className="text-xs sm:text-sm font-semibold text-sky-200 block truncate">
+                      {compound.reconstitution.recommendedDiluent}
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-[11px] text-slate-300 pt-3 border-t border-[rgba(141,168,195,0.15)] leading-relaxed">
+                  Indexed for laboratory in vitro receptor binding assays and cellular synthesis research. Commercial materials are procured as non-clinical reagents under verified laboratory standards.
+                </p>
+              </div>
             </div>
 
-            {/* Right Column: Chemical Identity Card (utilizing blank hero space) */}
+            {/* Right Column: Chemical Identity Card (Balanced with Left Column) */}
             <div className="lg:col-span-5">
               <ChemicalIdentityCard compound={compound} />
             </div>
@@ -312,79 +370,79 @@ export default async function PeptideDetailPage({ params }: PageProps) {
       {/* Main Content Layout */}
       <div className="container-wide mt-12 space-y-12">
         {/* Executive Compound Synopsis */}
-        <section className="rounded-3xl p-6 sm:p-8 card-paper border border-sky-500/25 bg-gradient-to-br from-[#02102b] via-[#041638] to-[#0a2149] shadow-xl space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[rgba(141,168,195,0.18)]">
-            <div className="flex items-center gap-2.5">
-              <div className="p-2 rounded-xl bg-sky-500/15 text-sky-400 border border-sky-400/20">
-                <Sparkles className="w-5 h-5" />
+        <section className="rounded-3xl p-6 sm:p-9 card-paper border border-sky-500/25 bg-gradient-to-br from-[#02102b] via-[#041638] to-[#0a2149] shadow-xl space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-[rgba(141,168,195,0.22)]">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-xl bg-sky-500/15 text-sky-400 border border-sky-400/25">
+                <Sparkles className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-sky-300 font-bold block">
+                <span className="text-xs font-mono uppercase tracking-widest text-sky-300 font-bold block">
                   Executive Biochemical Summary
                 </span>
-                <h2 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+                <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight mt-0.5">
                   Structured Chemical & Preclinical Profile
                 </h2>
               </div>
             </div>
-            <span className="text-xs font-mono text-slate-200 self-start sm:self-auto bg-[#020e24] px-3.5 py-1.5 rounded-full border border-[rgba(141,168,195,0.25)]">
+            <span className="text-xs font-mono text-slate-200 self-start sm:self-auto bg-[#020e24] px-4 py-2 rounded-full border border-[rgba(141,168,195,0.25)] font-semibold shadow-sm">
               PubChem & PubMed Indexed
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs leading-relaxed">
-            <div className="p-4.5 rounded-2xl bg-[#02102b]/90 border border-sky-500/25 hover:border-sky-400/50 transition-colors space-y-2">
-              <div className="flex items-center gap-2">
-                <div className="p-1 rounded-lg bg-sky-500/10 text-sky-400">
-                  <Atom className="w-4 h-4" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 leading-relaxed">
+            <div className="p-6 sm:p-7 rounded-2xl bg-[#02102b]/95 border border-sky-500/30 hover:border-sky-400/60 transition-colors space-y-3.5 shadow-md">
+              <div className="flex items-center gap-2.5">
+                <div className="p-2 rounded-lg bg-sky-500/15 text-sky-300">
+                  <Atom className="w-5 h-5" />
                 </div>
-                <h3 className="font-mono font-bold text-sky-300 uppercase text-[11px] tracking-wide">
+                <h3 className="font-mono font-bold text-sky-300 uppercase text-xs sm:text-sm tracking-wider">
                   1. Chemical Identity & Sequence Architecture
                 </h3>
               </div>
-              <p className="text-slate-200">
+              <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-normal">
                 {compound.name} ({compound.systematicName}) is an analytically characterized peptide with empirical formula {compound.molecularFormula} (MW {compound.molecularWeight}). CAS Registry: {compound.casNumber}.
               </p>
             </div>
 
-            <div className="p-4.5 rounded-2xl bg-[#02102b]/90 border border-emerald-500/25 hover:border-emerald-400/50 transition-colors space-y-2">
-              <div className="flex items-center gap-2">
-                <div className="p-1 rounded-lg bg-emerald-500/10 text-emerald-400">
-                  <Activity className="w-4 h-4" />
+            <div className="p-6 sm:p-7 rounded-2xl bg-[#02102b]/95 border border-emerald-500/30 hover:border-emerald-400/60 transition-colors space-y-3.5 shadow-md">
+              <div className="flex items-center gap-2.5">
+                <div className="p-2 rounded-lg bg-emerald-500/15 text-emerald-300">
+                  <Activity className="w-5 h-5" />
                 </div>
-                <h3 className="font-mono font-bold text-emerald-300 uppercase text-[11px] tracking-wide">
+                <h3 className="font-mono font-bold text-emerald-300 uppercase text-xs sm:text-sm tracking-wider">
                   2. Primary Preclinical Signaling Axis
                 </h3>
               </div>
-              <p className="text-slate-200">
+              <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-normal">
                 Investigated in preclinical assays for cellular signaling: {compound.mechanismOfAction[0]}
               </p>
             </div>
 
-            <div className="p-4.5 rounded-2xl bg-[#02102b]/90 border border-purple-500/25 hover:border-purple-400/50 transition-colors space-y-2">
-              <div className="flex items-center gap-2">
-                <div className="p-1 rounded-lg bg-purple-500/10 text-purple-400">
-                  <PackageCheck className="w-4 h-4" />
+            <div className="p-6 sm:p-7 rounded-2xl bg-[#02102b]/95 border border-purple-500/30 hover:border-purple-400/60 transition-colors space-y-3.5 shadow-md">
+              <div className="flex items-center gap-2.5">
+                <div className="p-2 rounded-lg bg-purple-500/15 text-purple-300">
+                  <PackageCheck className="w-5 h-5" />
                 </div>
-                <h3 className="font-mono font-bold text-purple-300 uppercase text-[11px] tracking-wide">
+                <h3 className="font-mono font-bold text-purple-300 uppercase text-xs sm:text-sm tracking-wider">
                   3. Physical Formats & Delivery Matrices
                 </h3>
               </div>
-              <p className="text-slate-200">
+              <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-normal">
                 Synthesized predominantly as high-purity lyophilized powder cakes, with secondary pre-metered pen cartridges and solution atomizers cataloged across vendors.
               </p>
             </div>
 
-            <div className="p-4.5 rounded-2xl bg-[#02102b]/90 border border-amber-500/25 hover:border-amber-400/50 transition-colors space-y-2">
-              <div className="flex items-center gap-2">
-                <div className="p-1 rounded-lg bg-amber-500/10 text-amber-400">
-                  <ThermometerSnowflake className="w-4 h-4" />
+            <div className="p-6 sm:p-7 rounded-2xl bg-[#02102b]/95 border border-amber-500/30 hover:border-amber-400/60 transition-colors space-y-3.5 shadow-md">
+              <div className="flex items-center gap-2.5">
+                <div className="p-2 rounded-lg bg-amber-500/15 text-amber-300">
+                  <ThermometerSnowflake className="w-5 h-5" />
                 </div>
-                <h3 className="font-mono font-bold text-amber-300 uppercase text-[11px] tracking-wide">
+                <h3 className="font-mono font-bold text-amber-300 uppercase text-xs sm:text-sm tracking-wider">
                   4. Reconstitution & Analytical Handling
                 </h3>
               </div>
-              <p className="text-slate-200">
+              <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-normal">
                 Recommended reconstitution with {compound.reconstitution.recommendedDiluent}. Lyophilized cake stored at {compound.reconstitution.storageLyophilized}. Solution stable at {compound.reconstitution.storageReconstituted}.
               </p>
             </div>

@@ -133,7 +133,7 @@ export default function TermsPage() {
                 </div>
                 <div className="p-3 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.18)]">
                   <strong className="text-white block mb-0.5">Independent Vendors</strong>
-                  <span className="text-slate-400">All outbound supplier links direct to third-party laboratory vendors.</span>
+                  <span className="text-slate-400">All outbound vendor links direct to independent third-party laboratory vendors.</span>
                 </div>
                 <div className="p-3 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.18)]">
                   <strong className="text-white block mb-0.5">English Jurisdiction</strong>

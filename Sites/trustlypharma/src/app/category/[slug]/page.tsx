@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
 
   return {
     title: `${category.name} Peptides — Research Index & Chemical Specifications`,
-    description: `${category.headline}. Preclinical data, molecular mechanisms, formulas, and laboratory supplier links for ${category.name.toLowerCase()}.`,
+    description: `${category.headline}. Preclinical data, molecular mechanisms, formulas, and laboratory vendor links for ${category.name.toLowerCase()}.`,
   };
 }
 
