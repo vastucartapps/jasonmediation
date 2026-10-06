@@ -1,57 +1,78 @@
 import Link from 'next/link';
-import { Shield, AlertTriangle, ExternalLink, Beaker, CheckCircle2 } from 'lucide-react';
+import { Beaker, ShieldCheck, CheckCircle2, ExternalLink } from 'lucide-react';
 import { RESEARCH_CATEGORIES } from '../data/categories';
 import { SUPPLIER_PROFILES } from '../data/suppliers';
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-obsidian-950 text-slate-400">
-      {/* Top Academic / Compliance Warning Banner */}
-      <div className="border-b border-white/5 bg-amber-500/[0.03] py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-start gap-4 p-5 rounded-xl border border-amber-500/20 bg-obsidian-900/60">
-            <div className="p-2 rounded-lg bg-amber-500/10 text-amber-400 shrink-0">
-              <AlertTriangle className="w-6 h-6" />
-            </div>
-            <div className="space-y-1.5 text-xs leading-relaxed">
-              <h4 className="text-sm font-semibold text-amber-300 font-mono tracking-wide uppercase">
-                Enterprise Scientific Content Compliance & Research-Use-Only (RUO) Notice
-              </h4>
-              <p className="text-slate-300">
-                All chemical nomenclature, molecular formulas, amino acid sequences, in vitro mechanism reviews, and third-party supplier links presented on <strong className="text-white">Trustly Pharma</strong> are curated strictly for accredited scientific researchers, university institutions, and in vitro laboratory analysis. None of the compounds indexed on this domain are intended for human, clinical, veterinary, or agricultural consumption.
-              </p>
-              <p className="text-slate-400">
-                No statement on this portal has been evaluated by the UK Medicines and Healthcare products Regulatory Agency (MHRA), the European Medicines Agency (EMA), or the United States Food and Drug Administration (FDA). Trustly Pharma acts as an independent scientific reference encyclopedia and does not process payments, dispense pharmaceuticals, or conduct retail transactions.
-              </p>
-            </div>
-          </div>
+    <footer className="border-t border-[rgba(141,168,195,0.18)] bg-[#020e24] text-slate-400">
+      {/* Discreet Professional Safety Banner */}
+      <div className="border-b border-[rgba(141,168,195,0.12)] bg-[#03132e]/60 py-6">
+        <div className="container-wide">
+          <p className="text-xs text-slate-400 leading-relaxed max-w-4xl">
+            <strong className="text-slate-300 font-semibold">Scientific & Non-Clinical Notice:</strong> Trustly Pharma is an independent biochemical encyclopedia, analytical testing index, and research reference. Primary scientific validation data are retrieved directly from PubChem, UniProt, and peer-reviewed journals. Commercial store links are provided solely for laboratory sourcing. Peptides cataloged are intended exclusively for in vitro and preclinical laboratory research, not for human or animal consumption, diagnostics, or direct therapeutic use.
+          </p>
         </div>
       </div>
 
       {/* Main Footer Links */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div className="container-wide py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center">
-                <Beaker className="w-4 h-4 text-cyan-400" />
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg bg-sky-500/20 border border-sky-500/30 flex items-center justify-center">
+                <Beaker className="w-4 h-4 text-sky-400" />
               </div>
               <span className="text-base font-bold tracking-tight text-white">
-                TRUSTLY<span className="text-cyan-400">PHARMA</span>
+                TRUSTLY<span className="text-sky-400">PHARMA</span>
               </span>
             </div>
-            <p className="text-xs text-slate-400 leading-relaxed pr-4">
-              Worldwide scientific peptide index, chemical sequence encyclopedia, and verified supplier comparison matrix. Built to support laboratory standardisation through HPLC assay transparency, molecular verification, and rigorous academic citation.
+            <p className="text-xs text-slate-400 leading-relaxed pr-6">
+              The independent UK and global peptide index, testing transparency benchmark, and chemical sequence catalog. Built to uphold laboratory standards through third-party HPLC assay auditing and academic peer-reviewed citations.
             </p>
-            <div className="flex items-center gap-4 text-xs font-mono text-slate-400">
+            <div className="flex items-center gap-4 text-xs font-mono text-slate-400 pt-1">
               <span className="flex items-center gap-1 text-emerald-400">
                 <CheckCircle2 className="w-3.5 h-3.5" /> HPLC Purity Assayed
               </span>
-              <span className="flex items-center gap-1 text-cyan-400">
-                <CheckCircle2 className="w-3.5 h-3.5" /> ESI-MS Verified
+              <span className="flex items-center gap-1 text-sky-400">
+                <CheckCircle2 className="w-3.5 h-3.5" /> ESI-MS Documented
               </span>
             </div>
+          </div>
+
+          {/* Core Tools & Index */}
+          <div>
+            <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-3">
+              Tools & Directory
+            </h5>
+            <ul className="space-y-2 text-xs">
+              <li>
+                <Link href="/suppliers/" className="hover:text-amber-400 transition-colors font-semibold text-amber-300">
+                  ★ Commercial Sourcing Outlets
+                </Link>
+              </li>
+              <li>
+                <Link href="/#calculator" className="hover:text-sky-400 transition-colors">
+                  Dilution Calculator
+                </Link>
+              </li>
+              <li>
+                <Link href="/#evidence-map" className="hover:text-sky-400 transition-colors">
+                  The Evidence Map
+                </Link>
+              </li>
+              <li>
+                <Link href="/#peptides-catalog" className="hover:text-sky-400 transition-colors">
+                  Peptides A–Z Directory
+                </Link>
+              </li>
+              <li>
+                <Link href="/formats/" className="hover:text-sky-400 transition-colors">
+                  Delivery Formats Standards
+                </Link>
+              </li>
+            </ul>
           </div>
 
           {/* Research Pathways */}
@@ -63,8 +84,8 @@ export function Footer() {
               {RESEARCH_CATEGORIES.map((cat) => (
                 <li key={cat.slug}>
                   <Link
-                    href={`/category/${cat.slug}`}
-                    className="hover:text-cyan-400 transition-colors"
+                    href={`/category/${cat.slug}/`}
+                    className="hover:text-sky-400 transition-colors"
                   >
                     {cat.name}
                   </Link>
@@ -73,39 +94,10 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Formats & Handling */}
-          <div>
-            <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-3">
-              Delivery Formats
-            </h5>
-            <ul className="space-y-2 text-xs">
-              <li>
-                <Link href="/formats#vial" className="hover:text-cyan-400 transition-colors">
-                  Lyophilized Powder Vials
-                </Link>
-              </li>
-              <li>
-                <Link href="/formats#pen" className="hover:text-cyan-400 transition-colors">
-                  Pre-Mixed Cartridge Pens
-                </Link>
-              </li>
-              <li>
-                <Link href="/formats#spray" className="hover:text-cyan-400 transition-colors">
-                  Metered Intranasal Sprays
-                </Link>
-              </li>
-              <li>
-                <Link href="/formats#stack" className="hover:text-cyan-400 transition-colors">
-                  Synergistic Research Blends
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Verified Supplier Network */}
+          {/* Commercial Store Network */}
           <div>
             <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-3 flex items-center gap-1">
-              <Shield className="w-3.5 h-3.5 text-emerald-400" /> Verified Stores
+              <ShieldCheck className="w-3.5 h-3.5 text-sky-400" /> Commercial Stores
             </h5>
             <ul className="space-y-2 text-xs">
               {Object.values(SUPPLIER_PROFILES).map((sup) => (
@@ -114,10 +106,10 @@ export function Footer() {
                     href={sup.baseUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-emerald-400 transition-colors flex items-center gap-1 group"
+                    className="hover:text-sky-300 transition-colors flex items-center gap-1 group text-slate-300"
                   >
                     <span>{sup.name}</span>
-                    <ExternalLink className="w-2.5 h-2.5 text-slate-600 group-hover:text-emerald-400" />
+                    <ExternalLink className="w-2.5 h-2.5 text-slate-600 group-hover:text-sky-300" />
                   </a>
                 </li>
               ))}
@@ -126,16 +118,16 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
+        <div className="mt-12 pt-6 border-t border-[rgba(141,168,195,0.15)] flex flex-col md:flex-row items-center justify-between text-[11px] text-slate-400 gap-4">
           <div>
-            © {new Date().getFullYear()} Trustly Pharma. All rights reserved. Registered UK Biotech Reference Portal.
+            © {new Date().getFullYear()} Trustly Pharma. All rights reserved. Registered UK Biotech Reference Directory.
           </div>
           <div className="flex items-center gap-6">
-            <Link href="/compliance" className="hover:text-slate-300 transition-colors">
-              Editorial Compliance Policy
+            <Link href="/compliance/" className="hover:text-slate-300 transition-colors">
+              Editorial Policy
             </Link>
-            <Link href="/verification" className="hover:text-slate-300 transition-colors">
-              Supplier Verification Standard
+            <Link href="/verification/" className="hover:text-slate-300 transition-colors">
+              Verification Standards
             </Link>
             <a href="/sitemap.xml" className="hover:text-slate-300 transition-colors">
               Sitemap

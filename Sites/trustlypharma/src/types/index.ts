@@ -1,4 +1,5 @@
 export type DeliveryFormatType = 'vial' | 'pen' | 'spray' | 'stack';
+export type EvidenceType = 'human' | 'mixed' | 'animal';
 
 export interface AcademicCitation {
   title: string;
@@ -16,9 +17,9 @@ export interface SupplierProductLink {
   url: string;
   format: DeliveryFormatType;
   puritySpecification: string;
-  batchAssayVerification: boolean;
   dispatchRegion: string;
   notes?: string;
+  batchAssayVerification?: boolean;
 }
 
 export interface ReconstitutionSpecifications {
@@ -27,6 +28,7 @@ export interface ReconstitutionSpecifications {
   storageReconstituted: string;
   stabilityWindow: string;
   molecularWeightGPerMol: number;
+  standardDoseMcg?: number;
 }
 
 export interface PeptideCompound {
@@ -40,6 +42,8 @@ export interface PeptideCompound {
   sequence?: string[];
   categorySlug: string;
   categoryName: string;
+  evidenceLevel: EvidenceType;
+  evidencePips: 1 | 2 | 3;
   shortOverview: string;
   mechanismOfAction: string[];
   preclinicalResearchNotes: string;
@@ -56,9 +60,7 @@ export interface SupplierProfile {
   baseUrl: string;
   establishedYear: number;
   dispatchLocations: string[];
-  analyticalAssays: string[];
-  reputationSummary: string;
-  verifiedScore: number;
+  productCatalogSummary: string;
 }
 
 export interface ResearchCategory {

@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://trustlypharma.co.uk'),
   title: {
     template: '%s | Trustly Pharma — Worldwide Peptide Research Index',
-    default: 'Trustly Pharma | Worldwide Peptide Research Index & Supplier Matrix',
+    default: 'Trustly Pharma | Worldwide Peptide Research Index & Chemical Directory',
   },
   description:
-    'Academic reference directory for synthetic research peptides. Features verified chemical formulas, CAS numbers, amino acid sequence profiles, HPLC purity assays, and independently audited laboratory suppliers.',
+    'Academic reference directory for synthetic research peptides. Features verified chemical formulas, CAS numbers, amino acid sequence profiles, HPLC purity standards, and commercial laboratory supplier sourcing catalogues.',
   keywords: [
     'peptide research index',
     'chemical sequence encyclopedia',
-    'HPLC verified peptide suppliers',
+    'HPLC peptide testing transparency',
     'BPC-157 CAS number',
     'TB-500 amino acid sequence',
     'laboratory grade peptides',
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     url: 'https://trustlypharma.co.uk',
     siteName: 'Trustly Pharma',
-    title: 'Trustly Pharma | Worldwide Peptide Research Index & Supplier Matrix',
+    title: 'Trustly Pharma | Worldwide Peptide Research Index & Chemical Directory',
     description:
-      'Academic reference directory for synthetic research peptides. Features verified chemical formulas, CAS numbers, amino acid sequence profiles, HPLC purity assays, and independently audited laboratory suppliers.',
+      'Academic reference directory for synthetic research peptides. Features verified chemical formulas, CAS numbers, amino acid sequence profiles, HPLC purity standards, and commercial laboratory supplier sourcing catalogues.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Trustly Pharma | Worldwide Peptide Research Index',
-    description: 'Academic peptide reference catalog and verified laboratory supplier matrix.',
+    description: 'Academic peptide reference catalog and commercial laboratory supplier sourcing catalogues.',
   },
 };
 
@@ -55,7 +55,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className="min-h-screen bg-obsidian-950 text-slate-100 flex flex-col antialiased selection:bg-cyan-500 selection:text-obsidian-950">
+      <body className="min-h-screen bg-[#02102b] text-slate-100 flex flex-col antialiased selection:bg-amber-400 selection:text-slate-950">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

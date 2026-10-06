@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ExternalLink, ShieldCheck, CheckCircle2, FileText, Globe, Truck, Beaker } from 'lucide-react';
+import { ExternalLink, Store, FileText, Truck, Beaker } from 'lucide-react';
 import { SupplierProductLink, DeliveryFormatType } from '../types';
 import { SUPPLIER_PROFILES } from '../data/suppliers';
 import { FORMAT_PROFILES } from '../data/formats';
@@ -22,34 +22,34 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
   const availableFormats = Array.from(new Set(supplierLinks.map((l) => l.format)));
 
   return (
-    <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 bg-gradient-to-br from-obsidian-850 to-obsidian-900 shadow-2xl space-y-6">
+    <div className="rounded-3xl p-6 sm:p-8 card-paper border border-[rgba(141,168,195,0.25)] shadow-2xl space-y-6">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[rgba(141,168,195,0.18)]">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="p-1 rounded bg-emerald-500/10 text-emerald-400">
-              <ShieldCheck className="w-4 h-4" />
+            <span className="p-1 rounded bg-sky-500/10 text-sky-400">
+              <Store className="w-4 h-4" />
             </span>
-            <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">
-              Verified Partner Network
+            <span className="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">
+              Commercial Laboratory Sourcing
             </span>
           </div>
           <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-            Certified Laboratory Suppliers for {compoundName}
+            Where to Source {compoundName} for Laboratory Research
           </h3>
-          <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
-            Direct laboratory reference links to independently audited chemical vendors offering batch HPLC analytical assays and verified cold-chain dispatch for in vitro experimentation.
+          <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">
+            Direct catalogue links to independent commercial vendors supplying laboratory-grade synthesis batches, lyophilized vials, and reconstitution solvents.
           </p>
         </div>
 
         {/* Format Filter Tabs */}
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-obsidian-950/80 border border-white/5 self-start md:self-auto overflow-x-auto max-w-full">
+        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.18)] self-start md:self-auto overflow-x-auto max-w-full">
           <button
             type="button"
             onClick={() => setActiveFormat('all')}
             className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all ${
               activeFormat === 'all'
-                ? 'bg-cyan-500 text-obsidian-950 font-bold shadow-glow-cyan/50'
+                ? 'bg-sky-500 text-obsidian-950 font-bold'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
@@ -65,7 +65,7 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
                 onClick={() => setActiveFormat(fmt)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all whitespace-nowrap ${
                   activeFormat === fmt
-                    ? 'bg-cyan-500 text-obsidian-950 font-bold shadow-glow-cyan/50'
+                    ? 'bg-sky-500 text-obsidian-950 font-bold'
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -85,11 +85,11 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
           return (
             <div
               key={`${link.supplierId}-${link.format}-${idx}`}
-              className="glass-panel-hover rounded-2xl p-4 sm:p-5 border border-white/5 bg-obsidian-900/60 flex flex-col lg:flex-row lg:items-center justify-between gap-4"
+              className="rounded-2xl p-4 sm:p-5 bg-[#103059] border border-[rgba(141,168,195,0.2)] hover:border-sky-400 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-4"
             >
-              {/* Left Column: Supplier & Delivery Format */}
-              <div className="flex items-start sm:items-center gap-4 min-w-[260px]">
-                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-obsidian-700 to-obsidian-950 border border-white/10 flex items-center justify-center font-bold text-white font-mono text-sm shadow-md shrink-0">
+              {/* Left Column: Supplier Identity */}
+              <div className="flex items-start sm:items-center gap-4 min-w-[240px]">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#02102b] to-[#0a2149] border border-[rgba(141,168,195,0.3)] flex items-center justify-center font-bold text-white font-mono text-sm shrink-0">
                   {profile ? profile.name.slice(0, 2).toUpperCase() : 'TP'}
                 </div>
                 <div>
@@ -97,71 +97,58 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
                     <span className="font-semibold text-white text-base">
                       {link.supplierName}
                     </span>
-                    <span className="inline-flex items-center gap-0.5 text-[10px] font-mono text-emerald-400 bg-emerald-950/50 px-1.5 py-0.5 rounded border border-emerald-500/20">
-                      <CheckCircle2 className="w-2.5 h-2.5" /> Audited
+                    <span className="text-[11px] font-mono text-slate-400 bg-[#02102b] px-2 py-0.5 rounded border border-[rgba(141,168,195,0.15)]">
+                      {profile?.domain}
                     </span>
                   </div>
                   <div className="flex flex-wrap items-center gap-2 mt-1">
-                    <span
-                      className={`text-[11px] font-mono px-2 py-0.5 rounded-md border ${
-                        fmtProfile ? fmtProfile.badgeColor : 'border-slate-700 text-slate-300'
-                      }`}
-                    >
+                    <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[#02102b] text-sky-300 border border-[rgba(141,168,195,0.2)]">
                       {fmtProfile ? fmtProfile.label : link.format}
                     </span>
-                    <span className="text-[11px] text-slate-500 font-mono">
+                    <span className="text-[11px] text-slate-400 font-mono">
                       {link.dispatchRegion}
                     </span>
                   </div>
                 </div>
               </div>
 
-              {/* Middle Column: Analytical Specifications */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs flex-1 border-y lg:border-y-0 lg:border-x border-white/5 py-3 lg:py-0 lg:px-6">
+              {/* Middle Column: Catalog Specifications */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs flex-1 border-y lg:border-y-0 lg:border-x border-[rgba(141,168,195,0.18)] py-3 lg:py-0 lg:px-6">
                 <div>
-                  <span className="text-[10px] font-mono uppercase text-slate-500 block">
-                    Purity Assay
+                  <span className="text-[10px] font-mono uppercase text-slate-400 block">
+                    Catalog Purity Spec
                   </span>
                   <span className="font-mono font-bold text-emerald-400">
                     {link.puritySpecification}
                   </span>
                 </div>
                 <div>
-                  <span className="text-[10px] font-mono uppercase text-slate-500 block">
-                    Testing Protocol
+                  <span className="text-[10px] font-mono uppercase text-slate-400 block">
+                    Product Format
                   </span>
-                  <span className="text-slate-300 font-mono text-[11px] flex items-center gap-1">
-                    <FileText className="w-3 h-3 text-cyan-400" /> HPLC & MS COA
+                  <span className="text-slate-200 font-mono text-[11px] flex items-center gap-1">
+                    <FileText className="w-3 h-3 text-sky-400" /> {fmtProfile ? fmtProfile.label : link.format}
                   </span>
                 </div>
                 <div className="col-span-2 sm:col-span-1">
-                  <span className="text-[10px] font-mono uppercase text-slate-500 block">
-                    Logistics / Handling
+                  <span className="text-[10px] font-mono uppercase text-slate-400 block">
+                    Dispatch Region
                   </span>
-                  <span className="text-slate-300 font-mono text-[11px] flex items-center gap-1">
-                    <Truck className="w-3 h-3 text-slate-400" /> Cold-Chain Tracked
+                  <span className="text-slate-200 font-mono text-[11px] flex items-center gap-1">
+                    <Truck className="w-3 h-3 text-slate-400" /> {link.dispatchRegion}
                   </span>
                 </div>
               </div>
 
-              {/* Right Column: Outbound Action */}
+              {/* Right Column: Outbound Store Action */}
               <div className="flex items-center justify-between lg:justify-end gap-3 shrink-0">
-                <div className="text-right hidden sm:block lg:hidden xl:block">
-                  <span className="text-[10px] font-mono text-slate-500 block">
-                    Batch Testing
-                  </span>
-                  <span className="text-[11px] font-mono text-cyan-400">
-                    Third-Party Assayed
-                  </span>
-                </div>
-
                 <a
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-medium text-xs text-obsidian-950 bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 transition-all font-mono font-bold shadow-glow-cyan/40 hover:scale-[1.02] active:scale-[0.98]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-xs gradient-bg shadow-md hover:scale-[1.02] active:scale-[0.98] transition-transform"
                 >
-                  <span>Access Certified Batch</span>
+                  <span>Order Research Batch</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
@@ -170,11 +157,11 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
         })}
       </div>
 
-      {/* Compliance Note */}
-      <div className="p-4 rounded-xl bg-obsidian-950/60 border border-white/5 text-[11px] text-slate-400 leading-relaxed flex items-center gap-2">
-        <Beaker className="w-4 h-4 text-cyan-400 shrink-0" />
+      {/* Sourcing Transparency Note */}
+      <div className="p-4 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.15)] text-[11px] text-slate-400 leading-relaxed flex items-center gap-2">
+        <Beaker className="w-4 h-4 text-sky-400 shrink-0" />
         <span>
-          <strong>Batch Purity Auditing:</strong> Trustly Pharma verifies analytical documentation independently. All external store links connect directly to vendor certificates of analysis (COAs) and reference batch inventories.
+          <strong>Commercial Sourcing Notice:</strong> Outbound retailer links connect directly to third-party commercial store catalogues for research procurement. Scientific validation standards belong strictly to peer-reviewed literature and chemical databases (PubChem, UniProt, PubMed).
         </span>
       </div>
     </div>

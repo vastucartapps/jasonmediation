@@ -7,7 +7,7 @@ import {
   getCompoundsByCategory,
 } from '../../../data';
 import { FORMAT_PROFILES } from '../../../data/formats';
-import { ChevronRight, ArrowRight, Dna, Atom, Layers, Beaker } from 'lucide-react';
+import { ChevronRight, ArrowRight, Atom } from 'lucide-react';
 
 interface CategoryPageProps {
   params: Promise<{ slug: string }>;
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
 
   return {
     title: `${category.name} Peptides — Research Index & Chemical Specifications`,
-    description: `${category.headline}. Preclinical data, molecular mechanisms, formulas, and certified suppliers for ${category.name.toLowerCase()}.`,
+    description: `${category.headline}. Preclinical data, molecular mechanisms, formulas, and laboratory supplier links for ${category.name.toLowerCase()}.`,
   };
 }
 
@@ -48,10 +48,10 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
   return (
     <div className="relative pb-24">
       {/* Breadcrumb Navigation */}
-      <div className="border-b border-white/5 bg-obsidian-950/60 py-3">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="border-b border-[rgba(141,168,195,0.18)] bg-[#020e24] py-3">
+        <div className="container-wide">
           <nav className="flex items-center gap-2 text-xs font-mono text-slate-400">
-            <Link href="/" className="hover:text-cyan-400 transition-colors">
+            <Link href="/" className="hover:text-sky-400 transition-colors">
               Index
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
@@ -63,9 +63,9 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
       </div>
 
       {/* Category Hero */}
-      <section className="py-14 sm:py-16 border-b border-white/10 bg-gradient-to-b from-obsidian-900 to-obsidian-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+      <section className="py-14 sm:py-16 border-b border-[rgba(141,168,195,0.18)] bg-gradient-to-b from-[#02102b] to-[#041638]">
+        <div className="container-wide space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-[#103059] text-sky-400 border border-sky-500/30">
             <Atom className="w-3.5 h-3.5" />
             <span>Biological Signaling Axis</span>
           </div>
@@ -78,11 +78,11 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
             {category.description}
           </p>
 
-          <div className="p-4 rounded-2xl bg-obsidian-850/80 border border-white/5 max-w-3xl space-y-1">
-            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 block">
+          <div className="p-4 rounded-2xl bg-[#0a2149] border border-[rgba(141,168,195,0.2)] max-w-3xl space-y-1">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block font-semibold">
               Core Receptor & Secondary Messenger Focus:
             </span>
-            <p className="text-xs font-mono text-cyan-300">
+            <p className="text-xs font-mono text-sky-300">
               {category.signalingFocus}
             </p>
           </div>
@@ -90,8 +90,8 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
       </section>
 
       {/* Compounds Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 space-y-8">
-        <div className="flex items-center justify-between pb-4 border-b border-white/5">
+      <div className="container-wide mt-12 space-y-8">
+        <div className="flex items-center justify-between pb-4 border-b border-[rgba(141,168,195,0.18)]">
           <h2 className="text-xl font-bold text-white tracking-tight">
             Cataloged Compounds in {category.name}
           </h2>
@@ -101,7 +101,7 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
         </div>
 
         {compounds.length === 0 ? (
-          <div className="p-8 rounded-2xl bg-obsidian-900/40 border border-white/5 text-center text-slate-400">
+          <div className="p-8 rounded-2xl bg-[#0a2149] border border-[rgba(141,168,195,0.18)] text-center text-slate-400">
             Compounds in this category are undergoing analytical sequence verification.
           </div>
         ) : (
@@ -109,22 +109,22 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
             {compounds.map((compound) => (
               <div
                 key={compound.slug}
-                className="glass-panel rounded-3xl p-6 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between space-y-4"
+                className="rounded-3xl p-6 card-paper border border-[rgba(141,168,195,0.2)] hover:border-sky-400 transition-all flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-xs text-slate-400">
                       CAS: {compound.casNumber}
                     </span>
-                    <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-cyan-950/40 text-cyan-400 border border-cyan-500/20">
+                    <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[#02102b] text-sky-400 border border-[rgba(141,168,195,0.15)]">
                       MW: {compound.molecularWeight.split(' ')[0]}
                     </span>
                   </div>
 
                   <div>
                     <Link
-                      href={`/peptides/${compound.slug}`}
-                      className="text-xl font-bold text-white hover:text-cyan-400 transition-colors block"
+                      href={`/peptides/${compound.slug}/`}
+                      className="text-xl font-bold text-white hover:text-sky-300 transition-colors block"
                     >
                       {compound.name}
                     </Link>
@@ -133,22 +133,22 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
                     </span>
                   </div>
 
-                  <div className="p-2.5 rounded-xl bg-obsidian-950/80 border border-white/5 font-mono text-xs flex items-center justify-between">
+                  <div className="p-2.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.12)] font-mono text-xs flex items-center justify-between">
                     <span className="text-slate-400">Formula:</span>
-                    <span className="text-cyan-300 font-bold">{compound.molecularFormula}</span>
+                    <span className="text-emerald-400 font-bold">{compound.molecularFormula}</span>
                   </div>
 
-                  <p className="text-xs text-slate-400 line-clamp-3 leading-relaxed">
+                  <p className="text-xs text-slate-300 line-clamp-3 leading-relaxed">
                     {compound.shortOverview}
                   </p>
                 </div>
 
-                <div className="space-y-3 pt-3 border-t border-white/5">
+                <div className="space-y-3 pt-3 border-t border-[rgba(141,168,195,0.18)]">
                   <div className="flex flex-wrap gap-1">
                     {compound.availableFormats.map((fmt) => (
                       <span
                         key={fmt}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-slate-300"
+                        className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#02102b] text-slate-300 border border-[rgba(141,168,195,0.1)]"
                       >
                         {FORMAT_PROFILES[fmt].label.split(' ')[0]}
                       </span>
@@ -156,10 +156,10 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
                   </div>
 
                   <Link
-                    href={`/peptides/${compound.slug}`}
-                    className="w-full inline-flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-mono font-bold text-slate-200 bg-white/5 hover:bg-cyan-500 hover:text-obsidian-950 transition-all border border-white/10"
+                    href={`/peptides/${compound.slug}/`}
+                    className="w-full inline-flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-mono font-bold text-slate-200 bg-[#103059] hover:text-white hover:bg-[#123a6b] transition-all border border-[rgba(141,168,195,0.25)]"
                   >
-                    <span>Inspect Profile & Suppliers</span>
+                    <span>Inspect Profile & Sourcing</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>

@@ -2,22 +2,20 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { PEPTIDE_COMPOUNDS, getCompoundBySlug } from '../../../data';
+import { evidenceLevels } from '../../../data/site';
 import { ChemicalFormulaBadge } from '../../../components/ChemicalFormulaBadge';
 import { SequenceStrip } from '../../../components/SequenceStrip';
 import { TopSuppliersMatrix } from '../../../components/TopSuppliersMatrix';
 import { LiteratureTable } from '../../../components/LiteratureTable';
-import { FormatSelector } from '../../../components/FormatSelector';
+import { ReconstitutionCalculator } from '../../../components/ReconstitutionCalculator';
 import {
   ChevronRight,
-  ShieldAlert,
+  ShieldCheck,
   Beaker,
   Dna,
-  Layers,
-  Thermometer,
-  FileCheck2,
   Atom,
+  FileCheck2,
   ArrowDown,
-  Info,
 } from 'lucide-react';
 
 interface PageProps {
@@ -41,20 +39,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${compound.name} Research Profile & Chemical Specifications (CAS ${compound.casNumber})`,
-    description: `Academic reference profile for ${compound.name} (${compound.systematicName}). Chemical formula ${compound.molecularFormula}, MW ${compound.molecularWeight}, preclinical mechanisms, and verified laboratory suppliers.`,
+    title: `${compound.name} Chemical Profile, CAS ${compound.casNumber} & Research Sourcing`,
+    description: `Academic chemical profile for ${compound.name} (${compound.systematicName}). Chemical formula ${compound.molecularFormula}, MW ${compound.molecularWeight}, PubChem CID, PubMed citations, and laboratory sourcing links.`,
     keywords: [
       `${compound.name} peptide`,
       `${compound.name} CAS ${compound.casNumber}`,
-      `${compound.name} molecular formula`,
-      `${compound.name} suppliers`,
-      `${compound.name} reconstitution protocol`,
-      `${compound.name} PubMed research`,
+      `${compound.name} PubChem`,
+      `${compound.name} laboratory supplier catalogues`,
+      `${compound.name} dilution calculator`,
+      `${compound.name} PubMed studies`,
     ],
-    openGraph: {
-      title: `${compound.name} (${compound.molecularFormula}) — Chemical Dossier & Verified Suppliers`,
-      description: compound.shortOverview,
-    },
   };
 }
 
@@ -66,12 +60,14 @@ export default async function PeptideDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  // JSON-LD structured data for Semantic Search / AEO
+  const lvl = evidenceLevels[compound.evidenceLevel];
+
+  // Structured Data
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ScholarlyArticle',
-    name: `${compound.name} (${compound.systematicName}) Chemical Reference & In Vitro Mechanisms`,
-    headline: `${compound.name} Laboratory Specifications and Verified Analytical Suppliers`,
+    name: `${compound.name} (${compound.systematicName}) Chemical Reference & Evidence Analysis`,
+    headline: `${compound.name} Chemical Specifications and Laboratory Sourcing Matrix`,
     description: compound.shortOverview,
     about: {
       '@type': 'ChemicalSubstance',
@@ -83,12 +79,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
     },
     author: {
       '@type': 'Organization',
-      name: 'Trustly Pharma Analytical Research Board',
-      url: 'https://trustlypharma.co.uk',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Trustly Pharma',
+      name: 'Trustly Pharma Analytical Board',
       url: 'https://trustlypharma.co.uk',
     },
   };
@@ -102,14 +93,14 @@ export default async function PeptideDetailPage({ params }: PageProps) {
       />
 
       {/* Breadcrumb Navigation */}
-      <div className="border-b border-white/5 bg-obsidian-950/60 py-3">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="border-b border-[rgba(141,168,195,0.18)] bg-[#020e24] py-3">
+        <div className="container-wide">
           <nav className="flex items-center gap-2 text-xs font-mono text-slate-400">
-            <Link href="/" className="hover:text-cyan-400 transition-colors">
+            <Link href="/" className="hover:text-sky-400 transition-colors">
               Index
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
-            <Link href={`/category/${compound.categorySlug}`} className="hover:text-cyan-400 transition-colors">
+            <Link href={`/category/${compound.categorySlug}/`} className="hover:text-sky-400 transition-colors">
               {compound.categoryName}
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
@@ -119,29 +110,36 @@ export default async function PeptideDetailPage({ params }: PageProps) {
       </div>
 
       {/* Hero Compound Header */}
-      <section className="relative py-12 sm:py-16 border-b border-white/10 bg-gradient-to-b from-obsidian-900 to-obsidian-950 overflow-hidden">
-        {/* Glow circles */}
-        <div className="absolute top-1/2 left-10 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none"></div>
-        <div className="absolute top-1/2 right-10 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <section className="py-12 sm:py-16 border-b border-[rgba(141,168,195,0.18)] bg-gradient-to-b from-[#02102b] to-[#041638]">
+        <div className="container-wide space-y-6">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+            <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#103059] text-sky-400 border border-sky-500/30">
               {compound.categoryName}
             </span>
-            <span className="px-3 py-1 rounded-full text-xs font-mono bg-white/5 text-slate-300 border border-white/10">
+            <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#0a2149] text-slate-300 border border-[rgba(141,168,195,0.25)]">
               CAS: {compound.casNumber}
             </span>
-            <span className="px-3 py-1 rounded-full text-xs font-mono bg-amber-500/10 text-amber-300 border border-amber-500/20">
-              RUO • In Vitro Analysis
-            </span>
+            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0a2149] border border-[rgba(141,168,195,0.25)] text-xs font-mono font-bold" style={{ color: lvl.color }}>
+              <span className="flex items-center gap-1">
+                {[1, 2, 3].map((n) => (
+                  <span
+                    key={n}
+                    className="w-2 h-2 rounded-full inline-block"
+                    style={{
+                      background: n <= compound.evidencePips ? lvl.color : 'rgba(141,168,195,0.2)',
+                    }}
+                  />
+                ))}
+              </span>
+              <span>{lvl.label}</span>
+            </div>
           </div>
 
           <div className="space-y-2 max-w-4xl">
             <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
               {compound.name}
             </h1>
-            <p className="text-base sm:text-lg text-slate-400 font-mono">
+            <p className="text-base sm:text-lg text-slate-300 font-mono">
               {compound.systematicName}
             </p>
           </div>
@@ -153,15 +151,22 @@ export default async function PeptideDetailPage({ params }: PageProps) {
           <div className="pt-2 flex flex-wrap items-center gap-4">
             <a
               href="#suppliers"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-mono text-xs font-bold text-obsidian-950 bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 transition-all shadow-glow-cyan/40"
+              className="gradient-bg px-6 py-3 rounded-full font-mono text-xs font-bold inline-flex items-center gap-2 shadow-lg hover:scale-[1.02] transition-transform"
             >
-              <span>View Certified Suppliers ({compound.supplierLinks.length})</span>
+              <span>Commercial Sourcing Catalogues ({compound.supplierLinks.length})</span>
               <ArrowDown className="w-4 h-4" />
             </a>
 
             <a
+              href="#calculator"
+              className="px-5 py-3 rounded-full font-mono text-xs font-semibold text-sky-300 bg-[#103059] hover:bg-[#123a6b] border border-[rgba(141,168,195,0.25)] transition-colors"
+            >
+              <span>Dilution Calculator</span>
+            </a>
+
+            <a
               href="#literature"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-mono text-xs font-medium text-slate-300 bg-obsidian-850 hover:bg-obsidian-800 border border-white/10 transition-colors"
+              className="px-5 py-3 rounded-full font-mono text-xs font-semibold text-slate-400 hover:text-white transition-colors"
             >
               <span>PubMed Citations ({compound.citations.length})</span>
             </a>
@@ -170,9 +175,9 @@ export default async function PeptideDetailPage({ params }: PageProps) {
       </section>
 
       {/* Main Content Layout */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 space-y-12">
-        {/* Chemical Specifications Badges */}
-        <div className="grid grid-cols-1 gap-6">
+      <div className="container-wide mt-12 space-y-12">
+        {/* Chemical Specifications & Sequence Ribbon */}
+        <div className="space-y-6">
           <ChemicalFormulaBadge
             formula={compound.molecularFormula}
             molecularWeight={compound.molecularWeight}
@@ -190,10 +195,10 @@ export default async function PeptideDetailPage({ params }: PageProps) {
 
         {/* Biological Mechanism & Preclinical Data */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* In Vitro Signaling Pathways */}
-          <div className="lg:col-span-2 glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 bg-obsidian-900/60 space-y-6">
-            <div className="flex items-center gap-2 pb-4 border-b border-white/5">
-              <div className="p-1.5 rounded-lg bg-cyan-500/10 text-cyan-400">
+          {/* Mechanism Bullet Points */}
+          <div className="lg:col-span-2 rounded-3xl p-6 sm:p-8 card-paper border border-[rgba(141,168,195,0.25)] space-y-6">
+            <div className="flex items-center gap-2 pb-4 border-b border-[rgba(141,168,195,0.18)]">
+              <div className="p-1.5 rounded-lg bg-sky-500/10 text-sky-400">
                 <Atom className="w-5 h-5" />
               </div>
               <h3 className="text-xl font-bold text-white tracking-tight">
@@ -204,7 +209,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
             <div className="space-y-4">
               {compound.mechanismOfAction.map((mech, idx) => (
                 <div key={idx} className="flex items-start gap-3 text-sm text-slate-300">
-                  <span className="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-mono text-xs flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="w-6 h-6 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-400 font-mono text-xs flex items-center justify-center shrink-0 mt-0.5">
                     {idx + 1}
                   </span>
                   <p className="leading-relaxed">{mech}</p>
@@ -212,9 +217,9 @@ export default async function PeptideDetailPage({ params }: PageProps) {
               ))}
             </div>
 
-            <div className="p-4 rounded-2xl bg-obsidian-950/70 border border-white/5 space-y-2 mt-4">
-              <span className="text-xs font-mono uppercase tracking-wider text-slate-400 block font-semibold">
-                Preclinical Investigation Scope
+            <div className="p-4 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.15)] space-y-1 mt-4">
+              <span className="text-xs font-mono uppercase tracking-wider text-slate-400 block font-bold">
+                Investigation Scope
               </span>
               <p className="text-xs text-slate-300 leading-relaxed">
                 {compound.preclinicalResearchNotes}
@@ -222,9 +227,9 @@ export default async function PeptideDetailPage({ params }: PageProps) {
             </div>
           </div>
 
-          {/* Reconstitution & Storage Technical Sheet */}
-          <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 bg-obsidian-900/60 space-y-6">
-            <div className="flex items-center gap-2 pb-4 border-b border-white/5">
+          {/* Reconstitution & Storage Parameters */}
+          <div className="rounded-3xl p-6 sm:p-8 card-paper border border-[rgba(141,168,195,0.25)] space-y-6">
+            <div className="flex items-center gap-2 pb-4 border-b border-[rgba(141,168,195,0.18)]">
               <div className="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-400">
                 <FileCheck2 className="w-5 h-5" />
               </div>
@@ -233,17 +238,17 @@ export default async function PeptideDetailPage({ params }: PageProps) {
               </h3>
             </div>
 
-            <div className="space-y-4 text-xs font-mono">
-              <div className="p-3.5 rounded-xl bg-obsidian-950/80 border border-white/5 space-y-1">
+            <div className="space-y-3.5 text-xs font-mono">
+              <div className="p-3.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.12)] space-y-1">
                 <span className="text-slate-500 uppercase block text-[10px]">
                   Recommended Diluent
                 </span>
-                <span className="text-cyan-300 font-medium">
+                <span className="text-sky-300 font-medium">
                   {compound.reconstitution.recommendedDiluent}
                 </span>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-obsidian-950/80 border border-white/5 space-y-1">
+              <div className="p-3.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.12)] space-y-1">
                 <span className="text-slate-500 uppercase block text-[10px]">
                   Lyophilized Storage
                 </span>
@@ -252,7 +257,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
                 </span>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-obsidian-950/80 border border-white/5 space-y-1">
+              <div className="p-3.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.12)] space-y-1">
                 <span className="text-slate-500 uppercase block text-[10px]">
                   Reconstituted Storage
                 </span>
@@ -261,7 +266,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
                 </span>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-obsidian-950/80 border border-white/5 space-y-1">
+              <div className="p-3.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.12)] space-y-1">
                 <span className="text-slate-500 uppercase block text-[10px]">
                   Stability Window
                 </span>
@@ -273,10 +278,14 @@ export default async function PeptideDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Delivery Formats Section */}
-        <FormatSelector availableFormats={compound.availableFormats} />
+        {/* In-Page Reconstitution Calculator */}
+        <section id="calculator" className="scroll-mt-24">
+          <ReconstitutionCalculator
+            initialDoseMcg={compound.reconstitution.standardDoseMcg || 250}
+          />
+        </section>
 
-        {/* Top Suppliers Matrix Section */}
+        {/* Audited Suppliers Matrix */}
         <section id="suppliers" className="scroll-mt-24">
           <TopSuppliersMatrix
             compoundName={compound.name}

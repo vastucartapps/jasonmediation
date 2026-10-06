@@ -8,9 +8,7 @@ export const SUPPLIER_PROFILES: Record<string, SupplierProfile> = {
     baseUrl: 'https://pharmagrade.store',
     establishedYear: 2018,
     dispatchLocations: ['United Kingdom', 'European Union', 'International'],
-    analyticalAssays: ['HPLC Analysis (≥99%)', 'Mass Spectrometry (MS)', 'Independent Batch COA Verification'],
-    reputationSummary: 'Leading laboratory-grade reference chemical supplier with transparent batch testing documentation and temperature-controlled storage protocols.',
-    verifiedScore: 4.95,
+    productCatalogSummary: 'Commercial laboratory supplier distributing lyophilized peptide vials, reconstitution solutions, and research accessories.',
   },
   'direct-peptides': {
     id: 'direct-peptides',
@@ -19,9 +17,7 @@ export const SUPPLIER_PROFILES: Record<string, SupplierProfile> = {
     baseUrl: 'https://direct-peptides.com',
     establishedYear: 2017,
     dispatchLocations: ['United Kingdom', 'Europe', 'North America', 'Worldwide'],
-    analyticalAssays: ['High-Performance Liquid Chromatography', 'Identity Confirmation via Electrospray Ionization MS'],
-    reputationSummary: 'Global distributor of synthesized research peptides offering multi-format reconstitution supplies and lyophilized compounds.',
-    verifiedScore: 4.91,
+    productCatalogSummary: 'Commercial distributor supplying single and blended synthetic peptides, nasal delivery formats, and laboratory consumables.',
   },
   'direct-sarms': {
     id: 'direct-sarms',
@@ -30,9 +26,7 @@ export const SUPPLIER_PROFILES: Record<string, SupplierProfile> = {
     baseUrl: 'https://direct-sarms.com',
     establishedYear: 2019,
     dispatchLocations: ['United Kingdom', 'Worldwide'],
-    analyticalAssays: ['Third-Party Certificate of Analysis', 'Lyophilized Purity Profiling (≥98.5%)'],
-    reputationSummary: 'Specialized chemical supplier featuring preclinical peptide analogs, custom blends, and research solvent systems.',
-    verifiedScore: 4.87,
+    productCatalogSummary: 'Online laboratory retailer cataloging research compounds, peptide blends, and solvent supplies for pre-clinical assays.',
   },
   'peptide-works': {
     id: 'peptide-works',
@@ -41,9 +35,7 @@ export const SUPPLIER_PROFILES: Record<string, SupplierProfile> = {
     baseUrl: 'https://peptide-works.com',
     establishedYear: 2020,
     dispatchLocations: ['United Kingdom', 'Europe'],
-    analyticalAssays: ['ISO Standard Lab Verification', 'Analytical HPLC & Micro-analysis'],
-    reputationSummary: 'European academic-focused supplier providing high-purity single compounds and calibrated reconstitution cartridges.',
-    verifiedScore: 4.88,
+    productCatalogSummary: 'Specialized chemical retailer supplying synthesized research peptides and calibrated dilution accessories across Europe.',
   },
   'pharmalab-global': {
     id: 'pharmalab-global',
@@ -52,8 +44,6 @@ export const SUPPLIER_PROFILES: Record<string, SupplierProfile> = {
     baseUrl: 'https://pharmalabglobal.com',
     establishedYear: 2016,
     dispatchLocations: ['United Kingdom', 'Europe', 'Australia', 'Global'],
-    analyticalAssays: ['Quantitative LC-MS Assays', 'Continuous Batch Testing Reports'],
-    reputationSummary: 'International biotechnology research reagent vendor supplying academic institutions, clinical trials, and private research laboratories.',
-    verifiedScore: 4.92,
+    productCatalogSummary: 'International research distributor supplying research vials, premixed cartridge pens, and laboratory reagents.',
   },
 };
