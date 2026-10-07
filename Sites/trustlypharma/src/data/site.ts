@@ -33,9 +33,10 @@ export const navItems: NavItem[] = [
 ];
 
 export const searchTabs = [
-  { id: 'peptides', label: 'Compounds', pills: ['BPC-157', 'TB-500', 'Semax', 'GHK-Cu', 'CJC-1295', 'Ipamorelin', 'Tirzepatide'] },
-  { id: 'categories', label: 'Research Pathways', pills: ['Recovery & Repair', 'CNS & Nootropics', 'Growth Hormone', 'Metabolic', 'Dermal Matrix'] },
-  { id: 'sellers', label: 'Commercial Outlets', pills: ['PharmaGrade', 'Direct Peptides', 'Peptide Works', 'Direct Sarms', 'PharmaLab Global'] },
+  { id: 'all', label: 'All Entries', pills: ['BPC-157', '137525-51-0', 'Semaglutide', 'GHK-Cu', 'CJC-1295', 'Tirzepatide'] },
+  { id: 'peptides', label: 'Peptides & CAS', pills: ['BPC-157', 'TB-500', 'Semax', 'GHK-Cu', 'Ipamorelin', 'Selank', 'Epithalon'] },
+  { id: 'categories', label: 'Research Pathways', pills: ['Tissue Repair', 'Cognitive & Neuro', 'Secretagogues', 'Metabolic', 'Dermal Matrix'] },
+  { id: 'vendors', label: 'Vendors & Partners', pills: ['PharmaGrade', 'Direct Peptides', 'Peptide Works', 'Direct Sarms', 'PharmaLab Global'] },
 ] as const;
 
 export const hero = {
