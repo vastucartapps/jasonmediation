@@ -59,9 +59,9 @@ export function WhatThisIs() {
                 Independent Vendor Directory
               </span>
             </div>
-            <h4 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+            <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
               Commercial Laboratory Vendor Catalogues
-            </h4>
+            </h3>
             <p className="text-sm text-slate-200 leading-relaxed">
               Direct catalog listings for established peptide distributors (PharmaGrade, Direct Peptides, Direct Sarms, Peptide Works, PharmaLab Global) providing research-grade materials, lyophilized vials, and solvent reagents.
             </p>

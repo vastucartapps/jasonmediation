@@ -108,10 +108,12 @@ export function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation-menu"
               className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-[rgba(141,168,195,0.25)] text-slate-300 hover:text-white transition-colors"
-              aria-label="Toggle Navigation"
+              aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -122,7 +124,13 @@ export function Header() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-50 bg-[#02102b] p-6 overflow-y-auto border-t border-slate-800">
+        <div
+          id="mobile-navigation-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile Navigation Menu"
+          className="lg:hidden fixed inset-0 z-50 bg-[#02102b] p-6 overflow-y-auto border-t border-slate-800"
+        >
           <div className="flex items-center justify-between pb-6 border-b border-slate-800">
             <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2">
               <Beaker className="w-6 h-6 text-sky-400" />

@@ -1,15 +1,19 @@
 import Link from 'next/link';
-import { ShieldCheck, Lock, Eye, FileText, ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
+import { ShieldCheck, Lock, ArrowRight } from 'lucide-react';
 
-export const metadata = {
-  title: 'Privacy Policy | Trustly Pharma Chemical Index',
+export const metadata: Metadata = {
+  title: 'Privacy Policy & GDPR | Trustly Pharma',
   description:
-    'UK GDPR and Data Protection Act 2018 privacy policy for the Trustly Pharma scientific directory. Transparent data practices, minimal analytics, and researcher privacy.',
+    'UK GDPR and Data Protection Act 2018 privacy policy for the Trustly Pharma scientific directory. Transparent data practices and researcher privacy.',
+  alternates: {
+    canonical: 'https://trustlypharma.co.uk/privacy/',
+  },
 };
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-[#020e24] text-slate-100">
+    <div className="min-h-screen bg-[#020e24] text-slate-100 pb-20">
       {/* Header */}
       <section className="border-b border-[rgba(141,168,195,0.18)] bg-gradient-to-b from-[#02102b] to-[#041638] py-14 md:py-18">
         <div className="container-wide">
@@ -23,7 +27,7 @@ export default function PrivacyPage() {
             </nav>
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#103059] border border-[rgba(141,168,195,0.25)] text-xs font-mono text-sky-400 mb-4">
-              <Lock className="w-3.5 h-3.5" />
+              <Lock className="w-3.5 h-3.5" aria-hidden="true" />
               <span>DATA PROTECTION & PRIVACY NOTICE</span>
             </div>
 
@@ -56,7 +60,12 @@ export default function PrivacyPage() {
                 <p><strong>Trustly Pharma Scientific Index</strong></p>
                 <p>71-75 Shelton Street, Covent Garden</p>
                 <p>London, WC2H 9JQ, United Kingdom</p>
-                <p>Data Protection Officer: <a href="mailto:privacy@trustlypharma.co.uk" className="text-sky-400">privacy@trustlypharma.co.uk</a></p>
+                <p>
+                  Data Protection Officer:{' '}
+                  <span className="select-all font-mono text-sky-400 font-semibold cursor-text">
+                    privacy@trustlypharma.co.uk
+                  </span>
+                </p>
               </div>
             </div>
 
@@ -69,67 +78,62 @@ export default function PrivacyPage() {
                 As an open scientific repository, Trustly Pharma operates under a principle of strict data minimization. 
                 We do not require user accounts, passwords, or credit card processing on our platform. The data we may process includes:
               </p>
-              <ul className="space-y-2 list-disc pl-5 text-xs text-slate-400">
-                <li>
-                  <strong className="text-slate-200">Institutional Correspondence Data:</strong> Name, professional email address, 
-                  academic institution, and message contents submitted voluntarily via our editorial inquiry form.
-                </li>
-                <li>
-                  <strong className="text-slate-200">Technical Server Telemetry:</strong> Anonymized IP addresses, browser user agent strings, 
-                  page request timestamps, and HTTP referral headers necessary for DDoS mitigation and server security logging.
-                </li>
-                <li>
-                  <strong className="text-slate-200">Client-Side Calculator State:</strong> Inputs entered into our reconstitution calculator 
-                  are processed entirely locally within your browser's JavaScript runtime and are never transmitted to our servers.
-                </li>
+              <ul className="space-y-1.5 list-disc pl-5 text-xs text-slate-400">
+                <li>Server access logs (IP address, user agent, requested URI, timestamp) retained for security diagnostics.</li>
+                <li>Voluntary contact correspondence (inquiries, chemical errata notices, or citation submissions).</li>
+                <li>Aggregated, privacy-preserving analytical metrics collected only upon explicit cookie consent.</li>
               </ul>
             </div>
 
             {/* Section 3 */}
             <div className="rounded-3xl border border-[rgba(141,168,195,0.25)] bg-[#071b3e] p-6 sm:p-8 shadow-xl space-y-4">
               <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                <span className="text-sky-400 font-mono text-sm">03.</span> Lawful Bases for Processing
+                <span className="text-sky-400 font-mono text-sm">03.</span> Lawful Basis for Processing
               </h2>
               <p>
-                Under UK GDPR Article 6, we process technical telemetry under our <strong>Legitimate Interests</strong> (maintaining website security, 
-                optimizing resource caching, and preventing automated malicious scraping). Correspondence submissions are processed on the basis of 
-                <strong>Consent</strong> provided by the sender at the moment of submission.
+                Under Article 6 of the UK GDPR, we process technical access logs under our <strong>Legitimate Interests</strong> (Article 6(1)(f)) 
+                to ensure system security, prevent bot scraping attacks, and maintain portal availability. 
+                Any analytical measurement is performed strictly with your <strong>Consent</strong> (Article 6(1)(a)).
               </p>
             </div>
 
             {/* Section 4 */}
             <div className="rounded-3xl border border-[rgba(141,168,195,0.25)] bg-[#071b3e] p-6 sm:p-8 shadow-xl space-y-4">
               <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                <span className="text-sky-400 font-mono text-sm">04.</span> Outbound External Links & Third Parties
+                <span className="text-sky-400 font-mono text-sm">04.</span> Outbound Links & Independent Vendors
               </h2>
               <p>
-                Trustly Pharma provides hyperlinks to external databases (e.g. PubMed/NCBI, PubChem, UniProt) and independent commercial chemical vendors 
-                (PharmaGrade, Direct Peptides, Direct Sarms, Peptide Works, PharmaLab Global). When clicking an external link, you leave Trustly Pharma and become 
-                subject to that external entity’s independent privacy and data collection policies.
+                Our chemical directory provides outbound references to third-party scientific databases (NCBI PubMed, PubChem) 
+                and independent commercial laboratory vendors. When you navigate to an external website, their respective privacy policies 
+                and data processing practices govern. We do not transmit visitor identifiers to third-party commercial vendors.
               </p>
             </div>
 
             {/* Section 5 */}
             <div className="rounded-3xl border border-[rgba(141,168,195,0.25)] bg-[#071b3e] p-6 sm:p-8 shadow-xl space-y-4">
               <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                <span className="text-sky-400 font-mono text-sm">05.</span> Your Statutory Rights
+                <span className="text-sky-400 font-mono text-sm">05.</span> Researcher Rights
               </h2>
               <p>
-                Under the UK Data Protection Act 2018, you possess the right to:
+                Under the UK GDPR and Data Protection Act 2018, you possess statutory rights regarding personal data:
               </p>
               <ul className="space-y-1.5 list-disc pl-5 text-xs text-slate-400">
                 <li>Request access to any personal data retained in connection with an inquiry.</li>
                 <li>Request the rectification or permanent erasure of your correspondence records.</li>
-                <li>Lodge a complaint with the UK Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-sky-400 underline">ico.org.uk</a>.</li>
+                <li>Lodge a complaint with the UK Information Commissioner&apos;s Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-sky-400 underline">ico.org.uk</a>.</li>
               </ul>
             </div>
           </div>
 
           {/* Right Column: Key Summary */}
           <div className="lg:col-span-4 space-y-6">
+            <h2 className="text-xl font-bold text-white tracking-tight mb-2">
+              Data Governance Summary & Policies
+            </h2>
+
             <div className="rounded-3xl border border-[rgba(141,168,195,0.25)] bg-[#071b3e] p-6 shadow-xl space-y-4">
               <h3 className="text-base font-bold text-white flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                <ShieldCheck className="w-4 h-4 text-emerald-400" aria-hidden="true" />
                 <span>Privacy Commitment</span>
               </h3>
               <div className="space-y-3 text-xs text-slate-300">
@@ -154,19 +158,19 @@ export default function PrivacyPage() {
                 <li>
                   <Link href="/terms/" className="text-sky-400 hover:text-sky-300 flex items-center gap-1 font-mono">
                     <span>Terms of Service</span>
-                    <ArrowRight className="w-3 h-3" />
+                    <ArrowRight className="w-3 h-3" aria-hidden="true" />
                   </Link>
                 </li>
                 <li>
                   <Link href="/safety/" className="text-sky-400 hover:text-sky-300 flex items-center gap-1 font-mono">
                     <span>Research Safety Policy</span>
-                    <ArrowRight className="w-3 h-3" />
+                    <ArrowRight className="w-3 h-3" aria-hidden="true" />
                   </Link>
                 </li>
                 <li>
                   <Link href="/about/" className="text-sky-400 hover:text-sky-300 flex items-center gap-1 font-mono">
                     <span>Database Methodology</span>
-                    <ArrowRight className="w-3 h-3" />
+                    <ArrowRight className="w-3 h-3" aria-hidden="true" />
                   </Link>
                 </li>
               </ul>

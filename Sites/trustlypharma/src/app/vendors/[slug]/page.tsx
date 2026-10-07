@@ -42,13 +42,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const pageUrl = `https://trustlypharma.co.uk/vendors/${vendor.id}/`;
 
   return {
-    title: `${vendor.name} Laboratory Reagent Dossier & Chemical Catalogues`,
-    description: `Independent analytical partner profile for ${vendor.name} (${vendor.domain}). Quality control standards, HPLC/MS verification, packaging integrity, and research peptide catalogue links.`,
+    title: `${vendor.name} Analytical Profile | Trustly Pharma`,
+    description: `Analytical profile for ${vendor.name} (${vendor.domain}): quality standards, HPLC/MS verification, cold-chain packaging, and research peptide catalogue.`,
     alternates: {
       canonical: pageUrl,
     },
     openGraph: {
-      title: `${vendor.name} - Verified Research Chemical Partner Profile`,
+      title: `${vendor.name} Analytical Profile | Trustly Pharma`,
       description: vendor.productCatalogSummary,
       url: pageUrl,
       type: 'profile',

@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 import { ChevronRight, Microscope, FileText, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Chemical Purity & Analytical Testing Standards (HPLC & MS)',
+  title: 'Analytical Verification Standards | Trustly Pharma',
   description:
-    'Technical criteria and analytical testing standards required for research-grade synthetic peptides, including HPLC assay chromatography and electrospray mass spectrometry.',
+    'Technical criteria and analytical testing standards for research peptides, including HPLC chromatography assay and electrospray mass spectrometry.',
 };
 
 export default function VerificationPage() {
@@ -43,7 +43,7 @@ export default function VerificationPage() {
             <div className="w-11 h-11 rounded-2xl bg-sky-500/15 border border-sky-400/35 text-sky-300 flex items-center justify-center font-bold font-mono text-base shadow-sm">
               01
             </div>
-            <h3 className="text-xl font-bold text-white">HPLC Assay Purity</h3>
+            <h2 className="text-xl font-bold text-white">HPLC Assay Purity</h2>
             <p className="text-sm text-slate-200 leading-relaxed">
               Every production batch requires minimum chromatographic purity of ≥98.0% (with standard research batches exceeding ≥99.0%) determined by reversed-phase High-Performance Liquid Chromatography (RP-HPLC). The main peak area percentage must be calculated against solvent blanks without baseline suppression.
             </p>
@@ -53,7 +53,7 @@ export default function VerificationPage() {
             <div className="w-11 h-11 rounded-2xl bg-emerald-500/15 border border-emerald-400/35 text-emerald-300 flex items-center justify-center font-bold font-mono text-base shadow-sm">
               02
             </div>
-            <h3 className="text-xl font-bold text-white">Mass Spectrometry (ESI-MS)</h3>
+            <h2 className="text-xl font-bold text-white">Mass Spectrometry (ESI-MS)</h2>
             <p className="text-sm text-slate-200 leading-relaxed">
               Molecular mass confirmation performed using Electrospray Ionization Mass Spectrometry (ESI-MS) or MALDI-TOF to verify theoretical molecular weight within ±1.0 Da tolerance. Confirms full amino acid chain elongation without truncated or deleted synthesis artifacts.
             </p>
@@ -63,7 +63,7 @@ export default function VerificationPage() {
             <div className="w-11 h-11 rounded-2xl bg-amber-500/15 border border-amber-400/35 text-amber-300 flex items-center justify-center font-bold font-mono text-base shadow-sm">
               03
             </div>
-            <h3 className="text-xl font-bold text-white">Cold-Chain Integrity</h3>
+            <h2 className="text-xl font-bold text-white">Cold-Chain Integrity</h2>
             <p className="text-sm text-slate-200 leading-relaxed">
               Lyophilized peptide cakes must be desiccated and sealed under high-purity inert nitrogen gas. Cold-chain storage at -20°C is required for extended preservation, with thermal transit protection to prevent moisture infiltration and enzymatic degradation.
             </p>
@@ -88,36 +88,36 @@ export default function VerificationPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-sm text-slate-200">
             <div className="p-5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.18)] space-y-2">
-              <h4 className="font-bold text-sky-300 font-mono text-xs uppercase tracking-wider">
+              <h3 className="font-bold text-sky-300 font-mono text-xs uppercase tracking-wider">
                 ✓ Unique Lot / Batch Traceability
-              </h4>
+              </h3>
               <p className="leading-relaxed">
                 The lot number printed on the physical vial label must correspond letter-for-letter with the batch identifier stamped on the chromatographic report. Batch reports missing specific dates or lot numbers represent unverified lots.
               </p>
             </div>
 
             <div className="p-5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.18)] space-y-2">
-              <h4 className="font-bold text-sky-300 font-mono text-xs uppercase tracking-wider">
+              <h3 className="font-bold text-sky-300 font-mono text-xs uppercase tracking-wider">
                 ✓ Independent Testing Portal Verification
-              </h4>
+              </h3>
               <p className="leading-relaxed">
                 Third-party analytical testing bodies (e.g., Janoshik, MZ Biolabs) provide digital verification QR codes or direct URL authentication portals where analytical reports can be independently confirmed against the laboratory database.
               </p>
             </div>
 
             <div className="p-5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.18)] space-y-2">
-              <h4 className="font-bold text-rose-300 font-mono text-xs uppercase tracking-wider">
+              <h3 className="font-bold text-rose-300 font-mono text-xs uppercase tracking-wider">
                 ⚠ Red Flag: Recycled Chromatograms
-              </h4>
+              </h3>
               <p className="leading-relaxed">
                 Identical retention time curves, pixel-for-pixel matching baseline noise, or mismatched instrument serial numbers across separate compound orders indicate falsified or reused chromatographic charts.
               </p>
             </div>
 
             <div className="p-5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.18)] space-y-2">
-              <h4 className="font-bold text-rose-300 font-mono text-xs uppercase tracking-wider">
+              <h3 className="font-bold text-rose-300 font-mono text-xs uppercase tracking-wider">
                 ⚠ Red Flag: Unaccredited Internal In-House Testing
-              </h4>
+              </h3>
               <p className="leading-relaxed">
                 Self-certified quality claims that fail to disclose third-party testing credentials, raw chromatograms, and detector parameters (UV wavelength 214 nm or 220 nm) fail baseline scientific procurement standards.
               </p>

@@ -49,9 +49,9 @@ export function ReconstitutionCalculator({
             <Calculator className="w-3.5 h-3.5" />
             <span>INTERACTIVE LABORATORY DILUTION TOOL</span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
             Peptide Dilution & Reconstitution Calculator
-          </h3>
+          </h2>
           <p className="text-xs sm:text-sm text-slate-200 mt-0.5">
             Compute stock concentrations, micro-pipetting draw volumes, and U-100 syringe units with zero procedural guesswork.
           </p>

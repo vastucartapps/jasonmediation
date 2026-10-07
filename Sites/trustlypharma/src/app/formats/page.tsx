@@ -11,9 +11,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Peptide Delivery Formats & Physical Preparation Standards | Trustly Pharma',
+  title: 'Delivery Formats & Reagents | Trustly Pharma',
   description:
-    'Comprehensive laboratory guide to synthetic peptide physical delivery states: Lyophilized powder vials, pre-mixed pens, metered nasal atomizers, and synergistic research stacks.',
+    'Laboratory guide to synthetic peptide physical delivery states: lyophilized powder vials, pen systems, nasal atomizers, and research reagent stacks.',
   alternates: {
     canonical: 'https://trustlypharma.co.uk/formats/',
   },

@@ -40,9 +40,13 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     };
   }
 
+  const shortName = category.name.length > 30 ? category.name.split('&')[0].trim() : category.name;
+  const rawTitle = `${category.name} Peptides | Trustly Pharma`;
+  const finalTitle = rawTitle.length <= 60 ? rawTitle : `${shortName} Peptides | Trustly Pharma`;
+
   return {
-    title: `${category.name} Peptides — Research Index & Chemical Specifications`,
-    description: `${category.headline}. Preclinical data, molecular mechanisms, formulas, and laboratory vendor links for ${category.name.toLowerCase()}.`,
+    title: finalTitle,
+    description: `${category.headline}. Preclinical data, molecular mechanisms, formulas, and laboratory vendor links.`.slice(0, 155),
   };
 }
 
@@ -198,12 +202,14 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
                     </div>
 
                     <div>
-                      <Link
-                        href={`/peptides/${compound.slug}/`}
-                        className="text-xl font-bold text-white group-hover:text-sky-300 transition-colors block"
-                      >
-                        {compound.name}
-                      </Link>
+                      <h3 className="text-xl font-bold text-white">
+                        <Link
+                          href={`/peptides/${compound.slug}/`}
+                          className="hover:text-sky-300 transition-colors block"
+                        >
+                          {compound.name}
+                        </Link>
+                      </h3>
                       <span className="text-xs text-slate-400 font-mono line-clamp-1 mt-0.5">
                         {compound.systematicName}
                       </span>

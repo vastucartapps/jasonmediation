@@ -15,9 +15,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Commercial Chemical Vendors & Independent Synthesis Partners',
+  title: 'Commercial Chemical Vendors | Trustly Pharma',
   description:
-    'Authoritative directory of independent commercial chemical vendors and laboratory synthesis partners supplying research-grade peptide vials, solvents, and analytical accessories.',
+    'Directory of verified commercial chemical vendors and laboratory synthesis partners supplying research-grade peptides, solvents, and analytical accessories.',
   alternates: {
     canonical: 'https://trustlypharma.co.uk/vendors/',
   },
@@ -171,9 +171,9 @@ export default function VendorsDirectoryPage() {
             <div className="p-2 rounded-xl bg-sky-500/15 text-sky-400 border border-sky-400/20">
               <ShieldCheck className="w-5 h-5" />
             </div>
-            <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+            <h2 className="text-lg sm:text-xl font-bold text-white tracking-tight">
               Trustly Pharma Partner Verification Criteria
-            </h3>
+            </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-200 leading-relaxed max-w-4xl">
             Commercial vendors cataloged in this directory are indexed for laboratory researcher convenience. Inclusion criteria require published Certificate of Analysis (COA) data, verifiable mass spectrometry and liquid chromatography records, sealed nitrogen packaging, and explicit research-only labeling. Trustly Pharma maintains complete editorial independence.

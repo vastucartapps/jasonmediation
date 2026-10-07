@@ -1,15 +1,19 @@
 import Link from 'next/link';
-import { FileText, ShieldCheck, Scale, ArrowRight, ExternalLink } from 'lucide-react';
+import type { Metadata } from 'next';
+import { FileText, ShieldCheck, Scale, ArrowRight } from 'lucide-react';
 
-export const metadata = {
-  title: 'Terms of Service | Trustly Pharma Chemical Index',
+export const metadata: Metadata = {
+  title: 'Terms of Service & Research Policy | Trustly Pharma',
   description:
-    'Terms of service and legal agreement governing the use of the Trustly Pharma open-access peptide directory, chemical data, and research citation resources.',
+    'Terms of use and analytical research disclaimers for the Trustly Pharma chemical repository. Guidelines on data integrity and independent lab vendors.',
+  alternates: {
+    canonical: 'https://trustlypharma.co.uk/terms/',
+  },
 };
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-[#020e24] text-slate-100">
+    <div className="min-h-screen bg-[#020e24] text-slate-100 pb-20">
       {/* Header */}
       <section className="border-b border-[rgba(141,168,195,0.18)] bg-gradient-to-b from-[#02102b] to-[#041638] py-14 md:py-18">
         <div className="container-wide">
@@ -23,7 +27,7 @@ export default function TermsPage() {
             </nav>
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#103059] border border-[rgba(141,168,195,0.25)] text-xs font-mono text-sky-400 mb-4">
-              <Scale className="w-3.5 h-3.5" />
+              <Scale className="w-3.5 h-3.5" aria-hidden="true" />
               <span>LEGAL TERMS & DIRECTORY CONDITIONS</span>
             </div>
 
@@ -46,84 +50,72 @@ export default function TermsPage() {
             {/* Section 1 */}
             <div className="rounded-3xl border border-[rgba(141,168,195,0.25)] bg-[#071b3e] p-6 sm:p-8 shadow-xl space-y-4">
               <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                <span className="text-sky-400 font-mono text-sm">01.</span> Nature of the Directory
+                <span className="text-sky-400 font-mono text-sm">01.</span> Nature of the Repository
               </h2>
               <p>
-                Trustly Pharma operates strictly as an educational and scientific chemical directory. The primary purpose of this portal 
-                is the synthesis, indexing, and cross-referencing of molecular identifiers (CAS numbers, PubChem CIDs, UniProt accession codes), 
-                chemical formulas, molecular weights, and peer-reviewed PubMed citations for qualified researchers, analytical chemists, and academic institutions.
+                Trustly Pharma provides open-access chemical information, CAS identifiers, empirical formulas, and peer-reviewed 
+                literature summaries strictly for laboratory research, analytical biochemistry, and educational reference. 
+                Trustly Pharma is not a pharmacy, manufacturer, or direct seller of synthetic peptides.
               </p>
             </div>
 
             {/* Section 2 */}
             <div className="rounded-3xl border border-[rgba(141,168,195,0.25)] bg-[#071b3e] p-6 sm:p-8 shadow-xl space-y-4">
               <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                <span className="text-sky-400 font-mono text-sm">02.</span> Laboratory Reagent Scope
+                <span className="text-sky-400 font-mono text-sm">02.</span> No Clinical or Medical Advice
               </h2>
               <p>
-                All compounds, polypeptides, and synthetic analogs documented across Trustly Pharma are referenced in the context of in vitro 
-                laboratory research, cell culture assays, chromatographic characterization, and analytical method development. 
-                Trustly Pharma does not manufacture, package, distribute, dispense, or vend chemical substances.
+                Information cataloged on this portal does not constitute medical, veterinary, or pharmacological advice. 
+                Peptide compounds described are handled strictly for in vitro and laboratory assays. We make no therapeutic 
+                or efficacy claims for human consumption.
               </p>
             </div>
 
             {/* Section 3 */}
             <div className="rounded-3xl border border-[rgba(141,168,195,0.25)] bg-[#071b3e] p-6 sm:p-8 shadow-xl space-y-4">
               <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                <span className="text-sky-400 font-mono text-sm">03.</span> Independent Commercial Distributor Links
+                <span className="text-sky-400 font-mono text-sm">03.</span> Independent Vendor Directories
               </h2>
               <p>
-                To assist researchers with chemical sourcing, compound detail dossiers provide external hyperlinks to established laboratory reagent distributors: 
-                PharmaGrade, Direct Peptides, Direct Sarms, Peptide Works, and PharmaLab Global.
+                Outbound links to commercial chemical vendors (PharmaGrade, Direct Peptides, Direct Sarms, Peptide Works, PharmaLab Global) 
+                are provided as independent catalog references. Trustly Pharma exercises no operational control over external vendor stock, 
+                dispatch logistics, or batch testing execution.
               </p>
-              <ul className="space-y-2 list-disc pl-5 text-xs text-slate-400">
-                <li>These distributors operate as completely separate and independent commercial entities.</li>
-                <li>Trustly Pharma has no role in pricing, payment processing, batch synthesis, customs clearance, shipping, or fulfillment.</li>
-                <li>Any commercial transactions entered into with external distributors are governed exclusively by their respective commercial terms.</li>
-              </ul>
             </div>
 
             {/* Section 4 */}
             <div className="rounded-3xl border border-[rgba(141,168,195,0.25)] bg-[#071b3e] p-6 sm:p-8 shadow-xl space-y-4">
               <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                <span className="text-sky-400 font-mono text-sm">04.</span> Intellectual Property & Fair Use Citations
+                <span className="text-sky-400 font-mono text-sm">04.</span> Intellectual Property & Citations
               </h2>
               <p>
-                Chemical structure data, amino acid sequences, and bibliographic citations indexed on this site are sourced from public domain databases 
-                including the National Center for Biotechnology Information (NCBI PubChem / PubMed) and the UniProt Consortium under academic fair-use principles. 
-                Editorial synopses, custom computational calculators, and site design are the intellectual property of Trustly Pharma.
+                All editorial syntheses, layout architectures, and calculation software algorithms are proprietary to Trustly Pharma. 
+                Primary scientific data (CAS numbers, PubChem CIDs, PubMed PMIDs) remain in the public domain and are referenced under 
+                academic fair-use conventions.
               </p>
             </div>
 
             {/* Section 5 */}
             <div className="rounded-3xl border border-[rgba(141,168,195,0.25)] bg-[#071b3e] p-6 sm:p-8 shadow-xl space-y-4">
               <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                <span className="text-sky-400 font-mono text-sm">05.</span> Disclaimer of Warranties & Limitation of Liability
+                <span className="text-sky-400 font-mono text-sm">05.</span> Limitation of Liability
               </h2>
               <p>
-                While the Trustly Pharma curation staff takes rigorous measures to ensure biochemical data, molecular weights, and citations reflect published literature, 
-                all data is provided on an &ldquo;as is&rdquo; basis without warranty of any kind. Trustly Pharma shall not be liable for any direct, indirect, incidental, 
-                or consequential damages arising from the use of chemical calculations or laboratory protocols referenced herein.
-              </p>
-            </div>
-
-            {/* Section 6 */}
-            <div className="rounded-3xl border border-[rgba(141,168,195,0.25)] bg-[#071b3e] p-6 sm:p-8 shadow-xl space-y-4">
-              <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                <span className="text-sky-400 font-mono text-sm">06.</span> Governing Law & Jurisdiction
-              </h2>
-              <p>
-                These Terms of Service are governed by and construed in accordance with the laws of England and Wales. 
-                Any legal proceedings arising out of or in connection with these terms shall be subject to the exclusive jurisdiction of the courts of England and Wales.
+                To the maximum extent permitted under the laws of England and Wales, Trustly Pharma and its contributors disclaim liability 
+                for direct, indirect, or consequential damages resulting from the analytical use or laboratory interpretation of cataloged data.
               </p>
             </div>
           </div>
 
           {/* Right Column: Key Pillars */}
           <div className="lg:col-span-4 space-y-6">
+            <h2 className="text-xl font-bold text-white tracking-tight mb-2">
+              Institutional Terms & Inquiries
+            </h2>
+
             <div className="rounded-3xl border border-[rgba(141,168,195,0.25)] bg-[#071b3e] p-6 shadow-xl space-y-4">
               <h3 className="text-base font-bold text-white flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-sky-400" />
+                <ShieldCheck className="w-4 h-4 text-sky-400" aria-hidden="true" />
                 <span>Summary of Key Terms</span>
               </h3>
               <div className="space-y-3 text-xs text-slate-300">
@@ -152,7 +144,7 @@ export default function TermsPage() {
                 className="inline-flex items-center gap-1.5 text-xs font-mono text-sky-400 hover:text-sky-300 font-bold"
               >
                 <span>Contact Legal / Editorial</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </Link>
             </div>
           </div>

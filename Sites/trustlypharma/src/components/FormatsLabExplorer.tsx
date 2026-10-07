@@ -273,9 +273,9 @@ export function FormatsLabExplorer() {
               <span className="w-6 h-6 rounded-lg bg-sky-500/15 border border-sky-400/30 text-sky-400 font-mono font-bold flex items-center justify-center shrink-0">
                 1
               </span>
-              <h4 className="font-mono font-bold text-sky-300 uppercase text-[11px]">
+              <h3 className="font-mono font-bold text-sky-300 uppercase text-[11px]">
                 Thermal Equilibration
-              </h4>
+              </h3>
             </div>
             <p className="text-slate-200">
               Remove the lyophilized peptide vial from -20°C freezer and allow it to equilibrate naturally to ambient room temperature (20°C–25°C) for 15–20 minutes before unsealing. Opening a frozen vial risks atmospheric moisture condensation, inducing premature hydrolytic peptide cleavage.
@@ -287,9 +287,9 @@ export function FormatsLabExplorer() {
               <span className="w-6 h-6 rounded-lg bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 font-mono font-bold flex items-center justify-center shrink-0">
                 2
               </span>
-              <h4 className="font-mono font-bold text-emerald-300 uppercase text-[11px]">
+              <h3 className="font-mono font-bold text-emerald-300 uppercase text-[11px]">
                 Wall-Trickle Diluent Introduction
-              </h4>
+              </h3>
             </div>
             <p className="text-slate-200">
               Draw the exact calculated volume of diluent using a calibrated analytical pipette or sterile syringe. Slowly aim the diluent stream against the inside glass wall of the vial, allowing the solvent to trickle down gently. Never project diluent directly onto the fragile lyophilized cake.
@@ -301,9 +301,9 @@ export function FormatsLabExplorer() {
               <span className="w-6 h-6 rounded-lg bg-purple-500/15 border border-purple-400/30 text-purple-400 font-mono font-bold flex items-center justify-center shrink-0">
                 3
               </span>
-              <h4 className="font-mono font-bold text-purple-300 uppercase text-[11px]">
+              <h3 className="font-mono font-bold text-purple-300 uppercase text-[11px]">
                 Gentle Rotational Dissolution
-              </h4>
+              </h3>
             </div>
             <p className="text-slate-200">
               Swirl the vial gently in slow circular horizontal rotations until all lyophilized particles are completely solubilized into a transparent solution. <strong className="text-rose-300">NEVER VORTEX OR VIGOROUSLY SHAKE</strong>: Mechanical shear stress disrupts fragile tertiary structures and denatures peptide chains.
@@ -315,9 +315,9 @@ export function FormatsLabExplorer() {
               <span className="w-6 h-6 rounded-lg bg-amber-500/15 border border-amber-400/30 text-amber-400 font-mono font-bold flex items-center justify-center shrink-0">
                 4
               </span>
-              <h4 className="font-mono font-bold text-amber-300 uppercase text-[11px]">
+              <h3 className="font-mono font-bold text-amber-300 uppercase text-[11px]">
                 Aliquot Partitioning & Cold Storage
-              </h4>
+              </h3>
             </div>
             <p className="text-slate-200">
               For multi-week research schedules, partition reconstituted solution into single-use amber cryogenic micro-centrifuge tubes. Store at 2°C–8°C for active protocols, or deep-freeze aliquots at -20°C. Never subject a reconstituted solution to repeated freeze-thaw cycles.
@@ -349,7 +349,7 @@ export function FormatsLabExplorer() {
               className="p-5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] space-y-3"
             >
               <div className="flex items-center justify-between pb-2 border-b border-[rgba(141,168,195,0.15)]">
-                <h4 className="text-sm font-bold text-white font-mono">{sol.name}</h4>
+                <h3 className="text-sm font-bold text-white font-mono">{sol.name}</h3>
                 <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30 font-bold">
                   {sol.shelfLife}
                 </span>

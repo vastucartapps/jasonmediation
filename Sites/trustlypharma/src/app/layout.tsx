@@ -8,11 +8,11 @@ import { MobileTrustBar } from '../components/MobileTrustBar';
 export const metadata: Metadata = {
   metadataBase: new URL('https://trustlypharma.co.uk'),
   title: {
-    template: '%s | Trustly Pharma — UK & International Peptide Index',
-    default: 'Trustly Pharma | UK & International Peptide Index & Analytical Chemical Directory',
+    template: '%s',
+    default: 'Trustly Pharma | UK & International Peptide Index',
   },
   description:
-    'Academic reference directory for synthetic research peptides. Features verified chemical formulas, CAS numbers, amino acid sequence profiles, HPLC purity standards, and commercial laboratory vendor sourcing catalogues.',
+    'Peer-reviewed peptide research index, verified PubChem chemical structures, CAS registry numbers, and third-party commercial laboratory vendor directories.',
   keywords: [
     'peptide research index',
     'chemical sequence encyclopedia',
@@ -37,16 +37,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://trustlypharma.co.uk',
+    url: 'https://trustlypharma.co.uk/',
     siteName: 'Trustly Pharma',
-    title: 'Trustly Pharma | UK & International Peptide Index & Analytical Chemical Directory',
+    title: 'Trustly Pharma | UK & International Peptide Index',
     description:
-      'Academic reference directory for synthetic research peptides. Features verified chemical formulas, CAS numbers, amino acid sequence profiles, HPLC purity standards, and commercial laboratory vendor sourcing catalogues.',
+      'Peer-reviewed peptide research index, verified PubChem chemical structures, CAS registry numbers, and commercial laboratory vendor directories.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Trustly Pharma | UK & International Peptide Index',
-    description: 'Academic peptide reference catalog and commercial laboratory vendor sourcing catalogues.',
+    description:
+      'Academic peptide reference catalog and commercial laboratory vendor sourcing catalogues.',
   },
 };
 

@@ -21,9 +21,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'MHRA Enforcement and Safety Tracker | UK Peptide Regulatory Intelligence',
+  title: 'MHRA Regulatory Tracker | Trustly Pharma',
   description:
-    'Rolling 90-day record of MHRA drug safety updates, public announcements, and enforcement actions touching synthetic research peptides and unlicensed medicines.',
+    'Rolling 90-day archive of MHRA drug safety updates, warning letters, and enforcement actions touching synthetic research peptides in the UK.',
   alternates: {
     canonical: 'https://trustlypharma.co.uk/regulatory/mhra-tracker/',
   },
@@ -356,10 +356,10 @@ export default function MhraTrackerPage() {
                   <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-sky-400 block">
                     {src.authority}
                   </span>
-                  <h4 className="text-base font-bold text-white group-hover:text-sky-300 transition-colors flex items-center justify-between">
+                  <h3 className="text-base font-bold text-white group-hover:text-sky-300 transition-colors flex items-center justify-between">
                     <span>{src.title}</span>
                     <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover:text-sky-300 shrink-0" />
-                  </h4>
+                  </h3>
                   <p className="text-xs text-slate-300 leading-relaxed">
                     {src.desc}
                   </p>
@@ -378,9 +378,9 @@ export default function MhraTrackerPage() {
             <div className="p-2 rounded-xl bg-sky-500/15 text-sky-400 border border-sky-400/20">
               <FileCheck2 className="w-5 h-5" />
             </div>
-            <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+            <h2 className="text-lg sm:text-xl font-bold text-white tracking-tight">
               Submit a Regulatory Reference or Notice
-            </h3>
+            </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-200 leading-relaxed max-w-4xl">
             Our editorial board continuously reviews official gazettes, MHRA Enforcement Group releases, and international anti-doping updates. If you represent an academic institution or regulatory agency with verifiable public documentation, contact our desk at{' '}

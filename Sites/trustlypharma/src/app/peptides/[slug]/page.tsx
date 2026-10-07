@@ -46,8 +46,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const pageUrl = `https://trustlypharma.co.uk/peptides/${compound.slug}/`;
 
   return {
-    title: `${compound.name} Chemical Profile, CAS ${compound.casNumber} & Research Sourcing`,
-    description: `Academic chemical profile for ${compound.name} (${compound.systematicName}). Chemical formula ${compound.molecularFormula}, MW ${compound.molecularWeight}, PubChem CID, PubMed citations, and laboratory sourcing links.`,
+    title: `${compound.name} Chemical Profile & CAS | Trustly Pharma`,
+    description: `Chemical profile for ${compound.name} (CAS ${compound.casNumber}): formula ${compound.molecularFormula}, MW ${compound.molecularWeight}, PubMed research citations, and laboratory vendor links.`.slice(0, 155),
     alternates: {
       canonical: pageUrl,
     },
@@ -458,7 +458,17 @@ export default async function PeptideDetailPage({ params }: PageProps) {
         )}
 
         {/* Biological Mechanism & Preclinical Data */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <section className="space-y-6">
+          <div className="pb-3 border-b border-[rgba(141,168,195,0.18)]">
+            <span className="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold block">
+              Preclinical Data & Handling
+            </span>
+            <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight mt-0.5">
+              Signaling Pathways & Laboratory Handling Protocols
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Mechanism Bullet Points */}
           <div className="lg:col-span-2 rounded-3xl p-6 sm:p-8 card-paper border border-[rgba(141,168,195,0.25)] space-y-6">
             <div className="flex items-center gap-2 pb-4 border-b border-[rgba(141,168,195,0.18)]">
@@ -541,6 +551,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
             </div>
           </div>
         </div>
+      </section>
 
         {/* In-Page Reconstitution Calculator */}
         <section id="calculator" className="scroll-mt-24">

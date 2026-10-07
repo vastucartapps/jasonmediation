@@ -35,9 +35,9 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
               Verified Reagent Partners & Vendors
             </span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
             Partner & Vendor Catalogues for {compoundName}
-          </h3>
+          </h2>
           <p className="text-xs sm:text-sm text-slate-200 mt-1 max-w-2xl font-medium">
             Independent partner directory providing research-grade lyophilized vials, cartridges, atomizers, and reconstitution solvents.
           </p>

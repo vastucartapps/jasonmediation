@@ -20,9 +20,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'UK Regulatory Framework for Peptides | Live Tracker & Intelligence Hub',
+  title: 'Regulatory Intelligence Hub | Trustly Pharma',
   description:
-    'Five regulators set the rules for peptides, collagen and GLP-1 medicines in the UK: MHRA, WADA, FDA, EMA, and ASA. Live intelligence tracker and primary source links.',
+    'Official UK regulatory framework for research peptides and GLP-1 medicines: MHRA, WADA, FDA, EMA, and ASA statutory policies and primary citations.',
   alternates: {
     canonical: 'https://trustlypharma.co.uk/regulatory/',
   },
@@ -408,10 +408,10 @@ export default function RegulatoryHubPage() {
                   <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-sky-400 block">
                     {src.authority}
                   </span>
-                  <h4 className="text-base font-bold text-white group-hover:text-sky-300 transition-colors flex items-center justify-between">
+                  <h3 className="text-base font-bold text-white group-hover:text-sky-300 transition-colors flex items-center justify-between">
                     <span>{src.title}</span>
                     <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover:text-sky-300 shrink-0" />
-                  </h4>
+                  </h3>
                   <p className="text-xs text-slate-300 leading-relaxed">
                     {src.desc}
                   </p>

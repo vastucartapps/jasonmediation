@@ -23,9 +23,9 @@ export function LiteratureTable({ compoundName, citations }: LiteratureTableProp
               Peer-Reviewed Literature
             </span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
             Academic Bibliography & Preclinical Studies for {compoundName}
-          </h3>
+          </h2>
           <p className="text-xs sm:text-sm text-slate-400 mt-1">
             Primary academic indexing sourced from PubMed and peer-reviewed biotechnology journals documenting molecular mechanisms and in vitro cellular response.
           </p>
@@ -44,9 +44,9 @@ export function LiteratureTable({ compoundName, citations }: LiteratureTableProp
             className="p-6 sm:p-7 rounded-3xl bg-[#05193d] border border-[rgba(141,168,195,0.22)] hover:border-sky-400/50 transition-all space-y-4 shadow-lg"
           >
             <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-              <h4 className="text-base sm:text-lg font-bold text-white leading-snug">
+              <h3 className="text-base sm:text-lg font-bold text-white leading-snug">
                 {cite.title}
-              </h4>
+              </h3>
               <div className="flex items-center gap-2 shrink-0">
                 {cite.pubmedId && (
                   <a

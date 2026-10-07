@@ -28,12 +28,12 @@ export function BiochemicalFaqAccordion({ faqs, compoundName }: Props) {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-[rgba(141,168,195,0.2)]">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a2347] border border-sky-400/40 text-xs font-mono font-bold text-sky-300 mb-2">
-            <HelpCircle className="w-3.5 h-3.5" />
+            <HelpCircle className="w-3.5 h-3.5" aria-hidden="true" />
             <span>BIOCHEMICAL REFERENCE Q&A</span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
             Frequently Asked Chemical & Analytical Questions
-          </h3>
+          </h2>
           <p className="text-xs sm:text-sm text-slate-200 mt-1">
             Authoritative scientific clarifications regarding {compoundName} classification, molecular pathways, and laboratory protocols.
           </p>
@@ -47,6 +47,9 @@ export function BiochemicalFaqAccordion({ faqs, compoundName }: Props) {
       <div className="space-y-4">
         {faqs.map((faq, idx) => {
           const isOpen = openIndices.includes(idx);
+          const triggerId = `faq-trigger-${idx}`;
+          const panelId = `faq-panel-${idx}`;
+
           return (
             <div
               key={idx}
@@ -58,8 +61,10 @@ export function BiochemicalFaqAccordion({ faqs, compoundName }: Props) {
             >
               <button
                 type="button"
+                id={triggerId}
                 onClick={() => toggle(idx)}
                 aria-expanded={isOpen}
+                aria-controls={panelId}
                 className="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 focus:outline-none"
               >
                 <div className="flex items-start gap-4">
@@ -80,12 +85,17 @@ export function BiochemicalFaqAccordion({ faqs, compoundName }: Props) {
                     ? 'bg-sky-500/20 text-sky-300 border-sky-400/40 rotate-180'
                     : 'bg-[#02102b] text-slate-400 border-[rgba(141,168,195,0.18)]'
                 }`}>
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDown className="w-4 h-4" aria-hidden="true" />
                 </div>
               </button>
 
               {isOpen && (
-                <div className="px-6 pb-6 pt-2 text-sm sm:text-base text-slate-200 leading-relaxed border-t border-[rgba(141,168,195,0.15)] bg-[#03132e]/70">
+                <div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={triggerId}
+                  className="px-6 pb-6 pt-2 text-sm sm:text-base text-slate-200 leading-relaxed border-t border-[rgba(141,168,195,0.15)] bg-[#03132e]/70"
+                >
                   <p className="pt-2">{faq.answer}</p>
                 </div>
               )}

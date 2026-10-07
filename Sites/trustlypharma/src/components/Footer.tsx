@@ -6,6 +6,7 @@ import { SUPPLIER_PROFILES } from '../data/suppliers';
 export function Footer() {
   return (
     <footer className="border-t border-[rgba(141,168,195,0.18)] bg-[#020e24] text-slate-400">
+      <h2 className="sr-only">Site Directory and Institutional Resources</h2>
       {/* Main Footer Links */}
       <div className="container-wide py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
@@ -13,7 +14,7 @@ export function Footer() {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-lg bg-sky-500/20 border border-sky-500/30 flex items-center justify-center">
-                <Beaker className="w-4 h-4 text-sky-400" />
+                <Beaker className="w-4 h-4 text-sky-400" aria-hidden="true" />
               </div>
               <span className="text-base font-bold tracking-tight text-white">
                 TRUSTLY<span className="text-sky-400">PHARMA</span>
@@ -24,19 +25,19 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-4 text-xs font-mono text-slate-400 pt-1">
               <span className="flex items-center gap-1 text-emerald-400">
-                <CheckCircle2 className="w-3.5 h-3.5" /> HPLC Purity Assayed
+                <CheckCircle2 className="w-3.5 h-3.5" aria-hidden="true" /> HPLC Purity Assayed
               </span>
               <span className="flex items-center gap-1 text-sky-400">
-                <CheckCircle2 className="w-3.5 h-3.5" /> ESI-MS Documented
+                <CheckCircle2 className="w-3.5 h-3.5" aria-hidden="true" /> ESI-MS Documented
               </span>
             </div>
           </div>
 
           {/* Core Tools & Index */}
           <div>
-            <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-4">
               Tools & Directory
-            </h5>
+            </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <Link href="/vendors/" className="hover:text-amber-400 transition-colors font-semibold text-amber-300">
@@ -93,9 +94,9 @@ export function Footer() {
 
           {/* Research Pathways */}
           <div>
-            <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-4">
               Research Pathways
-            </h5>
+            </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               {RESEARCH_CATEGORIES.map((cat) => (
                 <li key={cat.slug}>
@@ -112,9 +113,9 @@ export function Footer() {
 
           {/* Verified Vendor Network */}
           <div>
-            <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-4 flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-sky-400" /> Verified Partners
-            </h5>
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-4 flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-sky-400" aria-hidden="true" /> Verified Partners
+            </h3>
             <ul className="space-y-3 text-xs sm:text-sm">
               {Object.values(SUPPLIER_PROFILES).map((sup) => (
                 <li key={sup.id}>
@@ -124,7 +125,8 @@ export function Footer() {
                   >
                     <span className="flex items-center gap-2.5">
                       {sup.faviconUrl && (
-                        <img src={sup.faviconUrl} alt="" className="w-4 h-4 rounded object-contain shrink-0" />
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={sup.faviconUrl} alt={`${sup.name} vendor icon`} className="w-4 h-4 rounded object-contain shrink-0" />
                       )}
                       <span>{sup.name}</span>
                     </span>

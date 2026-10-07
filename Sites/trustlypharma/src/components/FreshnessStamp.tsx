@@ -17,9 +17,9 @@ export function FreshnessStamp() {
               </span>
             </div>
 
-            <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+            <h2 className="text-lg sm:text-xl font-bold text-white tracking-tight">
               Independent Peer-Review & Analytical Database Governance
-            </h3>
+            </h2>
 
             <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
               Chemical molecular entries, PubChem CIDs, CAS registries, and PubMed PMIDs are audited quarterly against official government and peer-reviewed biotechnology databases. Commercial partners are verified for published lot-specific HPLC/MS documentation.

@@ -347,10 +347,14 @@ export default function ContactPage() {
 
           {/* Right Column: Department Desks & Directory Protocol */}
           <div className="lg:col-span-5 space-y-6">
+            <h2 className="text-xl font-bold text-white tracking-tight mb-2">
+              Direct Department Contacts & Desk Information
+            </h2>
+
             {/* Direct Desks Card */}
             <div className="rounded-3xl border border-[rgba(141,168,195,0.25)] bg-[#071b3e] p-6 shadow-xl space-y-5">
               <h3 className="text-base font-bold text-white flex items-center gap-2">
-                <Building2 className="w-4 h-4 text-sky-400" />
+                <Building2 className="w-4 h-4 text-sky-400" aria-hidden="true" />
                 <span>Specialized Editorial Desks</span>
               </h3>
 
@@ -363,12 +367,9 @@ export default function ContactPage() {
                   <p className="text-xs text-slate-400 mb-2">
                     For molecular formulas, amino acid residue corrections, and isomeric notations.
                   </p>
-                  <a
-                    href="mailto:curation@trustlypharma.co.uk"
-                    className="font-mono text-xs text-sky-300 hover:text-white transition-colors flex items-center gap-1"
-                  >
+                  <span className="select-all font-mono text-xs text-sky-300 font-semibold block cursor-text">
                     curation@trustlypharma.co.uk
-                  </a>
+                  </span>
                 </div>
 
                 <div className="p-4 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.18)]">
@@ -379,12 +380,9 @@ export default function ContactPage() {
                   <p className="text-xs text-slate-400 mb-2">
                     Submissions of newly published peer-reviewed in vitro assays and clinical trial data.
                   </p>
-                  <a
-                    href="mailto:editorial@trustlypharma.co.uk"
-                    className="font-mono text-xs text-sky-300 hover:text-white transition-colors flex items-center gap-1"
-                  >
+                  <span className="select-all font-mono text-xs text-sky-300 font-semibold block cursor-text">
                     editorial@trustlypharma.co.uk
-                  </a>
+                  </span>
                 </div>
 
                 <div className="p-4 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.18)]">
@@ -395,12 +393,9 @@ export default function ContactPage() {
                   <p className="text-xs text-slate-400 mb-2">
                     Inquiries regarding inclusion in our research chemical vendor matrix (HPLC/COA verification mandatory).
                   </p>
-                  <a
-                    href="mailto:directory@trustlypharma.co.uk"
-                    className="font-mono text-xs text-sky-300 hover:text-white transition-colors flex items-center gap-1"
-                  >
+                  <span className="select-all font-mono text-xs text-sky-300 font-semibold block cursor-text">
                     directory@trustlypharma.co.uk
-                  </a>
+                  </span>
                 </div>
               </div>
             </div>

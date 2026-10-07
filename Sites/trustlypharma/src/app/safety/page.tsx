@@ -15,9 +15,9 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Research Safety Policy & Laboratory Handling Protocols | Trustly Pharma',
+  title: 'Research Safety & GLP Standards | Trustly Pharma',
   description:
-    'Comprehensive Good Laboratory Practice (GLP) standards, cold-chain temperature thresholds, reconstitution protocols, and chemical PPE guidelines for research peptides.',
+    'Good Laboratory Practice (GLP) standards, cold-chain storage thresholds, reconstitution protocols, and chemical PPE guidelines for research peptides.',
 };
 
 export default function SafetyPolicyPage() {
@@ -263,6 +263,7 @@ export default function SafetyPolicyPage() {
 
           {/* Right Column: Quick Reference & Tools */}
           <div className="lg:col-span-4 space-y-6">
+            <h2 className="sr-only">Quick Reference and Laboratory Tools</h2>
             <div className="rounded-3xl border border-[rgba(141,168,195,0.25)] bg-[#071b3e] p-6 shadow-xl space-y-4">
               <h3 className="text-base font-bold text-white flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-sky-400" />

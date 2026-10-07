@@ -26,9 +26,9 @@ export function ChemicalIdentityCard({ compound }: Props) {
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-sky-300 block">
               Molecular Anatomy
             </span>
-            <h3 className="text-xl font-bold text-white mt-0.5">
+            <h2 className="text-xl font-bold text-white mt-0.5">
               Chemical Structure & Metrics
-            </h3>
+            </h2>
           </div>
 
           <span className="flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-400 bg-emerald-950/60 px-3 py-1 rounded-full border border-emerald-500/30">

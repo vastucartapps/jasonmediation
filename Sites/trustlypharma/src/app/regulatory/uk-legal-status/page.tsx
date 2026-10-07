@@ -13,9 +13,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'UK Legal Status & WADA Classification Matrix | 12 Research Peptides',
+  title: 'UK Legal Status Matrix | Trustly Pharma',
   description:
-    'Comprehensive statutory classification matrix for 12 research peptide compounds under UK Human Medicines Regulations 2012, Misuse of Drugs Act 1971, and WADA S0/S2 anti-doping codes.',
+    'Statutory classification matrix for 12 research peptides under UK Human Medicines Regulations 2012, Misuse of Drugs Act 1971, and WADA anti-doping codes.',
   alternates: {
     canonical: 'https://trustlypharma.co.uk/regulatory/uk-legal-status/',
   },

@@ -41,7 +41,7 @@ const GLANCE_METRICS = [
 
 export function GlanceBar() {
   return (
-    <section className="border-b border-[rgba(141,168,195,0.22)] bg-[#020e24] py-10">
+    <div className="border-b border-[rgba(141,168,195,0.22)] bg-[#020e24] py-10">
       <div className="container-wide">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
           {GLANCE_METRICS.map((item, idx) => {
@@ -76,6 +76,6 @@ export function GlanceBar() {
           })}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
