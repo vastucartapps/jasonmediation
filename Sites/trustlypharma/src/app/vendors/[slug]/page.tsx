@@ -213,19 +213,19 @@ export default async function VendorDetailPage({ params }: PageProps) {
             </div>
 
             {/* Right Header: Operations & Dispatch Box */}
-            <div className="lg:col-span-4 rounded-3xl border border-[rgba(141,168,195,0.3)] bg-gradient-to-br from-[#071d42] to-[#03112c] p-6 shadow-xl space-y-4">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-sky-300 block">
+            <div className="lg:col-span-4 rounded-3xl border border-[rgba(141,168,195,0.3)] bg-gradient-to-br from-[#071d42] to-[#03112c] p-6 sm:p-7 shadow-xl space-y-5">
+              <span className="text-xs sm:text-sm font-mono font-bold uppercase tracking-widest text-sky-300 block">
                 Logistics & Fulfillment Hubs
               </span>
 
-              <div className="space-y-3 text-xs font-mono">
+              <div className="space-y-4 text-xs font-mono">
                 <div>
-                  <span className="text-slate-400 block text-[10px] uppercase">Dispatch Coverage</span>
-                  <div className="flex flex-wrap gap-1.5 mt-1.5">
+                  <span className="text-slate-300 block text-xs uppercase font-semibold">Dispatch Coverage</span>
+                  <div className="flex flex-wrap gap-2 mt-2">
                     {vendor.dispatchLocations.map((loc, idx) => (
                       <span
                         key={idx}
-                        className="px-2.5 py-1 rounded-lg bg-[#02102b] border border-[rgba(141,168,195,0.2)] text-slate-200 text-[11px]"
+                        className="px-3 py-1.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] text-slate-200 text-xs"
                       >
                         {loc}
                       </span>
@@ -233,9 +233,9 @@ export default async function VendorDetailPage({ params }: PageProps) {
                   </div>
                 </div>
 
-                <div className="pt-2 border-t border-[rgba(141,168,195,0.18)]">
-                  <span className="text-slate-400 block text-[10px] uppercase">Packaging Integrity</span>
-                  <p className="text-slate-200 font-sans text-xs mt-1 leading-relaxed">
+                <div className="pt-3 border-t border-[rgba(141,168,195,0.18)]">
+                  <span className="text-slate-300 block text-xs uppercase font-semibold">Packaging Integrity</span>
+                  <p className="text-slate-200 font-sans text-xs sm:text-sm mt-1.5 leading-relaxed">
                     {vendor.packagingStandards}
                   </p>
                 </div>

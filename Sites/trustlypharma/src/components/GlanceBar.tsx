@@ -43,31 +43,31 @@ export function GlanceBar() {
   return (
     <section className="border-b border-[rgba(141,168,195,0.22)] bg-[#020e24] py-10">
       <div className="container-wide">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
           {GLANCE_METRICS.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="p-6 rounded-3xl bg-gradient-to-br from-[#071d42] to-[#04122d] border border-[rgba(141,168,195,0.25)] hover:border-sky-400/60 transition-all shadow-xl space-y-3 group"
+                className="p-7 rounded-3xl bg-gradient-to-br from-[#071d42] via-[#051736] to-[#03112a] border border-[rgba(141,168,195,0.25)] hover:border-sky-400/60 transition-all shadow-xl space-y-4 group"
               >
-                <div className="flex items-center justify-between">
-                  <div className={`p-2.5 rounded-xl ${item.bg} ${item.border} ${item.color} border shadow-inner`}>
+                <div className="flex items-center justify-between pb-1">
+                  <div className={`p-3 rounded-2xl ${item.bg} ${item.border} ${item.color} border shadow-inner`}>
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-300 font-bold bg-[#02102b] px-2.5 py-1 rounded-full border border-[rgba(141,168,195,0.18)]">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-sky-300 font-bold bg-[#02102b] px-3 py-1 rounded-full border border-[rgba(141,168,195,0.2)]">
                     Audit Metric
                   </span>
                 </div>
 
-                <div>
+                <div className="pt-1 space-y-1.5">
                   <span className="font-mono font-extrabold text-3xl sm:text-4xl text-white tracking-tight block">
                     {item.value}
                   </span>
-                  <span className="text-sm font-bold text-slate-100 block mt-1">
+                  <span className="text-base font-bold text-slate-100 block">
                     {item.text}
                   </span>
-                  <span className="text-xs font-mono text-slate-300 block mt-0.5">
+                  <span className="text-xs sm:text-sm font-mono text-slate-300 block leading-relaxed">
                     {item.detail}
                   </span>
                 </div>

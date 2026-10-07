@@ -86,35 +86,35 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
           return (
             <div
               key={`${link.supplierId}-${link.format}-${idx}`}
-              className="rounded-2xl p-5 bg-[#061c42] border border-[rgba(141,168,195,0.22)] hover:border-sky-400 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-5 shadow-md"
+              className="rounded-3xl p-6 sm:p-7 bg-[#061c42] border border-[rgba(141,168,195,0.25)] hover:border-sky-400/80 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-6 shadow-xl"
             >
               {/* Left Column: Vendor Identity */}
               <div className="flex items-start sm:items-center gap-4 min-w-[280px]">
                 {profile?.logoUrl ? (
-                  <div className="h-12 w-28 px-2 py-1 rounded-xl bg-white/95 border border-white/20 flex items-center justify-center shrink-0 shadow-sm">
+                  <div className="h-14 w-32 px-3 py-1.5 rounded-2xl bg-white/95 border border-white/20 flex items-center justify-center shrink-0 shadow-sm">
                     <img
                       src={profile.logoUrl}
                       alt={`${link.supplierName} logo`}
-                      className="max-h-8 max-w-[100px] object-contain"
+                      className="max-h-9 max-w-[110px] object-contain"
                       loading="lazy"
                     />
                   </div>
                 ) : (
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02102b] to-[#0a2149] border border-[rgba(141,168,195,0.3)] flex items-center justify-center font-bold text-white font-mono text-base shrink-0 shadow-inner">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#02102b] to-[#0a2149] border border-[rgba(141,168,195,0.3)] flex items-center justify-center font-bold text-white font-mono text-base shrink-0 shadow-inner">
                     {profile ? profile.name.slice(0, 2).toUpperCase() : 'TP'}
                   </div>
                 )}
-                <div>
+                <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <span className="font-bold text-white text-base">
+                    <span className="font-bold text-white text-base sm:text-lg">
                       {link.supplierName}
                     </span>
-                    <span className="text-[11px] font-mono text-slate-300 bg-[#02102b] px-2 py-0.5 rounded border border-[rgba(141,168,195,0.2)]">
+                    <span className="text-xs font-mono text-slate-300 bg-[#02102b] px-2.5 py-0.5 rounded-lg border border-[rgba(141,168,195,0.2)]">
                       {profile?.domain}
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-2 text-xs font-mono text-slate-300 mt-1">
+                  <div className="flex items-center gap-2 text-xs sm:text-sm font-mono text-slate-300">
                     <span className="text-sky-300 font-semibold">
                       {link.linkType === 'category' ? 'Category Hub (All Formats)' : fmtProfile?.label}
                     </span>
@@ -131,31 +131,31 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
               </div>
 
               {/* Middle Metrics */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-8 py-2 lg:py-0 border-y lg:border-y-0 border-slate-700/60 lg:border-l lg:border-r border-[rgba(141,168,195,0.18)] lg:px-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-8 py-3 lg:py-0 border-y lg:border-y-0 border-slate-700/60 lg:border-l lg:border-r border-[rgba(141,168,195,0.18)] lg:px-8">
                 <div>
-                  <span className="text-[10px] font-mono uppercase text-slate-400 block font-semibold">
+                  <span className="text-xs font-mono uppercase text-slate-400 block font-semibold">
                     Catalog Purity Spec
                   </span>
-                  <span className="text-sm font-mono font-bold text-emerald-300 flex items-center gap-1 mt-0.5">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
+                  <span className="text-sm font-mono font-bold text-emerald-300 flex items-center gap-1.5 mt-1">
+                    <CheckCircle2 className="w-4 h-4" />
                     {link.puritySpecification}
                   </span>
                 </div>
 
                 <div>
-                  <span className="text-[10px] font-mono uppercase text-slate-400 block font-semibold">
+                  <span className="text-xs font-mono uppercase text-slate-400 block font-semibold">
                     Product Format
                   </span>
-                  <span className="text-xs font-mono text-slate-200 block mt-0.5 font-medium">
+                  <span className="text-xs sm:text-sm font-mono text-slate-200 block mt-1 font-medium">
                     {link.linkType === 'category' ? 'All Available Formats' : fmtProfile?.label}
                   </span>
                 </div>
 
                 <div className="hidden sm:block">
-                  <span className="text-[10px] font-mono uppercase text-slate-400 block font-semibold">
+                  <span className="text-xs font-mono uppercase text-slate-400 block font-semibold">
                     Dispatch Region
                   </span>
-                  <span className="text-xs font-mono text-slate-200 block mt-0.5">
+                  <span className="text-xs sm:text-sm font-mono text-slate-200 block mt-1">
                     {link.dispatchRegion}
                   </span>
                 </div>

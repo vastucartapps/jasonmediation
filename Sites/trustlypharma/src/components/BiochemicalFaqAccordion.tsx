@@ -44,15 +44,15 @@ export function BiochemicalFaqAccordion({ faqs, compoundName }: Props) {
         </span>
       </div>
 
-      <div className="space-y-3.5">
+      <div className="space-y-4">
         {faqs.map((faq, idx) => {
           const isOpen = openIndices.includes(idx);
           return (
             <div
               key={idx}
-              className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+              className={`rounded-3xl border transition-all duration-200 overflow-hidden shadow-md ${
                 isOpen
-                  ? 'bg-[#061c42] border-sky-400/60 shadow-lg'
+                  ? 'bg-[#061c42] border-sky-400/70 shadow-xl'
                   : 'bg-[#02102b] border-[rgba(141,168,195,0.2)] hover:border-sky-400/40'
               }`}
             >
@@ -60,22 +60,22 @@ export function BiochemicalFaqAccordion({ faqs, compoundName }: Props) {
                 type="button"
                 onClick={() => toggle(idx)}
                 aria-expanded={isOpen}
-                className="w-full p-4 sm:p-5 text-left flex items-start justify-between gap-4 focus:outline-none"
+                className="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 focus:outline-none"
               >
-                <div className="flex items-start gap-3.5">
-                  <span className={`w-7 h-7 rounded-lg flex items-center justify-center font-mono text-xs font-bold shrink-0 mt-0.5 border transition-colors ${
+                <div className="flex items-start gap-4">
+                  <span className={`w-8 h-8 rounded-xl flex items-center justify-center font-mono text-xs font-bold shrink-0 mt-0.5 border transition-colors shadow-sm ${
                     isOpen
                       ? 'bg-sky-500 text-slate-950 border-sky-400'
                       : 'bg-[#0a2347] text-sky-300 border-[rgba(141,168,195,0.25)]'
                   }`}>
                     {idx + 1}
                   </span>
-                  <span className="text-sm sm:text-base font-bold text-white leading-snug">
+                  <span className="text-base sm:text-lg font-bold text-white leading-snug">
                     {faq.question}
                   </span>
                 </div>
 
-                <div className={`p-1.5 rounded-lg border transition-all shrink-0 mt-0.5 ${
+                <div className={`p-2 rounded-xl border transition-all shrink-0 mt-0.5 ${
                   isOpen
                     ? 'bg-sky-500/20 text-sky-300 border-sky-400/40 rotate-180'
                     : 'bg-[#02102b] text-slate-400 border-[rgba(141,168,195,0.18)]'
@@ -85,7 +85,7 @@ export function BiochemicalFaqAccordion({ faqs, compoundName }: Props) {
               </button>
 
               {isOpen && (
-                <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-200 leading-relaxed border-t border-[rgba(141,168,195,0.15)] bg-[#03132e]/60">
+                <div className="px-6 pb-6 pt-2 text-sm sm:text-base text-slate-200 leading-relaxed border-t border-[rgba(141,168,195,0.15)] bg-[#03132e]/70">
                   <p className="pt-2">{faq.answer}</p>
                 </div>
               )}

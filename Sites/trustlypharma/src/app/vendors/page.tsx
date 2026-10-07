@@ -107,15 +107,15 @@ export default function VendorsDirectoryPage() {
                 </p>
 
                 {/* Key Quality Standards */}
-                <div className="space-y-2">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-sky-300 block font-bold flex items-center gap-1.5">
-                    <FlaskConical className="w-3.5 h-3.5" /> Analytical Protocols:
+                <div className="space-y-2.5">
+                  <span className="text-xs font-mono uppercase tracking-wider text-sky-300 block font-bold flex items-center gap-2">
+                    <FlaskConical className="w-4 h-4 text-sky-400" /> Analytical Protocols:
                   </span>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
                     {vendor.labTestingStandards.slice(0, 2).map((std, idx) => (
                       <div
                         key={idx}
-                        className="p-2.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.15)] text-slate-300 text-[11px] leading-snug"
+                        className="p-3 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.18)] text-slate-200 text-xs leading-snug font-mono"
                       >
                         ✓ {std}
                       </div>
@@ -124,15 +124,15 @@ export default function VendorsDirectoryPage() {
                 </div>
 
                 {/* Dispatch Hubs */}
-                <div className="space-y-1.5 pt-1">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block font-semibold flex items-center gap-1.5">
-                    <Truck className="w-3.5 h-3.5 text-sky-400" /> Dispatch Locations:
+                <div className="space-y-2 pt-1">
+                  <span className="text-xs font-mono uppercase tracking-wider text-slate-300 block font-semibold flex items-center gap-2">
+                    <Truck className="w-4 h-4 text-sky-400" /> Dispatch Locations:
                   </span>
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-2">
                     {vendor.dispatchLocations.map((loc, idx) => (
                       <span
                         key={idx}
-                        className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-[#02102b] border border-[rgba(141,168,195,0.2)] text-slate-200"
+                        className="text-xs font-mono px-3 py-1.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] text-slate-200"
                       >
                         {loc}
                       </span>

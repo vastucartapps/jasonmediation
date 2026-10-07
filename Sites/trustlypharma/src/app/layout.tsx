@@ -3,6 +3,7 @@ import './globals.css';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { CookieBanner } from '../components/CookieBanner';
+import { MobileTrustBar } from '../components/MobileTrustBar';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://trustlypharma.co.uk'),
@@ -56,11 +57,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className="min-h-screen bg-[#02102b] text-slate-100 flex flex-col antialiased selection:bg-amber-400 selection:text-slate-950">
+      <body className="min-h-screen bg-[#02102b] text-slate-100 flex flex-col antialiased selection:bg-amber-400 selection:text-slate-950 pb-16 lg:pb-0">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
         <CookieBanner />
+        <MobileTrustBar />
       </body>
     </html>
   );

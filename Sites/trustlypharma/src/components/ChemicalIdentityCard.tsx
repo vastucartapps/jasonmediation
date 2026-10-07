@@ -42,21 +42,21 @@ export function ChemicalIdentityCard({ compound }: Props) {
           </span>
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
-          <div className="p-3.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.18)]">
-            <span className="text-[10px] font-mono uppercase text-slate-400 block font-semibold">
+        <div className="grid grid-cols-2 gap-3.5">
+          <div className="p-4 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] space-y-1">
+            <span className="text-xs font-mono uppercase text-slate-400 block font-semibold">
               Molecular Weight
             </span>
-            <span className="font-mono text-base font-bold text-white block mt-0.5">
+            <span className="font-mono text-base sm:text-lg font-bold text-white block mt-0.5">
               {compound.molecularWeight}
             </span>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.18)]">
-            <span className="text-[10px] font-mono uppercase text-slate-400 block font-semibold">
+          <div className="p-4 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] space-y-1">
+            <span className="text-xs font-mono uppercase text-slate-400 block font-semibold">
               Residue Length
             </span>
-            <span className="font-mono text-base font-bold text-sky-300 block mt-0.5">
+            <span className="font-mono text-base sm:text-lg font-bold text-sky-300 block mt-0.5">
               {sequenceLength ? `${sequenceLength} Residues` : 'Synthetic Complex'}
             </span>
           </div>
@@ -64,30 +64,30 @@ export function ChemicalIdentityCard({ compound }: Props) {
       </div>
 
       {/* Database Verification Matrix */}
-      <div className="space-y-2.5 font-mono text-xs">
-        <div className="p-3 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.15)] flex items-center justify-between">
+      <div className="space-y-3 font-mono text-xs sm:text-sm">
+        <div className="p-3.5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.18)] flex items-center justify-between">
           <span className="text-slate-300">CAS Registry:</span>
           <span className="text-white font-bold">{compound.casNumber}</span>
         </div>
 
         {compound.pubchemCid && (
-          <div className="p-3 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.15)] flex items-center justify-between">
+          <div className="p-3.5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.18)] flex items-center justify-between">
             <span className="text-slate-300">PubChem CID:</span>
             <a
               href={`https://pubchem.ncbi.nlm.nih.gov/compound/${compound.pubchemCid}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sky-300 hover:text-white font-bold flex items-center gap-1 transition-colors"
+              className="text-sky-300 hover:text-white font-bold flex items-center gap-1.5 transition-colors"
             >
               <span>{compound.pubchemCid}</span>
-              <ExternalLink className="w-3 h-3" />
+              <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>
         )}
 
-        <div className="p-3 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.15)] flex items-center justify-between">
+        <div className="p-3.5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.18)] flex items-center justify-between">
           <span className="text-slate-300">Biochemical Class:</span>
-          <span className="text-amber-300 font-bold truncate max-w-[180px]">{compound.categoryName}</span>
+          <span className="text-amber-300 font-bold truncate max-w-[200px]">{compound.categoryName}</span>
         </div>
       </div>
 

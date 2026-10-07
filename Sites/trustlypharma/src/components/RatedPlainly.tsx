@@ -28,53 +28,55 @@ export function RatedPlainly() {
         </div>
 
         {/* 12-Card Symmetric 3x4 Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
           {PEPTIDE_COMPOUNDS.map((c) => {
             const lvl = evidenceLevels[c.evidenceLevel];
             return (
               <Link
                 key={c.slug}
                 href={`/peptides/${c.slug}/`}
-                className="block rounded-3xl p-6 bg-gradient-to-br from-[#071d42] to-[#04122d] border border-[rgba(141,168,195,0.25)] hover:border-sky-400 hover:shadow-2xl transition-all group space-y-3.5"
+                className="block rounded-3xl p-6 sm:p-7 bg-gradient-to-br from-[#071d42] via-[#051736] to-[#03112a] border border-[rgba(141,168,195,0.25)] hover:border-sky-400 hover:shadow-2xl transition-all group space-y-4 shadow-xl flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono text-slate-300 font-bold">
-                    CAS: {c.casNumber}
-                  </span>
-                  <div className="flex items-center gap-1.5" aria-label={lvl.label}>
-                    {[1, 2, 3].map((n) => (
-                      <span
-                        key={n}
-                        className="w-2 h-2 rounded-full shadow-sm"
-                        style={{
-                          background: n <= c.evidencePips ? lvl.color : 'rgba(141,168,195,0.25)',
-                        }}
-                      />
-                    ))}
+                <div className="space-y-3.5">
+                  <div className="flex items-center justify-between pb-1">
+                    <span className="text-xs font-mono text-slate-300 font-bold bg-[#02102b] px-2.5 py-1 rounded-lg border border-[rgba(141,168,195,0.18)]">
+                      CAS: {c.casNumber}
+                    </span>
+                    <div className="flex items-center gap-1.5" aria-label={lvl.label}>
+                      {[1, 2, 3].map((n) => (
+                        <span
+                          key={n}
+                          className="w-2.5 h-2.5 rounded-full shadow-sm"
+                          style={{
+                            background: n <= c.evidencePips ? lvl.color : 'rgba(141,168,195,0.25)',
+                          }}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                <div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-sky-300 transition-colors">
-                    {c.name}
-                  </h3>
-                  <p className="text-xs text-sky-300 font-mono mt-0.5 line-clamp-1 font-semibold">
-                    {c.categoryName}
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-sky-300 transition-colors">
+                      {c.name}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-sky-300 font-mono mt-1 line-clamp-1 font-semibold">
+                      {c.categoryName}
+                    </p>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.18)] font-mono text-xs flex justify-between items-center text-slate-200">
+                    <span className="text-slate-400 font-semibold">Formula:</span>
+                    <span className="text-emerald-300 font-bold tracking-wide">{c.molecularFormula}</span>
+                  </div>
+
+                  <p className="text-xs sm:text-[13px] text-slate-200 line-clamp-3 leading-relaxed">
+                    {c.shortOverview}
                   </p>
                 </div>
 
-                <div className="p-2.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.18)] font-mono text-xs flex justify-between text-slate-200">
-                  <span className="text-slate-400">Formula:</span>
-                  <span className="text-emerald-300 font-bold">{c.molecularFormula}</span>
-                </div>
-
-                <p className="text-xs text-slate-200 line-clamp-3 leading-relaxed">
-                  {c.shortOverview}
-                </p>
-
-                <div className="pt-3 border-t border-[rgba(141,168,195,0.2)] flex items-center justify-between text-xs font-mono font-bold" style={{ color: lvl.color }}>
+                <div className="pt-4 border-t border-[rgba(141,168,195,0.2)] flex items-center justify-between text-xs sm:text-sm font-mono font-bold" style={{ color: lvl.color }}>
                   <span>{lvl.label}</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                 </div>
               </Link>
             );
@@ -82,12 +84,12 @@ export function RatedPlainly() {
         </div>
 
         {/* Symmetric Directory Footer Bar */}
-        <div className="p-6 rounded-3xl bg-[#071d42] border border-[rgba(141,168,195,0.25)] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div className="space-y-1">
-            <span className="text-sm font-bold text-white block">
+        <div className="p-7 sm:p-8 rounded-3xl bg-gradient-to-r from-[#071d42] via-[#092350] to-[#051736] border border-[rgba(141,168,195,0.25)] flex flex-col sm:flex-row sm:items-center justify-between gap-5 shadow-xl">
+          <div className="space-y-1.5 max-w-2xl">
+            <span className="text-base sm:text-lg font-bold text-white block">
               Looking for a Specific Synthetic Peptide or Analytical Method?
             </span>
-            <span className="text-xs text-slate-300 block">
+            <span className="text-xs sm:text-sm text-slate-200 block leading-relaxed">
               Search all CAS numbers, PubChem CIDs, and research documentation across our chemical index.
             </span>
           </div>
@@ -95,13 +97,13 @@ export function RatedPlainly() {
           <div className="flex items-center gap-3 shrink-0">
             <Link
               href="/safety/"
-              className="px-5 py-2.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.25)] hover:border-sky-400 text-xs font-mono text-slate-200 hover:text-white transition-colors"
+              className="px-5 py-3 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.25)] hover:border-sky-400 text-xs sm:text-sm font-mono text-slate-200 hover:text-white transition-colors"
             >
               Research Safety SOP
             </Link>
             <Link
               href="/formats/"
-              className="gradient-bg px-5 py-2.5 rounded-xl font-bold text-xs text-slate-950 shadow-md hover:shadow-xl transition-all"
+              className="gradient-bg px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-slate-950 shadow-md hover:shadow-xl transition-all"
             >
               Delivery Formats Standards →
             </Link>

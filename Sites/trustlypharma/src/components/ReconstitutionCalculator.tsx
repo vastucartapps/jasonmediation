@@ -186,7 +186,7 @@ export function ReconstitutionCalculator({
                 {maxUnitsForSyringe} Units Capacity
               </span>
             </div>
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-3 gap-2.5">
               {[
                 { cap: 0.3 as SyringeCapacity, label: '0.3 mL (30 U)', sub: '0.5U precision' },
                 { cap: 0.5 as SyringeCapacity, label: '0.5 mL (50 U)', sub: '1.0U standard' },
@@ -196,112 +196,112 @@ export function ReconstitutionCalculator({
                   key={item.cap}
                   type="button"
                   onClick={() => setSyringeCapacity(item.cap)}
-                  className={`py-2 px-2 rounded-xl text-xs font-mono text-center transition-all ${
+                  className={`py-2.5 px-3 rounded-xl text-xs font-mono text-center transition-all ${
                     syringeCapacity === item.cap
                       ? 'bg-emerald-500 text-slate-950 font-bold shadow-md'
                       : 'bg-[#0a2347] text-slate-200 border border-[rgba(141,168,195,0.25)] hover:border-emerald-400'
                   }`}
                 >
-                  <div className="font-bold text-[11px]">{item.label}</div>
-                  <div className="text-[9px] opacity-80">{item.sub}</div>
+                  <div className="font-bold text-xs">{item.label}</div>
+                  <div className="text-[11px] opacity-90 mt-0.5">{item.sub}</div>
                 </button>
               ))}
             </div>
           </div>
 
           {/* 5. Live Mathematical Equation Box (Fills space with high utility) */}
-          <div className="p-4 rounded-2xl bg-[#031433] border border-sky-500/25 space-y-1.5 text-xs font-mono">
-            <span className="text-[10px] uppercase text-sky-300 font-bold tracking-wider block">
+          <div className="p-4.5 rounded-2xl bg-[#031433] border border-sky-500/30 space-y-2 text-xs font-mono shadow-inner">
+            <span className="text-xs uppercase text-sky-300 font-bold tracking-wider block">
               Dilution Formula Derivation:
             </span>
-            <div className="text-slate-200 text-[11px] space-y-1">
+            <div className="text-slate-200 text-xs space-y-1.5 leading-relaxed">
               <div>
                 Concentration = {(vialMg * 1000).toLocaleString()} mcg ÷ {waterMl} mL ={' '}
-                <strong className="text-sky-300">{concentrationMcgPerMl.toFixed(0)} mcg/mL</strong>
+                <strong className="text-sky-300 font-bold">{concentrationMcgPerMl.toFixed(0)} mcg/mL</strong>
               </div>
               <div>
                 Draw Volume = {doseMcg} mcg ÷ {concentrationMcgPerMl.toFixed(0)} mcg/mL ={' '}
-                <strong className="text-emerald-300">{volumeMlPerDose.toFixed(3)} mL</strong> (
-                <strong className="text-emerald-300">{unitsPerDose.toFixed(1)} Units</strong>)
+                <strong className="text-emerald-300 font-bold">{volumeMlPerDose.toFixed(3)} mL</strong> (
+                <strong className="text-emerald-300 font-bold">{unitsPerDose.toFixed(1)} Units</strong>)
               </div>
             </div>
           </div>
         </div>
 
         {/* Right Column: Calculated Output, Visual Syringe Fill & Handling Protocols */}
-        <div className="lg:col-span-6 p-6 sm:p-7 rounded-3xl bg-gradient-to-br from-[#071d42] to-[#03112c] border border-[rgba(141,168,195,0.3)] shadow-2xl space-y-6">
+        <div className="lg:col-span-6 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#071d42] to-[#03112c] border border-[rgba(141,168,195,0.3)] shadow-2xl space-y-6">
           <div className="flex items-center justify-between pb-3 border-b border-[rgba(141,168,195,0.2)]">
-            <span className="text-xs font-mono uppercase tracking-wider text-sky-300 font-bold">
+            <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-sky-300 font-bold">
               Volumetric Dispensing Calibration
             </span>
-            <span className="text-[11px] font-mono text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
+            <span className="text-xs font-mono text-emerald-300 bg-emerald-950/70 px-3 py-1 rounded-full border border-emerald-500/30 font-semibold">
               U-100 Standard
             </span>
           </div>
 
           {/* Primary Result Box */}
-          <div className="p-6 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.25)] text-center space-y-2">
-            <span className="text-xs font-mono text-slate-300 uppercase tracking-wider block font-semibold">
+          <div className="p-6 sm:p-7 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.25)] text-center space-y-2.5 shadow-md">
+            <span className="text-xs sm:text-sm font-mono text-slate-300 uppercase tracking-wider block font-semibold">
               Draw to on {syringeCapacity} mL U-100 Syringe:
             </span>
             <div className="text-5xl sm:text-6xl font-extrabold font-mono text-emerald-300 tracking-tight">
               {unitsPerDose.toFixed(1)}{' '}
               <span className="text-2xl font-normal text-slate-300">Units</span>
             </div>
-            <div className="text-xs font-mono text-slate-300 pt-1">
+            <div className="text-xs sm:text-sm font-mono text-slate-300 pt-1">
               Exact Liquid Volume:{' '}
               <strong className="text-white">{volumeMlPerDose.toFixed(3)} mL</strong> (approx.{' '}
               {unitsPerDose.toFixed(0)} tick marks)
             </div>
 
             {/* Visual Syringe Barrel Gauge Bar */}
-            <div className="pt-3 space-y-1">
-              <div className="w-full h-3 rounded-full bg-[#0a2347] border border-[rgba(141,168,195,0.2)] overflow-hidden p-0.5">
+            <div className="pt-3 space-y-1.5">
+              <div className="w-full h-3.5 rounded-full bg-[#0a2347] border border-[rgba(141,168,195,0.2)] overflow-hidden p-0.5">
                 <div
                   className="h-full rounded-full bg-gradient-to-r from-sky-400 to-emerald-400 transition-all duration-300"
                   style={{ width: `${fillPercentage}%` }}
                 />
               </div>
-              <div className="flex justify-between text-[10px] font-mono text-slate-400">
+              <div className="flex justify-between text-xs font-mono text-slate-300">
                 <span>0 U</span>
-                <span>Barrel Fill: {fillPercentage.toFixed(0)}%</span>
+                <span className="font-semibold text-sky-300">Barrel Fill: {fillPercentage.toFixed(0)}%</span>
                 <span>{maxUnitsForSyringe} U</span>
               </div>
             </div>
           </div>
 
           {/* Metrics Grid */}
-          <div className="grid grid-cols-2 gap-3 text-xs font-mono">
-            <div className="p-4 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.2)]">
-              <span className="text-slate-400 text-[10px] uppercase block font-semibold">
+          <div className="grid grid-cols-2 gap-3.5 text-xs font-mono">
+            <div className="p-4 sm:p-4.5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] space-y-1">
+              <span className="text-slate-300 text-xs uppercase block font-semibold">
                 Stock Concentration
               </span>
-              <span className="text-sky-300 font-bold text-base block mt-0.5">
+              <span className="text-sky-300 font-bold text-lg block mt-0.5">
                 {(concentrationMcgPerMl / 1000).toFixed(2)} mg/mL
               </span>
-              <span className="text-[10px] text-slate-400">
+              <span className="text-xs text-slate-400">
                 ({concentrationMcgPerMl.toFixed(0)} mcg/mL)
               </span>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.2)]">
-              <span className="text-slate-400 text-[10px] uppercase block font-semibold">
+            <div className="p-4 sm:p-4.5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] space-y-1">
+              <span className="text-slate-300 text-xs uppercase block font-semibold">
                 Aliquot Yield Per Vial
               </span>
-              <span className="text-amber-300 font-bold text-base block mt-0.5">
+              <span className="text-amber-300 font-bold text-lg block mt-0.5">
                 {Math.floor(totalDoses)} Doses
               </span>
-              <span className="text-[10px] text-slate-400">
+              <span className="text-xs text-slate-400">
                 ({(vialMg * 1000).toLocaleString()} mcg total)
               </span>
             </div>
           </div>
 
           {/* Scientific Handling Advisory */}
-          <div className="p-4 rounded-2xl bg-[#02102b]/90 border border-sky-500/20 text-xs text-slate-200 leading-relaxed flex items-start gap-3">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+          <div className="p-4.5 rounded-2xl bg-[#02102b]/95 border border-sky-500/25 text-xs sm:text-sm text-slate-200 leading-relaxed flex items-start gap-3.5 shadow-sm">
+            <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
             <div>
-              <strong className="text-sky-300 block mb-0.5 font-mono text-[11px] uppercase">
+              <strong className="text-sky-300 block mb-1 font-mono text-xs uppercase font-bold">
                 Laboratory Reconstitution Protocol:
               </strong>
               <span>

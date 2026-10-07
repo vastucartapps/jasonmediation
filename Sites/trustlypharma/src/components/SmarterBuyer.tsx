@@ -41,16 +41,16 @@ export function SmarterBuyer() {
           </Link>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-3xl bg-[#0a2149] border border-[rgba(141,168,195,0.2)] space-y-3"
+              className="p-7 rounded-3xl bg-gradient-to-br from-[#0a2149] via-[#071d42] to-[#04122d] border border-[rgba(141,168,195,0.25)] hover:border-sky-400/50 transition-all space-y-3.5 shadow-xl"
             >
-              <h3 className="text-base font-bold text-white leading-snug">
+              <h3 className="text-base sm:text-lg font-bold text-white leading-snug">
                 {item.title}
               </h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <p className="text-sm text-slate-200 leading-relaxed">
                 {item.text}
               </p>
             </div>

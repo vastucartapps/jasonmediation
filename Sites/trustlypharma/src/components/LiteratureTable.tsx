@@ -37,14 +37,14 @@ export function LiteratureTable({ compoundName, citations }: LiteratureTableProp
         </div>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4 sm:space-y-5">
         {citations.map((cite, idx) => (
           <div
             key={idx}
-            className="p-5 rounded-2xl bg-obsidian-900/60 border border-white/5 hover:border-cyan-500/20 transition-all space-y-3"
+            className="p-6 sm:p-7 rounded-3xl bg-[#05193d] border border-[rgba(141,168,195,0.22)] hover:border-sky-400/50 transition-all space-y-4 shadow-lg"
           >
-            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
-              <h4 className="text-base font-semibold text-white leading-snug">
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+              <h4 className="text-base sm:text-lg font-bold text-white leading-snug">
                 {cite.title}
               </h4>
               <div className="flex items-center gap-2 shrink-0">
@@ -53,10 +53,10 @@ export function LiteratureTable({ compoundName, citations }: LiteratureTableProp
                     href={`https://pubmed.ncbi.nlm.nih.gov/${cite.pubmedId}/`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-mono font-medium text-cyan-400 bg-cyan-950/40 border border-cyan-500/30 hover:bg-cyan-900/50 transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold text-sky-300 bg-sky-950/60 border border-sky-500/40 hover:bg-sky-900/60 transition-colors shadow-sm"
                   >
                     <span>PMID: {cite.pubmedId}</span>
-                    <ExternalLink className="w-2.5 h-2.5" />
+                    <ExternalLink className="w-3 h-3" />
                   </a>
                 )}
                 {cite.doi && (
@@ -64,23 +64,25 @@ export function LiteratureTable({ compoundName, citations }: LiteratureTableProp
                     href={`https://doi.org/${cite.doi}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-mono text-slate-400 bg-white/5 border border-white/10 hover:text-white transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono text-slate-300 bg-[#02102b] border border-[rgba(141,168,195,0.25)] hover:text-white transition-colors"
                   >
                     <span>DOI</span>
-                    <ExternalLink className="w-2.5 h-2.5" />
+                    <ExternalLink className="w-3 h-3" />
                   </a>
                 )}
               </div>
             </div>
 
-            <div className="text-xs font-mono text-slate-400 flex flex-wrap items-center gap-x-4 gap-y-1">
-              <span className="text-cyan-300 font-semibold">{cite.journal}</span>
+            <div className="text-xs sm:text-sm font-mono text-slate-300 flex flex-wrap items-center gap-x-4 gap-y-1.5">
+              <span className="text-sky-300 font-semibold">{cite.journal}</span>
+              <span>·</span>
               <span>Published: {cite.year}</span>
-              <span className="text-slate-500 truncate max-w-md">Authors: {cite.authors}</span>
+              <span>·</span>
+              <span className="text-slate-400">Authors: {cite.authors}</span>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-obsidian-950/70 border border-white/5 text-xs text-slate-300 leading-relaxed">
-              <strong className="text-slate-200 block text-[11px] font-mono uppercase tracking-wider mb-1">
+            <div className="p-4 sm:p-5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.18)] text-xs sm:text-sm text-slate-200 leading-relaxed shadow-inner">
+              <strong className="text-sky-300 block text-xs font-mono uppercase tracking-wider mb-1.5 font-bold">
                 Documented Laboratory Observation:
               </strong>
               {cite.keyFindings}

@@ -34,57 +34,57 @@ export function Footer() {
 
           {/* Core Tools & Index */}
           <div>
-            <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-3">
+            <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-4">
               Tools & Directory
             </h5>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <Link href="/vendors/" className="hover:text-amber-400 transition-colors font-semibold text-amber-300">
                   ★ Commercial Vendors & Partners
                 </Link>
               </li>
               <li>
-                <Link href="/#calculator" className="hover:text-sky-400 transition-colors">
+                <Link href="/#calculator" className="hover:text-sky-400 transition-colors text-slate-300">
                   Dilution Calculator
                 </Link>
               </li>
               <li>
-                <Link href="/#evidence-map" className="hover:text-sky-400 transition-colors">
+                <Link href="/#evidence-map" className="hover:text-sky-400 transition-colors text-slate-300">
                   The Evidence Map
                 </Link>
               </li>
               <li>
-                <Link href="/#peptides-catalog" className="hover:text-sky-400 transition-colors">
+                <Link href="/#peptides-catalog" className="hover:text-sky-400 transition-colors text-slate-300">
                   Peptides A–Z Directory
                 </Link>
               </li>
               <li>
-                <Link href="/formats/" className="hover:text-sky-400 transition-colors">
+                <Link href="/formats/" className="hover:text-sky-400 transition-colors text-slate-300">
                   Delivery Formats Standards
                 </Link>
               </li>
               <li>
-                <Link href="/regulatory/" className="hover:text-sky-400 transition-colors">
+                <Link href="/regulatory/" className="hover:text-sky-400 transition-colors text-slate-300">
                   Regulatory Intelligence Hub
                 </Link>
               </li>
               <li>
-                <Link href="/regulatory/mhra-tracker/" className="hover:text-sky-400 transition-colors">
+                <Link href="/regulatory/mhra-tracker/" className="hover:text-sky-400 transition-colors text-slate-300">
                   MHRA Enforcement Tracker
                 </Link>
               </li>
               <li>
-                <Link href="/regulatory/uk-legal-status/" className="hover:text-sky-400 transition-colors">
+                <Link href="/regulatory/uk-legal-status/" className="hover:text-sky-400 transition-colors text-slate-300">
                   UK Legal Status Matrix
                 </Link>
               </li>
               <li>
-                <Link href="/safety/" className="hover:text-sky-400 transition-colors">
+                <Link href="/safety/" className="hover:text-sky-400 transition-colors text-slate-300">
                   Research Safety Policy
                 </Link>
               </li>
               <li>
-                <Link href="/contact/" className="hover:text-sky-400 transition-colors">
+                <Link href="/contact/" className="hover:text-sky-400 transition-colors text-slate-300">
                   Institutional Contact Desk
                 </Link>
               </li>
@@ -93,15 +93,15 @@ export function Footer() {
 
           {/* Research Pathways */}
           <div>
-            <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-3">
+            <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-4">
               Research Pathways
             </h5>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2.5 text-xs sm:text-sm">
               {RESEARCH_CATEGORIES.map((cat) => (
                 <li key={cat.slug}>
                   <Link
                     href={`/category/${cat.slug}/`}
-                    className="hover:text-sky-400 transition-colors"
+                    className="hover:text-sky-400 transition-colors text-slate-300 block"
                   >
                     {cat.name}
                   </Link>
@@ -112,23 +112,23 @@ export function Footer() {
 
           {/* Verified Vendor Network */}
           <div>
-            <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-3 flex items-center gap-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-sky-400" /> Verified Partners
+            <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono mb-4 flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-sky-400" /> Verified Partners
             </h5>
-            <ul className="space-y-2.5 text-xs">
+            <ul className="space-y-3 text-xs sm:text-sm">
               {Object.values(SUPPLIER_PROFILES).map((sup) => (
                 <li key={sup.id}>
                   <Link
                     href={`/vendors/${sup.id}/`}
                     className="hover:text-sky-300 transition-colors flex items-center justify-between group text-slate-300"
                   >
-                    <span className="flex items-center gap-2">
+                    <span className="flex items-center gap-2.5">
                       {sup.faviconUrl && (
-                        <img src={sup.faviconUrl} alt="" className="w-3.5 h-3.5 rounded object-contain shrink-0" />
+                        <img src={sup.faviconUrl} alt="" className="w-4 h-4 rounded object-contain shrink-0" />
                       )}
                       <span>{sup.name}</span>
                     </span>
-                    <span className="text-[10px] text-sky-400 font-mono opacity-80 group-hover:opacity-100">Dossier →</span>
+                    <span className="text-xs text-sky-400 font-mono opacity-80 group-hover:opacity-100 font-semibold">Dossier →</span>
                   </Link>
                 </li>
               ))}

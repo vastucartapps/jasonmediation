@@ -121,7 +121,7 @@ export function EvidenceMap() {
         </div>
 
         {/* Categories Clusters - Differentiated Color & Theme */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {RESEARCH_CATEGORIES.map((cat) => {
             const theme = CATEGORY_THEMES[cat.slug] || CATEGORY_THEMES['tissue-repair-recovery'];
             const Icon = theme.icon;
@@ -130,37 +130,37 @@ export function EvidenceMap() {
               <Link
                 key={cat.slug}
                 href={`/category/${cat.slug}/`}
-                className={`rounded-3xl p-7 bg-gradient-to-br from-[#071d42] to-[#04122d] border border-[rgba(141,168,195,0.25)] ${theme.hoverBorder} transition-all duration-200 group flex flex-col justify-between space-y-5 shadow-xl hover:shadow-2xl hover:-translate-y-1`}
+                className={`rounded-3xl p-7 sm:p-8 bg-gradient-to-br from-[#071d42] via-[#051736] to-[#03112a] border border-[rgba(141,168,195,0.25)] ${theme.hoverBorder} transition-all duration-200 group flex flex-col justify-between space-y-6 shadow-xl hover:shadow-2xl hover:-translate-y-1`}
               >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className={`text-xs font-mono font-bold ${theme.badgeBg} ${theme.badgeText} px-3 py-1 rounded-full border ${theme.badgeBorder} inline-flex items-center gap-1.5`}>
-                      <Icon className="w-3.5 h-3.5" />
+                <div className="space-y-4 sm:space-y-5">
+                  <div className="flex items-center justify-between pb-1">
+                    <span className={`text-xs font-mono font-bold ${theme.badgeBg} ${theme.badgeText} px-3.5 py-1.5 rounded-full border ${theme.badgeBorder} inline-flex items-center gap-2 shadow-sm`}>
+                      <Icon className="w-4 h-4" />
                       <span>{cat.featuredCompoundSlugs.length} Compounds Mapped</span>
                     </span>
 
                     <span
-                      className="w-2.5 h-2.5 rounded-full"
+                      className="w-3 h-3 rounded-full shadow-sm"
                       style={{ backgroundColor: theme.accentColor }}
                       aria-hidden="true"
                     />
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-sky-300 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-sky-300 transition-colors">
                       {cat.name}
                     </h3>
-                    <p className="text-xs font-mono text-slate-300 mt-1 line-clamp-1">
+                    <p className="text-xs sm:text-sm font-mono text-sky-200/90 mt-1.5 font-medium leading-snug">
                       {cat.headline}
                     </p>
                   </div>
 
-                  <p className="text-xs text-slate-200 leading-relaxed line-clamp-3">
+                  <p className="text-sm text-slate-200 leading-relaxed">
                     {cat.description}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[rgba(141,168,195,0.2)] flex items-center justify-between text-xs font-mono font-bold text-slate-300 group-hover:text-white transition-colors">
+                <div className="pt-5 border-t border-[rgba(141,168,195,0.2)] flex items-center justify-between text-xs sm:text-sm font-mono font-bold text-slate-300 group-hover:text-white transition-colors">
                   <span>Explore Signaling Pathways</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" style={{ color: theme.accentColor }} />
                 </div>
