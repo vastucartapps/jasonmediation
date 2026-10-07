@@ -218,11 +218,11 @@ export default async function PeptideDetailPage({ params }: PageProps) {
             <Link href="/" className="hover:text-sky-400 transition-colors">
               Index
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
             <Link href={`/category/${compound.categorySlug}/`} className="hover:text-sky-400 transition-colors">
               {compound.categoryName}
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
             <span className="text-white font-semibold">{compound.name}</span>
           </nav>
         </div>
@@ -514,7 +514,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
 
             <div className="space-y-3.5 text-xs font-mono">
               <div className="p-3.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.12)] space-y-1">
-                <span className="text-slate-500 uppercase block text-[10px]">
+                <span className="text-slate-400 font-semibold uppercase block text-[10px]">
                   Recommended Diluent
                 </span>
                 <span className="text-sky-300 font-medium">
@@ -523,7 +523,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
               </div>
 
               <div className="p-3.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.12)] space-y-1">
-                <span className="text-slate-500 uppercase block text-[10px]">
+                <span className="text-slate-400 font-semibold uppercase block text-[10px]">
                   Lyophilized Storage
                 </span>
                 <span className="text-slate-200">
@@ -532,7 +532,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
               </div>
 
               <div className="p-3.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.12)] space-y-1">
-                <span className="text-slate-500 uppercase block text-[10px]">
+                <span className="text-slate-400 font-semibold uppercase block text-[10px]">
                   Reconstituted Storage
                 </span>
                 <span className="text-slate-200">
@@ -541,7 +541,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
               </div>
 
               <div className="p-3.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.12)] space-y-1">
-                <span className="text-slate-500 uppercase block text-[10px]">
+                <span className="text-slate-400 font-semibold uppercase block text-[10px]">
                   Stability Window
                 </span>
                 <span className="text-amber-300 text-[11px]">

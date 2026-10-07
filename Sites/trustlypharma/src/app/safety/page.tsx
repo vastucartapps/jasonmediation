@@ -18,11 +18,65 @@ export const metadata = {
   title: 'Research Safety & GLP Standards | Trustly Pharma',
   description:
     'Good Laboratory Practice (GLP) standards, cold-chain storage thresholds, reconstitution protocols, and chemical PPE guidelines for research peptides.',
+  alternates: {
+    canonical: 'https://trustlypharma.co.uk/safety/',
+  },
 };
 
 export default function SafetyPolicyPage() {
+  const pageUrl = 'https://trustlypharma.co.uk/safety/';
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://trustlypharma.co.uk/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Research Safety Policy',
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: 'Research Safety Policy & Chemical Handling SOP | Trustly Pharma',
+        description:
+          'Good Laboratory Practice (GLP) standards, cold-chain storage thresholds, reconstitution protocols, and chemical PPE guidelines for research peptides.',
+        about: [
+          {
+            '@type': 'DefinedTerm',
+            name: 'Good Laboratory Practice',
+            description: 'OECD GLP compliance for chemical and peptide handling.',
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'COSHH Regulations',
+            description: 'Control of Substances Hazardous to Health Regulations 2002.',
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-[#020e24] text-slate-100">
+      {/* Schema Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero Header */}
       <section className="border-b border-[rgba(141,168,195,0.18)] bg-gradient-to-b from-[#02102b] to-[#041638] py-14 md:py-18">
         <div className="container-wide">
@@ -31,7 +85,7 @@ export default function SafetyPolicyPage() {
               <Link href="/" className="hover:text-sky-400 transition-colors">
                 Index Home
               </Link>
-              <span>/</span>
+              <span className="text-slate-500">/</span>
               <span className="text-sky-400">Research Safety Policy</span>
             </nav>
 

@@ -1,52 +1,122 @@
-# Trustly Pharma — Worldwide Peptide Research Index & Chemical Encyclopedia
+# Trustly Pharma — UK & Worldwide Peptide Research Index & Chemical Encyclopedia
 > An authoritative, independent academic reference directory for synthetic research peptides.
 
-## Overview
-Trustly Pharma provides verified biochemical data, CAS registry numbers, molecular formulas, amino acid sequences, and peer-reviewed PubMed citations for synthetic research peptides. Content is compiled exclusively for researchers, laboratory chemists, and academic institutions investigating pre-clinical mechanisms.
+## Institutional Identity & Regulatory Mandate
+- **Organization**: Trustly Pharma (Analytical Chemical Reference Repository)
+- **Primary Domain**: https://trustlypharma.co.uk/
+- **Geographic Catchment**: United Kingdom, European Union & International Research Laboratories
+- **Statutory Charter**: Independent academic index providing verified chemical structures, CAS registries, and peer-reviewed PubMed citations.
+- **Commercial Independence**: Strictly non-transactional. Trustly Pharma processes zero payments, operates no direct sales cart, and acts solely as an analytical reference index with outbound links to verified commercial distributors.
+- **Handling Classification**: All cataloged compounds are intended exclusively for in vitro laboratory research and pre-clinical experimentation under OECD Principles of Good Laboratory Practice (GLP) and UK COSHH regulations. Not approved for human or veterinary administration.
 
 ## Primary Scientific Authority Sources
-- **PubChem (NIH National Library of Medicine)**: Chemical structures, CAS numbers, IUPAC nomenclature, and molecular masses.
-- **UniProtKB (Universal Protein Resource)**: Primary amino acid sequence data and protein family accessions.
-- **NCBI PubMed**: Peer-reviewed scientific studies documenting in vitro cell assays and animal in vivo mechanisms.
+- **PubChem (NIH National Library of Medicine)**: Chemical structures, CAS numbers, IUPAC systematic names, and molecular masses.
+- **UniProtKB (Universal Protein Resource)**: Primary amino acid sequence data, post-translational modifications, and protein accessions.
+- **NCBI PubMed**: Peer-reviewed scientific literature documenting in vitro cell cultures, receptor assays, and pre-clinical animal models.
 - **RCSB Protein Data Bank (PDB)**: Three-dimensional macromolecular structural coordinates.
+- **MHRA (Medicines and Healthcare products Regulatory Agency)**: UK statutory medicine classification, border notices, and unlicensed investigational chemical advisories.
 
-## Indexed Compounds & Chemical Profiles
-- **BPC-157** (CAS: 137525-51-0 | Formula: C62H98N16O22 | MW: 1419.55 g/mol | PubChem CID: 9941957)
-  - Classification: Synthetic pentadecapeptide derived from gastric juice protein BPC.
-  - Pathways: VEGFR2 transcription, FAK-Paxillin phosphorylation, early growth response 1 (egr-1).
-  - Scope: Pre-clinical soft tissue repair and microvascular angiogenesis models.
-- **TB-500** (CAS: 77591-33-4 | Formula: C212H350N56O78S | MW: 4963.5 g/mol | PubChem CID: 16132341)
-  - Classification: Synthetic 43-amino acid peptide analogue of thymosin beta-4 active domain (LKKTET).
-  - Pathways: G-actin monomer sequestration, actin filament polymerization, cellular motility.
-  - Scope: Endothelial migration, dermal repair, and myocardial wound remodeling in animal models.
-- **Semax** (CAS: 80714-61-0 | Formula: C37H51N9O10S | MW: 813.92 g/mol | PubChem CID: 3034285)
-  - Classification: Synthetic heptapeptide analogue of ACTH(4-10) with C-terminal Pro-Gly-Pro.
-  - Pathways: BDNF and TrkB receptor mRNA upregulation, monoaminergic neurotransmission modulation.
-  - Scope: Neuroprotection, ischemic stroke injury models, and cognitive synaptic plasticity.
-- **Selank** (CAS: 129954-34-3 | Formula: C33H57N11O9 | MW: 751.87 g/mol | PubChem CID: 115967)
-  - Classification: Synthetic regulatory heptapeptide derived from immunoglobulin G fragment tuftsin.
-  - Pathways: GABAergic allosteric modulation, enkephalin-degrading enzyme inhibition, IL-6 regulation.
-  - Scope: Anxiolysis assays, neuroimmunomodulation, and psychopharmacological research.
-- **Ipamorelin** (CAS: 170851-70-4 | Formula: C38H49N9O5 | MW: 711.85 g/mol | PubChem CID: 9831659)
-  - Classification: Pentapeptide growth hormone secretagogue (GHRP).
-  - Pathways: Selective ghrelin receptor (GHSR-1a) agonism; does not elevate ACTH, cortisol, or prolactin.
-  - Scope: Somatotroph pulsatile GH secretion and bone mineral density investigation.
-- **CJC-1295** (CAS: 863288-34-0 | Formula: C152H252N44O42 | MW: 3367.97 g/mol | PubChem CID: 91885566)
-  - Classification: 29-amino acid tetrasubstituted growth hormone-releasing hormone (GHRH) analogue.
-  - Pathways: Pituitary GHRH receptor stimulation, cAMP-protein kinase A signaling cascade.
-  - Scope: Pre-clinical evaluation of sustained GH and IGF-1 elevation kinetics.
-- **AOD-9604** (CAS: 221231-10-3 | Formula: C78H123N23O23S2 | MW: 1815.1 g/mol | PubChem CID: 9833503)
-  - Classification: Synthetic peptide fragment of human growth hormone C-terminal domain (hGH 177-191).
-  - Pathways: Beta-3 adrenergic receptor lipolytic pathway activation; does not alter blood glucose or IGF-1.
-  - Scope: Adipocyte lipid metabolism, chondrogenesis, and proteoglycan synthesis models.
+## Indexed Compounds & Chemical Dossiers (12 Verified Reagents)
+1. **BPC-157** (Body Protection Compound 157 Pentadecapeptide)
+   - CAS: 137525-51-0 | Formula: C62H98N16O22 | MW: 1419.55 g/mol | PubChem CID: 9941957
+   - Sequence: Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val
+   - Signaling Pathways: VEGFR2 transcription, FAK-Paxillin phosphorylation, eNOS/iNOS modulation.
+   - Laboratory Scope: Angiogenic microvascular integrity, soft tissue rupture recovery assays.
+   - Deep URL: https://trustlypharma.co.uk/peptides/bpc-157/
 
-## Commercial Laboratory Sourcing Catalogues
-Trustly Pharma provides outbound links to established commercial laboratory distributors where qualified research laboratories can procure synthesis batches and solvents:
-- **PharmaGrade** (pharmagrade.store): Lyophilized vials, pre-mixed cartridge pens, nasal delivery formats.
-- **Direct Peptides** (direct-peptides.com): Single compounds, synergistic blends, reconstitution supplies.
-- **Direct Sarms** (direct-sarms.com): Research peptides, laboratory solvents, pre-clinical consumables.
-- **Peptide Works** (peptide-works.com): Lyophilized single peptides, research stacks, dilution accessories.
-- **PharmaLab Global** (pharmalabglobal.com): Research vials, cartridge systems, laboratory reagents.
+2. **TB-500** (Thymosin Beta-4 Synthetic Acetylated Fragment Ac-LKKTETQ)
+   - CAS: 77591-33-4 | Formula: C212H350N56O78S | MW: 4963.50 g/mol | PubChem CID: 16132341
+   - Signaling Pathways: G-actin monomer sequestration, actin filament polymerization, cellular migration.
+   - Laboratory Scope: Endothelial migration, dermal repair, and myocardial wound remodeling in animal models.
+   - Deep URL: https://trustlypharma.co.uk/peptides/tb-500/
 
-## Regulatory & Non-Clinical Policy
-All compounds indexed on Trustly Pharma are intended strictly for laboratory and in vitro pre-clinical scientific research. They are not intended, approved, or sold for human or veterinary use, medical therapy, disease diagnosis, or performance enhancement.
+3. **Semax** (Heptapeptide ACTH 4-10 Analogue Met-Glu-His-Phe-Pro-Gly-Pro)
+   - CAS: 80714-61-0 | Formula: C37H51N9O10S | MW: 813.92 g/mol | PubChem CID: 3034285
+   - Signaling Pathways: BDNF and TrkB receptor mRNA upregulation, monoaminergic neurotransmission modulation.
+   - Laboratory Scope: Neuroprotection, ischemic stroke injury models, and cognitive synaptic plasticity.
+   - Deep URL: https://trustlypharma.co.uk/peptides/semax/
+
+4. **Selank** (Synthetic Heptapeptide Tuftsin Analogue Thr-Lys-Pro-Arg-Pro-Gly-Pro)
+   - CAS: 129954-34-3 | Formula: C33H57N11O9 | MW: 751.87 g/mol | PubChem CID: 115967
+   - Signaling Pathways: Allosteric modulation of GABAA receptors, enkephalin-degrading enzyme inhibition, IL-6 regulation.
+   - Laboratory Scope: Anxiolysis assays, neuroimmunomodulation, and psychopharmacological research.
+   - Deep URL: https://trustlypharma.co.uk/peptides/selank/
+
+5. **GHK-Cu** (Copper Tripeptide-1 Complex [Gly-His-Lys]·Cu2+)
+   - CAS: 49557-75-7 | Formula: C14H24CuN6O4 | MW: 403.92 g/mol | PubChem CID: 73587
+   - Signaling Pathways: Collagen Type I/III synthesis, MMP-1 and TIMP regulation, decorin gene expression.
+   - Laboratory Scope: Extracellular matrix remodeling, antioxidant SOD induction, dermal fibroblast proliferation.
+   - Deep URL: https://trustlypharma.co.uk/peptides/ghk-cu/
+
+6. **CJC-1295** (Tetrasubstituted GHRH 1-29 Analogue with Maleimidopropionic Acid DAC)
+   - CAS: 863288-34-0 | Formula: C152H252N44O42 | MW: 3367.97 g/mol | PubChem CID: 91885566
+   - Signaling Pathways: Pituitary GHRH receptor stimulation, cAMP-protein kinase A phosphorylation cascade.
+   - Laboratory Scope: Pharmacokinetic evaluation of sustained GH and IGF-1 secretion kinetics.
+   - Deep URL: https://trustlypharma.co.uk/peptides/cjc-1295/
+
+7. **Ipamorelin** (Selective Pentapeptide Growth Hormone Secretagogue Aib-His-D-2-Nal-D-Phe-Lys-NH2)
+   - CAS: 170851-70-4 | Formula: C38H49N9O5 | MW: 711.85 g/mol | PubChem CID: 9831659
+   - Signaling Pathways: Selective ghrelin receptor (GHSR-1a) agonism; zero significant elevation of ACTH, cortisol, or prolactin.
+   - Laboratory Scope: Somatotroph pulsatile GH secretion and bone mineral density investigation.
+   - Deep URL: https://trustlypharma.co.uk/peptides/ipamorelin/
+
+8. **AOD-9604** (C-Terminal Fragment of Human Growth Hormone hGH 177-191 with Disulfide Bond)
+   - CAS: 221231-10-3 | Formula: C78H123N23O23S2 | MW: 1815.10 g/mol | PubChem CID: 9833503
+   - Signaling Pathways: Beta-3 adrenergic receptor lipolytic pathway activation; does not alter blood glucose or IGF-1.
+   - Laboratory Scope: Adipocyte lipid metabolism, chondrogenesis, and proteoglycan synthesis models.
+   - Deep URL: https://trustlypharma.co.uk/peptides/aod-9604/
+
+9. **Epithalon** (Synthetic Telomerase-Activating Tetrapeptide Ala-Glu-Asp-Gly)
+   - CAS: 307297-39-8 | Formula: C14H22N4O9 | MW: 390.35 g/mol | PubChem CID: 219032
+   - Signaling Pathways: Telomerase reverse transcriptase (TERT) catalytic subunit expression, heterochromatin remodeling.
+   - Laboratory Scope: Cellular replicative senescence, pineal melatonin regulation, oxidative stress attenuation.
+   - Deep URL: https://trustlypharma.co.uk/peptides/epithalon/
+
+10. **MOTS-c** (Mitochondrial-Derived Peptide 16-Amino Acid Chain)
+    - CAS: 1627580-64-6 | Formula: C101H152N28O22S2 | MW: 2174.60 g/mol | PubChem CID: 138131376
+    - Signaling Pathways: AMPK phosphorylation activation, AICAR accumulation, folate-methionine cycle modulation.
+    - Laboratory Scope: Insulin sensitivity, cellular metabolic homeostasis, exercise-mimetic mitochondrial assays.
+    - Deep URL: https://trustlypharma.co.uk/peptides/mots-c/
+
+11. **Tirzepatide** (Dual GIP and GLP-1 Receptor Co-Agonist 39-Amino Acid Peptide)
+    - CAS: 2023788-19-2 | Formula: C225H348N48O68 | MW: 4813.53 g/mol | PubChem CID: 156588324
+    - Signaling Pathways: Dual glucose-dependent insulinotropic polypeptide (GIPR) and glucagon-like peptide-1 (GLP-1R) agonism.
+    - Laboratory Scope: In vitro incretin signaling kinetics, pancreatic beta-cell insulin secretion models.
+    - Deep URL: https://trustlypharma.co.uk/peptides/tirzepatide/
+
+12. **Semaglutide** (Selective Human GLP-1 Receptor Agonist Analogue with C18 Diacid Fatty Acid Side Chain)
+    - CAS: 910463-68-2 | Formula: C187H291N45O59 | MW: 4113.58 g/mol | PubChem CID: 56843331
+    - Signaling Pathways: GLP-1 receptor activation, cAMP signal transduction, delayed gastric motility pathways.
+    - Laboratory Scope: In vitro satiety signaling, incretin receptor sensitivity, beta-cell apoptosis resistance assays.
+    - Deep URL: https://trustlypharma.co.uk/peptides/semaglutide/
+
+## Research Pathways & Biological Signaling Axes
+- **Tissue Repair & Angiogenesis**: https://trustlypharma.co.uk/category/tissue-repair-recovery/
+- **Neuropeptides & Cognitive Neuroprotection**: https://trustlypharma.co.uk/category/neuropeptides-cognition/
+- **Growth Hormone Secretagogues & GHRH Analogs**: https://trustlypharma.co.uk/category/growth-hormone-secretagogues/
+- **Metabolic Regulation & Incretin Signaling**: https://trustlypharma.co.uk/category/metabolic-regulation/
+- **Dermal Matrix & Collagen Synthesis**: https://trustlypharma.co.uk/category/dermal-matrix-collagen/
+- **Cellular Longevity & Telomere Integrity**: https://trustlypharma.co.uk/category/cellular-longevity-aging/
+
+## Verified Commercial Partners & Distributor Dossiers
+Outbound chemical catalogue links direct qualified researchers to established suppliers where laboratory-grade batches can be procured:
+- **PharmaGrade Store**: https://trustlypharma.co.uk/vendors/pharmagrade/ (Headquarters: London, UK | Est. 2018 | HPLC Purity Threshold: ≥98.0%)
+- **Direct Peptides**: https://trustlypharma.co.uk/vendors/direct-peptides/ (Headquarters: Dublin, Ireland & UK Hub | Est. 2017 | HPLC Purity Baseline: ≥99.0%)
+- **Direct Sarms**: https://trustlypharma.co.uk/vendors/direct-sarms/ (Headquarters: London, UK | Est. 2019 | HPLC Baseline: ≥98.5%)
+- **Peptide Works**: https://trustlypharma.co.uk/vendors/peptide-works/ (Headquarters: Manchester, UK | Est. 2020 | SPPS Sequence Verified: ≥98.5%)
+- **PharmaLab Global**: https://trustlypharma.co.uk/vendors/pharmalab-global/ (Headquarters: London, UK | Est. 2016 | Triple-Stage HPLC/MS Protocol: ≥99.0%)
+
+## Regulatory Hub & Legal Compliance
+- **Regulatory Intelligence Hub**: https://trustlypharma.co.uk/regulatory/
+- **MHRA Enforcement & Compliance Tracker**: https://trustlypharma.co.uk/regulatory/mhra-tracker/
+- **UK Legal Status Matrix (Misuse of Drugs Act 1971 / POM)**: https://trustlypharma.co.uk/regulatory/uk-legal-status/
+- **Research Safety & GLP Chemical Policy**: https://trustlypharma.co.uk/safety/
+- **Analytical Verification Standards (HPLC & ESI-MS)**: https://trustlypharma.co.uk/verification/
+
+## Core Platform Tools
+- **Reconstitution & Syringe Dilution Calculator**: https://trustlypharma.co.uk/#calculator
+- **Preclinical & Clinical Evidence Map**: https://trustlypharma.co.uk/#evidence-map
+- **Delivery Formats Technical Specification**: https://trustlypharma.co.uk/formats/
+- **Institutional Contact & Citation Desk**: https://trustlypharma.co.uk/contact/
+- **HTML Index & Directory Sitemap**: https://trustlypharma.co.uk/sitemap/
+- **XML Sitemap Feed**: https://trustlypharma.co.uk/sitemap.xml

@@ -47,6 +47,9 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   return {
     title: finalTitle,
     description: `${category.headline}. Preclinical data, molecular mechanisms, formulas, and laboratory vendor links.`.slice(0, 155),
+    alternates: {
+      canonical: `https://trustlypharma.co.uk/category/${slug}/`,
+    },
   };
 }
 
@@ -70,8 +73,61 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
     }))
   );
 
+  const pageUrl = `https://trustlypharma.co.uk/category/${category.slug}/`;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://trustlypharma.co.uk/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Pathways',
+            item: 'https://trustlypharma.co.uk/#categories',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: category.name,
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        '@type': 'CollectionPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: `${category.name} | Research Pathways & Compounds`,
+        description: category.description,
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListElement: compounds.map((c, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: c.name,
+            url: `https://trustlypharma.co.uk/peptides/${c.slug}/`,
+          })),
+        },
+      },
+    ],
+  };
+
   return (
     <div className="relative pb-24 bg-[#020e24] text-slate-100 min-h-screen">
+      {/* Schema Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Breadcrumb Navigation */}
       <div className="border-b border-[rgba(141,168,195,0.18)] bg-[#02102b] py-3">
         <div className="container-wide">
@@ -79,11 +135,11 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
             <Link href="/" className="hover:text-sky-400 transition-colors">
               Index Home
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
             <Link href="/#categories" className="hover:text-sky-400 transition-colors">
               Pathways
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
             <span className="text-white font-semibold">{category.name}</span>
           </nav>
         </div>

@@ -82,7 +82,7 @@ export default function AboutPage() {
             <Link href="/" className="hover:text-sky-400 transition-colors">
               Index
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
             <span className="text-white font-semibold">About & Methodology</span>
           </nav>
         </div>

@@ -121,7 +121,7 @@ export function EvidenceMap() {
         </div>
 
         {/* Categories Clusters - Differentiated Color & Theme */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div id="categories" className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 scroll-mt-24">
           {RESEARCH_CATEGORIES.map((cat) => {
             const theme = CATEGORY_THEMES[cat.slug] || CATEGORY_THEMES['tissue-repair-recovery'];
             const Icon = theme.icon;

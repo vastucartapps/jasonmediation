@@ -100,8 +100,47 @@ export default function ContactPage() {
     setError(null);
   };
 
+  const pageUrl = 'https://trustlypharma.co.uk/contact/';
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://trustlypharma.co.uk/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Institutional Contact',
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        '@type': 'ContactPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: 'Institutional Contact & Chemical Data Submissions | Trustly Pharma',
+        description:
+          'Direct contact desk for chemical errata, PubMed citations, academic partnerships, and commercial vendor directory inclusions at Trustly Pharma.',
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-[#020e24] text-slate-100">
+      {/* Schema Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Breadcrumb Header */}
       <section className="border-b border-[rgba(141,168,195,0.18)] bg-gradient-to-b from-[#02102b] to-[#041638] py-12 md:py-16">
         <div className="container-wide">
@@ -110,7 +149,7 @@ export default function ContactPage() {
               <Link href="/" className="hover:text-sky-400 transition-colors">
                 Index Home
               </Link>
-              <span>/</span>
+              <span className="text-slate-500">/</span>
               <span className="text-sky-400">Institutional Contact & Inquiries</span>
             </nav>
 

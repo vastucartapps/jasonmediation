@@ -33,12 +33,12 @@ const COMPOUND_LEGAL_PAGES = [
   { name: 'TB-500', slug: 'tb-500' },
   { name: 'MOTS-c', slug: 'mots-c' },
   { name: 'Ipamorelin', slug: 'ipamorelin' },
-  { name: 'CJC-1295', slug: 'cjc-1295-dac' },
+  { name: 'CJC-1295', slug: 'cjc-1295' },
   { name: 'GHK-Cu', slug: 'ghk-cu' },
   { name: 'Tirzepatide', slug: 'tirzepatide' },
   { name: 'Semaglutide', slug: 'semaglutide' },
-  { name: 'Retatrutide', slug: 'retatrutide' },
-  { name: 'Epitalon', slug: 'epitalon' },
+  { name: 'AOD-9604', slug: 'aod-9604' },
+  { name: 'Epithalon', slug: 'epithalon' },
   { name: 'Semax', slug: 'semax' },
   { name: 'Selank', slug: 'selank' },
 ];
@@ -100,7 +100,7 @@ export default function RegulatoryHubPage() {
             <Link href="/" className="hover:text-sky-400 transition-colors">
               Index
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
             <span className="text-white font-semibold">Regulatory Hub</span>
           </nav>
         </div>

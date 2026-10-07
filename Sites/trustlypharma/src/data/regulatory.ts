@@ -563,7 +563,7 @@ export const LEGAL_STATUS_MATRIX: CompoundLegalStatus[] = [
       'Tuftsin analogue with immunomodulatory and neurotrophic properties in preclinical models. Unapproved for clinical therapeutic use in the UK.',
   },
   {
-    slug: 'cjc-1295-dac',
+    slug: 'cjc-1295',
     name: 'CJC-1295 (with DAC)',
     casNumber: '863288-34-0',
     ukHumanMedicinesRegs2012: 'Unlicensed Medicinal Substance',
@@ -599,8 +599,8 @@ export const LEGAL_STATUS_MATRIX: CompoundLegalStatus[] = [
       'Copper-chelated tripeptide researched extensively in dermatological collagen synthesis. Permitted for in vitro biochemical and cosmetic chemical characterization.',
   },
   {
-    slug: 'epitalon',
-    name: 'Epitalon (Epithalamin Synthetic Tetrapeptide)',
+    slug: 'epithalon',
+    name: 'Epithalon (Epithalamin Synthetic Tetrapeptide)',
     casNumber: '307297-39-8',
     ukHumanMedicinesRegs2012: 'Unlicensed Medicinal Substance',
     misuseOfDrugsAct1971: 'Non-Controlled Substance',

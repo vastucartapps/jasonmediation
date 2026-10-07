@@ -83,11 +83,11 @@ export default function UkLegalStatusPage() {
             <Link href="/" className="hover:text-sky-400 transition-colors">
               Index
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
             <Link href="/regulatory/" className="hover:text-sky-400 transition-colors">
               Regulatory Intelligence
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
             <span className="text-white font-semibold">UK Legal Status Matrix</span>
           </nav>
         </div>

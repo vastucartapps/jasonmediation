@@ -26,8 +26,56 @@ export const metadata: Metadata = {
 export default function VendorsDirectoryPage() {
   const vendors = getAllVendors();
 
+  const pageUrl = 'https://trustlypharma.co.uk/vendors/';
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://trustlypharma.co.uk/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Commercial Vendors',
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        '@type': 'CollectionPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: 'Commercial Chemical Vendors Directory | Trustly Pharma',
+        description:
+          'Directory of verified commercial chemical vendors and laboratory synthesis partners supplying research-grade peptides, solvents, and analytical accessories.',
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListElement: vendors.map((v, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: v.name,
+            url: `https://trustlypharma.co.uk/vendors/${v.id}/`,
+          })),
+        },
+      },
+    ],
+  };
+
   return (
     <div className="relative pb-24">
+      {/* Schema Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Breadcrumb Navigation */}
       <div className="border-b border-[rgba(141,168,195,0.18)] bg-[#020e24] py-3">
         <div className="container-wide">
@@ -35,7 +83,7 @@ export default function VendorsDirectoryPage() {
             <Link href="/" className="hover:text-sky-400 transition-colors">
               Index
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
             <span className="text-white font-semibold">Commercial Vendors Directory</span>
           </nav>
         </div>

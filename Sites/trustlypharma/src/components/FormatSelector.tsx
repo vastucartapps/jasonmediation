@@ -76,7 +76,7 @@ export function FormatSelector({ availableFormats = ['vial', 'pen', 'spray', 'st
 
           <div className="space-y-3">
             <div className="p-4 rounded-2xl bg-obsidian-950/70 border border-white/5">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 block flex items-center gap-1.5 mb-1">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-semibold block flex items-center gap-1.5 mb-1">
                 <Thermometer className="w-3.5 h-3.5 text-blue-400" /> Temperature & Storage
               </span>
               <p className="text-xs text-slate-200 font-mono">
@@ -85,7 +85,7 @@ export function FormatSelector({ availableFormats = ['vial', 'pen', 'spray', 'st
             </div>
 
             <div className="p-4 rounded-2xl bg-obsidian-950/70 border border-white/5">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 block mb-1">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-semibold block mb-1">
                 Reconstitution Required?
               </span>
               <div className="flex items-center gap-2">

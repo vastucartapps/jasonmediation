@@ -24,7 +24,8 @@ export async function GET() {
     { loc: `${baseUrl}/safety/`, lastmod, changefreq: 'monthly', priority: '0.7' },
     { loc: `${baseUrl}/privacy/`, lastmod, changefreq: 'monthly', priority: '0.5' },
     { loc: `${baseUrl}/terms/`, lastmod, changefreq: 'monthly', priority: '0.5' },
-    { loc: `${baseUrl}/verification/`, lastmod, changefreq: 'monthly', priority: '0.6' }
+    { loc: `${baseUrl}/verification/`, lastmod, changefreq: 'monthly', priority: '0.6' },
+    { loc: `${baseUrl}/sitemap/`, lastmod, changefreq: 'weekly', priority: '0.6' }
   );
 
   // Dynamic compound detail pages (12 compounds)

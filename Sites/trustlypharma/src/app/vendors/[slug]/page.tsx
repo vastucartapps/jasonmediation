@@ -131,11 +131,11 @@ export default async function VendorDetailPage({ params }: PageProps) {
             <Link href="/" className="hover:text-sky-400 transition-colors">
               Index
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
             <Link href="/vendors/" className="hover:text-sky-400 transition-colors">
               Commercial Vendors
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
             <span className="text-white font-semibold">{vendor.name}</span>
           </nav>
         </div>

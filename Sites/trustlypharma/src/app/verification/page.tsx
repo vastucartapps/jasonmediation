@@ -6,11 +6,53 @@ export const metadata: Metadata = {
   title: 'Analytical Verification Standards | Trustly Pharma',
   description:
     'Technical criteria and analytical testing standards for research peptides, including HPLC chromatography assay and electrospray mass spectrometry.',
+  alternates: {
+    canonical: 'https://trustlypharma.co.uk/verification/',
+  },
 };
 
 export default function VerificationPage() {
+  const pageUrl = 'https://trustlypharma.co.uk/verification/';
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://trustlypharma.co.uk/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Analytical Standards',
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: 'Chemical Purity & Analytical Standards | Trustly Pharma',
+        description:
+          'Technical criteria and analytical testing standards for research peptides, including HPLC chromatography assay and electrospray mass spectrometry.',
+      },
+    ],
+  };
+
   return (
     <div className="relative pb-24">
+      {/* Schema Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Breadcrumb Navigation */}
       <div className="border-b border-[rgba(141,168,195,0.18)] bg-[#020e24] py-3">
         <div className="container-wide">
@@ -18,7 +60,7 @@ export default function VerificationPage() {
             <Link href="/" className="hover:text-sky-400 transition-colors">
               Index
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
             <span className="text-white font-semibold">Analytical Standards</span>
           </nav>
         </div>
