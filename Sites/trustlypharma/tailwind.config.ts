@@ -51,6 +51,9 @@ const config: Config = {
         'glow-emerald': '0 0 35px -5px rgba(16, 185, 129, 0.25)',
         'card-dark': '0 10px 30px -10px rgba(0, 0, 0, 0.5)',
       },
+      spacing: {
+        '4.5': '1.125rem',
+      },
       animation: {
         'pulse-subtle': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },

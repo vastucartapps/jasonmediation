@@ -12,12 +12,12 @@ import ftplib
 import time
 from pathlib import Path
 
-def ensure_remote_dir(ftp, rel_dir):
+def ensure_remote_dir(ftp, rel_dir, base_dir="/"):
     """
-    Ensures a remote directory exists by walking down from root '/'.
-    Leaves the FTP connection's working directory at rel_dir.
+    Ensures a remote directory exists by walking down from base_dir.
+    Leaves the FTP connection's working directory at rel_dir under base_dir.
     """
-    ftp.cwd('/')
+    ftp.cwd(base_dir)
     if not rel_dir or rel_dir in ('.', '/'):
         return
 
@@ -32,7 +32,7 @@ def ensure_remote_dir(ftp, rel_dir):
                 pass
             ftp.cwd(part)
 
-def deploy_export(host, user, password, port, source_dir, use_tls=True):
+def deploy_export(host, user, password, port, source_dir, target_dir="/", use_tls=True):
     source_path = Path(source_dir).resolve()
     if not source_path.is_dir():
         print(f"Error: Source directory '{source_path}' does not exist.")
@@ -76,7 +76,7 @@ def deploy_export(host, user, password, port, source_dir, use_tls=True):
 
         # Switch remote directory if changed
         if rel_dir != current_dir:
-            ensure_remote_dir(ftp, rel_dir)
+            ensure_remote_dir(ftp, rel_dir, base_dir=target_dir)
             current_dir = rel_dir
 
         # Upload file with retry
@@ -91,8 +91,8 @@ def deploy_export(host, user, password, port, source_dir, use_tls=True):
                 print(f"Warning: retry {attempt + 1}/3 uploading {filename}: {err}")
                 time.sleep(1)
                 try:
-                    ftp.cwd('/')
-                    ensure_remote_dir(ftp, rel_dir)
+                    ftp.cwd(target_dir)
+                    ensure_remote_dir(ftp, rel_dir, base_dir=target_dir)
                 except Exception:
                     pass
 
@@ -125,10 +125,11 @@ def deploy_export(host, user, password, port, source_dir, use_tls=True):
 def main():
     parser = argparse.ArgumentParser(description="Deploy static Next.js export to cPanel via FTPS")
     parser.add_argument("--host", default="s688.lon1.mysecurecloudhost.com", help="FTP Host")
-    parser.add_argument("--user", default="alderton@mediationdirect.co.uk", help="FTP Username")
+    parser.add_argument("--user", default="portfolio@mediationdirect.co.uk", help="FTP Username")
     parser.add_argument("--password", default="eOfia5JLHt6D2qNhdgmLw35z", help="FTP Password")
     parser.add_argument("--port", type=int, default=21, help="FTP Port (default: 21)")
-    parser.add_argument("--source", default="Sites/aldertonfamilymediation/out", help="Local export directory")
+    parser.add_argument("--source", default="Sites/trustlypharma/out", help="Local export directory")
+    parser.add_argument("--target-dir", default="/", help="Remote base directory (e.g. / or /trustlypharma.co.uk)")
     parser.add_argument("--no-tls", action="store_true", help="Disable FTPS TLS")
 
     args = parser.parse_args()
@@ -138,6 +139,7 @@ def main():
         password=args.password,
         port=args.port,
         source_dir=args.source,
+        target_dir=args.target_dir,
         use_tls=not args.no_tls,
     )
 

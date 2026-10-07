@@ -43,38 +43,45 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
           </p>
         </div>
 
-        {/* Format Filter Tabs - Clean wrapping without ugly horizontal scrollbars */}
-        <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.22)] self-start md:self-auto">
-          <button
-            type="button"
-            onClick={() => setActiveFormat('all')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
-              activeFormat === 'all'
-                ? 'bg-sky-500 text-slate-950 font-bold shadow-sm'
-                : 'text-slate-300 hover:text-white hover:bg-slate-800/40'
-            }`}
-          >
-            All Formats ({supplierLinks.length})
-          </button>
-          {availableFormats.map((fmt) => {
-            const count = supplierLinks.filter((l) => l.format === fmt).length;
-            const profile = FORMAT_PROFILES[fmt as DeliveryFormatType];
-            return (
-              <button
-                key={fmt}
-                type="button"
-                onClick={() => setActiveFormat(fmt)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all whitespace-nowrap ${
-                  activeFormat === fmt
-                    ? 'bg-sky-500 text-slate-950 font-bold shadow-sm'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-800/40'
-                }`}
-              >
-                {profile?.label.split(' ')[0]} ({count})
-              </button>
-            );
-          })}
-        </div>
+        {/* Format Filter Tabs or Single Status Badge */}
+        {availableFormats.length > 1 ? (
+          <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.22)] self-start md:self-auto">
+            <button
+              type="button"
+              onClick={() => setActiveFormat('all')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
+                activeFormat === 'all'
+                  ? 'bg-sky-500 text-slate-950 font-bold shadow-sm'
+                  : 'text-slate-300 hover:text-white hover:bg-slate-800/40'
+              }`}
+            >
+              All Formats ({supplierLinks.length})
+            </button>
+            {availableFormats.map((fmt) => {
+              const count = supplierLinks.filter((l) => l.format === fmt).length;
+              const profile = FORMAT_PROFILES[fmt as DeliveryFormatType];
+              return (
+                <button
+                  key={fmt}
+                  type="button"
+                  onClick={() => setActiveFormat(fmt)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all whitespace-nowrap ${
+                    activeFormat === fmt
+                      ? 'bg-sky-500 text-slate-950 font-bold shadow-sm'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/40'
+                  }`}
+                >
+                  {profile?.label.split(' ')[0]} ({count})
+                </button>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="px-4 py-2 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.25)] text-xs font-mono text-sky-300 font-semibold flex items-center gap-2 self-start md:self-auto shadow-sm">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+            <span>{supplierLinks.length} Verified Partner Catalogues</span>
+          </div>
+        )}
       </div>
 
       {/* Comparison Grid */}

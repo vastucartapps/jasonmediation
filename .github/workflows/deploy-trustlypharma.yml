@@ -1,0 +1,50 @@
+name: Deploy Trustly Pharma to cPanel
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Sites/trustlypharma/**'
+      - '.github/workflows/deploy-trustlypharma.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy-trustlypharma:
+    name: Build & FTPS Deploy Trustly Pharma
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Monorepo
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install Workspace Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Trustly Pharma Static Export
+        run: pnpm --filter "./Sites/trustlypharma" run build
+
+      - name: Copy .htaccess to Output
+        run: cp Sites/trustlypharma/public/.htaccess Sites/trustlypharma/out/.htaccess
+
+      - name: Sync Static Export to cPanel via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER || 's688.lon1.mysecurecloudhost.com' }}
+          username: ${{ secrets.FTP_TRUSTLY_USERNAME || 'portfolio@mediationdirect.co.uk' }}
+          password: ${{ secrets.FTP_TRUSTLY_PASSWORD || 'eOfia5JLHt6D2qNhdgmLw35z' }}
+          protocol: ftps
+          port: 21
+          server-dir: /trustlypharma.co.uk/
+          local-dir: ./Sites/trustlypharma/out/
+          dangerous-clean-slate: false
