@@ -13,6 +13,9 @@ import {
   MailIcon,
   ClockIcon,
   CheckCircleIcon,
+  FacebookIcon,
+  LinkedInIcon,
+  PinterestIcon,
 } from './Icons';
 import { CookieSettingsButton } from './CookieSettingsButton';
 
@@ -115,6 +118,49 @@ export const Footer: React.FC<FooterProps> = ({ brand, brandVariant = 'alderton'
                   {brand.formattedPhone}
                 </a>
               </div>
+
+              {brand.socialLinks && (
+                <div className="pt-3 border-t border-slate-900/80">
+                  <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block mb-2.5">
+                    Connect With Our Practice
+                  </span>
+                  <div className="flex items-center gap-3">
+                    {brand.socialLinks.linkedin && (
+                      <a
+                        href={brand.socialLinks.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${brand.brandName} on LinkedIn`}
+                        className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:border-amber-400/50 hover:bg-slate-850 text-slate-400 hover:text-amber-300 flex items-center justify-center transition shadow-xs"
+                      >
+                        <LinkedInIcon className="w-4 h-4" />
+                      </a>
+                    )}
+                    {brand.socialLinks.facebook && (
+                      <a
+                        href={brand.socialLinks.facebook}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${brand.brandName} on Facebook`}
+                        className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:border-amber-400/50 hover:bg-slate-850 text-slate-400 hover:text-amber-300 flex items-center justify-center transition shadow-xs"
+                      >
+                        <FacebookIcon className="w-4 h-4" />
+                      </a>
+                    )}
+                    {brand.socialLinks.pinterest && (
+                      <a
+                        href={brand.socialLinks.pinterest}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${brand.brandName} on Pinterest`}
+                        className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:border-amber-400/50 hover:bg-slate-850 text-slate-400 hover:text-amber-300 flex items-center justify-center transition shadow-xs"
+                      >
+                        <PinterestIcon className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 

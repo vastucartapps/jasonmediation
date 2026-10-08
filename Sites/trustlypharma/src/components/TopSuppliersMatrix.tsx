@@ -102,6 +102,8 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
                     <img
                       src={profile.logoUrl}
                       alt={`${link.supplierName} logo`}
+                      width={110}
+                      height={36}
                       className="max-h-9 max-w-[110px] object-contain"
                       loading="lazy"
                     />
@@ -169,10 +171,10 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
               </div>
 
               {/* Right Column: CTA Buttons */}
-              <div className="flex items-center gap-3 shrink-0">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto shrink-0 pt-2 lg:pt-0">
                 <Link
                   href={`/vendors/${link.supplierId}/`}
-                  className="px-4 py-2.5 rounded-xl bg-[#02102b] hover:bg-[#0a2347] border border-[rgba(141,168,195,0.25)] text-xs font-mono font-semibold text-sky-300 hover:text-white transition-colors"
+                  className="px-4 py-2.5 rounded-xl bg-[#02102b] hover:bg-[#0a2347] border border-[rgba(141,168,195,0.25)] text-xs font-mono font-semibold text-sky-300 hover:text-white transition-colors text-center"
                 >
                   Vendor Profile
                 </Link>
@@ -181,10 +183,10 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="gradient-bg px-6 py-2.5 rounded-xl font-bold text-xs text-slate-950 inline-flex items-center gap-1.5 shadow-md hover:shadow-xl transition-all"
+                  className="gradient-bg px-6 py-2.5 rounded-xl font-bold text-xs text-slate-950 inline-flex items-center justify-center gap-1.5 shadow-md hover:shadow-xl transition-all"
                 >
                   <span>{link.linkType === 'category' ? 'Browse Partner Hub' : 'View Reagent Batch'}</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <ExternalLink className="w-3.5 h-3.5 shrink-0" />
                 </a>
               </div>
             </div>

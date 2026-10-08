@@ -23,7 +23,7 @@ ErrorDocument 404 /404.html
   # 3. Force HTTPS (301 Permanent Redirect)
   RewriteCond %{HTTPS} off
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  RewriteRule ^(.*)$ https://trustlypharma.co.uk/$1 [L,R=301]
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
 
   # Ensure DirectorySlash is on for clean directory URLs
   DirectorySlash On

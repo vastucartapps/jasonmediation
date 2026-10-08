@@ -138,6 +138,8 @@ export default function VendorsDirectoryPage() {
                       <img
                         src={vendor.logoUrl}
                         alt={`${vendor.name} logo`}
+                        width={130}
+                        height={36}
                         className="max-h-9 max-w-[130px] object-contain"
                         loading="lazy"
                       />

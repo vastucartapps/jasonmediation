@@ -126,7 +126,14 @@ export function Footer() {
                     <span className="flex items-center gap-2.5">
                       {sup.faviconUrl && (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={sup.faviconUrl} alt={`${sup.name} vendor icon`} className="w-4 h-4 rounded object-contain shrink-0" />
+                        <img
+                          src={sup.faviconUrl}
+                          alt={`${sup.name} vendor icon`}
+                          width={16}
+                          height={16}
+                          className="w-4 h-4 rounded object-contain shrink-0"
+                          loading="lazy"
+                        />
                       )}
                       <span>{sup.name}</span>
                     </span>

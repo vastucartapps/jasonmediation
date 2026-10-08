@@ -60,6 +60,11 @@ export const ALDERTON_CONTACT = {
     country: 'GB',
   },
   matomoSiteId: '110', // Matomo Site ID for Alderton Family Mediation
+  socialLinks: {
+    facebook: 'https://www.facebook.com/aldertonfamilymediation.co.uk',
+    pinterest: 'https://www.pinterest.com/aldertonfamilymediation/',
+    linkedin: 'https://www.linkedin.com/company/alderton-family-mediation-co-uk/',
+  },
 };
 
 export const CAVENDISH_CONTACT = {
@@ -79,4 +84,9 @@ export const CAVENDISH_CONTACT = {
     country: 'GB',
   },
   matomoSiteId: '111', // Matomo Site ID for Cavendish Family Mediation
+  socialLinks: {
+    facebook: 'https://www.facebook.com/cavendish.family.mediation.co.uk',
+    pinterest: 'https://www.pinterest.com/cavendishfamilymediation/',
+    linkedin: 'https://www.linkedin.com/company/cavendish-family-mediation-co-uk/',
+  },
 };

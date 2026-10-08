@@ -79,7 +79,14 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
     '@context': 'https://schema.org',
     '@graph': [
       {
+        '@type': 'WebSite',
+        '@id': 'https://trustlypharma.co.uk/#website',
+        url: 'https://trustlypharma.co.uk',
+        name: 'Trustly Pharma',
+      },
+      {
         '@type': 'BreadcrumbList',
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           {
             '@type': 'ListItem',
@@ -107,6 +114,8 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
         url: pageUrl,
         name: `${category.name} | Research Pathways & Compounds`,
         description: category.description,
+        isPartOf: { '@id': 'https://trustlypharma.co.uk/#website' },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
         mainEntity: {
           '@type': 'ItemList',
           itemListElement: compounds.map((c, i) => ({

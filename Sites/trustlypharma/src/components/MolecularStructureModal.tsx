@@ -500,6 +500,8 @@ export function MolecularStructureModal({
                   <img
                     src={pubchemImageUrl}
                     alt={`2D Chemical Structure of ${compound.name}`}
+                    width={400}
+                    height={320}
                     className={`max-h-[320px] w-auto object-contain transition-all duration-300 ${
                       invert2D ? 'filter invert hue-rotate-180 brightness-110 contrast-125' : ''
                     }`}

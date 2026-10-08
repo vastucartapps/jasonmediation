@@ -157,6 +157,15 @@ export interface GuideArticle {
   tableOfContents?: TableOfContentsItem[];
 }
 
+export interface SocialLinks {
+  facebook?: string;
+  pinterest?: string;
+  linkedin?: string;
+  twitter?: string;
+  instagram?: string;
+  youtube?: string;
+}
+
 export interface BrandConfig {
   brandId: 'alderton' | 'cavendish' | string;
   brandName: string;
@@ -183,6 +192,7 @@ export interface BrandConfig {
     surfaceBgHex: string;
     cardBorderHex: string;
   };
+  socialLinks?: SocialLinks;
   googleAnalyticsId?: string;
   googleSiteVerification?: string;
   matomoSiteId?: string;

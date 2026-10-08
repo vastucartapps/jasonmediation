@@ -32,25 +32,46 @@ def ensure_remote_dir(ftp, rel_dir, base_dir="/"):
                 pass
             ftp.cwd(part)
 
+import socket
+
+socket.setdefaulttimeout(30)
+
+def connect_ftp(host, user, password, port, use_tls=True):
+    print(f"Connecting to {host}:{port} via {'FTPS (explicit TLS)' if use_tls else 'standard FTP'}...")
+    if use_tls:
+        ftp = ftplib.FTP_TLS(timeout=30)
+        ftp.connect(host, port, timeout=30)
+        ftp.auth()
+        ftp.login(user, password)
+        ftp.prot_p()
+    else:
+        ftp = ftplib.FTP(timeout=30)
+        ftp.connect(host, port, timeout=30)
+        ftp.login(user, password)
+
+    ftp.set_pasv(True)
+    return ftp
+
+def get_remote_file_sizes(ftp):
+    sizes = {}
+    try:
+        for name, facts in ftp.mlsd():
+            if facts.get('type') == 'file':
+                try:
+                    sizes[name] = int(facts.get('size', -1))
+                except (ValueError, TypeError):
+                    pass
+    except Exception:
+        pass
+    return sizes
+
 def deploy_export(host, user, password, port, source_dir, target_dir="/", use_tls=True):
     source_path = Path(source_dir).resolve()
     if not source_path.is_dir():
         print(f"Error: Source directory '{source_path}' does not exist.")
         sys.exit(1)
 
-    print(f"Connecting to {host}:{port} via {'FTPS (explicit TLS)' if use_tls else 'standard FTP'}...")
-    if use_tls:
-        ftp = ftplib.FTP_TLS()
-        ftp.connect(host, port, timeout=30)
-        ftp.auth()
-        ftp.login(user, password)
-        ftp.prot_p()
-    else:
-        ftp = ftplib.FTP()
-        ftp.connect(host, port, timeout=30)
-        ftp.login(user, password)
-
-    ftp.set_pasv(True)
+    ftp = connect_ftp(host, user, password, port, use_tls)
     print(f"Authenticated successfully as {user}. Remote root: {ftp.pwd()}")
 
     # Collect all local files
@@ -63,13 +84,15 @@ def deploy_export(host, user, password, port, source_dir, target_dir="/", use_tl
 
     total_files = len(all_files)
     total_bytes = sum(os.path.getsize(f[0]) for f in all_files)
-    print(f"Discovered {total_files} files ({total_bytes / (1024 * 1024):.2f} MB) to deploy.\n")
+    print(f"Discovered {total_files} files ({total_bytes / (1024 * 1024):.2f} MB) to deploy.\n", flush=True)
 
     uploaded_count = 0
+    skipped_count = 0
     uploaded_bytes = 0
     start_time = time.time()
 
     current_dir = None
+    remote_sizes = {}
 
     for idx, (local_file, rel_dir, filename) in enumerate(all_files, 1):
         file_size = os.path.getsize(local_file)
@@ -78,8 +101,22 @@ def deploy_export(host, user, password, port, source_dir, target_dir="/", use_tl
         if rel_dir != current_dir:
             ensure_remote_dir(ftp, rel_dir, base_dir=target_dir)
             current_dir = rel_dir
+            remote_sizes = get_remote_file_sizes(ftp)
 
-        # Upload file with retry
+        # Smart delta sync:
+        # Static media (images, fonts, pdfs, icons) and hashed chunks can be safely skipped if exact size matches
+        is_static_asset = filename.lower().endswith(
+            ('.webp', '.jpg', '.jpeg', '.png', '.woff', '.woff2', '.pdf', '.ico', '.txt', '.svg', '.mp4')
+        ) or ('_next' in rel_dir and filename.lower().endswith(('.js', '.css')))
+
+        if is_static_asset and filename in remote_sizes and remote_sizes[filename] == file_size:
+            skipped_count += 1
+            if idx % 25 == 0 or idx == total_files:
+                percent = (idx / total_files) * 100
+                print(f"[{idx:3d}/{total_files:3d}] ({percent:5.1f}%) [SYNCED] -> {rel_dir}/{filename}", flush=True)
+            continue
+
+        # Upload file with automatic reconnect retry
         success = False
         for attempt in range(3):
             try:
@@ -88,16 +125,21 @@ def deploy_export(host, user, password, port, source_dir, target_dir="/", use_tl
                 success = True
                 break
             except Exception as err:
-                print(f"Warning: retry {attempt + 1}/3 uploading {filename}: {err}")
-                time.sleep(1)
+                print(f"Warning: retry {attempt + 1}/3 uploading {filename}: {err}", flush=True)
+                time.sleep(1.5)
                 try:
-                    ftp.cwd(target_dir)
-                    ensure_remote_dir(ftp, rel_dir, base_dir=target_dir)
+                    ftp.close()
                 except Exception:
                     pass
+                try:
+                    ftp = connect_ftp(host, user, password, port, use_tls)
+                    ensure_remote_dir(ftp, rel_dir, base_dir=target_dir)
+                    remote_sizes = get_remote_file_sizes(ftp)
+                except Exception as reconnect_err:
+                    print(f"Reconnect error: {reconnect_err}", flush=True)
 
         if not success:
-            print(f"FAILED to upload: {local_file} -> {rel_dir}/{filename}")
+            print(f"FAILED to upload: {local_file} -> {rel_dir}/{filename}", flush=True)
             sys.exit(1)
 
         uploaded_count += 1
@@ -107,20 +149,23 @@ def deploy_export(host, user, password, port, source_dir, target_dir="/", use_tl
         if rel_dir == '.':
             remote_display = f"/{filename}"
 
-        if idx % 20 == 0 or idx == total_files or idx <= 5:
+        if idx % 10 == 0 or idx == total_files or idx <= 5:
             percent = (idx / total_files) * 100
-            print(f"[{idx:3d}/{total_files:3d}] ({percent:5.1f}%) -> {remote_display} ({file_size / 1024:.1f} KB)")
+            print(f"[{idx:3d}/{total_files:3d}] ({percent:5.1f}%) [UPLOADED] -> {remote_display} ({file_size / 1024:.1f} KB)", flush=True)
 
-    ftp.cwd('/')
-    ftp.quit()
+    try:
+        ftp.cwd('/')
+        ftp.quit()
+    except Exception:
+        pass
 
     duration = time.time() - start_time
-    print(f"\n==========================================")
-    print(f" Deployment Completed Successfully!")
-    print(f" Total Files:   {uploaded_count}")
-    print(f" Total Payload: {uploaded_bytes / (1024 * 1024):.2f} MB")
-    print(f" Elapsed Time:  {duration:.1f} seconds ({uploaded_bytes / (1024 * duration):.1f} KB/s)")
-    print(f"==========================================\n")
+    print(f"\n==========================================", flush=True)
+    print(f" Deployment Completed Successfully!", flush=True)
+    print(f" Total Files:   {total_files} (Uploaded: {uploaded_count}, Skipped: {skipped_count})", flush=True)
+    print(f" Uploaded Size: {uploaded_bytes / (1024 * 1024):.2f} MB", flush=True)
+    print(f" Elapsed Time:  {duration:.1f} seconds", flush=True)
+    print(f"==========================================\n", flush=True)
 
 def main():
     parser = argparse.ArgumentParser(description="Deploy static Next.js export to cPanel via FTPS")

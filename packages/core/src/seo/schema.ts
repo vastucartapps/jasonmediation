@@ -169,6 +169,7 @@ export function generateLocalBusinessSchema(
       'https://www.wikidata.org/wiki/Q1519789', // Ministry of Justice (United Kingdom)
       'https://www.wikidata.org/wiki/Q5818968', // HMCTS
       'https://www.wikidata.org/wiki/Q5098319', // Children Act 1989
+      ...(brand.socialLinks ? Object.values(brand.socialLinks).filter((url): url is string => Boolean(url)) : []),
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',

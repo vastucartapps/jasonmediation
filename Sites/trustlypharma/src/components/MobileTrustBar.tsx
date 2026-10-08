@@ -43,7 +43,7 @@ export function MobileTrustBar() {
             <Link
               key={link.label}
               href={link.href}
-              className={`flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-center transition-colors ${
+              className={`flex flex-col items-center justify-center min-h-[44px] py-1.5 px-1 rounded-xl text-center transition-colors ${
                 link.isActive
                   ? 'bg-sky-500/15 text-sky-300 font-bold'
                   : 'text-slate-300 hover:text-white hover:bg-slate-800/40'

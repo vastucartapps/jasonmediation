@@ -19,6 +19,7 @@ export const CAVENDISH_BRAND: BrandConfig = {
   counties: SITE2_COUNTIES,
   matomoSiteId: CAVENDISH_CONTACT.matomoSiteId,
   matomoBaseUrl: CAVENDISH_CONTACT.matomoBaseUrl,
+  socialLinks: CAVENDISH_CONTACT.socialLinks,
   theme: {
     primaryHex: '#064E3B',
     primaryLightHex: '#047857',

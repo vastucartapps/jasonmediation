@@ -113,6 +113,16 @@ export default async function VendorDetailPage({ params }: PageProps) {
           },
         ],
       },
+      {
+        '@type': 'WebPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: `${vendor.name} Commercial Vendor Dossier & Independent Testing Matrix`,
+        description: vendor.productCatalogSummary,
+        isPartOf: { '@id': 'https://trustlypharma.co.uk/#website' },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
+        mainEntity: { '@id': `${pageUrl}#organization` },
+      },
     ],
   };
 
@@ -168,6 +178,8 @@ export default async function VendorDetailPage({ params }: PageProps) {
                     <img
                       src={vendor.logoUrl}
                       alt={`${vendor.name} logo`}
+                      width={170}
+                      height={40}
                       className="max-h-10 max-w-[170px] object-contain"
                     />
                   </div>
@@ -178,7 +190,14 @@ export default async function VendorDetailPage({ params }: PageProps) {
                   </h1>
                   <div className="flex items-center gap-2">
                     {vendor.faviconUrl && (
-                      <img src={vendor.faviconUrl} alt="" className="w-4 h-4 rounded object-contain" />
+                      <img
+                        src={vendor.faviconUrl}
+                        alt={`${vendor.name} favicon`}
+                        width={16}
+                        height={16}
+                        className="w-4 h-4 rounded object-contain"
+                        loading="lazy"
+                      />
                     )}
                     <span className="text-sm font-mono text-sky-300 font-semibold">
                       {vendor.domain}
