@@ -70,7 +70,7 @@ export default function ContactPage() {
     }
 
     if (!form.confirmAcademic) {
-      setError('Please confirm that your inquiry relates strictly to academic, chemical, or directory correspondence.');
+      setError('Please confirm that the inquiry relates strictly to academic, chemical, or directory correspondence.');
       return;
     }
 
@@ -347,8 +347,9 @@ export default function ContactPage() {
                   </div>
 
                   <div className="pt-2">
-                    <label className="flex items-start gap-3 cursor-pointer select-none">
+                    <label htmlFor="confirmAcademic" className="flex items-start gap-3 cursor-pointer select-none">
                       <input
+                        id="confirmAcademic"
                         type="checkbox"
                         checked={form.confirmAcademic}
                         onChange={(e) => setForm({ ...form, confirmAcademic: e.target.checked })}

@@ -36,7 +36,7 @@ export default function HomePage() {
                 '@type': 'DefinedTerm',
                 name: 'TB-500',
                 termCode: '77591-33-4',
-                description: 'Thymosin Beta-4 synthetic fragment investigating actin sequestration and wound recovery.',
+                description: 'Thymosin Beta-4 synthetic fragment investigating actin sequestration, cellular migration, and tissue repair models.',
               },
               {
                 '@type': 'DefinedTerm',

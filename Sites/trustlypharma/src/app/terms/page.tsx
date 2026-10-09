@@ -65,9 +65,9 @@ export default function TermsPage() {
                 <span className="text-sky-400 font-mono text-sm">02.</span> No Clinical or Medical Advice
               </h2>
               <p>
-                Information cataloged on this portal does not constitute medical, veterinary, or pharmacological advice. 
-                Peptide compounds described are handled strictly for in vitro and laboratory assays. We make no therapeutic 
-                or efficacy claims for human consumption.
+                Information cataloged on this portal does not constitute medical, veterinary, or clinical advice. 
+                Peptide compounds described are handled strictly as investigational chemical reagents for in vitro and laboratory assays. 
+                Materials indexed on this platform are not approved for human or veterinary administration, diagnosis, or therapeutic treatment.
               </p>
             </div>
 

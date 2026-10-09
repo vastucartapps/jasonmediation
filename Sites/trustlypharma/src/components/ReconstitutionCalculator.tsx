@@ -73,7 +73,7 @@ export function ReconstitutionCalculator({
           {/* 1. Vial Amount */}
           <div className="p-5 sm:p-6 rounded-2xl bg-[#031535] border border-[rgba(141,168,195,0.25)] space-y-3.5 shadow-sm">
             <div className="flex justify-between items-center">
-              <label className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+              <label htmlFor="vial-mass-slider" className="text-sm sm:text-base font-bold text-white flex items-center gap-2 cursor-pointer">
                 <span className="w-5 h-5 rounded-md bg-sky-500/20 text-sky-400 text-xs font-mono font-extrabold flex items-center justify-center">1</span>
                 <span>Lyophilized Vial Mass</span>
               </label>
@@ -97,11 +97,16 @@ export function ReconstitutionCalculator({
             </div>
             <div className="pt-1">
               <input
+                id="vial-mass-slider"
                 type="range"
                 min="1"
                 max="20"
                 step="0.5"
                 value={vialMg}
+                aria-label="Lyophilized Vial Mass in milligrams"
+                aria-valuemin={1}
+                aria-valuemax={20}
+                aria-valuenow={vialMg}
                 onChange={(e) => setVialMg(parseFloat(e.target.value))}
                 className="w-full h-2 rounded-lg accent-sky-400 cursor-pointer"
               />
@@ -111,7 +116,7 @@ export function ReconstitutionCalculator({
           {/* 2. Bacteriostatic Water Added */}
           <div className="p-5 sm:p-6 rounded-2xl bg-[#031535] border border-[rgba(141,168,195,0.25)] space-y-3.5 shadow-sm">
             <div className="flex justify-between items-center">
-              <label className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+              <label htmlFor="solvent-volume-slider" className="text-sm sm:text-base font-bold text-white flex items-center gap-2 cursor-pointer">
                 <span className="w-5 h-5 rounded-md bg-sky-500/20 text-sky-400 text-xs font-mono font-extrabold flex items-center justify-center">2</span>
                 <span>Reconstitution Solvent Added</span>
               </label>
@@ -135,11 +140,16 @@ export function ReconstitutionCalculator({
             </div>
             <div className="pt-1">
               <input
+                id="solvent-volume-slider"
                 type="range"
                 min="0.5"
                 max="5"
                 step="0.5"
                 value={waterMl}
+                aria-label="Reconstitution Solvent Volume in milliliters"
+                aria-valuemin={0.5}
+                aria-valuemax={5}
+                aria-valuenow={waterMl}
                 onChange={(e) => setWaterMl(parseFloat(e.target.value))}
                 className="w-full h-2 rounded-lg accent-sky-400 cursor-pointer"
               />
@@ -149,7 +159,7 @@ export function ReconstitutionCalculator({
           {/* 3. Target Aliquot */}
           <div className="p-5 sm:p-6 rounded-2xl bg-[#031535] border border-[rgba(141,168,195,0.25)] space-y-3.5 shadow-sm">
             <div className="flex justify-between items-center">
-              <label className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+              <label htmlFor="target-dose-slider" className="text-sm sm:text-base font-bold text-white flex items-center gap-2 cursor-pointer">
                 <span className="w-5 h-5 rounded-md bg-amber-500/20 text-amber-400 text-xs font-mono font-extrabold flex items-center justify-center">3</span>
                 <span>Target Aliquot / Test Mass</span>
               </label>
@@ -173,11 +183,16 @@ export function ReconstitutionCalculator({
             </div>
             <div className="pt-1">
               <input
+                id="target-dose-slider"
                 type="range"
                 min="50"
                 max="2000"
                 step="50"
                 value={doseMcg}
+                aria-label="Target Aliquot Mass in micrograms"
+                aria-valuemin={50}
+                aria-valuemax={2000}
+                aria-valuenow={doseMcg}
                 onChange={(e) => setDoseMcg(parseInt(e.target.value))}
                 className="w-full h-2 rounded-lg accent-amber-400 cursor-pointer"
               />
@@ -309,7 +324,7 @@ export function ReconstitutionCalculator({
                 Aliquot Yield Per Vial
               </span>
               <span className="text-amber-300 font-bold text-lg sm:text-xl block mt-0.5">
-                {Math.floor(totalDoses)} Doses
+                {Math.floor(totalDoses)} Aliquots
               </span>
               <span className="text-xs text-slate-400 block">
                 ({(vialMg * 1000).toLocaleString()} mcg total)

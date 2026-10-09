@@ -21,7 +21,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       'Modulation of nitric oxide (NO) synthase isoforms (eNOS and iNOS) in capillary endothelium.',
       'Downregulation of pro-inflammatory cytokines TNF-alpha and IL-6 in explanted tissue assays.',
     ],
-    preclinicalResearchNotes: 'Extensively cataloged in preclinical animal models for microvascular integrity, soft tissue rupture recovery, and mucosal epithelial restoration. It is handled exclusively for in vitro and laboratory evaluation.',
+    preclinicalResearchNotes: 'Extensively cataloged in preclinical animal models for microvascular integrity, soft tissue transection models, and mucosal epithelial cellular barrier integrity. It is handled exclusively for in vitro and laboratory evaluation.',
     availableFormats: ['vial', 'pen', 'spray', 'stack'],
     reconstitution: {
       recommendedDiluent: 'Bacteriostatic 0.9% Benzyl Alcohol USP or Sterile Purified Water',
@@ -96,7 +96,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         authors: 'Sikiric P, Seiwerth S, Rucman R, Turkovic B, et al.',
         pubmedId: '29898969',
         doi: '10.2174/1570159X17666190313134114',
-        keyFindings: 'Demonstrated stabilization of cellular membranes, attenuation of endothelial dysfunction, and accelerated healing cascades in preclinical models.',
+        keyFindings: 'Demonstrated stabilization of cellular membranes, attenuation of endothelial dysfunction, and accelerated microvascular repair cascades in preclinical models.',
       },
       {
         title: 'Pentadecapeptide BPC 157 enhances the growth hormone receptor expression in tendon fibroblasts',
@@ -138,7 +138,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       'Stimulation of epicardial progenitor cell mobilization and coronary vessel morphogenesis in vitro.',
       'Suppression of nuclear factor-kappa B (NF-kB) phosphorylation to blunt chronic inflammatory cascades.',
     ],
-    preclinicalResearchNotes: 'Characterized by high systemic diffusivity due to low molecular weight relative to parent Thymosin Beta-4. Evaluated in wound closure assays and skeletal muscle micro-trauma models.',
+    preclinicalResearchNotes: 'Characterized by high systemic diffusivity due to low molecular weight relative to parent Thymosin Beta-4. Evaluated in cell migration scratch assays and skeletal muscle cellular motility models.',
     availableFormats: ['vial', 'pen', 'spray', 'stack'],
     reconstitution: {
       recommendedDiluent: 'Bacteriostatic Water with 0.9% Benzyl Alcohol USP',
@@ -365,14 +365,14 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
     sequence: ['Gly', 'His', 'Lys', '[Cu2+]'],
     categorySlug: 'dermal-extracellular-matrix',
     categoryName: 'Dermal & Extracellular Matrix',
-    shortOverview: 'GHK-Cu is a human plasma-derived tripeptide with stoichiometric affinity for copper(II) ions. Researched for its capacity to reset gene expression patterns toward tissue regeneration, upregulate procollagen and elastin biosynthesis, and accelerate dermal re-epithelialization.',
+    shortOverview: 'GHK-Cu is a human plasma-derived tripeptide with stoichiometric affinity for copper(II) ions. Researched for its capacity to modulate gene expression involved in tissue remodeling, upregulate procollagen and elastin biosynthesis, and stimulate in vitro dermal fibroblast migration.',
     mechanismOfAction: [
       'Coordinate bonding with divalent copper Cu2+, delivering bio-available copper directly to lysyl oxidase and superoxide dismutase.',
       'Direct stimulation of dermal fibroblast procollagen type I and type III mRNA transcription.',
       'Modulation of matrix metalloproteinases (MMP-1, MMP-2) and tissue inhibitors of metalloproteinases (TIMP-1).',
       'Downregulation of inflammatory master regulator NF-kB and suppression of transforming growth factor-beta 1 overactivation.',
     ],
-    preclinicalResearchNotes: 'Distinguished by its characteristic intense royal blue appearance upon copper coordinate complexation. Evaluated in wound healing, skin thickness, and hair follicle anagen phase expansion models.',
+    preclinicalResearchNotes: 'Distinguished by its characteristic intense royal blue appearance upon copper coordinate complexation. Evaluated in dermal fibroblast proliferation, extracellular matrix remodeling, and follicular cellular transition models.',
     availableFormats: ['vial', 'pen', 'spray', 'stack'],
     reconstitution: {
       recommendedDiluent: 'Bacteriostatic Water USP or Sterile Saline',
@@ -723,7 +723,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       'Absence of binding to human growth hormone receptors, preventing IGF-1 induction or diabetogenic hyperglycemia.',
       'Chondrogenesis induction and extracellular matrix accumulation in cartilage explants.',
     ],
-    preclinicalResearchNotes: 'Subject of extensive academic investigation for fat oxidation dynamics and joint cartilage regeneration. Characterized by excellent safety and tolerability in preclinical and human safety trials.',
+    preclinicalResearchNotes: 'Subject of academic investigation for beta-3 adrenergic receptor lipolytic signaling and chondrocyte proteoglycan synthesis in preclinical models.',
     availableFormats: ['vial', 'pen', 'spray', 'stack'],
     reconstitution: {
       recommendedDiluent: 'Bacteriostatic Water USP or Sterile Saline',
@@ -807,7 +807,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         authors: 'Stier H, Vos E, Kenley D.',
         pubmedId: '25236178',
         doi: '10.1016/j.yrtph.2014.09.006',
-        keyFindings: 'Demonstrated exceptional safety profile with no evidence of anti-GH antibodies or altered glucose metabolism in randomized trials.',
+        keyFindings: 'Reported absence of anti-GH antibodies or adverse glycemic disruption across randomized clinical cohorts evaluating tolerability endpoints.',
       },
       {
         title: 'AOD9604 enhances in vitro chondrogenic differentiation of mesenchymal stem cells',
@@ -840,7 +840,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       'Inhibition of enkephalinase enzymes, attenuating degradation of endogenous leu- and met-enkephalins.',
       'Modulation of serotonin (5-HT) and dopamine turnover rates under acute experimental conditions.',
     ],
-    preclinicalResearchNotes: 'Evaluated in human clinical trials in Eastern Europe and preclinical rodent behavioral models for anxiolytic activity, nootropic modulation, and neuroprotective preservation against toxic insults.',
+    preclinicalResearchNotes: 'Evaluated in Eastern European clinical literature and preclinical rodent behavioral models for GABA-A receptor modulation, exploratory behavioral endpoints, and neuronal cell survival under acute stressors.',
     availableFormats: ['vial', 'spray'],
     reconstitution: {
       recommendedDiluent: 'Bacteriostatic Water or Sterile Isotonic Saline',
@@ -948,7 +948,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       'Antioxidant scavenging and attenuation of lipid peroxidation and reactive oxygen species (ROS) in cell models.',
       'Modulation of chromatin accessibility and epigenetic methylation patterns across age-associated gene loci.',
     ],
-    preclinicalResearchNotes: 'Investigated extensively in biogerontological models, organotypic explants, and cell culture assays for chromosome end-cap stabilization and cellular lifespan extension.',
+    preclinicalResearchNotes: 'Investigated in biogerontological models, organotypic explants, and cell culture assays for chromosome end-cap stabilization and cellular senescence dynamics in somatic culture models.',
     availableFormats: ['vial', 'spray'],
     reconstitution: {
       recommendedDiluent: 'Bacteriostatic Water or Sterile Purified Water',
@@ -1056,7 +1056,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       'Enhancement of cellular glucose uptake independent of insulin receptor substrate pathways.',
       'Reduction of inflammatory cytokine secretion in explanted tissue models.',
     ],
-    preclinicalResearchNotes: 'Extensively evaluated in preclinical murine models of insulin resistance, age-related metabolic decline, and physical endurance kinetics.',
+    preclinicalResearchNotes: 'Evaluated in preclinical murine models for AMPK activation cascades, cellular glucose transport kinetics, and mitochondrial metabolic homeostasis.',
     availableFormats: ['vial'],
     reconstitution: {
       recommendedDiluent: 'Bacteriostatic 0.9% Benzyl Alcohol USP or Sterile Purified Water',
@@ -1131,7 +1131,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         authors: 'Lee C, Zeng J, Drew BG, Sallam T, et al.',
         pubmedId: '25738459',
         doi: '10.1016/j.cmet.2015.02.001',
-        keyFindings: 'Identified MOTS-c as a systemic peptide acting on muscle tissue to restore insulin sensitivity and metabolic flexibility via AMPK activation.',
+        keyFindings: 'Identified MOTS-c as a systemic peptide acting on skeletal muscle cells to modulate glucose uptake and metabolic flexibility via AMPK activation.',
       },
       {
         title: 'MOTS-c is an exercise-induced mitochondrial-encoded regulator of physical capacity and performance',
@@ -1347,7 +1347,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         authors: 'Wilding JPH, Batterham RL, Calanna S, Davies M, et al.',
         pubmedId: '33567185',
         doi: '10.1056/NEJMoa2032183',
-        keyFindings: 'Documented 14.9% mean weight loss at week 68 alongside significant reductions in cardiometabolic risk markers.',
+        keyFindings: 'Documented 14.9% mean body weight reduction endpoint at week 68 in clinical trial cohorts alongside significant reductions in cardiometabolic risk markers.',
       },
       {
         title: 'Semaglutide and Cardiovascular Outcomes in Patients with Type 2 Diabetes',

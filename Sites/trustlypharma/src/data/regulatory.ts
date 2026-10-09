@@ -414,8 +414,8 @@ export const OFFICIAL_REGULATORY_SOURCES = [
   },
   {
     authority: 'MHRA',
-    title: 'Report a fake or illegally supplied medicine',
-    desc: 'The MHRA route for reporting a website or seller supplying medicines illegally, and for reporting a product you believe is counterfeit.',
+    title: 'Report an unlicensed or illegally supplied medicine',
+    desc: 'The MHRA statutory reporting channel for unlicensed sellers supplying prescription products unlawfully, and for submitting intelligence regarding suspected counterfeit reagents.',
     url: 'https://www.gov.uk/guidance/contact-mhra',
   },
   {

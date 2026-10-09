@@ -146,11 +146,13 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
 
         {/* Search Input Box */}
         <div className="relative">
-          <Search className="w-5 h-5 text-sky-400 absolute left-4 top-1/2 -translate-y-1/2" />
+          <Search className="w-5 h-5 text-sky-400 absolute left-4 top-1/2 -translate-y-1/2" aria-hidden="true" />
           <input
+            id="search-input"
             ref={inputRef}
             type="text"
             value={query}
+            aria-label="Search peptides by compound name, CAS number, or formula"
             onChange={(e) => {
               setQuery(e.target.value);
               setSelectedIndex(0);

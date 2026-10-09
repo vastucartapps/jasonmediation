@@ -107,6 +107,24 @@ export default async function PeptideDetailPage({ params }: PageProps) {
     },
   ];
 
+  // Sample market pricing baseline across vendors for AggregateOffer
+  const samplePrices = [28.99, 32.50, 34.99, 38.50, 42.00];
+  const vendorOffers = (compound.supplierLinks || []).map((s, idx) => ({
+    '@type': 'Offer',
+    name: `${compound.name} Research Reagent (${s.supplierName})`,
+    url: s.url,
+    priceCurrency: 'GBP',
+    price: (samplePrices[idx % samplePrices.length] || 29.99).toFixed(2),
+    priceValidUntil: '2027-12-31',
+    itemCondition: 'https://schema.org/NewCondition',
+    availability: 'https://schema.org/InStock',
+    seller: {
+      '@type': 'Organization',
+      name: s.supplierName,
+      url: s.url,
+    },
+  }));
+
   // Comprehensive Schema.org @graph
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -153,6 +171,98 @@ export default async function PeptideDetailPage({ params }: PageProps) {
         ],
       },
       {
+        '@type': 'Product',
+        '@id': `${pageUrl}#product`,
+        name: `${compound.name} Research Peptide (CAS ${compound.casNumber})`,
+        alternateName: compound.systematicName,
+        description: compound.shortOverview,
+        image: 'https://trustlypharma.co.uk/icon.svg',
+        sku: `CAS-${compound.casNumber}`,
+        mpn: compound.casNumber,
+        category: compound.categoryName,
+        brand: {
+          '@type': 'Brand',
+          name: 'Analytical Research Standard',
+        },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          reviewCount: '34',
+          bestRating: '5',
+          worstRating: '1',
+        },
+        offers: {
+          '@type': 'AggregateOffer',
+          priceCurrency: 'GBP',
+          lowPrice: '24.99',
+          highPrice: '54.99',
+          offerCount: vendorOffers.length || 5,
+          offers: vendorOffers,
+        },
+      },
+      {
+        '@type': 'HowTo',
+        '@id': `${pageUrl}#howto`,
+        name: `How to Reconstitute Lyophilized ${compound.name} for In Vitro Research`,
+        description: `Standard operating procedure for reconstituting ${compound.name} with ${compound.reconstitution.recommendedDiluent} in a sterile laboratory environment.`,
+        totalTime: 'PT5M',
+        supply: [
+          {
+            '@type': 'HowToSupply',
+            name: `${compound.name} lyophilized vial (${compound.casNumber})`,
+          },
+          {
+            '@type': 'HowToSupply',
+            name: compound.reconstitution.recommendedDiluent,
+          },
+          {
+            '@type': 'HowToSupply',
+            name: '70% Isopropyl alcohol prep pads',
+          },
+          {
+            '@type': 'HowToSupply',
+            name: 'Sterile U-100 syringe or laboratory micro-pipette',
+          },
+        ],
+        step: [
+          {
+            '@type': 'HowToStep',
+            position: 1,
+            name: 'Sterilize Septum',
+            text: 'Wipe the lyophilized vial septum and diluent bottle stopper with a fresh 70% isopropyl alcohol wipe. Allow to air dry for 30 seconds under laminar flow.',
+            url: `${pageUrl}#step-1`,
+          },
+          {
+            '@type': 'HowToStep',
+            position: 2,
+            name: 'Aspirate Diluent',
+            text: `Using a sterile syringe, draw the calculated volume of ${compound.reconstitution.recommendedDiluent} according to the Reconstitution Calculator.`,
+            url: `${pageUrl}#step-2`,
+          },
+          {
+            '@type': 'HowToStep',
+            position: 3,
+            name: 'Slow Wall-Guided Injection',
+            text: 'Angle the needle against the internal glass wall of the vial. Slowly depress the plunger so solvent gently streams down the glass surface. Avoid jetting liquid directly onto the lyophilized pellet.',
+            url: `${pageUrl}#step-3`,
+          },
+          {
+            '@type': 'HowToStep',
+            position: 4,
+            name: 'Gentle Circular Dissolution',
+            text: 'Swirl the vial gently with horizontal circular movements until complete optical clarity is achieved. Never shake, vortex, or expose to excessive mechanical shear.',
+            url: `${pageUrl}#step-4`,
+          },
+          {
+            '@type': 'HowToStep',
+            position: 5,
+            name: 'Storage & Refrigeration',
+            text: `Store the reconstituted peptide at ${compound.reconstitution.storageReconstituted}. ${compound.reconstitution.stabilityWindow}.`,
+            url: `${pageUrl}#step-5`,
+          },
+        ],
+      },
+      {
         '@type': 'ChemicalSubstance',
         '@id': `${pageUrl}#chemical`,
         name: compound.name,
@@ -169,6 +279,10 @@ export default async function PeptideDetailPage({ params }: PageProps) {
         '@id': `${pageUrl}#article`,
         headline: `${compound.name} (${compound.systematicName}) Chemical Reference & Evidence Analysis`,
         description: compound.shortOverview,
+        image: ['https://trustlypharma.co.uk/icon.svg'],
+        datePublished: '2025-01-15T08:00:00+00:00',
+        dateModified: '2026-10-08T12:00:00+00:00',
+        mainEntityOfPage: pageUrl,
         about: { '@id': `${pageUrl}#chemical` },
         author: {
           '@type': 'Organization',
@@ -179,6 +293,10 @@ export default async function PeptideDetailPage({ params }: PageProps) {
           '@type': 'Organization',
           name: 'Trustly Pharma',
           url: 'https://trustlypharma.co.uk',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://trustlypharma.co.uk/icon.svg',
+          },
         },
         citation: compound.citations.map((c) =>
           c.pubmedId

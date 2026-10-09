@@ -388,10 +388,10 @@ export default function RegulatoryHubPage() {
         <section className="rounded-3xl p-6 sm:p-9 bg-[#041433] border border-[rgba(141,168,195,0.25)] shadow-2xl space-y-6">
           <div className="space-y-2">
             <h2 className="text-2xl font-bold text-white">
-              Check it yourself: the official sources
+              Primary Statutory & Official Sources
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
-              Trustly Pharma is editorial commentary. Nothing here replaces the statutory authority of the UK regulator, and you should not take our word for any of it. These are the official UK destinations where the underlying position is published, free to read and open to anyone.
+              Trustly Pharma provides analytical educational commentary. Editorial summaries do not substitute for statutory guidance issued by the UK regulator. Official UK repositories publish primary legislative texts and classification notices for independent verification:
             </p>
           </div>
 

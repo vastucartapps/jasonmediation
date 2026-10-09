@@ -199,12 +199,18 @@ export function HeroHelix() {
       chains.forEach(drawChain);
     };
 
-    const loop = () => {
+    let lastTime = 0;
+    const loop = (timestamp: number) => {
       if (!running) return;
+      raf = requestAnimationFrame(loop);
+      // Throttle to ~30fps (32ms) to eliminate long tasks and reduce main-thread CPU overhead
+      if (timestamp - lastTime < 32) return;
+      lastTime = timestamp;
       t += 1;
       draw();
-      raf = requestAnimationFrame(loop);
     };
+
+    let startTimer: ReturnType<typeof setTimeout> | null = null;
 
     const start = () => {
       if (reduce) return draw();
@@ -213,7 +219,17 @@ export function HeroHelix() {
       raf = requestAnimationFrame(loop);
     };
 
+    const scheduleStart = () => {
+      if (startTimer) clearTimeout(startTimer);
+      // Defer continuous loop start until after initial paint & hydration window
+      startTimer = setTimeout(start, 500);
+    };
+
     const stop = () => {
+      if (startTimer) {
+        clearTimeout(startTimer);
+        startTimer = null;
+      }
       running = false;
       if (raf) cancelAnimationFrame(raf);
       raf = 0;
@@ -225,11 +241,11 @@ export function HeroHelix() {
       resize();
       draw();
     };
-    const onVisibility = () => (document.hidden ? stop() : start());
+    const onVisibility = () => (document.hidden ? stop() : scheduleStart());
     window.addEventListener('resize', onResize);
     document.addEventListener('visibilitychange', onVisibility);
     const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => (e.isIntersecting ? start() : stop())),
+      (entries) => entries.forEach((e) => (e.isIntersecting ? scheduleStart() : stop())),
       { threshold: 0 }
     );
     io.observe(canvas);

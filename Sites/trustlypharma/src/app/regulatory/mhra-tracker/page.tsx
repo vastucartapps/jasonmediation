@@ -383,9 +383,9 @@ export default function MhraTrackerPage() {
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-200 leading-relaxed max-w-4xl">
-            Our editorial board continuously reviews official gazettes, MHRA Enforcement Group releases, and international anti-doping updates. If you represent an academic institution or regulatory agency with verifiable public documentation, contact our desk at{' '}
+            The editorial curation board continuously monitors statutory gazettes, MHRA Enforcement Group bulletins, and regulatory border notices. Academic institutions or regulatory researchers submitting verifiable public documentation may reach the editorial desk via{' '}
             <Link href="/contact/" className="text-sky-300 hover:text-white underline underline-offset-2">
-              regulatory@trustlypharma.co.uk
+              the institutional contact desk
             </Link>.
           </p>
         </div>

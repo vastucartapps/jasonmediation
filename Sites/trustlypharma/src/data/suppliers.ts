@@ -39,7 +39,7 @@ export const VENDOR_PROFILES: Record<string, VendorProfile> = {
         url: 'https://pharmagrade.store/category/healing/',
       },
       {
-        categoryName: 'Nootropic & Neuroprotective Compounds',
+        categoryName: 'Neuropeptides & CNS Signaling Compounds',
         url: 'https://pharmagrade.store/category/nootropics/',
       },
     ],
