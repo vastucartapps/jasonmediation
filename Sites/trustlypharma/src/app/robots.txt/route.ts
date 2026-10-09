@@ -6,7 +6,7 @@ export async function GET() {
   const robots = `User-agent: *
 Allow: /
 
-Sitemap: https://trustlypharma.co.uk/sitemap.xml
+Sitemap: https://trustlypharma.uk/sitemap.xml
 `;
 
   return new NextResponse(robots, {

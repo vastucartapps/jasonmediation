@@ -19,13 +19,13 @@ export const metadata: Metadata = {
   description:
     'Comprehensive directory sitemap indexing all chemical compound dossiers, research pathways, verified vendor directories, and regulatory intelligence trackers.',
   alternates: {
-    canonical: 'https://trustlypharma.co.uk/sitemap/',
+    canonical: 'https://trustlypharma.uk/sitemap/',
   },
 };
 
 export default function SitemapPage() {
   const vendors = getAllVendors();
-  const pageUrl = 'https://trustlypharma.co.uk/sitemap/';
+  const pageUrl = 'https://trustlypharma.uk/sitemap/';
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -37,7 +37,7 @@ export default function SitemapPage() {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://trustlypharma.co.uk/',
+            item: 'https://trustlypharma.uk/',
           },
           {
             '@type': 'ListItem',

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description:
     'Rolling 90-day archive of MHRA drug safety updates, warning letters, and enforcement actions touching synthetic research peptides in the UK.',
   alternates: {
-    canonical: 'https://trustlypharma.co.uk/regulatory/mhra-tracker/',
+    canonical: 'https://trustlypharma.uk/regulatory/mhra-tracker/',
   },
 };
 
@@ -39,40 +39,40 @@ export default function MhraTrackerPage() {
     '@graph': [
       {
         '@type': 'WebSite',
-        '@id': 'https://trustlypharma.co.uk/#website',
-        url: 'https://trustlypharma.co.uk',
+        '@id': 'https://trustlypharma.uk/#website',
+        url: 'https://trustlypharma.uk',
         name: 'Trustly Pharma',
       },
       {
         '@type': 'MedicalWebPage',
-        '@id': 'https://trustlypharma.co.uk/regulatory/mhra-tracker/#webpage',
-        url: 'https://trustlypharma.co.uk/regulatory/mhra-tracker/',
+        '@id': 'https://trustlypharma.uk/regulatory/mhra-tracker/#webpage',
+        url: 'https://trustlypharma.uk/regulatory/mhra-tracker/',
         name: 'MHRA Enforcement and Safety Tracker',
         description:
           'Rolling 90-day archive of MHRA drug safety updates and enforcement actions regarding synthetic peptide compounds.',
-        isPartOf: { '@id': 'https://trustlypharma.co.uk/#website' },
+        isPartOf: { '@id': 'https://trustlypharma.uk/#website' },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': 'https://trustlypharma.co.uk/regulatory/mhra-tracker/#breadcrumb',
+        '@id': 'https://trustlypharma.uk/regulatory/mhra-tracker/#breadcrumb',
         itemListElement: [
           {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://trustlypharma.co.uk/',
+            item: 'https://trustlypharma.uk/',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Regulatory Intelligence',
-            item: 'https://trustlypharma.co.uk/regulatory/',
+            item: 'https://trustlypharma.uk/regulatory/',
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: 'MHRA Tracker',
-            item: 'https://trustlypharma.co.uk/regulatory/mhra-tracker/',
+            item: 'https://trustlypharma.uk/regulatory/mhra-tracker/',
           },
         ],
       },

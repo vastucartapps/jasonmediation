@@ -6,7 +6,7 @@ import { getAllVendors } from '../../data/suppliers';
 export const dynamic = 'force-static';
 
 export async function GET() {
-  const baseUrl = 'https://trustlypharma.co.uk';
+  const baseUrl = 'https://trustlypharma.uk';
   const lastmod = new Date().toISOString().split('T')[0];
 
   const urls: { loc: string; lastmod: string; changefreq: string; priority: string }[] = [];

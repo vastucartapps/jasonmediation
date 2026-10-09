@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     'Directory of verified commercial chemical vendors and laboratory synthesis partners supplying research-grade peptides, solvents, and analytical accessories.',
   alternates: {
-    canonical: 'https://trustlypharma.co.uk/vendors/',
+    canonical: 'https://trustlypharma.uk/vendors/',
   },
 };
 

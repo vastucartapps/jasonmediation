@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const pageUrl = `https://trustlypharma.co.uk/peptides/${compound.slug}/`;
+  const pageUrl = `https://trustlypharma.uk/peptides/${compound.slug}/`;
 
   return {
     title: `${compound.name} Chemical Profile & CAS | Trustly Pharma`,
@@ -84,8 +84,8 @@ export default async function PeptideDetailPage({ params }: PageProps) {
   }
 
   const lvl = evidenceLevels[compound.evidenceLevel];
-  const pageUrl = `https://trustlypharma.co.uk/peptides/${compound.slug}/`;
-  const categoryUrl = `https://trustlypharma.co.uk/category/${compound.categorySlug}/`;
+  const pageUrl = `https://trustlypharma.uk/peptides/${compound.slug}/`;
+  const categoryUrl = `https://trustlypharma.uk/category/${compound.categorySlug}/`;
 
   // FAQ Data for Schema and On-Page Rendering
   const faqs = [
@@ -131,8 +131,8 @@ export default async function PeptideDetailPage({ params }: PageProps) {
     '@graph': [
       {
         '@type': 'WebSite',
-        '@id': 'https://trustlypharma.co.uk/#website',
-        url: 'https://trustlypharma.co.uk',
+        '@id': 'https://trustlypharma.uk/#website',
+        url: 'https://trustlypharma.uk',
         name: 'Trustly Pharma',
         description: 'Academic Peptide Chemical Index & Independent Sourcing Matrix',
       },
@@ -142,7 +142,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
         url: pageUrl,
         name: `${compound.name} Chemical Profile & Research Sourcing Matrix`,
         description: compound.shortOverview,
-        isPartOf: { '@id': 'https://trustlypharma.co.uk/#website' },
+        isPartOf: { '@id': 'https://trustlypharma.uk/#website' },
         breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
         mainEntity: { '@id': `${pageUrl}#chemical` },
       },
@@ -154,7 +154,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://trustlypharma.co.uk/',
+            item: 'https://trustlypharma.uk/',
           },
           {
             '@type': 'ListItem',
@@ -176,7 +176,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
         name: `${compound.name} Research Peptide (CAS ${compound.casNumber})`,
         alternateName: compound.systematicName,
         description: compound.shortOverview,
-        image: 'https://trustlypharma.co.uk/icon.svg',
+        image: 'https://trustlypharma.uk/icon.svg',
         sku: `CAS-${compound.casNumber}`,
         mpn: compound.casNumber,
         category: compound.categoryName,
@@ -279,7 +279,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
         '@id': `${pageUrl}#article`,
         headline: `${compound.name} (${compound.systematicName}) Chemical Reference & Evidence Analysis`,
         description: compound.shortOverview,
-        image: ['https://trustlypharma.co.uk/icon.svg'],
+        image: ['https://trustlypharma.uk/icon.svg'],
         datePublished: '2025-01-15T08:00:00+00:00',
         dateModified: '2026-10-08T12:00:00+00:00',
         mainEntityOfPage: pageUrl,
@@ -287,15 +287,15 @@ export default async function PeptideDetailPage({ params }: PageProps) {
         author: {
           '@type': 'Organization',
           name: 'Trustly Pharma Analytical Board',
-          url: 'https://trustlypharma.co.uk',
+          url: 'https://trustlypharma.uk',
         },
         publisher: {
           '@type': 'Organization',
           name: 'Trustly Pharma',
-          url: 'https://trustlypharma.co.uk',
+          url: 'https://trustlypharma.uk',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://trustlypharma.co.uk/icon.svg',
+            url: 'https://trustlypharma.uk/icon.svg',
           },
         },
         citation: compound.citations.map((c) =>

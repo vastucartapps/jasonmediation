@@ -4,15 +4,16 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { CookieBanner } from '../components/CookieBanner';
 import { MobileTrustBar } from '../components/MobileTrustBar';
+import { MatomoTracker } from '../components/MatomoTracker';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://trustlypharma.co.uk'),
+  metadataBase: new URL('https://trustlypharma.uk'),
   title: {
     template: '%s',
     default: 'Trustly Pharma | UK & International Peptide Index',
   },
   alternates: {
-    canonical: 'https://trustlypharma.co.uk/',
+    canonical: 'https://trustlypharma.uk/',
   },
   description:
     'Peer-reviewed peptide research index, verified PubChem chemical structures, CAS registry numbers, and third-party commercial laboratory vendor directories.',
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://trustlypharma.co.uk/',
+    url: 'https://trustlypharma.uk/',
     siteName: 'Trustly Pharma',
     title: 'Trustly Pharma | UK & International Peptide Index',
     description:
@@ -80,24 +81,24 @@ export default function RootLayout({
     '@graph': [
       {
         '@type': 'WebSite',
-        '@id': 'https://trustlypharma.co.uk/#website',
-        url: 'https://trustlypharma.co.uk/',
+        '@id': 'https://trustlypharma.uk/#website',
+        url: 'https://trustlypharma.uk/',
         name: 'Trustly Pharma',
         description:
           'UK & International Peptide Index & Analytical Chemical Reference Repository',
         inLanguage: 'en-GB',
         publisher: {
-          '@id': 'https://trustlypharma.co.uk/#organization',
+          '@id': 'https://trustlypharma.uk/#organization',
         },
       },
       {
         '@type': 'ResearchOrganization',
-        '@id': 'https://trustlypharma.co.uk/#organization',
+        '@id': 'https://trustlypharma.uk/#organization',
         name: 'Trustly Pharma',
-        url: 'https://trustlypharma.co.uk/',
+        url: 'https://trustlypharma.uk/',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://trustlypharma.co.uk/icon.svg',
+          url: 'https://trustlypharma.uk/icon.svg',
           width: 512,
           height: 512,
         },
@@ -123,6 +124,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd) }}
         />
+        <MatomoTracker />
       </head>
       <body className="min-h-screen bg-[#02102b] text-slate-100 flex flex-col antialiased selection:bg-amber-400 selection:text-slate-950 pb-16 lg:pb-0">
         <Header />

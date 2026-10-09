@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'Terms of use and analytical research disclaimers for the Trustly Pharma chemical repository. Guidelines on data integrity and independent lab vendors.',
   alternates: {
-    canonical: 'https://trustlypharma.co.uk/terms/',
+    canonical: 'https://trustlypharma.uk/terms/',
   },
 };
 

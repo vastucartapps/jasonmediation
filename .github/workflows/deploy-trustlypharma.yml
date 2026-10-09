@@ -45,6 +45,6 @@ jobs:
           password: ${{ secrets.FTP_TRUSTLY_PASSWORD || 'eOfia5JLHt6D2qNhdgmLw35z' }}
           protocol: ftps
           port: 21
-          server-dir: /trustlypharma.co.uk/
+          server-dir: /trustlypharma.uk/
           local-dir: ./Sites/trustlypharma/out/
           dangerous-clean-slate: false

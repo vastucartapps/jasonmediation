@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description:
     'Independent biochemical encyclopedia: editorial charter, 5-stage verification methodology, PubMed literature curation, and commercial vendor standards.',
   alternates: {
-    canonical: 'https://trustlypharma.co.uk/about/',
+    canonical: 'https://trustlypharma.uk/about/',
   },
 };
 
@@ -33,34 +33,34 @@ export default function AboutPage() {
     '@graph': [
       {
         '@type': 'WebSite',
-        '@id': 'https://trustlypharma.co.uk/#website',
-        url: 'https://trustlypharma.co.uk',
+        '@id': 'https://trustlypharma.uk/#website',
+        url: 'https://trustlypharma.uk',
         name: 'Trustly Pharma',
       },
       {
         '@type': 'AboutPage',
-        '@id': 'https://trustlypharma.co.uk/about/#webpage',
-        url: 'https://trustlypharma.co.uk/about/',
+        '@id': 'https://trustlypharma.uk/about/#webpage',
+        url: 'https://trustlypharma.uk/about/',
         name: 'About Trustly Pharma & Analytical Methodology',
         description:
           'Independent chemical encyclopedia and academic research directory for synthetic peptides.',
-        isPartOf: { '@id': 'https://trustlypharma.co.uk/#website' },
+        isPartOf: { '@id': 'https://trustlypharma.uk/#website' },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': 'https://trustlypharma.co.uk/about/#breadcrumb',
+        '@id': 'https://trustlypharma.uk/about/#breadcrumb',
         itemListElement: [
           {
             '@type': 'ListItem',
             position: 1,
             name: 'Index Home',
-            item: 'https://trustlypharma.co.uk/',
+            item: 'https://trustlypharma.uk/',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'About & Methodology',
-            item: 'https://trustlypharma.co.uk/about/',
+            item: 'https://trustlypharma.uk/about/',
           },
         ],
       },

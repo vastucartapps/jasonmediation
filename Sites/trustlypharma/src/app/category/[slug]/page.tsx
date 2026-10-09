@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     title: finalTitle,
     description: `${category.headline}. Preclinical data, molecular mechanisms, formulas, and laboratory vendor links.`.slice(0, 155),
     alternates: {
-      canonical: `https://trustlypharma.co.uk/category/${slug}/`,
+      canonical: `https://trustlypharma.uk/category/${slug}/`,
     },
   };
 }
@@ -73,15 +73,15 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
     }))
   );
 
-  const pageUrl = `https://trustlypharma.co.uk/category/${category.slug}/`;
+  const pageUrl = `https://trustlypharma.uk/category/${category.slug}/`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebSite',
-        '@id': 'https://trustlypharma.co.uk/#website',
-        url: 'https://trustlypharma.co.uk',
+        '@id': 'https://trustlypharma.uk/#website',
+        url: 'https://trustlypharma.uk',
         name: 'Trustly Pharma',
       },
       {
@@ -92,13 +92,13 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://trustlypharma.co.uk/',
+            item: 'https://trustlypharma.uk/',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Pathways',
-            item: 'https://trustlypharma.co.uk/#categories',
+            item: 'https://trustlypharma.uk/#categories',
           },
           {
             '@type': 'ListItem',
@@ -114,7 +114,7 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
         url: pageUrl,
         name: `${category.name} | Research Pathways & Compounds`,
         description: category.description,
-        isPartOf: { '@id': 'https://trustlypharma.co.uk/#website' },
+        isPartOf: { '@id': 'https://trustlypharma.uk/#website' },
         breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
         mainEntity: {
           '@type': 'ItemList',
@@ -122,7 +122,7 @@ export default async function CategoryHubPage({ params }: CategoryPageProps) {
             '@type': 'ListItem',
             position: i + 1,
             name: c.name,
-            url: `https://trustlypharma.co.uk/peptides/${c.slug}/`,
+            url: `https://trustlypharma.uk/peptides/${c.slug}/`,
           })),
         },
       },

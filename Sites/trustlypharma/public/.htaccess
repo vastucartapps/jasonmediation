@@ -1,6 +1,6 @@
 # ----------------------------------------------------------------------
 # Apache configuration for Next.js Static Export on cPanel / LiteSpeed
-# Brand: Trustly Pharma (trustlypharma.co.uk)
+# Brand: Trustly Pharma (trustlypharma.uk)
 # ----------------------------------------------------------------------
 
 Options -Indexes
@@ -17,8 +17,9 @@ ErrorDocument 404 /404.html
   RewriteRule ^cdn-cgi/l/email-protection.*$ /contact/ [R=301,L]
 
   # 2. Force Canonical Hostname (301 Permanent Redirect)
-  RewriteCond %{HTTP_HOST} ^www\.trustlypharma\.co\.uk$ [NC]
-  RewriteRule ^(.*)$ https://trustlypharma.co.uk/$1 [L,R=301]
+  RewriteCond %{HTTP_HOST} ^(www\.)?trustlypharma\.co\.uk$ [NC,OR]
+  RewriteCond %{HTTP_HOST} ^www\.trustlypharma\.uk$ [NC]
+  RewriteRule ^(.*)$ https://trustlypharma.uk/$1 [L,R=301]
 
   # 3. Force HTTPS (301 Permanent Redirect)
   RewriteCond %{HTTPS} off

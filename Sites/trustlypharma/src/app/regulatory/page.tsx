@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description:
     'Official UK regulatory framework for research peptides and GLP-1 medicines: MHRA, WADA, FDA, EMA, and ASA statutory policies and primary citations.',
   alternates: {
-    canonical: 'https://trustlypharma.co.uk/regulatory/',
+    canonical: 'https://trustlypharma.uk/regulatory/',
   },
 };
 
@@ -49,13 +49,13 @@ export default function RegulatoryHubPage() {
     '@graph': [
       {
         '@type': 'WebSite',
-        '@id': 'https://trustlypharma.co.uk/#website',
-        url: 'https://trustlypharma.co.uk',
+        '@id': 'https://trustlypharma.uk/#website',
+        url: 'https://trustlypharma.uk',
         name: 'Trustly Pharma',
       },
       {
         '@type': 'GovernmentService',
-        '@id': 'https://trustlypharma.co.uk/regulatory/#service',
+        '@id': 'https://trustlypharma.uk/regulatory/#service',
         name: 'Peptide Regulatory Intelligence Hub',
         provider: {
           '@type': 'Organization',
@@ -66,19 +66,19 @@ export default function RegulatoryHubPage() {
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': 'https://trustlypharma.co.uk/regulatory/#breadcrumb',
+        '@id': 'https://trustlypharma.uk/regulatory/#breadcrumb',
         itemListElement: [
           {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://trustlypharma.co.uk/',
+            item: 'https://trustlypharma.uk/',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Regulatory Hub',
-            item: 'https://trustlypharma.co.uk/regulatory/',
+            item: 'https://trustlypharma.uk/regulatory/',
           },
         ],
       },

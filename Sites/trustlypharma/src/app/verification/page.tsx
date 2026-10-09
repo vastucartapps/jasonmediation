@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   description:
     'Technical criteria and analytical testing standards for research peptides, including HPLC chromatography assay and electrospray mass spectrometry.',
   alternates: {
-    canonical: 'https://trustlypharma.co.uk/verification/',
+    canonical: 'https://trustlypharma.uk/verification/',
   },
 };
 
 export default function VerificationPage() {
-  const pageUrl = 'https://trustlypharma.co.uk/verification/';
+  const pageUrl = 'https://trustlypharma.uk/verification/';
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -24,7 +24,7 @@ export default function VerificationPage() {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://trustlypharma.co.uk/',
+            item: 'https://trustlypharma.uk/',
           },
           {
             '@type': 'ListItem',

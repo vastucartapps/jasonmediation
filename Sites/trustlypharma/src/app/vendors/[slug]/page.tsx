@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const pageUrl = `https://trustlypharma.co.uk/vendors/${vendor.id}/`;
+  const pageUrl = `https://trustlypharma.uk/vendors/${vendor.id}/`;
 
   return {
     title: `${vendor.name} Analytical Profile | Trustly Pharma`,
@@ -65,7 +65,7 @@ export default async function VendorDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  const pageUrl = `https://trustlypharma.co.uk/vendors/${vendor.id}/`;
+  const pageUrl = `https://trustlypharma.uk/vendors/${vendor.id}/`;
 
   // Find compounds stocked by this vendor
   const stockedCompounds = PEPTIDE_COMPOUNDS.filter((compound) =>
@@ -77,8 +77,8 @@ export default async function VendorDetailPage({ params }: PageProps) {
     '@graph': [
       {
         '@type': 'WebSite',
-        '@id': 'https://trustlypharma.co.uk/#website',
-        url: 'https://trustlypharma.co.uk',
+        '@id': 'https://trustlypharma.uk/#website',
+        url: 'https://trustlypharma.uk',
         name: 'Trustly Pharma',
       },
       {
@@ -97,13 +97,13 @@ export default async function VendorDetailPage({ params }: PageProps) {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://trustlypharma.co.uk/',
+            item: 'https://trustlypharma.uk/',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Commercial Vendors',
-            item: 'https://trustlypharma.co.uk/vendors/',
+            item: 'https://trustlypharma.uk/vendors/',
           },
           {
             '@type': 'ListItem',
@@ -119,7 +119,7 @@ export default async function VendorDetailPage({ params }: PageProps) {
         url: pageUrl,
         name: `${vendor.name} Commercial Vendor Dossier & Independent Testing Matrix`,
         description: vendor.productCatalogSummary,
-        isPartOf: { '@id': 'https://trustlypharma.co.uk/#website' },
+        isPartOf: { '@id': 'https://trustlypharma.uk/#website' },
         breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
         mainEntity: { '@id': `${pageUrl}#organization` },
       },

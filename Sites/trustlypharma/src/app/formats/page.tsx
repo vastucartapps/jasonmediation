@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     'Laboratory guide to synthetic peptide physical delivery states: lyophilized powder vials, pen systems, nasal atomizers, and research reagent stacks.',
   alternates: {
-    canonical: 'https://trustlypharma.co.uk/formats/',
+    canonical: 'https://trustlypharma.uk/formats/',
   },
 };
 
@@ -25,32 +25,32 @@ export default function FormatsPage() {
     '@graph': [
       {
         '@type': 'WebSite',
-        '@id': 'https://trustlypharma.co.uk/#website',
-        url: 'https://trustlypharma.co.uk',
+        '@id': 'https://trustlypharma.uk/#website',
+        url: 'https://trustlypharma.uk',
         name: 'Trustly Pharma',
       },
       {
         '@type': 'TechArticle',
-        '@id': 'https://trustlypharma.co.uk/formats/#article',
+        '@id': 'https://trustlypharma.uk/formats/#article',
         headline: 'Peptide Delivery Formats & Laboratory Preparation Standards',
         description: 'Comprehensive technical reference for peptide formulation states, volumetric precision, and reconstitution SOPs.',
-        isPartOf: { '@id': 'https://trustlypharma.co.uk/#website' },
+        isPartOf: { '@id': 'https://trustlypharma.uk/#website' },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': 'https://trustlypharma.co.uk/formats/#breadcrumb',
+        '@id': 'https://trustlypharma.uk/formats/#breadcrumb',
         itemListElement: [
           {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://trustlypharma.co.uk/',
+            item: 'https://trustlypharma.uk/',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Delivery Formats',
-            item: 'https://trustlypharma.co.uk/formats/',
+            item: 'https://trustlypharma.uk/formats/',
           },
         ],
       },

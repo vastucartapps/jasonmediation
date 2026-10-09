@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   description:
     'Directory of verified commercial chemical vendors and laboratory synthesis partners supplying research-grade peptides, solvents, and analytical accessories.',
   alternates: {
-    canonical: 'https://trustlypharma.co.uk/vendors/',
+    canonical: 'https://trustlypharma.uk/vendors/',
   },
 };
 
 export default function VendorsDirectoryPage() {
   const vendors = getAllVendors();
 
-  const pageUrl = 'https://trustlypharma.co.uk/vendors/';
+  const pageUrl = 'https://trustlypharma.uk/vendors/';
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -38,7 +38,7 @@ export default function VendorsDirectoryPage() {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://trustlypharma.co.uk/',
+            item: 'https://trustlypharma.uk/',
           },
           {
             '@type': 'ListItem',
@@ -61,7 +61,7 @@ export default function VendorsDirectoryPage() {
             '@type': 'ListItem',
             position: i + 1,
             name: v.name,
-            url: `https://trustlypharma.co.uk/vendors/${v.id}/`,
+            url: `https://trustlypharma.uk/vendors/${v.id}/`,
           })),
         },
       },

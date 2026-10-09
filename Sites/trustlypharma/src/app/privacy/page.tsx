@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'UK GDPR and Data Protection Act 2018 privacy policy for the Trustly Pharma scientific directory. Transparent data practices and researcher privacy.',
   alternates: {
-    canonical: 'https://trustlypharma.co.uk/privacy/',
+    canonical: 'https://trustlypharma.uk/privacy/',
   },
 };
 
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
                 <p>
                   Data Protection Officer:{' '}
                   <span className="select-all font-mono text-sky-400 font-semibold cursor-text">
-                    privacy@trustlypharma.co.uk
+                    privacy@trustlypharma.uk
                   </span>
                 </p>
               </div>

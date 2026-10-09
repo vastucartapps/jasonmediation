@@ -16,8 +16,8 @@ export default function HomePage() {
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': 'https://trustlypharma.co.uk/#webpage',
-        url: 'https://trustlypharma.co.uk/',
+        '@id': 'https://trustlypharma.uk/#webpage',
+        url: 'https://trustlypharma.uk/',
         name: 'Trustly Pharma | UK & International Peptide Index & Chemical Encyclopedia',
         description:
           'Curated PubChem molecular profiles, peer-reviewed PubMed citations, verified laboratory preparation standards, and independent commercial vendor directories for scientific research.',

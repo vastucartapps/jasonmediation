@@ -19,12 +19,12 @@ export const metadata = {
   description:
     'Good Laboratory Practice (GLP) standards, cold-chain storage thresholds, reconstitution protocols, and chemical PPE guidelines for research peptides.',
   alternates: {
-    canonical: 'https://trustlypharma.co.uk/safety/',
+    canonical: 'https://trustlypharma.uk/safety/',
   },
 };
 
 export default function SafetyPolicyPage() {
-  const pageUrl = 'https://trustlypharma.co.uk/safety/';
+  const pageUrl = 'https://trustlypharma.uk/safety/';
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -36,7 +36,7 @@ export default function SafetyPolicyPage() {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://trustlypharma.co.uk/',
+            item: 'https://trustlypharma.uk/',
           },
           {
             '@type': 'ListItem',

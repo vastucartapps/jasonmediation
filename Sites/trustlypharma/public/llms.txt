@@ -4,53 +4,53 @@
 
 ## Core Documentation
 
-- [Home & Chemical Repository Index](https://trustlypharma.co.uk/): Comprehensive directory of synthetic research peptides, verified PubChem chemical structures, and peer-reviewed literature.
-- [Peptide Reconstitution & Dilution Calculator](https://trustlypharma.co.uk/#calculator): Interactive laboratory tool for calculating stock concentrations, micro-pipetting draw volumes, and U-100 syringe units.
-- [Analytical Verification & Testing Standards](https://trustlypharma.co.uk/verification/): Analytical methodology covering HPLC purity verification, mass spectrometry (ESI-MS), and COA validation standards.
-- [Delivery Formats & Laboratory Specifications](https://trustlypharma.co.uk/formats/): Physical delivery formats including lyophilized powder vials, nasal sprays, sublingual troches, and bacteriostatic reconstitution water.
-- [Preclinical & Clinical Evidence Map](https://trustlypharma.co.uk/#evidence-map): Evidence matrix indexing PubMed studies across human clinical trials, in vivo animal models, and in vitro cellular assays.
-- [Institutional Contact & Citation Desk](https://trustlypharma.co.uk/contact/): Institutional inquiry desk for academic researchers, analytical questions, and peer-reviewed citation submissions.
-- [HTML Sitemap Directory](https://trustlypharma.co.uk/sitemap/): Complete navigational hierarchy of all chemical dossiers, research categories, and vendor profiles.
+- [Home & Chemical Repository Index](https://trustlypharma.uk/): Comprehensive directory of synthetic research peptides, verified PubChem chemical structures, and peer-reviewed literature.
+- [Peptide Reconstitution & Dilution Calculator](https://trustlypharma.uk/#calculator): Interactive laboratory tool for calculating stock concentrations, micro-pipetting draw volumes, and U-100 syringe units.
+- [Analytical Verification & Testing Standards](https://trustlypharma.uk/verification/): Analytical methodology covering HPLC purity verification, mass spectrometry (ESI-MS), and COA validation standards.
+- [Delivery Formats & Laboratory Specifications](https://trustlypharma.uk/formats/): Physical delivery formats including lyophilized powder vials, nasal sprays, sublingual troches, and bacteriostatic reconstitution water.
+- [Preclinical & Clinical Evidence Map](https://trustlypharma.uk/#evidence-map): Evidence matrix indexing PubMed studies across human clinical trials, in vivo animal models, and in vitro cellular assays.
+- [Institutional Contact & Citation Desk](https://trustlypharma.uk/contact/): Institutional inquiry desk for academic researchers, analytical questions, and peer-reviewed citation submissions.
+- [HTML Sitemap Directory](https://trustlypharma.uk/sitemap/): Complete navigational hierarchy of all chemical dossiers, research categories, and vendor profiles.
 
 ## Research Peptides & Chemical Dossiers
 
-- [BPC-157 Research Dossier](https://trustlypharma.co.uk/peptides/bpc-157/): CAS 137525-51-0 Body Protection Compound pentadecapeptide research profile, angiogenic signaling, VEGFR2 pathways, and reconstitution guidelines.
-- [TB-500 Research Dossier](https://trustlypharma.co.uk/peptides/tb-500/): CAS 77591-33-4 Thymosin Beta-4 synthetic fragment, G-actin monomer sequestration, and cellular migration studies.
-- [Semax Research Dossier](https://trustlypharma.co.uk/peptides/semax/): CAS 80714-61-0 synthetic ACTH 4-10 analogue, BDNF upregulation, cognitive plasticity, and neuroprotective assays.
-- [Selank Research Dossier](https://trustlypharma.co.uk/peptides/selank/): CAS 129954-34-3 synthetic tuftsin analogue, GABA-A receptor modulation, and neuroimmunomodulation research.
-- [GHK-Cu Research Dossier](https://trustlypharma.co.uk/peptides/ghk-cu/): CAS 49557-75-7 copper tripeptide-1 complex, collagen synthesis, SOD antioxidant induction, and extracellular matrix remodeling.
-- [CJC-1295 Research Dossier](https://trustlypharma.co.uk/peptides/cjc-1295/): CAS 863288-34-0 tetrasubstituted GHRH 1-29 analogue with DAC, somatotroph secretion kinetics, and pharmacokinetics.
-- [Ipamorelin Research Dossier](https://trustlypharma.co.uk/peptides/ipamorelin/): CAS 170851-70-4 selective pentapeptide growth hormone secretagogue, ghrelin receptor agonism, and GH release assays.
-- [AOD-9604 Research Dossier](https://trustlypharma.co.uk/peptides/aod-9604/): CAS 221231-10-3 C-terminal hGH 177-191 fragment, beta-3 adrenergic receptor lipolytic pathway, and chondrogenesis.
-- [Epithalon Research Dossier](https://trustlypharma.co.uk/peptides/epithalon/): CAS 307297-39-8 synthetic telomerase-activating tetrapeptide, TERT catalytic subunit expression, and cellular senescence assays.
-- [MOTS-c Research Dossier](https://trustlypharma.co.uk/peptides/mots-c/): CAS 1627580-64-6 mitochondrial-derived peptide, AMPK phosphorylation activation, and metabolic homeostasis research.
-- [Tirzepatide Research Dossier](https://trustlypharma.co.uk/peptides/tirzepatide/): CAS 2023788-19-2 dual GIP and GLP-1 receptor co-agonist, incretin signaling kinetics, and beta-cell insulin secretion models.
-- [Semaglutide Research Dossier](https://trustlypharma.co.uk/peptides/semaglutide/): CAS 910463-68-2 human GLP-1 receptor agonist analogue, cAMP signal transduction, and satiety pathway investigation.
+- [BPC-157 Research Dossier](https://trustlypharma.uk/peptides/bpc-157/): CAS 137525-51-0 Body Protection Compound pentadecapeptide research profile, angiogenic signaling, VEGFR2 pathways, and reconstitution guidelines.
+- [TB-500 Research Dossier](https://trustlypharma.uk/peptides/tb-500/): CAS 77591-33-4 Thymosin Beta-4 synthetic fragment, G-actin monomer sequestration, and cellular migration studies.
+- [Semax Research Dossier](https://trustlypharma.uk/peptides/semax/): CAS 80714-61-0 synthetic ACTH 4-10 analogue, BDNF upregulation, cognitive plasticity, and neuroprotective assays.
+- [Selank Research Dossier](https://trustlypharma.uk/peptides/selank/): CAS 129954-34-3 synthetic tuftsin analogue, GABA-A receptor modulation, and neuroimmunomodulation research.
+- [GHK-Cu Research Dossier](https://trustlypharma.uk/peptides/ghk-cu/): CAS 49557-75-7 copper tripeptide-1 complex, collagen synthesis, SOD antioxidant induction, and extracellular matrix remodeling.
+- [CJC-1295 Research Dossier](https://trustlypharma.uk/peptides/cjc-1295/): CAS 863288-34-0 tetrasubstituted GHRH 1-29 analogue with DAC, somatotroph secretion kinetics, and pharmacokinetics.
+- [Ipamorelin Research Dossier](https://trustlypharma.uk/peptides/ipamorelin/): CAS 170851-70-4 selective pentapeptide growth hormone secretagogue, ghrelin receptor agonism, and GH release assays.
+- [AOD-9604 Research Dossier](https://trustlypharma.uk/peptides/aod-9604/): CAS 221231-10-3 C-terminal hGH 177-191 fragment, beta-3 adrenergic receptor lipolytic pathway, and chondrogenesis.
+- [Epithalon Research Dossier](https://trustlypharma.uk/peptides/epithalon/): CAS 307297-39-8 synthetic telomerase-activating tetrapeptide, TERT catalytic subunit expression, and cellular senescence assays.
+- [MOTS-c Research Dossier](https://trustlypharma.uk/peptides/mots-c/): CAS 1627580-64-6 mitochondrial-derived peptide, AMPK phosphorylation activation, and metabolic homeostasis research.
+- [Tirzepatide Research Dossier](https://trustlypharma.uk/peptides/tirzepatide/): CAS 2023788-19-2 dual GIP and GLP-1 receptor co-agonist, incretin signaling kinetics, and beta-cell insulin secretion models.
+- [Semaglutide Research Dossier](https://trustlypharma.uk/peptides/semaglutide/): CAS 910463-68-2 human GLP-1 receptor agonist analogue, cAMP signal transduction, and satiety pathway investigation.
 
 ## Research Categories & Signaling Pathways
 
-- [Tissue Repair & Recovery Peptides](https://trustlypharma.co.uk/category/tissue-repair-recovery/): Peptides modulating angiogenesis, fibroblast migration, and cellular extracellular matrix regeneration.
-- [Neuropeptides & Cognitive Function](https://trustlypharma.co.uk/category/neuropeptides-cognition/): Investigational peptides acting on central nervous system receptors and neurotrophic factor expression.
-- [Growth Hormone Secretagogues & GHRH](https://trustlypharma.co.uk/category/growth-hormone-secretagogues/): Compounds evaluating pituitary somatotroph receptor kinetics and pulsed hormone secretion.
-- [Metabolic Regulation & Incretin Mimicking](https://trustlypharma.co.uk/category/metabolic-regulation/): Peptides researching glucose homeostasis, dual-agonist incretin pathways, and mitochondrial signaling.
-- [Dermal Matrix & Collagen Synthesis](https://trustlypharma.co.uk/category/dermal-matrix-collagen/): Compounds investigating epidermal remodeling, fibroblast procollagen synthesis, and cosmetic science.
-- [Cellular Longevity & Telomere Integrity](https://trustlypharma.co.uk/category/cellular-longevity-aging/): Investigational peptides researching telomere length maintenance, cellular senescence, and anti-aging models.
+- [Tissue Repair & Recovery Peptides](https://trustlypharma.uk/category/tissue-repair-recovery/): Peptides modulating angiogenesis, fibroblast migration, and cellular extracellular matrix regeneration.
+- [Neuropeptides & Cognitive Function](https://trustlypharma.uk/category/neuropeptides-cognition/): Investigational peptides acting on central nervous system receptors and neurotrophic factor expression.
+- [Growth Hormone Secretagogues & GHRH](https://trustlypharma.uk/category/growth-hormone-secretagogues/): Compounds evaluating pituitary somatotroph receptor kinetics and pulsed hormone secretion.
+- [Metabolic Regulation & Incretin Mimicking](https://trustlypharma.uk/category/metabolic-regulation/): Peptides researching glucose homeostasis, dual-agonist incretin pathways, and mitochondrial signaling.
+- [Dermal Matrix & Collagen Synthesis](https://trustlypharma.uk/category/dermal-matrix-collagen/): Compounds investigating epidermal remodeling, fibroblast procollagen synthesis, and cosmetic science.
+- [Cellular Longevity & Telomere Integrity](https://trustlypharma.uk/category/cellular-longevity-aging/): Investigational peptides researching telomere length maintenance, cellular senescence, and anti-aging models.
 
 ## Verified Commercial Suppliers
 
-- [PharmaGrade Store Dossier](https://trustlypharma.co.uk/vendors/pharmagrade/): UK laboratory peptide supplier based in London, established 2018, HPLC purity threshold ≥98.0%.
-- [Direct Peptides Dossier](https://trustlypharma.co.uk/vendors/direct-peptides/): European peptide vendor based in Dublin and UK hub, established 2017, HPLC purity baseline ≥99.0%.
-- [Direct Sarms Dossier](https://trustlypharma.co.uk/vendors/direct-sarms/): UK chemical distributor based in London, established 2019, HPLC verification baseline ≥98.5%.
-- [Peptide Works Dossier](https://trustlypharma.co.uk/vendors/peptide-works/): Specialist peptide supplier based in Manchester, established 2020, SPPS sequence verified ≥98.5%.
-- [PharmaLab Global Dossier](https://trustlypharma.co.uk/vendors/pharmalab-global/): International chemical supplier based in London, established 2016, triple-stage HPLC/MS protocol ≥99.0%.
+- [PharmaGrade Store Dossier](https://trustlypharma.uk/vendors/pharmagrade/): UK laboratory peptide supplier based in London, established 2018, HPLC purity threshold ≥98.0%.
+- [Direct Peptides Dossier](https://trustlypharma.uk/vendors/direct-peptides/): European peptide vendor based in Dublin and UK hub, established 2017, HPLC purity baseline ≥99.0%.
+- [Direct Sarms Dossier](https://trustlypharma.uk/vendors/direct-sarms/): UK chemical distributor based in London, established 2019, HPLC verification baseline ≥98.5%.
+- [Peptide Works Dossier](https://trustlypharma.uk/vendors/peptide-works/): Specialist peptide supplier based in Manchester, established 2020, SPPS sequence verified ≥98.5%.
+- [PharmaLab Global Dossier](https://trustlypharma.uk/vendors/pharmalab-global/): International chemical supplier based in London, established 2016, triple-stage HPLC/MS protocol ≥99.0%.
 
 ## Regulatory Framework & Safety
 
-- [Regulatory Intelligence Hub](https://trustlypharma.co.uk/regulatory/): UK and EU statutory classification, OECD GLP standards, and chemical handling guidelines.
-- [MHRA Enforcement Tracker](https://trustlypharma.co.uk/regulatory/mhra-tracker/): Statutory medicine classification and regulatory advisories from the UK Medicines & Healthcare products Regulatory Agency.
-- [UK Legal Status Matrix](https://trustlypharma.co.uk/regulatory/uk-legal-status/): Misuse of Drugs Act 1971, Prescription Only Medicine (POM), and laboratory research chemical boundaries.
-- [Laboratory Research Safety Policy](https://trustlypharma.co.uk/safety/): Good Laboratory Practice (GLP) and UK COSHH chemical safety protocols.
+- [Regulatory Intelligence Hub](https://trustlypharma.uk/regulatory/): UK and EU statutory classification, OECD GLP standards, and chemical handling guidelines.
+- [MHRA Enforcement Tracker](https://trustlypharma.uk/regulatory/mhra-tracker/): Statutory medicine classification and regulatory advisories from the UK Medicines & Healthcare products Regulatory Agency.
+- [UK Legal Status Matrix](https://trustlypharma.uk/regulatory/uk-legal-status/): Misuse of Drugs Act 1971, Prescription Only Medicine (POM), and laboratory research chemical boundaries.
+- [Laboratory Research Safety Policy](https://trustlypharma.uk/safety/): Good Laboratory Practice (GLP) and UK COSHH chemical safety protocols.
 
 ## Optional Resources
 
-- [XML Sitemap Feed](https://trustlypharma.co.uk/sitemap.xml): Machine-readable XML sitemap index for search engine crawlers and web agents.
+- [XML Sitemap Feed](https://trustlypharma.uk/sitemap.xml): Machine-readable XML sitemap index for search engine crawlers and web agents.

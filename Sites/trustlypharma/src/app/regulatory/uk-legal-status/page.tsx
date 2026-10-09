@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     'Statutory classification matrix for 12 research peptides under UK Human Medicines Regulations 2012, Misuse of Drugs Act 1971, and WADA anti-doping codes.',
   alternates: {
-    canonical: 'https://trustlypharma.co.uk/regulatory/uk-legal-status/',
+    canonical: 'https://trustlypharma.uk/regulatory/uk-legal-status/',
   },
 };
 
@@ -29,39 +29,39 @@ export default function UkLegalStatusPage() {
     '@graph': [
       {
         '@type': 'WebSite',
-        '@id': 'https://trustlypharma.co.uk/#website',
-        url: 'https://trustlypharma.co.uk',
+        '@id': 'https://trustlypharma.uk/#website',
+        url: 'https://trustlypharma.uk',
         name: 'Trustly Pharma',
       },
       {
         '@type': 'MedicalWebPage',
-        '@id': 'https://trustlypharma.co.uk/regulatory/uk-legal-status/#webpage',
-        url: 'https://trustlypharma.co.uk/regulatory/uk-legal-status/',
+        '@id': 'https://trustlypharma.uk/regulatory/uk-legal-status/#webpage',
+        url: 'https://trustlypharma.uk/regulatory/uk-legal-status/',
         name: 'UK Peptide Legal Status & Statutory Classification Matrix',
         description: 'Comprehensive statutory classification for synthetic peptides under UK law and WADA regulations.',
-        isPartOf: { '@id': 'https://trustlypharma.co.uk/#website' },
+        isPartOf: { '@id': 'https://trustlypharma.uk/#website' },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': 'https://trustlypharma.co.uk/regulatory/uk-legal-status/#breadcrumb',
+        '@id': 'https://trustlypharma.uk/regulatory/uk-legal-status/#breadcrumb',
         itemListElement: [
           {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://trustlypharma.co.uk/',
+            item: 'https://trustlypharma.uk/',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Regulatory Intelligence',
-            item: 'https://trustlypharma.co.uk/regulatory/',
+            item: 'https://trustlypharma.uk/regulatory/',
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: 'UK Legal Status Matrix',
-            item: 'https://trustlypharma.co.uk/regulatory/uk-legal-status/',
+            item: 'https://trustlypharma.uk/regulatory/uk-legal-status/',
           },
         ],
       },

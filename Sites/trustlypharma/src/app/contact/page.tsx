@@ -100,7 +100,7 @@ export default function ContactPage() {
     setError(null);
   };
 
-  const pageUrl = 'https://trustlypharma.co.uk/contact/';
+  const pageUrl = 'https://trustlypharma.uk/contact/';
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -112,7 +112,7 @@ export default function ContactPage() {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://trustlypharma.co.uk/',
+            item: 'https://trustlypharma.uk/',
           },
           {
             '@type': 'ListItem',
@@ -408,7 +408,7 @@ export default function ContactPage() {
                     For molecular formulas, amino acid residue corrections, and isomeric notations.
                   </p>
                   <span className="select-all font-mono text-xs text-sky-300 font-semibold block cursor-text">
-                    curation@trustlypharma.co.uk
+                    curation@trustlypharma.uk
                   </span>
                 </div>
 
@@ -421,7 +421,7 @@ export default function ContactPage() {
                     Submissions of newly published peer-reviewed in vitro assays and clinical trial data.
                   </p>
                   <span className="select-all font-mono text-xs text-sky-300 font-semibold block cursor-text">
-                    editorial@trustlypharma.co.uk
+                    editorial@trustlypharma.uk
                   </span>
                 </div>
 
@@ -434,7 +434,7 @@ export default function ContactPage() {
                     Inquiries regarding inclusion in our research chemical vendor matrix (HPLC/COA verification mandatory).
                   </p>
                   <span className="select-all font-mono text-xs text-sky-300 font-semibold block cursor-text">
-                    directory@trustlypharma.co.uk
+                    directory@trustlypharma.uk
                   </span>
                 </div>
               </div>
