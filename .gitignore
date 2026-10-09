@@ -27,6 +27,8 @@ pnpm-debug.log*
 # Environment files
 .env*.local
 .env
+.env.*
+.env.cpanel
 
 # OS / Editor files
 .DS_Store
