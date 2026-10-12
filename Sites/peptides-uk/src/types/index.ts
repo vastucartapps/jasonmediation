@@ -32,6 +32,37 @@ export interface ReconstitutionSpecifications {
   standardDoseMcg?: number;
 }
 
+export interface ReceptorPharmacology {
+  primaryTarget: string;
+  receptorFamily: string;
+  bindingAffinity: string;
+  downstreamEffectors: string[];
+}
+
+export interface PharmacokineticData {
+  eliminationHalfLife: string;
+  primaryDegradationPath: string;
+  bioavailabilityModel: string;
+  renalClearanceIndex: string;
+}
+
+export interface SynthesisParameters {
+  synthesisMethod: string;
+  cTerminalModification: string;
+  nTerminalModification: string;
+  cleavageCocktail: string;
+  hplcRetentionTimeStandard: string;
+  massSpectrometryStandard: string;
+}
+
+export interface StructuredEvidenceTrial {
+  studyDesign: 'In Vitro Assay' | 'Preclinical In Vivo' | 'Double-Blind RCT' | 'Observational Cohort';
+  sampleSize: string;
+  endpointMeasured: string;
+  statisticalSignificance: string;
+  pubmedId: string;
+}
+
 export interface PeptideCompound {
   slug: string;
   name: string;
@@ -52,6 +83,10 @@ export interface PeptideCompound {
   reconstitution: ReconstitutionSpecifications;
   supplierLinks: SupplierProductLink[];
   citations: AcademicCitation[];
+  receptorPharmacology?: ReceptorPharmacology;
+  pharmacokinetics?: PharmacokineticData;
+  synthesisParameters?: SynthesisParameters;
+  structuredTrials?: StructuredEvidenceTrial[];
 }
 
 export interface ResearchCategory {

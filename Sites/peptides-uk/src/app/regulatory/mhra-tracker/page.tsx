@@ -28,7 +28,7 @@ import {
 export const metadata: Metadata = {
   title: 'MHRA Regulatory Enforcement & Drug Safety Tracker | Peptides UK',
   description:
-    'Rolling 90-day archive of MHRA drug safety updates, warning letters, border seizures, and enforcement actions touching synthetic research peptides in the United Kingdom.',
+    'Rolling 90-day archive of MHRA drug safety updates, warning letters, and border enforcement notices concerning research peptides in the United Kingdom.',
   alternates: {
     canonical: `${SITE_METADATA.url}/regulatory/mhra-tracker/`,
   },

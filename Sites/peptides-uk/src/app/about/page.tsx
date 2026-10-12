@@ -22,7 +22,7 @@ import {
 export const metadata: Metadata = {
   title: 'About Peptides UK: Editorial Charter & Analytical Methodology | Peptides UK',
   description:
-    'Independent British biochemical registry: editorial charter, 5-stage analytical verification methodology, PubChem molecular integration, and commercial supplier audit standards.',
+    'Independent British biochemical registry: editorial charter, 5-stage analytical verification, PubChem integration, and laboratory supplier audit standards.',
   alternates: {
     canonical: `${SITE_METADATA.url}/about/`,
   },

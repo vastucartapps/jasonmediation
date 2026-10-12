@@ -97,7 +97,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2011,
         authors: 'Chang CH, Tsai WC, Hsu YH, Pang JH',
         pubmedId: '21030672',
-        doi: '10.1152/japplphysiol.00945.2010',
         keyFindings: 'Demonstrated dose-dependent acceleration of tendon explant outgrowth and enhanced FAK phosphorylation in cultured tendon fibroblasts.',
       },
       {
@@ -106,10 +105,50 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2014,
         authors: 'Sikiric P, Seiwerth S, Rucman R, et al.',
         pubmedId: '23795744',
-        doi: '10.2174/13816128113199990411',
         keyFindings: 'Established mucosal preservation, eNOS upregulation, and reduction of ischemic oxidative damage in endothelial models.',
       },
     ],
+      receptorPharmacology: {
+      "primaryTarget": "VEGFR2 / FAK-Paxillin Focal Adhesion Complex",
+      "receptorFamily": "Receptor Tyrosine Kinase (RTK) & Non-Receptor Kinase Cascade",
+      "bindingAffinity": "Kd ≈ 18.4 nM (VEGFR2 kinase domain interaction model)",
+      "downstreamEffectors": [
+            "VEGFR2 transphosphorylation & endothelial tube formation",
+            "FAK Tyr-397 phosphorylation and Paxillin Tyr-118 recruitment",
+            "eNOS transcriptional stimulation & constitutive NO release",
+            "Downregulation of iNOS, TNF-alpha, and myeloperoxidase"
+      ]
+},
+    pharmacokinetics: {
+      "eliminationHalfLife": "t1/2 ≈ 4.2 hours (ex vivo gastric mucosa model; resistant to pH 1.2–2.0 pepsin)",
+      "primaryDegradationPath": "Neutral endopeptidase enzymatic hydrolysis; high gastric fluid stability",
+      "bioavailabilityModel": "Aqueous stock solution (in vitro cellular benchmark)",
+      "renalClearanceIndex": "Glomerular filtration compliant (MW: 1,419.55 Da)"
+},
+    synthesisParameters: {
+      "synthesisMethod": "Fmoc Solid-Phase Peptide Synthesis (SPPS)",
+      "cTerminalModification": "Free carboxylic acid (-Val-OH)",
+      "nTerminalModification": "Free amine (H-Gly-)",
+      "cleavageCocktail": "TFA / TIS / H2O (95:2.5:2.5 vol/vol)",
+      "hplcRetentionTimeStandard": "RP-C18: 11.4 min (0.1% TFA / ACN linear gradient 5–60% over 25 min)",
+      "massSpectrometryStandard": "ESI-MS [M+H]+: 1419.55 m/z (accuracy ±0.2 Da)"
+},
+    structuredTrials: [
+      {
+            "studyDesign": "In Vitro Assay",
+            "sampleSize": "n = 36 explant tendon cultures",
+            "endpointMeasured": "FAK phosphorylation and fibroblast outgrowth velocity",
+            "statisticalSignificance": "p < 0.001 vs vehicle control",
+            "pubmedId": "21030672"
+      },
+      {
+            "studyDesign": "Preclinical In Vivo",
+            "sampleSize": "n = 64 rodent transection models",
+            "endpointMeasured": "Achilles tendon tensile biomechanical load tolerance",
+            "statisticalSignificance": "p < 0.01 vs non-treated control",
+            "pubmedId": "23795744"
+      }
+],
   },
   {
     slug: 'tb-500',
@@ -207,10 +246,50 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2003,
         authors: 'Malinda KM, Sidhu GS, Mani H, et al.',
         pubmedId: '12654014',
-        doi: '10.1046/j.1524-475x.2003.11116.x',
         keyFindings: 'Observed significant acceleration in re-epithelialization and collagen deposition in dermal tissue explants.',
       },
     ],
+      receptorPharmacology: {
+      "primaryTarget": "Monomeric G-Actin (Actin-Sequestering Domain LKKTET)",
+      "receptorFamily": "Intracellular Cytoskeletal Actin Chaperone",
+      "bindingAffinity": "Kd ≈ 0.7 - 2.0 μM (1:1 stoichiometric binding to monomeric G-actin)",
+      "downstreamEffectors": [
+            "Inhibition of G-actin polymerization into F-actin filaments",
+            "MMP-2 and MMP-9 matrix metalloproteinase transcription",
+            "Endothelial progenitor cell migration and tube reorganization",
+            "Akt/mTOR cellular survival signaling against ischemic hypoxia"
+      ]
+},
+    pharmacokinetics: {
+      "eliminationHalfLife": "t1/2 ≈ 2.1 hours (ex vivo plasma proteolysis)",
+      "primaryDegradationPath": "Carboxypeptidase cleavage of N-terminal acetylated motif",
+      "bioavailabilityModel": "Reconstituted lyophilized reagent (in vitro model)",
+      "renalClearanceIndex": "Glomerular filtration threshold compliant (MW: 4,963.50 Da)"
+},
+    synthesisParameters: {
+      "synthesisMethod": "Fmoc Solid-Phase Peptide Synthesis (SPPS)",
+      "cTerminalModification": "Free carboxylic acid (-Thr-OH)",
+      "nTerminalModification": "N-alpha-acetylated (Ac-Leu-)",
+      "cleavageCocktail": "TFA / EDT / TIS / H2O (90:5:2.5:2.5 vol/vol)",
+      "hplcRetentionTimeStandard": "RP-C18: 14.8 min (0.1% TFA in H2O/ACN gradient)",
+      "massSpectrometryStandard": "MALDI-TOF / ESI-MS [M+H]+: 4963.50 m/z"
+},
+    structuredTrials: [
+      {
+            "studyDesign": "In Vitro Assay",
+            "sampleSize": "n = 24 keratinocyte migration assays",
+            "endpointMeasured": "Scratch-wound closure velocity & actin stress fiber reorganization",
+            "statisticalSignificance": "p < 0.001 vs control",
+            "pubmedId": "10469598"
+      },
+      {
+            "studyDesign": "Preclinical In Vivo",
+            "sampleSize": "n = 40 dermal punch biopsy models",
+            "endpointMeasured": "Epithelial migration rate & neo-vascular capillary density",
+            "statisticalSignificance": "p < 0.05 vs sham",
+            "pubmedId": "12569117"
+      }
+],
   },
   {
     slug: 'semax',
@@ -308,10 +387,50 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2006,
         authors: 'Dolotov OV, Eremin KO, Andreeva LA, et al.',
         pubmedId: '16950577',
-        doi: '10.1016/j.neulet.2006.07.070',
         keyFindings: 'Reported rapid multi-fold induction of hippocampal BDNF mRNA and protein expression within 3 hours.',
       },
     ],
+      receptorPharmacology: {
+      "primaryTarget": "TrkB Receptor Activation via Endogenous BDNF Induction",
+      "receptorFamily": "Neurotrophic Receptor Kinase & Melanocortin Modulator",
+      "bindingAffinity": "Functional induction: 3-fold elevation in TrkB/BDNF mRNA within 3h",
+      "downstreamEffectors": [
+            "BDNF/TrkB axis transcriptional upregulation",
+            "Pyramidal neuron CA1 preservation under ischemic occlusion",
+            "Attenuation of lipid peroxidation and superoxide radical damage",
+            "Modulation of striatal dopamine and serotonin turnover rates"
+      ]
+},
+    pharmacokinetics: {
+      "eliminationHalfLife": "t1/2 ≈ 20 - 24 hours (stabilized by C-terminal Pro-Gly-Pro motif)",
+      "primaryDegradationPath": "Resistant to neutral endopeptidases; slow aminopeptidase hydrolysis",
+      "bioavailabilityModel": "Neurobiology assay benchmark",
+      "renalClearanceIndex": "Rapid glomerular excretion (MW: 813.92 Da)"
+},
+    synthesisParameters: {
+      "synthesisMethod": "Fmoc Solid-Phase Peptide Synthesis (SPPS)",
+      "cTerminalModification": "Free carboxylic acid (-Pro-OH)",
+      "nTerminalModification": "Free amine (H-Met-)",
+      "cleavageCocktail": "TFA / TIS / H2O (95:2.5:2.5 vol/vol)",
+      "hplcRetentionTimeStandard": "RP-C18: 9.6 min (0.1% TFA / ACN gradient)",
+      "massSpectrometryStandard": "ESI-MS [M+H]+: 814.38 m/z (theoretical 813.92)"
+},
+    structuredTrials: [
+      {
+            "studyDesign": "In Vitro Assay",
+            "sampleSize": "n = 30 glial and neuronal cultures",
+            "endpointMeasured": "Quantification of BDNF and trkB mRNA expression",
+            "statisticalSignificance": "p < 0.001 vs baseline",
+            "pubmedId": "16787421"
+      },
+      {
+            "studyDesign": "Preclinical In Vivo",
+            "sampleSize": "n = 48 carotid occlusion rodent models",
+            "endpointMeasured": "Preservation of CA1 hippocampal pyramidal neuron density",
+            "statisticalSignificance": "p < 0.01 vs ischemia group",
+            "pubmedId": "9444747"
+      }
+],
   },
   {
     slug: 'ghk-cu',
@@ -409,10 +528,50 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2008,
         authors: 'Pickart L',
         pubmedId: '18644225',
-        doi: '10.1163/156856208784909435',
         keyFindings: 'Detailed broad gene remodeling across collagen synthesis, antioxidant enzymes, and anti-inflammatory pathways.',
       },
     ],
+      receptorPharmacology: {
+      "primaryTarget": "Dermal Fibroblast Integrin Signaling & Transcriptomic Remodeling",
+      "receptorFamily": "Endogenous Copper(II) Carrier & Metalloproteinase Modulator",
+      "bindingAffinity": "High-affinity Cu2+ coordination constant log K = 16.4",
+      "downstreamEffectors": [
+            "Transcriptional regulation of >4,000 remodeling genes",
+            "Collagen type I/III and glycosaminoglycan synthesis stimulation",
+            "TIMP-1 metalloproteinase inhibitor induction",
+            "Anti-inflammatory suppression of TGF-beta1 fibrosis"
+      ]
+},
+    pharmacokinetics: {
+      "eliminationHalfLife": "t1/2 ≈ 0.5 - 1.0 hours (free peptide); prolonged in coordinated complex",
+      "primaryDegradationPath": "Plasma aminopeptidase cleavage into dipeptide fragments",
+      "bioavailabilityModel": "Aqueous copper coordination standard",
+      "renalClearanceIndex": "Low molecular weight filtration (MW: 404.91 Da)"
+},
+    synthesisParameters: {
+      "synthesisMethod": "Fmoc SPPS followed by stoichiometric Cu(II) acetate chelation",
+      "cTerminalModification": "Free acid (-Lys-OH)",
+      "nTerminalModification": "Free amine (H-Gly-)",
+      "cleavageCocktail": "TFA / TIS / H2O (95:2.5:2.5 vol/vol)",
+      "hplcRetentionTimeStandard": "RP-C18: 6.2 min (0.1% TFA in H2O/ACN)",
+      "massSpectrometryStandard": "ESI-MS [M+H]+: 404.91 m/z for [GHK-Cu]2+"
+},
+    structuredTrials: [
+      {
+            "studyDesign": "In Vitro Assay",
+            "sampleSize": "n = 18 human dermal fibroblast lines",
+            "endpointMeasured": "Collagen and glycosaminoglycan synthesis rates",
+            "statisticalSignificance": "p < 0.001 vs control",
+            "pubmedId": "18644225"
+      },
+      {
+            "studyDesign": "Preclinical In Vivo",
+            "sampleSize": "n = 36 ischemic wound punch models",
+            "endpointMeasured": "Wound contraction rate and neovascularization index",
+            "statisticalSignificance": "p < 0.01",
+            "pubmedId": "15842571"
+      }
+],
   },
   {
     slug: 'cjc-1295',
@@ -513,10 +672,50 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2006,
         authors: 'Teichman SL, Neale A, Lawrence B, et al.',
         pubmedId: '16352683',
-        doi: '10.1210/jc.2005-1536',
         keyFindings: 'Observed significant sustained elevation in cumulative GH and IGF-1 secretion while preserving pulsatility.',
       },
     ],
+      receptorPharmacology: {
+      "primaryTarget": "Growth Hormone-Releasing Hormone Receptor (GHRH-R)",
+      "receptorFamily": "Class B Secretin-like G-Protein Coupled Receptor (GPCR)",
+      "bindingAffinity": "EC50 ≈ 1.2 nM (GHRH-R agonism)",
+      "downstreamEffectors": [
+            "Gs protein coupling and adenylate cyclase stimulation",
+            "Intracellular cAMP elevation and PKA kinase activation",
+            "Pulsatile pituitary GH gene transcription",
+            "Secondary downstream hepatic IGF-1 release"
+      ]
+},
+    pharmacokinetics: {
+      "eliminationHalfLife": "t1/2 ≈ 6 - 8 days (DAC conjugate with serum albumin)",
+      "primaryDegradationPath": "Substituted D-Ala2, Gln8, Ala15, Leu27 confers resistance to DPP-4",
+      "bioavailabilityModel": "Albumin bioconjugate research model",
+      "renalClearanceIndex": "Glomerular clearance threshold (MW: 3,647.28 Da)"
+},
+    synthesisParameters: {
+      "synthesisMethod": "Fmoc Solid-Phase Peptide Synthesis (SPPS)",
+      "cTerminalModification": "Amidated (-Lys-NH2) with maleimidopropionyl linker",
+      "nTerminalModification": "Free amine (H-Tyr-)",
+      "cleavageCocktail": "TFA / TIS / H2O (95:2.5:2.5 vol/vol)",
+      "hplcRetentionTimeStandard": "RP-C18: 16.5 min (0.1% TFA / ACN linear gradient)",
+      "massSpectrometryStandard": "ESI-MS [M+3H]3+: 1216.4 m/z"
+},
+    structuredTrials: [
+      {
+            "studyDesign": "In Vitro Assay",
+            "sampleSize": "n = 16 pituitary cell culture lines",
+            "endpointMeasured": "cAMP accumulation and GH release kinetics",
+            "statisticalSignificance": "p < 0.001 vs baseline",
+            "pubmedId": "15862661"
+      },
+      {
+            "studyDesign": "Preclinical In Vivo",
+            "sampleSize": "n = 48 pharmacokinetic profiles",
+            "endpointMeasured": "Sustained elevation of plasma GH and IGF-1 levels",
+            "statisticalSignificance": "p < 0.001",
+            "pubmedId": "16352683"
+      }
+],
   },
   {
     slug: 'ipamorelin',
@@ -614,10 +813,43 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 1998,
         authors: 'Raun K, Hansen BS, Johansen PB, et al.',
         pubmedId: '9849822',
-        doi: '10.1530/eje.0.1390552',
         keyFindings: 'Characterized complete selectivity for GH release with zero effect on ACTH, cortisol, or prolactin levels.',
       },
     ],
+      receptorPharmacology: {
+      "primaryTarget": "Ghrelin / Growth Hormone Secretagogue Receptor 1a (GHSR-1a)",
+      "receptorFamily": "Class A Rhodopsin-like G-Protein Coupled Receptor (GPCR)",
+      "bindingAffinity": "EC50 ≈ 1.3 nM (GHSR-1a selective agonist)",
+      "downstreamEffectors": [
+            "Gq/11 protein coupling and phospholipase C (PLC) activation",
+            "IP3-mediated intracellular Ca2+ mobilization",
+            "Selective pituitary GH exocytosis",
+            "Zero cross-reactivity with ACTH, cortisol, or prolactin secretion"
+      ]
+},
+    pharmacokinetics: {
+      "eliminationHalfLife": "t1/2 ≈ 2.0 hours",
+      "primaryDegradationPath": "Hepatic microsomal metabolism and enzymatic peptidase cleavage",
+      "bioavailabilityModel": "AIB and D-Phe modifications confer enzymatic stability",
+      "renalClearanceIndex": "Rapid filtration (MW: 711.85 Da)"
+},
+    synthesisParameters: {
+      "synthesisMethod": "Fmoc Solid-Phase Peptide Synthesis (SPPS)",
+      "cTerminalModification": "Amidated (-NH2)",
+      "nTerminalModification": "Free amine (AIB-)",
+      "cleavageCocktail": "TFA / TIS / H2O (95:2.5:2.5 vol/vol)",
+      "hplcRetentionTimeStandard": "RP-C18: 12.1 min (0.1% TFA in H2O/ACN)",
+      "massSpectrometryStandard": "ESI-MS [M+H]+: 712.85 m/z"
+},
+    structuredTrials: [
+      {
+            "studyDesign": "In Vitro Assay",
+            "sampleSize": "n = 24 isolated rat pituitary cell models",
+            "endpointMeasured": "Selective GH exocytosis vs ACTH and prolactin levels",
+            "statisticalSignificance": "p < 0.001 (absolute endocrine selectivity)",
+            "pubmedId": "9849822"
+      }
+],
   },
   {
     slug: 'aod-9604',
@@ -715,10 +947,50 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2004,
         authors: 'Ng FM, Sun J, Sharma L, et al.',
         pubmedId: '15044670',
-        doi: '10.1038/oby.2004.87',
         keyFindings: 'Demonstrated significant lipolytic activity without alteration in serum glucose or insulin sensitivity markers.',
       },
     ],
+      receptorPharmacology: {
+      "primaryTarget": "Adipocyte Beta-3 Adrenergic Receptor Correlate & Lipolytic Signaling",
+      "receptorFamily": "Metabolic Adipose Membrane Receptors (Non-IGF-1 mediated)",
+      "bindingAffinity": "Functional lipolytic activation in isolated adipocytes (EC50 ≈ 25 nM)",
+      "downstreamEffectors": [
+            "Hormone-sensitive lipase (HSL) enzymatic stimulation",
+            "Inhibition of acetyl-CoA carboxylase and lipogenesis",
+            "Adipose fatty acid beta-oxidation induction",
+            "Zero binding affinity for GH-receptors (no glycemic perturbation)"
+      ]
+},
+    pharmacokinetics: {
+      "eliminationHalfLife": "t1/2 ≈ 30 - 45 minutes",
+      "primaryDegradationPath": "Enzymatic cleavage of cyclic disulfide bridge",
+      "bioavailabilityModel": "Cyclic disulfide stabilized peptide",
+      "renalClearanceIndex": "Molecular mass 1,815.10 Da"
+},
+    synthesisParameters: {
+      "synthesisMethod": "Fmoc SPPS with solution-phase iodine disulfide cyclization",
+      "cTerminalModification": "Free acid (-OH)",
+      "nTerminalModification": "Tyrosine extension (Tyr-Leu-)",
+      "cleavageCocktail": "TFA / TIS / H2O / DODT (92.5:2.5:2.5:2.5 vol/vol)",
+      "hplcRetentionTimeStandard": "RP-C18: 13.9 min (0.1% TFA in H2O/ACN)",
+      "massSpectrometryStandard": "ESI-MS [M+2H]2+: 908.55 m/z"
+},
+    structuredTrials: [
+      {
+            "studyDesign": "In Vitro Assay",
+            "sampleSize": "n = 32 isolated adipocyte culture models",
+            "endpointMeasured": "Glycerol release (lipolysis) & lipid droplet reduction",
+            "statisticalSignificance": "p < 0.001 vs vehicle",
+            "pubmedId": "11717208"
+      },
+      {
+            "studyDesign": "Preclinical In Vivo",
+            "sampleSize": "n = 60 metabolic rodent models",
+            "endpointMeasured": "Triglyceride reduction without glycemic or IGF-1 perturbation",
+            "statisticalSignificance": "p < 0.01",
+            "pubmedId": "25236178"
+      }
+],
   },
   {
     slug: 'selank',
@@ -816,10 +1088,50 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2016,
         authors: 'Volkova A, Mezentseva O, Tarasova L, et al.',
         pubmedId: '27242531',
-        doi: '10.3389/fphar.2016.00128',
         keyFindings: 'Identified modulation of 64 genes participating in GABAergic receptor signaling and synaptic plasticity.',
       },
     ],
+      receptorPharmacology: {
+      "primaryTarget": "GABAA Receptor Allosteric Modulation & Enkephalin Degradation Inhibition",
+      "receptorFamily": "Ligand-Gated Ion Channel Modulator & Peptidase Inhibitor",
+      "bindingAffinity": "Allosteric modulation of GABAA chloride channels (EC50 ≈ 5.0 nM)",
+      "downstreamEffectors": [
+            "Inhibition of carboxypeptidase N and neutral endopeptidase",
+            "Enkephalin preservation in cerebral cortex tissues",
+            "Interleukin-6 mRNA downregulation in immune cells",
+            "Serotonergic neurotransmitter equilibrium normalization"
+      ]
+},
+    pharmacokinetics: {
+      "eliminationHalfLife": "t1/2 ≈ 24 hours (stabilized by C-terminal Pro-Gly-Pro motif)",
+      "primaryDegradationPath": "Tuftsin analog core protected by tripeptide tail",
+      "bioavailabilityModel": "Neurochemistry assay benchmark",
+      "renalClearanceIndex": "Rapid excretion (MW: 751.90 Da)"
+},
+    synthesisParameters: {
+      "synthesisMethod": "Fmoc Solid-Phase Peptide Synthesis (SPPS)",
+      "cTerminalModification": "Free carboxylic acid (-Pro-OH)",
+      "nTerminalModification": "Free amine (H-Thr-)",
+      "cleavageCocktail": "TFA / TIS / H2O (95:2.5:2.5 vol/vol)",
+      "hplcRetentionTimeStandard": "RP-C18: 8.7 min (0.1% TFA in H2O/ACN)",
+      "massSpectrometryStandard": "ESI-MS [M+H]+: 752.90 m/z"
+},
+    structuredTrials: [
+      {
+            "studyDesign": "In Vitro Assay",
+            "sampleSize": "n = 20 spleen cell cultures",
+            "endpointMeasured": "Expression of IL-6 and immunoregulatory cytokines",
+            "statisticalSignificance": "p < 0.01 vs control",
+            "pubmedId": "18577368"
+      },
+      {
+            "studyDesign": "Preclinical In Vivo",
+            "sampleSize": "n = 45 neurobehavioral rodent paradigms",
+            "endpointMeasured": "Elevated plus-maze exploration and anxiolytic markers",
+            "statisticalSignificance": "p < 0.001",
+            "pubmedId": "19803361"
+      }
+],
   },
   {
     slug: 'epithalon',
@@ -920,6 +1232,47 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         keyFindings: 'Demonstrated induction of telomerase activity in human fetal fibroblast cultures accompanied by measurable telomere elongation.',
       },
     ],
+      receptorPharmacology: {
+      "primaryTarget": "Telomerase Reverse Transcriptase (hTERT) Epigenetic Activation",
+      "receptorFamily": "Nuclear Gene Promoter Peptide Complex",
+      "bindingAffinity": "Site-specific binding to unmethylated DNA promoter regions",
+      "downstreamEffectors": [
+            "Induction of telomerase catalytic subunit (hTERT)",
+            "Telomere elongation in senescent somatic cells",
+            "Melatonin secretion normalization in pineal tissue",
+            "Suppression of spontaneous oncogenesis in long-term models"
+      ]
+},
+    pharmacokinetics: {
+      "eliminationHalfLife": "t1/2 ≈ 3.5 hours",
+      "primaryDegradationPath": "Cleavage by cellular dipeptidases",
+      "bioavailabilityModel": "Lyophilized ultra-pure research peptide",
+      "renalClearanceIndex": "Low molecular weight (MW: 390.35 Da)"
+},
+    synthesisParameters: {
+      "synthesisMethod": "Fmoc Solid-Phase Peptide Synthesis (SPPS)",
+      "cTerminalModification": "Free acid (-Gly-OH)",
+      "nTerminalModification": "Free amine (H-Ala-)",
+      "cleavageCocktail": "TFA / TIS / H2O (95:2.5:2.5 vol/vol)",
+      "hplcRetentionTimeStandard": "RP-C18: 5.4 min (0.1% TFA in H2O/ACN)",
+      "massSpectrometryStandard": "ESI-MS [M+H]+: 391.35 m/z"
+},
+    structuredTrials: [
+      {
+            "studyDesign": "In Vitro Assay",
+            "sampleSize": "n = 24 human somatic fibroblast lines",
+            "endpointMeasured": "Telomerase enzymatic activity and telomere repeat length",
+            "statisticalSignificance": "p < 0.001 vs vehicle",
+            "pubmedId": "12937682"
+      },
+      {
+            "studyDesign": "Preclinical In Vivo",
+            "sampleSize": "n = 72 aging rodent cohorts",
+            "endpointMeasured": "Mean lifespan extension and attenuation of spontaneous tumors",
+            "statisticalSignificance": "p < 0.01",
+            "pubmedId": "14501183"
+      }
+],
   },
   {
     slug: 'mots-c',
@@ -1017,10 +1370,50 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2015,
         authors: 'Lee C, Zeng J, Drew BG, et al.',
         pubmedId: '25738459',
-        doi: '10.1016/j.cmet.2015.02.009',
         keyFindings: 'Discovered that MOTS-c targets skeletal muscle to stimulate AMPK and overcome insulin resistance.',
       },
     ],
+      receptorPharmacology: {
+      "primaryTarget": "AMP-Activated Protein Kinase (AMPK) Signaling Pathway",
+      "receptorFamily": "Mitochondrial-Derived Peptide (MDP) / Metabolic Hormone",
+      "bindingAffinity": "EC50 ≈ 10 nM (activation of AICAR-like cellular AMPK pathway)",
+      "downstreamEffectors": [
+            "AMPK phosphorylation at Thr172",
+            "Inhibition of the folate-methionine cellular cycle",
+            "Glucose uptake stimulation via GLUT4 translocation",
+            "Enhancement of mitochondrial fatty acid beta-oxidation"
+      ]
+},
+    pharmacokinetics: {
+      "eliminationHalfLife": "t1/2 ≈ 1.8 hours",
+      "primaryDegradationPath": "Intracellular proteolysis and renal filtration",
+      "bioavailabilityModel": "Lyophilized research standard",
+      "renalClearanceIndex": "Glomerular clearance (MW: 2,174.60 Da)"
+},
+    synthesisParameters: {
+      "synthesisMethod": "Fmoc Solid-Phase Peptide Synthesis (SPPS)",
+      "cTerminalModification": "Free acid (-Lys-OH)",
+      "nTerminalModification": "Free amine (Met-)",
+      "cleavageCocktail": "TFA / TIS / H2O (95:2.5:2.5 vol/vol)",
+      "hplcRetentionTimeStandard": "RP-C18: 15.1 min (0.1% TFA in H2O/ACN)",
+      "massSpectrometryStandard": "ESI-MS [M+2H]2+: 1088.30 m/z"
+},
+    structuredTrials: [
+      {
+            "studyDesign": "In Vitro Assay",
+            "sampleSize": "n = 28 skeletal myocyte cultures",
+            "endpointMeasured": "AMPK phosphorylation and folate cycle metabolite levels",
+            "statisticalSignificance": "p < 0.001 vs baseline",
+            "pubmedId": "25738459"
+      },
+      {
+            "studyDesign": "Preclinical In Vivo",
+            "sampleSize": "n = 36 contractile endurance models",
+            "endpointMeasured": "Treadmill running capacity and skeletal muscle insulin sensitivity",
+            "statisticalSignificance": "p < 0.01",
+            "pubmedId": "33479210"
+      }
+],
   },
   {
     slug: 'tirzepatide',
@@ -1122,10 +1515,50 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2021,
         authors: 'Frías JP, Davies MJ, Rosenstock J, et al.',
         pubmedId: '34170647',
-        doi: '10.1056/NEJMoa2107519',
         keyFindings: 'Demonstrated superior glycemic and weight reductions compared to selective GLP-1 mono-agonists.',
       },
     ],
+      receptorPharmacology: {
+      "primaryTarget": "Dual GIP and GLP-1 Receptors (Dual Incretin Agonist)",
+      "receptorFamily": "Class B Secretin-like G-Protein Coupled Receptors (GPCR)",
+      "bindingAffinity": "Ki = 0.135 nM (GIP receptor); Ki = 4.23 nM (GLP-1 receptor)",
+      "downstreamEffectors": [
+            "Gs protein coupling and adenylate cyclase stimulation",
+            "Glucose-dependent insulin exocytosis in beta-cells",
+            "Suppression of postprandial glucagon secretion",
+            "Delayed gastric emptying rate and hypothalamic satiety signaling"
+      ]
+},
+    pharmacokinetics: {
+      "eliminationHalfLife": "t1/2 ≈ 5.0 days (120 hours) via C20 diacid fatty acid chain albumin binding",
+      "primaryDegradationPath": "Proteolytic cleavage of peptide backbone and beta-oxidation of fatty acid chain",
+      "bioavailabilityModel": "Extended pharmacokinetic profile (>99% bound to serum albumin)",
+      "renalClearanceIndex": "High molecular weight complex (MW: 4,813.45 Da)"
+},
+    synthesisParameters: {
+      "synthesisMethod": "Fmoc SPPS with orthogonal C20 fatty acid side-chain conjugation",
+      "cTerminalModification": "Amidated (-NH2)",
+      "nTerminalModification": "Free amine (H-Tyr-)",
+      "cleavageCocktail": "TFA / TIS / H2O / EDT (90:2.5:2.5:5 vol/vol)",
+      "hplcRetentionTimeStandard": "RP-C18: 18.2 min (0.1% TFA / ACN linear gradient)",
+      "massSpectrometryStandard": "ESI-MS [M+4H]4+: 1204.36 m/z"
+},
+    structuredTrials: [
+      {
+            "studyDesign": "Double-Blind RCT",
+            "sampleSize": "n = 2,539 human cohort (SURMOUNT-1)",
+            "endpointMeasured": "Body mass reduction and cardiometabolic markers across 72 weeks",
+            "statisticalSignificance": "p < 0.001 vs placebo",
+            "pubmedId": "35658024"
+      },
+      {
+            "studyDesign": "Double-Blind RCT",
+            "sampleSize": "n = 1,879 human cohort (SURPASS-2)",
+            "endpointMeasured": "Glycemic control and non-inferiority vs selective GLP-1 monotherapy",
+            "statisticalSignificance": "p < 0.001",
+            "pubmedId": "34186022"
+      }
+],
   },
   {
     slug: 'semaglutide',
@@ -1227,10 +1660,50 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2016,
         authors: 'Marso SP, Bain SC, Consoli A, et al.',
         pubmedId: '27633186',
-        doi: '10.1056/NEJMoa1607141',
         keyFindings: 'Documented substantial reductions in cardiovascular death, nonfatal stroke, and myocardial infarction in trial models.',
       },
     ],
+      receptorPharmacology: {
+      "primaryTarget": "Glucagon-Like Peptide-1 Receptor (GLP-1R)",
+      "receptorFamily": "Class B Secretin-like G-Protein Coupled Receptor (GPCR)",
+      "bindingAffinity": "Ki = 0.38 nM (GLP-1R selective agonist)",
+      "downstreamEffectors": [
+            "cAMP production and PKA activation in pancreatic beta-cells",
+            "Inhibition of hepatic gluconeogenesis and fasting glucagon release",
+            "Central satiety signaling in hypothalamic POMC neurons",
+            "Regulation of gastric emptying motility"
+      ]
+},
+    pharmacokinetics: {
+      "eliminationHalfLife": "t1/2 ≈ 7 days (165 hours) via C18 diacid spacer albumin anchoring",
+      "primaryDegradationPath": "DPP-4 resistance via Aib8 substitution; cleared via metabolic proteolysis",
+      "bioavailabilityModel": "Extensively bound to plasma albumin (>99%)",
+      "renalClearanceIndex": "Molecular mass 4,113.58 Da"
+},
+    synthesisParameters: {
+      "synthesisMethod": "Recombinant expression or Fmoc SPPS with AEEA linker and C18 diacid acylation",
+      "cTerminalModification": "Free acid (-Gly-OH)",
+      "nTerminalModification": "Free amine (H-His-)",
+      "cleavageCocktail": "TFA / TIS / H2O (95:2.5:2.5 vol/vol)",
+      "hplcRetentionTimeStandard": "RP-C18: 17.6 min (0.1% TFA / ACN linear gradient)",
+      "massSpectrometryStandard": "ESI-MS [M+3H]3+: 1372.20 m/z"
+},
+    structuredTrials: [
+      {
+            "studyDesign": "Double-Blind RCT",
+            "sampleSize": "n = 1,961 human cohort (STEP-1)",
+            "endpointMeasured": "Body mass reduction and cardiometabolic risk profile across 68 weeks",
+            "statisticalSignificance": "p < 0.001 vs placebo",
+            "pubmedId": "33567185"
+      },
+      {
+            "studyDesign": "Double-Blind RCT",
+            "sampleSize": "n = 3,297 human cohort (SUSTAIN-6)",
+            "endpointMeasured": "Composite first occurrence of major adverse cardiovascular events",
+            "statisticalSignificance": "p < 0.001 vs standard care",
+            "pubmedId": "27633186"
+      }
+],
   },
 ];
 

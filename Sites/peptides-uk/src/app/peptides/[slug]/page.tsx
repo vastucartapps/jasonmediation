@@ -23,6 +23,7 @@ import {
   Thermometer,
   Layers,
   Dna,
+  Atom,
 } from 'lucide-react';
 import { ReagentCard } from '@/components/ReagentCard';
 
@@ -41,7 +42,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!compound) return {};
 
   const title = `${compound.name} (${compound.casNumber}) UK Lab Monograph & Sourcing`;
-  const description = `British academic chemical monograph for ${compound.name}: CAS ${compound.casNumber}, molecular formula ${compound.molecularFormula}, MW ${compound.molecularWeight}, PubMed citations, and verified UK laboratory suppliers.`;
+  const description = `${compound.name} (${compound.casNumber}) academic monograph: formula ${compound.molecularFormula}, MW ${compound.molecularWeight}, PubMed trials, and UK vendors.`;
 
   return {
     title,
@@ -480,6 +481,208 @@ export default async function CompoundPage({ params }: PageProps) {
         </div>
       </div>
 
+      {/* Academic Monograph: Receptor Pharmacology, SPPS Synthesis, & Pharmacokinetics */}
+      <section className="space-y-6">
+        <div className="border-b border-slate-200 pb-4">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-emerald-700">
+            <Atom className="w-4 h-4 text-emerald-600" />
+            <span>Academic Biochemical Monograph</span>
+          </div>
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mt-1">
+            Receptor Affinity, SPPS Synthesis &amp; Pharmacokinetics
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-600 mt-1">
+            Standardized chemical parameters, solid-phase synthesis criteria, and quantitative receptor affinity benchmarks for {compound.name}.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Card 1: Receptor Pharmacology */}
+          {compound.receptorPharmacology && (
+            <div className="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-sm space-y-4">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                <span className="text-xs font-mono font-bold uppercase text-emerald-700 flex items-center gap-1.5">
+                  <Activity className="w-4 h-4" />
+                  <span>Receptor Binding</span>
+                </span>
+                <span className="badge-emerald text-[10px] py-0 px-2 font-mono">Pharmacology</span>
+              </div>
+              <div className="space-y-3 text-xs">
+                <div>
+                  <div className="text-slate-500 font-mono text-[11px]">Primary Biological Target</div>
+                  <div className="font-bold text-slate-900 text-sm">{compound.receptorPharmacology.primaryTarget}</div>
+                </div>
+                <div>
+                  <div className="text-slate-500 font-mono text-[11px]">Receptor Class / Superfamily</div>
+                  <div className="font-semibold text-slate-800">{compound.receptorPharmacology.receptorFamily}</div>
+                </div>
+                <div>
+                  <div className="text-slate-500 font-mono text-[11px]">Quantified Binding Affinity</div>
+                  <div className="font-mono font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200/60 inline-block mt-0.5">
+                    {compound.receptorPharmacology.bindingAffinity}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-slate-500 font-mono text-[11px] mb-1">Downstream Signaling Effectors</div>
+                  <ul className="space-y-1 text-slate-700">
+                    {compound.receptorPharmacology.downstreamEffectors.map((eff, i) => (
+                      <li key={i} className="flex items-start gap-1.5">
+                        <span className="text-emerald-500 font-bold">•</span>
+                        <span>{eff}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Card 2: Solid-Phase Peptide Synthesis (SPPS) */}
+          {compound.synthesisParameters && (
+            <div className="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-sm space-y-4">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                <span className="text-xs font-mono font-bold uppercase text-blue-700 flex items-center gap-1.5">
+                  <FlaskConical className="w-4 h-4" />
+                  <span>SPPS Synthesis</span>
+                </span>
+                <span className="badge-cobalt text-[10px] py-0 px-2 font-mono">Chemistry</span>
+              </div>
+              <div className="space-y-3 text-xs font-mono">
+                <div>
+                  <div className="text-slate-500 text-[11px]">Synthesis Methodology</div>
+                  <div className="font-bold text-slate-900 font-sans">{compound.synthesisParameters.synthesisMethod}</div>
+                </div>
+                <div className="grid grid-cols-2 gap-2 pt-1">
+                  <div>
+                    <div className="text-slate-500 text-[11px]">N-Terminal</div>
+                    <div className="font-semibold text-slate-800">{compound.synthesisParameters.nTerminalModification}</div>
+                  </div>
+                  <div>
+                    <div className="text-slate-500 text-[11px]">C-Terminal</div>
+                    <div className="font-semibold text-slate-800">{compound.synthesisParameters.cTerminalModification}</div>
+                  </div>
+                </div>
+                <div>
+                  <div className="text-slate-500 text-[11px]">Resin Cleavage Cocktail</div>
+                  <div className="text-slate-700 text-[11px] bg-slate-50 p-2 rounded-lg border border-slate-200">
+                    {compound.synthesisParameters.cleavageCocktail}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-slate-500 text-[11px]">Analytical RP-HPLC Standard</div>
+                  <div className="text-slate-800 text-[11px] font-bold">
+                    {compound.synthesisParameters.hplcRetentionTimeStandard}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-slate-500 text-[11px]">Mass Spectrometry Calibration</div>
+                  <div className="text-slate-800 text-[11px] text-blue-700 font-bold">
+                    {compound.synthesisParameters.massSpectrometryStandard}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Card 3: Pharmacokinetics & Stability */}
+          {compound.pharmacokinetics && (
+            <div className="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-sm space-y-4">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                <span className="text-xs font-mono font-bold uppercase text-purple-700 flex items-center gap-1.5">
+                  <Clock className="w-4 h-4" />
+                  <span>Pharmacokinetics</span>
+                </span>
+                <span className="bg-purple-50 text-purple-800 border border-purple-200 text-[10px] py-0 px-2 rounded-full font-mono font-bold">In Vitro PK</span>
+              </div>
+              <div className="space-y-3 text-xs">
+                <div>
+                  <div className="text-slate-500 font-mono text-[11px]">Biological Half-Life (t1/2)</div>
+                  <div className="font-mono font-bold text-slate-900 bg-purple-50/60 p-2 rounded-lg border border-purple-100 text-xs">
+                    {compound.pharmacokinetics.eliminationHalfLife}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-slate-500 font-mono text-[11px]">Primary Degradation Pathway</div>
+                  <div className="text-slate-700 leading-relaxed text-xs">
+                    {compound.pharmacokinetics.primaryDegradationPath}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-slate-500 font-mono text-[11px]">Bioavailability Profile</div>
+                  <div className="text-slate-700 text-xs">
+                    {compound.pharmacokinetics.bioavailabilityModel}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-slate-500 font-mono text-[11px]">Renal Filtration Threshold</div>
+                  <div className="text-slate-700 text-xs font-mono">
+                    {compound.pharmacokinetics.renalClearanceIndex}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Structured Trial Evidence Table */}
+      {compound.structuredTrials && compound.structuredTrials.length > 0 && (
+        <section className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-sm space-y-4">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-slate-500">
+            <BookOpen className="w-4 h-4 text-emerald-600" />
+            <span>Quantitative Pre-Clinical &amp; Clinical Evidence Matrix</span>
+          </div>
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+            Documented Biochemical Endpoints &amp; Statistical Significance
+          </h2>
+
+          <div className="overflow-x-auto pt-2">
+            <table className="w-full text-left text-xs border-collapse">
+              <thead>
+                <tr className="border-b border-slate-200 font-mono text-slate-500 uppercase text-[11px]">
+                  <th className="py-2.5 px-3">Study Design</th>
+                  <th className="py-2.5 px-3">Cohort (n)</th>
+                  <th className="py-2.5 px-3">Measured Biological Endpoint</th>
+                  <th className="py-2.5 px-3">Statistical Significance</th>
+                  <th className="py-2.5 px-3 text-right">NCBI Citation</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                {compound.structuredTrials.map((trial, idx) => (
+                  <tr key={idx} className="hover:bg-slate-50 transition-colors">
+                    <td className="py-3 px-3 font-bold text-slate-900">
+                      <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-slate-100 text-slate-700 border border-slate-200">
+                        {trial.studyDesign}
+                      </span>
+                    </td>
+                    <td className="py-3 px-3 font-mono text-slate-700">
+                      {trial.sampleSize}
+                    </td>
+                    <td className="py-3 px-3 text-slate-800 font-sans max-w-sm">
+                      {trial.endpointMeasured}
+                    </td>
+                    <td className="py-3 px-3 font-mono font-bold text-emerald-700">
+                      {trial.statisticalSignificance}
+                    </td>
+                    <td className="py-3 px-3 text-right font-mono">
+                      <a
+                        href={`https://pubmed.ncbi.nlm.nih.gov/${trial.pubmedId}/`}
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-700 font-bold hover:underline"
+                      >
+                        <span>PMID {trial.pubmedId}</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
+
       {/* Academic PubMed Citations */}
       {compound.citations && compound.citations.length > 0 && (
         <section className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-sm space-y-4">
@@ -511,7 +714,7 @@ export default async function CompoundPage({ params }: PageProps) {
                     <a
                       href={`https://pubmed.ncbi.nlm.nih.gov/${citation.pubmedId}/`}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer nofollow"
                       className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-700 font-mono font-semibold"
                     >
                       <span>PubMed PMID: {citation.pubmedId}</span>

@@ -22,15 +22,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const category = getCategoryBySlug(slug);
   if (!category) return {};
 
+  const desc = `${category.name} in UK laboratory research: ${category.headline}`.slice(0, 150);
+
   return {
     title: `${category.name} | UK Pre-Clinical Signaling Pathways`,
-    description: `${category.headline}: ${category.description}`,
+    description: desc,
     alternates: {
       canonical: `${SITE_METADATA.url}/category/${category.slug}/`,
     },
     openGraph: {
       title: `${category.name} Signaling Hub`,
-      description: category.description,
+      description: desc,
       url: `${SITE_METADATA.url}/category/${category.slug}/`,
       images: [`${SITE_METADATA.url}/icon-512x512.png`],
     },

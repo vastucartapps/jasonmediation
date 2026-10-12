@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: 'Verified UK Peptide Suppliers & Sourcing Matrix',
   description:
-    'Comprehensive independent audit of the 5 verified UK research peptide distributors: PharmaGrade Store, Direct Peptides, Direct Sarms, Peptide Works, and PharmaLab Global.',
+    'Independent audit of 5 verified UK peptide distributors: purity standards, HPLC batch verification, dispatch corridors, and laboratory research catalogs.',
   alternates: {
     canonical: `${SITE_METADATA.url}/vendors/`,
   },

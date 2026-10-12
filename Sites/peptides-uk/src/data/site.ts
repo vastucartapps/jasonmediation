@@ -8,7 +8,7 @@ export const SITE_METADATA = {
   name: 'Peptides UK',
   title: 'Peptides UK | British Laboratory Peptide Index & Sourcing Matrix',
   description:
-    'Authoritative United Kingdom academic and clinical chemical registry indexing synthetic peptides, amino acid sequences, PubChem molecular specifications, PubMed citations, and verified UK laboratory vendors.',
+    'UK academic registry indexing synthetic peptides, amino acid sequences, PubChem molecular specifications, and verified laboratory supplier audits.',
   domain: 'peptides-uk.org',
   url: 'https://peptides-uk.org',
   locale: 'en_GB',

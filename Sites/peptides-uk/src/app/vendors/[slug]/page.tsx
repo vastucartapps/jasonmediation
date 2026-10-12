@@ -34,15 +34,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const vendor = getVendorById(slug);
   if (!vendor) return {};
 
+  const desc = `Independent UK laboratory audit of ${vendor.name} (${vendor.domain}): HPLC purity ≥${vendor.hplcBaseline}%, packaging standards, and verified catalog.`;
+
   return {
     title: `${vendor.name} UK Laboratory Audit & Supplier Profile`,
-    description: `Independent UK audit of ${vendor.name} (${vendor.domain}): HPLC purity baseline ≥${vendor.hplcBaseline}%, dispatch corridors, packaging standards, and verified research compounds.`,
+    description: desc,
     alternates: {
       canonical: `${SITE_METADATA.url}/vendors/${vendor.id}/`,
     },
     openGraph: {
       title: `${vendor.name} UK Supplier Dossier`,
-      description: vendor.productCatalogSummary,
+      description: desc,
       url: `${SITE_METADATA.url}/vendors/${vendor.id}/`,
       images: [`${SITE_METADATA.url}/icon-512x512.png`],
     },

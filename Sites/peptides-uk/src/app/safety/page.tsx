@@ -17,12 +17,15 @@ import {
   Scale,
   ArrowRight,
   ExternalLink,
+  Thermometer,
+  FileCheck2,
+  ShieldCheck,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'COSHH Chemical Safety & Laboratory Handling Protocols | Peptides UK',
   description:
-    'Comprehensive UK laboratory chemical safety guidelines under the Control of Substances Hazardous to Health Regulations 2002 (COSHH): PPE specifications, spill response, exposure protocols, and hazardous waste disposal.',
+    'UK laboratory chemical safety protocols under COSHH 2002: PPE specifications, spill response, exposure protocols, and hazardous waste disposal.',
   alternates: {
     canonical: `${SITE_METADATA.url}/safety/`,
   },
@@ -290,6 +293,217 @@ export default function SafetyPage() {
               must be collected in labeled non-halogenated organic waste drums. Maintain consignment notes for a minimum
               of 3 years as mandated by the Environment Agency.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Protocol Section 06: UK Statutory COSHH 2002 Framework & CL2 Protocol */}
+      <section className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-10 shadow-sm space-y-8">
+        <div className="border-b border-slate-200 pb-4">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-emerald-700">
+            <ShieldCheck className="w-4 h-4 text-emerald-600" />
+            <span>Statutory Compliance Matrix</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mt-1">
+            Section 06: COSHH 2002 Assessment &amp; CL2 Laboratory Protocol
+          </h2>
+          <p className="text-sm text-slate-600 mt-1 max-w-3xl leading-relaxed">
+            Standard operating procedure aligned with Health and Safety Executive (HSE) statutory directives under
+            the Control of Substances Hazardous to Health Regulations 2002 (SI 2002/2677), BS EN standards, and UN transport codes.
+          </p>
+        </div>
+
+        {/* 4-Column Statutory Overview */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-xs">
+          <div className="card-inner-elevated p-5 space-y-2.5">
+            <div className="flex items-center gap-2 text-slate-900 font-bold font-mono text-sm border-b border-slate-200/80 pb-2">
+              <Scale className="w-4 h-4 text-emerald-600" />
+              <span>COSHH Reg 6 &amp; 7</span>
+            </div>
+            <p className="text-slate-600 leading-relaxed">
+              Mandatory documented risk assessment prior to handling. Elimination of hazard or control of exposure via engineering containment (ducted laminar flow hoods) before relying on PPE.
+            </p>
+            <div className="text-[10px] font-mono text-emerald-700 font-bold pt-1">
+              Statutory Basis: SI 2002/2677
+            </div>
+          </div>
+
+          <div className="card-inner-elevated p-5 space-y-2.5">
+            <div className="flex items-center gap-2 text-slate-900 font-bold font-mono text-sm border-b border-slate-200/80 pb-2">
+              <FlaskConical className="w-4 h-4 text-blue-600" />
+              <span>Containment Level 2</span>
+            </div>
+            <p className="text-slate-600 leading-relaxed">
+              Negative-pressure laboratory airflow, HEPA air filtration, restricted biohazard access, and Class II microbiological safety cabinets for aerosol-generating reconstitution procedures.
+            </p>
+            <div className="text-[10px] font-mono text-blue-700 font-bold pt-1">
+              Standard: ACDP CL2 Guidance
+            </div>
+          </div>
+
+          <div className="card-inner-elevated p-5 space-y-2.5">
+            <div className="flex items-center gap-2 text-slate-900 font-bold font-mono text-sm border-b border-slate-200/80 pb-2">
+              <Hand className="w-4 h-4 text-purple-600" />
+              <span>BS EN 374 Gloves</span>
+            </div>
+            <p className="text-slate-600 leading-relaxed">
+              Nitrile gloves meeting BS EN ISO 374-1:2016 Type B. Chemical permeation breakthrough time Class 2 (&gt;30 min) against organic solvents and reconstitution diluents.
+            </p>
+            <div className="text-[10px] font-mono text-purple-700 font-bold pt-1">
+              Breakthrough: Class 2 (&gt;30m)
+            </div>
+          </div>
+
+          <div className="card-inner-elevated p-5 space-y-2.5">
+            <div className="flex items-center gap-2 text-slate-900 font-bold font-mono text-sm border-b border-slate-200/80 pb-2">
+              <Trash2 className="w-4 h-4 text-amber-600" />
+              <span>UN 3291 Waste</span>
+            </div>
+            <p className="text-slate-600 leading-relaxed">
+              Rigid puncture-resistant yellow sharps bins compliant with UN 3291 and EWC Code 18 01 03*. Final high-temperature thermal incineration (&gt;1100°C) at authorized facilities.
+            </p>
+            <div className="text-[10px] font-mono text-amber-700 font-bold pt-1">
+              Code: EWC 18 01 03*
+            </div>
+          </div>
+        </div>
+
+        {/* HSE EH40 Workplace Exposure Limits (WEL) Reference Table */}
+        <div className="space-y-3">
+          <div className="text-xs font-mono font-bold uppercase text-slate-700 flex items-center gap-2">
+            <FileCheck2 className="w-4 h-4 text-emerald-600" />
+            <span>HSE EH40/2005 Workplace Exposure Limits (WEL) for Reconstitution Media</span>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-xs border-collapse">
+              <thead>
+                <tr className="border-b border-slate-200 font-mono text-slate-500 uppercase text-[11px] bg-slate-50">
+                  <th className="py-2.5 px-3">Substance / Reagent</th>
+                  <th className="py-2.5 px-3">CAS Number</th>
+                  <th className="py-2.5 px-3">8-Hour TWA Limit</th>
+                  <th className="py-2.5 px-3">15-Min STEL Limit</th>
+                  <th className="py-2.5 px-3">Risk Notation</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 font-mono">
+                <tr className="hover:bg-slate-50">
+                  <td className="py-2.5 px-3 font-bold text-slate-900 font-sans">Benzyl Alcohol (Bacteriostatic Preservative)</td>
+                  <td className="py-2.5 px-3 text-slate-600">100-51-6</td>
+                  <td className="py-2.5 px-3 text-slate-800">10 ppm (44 mg/m³)</td>
+                  <td className="py-2.5 px-3 text-slate-800">20 ppm (88 mg/m³)</td>
+                  <td className="py-2.5 px-3 text-amber-700 font-semibold font-sans">Skin irritant; aerosol containment</td>
+                </tr>
+                <tr className="hover:bg-slate-50">
+                  <td className="py-2.5 px-3 font-bold text-slate-900 font-sans">Acetic Acid (0.1M Diluent for Basic Peptides)</td>
+                  <td className="py-2.5 px-3 text-slate-600">64-19-7</td>
+                  <td className="py-2.5 px-3 text-slate-800">10 ppm (25 mg/m³)</td>
+                  <td className="py-2.5 px-3 text-slate-800">20 ppm (50 mg/m³)</td>
+                  <td className="py-2.5 px-3 text-amber-700 font-semibold font-sans">Corrosive vapour; use fume hood</td>
+                </tr>
+                <tr className="hover:bg-slate-50">
+                  <td className="py-2.5 px-3 font-bold text-slate-900 font-sans">Acetonitrile (HPLC Mobile Phase Residue)</td>
+                  <td className="py-2.5 px-3 text-slate-600">75-05-8</td>
+                  <td className="py-2.5 px-3 text-slate-800">40 ppm (68 mg/m³)</td>
+                  <td className="py-2.5 px-3 text-slate-800">60 ppm (102 mg/m³)</td>
+                  <td className="py-2.5 px-3 text-red-700 font-semibold font-sans">Sk notation (cutaneous absorption)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Cold-Chain Thermal Stability Half-Life Matrix */}
+        <div className="space-y-3">
+          <div className="text-xs font-mono font-bold uppercase text-slate-700 flex items-center gap-2">
+            <Thermometer className="w-4 h-4 text-blue-600" />
+            <span>Peptide Cold-Chain Thermal Degradation Kinetic Matrix</span>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-xs border-collapse">
+              <thead>
+                <tr className="border-b border-slate-200 font-mono text-slate-500 uppercase text-[11px] bg-slate-50">
+                  <th className="py-2.5 px-3">Storage Condition</th>
+                  <th className="py-2.5 px-3">Temperature</th>
+                  <th className="py-2.5 px-3">Lyophilized Stability</th>
+                  <th className="py-2.5 px-3">Reconstituted Aqueous (t1/2)</th>
+                  <th className="py-2.5 px-3">Degradation Mechanism</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 font-mono">
+                <tr className="hover:bg-slate-50">
+                  <td className="py-2.5 px-3 font-bold text-slate-900 font-sans">Cryogenic Ultra-Low</td>
+                  <td className="py-2.5 px-3 text-blue-700 font-bold">-80°C (Argon seal)</td>
+                  <td className="py-2.5 px-3 text-emerald-700 font-bold">Up to 36 months</td>
+                  <td className="py-2.5 px-3 text-slate-600">Not recommended (freeze-thaw shock)</td>
+                  <td className="py-2.5 px-3 text-slate-600 font-sans">Negligible; lattice immobilization</td>
+                </tr>
+                <tr className="hover:bg-slate-50">
+                  <td className="py-2.5 px-3 font-bold text-slate-900 font-sans">Standard Laboratory Freezer</td>
+                  <td className="py-2.5 px-3 text-blue-700 font-bold">-20°C (Desiccated)</td>
+                  <td className="py-2.5 px-3 text-emerald-700 font-bold">Up to 24 months</td>
+                  <td className="py-2.5 px-3 text-slate-600">Up to 90 days (aliquoted)</td>
+                  <td className="py-2.5 px-3 text-slate-600 font-sans">Slow atmospheric deamidation</td>
+                </tr>
+                <tr className="hover:bg-slate-50">
+                  <td className="py-2.5 px-3 font-bold text-slate-900 font-sans">Refrigerated Operating Cold-Chain</td>
+                  <td className="py-2.5 px-3 text-emerald-700 font-bold">2°C to 8°C</td>
+                  <td className="py-2.5 px-3 text-slate-700">Up to 90 days</td>
+                  <td className="py-2.5 px-3 text-emerald-700 font-bold">28 days (0.9% benzyl alcohol)</td>
+                  <td className="py-2.5 px-3 text-slate-600 font-sans">Methionine oxidation, hydrolysis</td>
+                </tr>
+                <tr className="hover:bg-slate-50">
+                  <td className="py-2.5 px-3 font-bold text-slate-900 font-sans">Ambient Benchtop Exposure</td>
+                  <td className="py-2.5 px-3 text-amber-700 font-bold">20°C to 25°C</td>
+                  <td className="py-2.5 px-3 text-amber-700">Up to 14 days</td>
+                  <td className="py-2.5 px-3 text-amber-700 font-bold">24 – 48 hours max</td>
+                  <td className="py-2.5 px-3 text-slate-600 font-sans">Rapid peptide bond cleavage, aggregation</td>
+                </tr>
+                <tr className="hover:bg-slate-50">
+                  <td className="py-2.5 px-3 font-bold text-slate-900 font-sans">Thermal Stress / Incubator</td>
+                  <td className="py-2.5 px-3 text-red-700 font-bold">37°C+</td>
+                  <td className="py-2.5 px-3 text-red-700">&lt; 48 hours</td>
+                  <td className="py-2.5 px-3 text-red-700 font-bold">&lt; 6 hours</td>
+                  <td className="py-2.5 px-3 text-slate-600 font-sans">Extensive denaturation, racemization</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* SOP-SP-04 Protocol Card */}
+        <div className="card-inner-elevated p-6 space-y-3 bg-slate-50/50">
+          <div className="font-mono font-bold text-xs uppercase text-slate-900 flex items-center justify-between border-b border-slate-200 pb-2">
+            <span className="flex items-center gap-2">
+              <AlertTriangle className="w-4 h-4 text-red-600" />
+              <span>Standard Operating Procedure: SOP-SP-04 (Spill Remediation &amp; Neutralization)</span>
+            </span>
+            <span className="badge-emerald text-[10px] py-0 px-2 font-mono">Mandatory Compliance</span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs pt-1">
+            <div className="space-y-1">
+              <span className="font-bold text-slate-900 block font-mono">Phase 1: Isolation</span>
+              <p className="text-slate-600 leading-relaxed">
+                Immediately clear a 2-metre exclusion zone. Post COSHH warning notice and deactivate local forced ventilation to prevent powder migration.
+              </p>
+            </div>
+            <div className="space-y-1">
+              <span className="font-bold text-slate-900 block font-mono">Phase 2: PPE Donning</span>
+              <p className="text-slate-600 leading-relaxed">
+                Don BS EN 149 FFP3 particulate respirator, double BS EN 374 nitrile gloves, and BS EN 166 Grade 1B ocular splash goggles prior to entry.
+              </p>
+            </div>
+            <div className="space-y-1">
+              <span className="font-bold text-slate-900 block font-mono">Phase 3: Damp Absorption</span>
+              <p className="text-slate-600 leading-relaxed">
+                Cover spill with lint-free wipes pre-moistened with 70% ethanol / 0.1M sodium hypochlorite. Do NOT sweep dry powder. Collect into sealed container.
+              </p>
+            </div>
+            <div className="space-y-1">
+              <span className="font-bold text-slate-900 block font-mono">Phase 4: Waste Segregation</span>
+              <p className="text-slate-600 leading-relaxed">
+                Seal all cleaning media, gloves, and broken borosilicate glass in UN 3291 clinical sharps waste (EWC 18 01 03*). Complete HSE RIDDOR form if required.
+              </p>
+            </div>
           </div>
         </div>
       </section>

@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = {
   title: 'UK Legal Status & Schedules: Misuse of Drugs Act 1971 | Peptides UK',
   description:
-    'Authoritative statutory classification matrix for 12 research peptides under the UK Human Medicines Regulations 2012, Misuse of Drugs Act 1971, Psychoactive Substances Act 2016, and WADA anti-doping codes.',
+    'Statutory classification matrix for 12 research peptides under UK SI 2012/1916, Misuse of Drugs Act 1971, and WADA anti-doping regulations.',
   alternates: {
     canonical: `${SITE_METADATA.url}/regulatory/uk-legal-status/`,
   },
@@ -211,6 +211,107 @@ export default function UkLegalStatusPage() {
           </table>
         </div>
       </div>
+
+      {/* Comprehensive Statutory Jurisprudence & MHRA Compliance Deep Dive */}
+      <section className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-10 shadow-sm space-y-8">
+        <div className="border-b border-slate-200 pb-4">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-emerald-700">
+            <Scale className="w-4 h-4 text-emerald-600" />
+            <span>UK Statutory Jurisprudence &amp; MHRA Governance</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mt-1">
+            Regulation 46 vs Regulation 167 &amp; MHRA Guidance Note 8
+          </h2>
+          <p className="text-sm text-slate-600 mt-1 max-w-4xl leading-relaxed">
+            The legal demarcation governing research chemical distribution in the United Kingdom rests upon clear statutory boundaries
+            established under the Human Medicines Regulations 2012 (SI 2012/1916) and European Case Law (C-27/08 and C-140/07).
+          </p>
+        </div>
+
+        {/* 2-Column Comparative Architecture */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Column A: Regulation 46 vs Regulation 167 */}
+          <div className="card-inner-elevated p-6 space-y-4">
+            <div className="flex items-center gap-2 text-slate-900 font-bold font-mono text-sm border-b border-slate-200/80 pb-2">
+              <Building2 className="w-4 h-4 text-emerald-600" />
+              <span>SI 2012/1916: Regulation 46 vs Regulation 167 Carve-Out</span>
+            </div>
+            <div className="space-y-3 text-xs leading-relaxed text-slate-700">
+              <p>
+                <strong className="text-slate-900">Regulation 46 (Prohibition):</strong> Mandates that no medicinal product may be placed on the UK market, distributed, or supplied without a valid Marketing Authorisation granted by the Licensing Authority (MHRA). Violation of Regulation 46 is a strict-liability criminal offense carrying statutory penalties including seizure and prosecution under Section 279.
+              </p>
+              <p>
+                <strong className="text-slate-900">Regulation 167 (Research &amp; Specials Exemption):</strong> Creates an explicit statutory exemption for the supply of unlicensed substances for scientific investigations, in-vitro assays, and laboratory control calibrations. Chemical reagents supplied with clear labeling (&quot;For In Vitro Laboratory Research Only&quot;), devoid of dosing guidelines or therapeutic marketing, fall squarely outside the remit of medicinal marketing authorizations.
+              </p>
+              <div className="bg-emerald-50 text-emerald-900 p-3 rounded-xl border border-emerald-200/60 font-mono text-[11px]">
+                <strong>Compliance Precondition:</strong> Reagents must never be accompanied by human administration hardware (e.g. bacteriostatic injection kits, multi-dose delivery pens with dosage dials) to preserve Regulation 167 scientific status.
+              </div>
+            </div>
+          </div>
+
+          {/* Column B: MHRA Guidance Note 8 Two-Limbed Test */}
+          <div className="card-inner-elevated p-6 space-y-4">
+            <div className="flex items-center gap-2 text-slate-900 font-bold font-mono text-sm border-b border-slate-200/80 pb-2">
+              <FileText className="w-4 h-4 text-blue-600" />
+              <span>MHRA Guidance Note 8: The Dual-Limb Legal Test</span>
+            </div>
+            <div className="space-y-3 text-xs leading-relaxed text-slate-700">
+              <p>
+                Under Section 2 of SI 2012/1916 and MHRA Guidance Note 8 (&quot;A guide to what is a medicinal product&quot;), a substance is legally classified as a medicine if it satisfies either of two distinct legal limbs:
+              </p>
+              <div className="space-y-2">
+                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                  <div className="font-bold text-slate-900 font-mono text-[11px] text-blue-700">
+                    Limb 1: The Presentation Limb
+                  </div>
+                  <p className="text-[11px] text-slate-600 mt-1">
+                    A product is a medicine if presented as possessing properties for treating, preventing, or diagnosing disease. Advertising human health benefits, patient testimonials, or offering dosage advice legally categorizes the product under Limb 1, resulting in immediate MHRA enforcement notices.
+                  </p>
+                </div>
+                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                  <div className="font-bold text-slate-900 font-mono text-[11px] text-purple-700">
+                    Limb 2: The Functional Limb
+                  </div>
+                  <p className="text-[11px] text-slate-600 mt-1">
+                    A product is a medicine if administered to human beings with a view to restoring, correcting, or modifying physiological functions. Because synthetic peptides possess cellular bioactivity, vendors avoid Limb 2 exclusively by strictly supplying them for non-human, in-vitro experimental systems.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ASA CAP Code 12.11 Advertising Standards Grid */}
+        <div className="card-inner-elevated p-6 space-y-3 bg-slate-50/70 border-slate-200">
+          <div className="flex items-center justify-between border-b border-slate-200 pb-2">
+            <div className="flex items-center gap-2 text-slate-900 font-bold font-mono text-xs uppercase">
+              <ShieldAlert className="w-4 h-4 text-amber-600" />
+              <span>Advertising Standards Authority (ASA) CAP Code Rule 12.11 Compliance</span>
+            </div>
+            <span className="badge-amber text-[10px] py-0 px-2 font-mono">Mandatory Rule</span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-700 leading-relaxed pt-1">
+            <div className="space-y-1">
+              <strong className="text-slate-900 font-sans block">Direct-to-Consumer Prohibition</strong>
+              <p>
+                Rule 12.11 of the UK Code of Non-broadcast Advertising (CAP Code) strictly prohibits advertising prescription-only medicines or unlicensed medicinal products to the general public across search, social media, and digital banners.
+              </p>
+            </div>
+            <div className="space-y-1">
+              <strong className="text-slate-900 font-sans block">Non-Promotional Registry Standard</strong>
+              <p>
+                Scientific registries must present objective, chemical, and literature-indexed information without marketing hype, discount promotion codes, before-and-after imagery, or lifestyle enhancement claims.
+              </p>
+            </div>
+            <div className="space-y-1">
+              <strong className="text-slate-900 font-sans block">Enforcement Sanctions</strong>
+              <p>
+                Breaches of CAP Code 12.11 trigger referral to the MHRA Borderline Section, resulting in mandatory website takedowns, payment gateway revocations, and Trading Standards prosecutions under consumer protection laws.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Statutory Pillar Breakdown Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">

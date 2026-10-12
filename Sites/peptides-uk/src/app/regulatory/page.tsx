@@ -26,7 +26,7 @@ import {
 export const metadata: Metadata = {
   title: 'UK Regulatory Hub & MHRA Peptide Statutory Compliance | Peptides UK',
   description:
-    'Authoritative United Kingdom statutory intelligence on research peptides: Human Medicines Regulations 2012 (SI 2012/1916), Misuse of Drugs Act 1971, WADA Prohibited List, and rolling MHRA compliance directives.',
+    'Authoritative UK statutory intelligence on peptides: Human Medicines Regulations 2012 (SI 2012/1916), Misuse of Drugs Act 1971, and rolling MHRA directives.',
   alternates: {
     canonical: `${SITE_METADATA.url}/regulatory/`,
   },

@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: 'Peptide Formats & Laboratory Vial Specifications | Peptides UK',
   description:
-    'Technical guide to research peptide physical formats: lyophilized powder vials, pre-metered pen cartridges, intranasal atomizers, and synergistic research stacks. Includes cold-chain kinetics, diluent parameters, and stability metrics.',
+    'Technical guide to peptide physical formats: lyophilized vials, pre-metered pen cartridges, and research stacks with cold-chain stability metrics.',
   alternates: {
     canonical: `${SITE_METADATA.url}/formats/`,
   },

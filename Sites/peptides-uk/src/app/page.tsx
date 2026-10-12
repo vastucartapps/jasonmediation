@@ -60,7 +60,7 @@ export default function HomePage() {
         url: 'https://peptides-uk.org/',
         name: 'Peptides UK | British Clinical Chemical Registry & Academic Compendium',
         description:
-          'Peer-reviewed PubChem chemical monographs, RP-HPLC purity standards, British statutory governance frameworks, and independent UK laboratory supplier directories for non-clinical research.',
+          'PubChem chemical monographs, RP-HPLC purity standards, statutory MHRA frameworks, and verified UK laboratory supplier directories for non-clinical research.',
         about: [
           {
             '@type': 'DefinedTermSet',

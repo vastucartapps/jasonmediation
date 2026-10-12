@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = {
   title: 'HPLC & Mass Spectrometry Peptide Verification Protocols | Peptides UK',
   description:
-    'Comprehensive laboratory analytical verification methodology: Reverse-Phase HPLC chromatographic purity, ESI Mass Spectrometry molecular identity, Endotoxin LAL assay, and Certificate of Analysis (COA) audit criteria.',
+    'Laboratory analytical verification: RP-HPLC chromatographic purity, ESI Mass Spectrometry identity, Endotoxin LAL assays, and digital COA audits.',
   alternates: {
     canonical: `${SITE_METADATA.url}/verification/`,
   },

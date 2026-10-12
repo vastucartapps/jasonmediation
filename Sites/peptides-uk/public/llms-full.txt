@@ -97,10 +97,10 @@ Extensively investigated across British and European pharmacological laboratorie
 
 #### Peer-Reviewed Academic Citations
 - **Pentadecapeptide BPC 157 and its role in promoting tendon healing: Accelerated outgrowth and migration of tendon fibroblasts** (2011)
-  *Journal of Applied Physiology* by Chang CH, Tsai WC, Hsu YH, Pang JH. PMID: 21030672. DOI: 10.1152/japplphysiol.00945.2010
+  *Journal of Applied Physiology* by Chang CH, Tsai WC, Hsu YH, Pang JH. PMID: 21030672. DOI: N/A
   *Key Finding*: Demonstrated dose-dependent acceleration of tendon explant outgrowth and enhanced FAK phosphorylation in cultured tendon fibroblasts.
 - **Stable gastric pentadecapeptide BPC 157 in the treatment of colitis and gastrointestinal lesions** (2014)
-  *Current Pharmaceutical Design* by Sikiric P, Seiwerth S, Rucman R, et al.. PMID: 23795744. DOI: 10.2174/13816128113199990411
+  *Current Pharmaceutical Design* by Sikiric P, Seiwerth S, Rucman R, et al.. PMID: 23795744. DOI: N/A
   *Key Finding*: Established mucosal preservation, eNOS upregulation, and reduction of ischemic oxidative damage in endothelial models.
 
 ---
@@ -144,7 +144,7 @@ Frequently investigated alongside BPC-157 in dual-pathway tissue remodeling prot
 
 #### Peer-Reviewed Academic Citations
 - **Thymosin beta4 promotes dermal healing in pre-clinical wound models** (2003)
-  *Wound Repair and Regeneration* by Malinda KM, Sidhu GS, Mani H, et al.. PMID: 12654014. DOI: 10.1046/j.1524-475x.2003.11116.x
+  *Wound Repair and Regeneration* by Malinda KM, Sidhu GS, Mani H, et al.. PMID: 12654014. DOI: N/A
   *Key Finding*: Observed significant acceleration in re-epithelialization and collagen deposition in dermal tissue explants.
 
 ---
@@ -188,7 +188,7 @@ Available as lyophilized powder or metered intranasal aqueous formulation. Demon
 
 #### Peer-Reviewed Academic Citations
 - **Semax, an ACTH(4-10) analogue with nootropic properties, stimulates BDNF expression in the rat hippocampus** (2006)
-  *Neuroscience Letters* by Dolotov OV, Eremin KO, Andreeva LA, et al.. PMID: 16950577. DOI: 10.1016/j.neulet.2006.07.070
+  *Neuroscience Letters* by Dolotov OV, Eremin KO, Andreeva LA, et al.. PMID: 16950577. DOI: N/A
   *Key Finding*: Reported rapid multi-fold induction of hippocampal BDNF mRNA and protein expression within 3 hours.
 
 ---
@@ -232,7 +232,7 @@ Easily recognized by its distinct intense royal blue appearance in aqueous solut
 
 #### Peer-Reviewed Academic Citations
 - **The human tripeptide GHK and tissue remodeling** (2008)
-  *Journal of Biomaterials Science, Polymer Edition* by Pickart L. PMID: 18644225. DOI: 10.1163/156856208784909435
+  *Journal of Biomaterials Science, Polymer Edition* by Pickart L. PMID: 18644225. DOI: N/A
   *Key Finding*: Detailed broad gene remodeling across collagen synthesis, antioxidant enzymes, and anti-inflammatory pathways.
 
 ---
@@ -276,7 +276,7 @@ Typically studied in conjunction with GHSR-1a agonists like Ipamorelin to invest
 
 #### Peer-Reviewed Academic Citations
 - **Pulsatile growth hormone secretion after administration of CJC-1295** (2006)
-  *Journal of Clinical Endocrinology & Metabolism* by Teichman SL, Neale A, Lawrence B, et al.. PMID: 16352683. DOI: 10.1210/jc.2005-1536
+  *Journal of Clinical Endocrinology & Metabolism* by Teichman SL, Neale A, Lawrence B, et al.. PMID: 16352683. DOI: N/A
   *Key Finding*: Observed significant sustained elevation in cumulative GH and IGF-1 secretion while preserving pulsatility.
 
 ---
@@ -320,7 +320,7 @@ Considered one of the cleanest research tools for investigating somatotrophic se
 
 #### Peer-Reviewed Academic Citations
 - **Ipamorelin, the first selective growth hormone secretagogue** (1998)
-  *European Journal of Endocrinology* by Raun K, Hansen BS, Johansen PB, et al.. PMID: 9849822. DOI: 10.1530/eje.0.1390552
+  *European Journal of Endocrinology* by Raun K, Hansen BS, Johansen PB, et al.. PMID: 9849822. DOI: N/A
   *Key Finding*: Characterized complete selectivity for GH release with zero effect on ACTH, cortisol, or prolactin levels.
 
 ---
@@ -364,7 +364,7 @@ Contains an internal disulfide bond between Cys7 and Cys14 required for biologic
 
 #### Peer-Reviewed Academic Citations
 - **The effect of AOD9604, a novel growth hormone fragment, on lipolysis and metabolic parameters in pre-clinical models** (2004)
-  *Obesity Research* by Ng FM, Sun J, Sharma L, et al.. PMID: 15044670. DOI: 10.1038/oby.2004.87
+  *Obesity Research* by Ng FM, Sun J, Sharma L, et al.. PMID: 15044670. DOI: N/A
   *Key Finding*: Demonstrated significant lipolytic activity without alteration in serum glucose or insulin sensitivity markers.
 
 ---
@@ -408,7 +408,7 @@ Stabilized against circulating peptidases by the Pro-Gly-Pro sequence. Frequentl
 
 #### Peer-Reviewed Academic Citations
 - **Selank administration affects the expression of some genes involved in GABAergic neurotransmission** (2016)
-  *Frontiers in Pharmacology* by Volkova A, Mezentseva O, Tarasova L, et al.. PMID: 27242531. DOI: 10.3389/fphar.2016.00128
+  *Frontiers in Pharmacology* by Volkova A, Mezentseva O, Tarasova L, et al.. PMID: 27242531. DOI: N/A
   *Key Finding*: Identified modulation of 64 genes participating in GABAergic receptor signaling and synaptic plasticity.
 
 ---
@@ -496,7 +496,7 @@ Hydrophobic and thermally sensitive peptide requiring precise cold-chain handlin
 
 #### Peer-Reviewed Academic Citations
 - **The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis and reduces diet-induced obesity** (2015)
-  *Cell Metabolism* by Lee C, Zeng J, Drew BG, et al.. PMID: 25738459. DOI: 10.1016/j.cmet.2015.02.009
+  *Cell Metabolism* by Lee C, Zeng J, Drew BG, et al.. PMID: 25738459. DOI: N/A
   *Key Finding*: Discovered that MOTS-c targets skeletal muscle to stimulate AMPK and overcome insulin resistance.
 
 ---
@@ -540,7 +540,7 @@ High molecular weight (4813.45 g/mol) requiring gentle reconstitution. Used as a
 
 #### Peer-Reviewed Academic Citations
 - **Tirzepatide: A Dual GIP/GLP-1 Receptor Agonist for the Treatment of Type 2 Diabetes and Obesity** (2021)
-  *New England Journal of Medicine* by Frías JP, Davies MJ, Rosenstock J, et al.. PMID: 34170647. DOI: 10.1056/NEJMoa2107519
+  *New England Journal of Medicine* by Frías JP, Davies MJ, Rosenstock J, et al.. PMID: 34170647. DOI: N/A
   *Key Finding*: Demonstrated superior glycemic and weight reductions compared to selective GLP-1 mono-agonists.
 
 ---
@@ -584,7 +584,7 @@ Benchmark peptide for incretin-based scientific investigations. Handled with ste
 
 #### Peer-Reviewed Academic Citations
 - **Semaglutide and Cardiovascular Outcomes in Patients with Type 2 Diabetes** (2016)
-  *New England Journal of Medicine* by Marso SP, Bain SC, Consoli A, et al.. PMID: 27633186. DOI: 10.1056/NEJMoa1607141
+  *New England Journal of Medicine* by Marso SP, Bain SC, Consoli A, et al.. PMID: 27633186. DOI: N/A
   *Key Finding*: Documented substantial reductions in cardiovascular death, nonfatal stroke, and myocardial infarction in trial models.
 
 ---

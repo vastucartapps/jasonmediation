@@ -42,6 +42,10 @@ function run() {
     fs.writeFileSync(path.join(outDir, 'robots.txt'), robotsTxt, 'utf-8');
     fs.writeFileSync(path.join(outDir, 'llms.txt'), llmsTxt, 'utf-8');
     fs.writeFileSync(path.join(outDir, 'llms-full.txt'), llmsFullTxt, 'utf-8');
+    const indexNowKey = '5f2e8b4e7c1a4b9c9f2e8b4e7c1a4b9c.txt';
+    if (fs.existsSync(path.join(publicDir, indexNowKey))) {
+      fs.copyFileSync(path.join(publicDir, indexNowKey), path.join(outDir, indexNowKey));
+    }
     console.log('Successfully wrote discovery assets to out/');
   }
 
