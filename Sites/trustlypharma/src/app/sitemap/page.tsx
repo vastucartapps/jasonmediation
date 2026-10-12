@@ -20,6 +20,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${BASE_URL}/sitemap/`,
   },
+  openGraph: {
+    title: 'HTML Index & Directory Sitemap | Trustly Pharma',
+    description:
+      'Comprehensive directory sitemap dynamically indexing all chemical compound dossiers, research pathways, verified vendor directories, and regulatory intelligence trackers.',
+    url: `${BASE_URL}/sitemap/`,
+    siteName: 'Trustly Pharma',
+    type: 'website',
+    images: [
+      {
+        url: `${BASE_URL}/icon-512x512.png`,
+        width: 512,
+        height: 512,
+        alt: 'Trustly Pharma Sitemap & Directory Index',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'HTML Index & Directory Sitemap | Trustly Pharma',
+    description:
+      'Comprehensive directory sitemap dynamically indexing all chemical compound dossiers, research pathways, verified vendor directories, and regulatory intelligence trackers.',
+    images: [`${BASE_URL}/icon-512x512.png`],
+  },
 };
 
 export default function SitemapPage() {

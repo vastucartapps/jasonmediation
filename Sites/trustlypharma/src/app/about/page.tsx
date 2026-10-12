@@ -25,6 +25,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://trustlypharma.uk/about/',
   },
+  openGraph: {
+    title: 'About Trustly Pharma & Methodology | Trustly Pharma',
+    description:
+      'Independent biochemical encyclopedia: editorial charter, 5-stage verification methodology, PubMed literature curation, and commercial vendor standards.',
+    url: 'https://trustlypharma.uk/about/',
+    siteName: 'Trustly Pharma',
+    type: 'website',
+    images: [
+      {
+        url: 'https://trustlypharma.uk/icon-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'About Trustly Pharma Research Index',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Trustly Pharma & Methodology | Trustly Pharma',
+    description:
+      'Independent biochemical encyclopedia: editorial charter, 5-stage verification methodology, PubMed literature curation, and commercial vendor standards.',
+    images: ['https://trustlypharma.uk/icon-512x512.png'],
+  },
 };
 
 export default function AboutPage() {

@@ -46,12 +46,22 @@ export const metadata: Metadata = {
     title: 'Trustly Pharma | UK & International Peptide Index',
     description:
       'Peer-reviewed peptide research index, verified PubChem chemical structures, CAS registry numbers, and commercial laboratory vendor directories.',
+    images: [
+      {
+        url: 'https://trustlypharma.uk/icon-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Trustly Pharma Academic Peptide Reference Index',
+        type: 'image/png',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Trustly Pharma | UK & International Peptide Index',
     description:
       'Academic peptide reference catalog and commercial laboratory vendor sourcing catalogues.',
+    images: ['https://trustlypharma.uk/icon-512x512.png'],
   },
   icons: {
     icon: [

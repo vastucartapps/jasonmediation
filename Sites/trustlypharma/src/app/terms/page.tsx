@@ -9,6 +9,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://trustlypharma.uk/terms/',
   },
+  openGraph: {
+    title: 'Terms of Service & Research Policy | Trustly Pharma',
+    description:
+      'Terms of use and analytical research disclaimers for the Trustly Pharma chemical repository. Guidelines on data integrity and independent lab vendors.',
+    url: 'https://trustlypharma.uk/terms/',
+    siteName: 'Trustly Pharma',
+    type: 'website',
+    images: [
+      {
+        url: 'https://trustlypharma.uk/icon-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Trustly Pharma Terms of Service & Research Policy',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Service & Research Policy | Trustly Pharma',
+    description:
+      'Terms of use and analytical research disclaimers for the Trustly Pharma chemical repository. Guidelines on data integrity and independent lab vendors.',
+    images: ['https://trustlypharma.uk/icon-512x512.png'],
+  },
 };
 
 export default function TermsPage() {

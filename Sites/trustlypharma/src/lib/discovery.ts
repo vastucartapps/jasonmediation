@@ -278,7 +278,6 @@ export function generateRobotsTxt(): string {
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /_next/
 
 # AI Discovery & Agentic Browsing Crawlers
 User-agent: GPTBot

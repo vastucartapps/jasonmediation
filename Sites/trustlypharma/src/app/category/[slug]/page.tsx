@@ -44,11 +44,34 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   const rawTitle = `${category.name} Peptides | Trustly Pharma`;
   const finalTitle = rawTitle.length <= 60 ? rawTitle : `${shortName} Peptides | Trustly Pharma`;
 
+  const pageUrl = `https://trustlypharma.uk/category/${slug}/`;
+
   return {
     title: finalTitle,
     description: `${category.headline}. Preclinical data, molecular mechanisms, formulas, and laboratory vendor links.`.slice(0, 155),
     alternates: {
-      canonical: `https://trustlypharma.uk/category/${slug}/`,
+      canonical: pageUrl,
+    },
+    openGraph: {
+      title: finalTitle,
+      description: category.headline,
+      url: pageUrl,
+      type: 'website',
+      siteName: 'Trustly Pharma',
+      images: [
+        {
+          url: 'https://trustlypharma.uk/icon-512x512.png',
+          width: 512,
+          height: 512,
+          alt: `${category.name} Research Peptides Category Dossier`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: finalTitle,
+      description: category.headline,
+      images: ['https://trustlypharma.uk/icon-512x512.png'],
     },
   };
 }

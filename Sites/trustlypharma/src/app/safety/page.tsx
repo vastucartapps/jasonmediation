@@ -21,6 +21,29 @@ export const metadata = {
   alternates: {
     canonical: 'https://trustlypharma.uk/safety/',
   },
+  openGraph: {
+    title: 'Research Safety & GLP Standards | Trustly Pharma',
+    description:
+      'Good Laboratory Practice (GLP) standards, cold-chain storage thresholds, reconstitution protocols, and chemical PPE guidelines for research peptides.',
+    url: 'https://trustlypharma.uk/safety/',
+    siteName: 'Trustly Pharma',
+    type: 'website',
+    images: [
+      {
+        url: 'https://trustlypharma.uk/icon-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Research Safety & GLP Standards',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Research Safety & GLP Standards | Trustly Pharma',
+    description:
+      'Good Laboratory Practice (GLP) standards, cold-chain storage thresholds, reconstitution protocols, and chemical PPE guidelines for research peptides.',
+    images: ['https://trustlypharma.uk/icon-512x512.png'],
+  },
 };
 
 export default function SafetyPolicyPage() {

@@ -85,19 +85,19 @@ export const VENDOR_PROFILES: Record<string, VendorProfile> = {
     officialCategoryLinks: [
       {
         categoryName: 'Full Research Peptides Catalog',
-        url: 'https://direct-peptides.com/product-category/peptides/',
+        url: 'https://direct-peptides.com',
       },
       {
         categoryName: 'Synergistic Peptide Blends',
-        url: 'https://direct-peptides.com/product-category/peptide-blends/',
+        url: 'https://direct-peptides.com',
       },
       {
         categoryName: 'Calibrated Nasal Spray Reagents',
-        url: 'https://direct-peptides.com/product-category/nasal-sprays/',
+        url: 'https://direct-peptides.com',
       },
       {
         categoryName: 'Laboratory Reconstitution Accessories',
-        url: 'https://direct-peptides.com/product-category/reconstitution/',
+        url: 'https://direct-peptides.com',
       },
     ],
     supportedCompoundSlugs: [
@@ -140,15 +140,15 @@ export const VENDOR_PROFILES: Record<string, VendorProfile> = {
     officialCategoryLinks: [
       {
         categoryName: 'Peptide Research Collection',
-        url: 'https://direct-sarms.com/product-category/peptides/',
+        url: 'https://direct-sarms.com',
       },
       {
         categoryName: 'Synergistic Research Combos',
-        url: 'https://direct-sarms.com/product-category/stacks/',
+        url: 'https://direct-sarms.com/product-category/blend-peptide-vials/',
       },
       {
         categoryName: 'Liquid Carrier Solutions',
-        url: 'https://direct-sarms.com/product-category/liquids/',
+        url: 'https://direct-sarms.com',
       },
     ],
     supportedCompoundSlugs: [
@@ -189,11 +189,11 @@ export const VENDOR_PROFILES: Record<string, VendorProfile> = {
     officialCategoryLinks: [
       {
         categoryName: 'Academic Peptide Catalog',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
       },
       {
         categoryName: 'Solvents, Water & Consumables',
-        url: 'https://peptide-works.com/category/accessories/',
+        url: 'https://peptide-works.com',
       },
     ],
     supportedCompoundSlugs: [

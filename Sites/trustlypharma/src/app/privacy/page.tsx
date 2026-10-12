@@ -9,6 +9,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://trustlypharma.uk/privacy/',
   },
+  openGraph: {
+    title: 'Privacy Policy & GDPR | Trustly Pharma',
+    description:
+      'UK GDPR and Data Protection Act 2018 privacy policy for the Trustly Pharma scientific directory. Transparent data practices and researcher privacy.',
+    url: 'https://trustlypharma.uk/privacy/',
+    siteName: 'Trustly Pharma',
+    type: 'website',
+    images: [
+      {
+        url: 'https://trustlypharma.uk/icon-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Trustly Pharma Privacy Policy & GDPR',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy & GDPR | Trustly Pharma',
+    description:
+      'UK GDPR and Data Protection Act 2018 privacy policy for the Trustly Pharma scientific directory. Transparent data practices and researcher privacy.',
+    images: ['https://trustlypharma.uk/icon-512x512.png'],
+  },
 };
 
 export default function PrivacyPage() {
@@ -62,9 +85,10 @@ export default function PrivacyPage() {
                 <p>London, WC2H 9JQ, United Kingdom</p>
                 <p>
                   Data Protection Officer:{' '}
-                  <span className="select-all font-mono text-sky-400 font-semibold cursor-text">
-                    privacy@trustlypharma.uk
-                  </span>
+                  <span
+                    className="select-all font-mono text-sky-400 font-semibold cursor-text"
+                    dangerouslySetInnerHTML={{ __html: '<!--email_off-->privacy@trustlypharma.uk<!--/email_off-->' }}
+                  />
                 </p>
               </div>
             </div>

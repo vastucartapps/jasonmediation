@@ -57,8 +57,8 @@ export default function PrivacyPage() {
         <section className="space-y-2">
           <h2 className="text-xl font-bold text-slate-900">1. Data Controller</h2>
           <p>
-            The data controller responsible for this website is the Peptides-UK.org Academic Editorial Desk
-            ({SITE_METADATA.contactEmail}).
+            The data controller responsible for this website is the Peptides-UK.org Academic Editorial Desk{' '}
+            (<span dangerouslySetInnerHTML={{ __html: `<!--email_off-->${SITE_METADATA.contactEmail}<!--/email_off-->` }} />).
           </p>
         </section>
 

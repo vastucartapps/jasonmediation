@@ -130,7 +130,7 @@ export const MHRA_FULL_90DAY_RECORDS: MhraRecordItem[] = [
     date: '2026-09-24',
     type: 'ENFORCEMENT',
     item: 'MHRA welcomes sentencing after fraud convictions over falsely certified medical devices',
-    url: 'https://www.gov.uk/government/news/mhra-welcomes-sentencing-after-fraud-convictions',
+    url: 'https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency',
     relevantHere: false,
     summary: 'Criminal convictions secured following joint Trading Standards and MHRA prosecution into counterfeit compliance certification.',
   },
@@ -251,7 +251,7 @@ export const MHRA_FULL_90DAY_RECORDS: MhraRecordItem[] = [
     date: '2026-08-18',
     type: 'ANNOUNCEMENT',
     item: 'MHRA sets out position on regulation of microbiome-based medicinal products',
-    url: 'https://www.gov.uk/government/news/microbiome-based-medicinal-products',
+    url: 'https://www.gov.uk/drug-safety-update',
     relevantHere: false,
   },
   {
@@ -306,7 +306,7 @@ export const UK_REGULATOR_STATEMENTS_2026 = [
     regulator: 'MHRA',
     date: '2026-09-24',
     title: 'MHRA welcomes sentencing after fraud convictions over falsely certified medical devices',
-    url: 'https://www.gov.uk/government/news/mhra-welcomes-sentencing-after-fraud-convictions',
+    url: 'https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency',
     type: 'Enforcement',
   },
   {
@@ -378,7 +378,7 @@ export const UK_REGULATOR_STATEMENTS_2026 = [
     regulator: 'ASA',
     date: '2026-02-11',
     title: 'ASA upholds rulings that public discount and referral code posts for online pharmacies advertised prescription-only weight-loss medicines to the public.',
-    url: 'https://www.asa.org.uk/rulings',
+    url: 'https://www.asa.org.uk/codes-and-rulings/rulings.html',
     type: 'Ad Ruling',
   },
   {
@@ -434,7 +434,7 @@ export const OFFICIAL_REGULATORY_SOURCES = [
     authority: 'LEGISLATION.GOV.UK',
     title: 'Human Medicines Regulations 2012',
     desc: 'The legislation that defines what counts as a medicine in the UK, and what constitutes illegal supply. A product marketed with medicinal claims is regulated as a medicine regardless of how it is labelled.',
-    url: 'https://www.legislation.gov.uk/uksi/2012/1916/contents/made',
+    url: 'https://www.legislation.gov.uk/uksi/2012/1916/contents',
   },
 ];
 

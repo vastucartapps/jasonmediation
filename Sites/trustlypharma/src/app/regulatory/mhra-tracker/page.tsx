@@ -27,6 +27,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://trustlypharma.uk/regulatory/mhra-tracker/',
   },
+  openGraph: {
+    title: 'MHRA Regulatory Tracker | Trustly Pharma',
+    description:
+      'Rolling 90-day archive of MHRA drug safety updates, warning letters, and enforcement actions touching synthetic research peptides in the UK.',
+    url: 'https://trustlypharma.uk/regulatory/mhra-tracker/',
+    siteName: 'Trustly Pharma',
+    type: 'website',
+    images: [
+      {
+        url: 'https://trustlypharma.uk/icon-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Trustly Pharma MHRA Regulatory Tracker',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MHRA Regulatory Tracker | Trustly Pharma',
+    description:
+      'Rolling 90-day archive of MHRA drug safety updates, warning letters, and enforcement actions touching synthetic research peptides in the UK.',
+    images: ['https://trustlypharma.uk/icon-512x512.png'],
+  },
 };
 
 export default function MhraTrackerPage() {

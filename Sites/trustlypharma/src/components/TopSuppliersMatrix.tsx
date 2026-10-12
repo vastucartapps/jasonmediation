@@ -182,7 +182,7 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
                 <a
                   href={link.url}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="gradient-bg px-6 py-2.5 rounded-xl font-bold text-xs text-slate-950 inline-flex items-center justify-center gap-1.5 shadow-md hover:shadow-xl transition-all"
                 >
                   <span>{link.linkType === 'category' ? 'Browse Partner Hub' : 'View Reagent Batch'}</span>

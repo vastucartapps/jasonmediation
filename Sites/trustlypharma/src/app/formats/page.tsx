@@ -17,6 +17,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://trustlypharma.uk/formats/',
   },
+  openGraph: {
+    title: 'Delivery Formats & Reagents | Trustly Pharma',
+    description:
+      'Laboratory guide to synthetic peptide physical delivery states: lyophilized powder vials, pen systems, nasal atomizers, and research reagent stacks.',
+    url: 'https://trustlypharma.uk/formats/',
+    siteName: 'Trustly Pharma',
+    type: 'website',
+    images: [
+      {
+        url: 'https://trustlypharma.uk/icon-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Peptide Delivery Formats & Laboratory Standards',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Delivery Formats & Reagents | Trustly Pharma',
+    description:
+      'Laboratory guide to synthetic peptide physical delivery states: lyophilized powder vials, pen systems, nasal atomizers, and research reagent stacks.',
+    images: ['https://trustlypharma.uk/icon-512x512.png'],
+  },
 };
 
 export default function FormatsPage() {

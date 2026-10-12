@@ -9,6 +9,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://trustlypharma.uk/verification/',
   },
+  openGraph: {
+    title: 'Analytical Verification Standards | Trustly Pharma',
+    description:
+      'Technical criteria and analytical testing standards for research peptides, including HPLC chromatography assay and electrospray mass spectrometry.',
+    url: 'https://trustlypharma.uk/verification/',
+    siteName: 'Trustly Pharma',
+    type: 'website',
+    images: [
+      {
+        url: 'https://trustlypharma.uk/icon-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Analytical Verification Standards & HPLC Assays',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Analytical Verification Standards | Trustly Pharma',
+    description:
+      'Technical criteria and analytical testing standards for research peptides, including HPLC chromatography assay and electrospray mass spectrometry.',
+    images: ['https://trustlypharma.uk/icon-512x512.png'],
+  },
 };
 
 export default function VerificationPage() {

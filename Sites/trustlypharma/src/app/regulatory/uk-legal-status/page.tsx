@@ -19,6 +19,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://trustlypharma.uk/regulatory/uk-legal-status/',
   },
+  openGraph: {
+    title: 'UK Legal Status Matrix | Trustly Pharma',
+    description:
+      'Statutory classification matrix for 12 research peptides under UK Human Medicines Regulations 2012, Misuse of Drugs Act 1971, and WADA anti-doping codes.',
+    url: 'https://trustlypharma.uk/regulatory/uk-legal-status/',
+    siteName: 'Trustly Pharma',
+    type: 'website',
+    images: [
+      {
+        url: 'https://trustlypharma.uk/icon-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'UK Peptide Legal Status & Statutory Classification Matrix',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'UK Legal Status Matrix | Trustly Pharma',
+    description:
+      'Statutory classification matrix for 12 research peptides under UK Human Medicines Regulations 2012, Misuse of Drugs Act 1971, and WADA anti-doping codes.',
+    images: ['https://trustlypharma.uk/icon-512x512.png'],
+  },
 };
 
 export default function UkLegalStatusPage() {

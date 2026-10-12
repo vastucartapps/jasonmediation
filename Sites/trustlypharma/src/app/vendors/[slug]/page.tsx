@@ -53,6 +53,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: pageUrl,
       type: 'profile',
       siteName: 'Trustly Pharma',
+      images: [
+        {
+          url: 'https://trustlypharma.uk/icon-512x512.png',
+          width: 512,
+          height: 512,
+          alt: `${vendor.name} Commercial Vendor Dossier`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${vendor.name} Analytical Profile | Trustly Pharma`,
+      description: vendor.productCatalogSummary,
+      images: ['https://trustlypharma.uk/icon-512x512.png'],
     },
   };
 }

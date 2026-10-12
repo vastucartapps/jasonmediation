@@ -26,6 +26,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://trustlypharma.uk/regulatory/',
   },
+  openGraph: {
+    title: 'Regulatory Intelligence Hub | Trustly Pharma',
+    description:
+      'Official UK regulatory framework for research peptides and GLP-1 medicines: MHRA, WADA, FDA, EMA, and ASA statutory policies and primary citations.',
+    url: 'https://trustlypharma.uk/regulatory/',
+    siteName: 'Trustly Pharma',
+    type: 'website',
+    images: [
+      {
+        url: 'https://trustlypharma.uk/icon-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Trustly Pharma Regulatory Intelligence Hub',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Regulatory Intelligence Hub | Trustly Pharma',
+    description:
+      'Official UK regulatory framework for research peptides and GLP-1 medicines: MHRA, WADA, FDA, EMA, and ASA statutory policies and primary citations.',
+    images: ['https://trustlypharma.uk/icon-512x512.png'],
+  },
 };
 
 const COMPOUND_LEGAL_PAGES = [

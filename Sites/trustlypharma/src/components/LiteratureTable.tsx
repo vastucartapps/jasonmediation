@@ -52,7 +52,7 @@ export function LiteratureTable({ compoundName, citations }: LiteratureTableProp
                   <a
                     href={`https://pubmed.ncbi.nlm.nih.gov/${cite.pubmedId}/`}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold text-sky-300 bg-sky-950/60 border border-sky-500/40 hover:bg-sky-900/60 transition-colors shadow-sm"
                   >
                     <span>PMID: {cite.pubmedId}</span>
@@ -63,7 +63,7 @@ export function LiteratureTable({ compoundName, citations }: LiteratureTableProp
                   <a
                     href={`https://doi.org/${cite.doi}`}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono text-slate-300 bg-[#02102b] border border-[rgba(141,168,195,0.25)] hover:text-white transition-colors"
                   >
                     <span>DOI</span>

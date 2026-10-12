@@ -46,7 +46,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/bpc-157/',
+        url: 'https://direct-peptides.com#bpc-157/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -57,7 +57,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/bpc-157/',
+        url: 'https://direct-sarms.com#bpc-157/',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -68,7 +68,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -95,7 +95,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2018,
         authors: 'Sikiric P, Seiwerth S, Rucman R, Turkovic B, et al.',
         pubmedId: '29898969',
-        doi: '10.2174/1570159X17666190313134114',
+        // doi removed - dead link
         keyFindings: 'Demonstrated stabilization of cellular membranes, attenuation of endothelial dysfunction, and accelerated microvascular repair cascades in preclinical models.',
       },
       {
@@ -104,7 +104,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2011,
         authors: 'Chang CH, Tsai WC, Lin MS, Hsu YH, Pang JH.',
         pubmedId: '21979308',
-        doi: '10.3390/molecules191118166',
+        // doi removed - dead link
         keyFindings: 'Revealed dose-dependent upregulation of growth hormone receptor mRNA expression and activation of the FAK-Paxillin phosphorylation cascade.',
       },
       {
@@ -163,7 +163,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/tb500/',
+        url: 'https://direct-peptides.com#tb500/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -174,7 +174,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/tb500/',
+        url: 'https://direct-sarms.com#tb500/',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -185,7 +185,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -230,7 +230,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2004,
         authors: 'Bock-Marquette I, Saxena A, White MD, DiMaio JM, Srivastava D.',
         pubmedId: '15537682',
-        doi: '10.1161/01.CIR.0000148823.15138.83',
+        // doi removed - dead link
         keyFindings: 'Demonstrated activation of Akt phosphorylation mediating survival in explanted ischemic cardiac tissue models.',
       },
     ],
@@ -280,7 +280,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/semax/',
+        url: 'https://direct-peptides.com#semax/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -291,7 +291,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/semax/',
+        url: 'https://direct-sarms.com#semax/',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -302,7 +302,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -347,7 +347,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2014,
         authors: 'Medvedeva EV, Dmitrieva VG, Povarova OV, et al.',
         pubmedId: '24699863',
-        doi: '10.1007/s00438-014-0839-4',
+        // doi removed - dead link
         keyFindings: 'Identified broad upregulation of angiogenic and neuroprotective genes in cerebral cortex within 24 hours of occlusion.',
       },
     ],
@@ -397,7 +397,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/ghk-cu/',
+        url: 'https://direct-peptides.com#ghk-cu/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -408,7 +408,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/ghk-cu/',
+        url: 'https://direct-sarms.com#ghk-cu/',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -419,7 +419,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -514,7 +514,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/cjc-1295-no-dac/',
+        url: 'https://direct-peptides.com#cjc-1295-no-dac/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -525,7 +525,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/cjc-1295-dac/',
+        url: 'https://direct-sarms.com#cjc-1295-dac/',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -536,7 +536,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -581,7 +581,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2008,
         authors: 'Alba M, Fintini D, Saggese G, Salvatori R.',
         pubmedId: '18270830',
-        doi: '10.1007/s11154-008-9071-8',
+        // doi removed - dead link
         keyFindings: 'Analyzed physiological pulsatility preservation and pituitary reserve maintenance under prolonged secretagogue exposure.',
       },
     ],
@@ -631,7 +631,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/ipamorelin/',
+        url: 'https://direct-peptides.com#ipamorelin/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -642,7 +642,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/ipamorelin/',
+        url: 'https://direct-sarms.com#ipamorelin/',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -653,7 +653,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -689,7 +689,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 1999,
         authors: 'Gobburu JV, Agersø H, Jusko WJ, Ynddal L.',
         pubmedId: '10496660',
-        doi: '10.1023/a:1018956903254',
+        // doi removed - dead link
         keyFindings: 'Established clean linear pharmacokinetics and rapid clearance profiles without accumulation across human cohorts.',
       },
       {
@@ -698,7 +698,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 1999,
         authors: 'Johansen PB, Nowak J, Skjaerbaek C, Flyvbjerg A, et al.',
         pubmedId: '10429486',
-        doi: '10.1016/s1096-6374(99)80029-4',
+        // doi removed - dead link
         keyFindings: 'Quantified significant increase in tibial longitudinal bone growth rate without perturbing plasma IGF-I binding protein profiles.',
       },
     ],
@@ -748,7 +748,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/aod-9604/',
+        url: 'https://direct-peptides.com#aod-9604/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -759,7 +759,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/peptides/',
+        url: 'https://direct-sarms.com#peptides/',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -770,7 +770,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -815,7 +815,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2015,
         authors: 'Kwon DR, Park GY, Lee SU.',
         pubmedId: '26069711',
-        doi: '10.1177/1947603515589139',
+        // doi removed - dead link
         keyFindings: 'Reported synergistic enhancement of proteoglycan and type II collagen deposition in cartilage defect models.',
       },
     ],
@@ -865,7 +865,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/selank/',
+        url: 'https://direct-peptides.com#selank/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -876,7 +876,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/selank/',
+        url: 'https://direct-sarms.com#selank/',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -887,7 +887,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -914,7 +914,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2008,
         authors: 'Uchakina ON, Uchakin PN, Miasoedov NF, Andreeva LA, et al.',
         pubmedId: '18578308',
-        doi: '10.1007/s10517-008-0199-8',
+        // doi removed - dead link
         keyFindings: 'Demonstrated suppression of pro-inflammatory IL-6 expression alongside modulation of peripheral cytokine dynamics.',
       },
       {
@@ -923,7 +923,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2010,
         authors: 'Volkova A, Andreeva L, Myasoedov N.',
         pubmedId: '20925206',
-        doi: '10.3103/S089141681003006X',
+        // doi removed - dead link
         keyFindings: 'Quantified differential expression of 84 genes related to GABAergic, serotonergic, and neurotrophic transmission.',
       },
     ],
@@ -973,7 +973,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/epithalon/',
+        url: 'https://direct-peptides.com#epithalon/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -984,7 +984,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/epithalon/',
+        url: 'https://direct-sarms.com#epithalon/',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -995,7 +995,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -1081,7 +1081,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/mots-c/',
+        url: 'https://direct-peptides.com#mots-c/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -1092,7 +1092,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/mots-c/',
+        url: 'https://direct-sarms.com#mots-c/',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -1103,7 +1103,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -1189,7 +1189,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/tirzepatide/',
+        url: 'https://direct-peptides.com#tirzepatide/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -1200,7 +1200,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/tirzepatide/',
+        url: 'https://direct-sarms.com#tirzepatide/',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -1211,7 +1211,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -1297,7 +1297,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/semaglutide/',
+        url: 'https://direct-peptides.com#semaglutide/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -1308,7 +1308,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/semaglutide/',
+        url: 'https://direct-sarms.com#semaglutide/',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -1319,7 +1319,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,

@@ -407,9 +407,10 @@ export default function ContactPage() {
                   <p className="text-xs text-slate-400 mb-2">
                     For molecular formulas, amino acid residue corrections, and isomeric notations.
                   </p>
-                  <span className="select-all font-mono text-xs text-sky-300 font-semibold block cursor-text">
-                    curation@trustlypharma.uk
-                  </span>
+                  <span
+                    className="select-all font-mono text-xs text-sky-300 font-semibold block cursor-text"
+                    dangerouslySetInnerHTML={{ __html: '<!--email_off-->curation@trustlypharma.uk<!--/email_off-->' }}
+                  />
                 </div>
 
                 <div className="p-4 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.18)]">
@@ -420,9 +421,10 @@ export default function ContactPage() {
                   <p className="text-xs text-slate-400 mb-2">
                     Submissions of newly published peer-reviewed in vitro assays and clinical trial data.
                   </p>
-                  <span className="select-all font-mono text-xs text-sky-300 font-semibold block cursor-text">
-                    editorial@trustlypharma.uk
-                  </span>
+                  <span
+                    className="select-all font-mono text-xs text-sky-300 font-semibold block cursor-text"
+                    dangerouslySetInnerHTML={{ __html: '<!--email_off-->editorial@trustlypharma.uk<!--/email_off-->' }}
+                  />
                 </div>
 
                 <div className="p-4 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.18)]">
@@ -433,9 +435,10 @@ export default function ContactPage() {
                   <p className="text-xs text-slate-400 mb-2">
                     Inquiries regarding inclusion in our research chemical vendor matrix (HPLC/COA verification mandatory).
                   </p>
-                  <span className="select-all font-mono text-xs text-sky-300 font-semibold block cursor-text">
-                    directory@trustlypharma.uk
-                  </span>
+                  <span
+                    className="select-all font-mono text-xs text-sky-300 font-semibold block cursor-text"
+                    dangerouslySetInnerHTML={{ __html: '<!--email_off-->directory@trustlypharma.uk<!--/email_off-->' }}
+                  />
                 </div>
               </div>
             </div>

@@ -57,11 +57,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: pageUrl,
       type: 'article',
       siteName: 'Trustly Pharma',
+      images: [
+        {
+          url: 'https://trustlypharma.uk/icon-512x512.png',
+          width: 512,
+          height: 512,
+          alt: `${compound.name} Chemical Structure & Research Profile`,
+        },
+      ],
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title: `${compound.name} Chemical Reference Profile`,
       description: compound.shortOverview,
+      images: ['https://trustlypharma.uk/icon-512x512.png'],
     },
     keywords: [
       `${compound.name} peptide`,
@@ -193,6 +202,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
         },
         offers: {
           '@type': 'AggregateOffer',
+          url: pageUrl,
           priceCurrency: 'GBP',
           lowPrice: '24.99',
           highPrice: '54.99',
@@ -205,6 +215,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
         '@id': `${pageUrl}#howto`,
         name: `How to Reconstitute Lyophilized ${compound.name} for In Vitro Research`,
         description: `Standard operating procedure for reconstituting ${compound.name} with ${compound.reconstitution.recommendedDiluent} in a sterile laboratory environment.`,
+        image: 'https://trustlypharma.uk/icon-512x512.png',
         totalTime: 'PT5M',
         supply: [
           {
