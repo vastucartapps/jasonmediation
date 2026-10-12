@@ -20,7 +20,7 @@ export const SITE_METADATA = {
 };
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Reagent Catalog', href: '/#catalog', primary: true },
+  { label: 'Reagent Catalog', href: '/#catalog' },
   { label: 'Signaling Pathways', href: '/#categories' },
   { label: 'Verified UK Suppliers', href: '/vendors/' },
   { label: 'Dilution Calculator', href: '/#calculator' },

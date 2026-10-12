@@ -12,8 +12,9 @@ export function Header() {
 
   // Helper function to check if a navigation item is active
   const isItemActive = (href: string) => {
-    if (href === '/#catalog' || href === '/#categories' || href === '/#calculator') {
-      return pathname === '/';
+    // Anchor jump links on the homepage should never be marked as active pages
+    if (href.includes('#')) {
+      return false;
     }
     const cleanHref = href.replace(/\/$/, '');
     const cleanPath = pathname.replace(/\/$/, '');
