@@ -1,0 +1,42 @@
+# Peptides-UK.org - British Laboratory Chemical Directory
+
+> Authoritative United Kingdom clinical and academic registry indexing synthetic peptides, amino acid sequences, PubChem molecular specifications, PubMed research citations, and verified British laboratory suppliers. Strictly intended for in vitro academic and biotechnology research under UK Human Medicines Regulations 2012.
+
+## Machine Discoverable Resources
+- Canonical XML Sitemap: https://peptides-uk.org/sitemap.xml
+- Full Technical Compendium: https://peptides-uk.org/llms-full.txt
+- Visual HTML Sitemap: https://peptides-uk.org/sitemap/
+- UK MHRA Compliance Hub: https://peptides-uk.org/regulatory/
+- Verified Supplier Directory: https://peptides-uk.org/vendors/
+
+## Verified UK Research Reagents Indexed
+- [BPC-157 (Body Protection Compound-157 Pentadecapeptide)](https://peptides-uk.org/peptides/bpc-157/): CAS 137525-51-0 | Formula: C62H98N16O22 | MW: 1419.55 g/mol | Category: Tissue Repair & Angiogenesis
+- [TB-500 (Thymosin Beta-4 Active Hexapeptide Domain (Ac-LKKTET-OH))](https://peptides-uk.org/peptides/tb-500/): CAS 77591-33-4 | Formula: C212H350N56O78S | MW: 4963.50 g/mol | Category: Tissue Repair & Angiogenesis
+- [Semax (Heptapeptide ACTH(4-10) Analog (Met-Glu-His-Phe-Pro-Gly-Pro))](https://peptides-uk.org/peptides/semax/): CAS 80714-61-0 | Formula: C37H51N9O10S | MW: 813.92 g/mol | Category: Neuropeptides & CNS Signaling
+- [GHK-Cu (Copper Tripeptide-1 Complex (Gly-His-Lys:Cu2+))](https://peptides-uk.org/peptides/ghk-cu/): CAS 49557-75-7 | Formula: C14H24CuN6O4 | MW: 403.92 g/mol | Category: Dermal & Extracellular Matrix
+- [CJC-1295 (Modified Growth Hormone-Releasing Hormone (Mod GRF 1-29 / CJC-1295 No DAC))](https://peptides-uk.org/peptides/cjc-1295/): CAS 863288-34-0 | Formula: C152H252N44O42 | MW: 3367.97 g/mol | Category: Growth Hormone Secretagogues & GHRH
+- [Ipamorelin (Aib-His-D-2-Nal-D-Phe-Lys-NH2 Pentapeptide)](https://peptides-uk.org/peptides/ipamorelin/): CAS 170851-70-4 | Formula: C38H49N9O5 | MW: 711.86 g/mol | Category: Growth Hormone Secretagogues & GHRH
+- [AOD-9604 (Human Growth Hormone C-Terminal Fragment (Tyr-hGH177-191))](https://peptides-uk.org/peptides/aod-9604/): CAS 221231-10-3 | Formula: C78H123N23O23S2 | MW: 1815.12 g/mol | Category: Metabolic & Incretin Signaling
+- [Selank (Synthetic Tuftsin Heptapeptide Analogue (Thr-Lys-Pro-Arg-Pro-Gly-Pro))](https://peptides-uk.org/peptides/selank/): CAS 129954-34-3 | Formula: C33H57N11O9 | MW: 751.88 g/mol | Category: Neuropeptides & CNS Signaling
+- [Epithalon (Synthetic Pineal Tetrapeptide (Ala-Glu-Asp-Gly))](https://peptides-uk.org/peptides/epithalon/): CAS 307297-39-8 | Formula: C14H22N4O9 | MW: 390.35 g/mol | Category: Cellular Longevity & Mitochondrial Axis
+- [MOTS-c (Mitochondrial Open Reading Frame of the 12S rRNA-c (16-AA Peptide))](https://peptides-uk.org/peptides/mots-c/): CAS 1627580-64-6 | Formula: C101H152N28O22S2 | MW: 2174.62 g/mol | Category: Cellular Longevity & Mitochondrial Axis
+- [Tirzepatide (Dual GIP and GLP-1 Receptor Co-Agonist 39-AA Synthetic Peptide)](https://peptides-uk.org/peptides/tirzepatide/): CAS 2023788-19-2 | Formula: C225H348N48O68 | MW: 4813.45 g/mol | Category: Metabolic & Incretin Signaling
+- [Semaglutide (Acylated GLP-1 Analogue (31-AA Chain with C18 Diacid Spacer))](https://peptides-uk.org/peptides/semaglutide/): CAS 910463-68-2 | Formula: C187H291N45O59 | MW: 4113.58 g/mol | Category: Metabolic & Incretin Signaling
+
+## Research Signaling Pathway Hubs
+- [Tissue Repair & Angiogenesis](https://peptides-uk.org/category/tissue-repair-recovery/): UK Laboratory Investigation into Cellular Migration & Microvascular Integrity
+- [Neuropeptides & CNS Signaling](https://peptides-uk.org/category/neuropeptides-cognition/): Pre-Clinical Neurotrophic Expression & Central Synaptic Modulation
+- [Growth Hormone Secretagogues & GHRH](https://peptides-uk.org/category/growth-hormone-secretagogues/): Anterior Pituitary Somatotroph Receptors & Pulsatile Endocrine Cascades
+- [Metabolic & Incretin Signaling](https://peptides-uk.org/category/metabolic-regulation/): Dual Incretin Receptor Co-Agonism & Lipolytic Energy Dynamics
+- [Dermal & Extracellular Matrix](https://peptides-uk.org/category/dermal-extracellular-matrix/): Copper Chelation Dynamics & Fibroblast Procollagen Remodeling
+- [Cellular Longevity & Mitochondrial Axis](https://peptides-uk.org/category/cellular-longevity-mitochondrial/): Telomeric Chromatin Architecture & Mitochondrial-Derived Bioenergetics
+
+## Verified UK Chemical Suppliers
+- [PharmaGrade Store](https://peptides-uk.org/vendors/pharmagrade/): HQ: London, United Kingdom | Baseline HPLC Purity: ≥98.5% | Dispatch: United Kingdom (Royal Mail Tracked 24), European Union, International
+- [Direct Peptides](https://peptides-uk.org/vendors/direct-peptides/): HQ: Dublin, Ireland & UK Distribution Hub | Baseline HPLC Purity: ≥99.1% | Dispatch: United Kingdom Express Hub, European Union, North America, Worldwide
+- [Direct Sarms](https://peptides-uk.org/vendors/direct-sarms/): HQ: London, United Kingdom | Baseline HPLC Purity: ≥98.7% | Dispatch: United Kingdom Hub, European Union, Worldwide
+- [Peptide Works](https://peptides-uk.org/vendors/peptide-works/): HQ: Manchester, United Kingdom | Baseline HPLC Purity: ≥98.8% | Dispatch: United Kingdom (Next Day Tracked), European Union
+- [PharmaLab Global](https://peptides-uk.org/vendors/pharmalab-global/): HQ: London, United Kingdom (International Dispatch Hubs) | Baseline HPLC Purity: ≥99.2% | Dispatch: United Kingdom Hub, European Union, Australia, Global
+
+## Statutory Regulatory Notice
+All biochemical entries cataloged on Peptides-UK.org are classified strictly as analytical reference standards and chemical reagents for in vitro laboratory evaluation. They are not medicinal products under the UK Human Medicines Regulations 2012 and are strictly not for human or animal consumption.

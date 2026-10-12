@@ -1,0 +1,21 @@
+{
+  "name": "Trustly Pharma",
+  "short_name": "Trustly Pharma",
+  "description": "UK & International Peptide Index & Analytical Chemical Reference Repository",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020e24",
+  "theme_color": "#02102b",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

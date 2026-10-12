@@ -1,0 +1,26 @@
+# ----------------------------------------------------------------------
+# Robots.txt for Peptides UK (peptides-uk.org)
+# United Kingdom Clinical & Academic Laboratory Peptide Directory
+# ----------------------------------------------------------------------
+
+User-agent: *
+Allow: /
+
+# Canonical Single Dynamic XML Sitemap
+Sitemap: https://peptides-uk.org/sitemap.xml
+
+# LLM & WebMCP Discovery Agents
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /

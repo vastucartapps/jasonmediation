@@ -1,0 +1,52 @@
+import * as fs from 'fs';
+import * as path from 'path';
+import {
+  generateUnifiedSitemapXml,
+  generateRobotsTxt,
+  generateLlmsTxt,
+  generateLlmsFullTxt,
+  getAllCanonicalRoutes,
+} from '../src/lib/discovery';
+
+const projectRoot = path.resolve(__dirname, '..');
+const publicDir = path.join(projectRoot, 'public');
+const outDir = path.join(projectRoot, 'out');
+
+function ensureDir(dir: string) {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+}
+
+function run() {
+  console.log('Generating Single Source of Truth discovery assets for Peptides UK...');
+
+  ensureDir(publicDir);
+
+  const sitemapXml = generateUnifiedSitemapXml();
+  const robotsTxt = generateRobotsTxt();
+  const llmsTxt = generateLlmsTxt();
+  const llmsFullTxt = generateLlmsFullTxt();
+
+  // Write to public/
+  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml, 'utf-8');
+  fs.writeFileSync(path.join(publicDir, 'robots.txt'), robotsTxt, 'utf-8');
+  fs.writeFileSync(path.join(publicDir, 'llms.txt'), llmsTxt, 'utf-8');
+  fs.writeFileSync(path.join(publicDir, 'llms-full.txt'), llmsFullTxt, 'utf-8');
+
+  console.log('Successfully wrote sitemap.xml, robots.txt, llms.txt, llms-full.txt to public/');
+
+  // If out directory exists (e.g. postbuild), write directly to out/ as well
+  if (fs.existsSync(outDir)) {
+    fs.writeFileSync(path.join(outDir, 'sitemap.xml'), sitemapXml, 'utf-8');
+    fs.writeFileSync(path.join(outDir, 'robots.txt'), robotsTxt, 'utf-8');
+    fs.writeFileSync(path.join(outDir, 'llms.txt'), llmsTxt, 'utf-8');
+    fs.writeFileSync(path.join(outDir, 'llms-full.txt'), llmsFullTxt, 'utf-8');
+    console.log('Successfully wrote discovery assets to out/');
+  }
+
+  const routes = getAllCanonicalRoutes();
+  console.log(`Total canonical routes indexed: ${routes.length}`);
+}
+
+run();
