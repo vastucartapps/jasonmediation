@@ -11,6 +11,8 @@ import {
   TrendingUp,
   Scale,
   Sparkles,
+  ArrowRight,
+  Dna,
 } from 'lucide-react';
 
 export function ClinicalHero() {
@@ -23,7 +25,7 @@ export function ClinicalHero() {
       formula: 'C62H98N16O22',
       mw: '1419.55 g/mol',
       purity: '99.2%',
-      sequence: 'Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val',
+      sequenceList: ['Gly', 'Glu', 'Pro', 'Pro', 'Pro', 'Gly', 'Lys', 'Pro', 'Ala', 'Asp', 'Asp', 'Ala', 'Gly', 'Leu', 'Val'],
       indication: 'VEGFR2 & FAK-Paxillin Cytoskeletal Activation',
       testingMethod: 'Reverse-Phase HPLC & ESI-MS Dual Assay',
       status: 'Analytical Reference Standard Certified',
@@ -35,7 +37,7 @@ export function ClinicalHero() {
       formula: 'C212H350N56O78S',
       mw: '4963.50 g/mol',
       purity: '99.1%',
-      sequence: 'Ac-Leu-Lys-Lys-Thr-Glu-Thr-OH',
+      sequenceList: ['Ac-Leu', 'Lys', 'Lys', 'Thr', 'Glu', 'Thr-OH'],
       indication: 'G-Actin Monomer Sequestration & Motility',
       testingMethod: 'C18 Reverse-Phase HPLC & MS/MS',
       status: 'Analytical Reference Standard Certified',
@@ -47,7 +49,7 @@ export function ClinicalHero() {
       formula: 'C37H51N9O10S',
       mw: '813.92 g/mol',
       purity: '99.4%',
-      sequence: 'Met-Glu-His-Phe-Pro-Gly-Pro',
+      sequenceList: ['Met', 'Glu', 'His', 'Phe', 'Pro', 'Gly', 'Pro'],
       indication: 'Hippocampal BDNF/TrkB Axis Upregulation',
       testingMethod: 'Ion-Exchange HPLC & Spectrometry',
       status: 'Analytical Reference Standard Certified',
@@ -58,20 +60,20 @@ export function ClinicalHero() {
   const current = compoundDetails[activeCompound];
 
   return (
-    <section className="relative overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200/80">
+    <section className="relative overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200/80 bg-benzene-washout">
       {/* Background Soft Accent Orbs */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-100/40 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-100/30 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column: Clinical Briefing */}
           <div className="lg:col-span-7 space-y-6">
             {/* Top UK Clinical Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs font-mono font-semibold shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50/90 border border-emerald-200/90 text-emerald-800 text-xs font-mono font-semibold shadow-xs">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span>United Kingdom Clinical &amp; Academic Registry</span>
-              <span className="text-emerald-400">|</span>
+              <span className="text-emerald-300">|</span>
               <span className="text-emerald-700 font-bold">In Vitro Only</span>
             </div>
 
@@ -92,19 +94,19 @@ export function ClinicalHero() {
 
             {/* Key Trust Stats Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-              <div className="p-3 bg-white rounded-xl border border-slate-200/90 shadow-sm">
+              <div className="p-3.5 bg-white/90 backdrop-blur-sm rounded-xl border border-slate-200/90 shadow-xs">
                 <div className="text-xl sm:text-2xl font-bold font-mono text-slate-900">12</div>
                 <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">Compounds</div>
               </div>
-              <div className="p-3 bg-white rounded-xl border border-slate-200/90 shadow-sm">
+              <div className="p-3.5 bg-white/90 backdrop-blur-sm rounded-xl border border-slate-200/90 shadow-xs">
                 <div className="text-xl sm:text-2xl font-bold font-mono text-emerald-600">≥98.5%</div>
                 <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">HPLC Purity</div>
               </div>
-              <div className="p-3 bg-white rounded-xl border border-slate-200/90 shadow-sm">
+              <div className="p-3.5 bg-white/90 backdrop-blur-sm rounded-xl border border-slate-200/90 shadow-xs">
                 <div className="text-xl sm:text-2xl font-bold font-mono text-blue-600">5</div>
                 <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">UK Suppliers</div>
               </div>
-              <div className="p-3 bg-white rounded-xl border border-slate-200/90 shadow-sm">
+              <div className="p-3.5 bg-white/90 backdrop-blur-sm rounded-xl border border-slate-200/90 shadow-xs">
                 <div className="text-xl sm:text-2xl font-bold font-mono text-slate-900">300+</div>
                 <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">PubMed PMIDs</div>
               </div>
@@ -114,64 +116,67 @@ export function ClinicalHero() {
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <Link
                 href="/#catalog"
-                className="px-5 py-3 rounded-xl bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 transition-all shadow-md shadow-emerald-700/20 hover:-translate-y-0.5"
+                className="px-5 py-3 rounded-xl bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 transition-all shadow-md shadow-emerald-700/20 hover:-translate-y-0.5 inline-flex items-center gap-2"
               >
-                Explore Reagents A–Z →
+                <span>Explore Reagents A–Z</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/vendors/"
-                className="px-5 py-3 rounded-xl bg-white border border-slate-300 text-slate-800 font-semibold text-sm hover:bg-slate-50 hover:border-slate-400 transition-all shadow-sm hover:-translate-y-0.5"
+                className="px-5 py-3 rounded-xl bg-white border border-slate-300 text-slate-800 font-semibold text-sm hover:bg-slate-50 hover:border-slate-400 transition-all shadow-xs hover:-translate-y-0.5"
               >
                 Compare 5 UK Suppliers
               </Link>
               <Link
-                href="/#calculator"
-                className="px-5 py-3 rounded-xl bg-slate-100 text-slate-700 font-semibold text-sm hover:bg-slate-200 transition-all"
+                href="/regulatory/uk-legal-status/"
+                className="px-5 py-3 rounded-xl bg-blue-50 text-blue-800 border border-blue-200 font-semibold text-sm hover:bg-blue-100 transition-all"
               >
-                Dilution Calculator
+                UK Legal Status
               </Link>
             </div>
           </div>
 
           {/* Right Column: Interactive Real-Time Assay Dashboard Card */}
           <div className="lg:col-span-5">
-            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-xl shadow-slate-200/50 space-y-5 relative">
+            <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200/90 p-6 shadow-xl shadow-slate-200/50 space-y-5 relative">
               {/* Card Header & Compound Switcher */}
               <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                 <div className="flex items-center gap-2">
-                  <FlaskConical className="w-5 h-5 text-emerald-600" />
+                  <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-700">
+                    <FlaskConical className="w-4 h-4" />
+                  </div>
                   <span className="font-mono text-xs font-bold uppercase tracking-wider text-slate-700">
-                    Live Analytical Assay Card
+                    Analytical Assay Card
                   </span>
                 </div>
                 {/* Compound Toggles */}
-                <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-lg">
+                <div className="flex items-center gap-1 bg-slate-100/90 p-1 rounded-lg border border-slate-200/60">
                   <button
                     onClick={() => setActiveCompound('bpc157')}
-                    className={`px-2 py-1 text-[11px] font-mono font-bold rounded ${
+                    className={`px-2.5 py-1 text-[11px] font-mono font-bold rounded-md transition-all ${
                       activeCompound === 'bpc157'
                         ? 'bg-white text-emerald-700 shadow-xs'
-                        : 'text-slate-500 hover:text-slate-800'
+                        : 'text-slate-500 hover:text-slate-900'
                     }`}
                   >
                     BPC
                   </button>
                   <button
                     onClick={() => setActiveCompound('tb500')}
-                    className={`px-2 py-1 text-[11px] font-mono font-bold rounded ${
+                    className={`px-2.5 py-1 text-[11px] font-mono font-bold rounded-md transition-all ${
                       activeCompound === 'tb500'
                         ? 'bg-white text-emerald-700 shadow-xs'
-                        : 'text-slate-500 hover:text-slate-800'
+                        : 'text-slate-500 hover:text-slate-900'
                     }`}
                   >
                     TB-4
                   </button>
                   <button
                     onClick={() => setActiveCompound('semax')}
-                    className={`px-2 py-1 text-[11px] font-mono font-bold rounded ${
+                    className={`px-2.5 py-1 text-[11px] font-mono font-bold rounded-md transition-all ${
                       activeCompound === 'semax'
                         ? 'bg-white text-emerald-700 shadow-xs'
-                        : 'text-slate-500 hover:text-slate-800'
+                        : 'text-slate-500 hover:text-slate-900'
                     }`}
                   >
                     SEMAX
@@ -181,58 +186,69 @@ export function ClinicalHero() {
 
               {/* Compound Headline */}
               <div>
-                <div className="text-xs font-mono text-emerald-600 font-bold uppercase tracking-wide">
-                  Active Reference Lot: UK-2026-LOT
+                <div className="flex items-center gap-2 text-xs font-mono text-emerald-700 font-bold uppercase tracking-wide">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  <span>Reference Lot: UK-2026-LOT</span>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mt-0.5">{current.name}</h3>
-                <div className="flex items-center gap-2 mt-2">
-                  <span className="font-mono text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">
+                <h3 className="text-xl font-bold text-slate-900 mt-1">{current.name}</h3>
+                <div className="flex flex-wrap items-center gap-1.5 mt-2.5">
+                  <span className="font-mono text-xs bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md border border-slate-200 font-semibold">
                     CAS {current.cas}
                   </span>
-                  <span className="font-mono text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded border border-emerald-200">
+                  <span className="font-mono text-xs bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-md border border-emerald-200/80 font-bold">
                     HPLC {current.purity}
                   </span>
-                  <span className="font-mono text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded border border-blue-200">
+                  <span className="font-mono text-xs bg-blue-50 text-blue-700 px-2.5 py-1 rounded-md border border-blue-200/80 font-semibold">
                     {current.mw}
                   </span>
                 </div>
               </div>
 
-              {/* Chemical Specifications Data Matrix */}
-              <div className="bg-slate-50 rounded-xl p-3.5 border border-slate-100 space-y-2 font-mono text-xs">
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Molecular Formula:</span>
-                  <span className="font-bold text-slate-800">{current.formula}</span>
+              {/* Chemical Specifications Data Matrix - Refined Card-in-Card */}
+              <div className="card-inner-elevated p-4 space-y-2.5 font-mono text-xs">
+                <div className="flex justify-between items-center py-0.5 border-b border-slate-100 pb-1.5">
+                  <span className="text-slate-500 font-medium">Formula:</span>
+                  <span className="font-bold text-slate-900 formula-chip">{current.formula}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Assay Methodology:</span>
+                <div className="flex justify-between items-center py-0.5 border-b border-slate-100 pb-1.5">
+                  <span className="text-slate-500 font-medium">Methodology:</span>
                   <span className="font-semibold text-slate-800">{current.testingMethod}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Signaling Axis:</span>
-                  <span className="font-semibold text-slate-800 text-right">{current.indication}</span>
+                <div className="flex justify-between items-start py-0.5 border-b border-slate-100 pb-1.5">
+                  <span className="text-slate-500 font-medium">Signaling Axis:</span>
+                  <span className="font-semibold text-slate-800 text-right max-w-[210px]">{current.indication}</span>
                 </div>
-                <div className="pt-2 border-t border-slate-200/80">
-                  <span className="text-slate-500 block mb-1">Sequence Fragment:</span>
-                  <div className="text-[11px] bg-white p-2 rounded border border-slate-200 text-emerald-800 break-all font-mono">
-                    {current.sequence}
+                <div className="pt-1.5">
+                  <div className="flex items-center gap-1 text-[11px] text-slate-500 font-medium mb-1.5">
+                    <Dna className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>Sequence Residues ({current.sequenceList.length}):</span>
+                  </div>
+                  <div className="flex flex-wrap gap-1">
+                    {current.sequenceList.map((res, i) => (
+                      <span
+                        key={i}
+                        className="bg-white px-1.5 py-0.5 rounded text-[10px] font-bold text-emerald-800 border border-slate-200 shadow-2xs"
+                      >
+                        {res}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
 
               {/* Quality Standards & Verification Footer */}
-              <div className="space-y-2 pt-1">
-                <div className="flex items-center justify-between text-xs text-slate-500">
+              <div className="space-y-1.5 pt-1">
+                <div className="flex items-center justify-between text-xs text-slate-600">
                   <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                    <span>European ISO 17025 Third-Party Tested</span>
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+                    <span>ISO 17025 Third-Party Chromatography</span>
                   </span>
                   <span className="font-mono font-bold text-emerald-600">PASS</span>
                 </div>
-                <div className="flex items-center justify-between text-xs text-slate-500">
+                <div className="flex items-center justify-between text-xs text-slate-600">
                   <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                    <span>Nitrogen-Purged Neutral Borosilicate Vial</span>
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+                    <span>Neutral Borosilicate Type I Glass</span>
                   </span>
                   <span className="font-mono font-bold text-emerald-600">PASS</span>
                 </div>
@@ -241,10 +257,10 @@ export function ClinicalHero() {
               {/* Direct Dossier Link Button */}
               <Link
                 href={`/peptides/${current.slug}/`}
-                className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-900 text-white font-semibold text-xs hover:bg-emerald-700 transition-colors"
+                className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-900 text-white font-semibold text-xs hover:bg-emerald-700 transition-colors shadow-xs"
               >
-                <span>View Full {current.name} Monograph &amp; Sourcing Matrix</span>
-                <span>→</span>
+                <span>View Full {current.name} Monograph</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           </div>

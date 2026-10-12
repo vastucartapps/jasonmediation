@@ -67,24 +67,35 @@ export default function VendorsIndexPage() {
             className="clinical-card p-6 sm:p-8 bg-white border border-slate-200/90 rounded-3xl shadow-sm hover:border-emerald-500/40 transition-all space-y-6"
           >
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-slate-100 pb-6">
-              <div className="space-y-2">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="badge-emerald font-mono text-xs">
-                    HPLC Baseline ≥{vendor.hplcBaseline}%
-                  </span>
-                  <span className="badge-cobalt font-mono text-xs">
-                    Est. {vendor.establishedYear}
-                  </span>
-                  <span className="text-xs font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
-                    {vendor.headquarters}
-                  </span>
+              <div className="flex flex-col sm:flex-row sm:items-start gap-5">
+                {vendor.logoUrl && (
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white border border-slate-200 shadow-xs p-2 flex items-center justify-center flex-shrink-0">
+                    <img
+                      src={vendor.logoUrl}
+                      alt={vendor.name}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                )}
+                <div className="space-y-2">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="badge-emerald font-mono text-xs">
+                      HPLC Baseline ≥{vendor.hplcBaseline}%
+                    </span>
+                    <span className="badge-cobalt font-mono text-xs">
+                      Est. {vendor.establishedYear}
+                    </span>
+                    <span className="text-xs font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+                      {vendor.headquarters}
+                    </span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+                    {vendor.name}
+                  </h2>
+                  <p className="text-xs sm:text-sm text-slate-600 max-w-3xl leading-relaxed">
+                    {vendor.productCatalogSummary}
+                  </p>
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-                  {vendor.name}
-                </h2>
-                <p className="text-xs sm:text-sm text-slate-600 max-w-3xl leading-relaxed">
-                  {vendor.productCatalogSummary}
-                </p>
               </div>
 
               {/* Action Buttons */}

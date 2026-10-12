@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="2.0"
+<xsl:stylesheet version="1.0"
                 xmlns:html="http://www.w3.org/TR/REC-html40"
                 xmlns:sitemap="http://www.sitemaps.org/schemas/sitemap/0.9"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
@@ -288,7 +288,7 @@
           </xsl:choose>
 
           <div class="footer-note">
-            Peptides UK &copy; 2026 &middot; Clinical Laboratory Directory &middot; In Vitro Academic Research Only
+            Peptides UK &#169; 2026 &#183; Clinical Laboratory Directory &#183; In Vitro Academic Research Only
           </div>
         </div>
 

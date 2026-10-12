@@ -47,9 +47,22 @@ export function UkVendorMatrix() {
             {vendors.map((vendor) => (
               <tr key={vendor.id} className="hover:bg-slate-50/70 transition-colors">
                 <td className="py-4 px-4">
-                  <div className="font-bold text-slate-900 text-sm">{vendor.name}</div>
-                  <div className="text-slate-500 font-mono text-[11px]">{vendor.headquarters}</div>
-                  <div className="text-emerald-600 font-mono text-[10px] mt-0.5">Est. {vendor.establishedYear}</div>
+                  <div className="flex items-center gap-3">
+                    {vendor.logoUrl && (
+                      <div className="w-10 h-10 rounded-lg bg-white border border-slate-200 p-1 flex items-center justify-center flex-shrink-0 shadow-2xs">
+                        <img
+                          src={vendor.logoUrl}
+                          alt={vendor.name}
+                          className="max-w-full max-h-full object-contain"
+                        />
+                      </div>
+                    )}
+                    <div>
+                      <div className="font-bold text-slate-900 text-sm">{vendor.name}</div>
+                      <div className="text-slate-500 font-mono text-[11px]">{vendor.headquarters}</div>
+                      <div className="text-emerald-600 font-mono text-[10px] mt-0.5">Est. {vendor.establishedYear}</div>
+                    </div>
+                  </div>
                 </td>
                 <td className="py-4 px-4 font-mono">
                   <span className="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-md font-bold border border-emerald-200">
