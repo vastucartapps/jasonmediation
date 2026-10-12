@@ -260,81 +260,81 @@ export default async function CompoundPage({ params }: PageProps) {
       />
 
       {/* Breadcrumb Navigation */}
-      <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-mono text-slate-400">
-        <Link href="/" className="hover:text-emerald-400 transition-colors">
+      <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-mono text-slate-500">
+        <Link href="/" className="hover:text-emerald-700 transition-colors">
           Home
         </Link>
-        <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
-        <Link href={`/category/${compound.categorySlug}/`} className="hover:text-emerald-400 transition-colors">
+        <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+        <Link href={`/category/${compound.categorySlug}/`} className="hover:text-emerald-700 transition-colors">
           {compound.categoryName}
         </Link>
-        <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
-        <span className="text-white font-bold">{compound.name}</span>
+        <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+        <span className="text-slate-900 font-bold">{compound.name}</span>
       </nav>
 
-      {/* Monograph Header Card - Rich Deep Clinical Styling */}
-      <div className="bg-gradient-to-br from-[#05183d] via-[#071f4c] to-[#03132e] rounded-3xl border border-sky-400/35 p-6 sm:p-8 md:p-10 shadow-2xl space-y-6 relative overflow-hidden">
-        {/* Ambient Glow Orbs */}
-        <div className="absolute -top-24 -right-24 w-80 h-80 bg-sky-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-emerald-500/12 rounded-full blur-3xl pointer-events-none" />
+      {/* Monograph Header Card - Light Clinical Academic Dossier */}
+      <div className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 md:p-10 shadow-[0_4px_25px_-5px_rgba(15,23,42,0.06)] space-y-6 relative overflow-hidden bg-benzene-washout">
+        {/* Soft Ambient Accent Lighting */}
+        <div className="absolute -top-24 -right-24 w-80 h-80 bg-sky-200/30 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-emerald-200/30 rounded-full blur-3xl pointer-events-none" />
 
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 relative z-10">
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-500/40 inline-flex items-center gap-1.5 shadow-sm">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-50 text-emerald-800 border border-emerald-300 inline-flex items-center gap-1.5 shadow-2xs">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                 <span>UK Academic Monograph</span>
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#0c2859] text-sky-300 border border-sky-400/40 shadow-sm">
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-sky-50 text-sky-800 border border-sky-300 shadow-2xs">
                 {compound.categoryName}
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-500/40 shadow-sm">
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-50 text-amber-800 border border-amber-300 shadow-2xs">
                 In Vitro Laboratory Only
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
               {compound.name}
             </h1>
-            <p className="text-sm sm:text-base text-slate-300 font-mono font-normal max-w-3xl">
+            <p className="text-sm sm:text-base text-slate-600 font-mono font-normal max-w-3xl">
               {compound.systematicName}
             </p>
           </div>
 
-          {/* Quick Specifications Widget - Elevated High-Contrast Card */}
-          <div className="bg-[#061c42]/95 rounded-2xl border border-sky-400/35 p-5 space-y-3 font-mono text-xs shadow-xl backdrop-blur-sm lg:min-w-[320px]">
-            <div className="flex items-center justify-between pb-2 border-b border-[rgba(141,168,195,0.2)]">
-              <span className="text-[11px] font-bold uppercase text-sky-300 tracking-wider">
+          {/* Quick Specifications Widget - Elevated Light Clinical Card */}
+          <div className="bg-slate-50/95 rounded-2xl border border-slate-200 p-5 space-y-3 font-mono text-xs shadow-xs backdrop-blur-sm lg:min-w-[320px]">
+            <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+              <span className="text-[11px] font-bold uppercase text-slate-700 tracking-wider">
                 PubChem Molecular Specs
               </span>
-              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-500/40">
+              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
                 Validated
               </span>
             </div>
-            <div className="flex justify-between items-center py-0.5 border-b border-[rgba(141,168,195,0.15)]">
-              <span className="text-slate-400 font-medium">CAS Registry:</span>
-              <span className="font-bold text-white bg-[#020e24] px-2.5 py-0.5 rounded border border-sky-400/30">
+            <div className="flex justify-between items-center py-0.5 border-b border-slate-200 pb-1.5">
+              <span className="text-slate-500 font-medium">CAS Registry:</span>
+              <span className="font-bold text-slate-900 bg-white px-2.5 py-0.5 rounded border border-slate-200 shadow-2xs">
                 {compound.casNumber}
               </span>
             </div>
-            <div className="flex justify-between items-center py-0.5 border-b border-[rgba(141,168,195,0.15)]">
-              <span className="text-slate-400 font-medium">Chemical Formula:</span>
-              <span className="font-bold text-emerald-300 bg-[#020e24] px-2 py-0.5 rounded border border-emerald-400/30">
+            <div className="flex justify-between items-center py-0.5 border-b border-slate-200 pb-1.5">
+              <span className="text-slate-500 font-medium">Chemical Formula:</span>
+              <span className="font-bold text-sky-800 bg-sky-50 px-2 py-0.5 rounded border border-sky-200">
                 {compound.molecularFormula}
               </span>
             </div>
-            <div className="flex justify-between items-center py-0.5 border-b border-[rgba(141,168,195,0.15)]">
-              <span className="text-slate-400 font-medium">Monoisotopic MW:</span>
-              <span className="font-bold text-white">{compound.molecularWeight}</span>
+            <div className="flex justify-between items-center py-0.5 border-b border-slate-200 pb-1.5">
+              <span className="text-slate-500 font-medium">Monoisotopic MW:</span>
+              <span className="font-bold text-slate-900">{compound.molecularWeight}</span>
             </div>
             {compound.pubchemCid && (
               <div className="flex justify-between items-center pt-0.5">
-                <span className="text-slate-400 font-medium">PubChem CID:</span>
+                <span className="text-slate-500 font-medium">PubChem CID:</span>
                 <a
                   href={`https://pubchem.ncbi.nlm.nih.gov/compound/${compound.pubchemCid}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-bold text-sky-300 hover:text-white hover:underline inline-flex items-center gap-1"
+                  className="font-bold text-sky-700 hover:text-sky-900 hover:underline inline-flex items-center gap-1"
                 >
                   <span>{compound.pubchemCid}</span>
                   <ExternalLink className="w-3 h-3" />
@@ -346,19 +346,19 @@ export default async function CompoundPage({ params }: PageProps) {
 
         {/* Amino Acid Sequence Fragment */}
         {compound.sequence && compound.sequence.length > 0 && (
-          <div className="bg-[#061c42]/90 rounded-2xl border border-emerald-500/30 p-5 space-y-2.5 backdrop-blur-sm relative z-10">
+          <div className="bg-slate-50/90 rounded-2xl border border-slate-200 p-5 space-y-2.5 relative z-10">
             <div className="flex items-center justify-between">
-              <div className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-300 flex items-center gap-2">
-                <Dna className="w-4 h-4 text-emerald-400" />
+              <div className="text-xs font-mono font-bold uppercase tracking-wider text-slate-700 flex items-center gap-2">
+                <Dna className="w-4 h-4 text-emerald-600" />
                 <span>Primary Amino Acid Sequence ({compound.sequence.length} residues)</span>
               </div>
-              <span className="text-[11px] font-mono text-slate-400">N-terminus → C-terminus</span>
+              <span className="text-[11px] font-mono text-slate-500">N-terminus → C-terminus</span>
             </div>
             <div className="flex flex-wrap gap-1.5 font-mono text-xs pt-1">
               {compound.sequence.map((residue, idx) => (
                 <div
                   key={idx}
-                  className="bg-[#020e24] px-2.5 py-1 rounded-lg border border-emerald-500/40 font-bold text-emerald-300 shadow-sm flex items-center gap-1.5 hover:border-emerald-400 transition-colors"
+                  className="bg-white px-2.5 py-1 rounded-lg border border-emerald-300 font-bold text-emerald-900 shadow-2xs flex items-center gap-1.5 hover:border-emerald-500 transition-colors"
                 >
                   <span className="text-[9px] text-slate-400 font-normal">{idx + 1}</span>
                   <span>{residue}</span>
@@ -370,35 +370,35 @@ export default async function CompoundPage({ params }: PageProps) {
 
         {/* Overview Narrative */}
         <div className="pt-2 relative z-10">
-          <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
+          <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 mb-2">
             Pre-Clinical Overview
           </h2>
-          <p className="text-slate-200 leading-relaxed text-sm sm:text-base">
+          <p className="border-l-3 border-emerald-500 pl-4 py-1 text-slate-700 leading-relaxed text-sm sm:text-base">
             {compound.shortOverview}
           </p>
         </div>
       </div>
 
       {/* Verified UK Sourcing Matrix for this Compound */}
-      <section className="bg-[#071938] rounded-3xl border border-[rgba(141,168,195,0.25)] p-6 sm:p-8 shadow-2xl space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[rgba(141,168,195,0.2)] pb-4">
+      <section className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-xs space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-4">
           <div>
-            <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-400 bg-emerald-950/70 px-2.5 py-0.5 rounded-full border border-emerald-500/30 mb-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-300 mb-1">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
               <span>Independent Laboratory Audit</span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-bold text-white">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
               Verified UK Suppliers for {compound.name}
             </h2>
           </div>
-          <div className="text-xs font-mono text-slate-400">
+          <div className="text-xs font-mono text-slate-500">
             5 Audited British &amp; European Sources
           </div>
         </div>
 
-        <div className="w-full max-w-full overflow-x-auto rounded-xl border border-[rgba(141,168,195,0.2)]">
+        <div className="w-full max-w-full overflow-x-auto rounded-xl border border-slate-200">
           <table className="w-full text-left text-xs border-collapse min-w-[650px]">
-            <thead className="bg-[#0b224c] text-sky-200 font-mono text-[11px] uppercase tracking-wider border-b border-[rgba(141,168,195,0.2)]">
+            <thead className="bg-slate-50 text-slate-700 font-mono text-[11px] uppercase tracking-wider border-b border-slate-200">
               <tr>
                 <th className="py-3 px-4 font-bold">Supplier</th>
                 <th className="py-3 px-4 font-bold">Assay Purity</th>
@@ -408,22 +408,22 @@ export default async function CompoundPage({ params }: PageProps) {
                 <th className="py-3 px-4 font-bold text-right">Access</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[rgba(141,168,195,0.15)] font-mono">
+            <tbody className="divide-y divide-slate-100 font-mono">
               {compound.supplierLinks.map((supplier) => (
-                <tr key={supplier.supplierId} className="hover:bg-[#0c2859] transition-colors">
-                  <td className="py-3.5 px-4 font-bold text-white font-sans">
+                <tr key={supplier.supplierId} className="hover:bg-slate-50/70 transition-colors">
+                  <td className="py-3.5 px-4 font-bold text-slate-900 font-sans">
                     {supplier.supplierName}
                   </td>
-                  <td className="py-3.5 px-4 text-emerald-400 font-bold">
+                  <td className="py-3.5 px-4 text-emerald-700 font-bold">
                     {supplier.puritySpecification}
                   </td>
-                  <td className="py-3.5 px-4 text-slate-300 uppercase">
+                  <td className="py-3.5 px-4 text-slate-600 uppercase">
                     {supplier.format}
                   </td>
-                  <td className="py-3.5 px-4 text-slate-300">
+                  <td className="py-3.5 px-4 text-slate-600">
                     {supplier.dispatchRegion}
                   </td>
-                  <td className="py-3.5 px-4 text-slate-400 font-sans text-xs max-w-xs">
+                  <td className="py-3.5 px-4 text-slate-500 font-sans text-xs max-w-xs">
                     {supplier.notes}
                   </td>
                   <td className="py-3.5 px-4 text-right">
@@ -431,7 +431,7 @@ export default async function CompoundPage({ params }: PageProps) {
                       href={supplier.url}
                       target="_blank"
                       rel="noopener noreferrer nofollow"
-                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-500 transition-colors shadow-xs"
+                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors shadow-xs"
                     >
                       <span>Check Batch</span>
                       <ExternalLink className="w-3 h-3" />
@@ -447,18 +447,18 @@ export default async function CompoundPage({ params }: PageProps) {
       {/* Mechanism of Action & Preclinical Findings */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Mechanisms */}
-        <div className="bg-[#071938] rounded-3xl border border-[rgba(141,168,195,0.25)] p-6 sm:p-8 shadow-2xl space-y-4">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-emerald-400">
-            <Activity className="w-4 h-4" />
+        <div className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-xs space-y-4">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-emerald-700">
+            <Activity className="w-4 h-4 text-emerald-600" />
             <span>Biochemical Mechanisms of Action</span>
           </div>
-          <h3 className="text-xl font-bold text-white">
+          <h3 className="text-xl font-bold text-slate-900">
             Molecular Signaling Pathways
           </h3>
-          <ul className="space-y-3 text-xs sm:text-sm text-slate-200">
+          <ul className="space-y-3 text-xs sm:text-sm text-slate-700">
             {compound.mechanismOfAction.map((mech, idx) => (
               <li key={idx} className="flex items-start gap-2.5">
-                <span className="w-5 h-5 rounded-full bg-emerald-950/80 text-emerald-300 border border-emerald-500/40 flex items-center justify-center font-mono text-[10px] font-bold flex-shrink-0 mt-0.5">
+                <span className="w-5 h-5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-300 flex items-center justify-center font-mono text-[10px] font-bold flex-shrink-0 mt-0.5">
                   {idx + 1}
                 </span>
                 <span className="leading-relaxed">{mech}</span>
@@ -468,59 +468,59 @@ export default async function CompoundPage({ params }: PageProps) {
         </div>
 
         {/* Preclinical Laboratory Handling */}
-        <div className="bg-[#071938] rounded-3xl border border-[rgba(141,168,195,0.25)] p-6 sm:p-8 shadow-2xl space-y-4">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-sky-400">
-            <FlaskConical className="w-4 h-4" />
+        <div className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-xs space-y-4">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-sky-700">
+            <FlaskConical className="w-4 h-4 text-sky-600" />
             <span>Pre-Clinical Laboratory Handling</span>
           </div>
-          <h3 className="text-xl font-bold text-white">
+          <h3 className="text-xl font-bold text-slate-900">
             Laboratory Evaluation Guidelines
           </h3>
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
             {compound.preclinicalResearchNotes}
           </p>
 
-          <div className="bg-[#051739] rounded-2xl border border-[rgba(141,168,195,0.2)] p-4 sm:p-5 space-y-2.5 text-xs font-mono">
-            <div className="text-[11px] font-bold text-sky-200 uppercase tracking-wider border-b border-[rgba(141,168,195,0.18)] pb-2 flex items-center justify-between">
+          <div className="bg-slate-50/90 rounded-2xl border border-slate-200 p-4 sm:p-5 space-y-2.5 text-xs font-mono">
+            <div className="text-[11px] font-bold text-slate-700 uppercase tracking-wider border-b border-slate-200 pb-2 flex items-center justify-between">
               <span className="flex items-center gap-1.5">
-                <Thermometer className="w-4 h-4 text-sky-400" />
+                <Thermometer className="w-4 h-4 text-sky-600" />
                 <span>Aseptic Dissolution &amp; Storage</span>
               </span>
               <span className="badge-cobalt text-[10px] py-0 px-2">UK Lab Standard</span>
             </div>
-            <div className="flex justify-between items-center py-0.5 border-b border-[rgba(141,168,195,0.15)]">
-              <span className="text-slate-400 font-medium">Recommended Diluent:</span>
-              <span className="font-bold text-sky-300 bg-[#0a2347] px-2 py-0.5 rounded border border-sky-400/40">
+            <div className="flex justify-between items-center py-0.5 border-b border-slate-200 pb-1">
+              <span className="text-slate-500 font-medium">Recommended Diluent:</span>
+              <span className="font-bold text-sky-800 bg-sky-50 px-2 py-0.5 rounded border border-sky-200">
                 {compound.reconstitution.recommendedDiluent}
               </span>
             </div>
-            <div className="flex justify-between items-center py-0.5 border-b border-[rgba(141,168,195,0.15)]">
-              <span className="text-slate-400 font-medium">Lyophilized Storage:</span>
-              <span className="font-semibold text-slate-200">{compound.reconstitution.storageLyophilized}</span>
+            <div className="flex justify-between items-center py-0.5 border-b border-slate-200 pb-1">
+              <span className="text-slate-500 font-medium">Lyophilized Storage:</span>
+              <span className="font-semibold text-slate-800">{compound.reconstitution.storageLyophilized}</span>
             </div>
-            <div className="flex justify-between items-center py-0.5 border-b border-[rgba(141,168,195,0.15)]">
-              <span className="text-slate-400 font-medium">Reconstituted Storage:</span>
-              <span className="font-semibold text-slate-200">{compound.reconstitution.storageReconstituted}</span>
+            <div className="flex justify-between items-center py-0.5 border-b border-slate-200 pb-1">
+              <span className="text-slate-500 font-medium">Reconstituted Storage:</span>
+              <span className="font-semibold text-slate-800">{compound.reconstitution.storageReconstituted}</span>
             </div>
             <div className="flex justify-between items-center pt-0.5">
-              <span className="text-slate-400 font-medium">Solution Stability:</span>
-              <span className="font-bold text-emerald-400">{compound.reconstitution.stabilityWindow}</span>
+              <span className="text-slate-500 font-medium">Solution Stability:</span>
+              <span className="font-bold text-emerald-700">{compound.reconstitution.stabilityWindow}</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Academic Monograph: Receptor Pharmacology, SPPS Synthesis, & Pharmacokinetics */}
-      <section className="bg-[#071938] rounded-3xl border border-[rgba(141,168,195,0.25)] p-6 sm:p-8 shadow-2xl space-y-6">
-        <div className="border-b border-[rgba(141,168,195,0.2)] pb-4">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-emerald-400">
-            <Atom className="w-4 h-4 text-emerald-400" />
+      <section className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-xs space-y-6">
+        <div className="border-b border-slate-200 pb-4">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-emerald-700">
+            <Atom className="w-4 h-4 text-emerald-600" />
             <span>Academic Biochemical Monograph</span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-white mt-1">
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mt-1">
             Receptor Affinity, SPPS Synthesis &amp; Pharmacokinetics
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300 mt-1">
+          <p className="text-xs sm:text-sm text-slate-600 mt-1">
             Standardized chemical parameters, solid-phase synthesis criteria, and quantitative receptor affinity benchmarks for {compound.name}.
           </p>
         </div>
@@ -528,37 +528,37 @@ export default async function CompoundPage({ params }: PageProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1: Receptor Pharmacology */}
           {compound.receptorPharmacology && (
-            <div className="bg-[#051739] rounded-2xl border border-[rgba(141,168,195,0.2)] p-5 space-y-4">
-              <div className="flex items-center justify-between border-b border-[rgba(141,168,195,0.18)] pb-2">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400">
+            <div className="bg-slate-50/90 rounded-2xl border border-slate-200 p-5 space-y-4">
+              <div className="flex items-center justify-between border-b border-slate-200 pb-2">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">
                   Target Receptors
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/70 text-emerald-300 border border-emerald-500/30 font-bold">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-300 font-bold">
                   Binding Kinetics
                 </span>
               </div>
               <div className="space-y-3">
                 <div>
-                  <div className="text-slate-400 font-mono text-[11px]">Primary Receptor Cascade</div>
-                  <div className="text-white font-bold text-sm mt-0.5">
+                  <div className="text-slate-500 font-mono text-[11px]">Primary Receptor Cascade</div>
+                  <div className="text-slate-900 font-bold text-sm mt-0.5">
                     {compound.receptorPharmacology.primaryTarget}
                   </div>
                 </div>
                 <div>
-                  <div className="text-slate-400 font-mono text-[11px]">Binding Affinity (Kd / Ki)</div>
-                  <div className="font-mono font-bold text-emerald-400 bg-[#03132e] p-2 rounded-lg border border-[rgba(141,168,195,0.2)] text-xs mt-0.5">
+                  <div className="text-slate-500 font-mono text-[11px]">Binding Affinity (Kd / Ki)</div>
+                  <div className="font-mono font-bold text-emerald-800 bg-white p-2 rounded-lg border border-slate-200 text-xs mt-0.5 shadow-2xs">
                     {compound.receptorPharmacology.bindingAffinity}
                   </div>
                 </div>
                 <div>
-                  <div className="text-slate-400 font-mono text-[11px]">Receptor Family</div>
-                  <div className="text-slate-200 text-xs mt-0.5">
+                  <div className="text-slate-500 font-mono text-[11px]">Receptor Family</div>
+                  <div className="text-slate-800 text-xs mt-0.5">
                     {compound.receptorPharmacology.receptorFamily}
                   </div>
                 </div>
                 <div>
-                  <div className="text-slate-400 font-mono text-[11px]">Downstream Effectors</div>
-                  <ul className="text-slate-200 text-xs mt-0.5 space-y-1 list-disc list-inside">
+                  <div className="text-slate-500 font-mono text-[11px]">Downstream Effectors</div>
+                  <ul className="text-slate-700 text-xs mt-0.5 space-y-1 list-disc list-inside">
                     {compound.receptorPharmacology.downstreamEffectors.slice(0, 3).map((eff, i) => (
                       <li key={i} className="line-clamp-1">{eff}</li>
                     ))}
@@ -570,37 +570,37 @@ export default async function CompoundPage({ params }: PageProps) {
 
           {/* Card 2: Solid-Phase Peptide Synthesis (SPPS) Parameters */}
           {compound.synthesisParameters && (
-            <div className="bg-[#051739] rounded-2xl border border-[rgba(141,168,195,0.2)] p-5 space-y-4">
-              <div className="flex items-center justify-between border-b border-[rgba(141,168,195,0.18)] pb-2">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-sky-400">
+            <div className="bg-slate-50/90 rounded-2xl border border-slate-200 p-5 space-y-4">
+              <div className="flex items-center justify-between border-b border-slate-200 pb-2">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-sky-800">
                   SPPS Methodology
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0a2347] text-sky-300 border border-sky-400/40 font-bold">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-50 text-sky-800 border border-sky-300 font-bold">
                   ISO Criteria
                 </span>
               </div>
               <div className="space-y-3">
                 <div>
-                  <div className="text-slate-400 font-mono text-[11px]">Synthesis Protocol</div>
-                  <div className="text-white font-mono text-xs font-bold mt-0.5">
+                  <div className="text-slate-500 font-mono text-[11px]">Synthesis Protocol</div>
+                  <div className="text-slate-900 font-mono text-xs font-bold mt-0.5">
                     {compound.synthesisParameters.synthesisMethod}
                   </div>
                 </div>
                 <div>
-                  <div className="text-slate-400 font-mono text-[11px]">N-Terminal / C-Terminal Mod</div>
-                  <div className="text-slate-200 font-mono text-xs mt-0.5">
+                  <div className="text-slate-500 font-mono text-[11px]">N-Terminal / C-Terminal Mod</div>
+                  <div className="text-slate-800 font-mono text-xs mt-0.5">
                     {compound.synthesisParameters.nTerminalModification} &middot; {compound.synthesisParameters.cTerminalModification}
                   </div>
                 </div>
                 <div>
-                  <div className="text-slate-400 font-mono text-[11px]">Acid Cleavage Cocktail</div>
-                  <div className="text-slate-200 font-mono text-xs mt-0.5">
+                  <div className="text-slate-500 font-mono text-[11px]">Acid Cleavage Cocktail</div>
+                  <div className="text-slate-800 font-mono text-xs mt-0.5">
                     {compound.synthesisParameters.cleavageCocktail}
                   </div>
                 </div>
                 <div>
-                  <div className="text-slate-400 font-mono text-[11px]">HPLC Retention Standard</div>
-                  <div className="font-mono font-bold text-sky-300 bg-[#03132e] p-2 rounded-lg border border-[rgba(141,168,195,0.2)] text-xs mt-0.5">
+                  <div className="text-slate-500 font-mono text-[11px]">HPLC Retention Standard</div>
+                  <div className="font-mono font-bold text-sky-800 bg-white p-2 rounded-lg border border-slate-200 text-xs mt-0.5 shadow-2xs">
                     {compound.synthesisParameters.hplcRetentionTimeStandard}
                   </div>
                 </div>
@@ -610,37 +610,37 @@ export default async function CompoundPage({ params }: PageProps) {
 
           {/* Card 3: Pharmacokinetic Benchmarks */}
           {compound.pharmacokinetics && (
-            <div className="bg-[#051739] rounded-2xl border border-[rgba(141,168,195,0.2)] p-5 space-y-4">
-              <div className="flex items-center justify-between border-b border-[rgba(141,168,195,0.18)] pb-2">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-purple-400">
+            <div className="bg-slate-50/90 rounded-2xl border border-slate-200 p-5 space-y-4">
+              <div className="flex items-center justify-between border-b border-slate-200 pb-2">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-purple-800">
                   Pharmacokinetics
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-950/70 text-purple-300 border border-purple-500/30 font-bold">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-50 text-purple-800 border border-purple-300 font-bold">
                   In Vitro / In Vivo
                 </span>
               </div>
               <div className="space-y-3">
                 <div>
-                  <div className="text-slate-400 font-mono text-[11px]">Elimination Half-Life</div>
-                  <div className="font-mono font-bold text-white bg-[#03132e] p-2 rounded-lg border border-[rgba(141,168,195,0.2)] text-xs mt-0.5">
+                  <div className="text-slate-500 font-mono text-[11px]">Elimination Half-Life</div>
+                  <div className="font-mono font-bold text-slate-900 bg-white p-2 rounded-lg border border-slate-200 text-xs mt-0.5 shadow-2xs">
                     {compound.pharmacokinetics.eliminationHalfLife}
                   </div>
                 </div>
                 <div>
-                  <div className="text-slate-400 font-mono text-[11px]">Primary Degradation Pathway</div>
-                  <div className="text-slate-200 leading-relaxed text-xs mt-0.5">
+                  <div className="text-slate-500 font-mono text-[11px]">Primary Degradation Pathway</div>
+                  <div className="text-slate-700 leading-relaxed text-xs mt-0.5">
                     {compound.pharmacokinetics.primaryDegradationPath}
                   </div>
                 </div>
                 <div>
-                  <div className="text-slate-400 font-mono text-[11px]">Bioavailability Profile</div>
-                  <div className="text-slate-200 text-xs mt-0.5">
+                  <div className="text-slate-500 font-mono text-[11px]">Bioavailability Profile</div>
+                  <div className="text-slate-800 text-xs mt-0.5">
                     {compound.pharmacokinetics.bioavailabilityModel}
                   </div>
                 </div>
                 <div>
-                  <div className="text-slate-400 font-mono text-[11px]">Renal Filtration Threshold</div>
-                  <div className="text-slate-200 text-xs font-mono mt-0.5">
+                  <div className="text-slate-500 font-mono text-[11px]">Renal Filtration Threshold</div>
+                  <div className="text-slate-800 text-xs font-mono mt-0.5">
                     {compound.pharmacokinetics.renalClearanceIndex}
                   </div>
                 </div>
@@ -652,19 +652,19 @@ export default async function CompoundPage({ params }: PageProps) {
 
       {/* Structured Trial Evidence Table */}
       {compound.structuredTrials && compound.structuredTrials.length > 0 && (
-        <section className="bg-[#071938] rounded-3xl border border-[rgba(141,168,195,0.25)] p-6 sm:p-8 shadow-2xl space-y-4">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-slate-400">
-            <BookOpen className="w-4 h-4 text-emerald-400" />
+        <section className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-xs space-y-4">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-slate-500">
+            <BookOpen className="w-4 h-4 text-emerald-600" />
             <span>Quantitative Pre-Clinical &amp; Clinical Evidence Matrix</span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-white">
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
             Documented Biochemical Endpoints &amp; Statistical Significance
           </h2>
 
           <div className="overflow-x-auto pt-2">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
-                <tr className="border-b border-[rgba(141,168,195,0.2)] font-mono text-slate-400 uppercase text-[11px]">
+                <tr className="border-b border-slate-200 font-mono text-slate-500 uppercase text-[11px] bg-slate-50">
                   <th className="py-2.5 px-3">Study Design</th>
                   <th className="py-2.5 px-3">Cohort (n)</th>
                   <th className="py-2.5 px-3">Measured Biological Endpoint</th>
@@ -672,21 +672,21 @@ export default async function CompoundPage({ params }: PageProps) {
                   <th className="py-2.5 px-3 text-right">NCBI Citation</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[rgba(141,168,195,0.15)]">
+              <tbody className="divide-y divide-slate-100">
                 {compound.structuredTrials.map((trial, idx) => (
-                  <tr key={idx} className="hover:bg-[#0c2859] transition-colors">
-                    <td className="py-3 px-3 font-bold text-white">
-                      <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-[#051739] text-sky-300 border border-sky-400/30">
+                  <tr key={idx} className="hover:bg-slate-50/70 transition-colors">
+                    <td className="py-3 px-3 font-bold text-slate-900">
+                      <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-sky-50 text-sky-800 border border-sky-200">
                         {trial.studyDesign}
                       </span>
                     </td>
-                    <td className="py-3 px-3 font-mono text-slate-300">
+                    <td className="py-3 px-3 font-mono text-slate-600">
                       {trial.sampleSize}
                     </td>
-                    <td className="py-3 px-3 text-slate-200 font-sans max-w-sm">
+                    <td className="py-3 px-3 text-slate-700 font-sans max-w-sm">
                       {trial.endpointMeasured}
                     </td>
-                    <td className="py-3 px-3 font-mono font-bold text-emerald-400">
+                    <td className="py-3 px-3 font-mono font-bold text-emerald-700">
                       {trial.statisticalSignificance}
                     </td>
                     <td className="py-3 px-3 text-right font-mono">
@@ -694,7 +694,7 @@ export default async function CompoundPage({ params }: PageProps) {
                         href={`https://pubmed.ncbi.nlm.nih.gov/${trial.pubmedId}/`}
                         target="_blank"
                         rel="noopener noreferrer nofollow"
-                        className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-bold hover:underline"
+                        className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-800 font-bold hover:underline"
                       >
                         <span>PMID {trial.pubmedId}</span>
                         <ExternalLink className="w-3 h-3" />
@@ -710,12 +710,12 @@ export default async function CompoundPage({ params }: PageProps) {
 
       {/* Academic PubMed Citations */}
       {compound.citations && compound.citations.length > 0 && (
-        <section className="bg-[#071938] rounded-3xl border border-[rgba(141,168,195,0.25)] p-6 sm:p-8 shadow-2xl space-y-4">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-slate-400">
-            <BookOpen className="w-4 h-4 text-emerald-400" />
+        <section className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-xs space-y-4">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-slate-500">
+            <BookOpen className="w-4 h-4 text-emerald-600" />
             <span>Peer-Reviewed Academic Citations</span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-white">
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
             Indexed Scientific Literature
           </h2>
 
@@ -723,16 +723,16 @@ export default async function CompoundPage({ params }: PageProps) {
             {compound.citations.map((citation, idx) => (
               <div
                 key={idx}
-                className="p-5 bg-[#051739] rounded-2xl border border-[rgba(141,168,195,0.2)] space-y-2 text-xs hover:border-emerald-400/40 transition-colors"
+                className="p-5 bg-slate-50/80 rounded-2xl border border-slate-200 space-y-2 text-xs hover:border-slate-300 transition-colors"
               >
-                <div className="font-bold text-white text-sm">
+                <div className="font-bold text-slate-900 text-sm">
                   {citation.title}
                 </div>
-                <div className="text-slate-400 font-mono">
+                <div className="text-slate-500 font-mono">
                   <em>{citation.journal}</em> ({citation.year}) &middot; {citation.authors}
                 </div>
-                <div className="text-slate-200 leading-relaxed">
-                  <strong className="text-white">Key Finding:</strong> {citation.keyFindings}
+                <div className="text-slate-700 leading-relaxed">
+                  <strong className="text-slate-900">Key Finding:</strong> {citation.keyFindings}
                 </div>
                 {citation.pubmedId && (
                   <div className="pt-1">
@@ -740,7 +740,7 @@ export default async function CompoundPage({ params }: PageProps) {
                       href={`https://pubmed.ncbi.nlm.nih.gov/${citation.pubmedId}/`}
                       target="_blank"
                       rel="noopener noreferrer nofollow"
-                      className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-mono font-semibold"
+                      className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-800 font-mono font-semibold"
                     >
                       <span>PubMed PMID: {citation.pubmedId}</span>
                       <ExternalLink className="w-3 h-3" />
@@ -759,18 +759,18 @@ export default async function CompoundPage({ params }: PageProps) {
       {/* Related Compounds (Full ReagentCard Components) */}
       {relatedCompounds.length > 0 && (
         <section className="space-y-6">
-          <div className="flex items-end justify-between border-b border-[rgba(141,168,195,0.2)] pb-4">
+          <div className="flex items-end justify-between border-b border-slate-200 pb-4">
             <div>
-              <div className="text-xs font-mono font-bold uppercase text-emerald-400">
+              <div className="text-xs font-mono font-bold uppercase text-emerald-700">
                 Biological Pathway Correlates
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-white">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
                 More Reagents in {compound.categoryName}
               </h2>
             </div>
             <Link
               href={`/category/${compound.categorySlug}/`}
-              className="text-xs font-mono font-semibold text-emerald-400 hover:underline inline-flex items-center gap-1"
+              className="text-xs font-mono font-semibold text-emerald-700 hover:underline inline-flex items-center gap-1"
             >
               <span>View Pathway Hub</span>
               <ArrowRight className="w-3.5 h-3.5" />

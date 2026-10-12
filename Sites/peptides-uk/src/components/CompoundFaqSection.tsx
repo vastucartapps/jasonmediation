@@ -23,21 +23,21 @@ export function CompoundFaqSection({ compoundName, faqs }: CompoundFaqSectionPro
   };
 
   return (
-    <section id="faq" className="bg-[#071938] rounded-3xl border border-[rgba(141,168,195,0.25)] p-6 sm:p-8 md:p-10 shadow-2xl space-y-6 scroll-mt-20">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[rgba(141,168,195,0.2)] pb-4">
+    <section id="faq" className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 md:p-10 shadow-xs space-y-6 scroll-mt-20">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-4">
         <div>
-          <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-sky-300 bg-[#0a2347] px-3 py-1 rounded-full border border-sky-400/35 mb-2">
-            <HelpCircle className="w-3.5 h-3.5 text-sky-400" />
+          <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-sky-800 bg-sky-50 px-3 py-1 rounded-full border border-sky-300 mb-2">
+            <HelpCircle className="w-3.5 h-3.5 text-sky-600" />
             <span>BIOCHEMICAL &amp; REGULATORY Q&amp;A</span>
           </div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
             Curated Scientific Q&amp;A for {compoundName}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300 mt-1">
+          <p className="text-xs sm:text-sm text-slate-600 mt-1">
             Authoritative pre-clinical, analytical, and statutory handling guidelines for laboratory researchers.
           </p>
         </div>
-        <div className="text-xs font-mono font-bold text-emerald-400 bg-emerald-950/70 px-3 py-1.5 rounded-xl border border-emerald-500/30 self-start sm:self-auto shrink-0">
+        <div className="text-xs font-mono font-bold text-emerald-800 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-300 self-start sm:self-auto shrink-0">
           {faqs.length} Curated Questions
         </div>
       </div>
@@ -53,8 +53,8 @@ export function CompoundFaqSection({ compoundName, faqs }: CompoundFaqSectionPro
               key={idx}
               className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                 isOpen
-                  ? 'bg-[#061c42] border-sky-400/60 shadow-xl'
-                  : 'bg-[#041535] border-[rgba(141,168,195,0.2)] hover:border-sky-400/30'
+                  ? 'bg-sky-50/40 border-sky-300 shadow-sm'
+                  : 'bg-white border-slate-200/90 hover:border-slate-300 shadow-xs'
               }`}
             >
               <button
@@ -69,18 +69,18 @@ export function CompoundFaqSection({ compoundName, faqs }: CompoundFaqSectionPro
                   <span
                     className={`w-7 h-7 rounded-lg flex items-center justify-center font-mono text-xs font-bold shrink-0 mt-0.5 border transition-colors ${
                       isOpen
-                        ? 'bg-sky-500 text-slate-950 border-sky-400'
-                        : 'bg-[#0a2347] text-sky-300 border-[rgba(141,168,195,0.25)]'
+                        ? 'bg-sky-600 text-white border-sky-600'
+                        : 'bg-slate-100 text-slate-700 border-slate-200'
                     }`}
                   >
                     {idx + 1}
                   </span>
                   <div>
-                    <span className="text-sm sm:text-base font-bold text-white leading-snug block">
+                    <span className="text-sm sm:text-base font-bold text-slate-900 leading-snug block">
                       {faq.question}
                     </span>
                     {faq.category && (
-                      <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block mt-0.5">
+                      <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider block mt-0.5">
                         {faq.category}
                       </span>
                     )}
@@ -90,8 +90,8 @@ export function CompoundFaqSection({ compoundName, faqs }: CompoundFaqSectionPro
                 <div
                   className={`p-1.5 rounded-lg border transition-all shrink-0 mt-0.5 ${
                     isOpen
-                      ? 'bg-sky-500/20 text-sky-300 border-sky-400/40 rotate-180'
-                      : 'bg-[#020e24] text-slate-400 border-[rgba(141,168,195,0.2)]'
+                      ? 'bg-sky-100 text-sky-800 border-sky-200 rotate-180'
+                      : 'bg-slate-50 text-slate-500 border-slate-200'
                   }`}
                 >
                   <ChevronDown className="w-4 h-4" />
@@ -103,14 +103,14 @@ export function CompoundFaqSection({ compoundName, faqs }: CompoundFaqSectionPro
                   id={panelId}
                   role="region"
                   aria-labelledby={triggerId}
-                  className="px-5 pb-5 pt-2 text-xs sm:text-sm text-slate-200 leading-relaxed border-t border-[rgba(141,168,195,0.15)] bg-[#03132e]/80 space-y-3"
+                  className="px-5 pb-5 pt-2 text-xs sm:text-sm text-slate-700 leading-relaxed border-t border-slate-100 bg-white space-y-3"
                 >
                   <p className="pt-1">{faq.answer}</p>
                   {faq.citation && (
-                    <div className="p-2.5 rounded-xl bg-[#0a2347] border border-sky-400/25 flex items-start gap-2 text-xs font-mono text-sky-200">
-                      <Scale className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 flex items-start gap-2 text-xs font-mono text-emerald-900">
+                      <Scale className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                       <div>
-                        <strong className="text-white">Citation Benchmark: </strong>
+                        <strong className="text-emerald-950">Citation Benchmark: </strong>
                         <span>{faq.citation}</span>
                       </div>
                     </div>
