@@ -113,7 +113,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2014,
         authors: 'Seiwerth S, Rucman R, Turkovic B, Sever M, et al.',
         pubmedId: '23795744',
-        doi: '10.2174/13816128113199990426',
         keyFindings: 'Quantified rapid collateral vessel recruitment bypassing vascular occlusions via VEGF expression enhancement in ex vivo tissues.',
       },
     ],
@@ -212,7 +211,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2003,
         authors: 'Philp D, Badamchian M, Scheremeta B, Nguyen M, Goldstein AL.',
         pubmedId: '14617284',
-        doi: '10.1046/j.1524-475x.2003.11105.x',
         keyFindings: 'Quantified a 42% acceleration in re-epithelialization in dermal punch biopsy models following administration.',
       },
       {
@@ -221,7 +219,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2007,
         authors: 'Smart N, Risebro CA, Melville AA, Moses K, Schwartz RJ, et al.',
         pubmedId: '17898717',
-        doi: '10.1038/nature05971',
         keyFindings: 'Identified reactivated quiescent epicardial stem cells differentiating into functional cardiac vasculature.',
       },
       {
@@ -329,7 +326,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2006,
         authors: 'Dolotov OV, Eremin KO, Andreeva LA, Novosadova EV, et al.',
         pubmedId: '16787421',
-        doi: '10.1111/j.1471-4159.2006.03858.x',
         keyFindings: 'Quantified a 3-fold elevation in BDNF and trkB mRNA in glial and neuronal cultures within 3 hours.',
       },
       {
@@ -338,7 +334,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 1997,
         authors: 'Ashmarin IP, Nezavibatko VN, Levitskaya NG, et al.',
         pubmedId: '9444747',
-        doi: '10.1007/BF02462886',
         keyFindings: 'Confirmed preservation of pyramidal neuron density in rat CA1 hippocampal region following bilateral carotid occlusion.',
       },
       {
@@ -446,7 +441,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2018,
         authors: 'Pickart L, Vasquez-Soltero JM, Margolina A.',
         pubmedId: '29986520',
-        doi: '10.3390/ijms19071987',
         keyFindings: 'Identified broad transcriptomic shifts regulating over 4,000 genes involved in tissue remodeling and DNA repair mechanisms.',
       },
       {
@@ -455,7 +449,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2008,
         authors: 'Pickart L.',
         pubmedId: '18644225',
-        doi: '10.1163/156856208784909435',
         keyFindings: 'Documented stimulation of collagen, dermatan sulfate, and chondroitin sulfate synthesis in dermal fibroblast culture.',
       },
       {
@@ -464,7 +457,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2005,
         authors: 'Cangul IT, Gul NY, Topal A, Yilmaz R.',
         pubmedId: '15842571',
-        doi: '10.1111/j.1067-1927.2005.130206.x',
         keyFindings: 'Observed significant elevation in wound contraction, granulation tissue formation, and neo-vascularization.',
       },
     ],
@@ -563,7 +555,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2006,
         authors: 'Teichman SL, Neale A, Lawrence B, Gagnon C, Castaigne JP, Frohman LA.',
         pubmedId: '16352683',
-        doi: '10.1210/jc.2005-1536',
         keyFindings: 'Demonstrated dose-dependent 2- to 10-fold elevations in GH and 1.5- to 3-fold increases in IGF-1 in human randomized kinetic protocols.',
       },
       {
@@ -572,7 +563,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2005,
         authors: 'Jetté L, Léger R, Thibaudeau K, Benquet C, et al.',
         pubmedId: '15862661',
-        doi: '10.1016/j.peptides.2005.01.018',
         keyFindings: 'Characterized complete resistance to DPP-4 enzymatic inactivation, resulting in 4-fold greater metabolic stability.',
       },
       {
@@ -680,7 +670,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 1998,
         authors: 'Raun K, Hansen BS, Johansen PB, Thøgersen H, et al.',
         pubmedId: '9849822',
-        doi: '10.1530/eje.0.1390552',
         keyFindings: 'Confirmed selective GH release with absolute absence of ACTH, cortisol, or prolactin elevation in in vivo and in vitro paradigms.',
       },
       {
@@ -797,7 +786,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2001,
         authors: 'Heffernan M, Summers RJ, Thorburn A, Ogru E, et al.',
         pubmedId: '11717208',
-        doi: '10.1210/endo.142.12.8522',
         keyFindings: 'Demonstrated direct stimulation of lipolysis and inhibition of lipogenesis without adverse glycemic perturbation.',
       },
       {
@@ -806,7 +794,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2014,
         authors: 'Stier H, Vos E, Kenley D.',
         pubmedId: '25236178',
-        doi: '10.1016/j.yrtph.2014.09.006',
         keyFindings: 'Reported absence of anti-GH antibodies or adverse glycemic disruption across randomized clinical cohorts evaluating tolerability endpoints.',
       },
       {
@@ -1022,7 +1009,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2003,
         authors: 'Khavinson VK, Bondarev IE, Butyugov AA.',
         pubmedId: '12937682',
-        doi: '10.1023/A:1025493705728',
         keyFindings: 'Observed reactivation of telomerase enzymatic activity and significant elongation of telomeric repeats in cultured human cells.',
       },
       {
@@ -1031,7 +1017,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2003,
         authors: 'Anisimov VN, Khavinson VK.',
         pubmedId: '14501183',
-        doi: '10.1159/000071711',
         keyFindings: 'Documented systemic attenuation of spontaneous tumor development and normalization of antioxidant defense biomarkers.',
       },
     ],
@@ -1130,7 +1115,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2015,
         authors: 'Lee C, Zeng J, Drew BG, Sallam T, et al.',
         pubmedId: '25738459',
-        doi: '10.1016/j.cmet.2015.02.001',
         keyFindings: 'Identified MOTS-c as a systemic peptide acting on skeletal muscle cells to modulate glucose uptake and metabolic flexibility via AMPK activation.',
       },
       {
@@ -1139,7 +1123,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2021,
         authors: 'Reynolds JC, Lai RW, Woodhead JST, Joly JH, et al.',
         pubmedId: '33479210',
-        doi: '10.1038/s41467-020-20790-0',
         keyFindings: 'Quantified endogenous MOTS-c upregulation following contractile exercise and documented enhanced running capacity in rodent models.',
       },
     ],
@@ -1238,7 +1221,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2022,
         authors: 'Jastreboff AM, Aronne LJ, Ahmad NN, Wharton S, et al.',
         pubmedId: '35658024',
-        doi: '10.1056/NEJMoa2206038',
         keyFindings: 'Quantified substantial mean percentage reduction in body weight across 72 weeks in a double-blind, randomized, controlled trial.',
       },
       {
@@ -1247,7 +1229,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2021,
         authors: 'Frias JP, Davies MJ, Rosenstock J, Perez Manghi FC, et al.',
         pubmedId: '34186022',
-        doi: '10.1056/NEJMoa2107519',
         keyFindings: 'Demonstrated superior non-inferiority and statistical superiority in glycemic reduction compared to selective GLP-1 receptor monotherapy.',
       },
     ],
@@ -1346,7 +1327,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2021,
         authors: 'Wilding JPH, Batterham RL, Calanna S, Davies M, et al.',
         pubmedId: '33567185',
-        doi: '10.1056/NEJMoa2032183',
         keyFindings: 'Documented 14.9% mean body weight reduction endpoint at week 68 in clinical trial cohorts alongside significant reductions in cardiometabolic risk markers.',
       },
       {
@@ -1355,7 +1335,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2016,
         authors: 'Marso SP, Bain SC, Consoli A, Eliaschewitz FG, et al.',
         pubmedId: '27633186',
-        doi: '10.1056/NEJMoa1607141',
         keyFindings: 'Reported significant 26% lower rate of first occurrence of death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke.',
       },
     ],

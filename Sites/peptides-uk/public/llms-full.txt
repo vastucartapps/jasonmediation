@@ -452,7 +452,7 @@ Remarkably small molecular weight (390.35 g/mol) facilitating rapid diffusion in
 
 #### Peer-Reviewed Academic Citations
 - **Telomerase activation and telomere elongation in human cells by the peptide Epithalon** (2003)
-  *Bulletin of Experimental Biology and Medicine* by Khavinson VK, Bondarev IE, Butyugov AA. PMID: 12937682. DOI: 10.1023/a:1025493705728
+  *Bulletin of Experimental Biology and Medicine* by Khavinson VK, Bondarev IE, Butyugov AA. PMID: 12937682. DOI: N/A
   *Key Finding*: Demonstrated induction of telomerase activity in human fetal fibroblast cultures accompanied by measurable telomere elongation.
 
 ---
@@ -645,7 +645,7 @@ Benchmark peptide for incretin-based scientific investigations. Handled with ste
 - **Packaging Standards**: UV-blocking amber borosilicate containers with graduated laboratory transfer pipettes and induction-sealed tamper liners.
 - **Official Category Hubs**:
   - [Peptide Research Collection](https://direct-sarms.com)
-  - [Synergistic Research Combos](https://direct-sarms.com/product-category/blend-peptide-vials/)
+  - [Synergistic Research Combos](https://direct-sarms.com)
   - [Liquid Carrier Solutions](https://direct-sarms.com)
 
 

@@ -16,14 +16,14 @@ import {
 export const metadata: Metadata = {
   title: 'HTML Index & Directory Sitemap | Trustly Pharma',
   description:
-    'Comprehensive directory sitemap dynamically indexing all chemical compound dossiers, research pathways, verified vendor directories, and regulatory intelligence trackers.',
+    'Directory sitemap indexing all chemical compound dossiers, research pathways, verified laboratory vendors, and UK regulatory trackers.',
   alternates: {
     canonical: `${BASE_URL}/sitemap/`,
   },
   openGraph: {
     title: 'HTML Index & Directory Sitemap | Trustly Pharma',
     description:
-      'Comprehensive directory sitemap dynamically indexing all chemical compound dossiers, research pathways, verified vendor directories, and regulatory intelligence trackers.',
+      'Directory sitemap indexing all chemical compound dossiers, research pathways, verified laboratory vendors, and UK regulatory trackers.',
     url: `${BASE_URL}/sitemap/`,
     siteName: 'Trustly Pharma',
     type: 'website',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'HTML Index & Directory Sitemap | Trustly Pharma',
     description:
-      'Comprehensive directory sitemap dynamically indexing all chemical compound dossiers, research pathways, verified vendor directories, and regulatory intelligence trackers.',
+      'Directory sitemap indexing all chemical compound dossiers, research pathways, verified laboratory vendors, and UK regulatory trackers.',
     images: [`${BASE_URL}/icon-512x512.png`],
   },
 };

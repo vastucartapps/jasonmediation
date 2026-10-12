@@ -144,7 +144,7 @@ export const VENDOR_PROFILES: Record<string, VendorProfile> = {
       },
       {
         categoryName: 'Synergistic Research Combos',
-        url: 'https://direct-sarms.com/product-category/blend-peptide-vials/',
+        url: 'https://direct-sarms.com',
       },
       {
         categoryName: 'Liquid Carrier Solutions',

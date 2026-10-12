@@ -424,7 +424,7 @@ export default function RegulatoryHubPage() {
                 key={idx}
                 href={src.url}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="p-5 rounded-2xl bg-[#020e24] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/50 transition-all flex flex-col justify-between group space-y-3"
               >
                 <div className="space-y-1.5">

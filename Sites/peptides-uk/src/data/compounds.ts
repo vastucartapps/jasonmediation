@@ -917,7 +917,6 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         year: 2003,
         authors: 'Khavinson VK, Bondarev IE, Butyugov AA',
         pubmedId: '12937682',
-        doi: '10.1023/a:1025493705728',
         keyFindings: 'Demonstrated induction of telomerase activity in human fetal fibroblast cultures accompanied by measurable telomere elongation.',
       },
     ],

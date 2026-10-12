@@ -336,6 +336,52 @@ export default function SafetyPolicyPage() {
                 </ul>
               </div>
             </section>
+
+            {/* 6. Statutory COSHH 2002 Framework & HSE Mandates */}
+            <section className="rounded-3xl border border-[rgba(141,168,195,0.25)] bg-[#071b3e] p-6 sm:p-8 shadow-xl">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-[11px] font-mono text-amber-400 uppercase tracking-widest block">
+                    Protocol Section 06
+                  </span>
+                  <h2 className="text-xl font-bold text-white">
+                    UK COSHH 2002 Risk Assessment & HSE Statutory Governance
+                  </h2>
+                </div>
+              </div>
+
+              <div className="space-y-4 text-sm text-slate-300 leading-relaxed">
+                <p>
+                  Under Regulation 6 of the <strong>Control of Substances Hazardous to Health Regulations 2002 (SI 2002/2677)</strong>, employers and principal investigators are legally prohibited from carrying out laboratory work involving hazardous chemical agents without completing a formal, documented COSHH risk assessment.
+                </p>
+
+                <div className="grid sm:grid-cols-2 gap-4 text-xs">
+                  <div className="p-4 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.18)] space-y-2">
+                    <span className="font-bold text-sky-400 block">Containment Level 2 (CL2) Protocols</span>
+                    <p className="text-slate-400 leading-relaxed">
+                      Lyophilized synthetic analogues must be unpacked within dedicated negative-pressure chemical containment suites or laminar flow hoods adhering to BS 5726 containment specifications.
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.18)] space-y-2">
+                    <span className="font-bold text-emerald-400 block">HSE EH40 Workplace Exposure Limits</span>
+                    <p className="text-slate-400 leading-relaxed">
+                      While intact peptide chains lack assigned numerical 8-hour Time Weighted Average (TWA) limits under EH40, carrier solvents (e.g., acetic acid: 10 ppm TWA, 25 mg/m³) require calibrated vapour extraction.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-[#02102b] border border-[rgba(141,168,195,0.18)] space-y-2 text-xs">
+                  <span className="font-bold text-white block">Emergency Spill Remediation Procedure (SOP-SP-04)</span>
+                  <p className="text-slate-400 leading-relaxed">
+                    In the event of accidental vial fracture or dry powder spillage: immediately evacuate the perimeter for 15 minutes to allow aerosol settle. Don respiratory protection conforming to BS EN 149 (FFP3 particulate respirator), moisten absorbent chemical wipes with 10% sodium hypochlorite neutralizing solution, and sweep inward. Place contaminated detritus into UN 3291 clinical waste incineration receptacles.
+                  </p>
+                </div>
+              </div>
+            </section>
           </div>
 
           {/* Right Column: Quick Reference & Tools */}

@@ -81,7 +81,7 @@ export const REGULATORS: RegulatorInfo[] = [
     jurisdiction: 'European Union',
     statutoryBasis: 'Regulation (EC) No 726/2004 & Directive 2001/83/EC',
     mandate: 'Evaluates and monitors medicinal products within the EU single market.',
-    officialUrl: 'https://www.ema.europa.eu/',
+    officialUrl: 'https://www.ema.europa.eu/en/homepage',
     keyEnforcementArea: 'Scientific evaluation of centralized marketing authorization applications for GLP-1 analogues and recombinant peptides.',
   },
 ];
@@ -362,7 +362,7 @@ export const UK_REGULATOR_STATEMENTS_2026 = [
     regulator: 'GPHC',
     date: '2026-04-01',
     title: 'GPhC review of weight-management services reports 1,307 concerns over two years. 27% concerned prescribing practice and 17% advertising.',
-    url: 'https://www.pharmacyregulation.org/news',
+    url: 'https://www.pharmacyregulation.org/',
     type: 'Review',
   },
   {
@@ -434,7 +434,7 @@ export const OFFICIAL_REGULATORY_SOURCES = [
     authority: 'LEGISLATION.GOV.UK',
     title: 'Human Medicines Regulations 2012',
     desc: 'The legislation that defines what counts as a medicine in the UK, and what constitutes illegal supply. A product marketed with medicinal claims is regulated as a medicine regardless of how it is labelled.',
-    url: 'https://www.legislation.gov.uk/uksi/2012/1916/contents',
+    url: 'https://www.legislation.gov.uk/uksi/2012/1916/contents/made',
   },
 ];
 

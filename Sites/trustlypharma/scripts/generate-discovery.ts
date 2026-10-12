@@ -56,10 +56,14 @@ if (fs.existsSync(outDir)) {
   fs.writeFileSync(path.join(outDir, 'robots.txt'), robotsTxt, 'utf-8');
   fs.writeFileSync(path.join(outDir, 'llms.txt'), llmsTxt, 'utf-8');
   fs.writeFileSync(path.join(outDir, 'llms-full.txt'), llmsFullTxt, 'utf-8');
-  if (fs.existsSync(path.join(publicDir, 'sitemap.xsl'))) {
+    if (fs.existsSync(path.join(publicDir, 'sitemap.xsl'))) {
     fs.copyFileSync(path.join(publicDir, 'sitemap.xsl'), path.join(outDir, 'sitemap.xsl'));
   }
-  console.log('       Mirrored all 5 discovery endpoints into out/ successfully.');
+  const indexNowKey = '5f2e8b4e7c1a4b9c9f2e8b4e7c1a4b9c.txt';
+  if (fs.existsSync(path.join(publicDir, indexNowKey))) {
+    fs.copyFileSync(path.join(publicDir, indexNowKey), path.join(outDir, indexNowKey));
+  }
+  console.log('       Mirrored all 6 discovery endpoints into out/ successfully.');
 }
 
 console.log('\nAll discovery assets generated successfully!');
