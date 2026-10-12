@@ -96,6 +96,13 @@ export function generateRobotsTxt(): string {
 
 User-agent: *
 Allow: /
+Disallow: /api/
+
+# Audit Crawler Hygiene (Prevents cluttering audit reports with internal Next.js JS chunks)
+User-agent: AhrefsBot
+Allow: /
+Disallow: /_next/
+Disallow: /api/
 
 # Canonical Single Dynamic XML Sitemap
 Sitemap: ${CANONICAL_BASE_URL}/sitemap.xml

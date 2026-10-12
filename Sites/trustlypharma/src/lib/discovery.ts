@@ -279,6 +279,12 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
+# Audit Crawler Hygiene (Prevents cluttering audit reports with internal Next.js JS chunks)
+User-agent: AhrefsBot
+Allow: /
+Disallow: /_next/
+Disallow: /api/
+
 # AI Discovery & Agentic Browsing Crawlers
 User-agent: GPTBot
 Allow: /
