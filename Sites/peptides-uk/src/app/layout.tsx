@@ -149,9 +149,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(rootSchema) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans antialiased overflow-x-hidden max-w-full">
+      <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans antialiased overflow-x-clip max-w-full">
         <Header />
-        <main className="flex-1 w-full max-w-full overflow-hidden">{children}</main>
+        <main className="flex-1 w-full max-w-full">{children}</main>
         <Footer />
         <CookieBanner />
         <MatomoTracker />

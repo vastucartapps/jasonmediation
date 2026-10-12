@@ -14,7 +14,7 @@
 
 html {
   background-color: var(--clinical-bg);
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
   width: 100%;
 }
@@ -23,8 +23,8 @@ body {
   background-color: var(--clinical-bg);
   color: var(--clinical-text);
   font-family: 'Plus Jakarta Sans', Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  overflow-x: hidden;
-  max-width: 100vw;
+  overflow-x: clip;
+  max-width: 100%;
   width: 100%;
   position: relative;
   -webkit-font-smoothing: antialiased;

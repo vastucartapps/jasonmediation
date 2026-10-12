@@ -3,9 +3,17 @@
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { ClinicalHero } from '@/components/ClinicalHero';
+import { RegistryArchitecture } from '@/components/RegistryArchitecture';
+import { ClinicalGlanceBar } from '@/components/ClinicalGlanceBar';
+import { UkRegulatoryFeed } from '@/components/UkRegulatoryFeed';
+import { EvidenceSignalingMap } from '@/components/EvidenceSignalingMap';
 import { ReagentCard } from '@/components/ReagentCard';
 import { UkVendorMatrix } from '@/components/UkVendorMatrix';
 import { ClinicalCalculator } from '@/components/ClinicalCalculator';
+import { SmarterLaboratoryBuyer } from '@/components/SmarterLaboratoryBuyer';
+import { RegulatoryTrackersHub } from '@/components/RegulatoryTrackersHub';
+import { BiochemicalFaqAccordion } from '@/components/BiochemicalFaqAccordion';
+import { FreshnessAndGovernance } from '@/components/FreshnessAndGovernance';
 import { getAllCompounds } from '@/data/compounds';
 import { getAllCategories } from '@/data/categories';
 import {
@@ -18,6 +26,7 @@ import {
   Layers,
   ChevronRight,
   CheckCircle2,
+  Scale,
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -42,12 +51,75 @@ export default function HomePage() {
     });
   }, [allCompounds, searchQuery, selectedCategory]);
 
+  const homeJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': 'https://peptides-uk.org/#webpage',
+        url: 'https://peptides-uk.org/',
+        name: 'Peptides UK | British Clinical Chemical Registry & Academic Compendium',
+        description:
+          'Peer-reviewed PubChem chemical monographs, RP-HPLC purity standards, British statutory governance frameworks, and independent UK laboratory supplier directories for non-clinical research.',
+        about: [
+          {
+            '@type': 'DefinedTermSet',
+            name: 'UK Synthetic Peptide Chemical Monographs',
+            hasDefinedTerm: [
+              {
+                '@type': 'DefinedTerm',
+                name: 'BPC-157 Pentadecapeptide',
+                termCode: '137525-51-0',
+                description: 'Body Protection Compound 157 for in vitro microvascular and angiogenic signaling assays.',
+              },
+              {
+                '@type': 'DefinedTerm',
+                name: 'TB-500 Thymosin Beta-4',
+                termCode: '77591-33-4',
+                description: 'Thymosin Beta-4 synthetic fragment investigating actin sequestration and cellular motility models.',
+              },
+              {
+                '@type': 'DefinedTerm',
+                name: 'Semaglutide Incretin Mimetic',
+                termCode: '910463-68-2',
+                description: 'GLP-1 receptor agonist investigating metabolic kinase cascades and glycemic signaling.',
+              },
+              {
+                '@type': 'DefinedTerm',
+                name: 'RP-HPLC Assay Purity Standard',
+                description: 'Reversed-Phase High-Performance Liquid Chromatography analytical purity verification benchmark ≥98.0%.',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  };
+
   return (
-    <div className="space-y-16 md:space-y-24">
+    <div className="space-y-16 md:space-y-24 pb-12">
+      {/* Schema Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
+      />
+
       {/* 1. Clinical Hero with Live Assay Dashboard */}
       <ClinicalHero />
 
-      {/* 2. Interactive Compound Catalog Section */}
+      {/* 2. Database Architecture & Methodology */}
+      <RegistryArchitecture />
+
+      {/* 3. Clinical Glance Stats Strip */}
+      <ClinicalGlanceBar />
+
+      {/* 4. Live 2026 UK Statutory & MHRA Governance Feed */}
+      <UkRegulatoryFeed />
+
+      {/* 5. The Biological Signaling & Pre-Clinical Evidence Map */}
+      <EvidenceSignalingMap />
+
+      {/* 6. Interactive Compound Catalog Section */}
       <section id="catalog" className="container-wide space-y-8 scroll-mt-20">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
           <div>
@@ -137,66 +209,29 @@ export default function HomePage() {
         )}
       </section>
 
-      {/* 3. Research Pathways & Signaling Hubs */}
-      <section id="categories" className="container-wide space-y-8 scroll-mt-20">
-        <div className="border-b border-slate-200 pb-6">
-          <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200/60 mb-2">
-            <Layers className="w-4 h-4 text-blue-600" />
-            <span>Pre-Clinical Signaling Architecture</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Research Categories &amp; Pathways
-          </h2>
-          <p className="text-sm text-slate-600 max-w-2xl mt-1">
-            Explore biochemical sequences categorized by receptor targets, intracellular kinase cascades, and physiological signaling axes.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {allCategories.map((cat) => (
-            <Link
-              key={cat.slug}
-              href={`/category/${cat.slug}/`}
-              className="clinical-card p-6 flex flex-col justify-between group hover:border-blue-500/50"
-            >
-              <div className="space-y-3">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded border border-blue-200/80 inline-block">
-                  Pathway Hub
-                </span>
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  {cat.name}
-                </h3>
-                <p className="text-xs font-semibold text-slate-700">
-                  {cat.headline}
-                </p>
-                <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
-                  {cat.description}
-                </p>
-                <div className="pt-2 border-t border-slate-100 font-mono text-[11px] text-slate-500">
-                  <span className="font-bold text-slate-700">Signaling: </span>
-                  <span className="line-clamp-2">{cat.signalingFocus}</span>
-                </div>
-              </div>
-              <div className="pt-4 flex items-center justify-between text-xs font-semibold text-blue-600 group-hover:text-blue-700">
-                <span>View All In This Category</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* 4. Verified UK Suppliers Comparison Matrix */}
+      {/* 7. Verified UK Suppliers Comparison Matrix */}
       <div className="container-wide">
         <UkVendorMatrix />
       </div>
 
-      {/* 5. Clinical Dilution Calculator */}
+      {/* 8. Clinical Dilution & Syringe Calculator */}
       <div className="container-wide">
         <ClinicalCalculator />
       </div>
 
-      {/* 6. UK Regulatory & Statutory Authority Briefing */}
+      {/* 9. Smarter Laboratory Buyer - 4 Procurement Standards */}
+      <SmarterLaboratoryBuyer />
+
+      {/* 10. Live Research & Regulatory Intelligence Trackers */}
+      <RegulatoryTrackersHub />
+
+      {/* 11. Biochemical & Statutory Frequently Asked Questions */}
+      <BiochemicalFaqAccordion />
+
+      {/* 12. Freshness Stamp & Scientific Governance */}
+      <FreshnessAndGovernance />
+
+      {/* 13. UK Regulatory & Statutory Authority Briefing */}
       <section className="container-wide">
         <div className="bg-slate-900 text-white rounded-3xl p-8 md:p-12 space-y-6">
           <div className="max-w-3xl space-y-4">

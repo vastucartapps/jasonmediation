@@ -23,9 +23,9 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-slate-200/80 shadow-xs transition-all">
-      {/* Top Clinical Utility Strip */}
-      <div className="bg-slate-900 text-slate-300 text-xs py-1.5 px-4 sm:px-6 border-b border-slate-800/60">
+    <>
+      {/* Top Clinical Utility Strip (static at top) */}
+      <div className="bg-slate-900 text-slate-300 text-xs py-1.5 px-4 sm:px-6 border-b border-slate-800/60 relative z-40">
         <div className="container-wide flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -44,8 +44,9 @@ export function Header() {
         </div>
       </div>
 
-      {/* Main Navbar */}
-      <div className="container-wide py-3 flex items-center justify-between">
+      {/* Main Sticky Frosted Glass Navbar */}
+      <header className="sticky top-0 z-50 bg-white/75 backdrop-blur-2xl border-b border-slate-200/80 shadow-[0_4px_30px_rgba(0,0,0,0.04)] transition-all">
+        <div className="container-wide py-3 flex items-center justify-between">
         {/* Brand Crest */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 via-teal-700 to-slate-900 flex items-center justify-center text-white shadow-md shadow-emerald-900/15 group-hover:scale-105 transition-transform">
@@ -157,5 +158,6 @@ export function Header() {
         </div>
       )}
     </header>
+    </>
   );
 }
