@@ -29,9 +29,9 @@ ErrorDocument 404 /404.html
   # Ensure DirectorySlash is on for clean directory URLs
   DirectorySlash On
 
-  # Sitemaps and AI Discovery aliases
-  RewriteRule ^sitemaps?_index\.xml$ /sitemap_index.xml [L]
-  RewriteRule ^sitemaps\.xml$ /sitemap.xml [L]
+  # Single Sitemaps and AI Discovery aliases
+  RewriteRule ^sitemaps?_index\.xml$ /sitemap.xml [R=301,L]
+  RewriteRule ^sitemaps\.xml$ /sitemap.xml [R=301,L]
   RewriteRule ^sitemap$ /sitemap/ [R=301,L]
 
   # If requested path with index.html exists, serve it

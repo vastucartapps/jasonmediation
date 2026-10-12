@@ -298,7 +298,6 @@ Allow: /
 
 # Machine Discovery Feeds
 Sitemap: ${BASE_URL}/sitemap.xml
-Sitemap: ${BASE_URL}/sitemap_index.xml
 
 # Host Directive
 Host: trustlypharma.uk
@@ -362,8 +361,7 @@ ${vendors
 ## Discovery Endpoints & Agent Catalogs
 
 - [Full Markdown Technical Catalog](${BASE_URL}/llms-full.txt): Complete uncompressed markdown dossiers, molecular structures, and laboratory operating procedures.
-- [XML Sitemap Feed](${BASE_URL}/sitemap.xml): Machine-readable XML sitemap index.
-- [XML Sitemap Index](${BASE_URL}/sitemap_index.xml): Master XML sitemap index pointer.
+- [XML Sitemap Feed](${BASE_URL}/sitemap.xml): Unified machine-readable XML sitemap index.
 - [Robots Policy](${BASE_URL}/robots.txt): Machine crawler indexation policy.
 `;
 }
@@ -381,7 +379,7 @@ export function generateLlmsFullTxt(): string {
 
 > Complete Technical Dossier & Laboratory Specification Manual for UK & International Synthetic Peptides.
 > Website: ${BASE_URL}/
-> Canonical Sitemaps: ${BASE_URL}/sitemap.xml | ${BASE_URL}/sitemap_index.xml
+> Canonical Sitemap: ${BASE_URL}/sitemap.xml
 
 ---
 

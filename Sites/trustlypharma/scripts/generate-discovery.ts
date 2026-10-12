@@ -31,41 +31,35 @@ if (!fs.existsSync(publicDir)) {
   fs.mkdirSync(publicDir, { recursive: true });
 }
 
-// 1. Generate sitemap.xml
+// 1. Generate single unified sitemap.xml
 const sitemapXml = generateXmlSitemap();
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml, 'utf-8');
-console.log(`[2/5] Wrote public/sitemap.xml (${sitemapXml.length} bytes)`);
+console.log(`[2/4] Wrote public/sitemap.xml (${sitemapXml.length} bytes)`);
 
-// 2. Generate sitemap_index.xml
-const sitemapIndexXml = generateSitemapIndex();
-fs.writeFileSync(path.join(publicDir, 'sitemap_index.xml'), sitemapIndexXml, 'utf-8');
-console.log(`[3/5] Wrote public/sitemap_index.xml (${sitemapIndexXml.length} bytes)`);
-
-// 3. Generate robots.txt
+// 2. Generate robots.txt
 const robotsTxt = generateRobotsTxt();
 fs.writeFileSync(path.join(publicDir, 'robots.txt'), robotsTxt, 'utf-8');
-console.log(`[4/5] Wrote public/robots.txt (${robotsTxt.length} bytes)`);
+console.log(`[3/4] Wrote public/robots.txt (${robotsTxt.length} bytes)`);
 
-// 4. Generate llms.txt & llms-full.txt
+// 3. Generate llms.txt & llms-full.txt
 const llmsTxt = generateLlmsTxt();
 fs.writeFileSync(path.join(publicDir, 'llms.txt'), llmsTxt, 'utf-8');
 
 const llmsFullTxt = generateLlmsFullTxt();
 fs.writeFileSync(path.join(publicDir, 'llms-full.txt'), llmsFullTxt, 'utf-8');
-console.log(`[5/5] Wrote public/llms.txt (${llmsTxt.length} bytes) & public/llms-full.txt (${llmsFullTxt.length} bytes)`);
+console.log(`[4/4] Wrote public/llms.txt (${llmsTxt.length} bytes) & public/llms-full.txt (${llmsFullTxt.length} bytes)`);
 
 // If out directory exists (e.g. during postbuild), sync them there too
 if (fs.existsSync(outDir)) {
   console.log('\n[SYNC] Mirroring discovery assets to out/ directory...');
   fs.writeFileSync(path.join(outDir, 'sitemap.xml'), sitemapXml, 'utf-8');
-  fs.writeFileSync(path.join(outDir, 'sitemap_index.xml'), sitemapIndexXml, 'utf-8');
   fs.writeFileSync(path.join(outDir, 'robots.txt'), robotsTxt, 'utf-8');
   fs.writeFileSync(path.join(outDir, 'llms.txt'), llmsTxt, 'utf-8');
   fs.writeFileSync(path.join(outDir, 'llms-full.txt'), llmsFullTxt, 'utf-8');
   if (fs.existsSync(path.join(publicDir, 'sitemap.xsl'))) {
     fs.copyFileSync(path.join(publicDir, 'sitemap.xsl'), path.join(outDir, 'sitemap.xsl'));
   }
-  console.log('       Mirrored all 6 discovery endpoints into out/ successfully.');
+  console.log('       Mirrored all 5 discovery endpoints into out/ successfully.');
 }
 
 console.log('\nAll discovery assets generated successfully!');

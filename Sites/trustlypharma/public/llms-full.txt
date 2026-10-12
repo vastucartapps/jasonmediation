@@ -2,7 +2,7 @@
 
 > Complete Technical Dossier & Laboratory Specification Manual for UK & International Synthetic Peptides.
 > Website: https://trustlypharma.uk/
-> Canonical Sitemaps: https://trustlypharma.uk/sitemap.xml | https://trustlypharma.uk/sitemap_index.xml
+> Canonical Sitemap: https://trustlypharma.uk/sitemap.xml
 
 ---
 

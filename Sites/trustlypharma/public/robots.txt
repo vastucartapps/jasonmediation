@@ -24,7 +24,6 @@ Allow: /
 
 # Machine Discovery Feeds
 Sitemap: https://trustlypharma.uk/sitemap.xml
-Sitemap: https://trustlypharma.uk/sitemap_index.xml
 
 # Host Directive
 Host: trustlypharma.uk

@@ -116,14 +116,8 @@ export default function SitemapPage() {
               href="/sitemap.xml"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#071c3f] border border-sky-500/40 text-sky-300 hover:text-white hover:border-sky-400 transition-colors"
             >
-              <span>XML Sitemap Feed</span>
+              <span>Unified XML Sitemap</span>
               <span className="text-slate-400">({routes.length} URLs)</span>
-            </a>
-            <a
-              href="/sitemap_index.xml"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#071c3f] border border-[rgba(141,168,195,0.25)] text-slate-300 hover:text-white transition-colors"
-            >
-              <span>Sitemap Index</span>
             </a>
             <a
               href="/llms.txt"
