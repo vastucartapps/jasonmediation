@@ -1,0 +1,30 @@
+# Trustly Pharma - Robots Specification
+# Canonical Host: https://trustlypharma.uk
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+# AI Discovery & Agentic Browsing Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Machine Discovery Feeds
+Sitemap: https://trustlypharma.uk/sitemap.xml
+Sitemap: https://trustlypharma.uk/sitemap_index.xml
+
+# Host Directive
+Host: trustlypharma.uk

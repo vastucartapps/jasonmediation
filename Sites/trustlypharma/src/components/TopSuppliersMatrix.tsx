@@ -96,7 +96,7 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
               className="rounded-3xl p-6 sm:p-7 bg-[#061c42] border border-[rgba(141,168,195,0.25)] hover:border-sky-400/80 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-6 shadow-xl"
             >
               {/* Left Column: Vendor Identity */}
-              <div className="flex items-start sm:items-center gap-4 min-w-[280px]">
+              <div className="flex items-start sm:items-center gap-3 sm:gap-4 w-full sm:w-auto lg:min-w-[260px] max-w-full">
                 {profile?.logoUrl ? (
                   <div className="h-14 w-32 px-3 py-1.5 rounded-2xl bg-white/95 border border-white/20 flex items-center justify-center shrink-0 shadow-sm">
                     <img

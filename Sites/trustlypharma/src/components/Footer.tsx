@@ -175,6 +175,9 @@ export function Footer() {
             <a href="/sitemap.xml" className="hover:text-slate-300 transition-colors">
               XML Sitemap
             </a>
+            <a href="/llms.txt" className="hover:text-slate-300 transition-colors">
+              llms.txt
+            </a>
           </div>
         </div>
       </div>

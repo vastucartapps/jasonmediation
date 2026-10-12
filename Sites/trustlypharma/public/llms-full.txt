@@ -1,0 +1,314 @@
+# Trustly Pharma - Comprehensive Chemical & Regulatory Compendium
+
+> Complete Technical Dossier & Laboratory Specification Manual for UK & International Synthetic Peptides.
+> Website: https://trustlypharma.uk/
+> Canonical Sitemaps: https://trustlypharma.uk/sitemap.xml | https://trustlypharma.uk/sitemap_index.xml
+
+---
+
+## 1. Complete Chemical Monograph Directory
+
+### BPC-157 (Body Protection Compound 157 Pentadecapeptide)
+- **CAS Registry Number**: 137525-51-0
+- **PubChem CID**: 9941957
+- **Empirical Formula**: C62H98N16O22
+- **Molecular Weight**: 1419.55 g/mol g/mol
+- **Amino Acid Sequence**: Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val
+- **Research Category**: Tissue Repair & Angiogenesis (https://trustlypharma.uk/category/tissue-repair-recovery/)
+- **Canonical Dossier URL**: https://trustlypharma.uk/peptides/bpc-157/
+- **Overview**: BPC-157 is a 15-amino-acid synthetic peptide derived from human gastric juice protein BPC. Preclinical laboratory models investigate its interaction with focal adhesion kinase (FAK), vascular endothelial growth factor receptor 2 (VEGFR2), and early growth response protein 1 (egr-1).
+- **Primary Mechanism of Action**: Upregulation of VEGFR2 transcription and early angiogenic vessel collateralization in ischemic microenvironments. Activation of the FAK-Paxillin phosphorylation cascade, mediating in vitro tendon and ligament fibroblast migration. Modulation of nitric oxide (NO) synthase isoforms (eNOS and iNOS) in capillary endothelium. Downregulation of pro-inflammatory cytokines TNF-alpha and IL-6 in explanted tissue assays.
+- **Reconstitution Standard**: Diluent: Bacteriostatic 0.9% Benzyl Alcohol USP or Sterile Purified Water | Lyophilized Storage: -20°C desiccated (stable up to 24 months) | Solution Storage: 2°C to 8°C refrigerated; protect from light (stable 28 days) | Stability: Reconstituted solution degrades above 25°C or under repeated freeze-thaw cycles
+- **Documented Research Citations**: 3 indexed PubMed studies.
+  * "Brain-gut axis and pentadecapeptide BPC 157: Theoretical and practical implications" (Sikiric P, Seiwerth S, Rucman R, Turkovic B, et al., 2018) - PMID: 29898969
+  * "Pentadecapeptide BPC 157 enhances the growth hormone receptor expression in tendon fibroblasts" (Chang CH, Tsai WC, Lin MS, Hsu YH, Pang JH., 2011) - PMID: 21979308
+  * "BPC 157 and blood vessels: Modulation of angiogenesis and endothelial integrity" (Seiwerth S, Rucman R, Turkovic B, Sever M, et al., 2014) - PMID: 23795744
+
+---
+
+### TB-500 (Thymosin Beta-4 Synthetic Acetylated Fragment Ac-LKKTETQ)
+- **CAS Registry Number**: 77591-33-4
+- **PubChem CID**: 16132341
+- **Empirical Formula**: C212H350N56O78S
+- **Molecular Weight**: 4963.50 g/mol g/mol
+- **Amino Acid Sequence**: Ac-Leu-Lys-Lys-Thr-Glu-Thr-Gln
+- **Research Category**: Tissue Repair & Angiogenesis (https://trustlypharma.uk/category/tissue-repair-recovery/)
+- **Canonical Dossier URL**: https://trustlypharma.uk/peptides/tb-500/
+- **Overview**: TB-500 is a synthetic peptide containing the primary active actin-sequestering domain of naturally occurring Thymosin Beta-4. Preclinical investigations focus on its ability to regulate G-actin polymerization, promote cellular migration, and attenuate cardiac and myofibrillar fibrotic scarring.
+- **Primary Mechanism of Action**: G-actin sequestering via steric binding at the actin monomer cleft, regulating intracellular filament dynamics. Upregulation of matrix metalloproteinases to mobilize cellular migration across extracellular matrix lattices. Stimulation of epicardial progenitor cell mobilization and coronary vessel morphogenesis in vitro. Suppression of nuclear factor-kappa B (NF-kB) phosphorylation to blunt chronic inflammatory cascades.
+- **Reconstitution Standard**: Diluent: Bacteriostatic Water with 0.9% Benzyl Alcohol USP | Lyophilized Storage: -20°C desiccated | Solution Storage: 2°C to 8°C refrigerated (stable 21 days) | Stability: Highly sensitive to excessive vortexing; gentle swirl recommended
+- **Documented Research Citations**: 3 indexed PubMed studies.
+  * "Thymosin beta 4 promotes dermal healing and regulates actin sequestration" (Philp D, Badamchian M, Scheremeta B, Nguyen M, Goldstein AL., 2003) - PMID: 14617284
+  * "Thymosin beta 4 induces adult epicardial neovascularization" (Smart N, Risebro CA, Melville AA, Moses K, Schwartz RJ, et al., 2007) - PMID: 17898717
+  * "Thymosin beta-4 protects against cellular apoptosis in ischemic cardiomyocytes" (Bock-Marquette I, Saxena A, White MD, DiMaio JM, Srivastava D., 2004) - PMID: 15537682
+
+---
+
+### Semax (Met-Glu-His-Phe-Pro-Gly-Pro Heptapeptide (ACTH 4-10 Pro-Gly-Pro))
+- **CAS Registry Number**: 80714-61-0
+- **PubChem CID**: 9841804
+- **Empirical Formula**: C37H51N9O10S
+- **Molecular Weight**: 813.93 g/mol g/mol
+- **Amino Acid Sequence**: Met-Glu-His-Phe-Pro-Gly-Pro
+- **Research Category**: Neuropeptides & CNS Signaling (https://trustlypharma.uk/category/neuropeptides-cognition/)
+- **Canonical Dossier URL**: https://trustlypharma.uk/peptides/semax/
+- **Overview**: Semax is a synthetic heptapeptide structurally related to the 4-10 fragment of adrenocorticotropic hormone (ACTH), stabilized by a C-terminal Pro-Gly-Pro tripeptide. It lacks hormonal endocrine activity while displaying neurotrophic and neuroprotective properties in cerebral ischemia assays.
+- **Primary Mechanism of Action**: Rapid induction of Brain-Derived Neurotrophic Factor (BDNF) mRNA and protein synthesis in hippocampal tissue. Activation of TrkB receptor autophosphorylation and downstream PI3K/Akt neuroprotective cascades. Regulation of monoamine turnover, elevating extracellular dopamine and serotonin in striatal tissue slices. Stabilization of cerebral microcirculation during hypoperfusion without systemic blood pressure alteration.
+- **Reconstitution Standard**: Diluent: Purified Saline USP (0.9% NaCl) or Bacteriostatic Water | Lyophilized Storage: -20°C in dark storage | Solution Storage: 2°C to 8°C refrigerated; do not freeze solution | Stability: Stable for 30 days in chilled aqueous nasal solution
+- **Documented Research Citations**: 3 indexed PubMed studies.
+  * "Semax, an ACTH(4-10) analogue with nootropic properties, stimulates BDNF synthesis in the rat brain" (Dolotov OV, Eremin KO, Andreeva LA, Novosadova EV, et al., 2006) - PMID: 16787421
+  * "Heptapeptide Semax and its neuroprotective effects in models of acute cerebral hypoperfusion" (Ashmarin IP, Nezavibatko VN, Levitskaya NG, et al., 1997) - PMID: 9444747
+  * "The peptide Semax affects the expression of genes related to the immune and vascular systems in rat brain focal ischemia" (Medvedeva EV, Dmitrieva VG, Povarova OV, et al., 2014) - PMID: 24699863
+
+---
+
+### GHK-Cu (Copper (II) Glycyl-L-Histidyl-L-Lysine Complex)
+- **CAS Registry Number**: 49557-75-7
+- **PubChem CID**: 73587
+- **Empirical Formula**: C14H24CuN6O4
+- **Molecular Weight**: 403.93 g/mol g/mol
+- **Amino Acid Sequence**: Gly-His-Lys-[Cu2+]
+- **Research Category**: Dermal & Extracellular Matrix (https://trustlypharma.uk/category/dermal-extracellular-matrix/)
+- **Canonical Dossier URL**: https://trustlypharma.uk/peptides/ghk-cu/
+- **Overview**: GHK-Cu is a human plasma-derived tripeptide with stoichiometric affinity for copper(II) ions. Researched for its capacity to modulate gene expression involved in tissue remodeling, upregulate procollagen and elastin biosynthesis, and stimulate in vitro dermal fibroblast migration.
+- **Primary Mechanism of Action**: Coordinate bonding with divalent copper Cu2+, delivering bio-available copper directly to lysyl oxidase and superoxide dismutase. Direct stimulation of dermal fibroblast procollagen type I and type III mRNA transcription. Modulation of matrix metalloproteinases (MMP-1, MMP-2) and tissue inhibitors of metalloproteinases (TIMP-1). Downregulation of inflammatory master regulator NF-kB and suppression of transforming growth factor-beta 1 overactivation.
+- **Reconstitution Standard**: Diluent: Bacteriostatic Water USP or Sterile Saline | Lyophilized Storage: -20°C protected from light | Solution Storage: 2°C to 8°C refrigerated (stable 35 days) | Stability: High thermal and chemical stability due to strong copper coordinate bonds
+- **Documented Research Citations**: 3 indexed PubMed studies.
+  * "Regenerative and Protective Actions of the GHK-Cu Peptide in the Light of the New Gene Data" (Pickart L, Vasquez-Soltero JM, Margolina A., 2018) - PMID: 29986520
+  * "The human tri-peptide GHK and tissue remodeling" (Pickart L., 2008) - PMID: 18644225
+  * "GHK-Cu accelerates healing of ischemic open wounds in rats" (Cangul IT, Gul NY, Topal A, Yilmaz R., 2005) - PMID: 15842571
+
+---
+
+### CJC-1295 (Modified Growth Hormone Releasing Factor GRF(1-29) Tetrasubstituted)
+- **CAS Registry Number**: 863288-34-0
+- **PubChem CID**: 91885542
+- **Empirical Formula**: C152H252N44O42
+- **Molecular Weight**: 3367.97 g/mol g/mol
+- **Amino Acid Sequence**: Tyr-D-Ala-Asp-Ala-Ile-Phe-Thr-Gln-Ser-Tyr-Arg-Lys-Val-Leu-Ala-Gln-Leu-Ser-Ala-Arg-Lys-Leu-Leu-Gln-Asp-Ile-Leu-Ser-Arg
+- **Research Category**: Growth Hormone Secretagogues & GHRH (https://trustlypharma.uk/category/growth-hormone-secretagogues/)
+- **Canonical Dossier URL**: https://trustlypharma.uk/peptides/cjc-1295/
+- **Overview**: CJC-1295 is a tetrasubstituted 29-amino-acid synthetic peptide analog of growth hormone-releasing hormone (GHRH). It is designed with substitutions at positions 2, 8, 15, and 27 to impart resistance against dipeptidyl peptidase-4 (DPP-4) enzymatic degradation.
+- **Primary Mechanism of Action**: Selective binding to pituitary somatotroph GHRH receptors, stimulating adenylate cyclase and cAMP pathways. Promotion of physiologic pulsatile endogenous growth hormone secretion while preserving negative feedback loops. Sustained stimulation of hepatic insulin-like growth factor 1 (IGF-1) transcription. Preservation of pituitary responsiveness without downregulating prolactin or cortisol receptor selectivity.
+- **Reconstitution Standard**: Diluent: Bacteriostatic Water USP (0.9% Benzyl Alcohol) | Lyophilized Storage: -20°C dry vacuum | Solution Storage: 2°C to 8°C refrigerated (stable 21 days) | Stability: Store away from light; avoid mechanical agitation
+- **Documented Research Citations**: 3 indexed PubMed studies.
+  * "Prolonged stimulation of growth hormone (GH) and insulin-like growth factor I by CJC-1295 in healthy subjects" (Teichman SL, Neale A, Lawrence B, Gagnon C, Castaigne JP, Frohman LA., 2006) - PMID: 16352683
+  * "Substituted growth hormone-releasing hormone analogs with extended in vivo half-lives" (Jetté L, Léger R, Thibaudeau K, Benquet C, et al., 2005) - PMID: 15862661
+  * "GHRH and its synthetic analogs: Neuroendocrine kinetics and therapeutic investigations" (Alba M, Fintini D, Saggese G, Salvatori R., 2008) - PMID: 18270830
+
+---
+
+### Ipamorelin (Aib-His-D-2-Nal-D-Phe-Lys-NH2 Pentapeptide GHSR Agonist)
+- **CAS Registry Number**: 170851-70-4
+- **PubChem CID**: 9831659
+- **Empirical Formula**: C38H49N9O5
+- **Molecular Weight**: 711.86 g/mol g/mol
+- **Amino Acid Sequence**: Aib-His-D-2-Nal-D-Phe-Lys-NH2
+- **Research Category**: Growth Hormone Secretagogues & GHRH (https://trustlypharma.uk/category/growth-hormone-secretagogues/)
+- **Canonical Dossier URL**: https://trustlypharma.uk/peptides/ipamorelin/
+- **Overview**: Ipamorelin is a synthetic pentapeptide and selective ghrelin/growth hormone secretagogue receptor 1a (GHSR-1a) agonist. It demonstrates exquisite somatotroph selectivity, eliciting endogenous growth hormone pulses without significantly raising adrenocorticotropic hormone (ACTH), cortisol, prolactin, or aldosterone.
+- **Primary Mechanism of Action**: Selective agonism of pituitary and hypothalamic GHSR-1a receptors, activating phospholipase C (PLC) pathways. Intracellular inositol trisphosphate (IP3) generation prompting controlled calcium release and GH vesicle exocytosis. Absolute lack of stimulatory activity at ghrelin receptors regulating appetite or gastrointestinal hypermotility in standard assays. Synergistic amplification of GH release when co-administered with GHRH analogs like CJC-1295.
+- **Reconstitution Standard**: Diluent: Bacteriostatic Water USP | Lyophilized Storage: -20°C dry | Solution Storage: 2°C to 8°C refrigerated (stable 28 days) | Stability: Stable under refrigeration; keep away from heating elements
+- **Documented Research Citations**: 3 indexed PubMed studies.
+  * "Ipamorelin, the first selective growth hormone secretagogue" (Raun K, Hansen BS, Johansen PB, Thøgersen H, et al., 1998) - PMID: 9849822
+  * "Pharmacokinetic-pharmacodynamic modeling of ipamorelin, a growth hormone releasing peptide, in human volunteers" (Gobburu JV, Agersø H, Jusko WJ, Ynddal L., 1999) - PMID: 10496660
+  * "Ipamorelin, a new growth-hormone secretagogue, induces longitudinal bone growth in rats" (Johansen PB, Nowak J, Skjaerbaek C, Flyvbjerg A, et al., 1999) - PMID: 10429486
+
+---
+
+### AOD-9604 (Advanced Obesity Drug 9604 (Tyr-hGH 177-191 Synthetic Fragment))
+- **CAS Registry Number**: 221231-10-3
+- **PubChem CID**: 16131448
+- **Empirical Formula**: C78H123N23O23S2
+- **Molecular Weight**: 1815.12 g/mol g/mol
+- **Amino Acid Sequence**: Tyr-Leu-Arg-Ile-Val-Gln-Cys-Arg-Ser-Val-Glu-Gly-Ser-Cys-Gly-Phe
+- **Research Category**: Metabolic & Incretin Signaling (https://trustlypharma.uk/category/metabolic-regulation/)
+- **Canonical Dossier URL**: https://trustlypharma.uk/peptides/aod-9604/
+- **Overview**: AOD-9604 is a synthetic 16-amino-acid peptide fragment corresponding to the lipolytic C-terminus of human growth hormone (hGH 177-191) with an added N-terminal tyrosine residue. Studied for its capacity to stimulate beta-3 adrenergic lipolytic pathways without affecting insulin sensitivity or serum IGF-1 levels.
+- **Primary Mechanism of Action**: Selective upregulation of beta-3 adrenergic receptor expression on adipocytes, stimulating hormone-sensitive lipase. Inhibition of acetyl-CoA carboxylase activity, suppressing de novo lipogenesis in cultured adipose tissue. Absence of binding to human growth hormone receptors, preventing IGF-1 induction or diabetogenic hyperglycemia. Chondrogenesis induction and extracellular matrix accumulation in cartilage explants.
+- **Reconstitution Standard**: Diluent: Bacteriostatic Water USP or Sterile Saline | Lyophilized Storage: -20°C desiccated | Solution Storage: 2°C to 8°C refrigerated (stable 21 days) | Stability: Lyophilized cake maintains integrity up to 2 years at -20°C
+- **Documented Research Citations**: 3 indexed PubMed studies.
+  * "The Effects of Human GH and Its C-Terminal Fragment (AOD9604) on Lipid Metabolism" (Heffernan M, Summers RJ, Thorburn A, Ogru E, et al., 2001) - PMID: 11717208
+  * "Safety and tolerability of the hexadecapeptide AOD9604 in humans" (Stier H, Vos E, Kenley D., 2014) - PMID: 25236178
+  * "AOD9604 enhances in vitro chondrogenic differentiation of mesenchymal stem cells" (Kwon DR, Park GY, Lee SU., 2015) - PMID: 26069711
+
+---
+
+### Selank (Tuftsin Analog Heptapeptide (TP-7))
+- **CAS Registry Number**: 129954-34-3
+- **PubChem CID**: 11765600
+- **Empirical Formula**: C33H57N11O9
+- **Molecular Weight**: 751.89 g/mol g/mol
+- **Amino Acid Sequence**: Thr-Lys-Pro-Arg-Pro-Gly-Pro
+- **Research Category**: Neuropeptides & CNS Signaling (https://trustlypharma.uk/category/neuropeptides-cognition/)
+- **Canonical Dossier URL**: https://trustlypharma.uk/peptides/selank/
+- **Overview**: Selank is a synthetic regulatory heptapeptide derived from the immunomodulatory tetrapeptide tuftsin with a C-terminal Pro-Gly-Pro sequence extension. Investigated in neurochemical models for allosteric GABA-A receptor modulation, enkephalinase inhibition, and brain-derived neurotrophic factor (BDNF) mRNA expression.
+- **Primary Mechanism of Action**: Allosteric positive modulation of GABA-A receptor signaling without benzodiazepine sedative liabilities. Upregulation of BDNF and TrkB receptor mRNA transcription in the hippocampus and frontal cortex. Inhibition of enkephalinase enzymes, attenuating degradation of endogenous leu- and met-enkephalins. Modulation of serotonin (5-HT) and dopamine turnover rates under acute experimental conditions.
+- **Reconstitution Standard**: Diluent: Bacteriostatic Water or Sterile Isotonic Saline | Lyophilized Storage: -20°C desiccated (stable up to 24 months) | Solution Storage: 2°C to 8°C refrigerated; protect from light (stable 21 days) | Stability: Peptide bonds sensitive to ambient heat; maintain 2°C to 8°C post-dilution
+- **Documented Research Citations**: 2 indexed PubMed studies.
+  * "The effect of selank on the level of cytokines in blood of patients with generalized anxiety disorder" (Uchakina ON, Uchakin PN, Miasoedov NF, Andreeva LA, et al., 2008) - PMID: 18578308
+  * "Selank regulates the expression of genes involved in neurotransmission in rat brain cells" (Volkova A, Andreeva L, Myasoedov N., 2010) - PMID: 20925206
+
+---
+
+### Epithalon (Ala-Glu-Asp-Gly Synthetic Pineal Tetrapeptide (AEDG / Epitalon))
+- **CAS Registry Number**: 307297-39-8
+- **PubChem CID**: 219036
+- **Empirical Formula**: C14H22N4O9
+- **Molecular Weight**: 390.35 g/mol g/mol
+- **Amino Acid Sequence**: Ala-Glu-Asp-Gly
+- **Research Category**: Cellular Longevity & Mitochondrial Axis (https://trustlypharma.uk/category/cellular-longevity-mitochondrial/)
+- **Canonical Dossier URL**: https://trustlypharma.uk/peptides/epithalon/
+- **Overview**: Epithalon is a synthetic biomimetic tetrapeptide modeled after the endogenous pineal peptide epithalamin. Investigated for its ability to induce telomerase reverse transcriptase (TERT) expression, elongate telomeres in human somatic cells, modulate melatonin synthesis, and reduce oxidative mitochondrial stress.
+- **Primary Mechanism of Action**: Upregulation of telomerase activity (TERT) resulting in elongation of telomere repeats in human cell cultures. Regulation of pineal gland gene expression and circadian nocturnal melatonin secretion patterns. Antioxidant scavenging and attenuation of lipid peroxidation and reactive oxygen species (ROS) in cell models. Modulation of chromatin accessibility and epigenetic methylation patterns across age-associated gene loci.
+- **Reconstitution Standard**: Diluent: Bacteriostatic Water or Sterile Purified Water | Lyophilized Storage: -20°C desiccated (stable up to 24 months) | Solution Storage: 2°C to 8°C refrigerated (stable 28 days) | Stability: Lyophilized powder highly stable; avoid repeated temperature fluctuations
+- **Documented Research Citations**: 2 indexed PubMed studies.
+  * "Peptide promotes telomerase activity and telomere elongation in human fibroblasts" (Khavinson VK, Bondarev IE, Butyugov AA., 2003) - PMID: 12937682
+  * "Geroprotective effect of epithalamin and epithalon: telomerase and longevity" (Anisimov VN, Khavinson VK., 2003) - PMID: 14501183
+
+---
+
+### MOTS-c (Mitochondrial ORF of the 12S rRNA Type-c (16-mer))
+- **CAS Registry Number**: 1627580-64-6
+- **PubChem CID**: 138117765
+- **Empirical Formula**: C101H152N28O22S2
+- **Molecular Weight**: 2174.6 g/mol g/mol
+- **Amino Acid Sequence**: Met-Arg-Trp-Gln-Glu-Met-Gly-Tyr-Ile-Phe-Tyr-Pro-Arg-Lys-Leu-Arg
+- **Research Category**: Cellular Longevity & Mitochondrial Axis (https://trustlypharma.uk/category/cellular-longevity-mitochondrial/)
+- **Canonical Dossier URL**: https://trustlypharma.uk/peptides/mots-c/
+- **Overview**: MOTS-c is a 16-amino-acid peptide encoded within the mitochondrial 12S ribosomal RNA. Investigated in metabolic and biogerontology models for its ability to translocate to the nucleus under metabolic stress, activate AMPK (5′ AMP-activated protein kinase), and regulate nuclear gene expression related to glucose utilization and cellular senescence.
+- **Primary Mechanism of Action**: Direct phosphorylation and activation of AMPK signaling cascades in skeletal muscle cells. Stress-responsive nuclear translocation binding to chromatin to modulate adaptive gene loci. Enhancement of cellular glucose uptake independent of insulin receptor substrate pathways. Reduction of inflammatory cytokine secretion in explanted tissue models.
+- **Reconstitution Standard**: Diluent: Bacteriostatic 0.9% Benzyl Alcohol USP or Sterile Purified Water | Lyophilized Storage: -20°C desiccated (stable up to 24 months) | Solution Storage: 2°C to 8°C refrigerated (stable 21 days) | Stability: Keep chilled post-reconstitution; sensitive to thermal degradation above 25°C
+- **Documented Research Citations**: 2 indexed PubMed studies.
+  * "The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis and reduces diet-induced obesity" (Lee C, Zeng J, Drew BG, Sallam T, et al., 2015) - PMID: 25738459
+  * "MOTS-c is an exercise-induced mitochondrial-encoded regulator of physical capacity and performance" (Reynolds JC, Lai RW, Woodhead JST, Joly JH, et al., 2021) - PMID: 33479210
+
+---
+
+### Tirzepatide (Glucose-Dependent Insulinotropic Polypeptide (GIP) / GLP-1 Dual Agonist)
+- **CAS Registry Number**: 2023788-19-2
+- **PubChem CID**: 156588324
+- **Empirical Formula**: C225H348N48O68
+- **Molecular Weight**: 4813.5 g/mol g/mol
+- **Amino Acid Sequence**: Tyr-Aib-Glu-Gly-Thr-Phe-Thr-Ser-Asp-Tyr-Ser-Ile-Aib-Leu-Asp-Lys-Ile-Ala-Gln-Lys-Ala-Phe-Val-Gln-Trp-Leu-Ile-Ala-Gly-Gly-Pro-Ser-Ser-Gly-Ala-Pro-Pro-Pro-Ser
+- **Research Category**: Metabolic & Incretin Signaling (https://trustlypharma.uk/category/metabolic-regulation/)
+- **Canonical Dossier URL**: https://trustlypharma.uk/peptides/tirzepatide/
+- **Overview**: Tirzepatide is a 39-amino-acid synthetic peptide engineered with dual agonism at both glucose-dependent insulinotropic polypeptide (GIP) and glucagon-like peptide-1 (GLP-1) receptors. Investigated in extensive clinical trials and preclinical pharmacological assays for glucose homeostasis, lipolytic modulation, and pancreatic beta-cell insulin secretion.
+- **Primary Mechanism of Action**: Dual-receptor binding and activation across both GIP and GLP-1 G-protein coupled receptors. Glucose-dependent potentiation of first- and second-phase insulin secretion from pancreatic beta cells. Attenuation of postprandial glucagon secretion and delay of gastric emptying kinetics in experimental models. Enhancement of adipocyte lipid buffering capacity via selective GIP receptor signaling cascades.
+- **Reconstitution Standard**: Diluent: Bacteriostatic Water (0.9% Benzyl Alcohol USP) or Sterile Diluent | Lyophilized Storage: -20°C desiccated (stable up to 24 months) | Solution Storage: 2°C to 8°C refrigerated; do not freeze (stable 28 days) | Stability: Reconstituted peptide degrades upon freezing or mechanical agitation
+- **Documented Research Citations**: 2 indexed PubMed studies.
+  * "Tirzepatide Once Weekly for the Treatment of Obesity" (Jastreboff AM, Aronne LJ, Ahmad NN, Wharton S, et al., 2022) - PMID: 35658024
+  * "Tirzepatide versus Semaglutide Once Weekly in Patients with Type 2 Diabetes" (Frias JP, Davies MJ, Rosenstock J, Perez Manghi FC, et al., 2021) - PMID: 34186022
+
+---
+
+### Semaglutide (GLP-1 Receptor Agonist Modified Polypeptide)
+- **CAS Registry Number**: 910463-68-2
+- **PubChem CID**: 56843331
+- **Empirical Formula**: C187H291N45O59
+- **Molecular Weight**: 4113.6 g/mol g/mol
+- **Amino Acid Sequence**: His-Aib-Glu-Gly-Thr-Phe-Thr-Ser-Asp-Val-Ser-Ser-Tyr-Leu-Glu-Gly-Gln-Ala-Ala-Lys-Glu-Phe-Ile-Ala-Trp-Leu-Val-Arg-Gly-Arg-Gly
+- **Research Category**: Metabolic & Incretin Signaling (https://trustlypharma.uk/category/metabolic-regulation/)
+- **Canonical Dossier URL**: https://trustlypharma.uk/peptides/semaglutide/
+- **Overview**: Semaglutide is a synthetic glucagon-like peptide-1 (GLP-1) receptor agonist modified with an alpha-aminoisobutyric acid substitution and a C-18 fatty diacid spacer to facilitate non-covalent albumin binding. Characterized across human clinical trials for glucose regulation and neuro-endocrine appetite pathway interactions.
+- **Primary Mechanism of Action**: Selective agonism of GLP-1 receptors in the pancreas and central nervous system nuclei. Stimulation of glucose-dependent insulin biosynthesis and suppression of inappropriate glucagon secretion. Modulation of pro-opiomelanocortin (POMC) neurons in the arcuate nucleus of the hypothalamus. Deceleration of gastric motility and regulation of peripheral glycemic excursion profiles.
+- **Reconstitution Standard**: Diluent: Bacteriostatic 0.9% Benzyl Alcohol USP or Sterile Diluent | Lyophilized Storage: -20°C desiccated (stable up to 24 months) | Solution Storage: 2°C to 8°C refrigerated (stable 28 days) | Stability: Aqueous solution stable at 2°C to 8°C; avoid exposure to light
+- **Documented Research Citations**: 2 indexed PubMed studies.
+  * "Once-Weekly Semaglutide in Adults with Overweight or Obesity" (Wilding JPH, Batterham RL, Calanna S, Davies M, et al., 2021) - PMID: 33567185
+  * "Semaglutide and Cardiovascular Outcomes in Patients with Type 2 Diabetes" (Marso SP, Bain SC, Consoli A, Eliaschewitz FG, et al., 2016) - PMID: 27633186
+
+
+---
+
+## 2. Research Pathways & Molecular Targets
+
+### Tissue Repair & Angiogenesis
+- **URL**: https://trustlypharma.uk/category/tissue-repair-recovery/
+- **Headline**: Preclinical Cellular Migration & Extracellular Matrix Remodeling
+- **Description**: Systematic analysis of synthetic peptide sequences investigated in cellular motility, vascular endothelial growth factor (VEGF) transcription, and collagen fibrillogenesis.
+- **Signaling Focus**: FAK-Paxillin pathway activation, VEGFR2 autophosphorylation, eNOS expression, actin cytoskeletal reorganization.
+
+### Neuropeptides & CNS Signaling
+- **URL**: https://trustlypharma.uk/category/neuropeptides-cognition/
+- **Headline**: Neurotrophic Factor Expression & Monoamine Neurotransmission
+- **Description**: Academic reference profiles for synthetic peptide fragments investigated for their interactions with brain-derived neurotrophic factor (BDNF), melanocortin receptors, and GABAergic modulation.
+- **Signaling Focus**: BDNF/TrkB axis upregulation, serotonin turnover regulation, enkephalinase inhibition, neurovascular preservation.
+
+### Growth Hormone Secretagogues & GHRH
+- **URL**: https://trustlypharma.uk/category/growth-hormone-secretagogues/
+- **Headline**: Pituitary Somatotroph Receptors & Ghrelin Signaling Pathways
+- **Description**: Structural and kinetic profiling of synthetic peptides designed to selectively stimulate pulsatile endogenous growth hormone secretion via pituitary receptor pathways.
+- **Signaling Focus**: GHSR-1a receptor agonism, GHRH receptor selectivity, downstream IGF-1 transcription without prolactin perturbation.
+
+### Metabolic & Incretin Signaling
+- **URL**: https://trustlypharma.uk/category/metabolic-regulation/
+- **Headline**: Incretin Receptor Co-Agonism & Lipolytic Pathways
+- **Description**: Analytical catalog of synthetic peptides targeting GLP-1, GIP, and beta-3 adrenergic receptors to investigate cellular glucose homeostasis and lipid oxidation cascades.
+- **Signaling Focus**: GLP-1R / GIPR modulation, cAMP signaling, hormone-sensitive lipase stimulation, adipose beta-3 receptor agonism.
+
+### Dermal & Extracellular Matrix
+- **URL**: https://trustlypharma.uk/category/dermal-extracellular-matrix/
+- **Headline**: Copper Chelation & Fibroblast Procollagen Biosynthesis
+- **Description**: Comparative technical examination of peptide complexes studied for their modulation of matrix metalloproteinases (MMPs), decorin synthesis, and glycosaminoglycan accumulation.
+- **Signaling Focus**: Copper (Cu2+) coordinate bonding, TGF-beta pathway stimulation, MMP-1/MMP-2 balance regulation, dermal fibroblast proliferation.
+
+### Cellular Longevity & Mitochondrial Axis
+- **URL**: https://trustlypharma.uk/category/cellular-longevity-mitochondrial/
+- **Headline**: Telomerase Transcription & Electron Transport Modulation
+- **Description**: Preclinical investigation of peptides studied for telomere protection, mitochondrial biogenesis, AMPK activation, and protection against reactive oxygen species (ROS).
+- **Signaling Focus**: Telomerase reverse transcriptase (TERT) activation, cardiolipin stabilization, mitochondrial ATP synthesis, epigenetic age regulation.
+
+
+---
+
+## 3. Verified Commercial Supplier Directory
+
+### PharmaGrade Store
+- **Dossier URL**: https://trustlypharma.uk/vendors/pharmagrade/
+- **Domain**: pharmagrade.store
+- **Headquarters**: London, United Kingdom
+- **Established**: 2018
+- **Testing Standards**: High-Performance Liquid Chromatography (HPLC) batch purity profiling; Electrospray Ionization Mass Spectrometry (ESI-MS) molecular identity confirmation; Certified purity threshold ≥98.0% for analytical reference assays; Independent European contract laboratory third-party testing
+- **Catalog Summary**: Established UK-based chemical distributor specializing in high-purity research peptides, lyophilized reagent vials, and laboratory reconstitution solvents.
+
+### Direct Peptides
+- **Dossier URL**: https://trustlypharma.uk/vendors/direct-peptides/
+- **Domain**: direct-peptides.com
+- **Headquarters**: Dublin, Ireland & UK Hub
+- **Established**: 2017
+- **Testing Standards**: Batch-specific HPLC analytical chromatograms available on demand; ESI-MS verification confirming exact monoisotopic mass; Reference analytical standard purity testing exceeding ≥99.0%; Accelerated degradation monitoring across simulated thermal transit
+- **Catalog Summary**: International reagent supplier providing high-throughput synthesis catalogues of amino acid chains, synergistic multi-peptide blends, and calibrated spray matrices.
+
+### Direct Sarms
+- **Dossier URL**: https://trustlypharma.uk/vendors/direct-sarms/
+- **Domain**: direct-sarms.com
+- **Headquarters**: London, United Kingdom
+- **Established**: 2019
+- **Testing Standards**: Gas chromatography-mass spectrometry (GC-MS) & reverse-phase HPLC assays; Carrier dissolution profiling for liquid receptor-binding studies; Minimum analytical purity baseline of ≥98.5% with Certificate of Analysis
+- **Catalog Summary**: Online chemical retailer cataloging investigational biochemicals, multi-compound research combinations, and analytical grade control standards.
+
+### Peptide Works
+- **Dossier URL**: https://trustlypharma.uk/vendors/peptide-works/
+- **Domain**: peptide-works.com
+- **Headquarters**: Manchester, United Kingdom
+- **Established**: 2020
+- **Testing Standards**: Automated solid-phase peptide synthesis (SPPS) sequence confirmation; Reverse-phase HPLC integration spectra verifying chromatographic purity ≥98.5%; Karl Fischer volumetric titration measuring residual lyophilization moisture (<4%); Batch traceability with digital analytical certificate archive
+- **Catalog Summary**: Specialized UK chemical retailer focusing on high-purity solid-phase synthesis peptides with sequence validation for institutional laboratories.
+
+### PharmaLab Global
+- **Dossier URL**: https://trustlypharma.uk/vendors/pharmalab-global/
+- **Domain**: pharmalabglobal.com
+- **Headquarters**: London, United Kingdom (International Dispatch Hubs)
+- **Established**: 2016
+- **Testing Standards**: Triple-stage quality protocol (HPLC purity, ESI-MS identification, microbial load testing); Blind third-party analytical verification across partner European testing facilities; Standardized Certificate of Analysis accompanying each commercial batch lot
+- **Catalog Summary**: International reagent distribution network supplying research peptides, pre-metered multidose cartridge pens, and analytical testing consumables worldwide.
+
+
+---
+
+## 4. UK Statutory & Regulatory Framework
+
+- **Medicines & Healthcare products Regulatory Agency (MHRA)**: Regulates medicinal claims under Human Medicines Regulations 2012 (SI 2012/1916). Research chemicals must not be marketed or sold for human consumption.
+- **Misuse of Drugs Act 1971**: Specific synthetic peptide analogues are monitored for controlled substance classification. Analytical reference materials require standard laboratory handling.
+- **World Anti-Doping Agency (WADA)**: Sections S0 (Non-approved substances) and S2 (Peptide hormones and growth factors) prohibit in-competition and out-of-competition use.
+- **OECD Good Laboratory Practice (GLP)**: Reconstitution protocols require sterile air laminar flow, bacteriostatic 0.9% benzyl alcohol preserved water, and cold-chain maintenance at 2°C–8°C.

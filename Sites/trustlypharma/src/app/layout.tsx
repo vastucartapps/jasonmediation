@@ -98,7 +98,7 @@ export default function RootLayout({
         url: 'https://trustlypharma.uk/',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://trustlypharma.uk/icon.svg',
+          url: 'https://trustlypharma.uk/icon-512x512.png',
           width: 512,
           height: 512,
         },
@@ -120,6 +120,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+        <link rel="alternate" type="text/markdown" title="LLMs.txt" href="/llms.txt" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd) }}

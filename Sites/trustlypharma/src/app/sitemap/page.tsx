@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { PEPTIDE_COMPOUNDS } from '../../data/compounds';
-import { RESEARCH_CATEGORIES } from '../../data/categories';
-import { getAllVendors } from '../../data/suppliers';
+import { getAllDiscoveryRoutes, BASE_URL } from '../../lib/discovery';
 import {
   FileText,
   ChevronRight,
@@ -12,20 +10,28 @@ import {
   Scale,
   Calculator,
   Compass,
+  CheckCircle,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'HTML Index & Directory Sitemap | Trustly Pharma',
   description:
-    'Comprehensive directory sitemap indexing all chemical compound dossiers, research pathways, verified vendor directories, and regulatory intelligence trackers.',
+    'Comprehensive directory sitemap dynamically indexing all chemical compound dossiers, research pathways, verified vendor directories, and regulatory intelligence trackers.',
   alternates: {
-    canonical: 'https://trustlypharma.uk/sitemap/',
+    canonical: `${BASE_URL}/sitemap/`,
   },
 };
 
 export default function SitemapPage() {
-  const vendors = getAllVendors();
-  const pageUrl = 'https://trustlypharma.uk/sitemap/';
+  const routes = getAllDiscoveryRoutes();
+  const pageUrl = `${BASE_URL}/sitemap/`;
+
+  const coreRoutes = routes.filter((r) => r.section === 'Core Platform');
+  const compoundRoutes = routes.filter((r) => r.section === 'Peptide Compounds');
+  const pathwayRoutes = routes.filter((r) => r.section === 'Research Pathways');
+  const vendorRoutes = routes.filter((r) => r.section === 'Commercial Vendors');
+  const regulatoryRoutes = routes.filter((r) => r.section === 'Regulatory Hub');
+  const governanceRoutes = routes.filter((r) => r.section === 'Governance & Legal');
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -37,7 +43,7 @@ export default function SitemapPage() {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://trustlypharma.uk/',
+            item: `${BASE_URL}/`,
           },
           {
             '@type': 'ListItem',
@@ -53,7 +59,17 @@ export default function SitemapPage() {
         url: pageUrl,
         name: 'HTML Index & Complete Sitemap | Trustly Pharma',
         description:
-          'Complete directory sitemap indexing all chemical compound dossiers, research pathways, verified vendor directories, and regulatory intelligence trackers.',
+          'Complete directory sitemap dynamically indexing all chemical compound dossiers, research pathways, verified vendor directories, and regulatory intelligence trackers.',
+        mainEntity: {
+          '@type': 'ItemList',
+          numberOfItems: routes.length,
+          itemListElement: routes.map((r, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            url: r.loc,
+            name: r.title,
+          })),
+        },
       },
     ],
   };
@@ -84,16 +100,50 @@ export default function SitemapPage() {
         <div className="container-wide space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-[#103059] text-sky-400 border border-sky-500/30">
             <Compass className="w-3.5 h-3.5" />
-            <span>EXHAUSTIVE PLATFORM DIRECTORY</span>
+            <span>DYNAMIC DISCOVERY INDEX · {routes.length} CANONICAL ROUTES</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            HTML Index & Complete Sitemap
+            HTML Index &amp; Complete Sitemap
           </h1>
 
           <p className="text-base sm:text-lg text-slate-200 max-w-3xl leading-relaxed">
-            Direct navigation index cataloging 100% of indexable chemical compound profiles, biological signaling pathways, commercial vendor dossiers, and UK statutory compliance trackers.
+            Direct navigation index cataloging 100% of indexable chemical compound profiles, biological signaling pathways, commercial vendor dossiers, and UK statutory compliance trackers. Auto-populated in real-time from the central scientific registry.
           </p>
+
+          <div className="flex flex-wrap gap-4 pt-2 text-xs font-mono text-slate-300">
+            <a
+              href="/sitemap.xml"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#071c3f] border border-sky-500/40 text-sky-300 hover:text-white hover:border-sky-400 transition-colors"
+            >
+              <span>XML Sitemap Feed</span>
+              <span className="text-slate-400">({routes.length} URLs)</span>
+            </a>
+            <a
+              href="/sitemap_index.xml"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#071c3f] border border-[rgba(141,168,195,0.25)] text-slate-300 hover:text-white transition-colors"
+            >
+              <span>Sitemap Index</span>
+            </a>
+            <a
+              href="/llms.txt"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#071c3f] border border-[rgba(141,168,195,0.25)] text-slate-300 hover:text-white transition-colors"
+            >
+              <span>llms.txt</span>
+            </a>
+            <a
+              href="/llms-full.txt"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#071c3f] border border-[rgba(141,168,195,0.25)] text-slate-300 hover:text-white transition-colors"
+            >
+              <span>llms-full.txt</span>
+            </a>
+            <a
+              href="/robots.txt"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#071c3f] border border-[rgba(141,168,195,0.25)] text-slate-300 hover:text-white transition-colors"
+            >
+              <span>robots.txt</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -101,141 +151,109 @@ export default function SitemapPage() {
       <main className="container-wide py-12 md:py-16 space-y-12">
         {/* 1. Core Platform & Analytical Tools */}
         <section className="space-y-6">
-          <div className="flex items-center gap-2 pb-3 border-b border-[rgba(141,168,195,0.2)]">
-            <Calculator className="w-5 h-5 text-sky-400" />
-            <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-              Core Platform & Analytical Tools
-            </h2>
+          <div className="flex items-center justify-between pb-3 border-b border-[rgba(141,168,195,0.2)]">
+            <div className="flex items-center gap-2">
+              <Calculator className="w-5 h-5 text-sky-400" />
+              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Core Platform &amp; Analytical Tools
+              </h2>
+            </div>
+            <span className="text-xs font-mono text-slate-400 bg-[#071c3f] px-2.5 py-1 rounded-md border border-[rgba(141,168,195,0.2)]">
+              {coreRoutes.length} pages
+            </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Link
-              href="/"
-              className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-all block group"
-            >
-              <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base">
-                Index Home →
-              </h3>
-              <p className="text-xs text-slate-300 mt-1">
-                Main peptide chemical index,PubChem cross-references, and search.
-              </p>
-            </Link>
-
-            <Link
-              href="/vendors/"
-              className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-all block group"
-            >
-              <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base">
-                Commercial Vendors Directory →
-              </h3>
-              <p className="text-xs text-slate-300 mt-1">
-                Independent partner directory for verified research suppliers.
-              </p>
-            </Link>
-
-            <Link
-              href="/#calculator"
-              className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-all block group"
-            >
-              <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base">
-                Dilution & Syringe Calculator →
-              </h3>
-              <p className="text-xs text-slate-300 mt-1">
-                Precision micro-volume reconstitution and unit calculation engine.
-              </p>
-            </Link>
-
-            <Link
-              href="/#evidence-map"
-              className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-all block group"
-            >
-              <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base">
-                The Evidence Map →
-              </h3>
-              <p className="text-xs text-slate-300 mt-1">
-                Interactive 3-tier preclinical and clinical evidence matrix.
-              </p>
-            </Link>
-
-            <Link
-              href="/formats/"
-              className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-all block group"
-            >
-              <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base">
-                Delivery Formats Standards →
-              </h3>
-              <p className="text-xs text-slate-300 mt-1">
-                Lyophilized vials, cartridges, atomizers, and solvent diluents.
-              </p>
-            </Link>
-
-            <Link
-              href="/verification/"
-              className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-all block group"
-            >
-              <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base">
-                Analytical Verification Standards →
-              </h3>
-              <p className="text-xs text-slate-300 mt-1">
-                HPLC purity assays and ESI mass spectrometry standards.
-              </p>
-            </Link>
-          </div>
-        </section>
-
-        {/* 2. Research Pathways & Categories */}
-        <section className="space-y-6">
-          <div className="flex items-center gap-2 pb-3 border-b border-[rgba(141,168,195,0.2)]">
-            <FlaskConical className="w-5 h-5 text-emerald-400" />
-            <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-              Research Pathways & Signaling Axes
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {RESEARCH_CATEGORIES.map((cat) => (
+            {coreRoutes.map((r) => (
               <Link
-                key={cat.slug}
-                href={`/category/${cat.slug}/`}
-                className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-emerald-400/60 transition-all block group"
+                key={r.path}
+                href={r.path}
+                className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-all block group"
               >
-                <h3 className="font-bold text-white group-hover:text-emerald-300 transition-colors text-base">
-                  {cat.name} →
+                <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base">
+                  {r.title} →
                 </h3>
                 <p className="text-xs text-slate-300 mt-1 line-clamp-2">
-                  {cat.description}
+                  {r.description}
                 </p>
+                <div className="mt-3 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                  <span>Priority: {r.priority}</span>
+                  <span className="text-sky-400 capitalize">{r.changefreq}</span>
+                </div>
               </Link>
             ))}
           </div>
         </section>
 
-        {/* 3. Peptides Compound Directory */}
+        {/* 2. Research Peptides Directory */}
         <section className="space-y-6">
-          <div className="flex items-center gap-2 pb-3 border-b border-[rgba(141,168,195,0.2)]">
-            <FileText className="w-5 h-5 text-sky-400" />
-            <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-              Chemical Compound Reference Dossiers (12 Compounds)
-            </h2>
+          <div className="flex items-center justify-between pb-3 border-b border-[rgba(141,168,195,0.2)]">
+            <div className="flex items-center gap-2">
+              <FileText className="w-5 h-5 text-sky-400" />
+              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Chemical Compound Reference Dossiers
+              </h2>
+            </div>
+            <span className="text-xs font-mono text-emerald-400 bg-emerald-950/60 px-2.5 py-1 rounded-md border border-emerald-500/30">
+              {compoundRoutes.length} compounds auto-indexed
+            </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {PEPTIDE_COMPOUNDS.map((c) => (
+            {compoundRoutes.map((r) => (
               <Link
-                key={c.slug}
-                href={`/peptides/${c.slug}/`}
+                key={r.path}
+                href={r.path}
                 className="p-4 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-all block group"
               >
                 <div className="flex items-center justify-between">
-                  <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base">
-                    {c.name}
+                  <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base truncate">
+                    {r.title.replace(' Chemical Reference Dossier', '')}
                   </h3>
-                  <span className="text-[10px] font-mono text-slate-400 bg-[#02102b] px-2 py-0.5 rounded border border-[rgba(141,168,195,0.18)]">
-                    {c.casNumber}
-                  </span>
+                  {r.meta?.casNumber && (
+                    <span className="text-[10px] font-mono text-slate-400 bg-[#02102b] px-2 py-0.5 rounded border border-[rgba(141,168,195,0.18)] shrink-0 ml-2">
+                      {r.meta.casNumber}
+                    </span>
+                  )}
                 </div>
                 <p className="text-xs text-slate-300 mt-1 line-clamp-1">
-                  {c.systematicName}
+                  {r.description}
                 </p>
-                <div className="mt-2 text-[11px] font-mono text-sky-400">
-                  {c.citations.length} PubMed studies indexed →
+                <div className="mt-2 flex items-center justify-between text-[11px] font-mono text-sky-400">
+                  <span>{r.meta?.citationCount || 0} studies indexed</span>
+                  <span className="text-slate-400">View Dossier →</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* 3. Research Pathways & Categories */}
+        <section className="space-y-6">
+          <div className="flex items-center justify-between pb-3 border-b border-[rgba(141,168,195,0.2)]">
+            <div className="flex items-center gap-2">
+              <FlaskConical className="w-5 h-5 text-emerald-400" />
+              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Research Pathways &amp; Signaling Axes
+              </h2>
+            </div>
+            <span className="text-xs font-mono text-slate-400 bg-[#071c3f] px-2.5 py-1 rounded-md border border-[rgba(141,168,195,0.2)]">
+              {pathwayRoutes.length} pathways
+            </span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {pathwayRoutes.map((r) => (
+              <Link
+                key={r.path}
+                href={r.path}
+                className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-emerald-400/60 transition-all block group"
+              >
+                <h3 className="font-bold text-white group-hover:text-emerald-300 transition-colors text-base">
+                  {r.title.replace(' Pathway Index', '')} →
+                </h3>
+                <p className="text-xs text-slate-300 mt-1 line-clamp-2">
+                  {r.description}
+                </p>
+                <div className="mt-3 text-[11px] font-mono text-emerald-400">
+                  Explore Signaling Pathway →
                 </div>
               </Link>
             ))}
@@ -244,26 +262,31 @@ export default function SitemapPage() {
 
         {/* 4. Verified Commercial Vendors */}
         <section className="space-y-6">
-          <div className="flex items-center gap-2 pb-3 border-b border-[rgba(141,168,195,0.2)]">
-            <Store className="w-5 h-5 text-amber-400" />
-            <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-              Verified Commercial Partners & Vendors
-            </h2>
+          <div className="flex items-center justify-between pb-3 border-b border-[rgba(141,168,195,0.2)]">
+            <div className="flex items-center gap-2">
+              <Store className="w-5 h-5 text-amber-400" />
+              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Verified Commercial Partners &amp; Vendors
+              </h2>
+            </div>
+            <span className="text-xs font-mono text-slate-400 bg-[#071c3f] px-2.5 py-1 rounded-md border border-[rgba(141,168,195,0.2)]">
+              {vendorRoutes.length} suppliers
+            </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {vendors.map((v) => (
+            {vendorRoutes.map((r) => (
               <Link
-                key={v.id}
-                href={`/vendors/${v.id}/`}
+                key={r.path}
+                href={r.path}
                 className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-amber-400/60 transition-all block group text-center"
               >
                 <h3 className="font-bold text-white group-hover:text-amber-300 transition-colors text-base">
-                  {v.name}
+                  {r.title.replace(' Commercial Supplier Dossier', '')}
                 </h3>
                 <p className="text-xs font-mono text-slate-400 mt-1">
-                  {v.domain}
+                  {r.meta?.domain || 'Verified Vendor'}
                 </p>
-                <span className="inline-block mt-3 text-xs text-sky-400 font-mono">
+                <span className="inline-block mt-3 text-xs text-amber-400 font-mono">
                   View Dossier →
                 </span>
               </Link>
@@ -273,131 +296,66 @@ export default function SitemapPage() {
 
         {/* 5. Regulatory Intelligence Hub */}
         <section className="space-y-6">
-          <div className="flex items-center gap-2 pb-3 border-b border-[rgba(141,168,195,0.2)]">
-            <Scale className="w-5 h-5 text-purple-400" />
-            <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-              Regulatory Intelligence & Compliance Hub
-            </h2>
+          <div className="flex items-center justify-between pb-3 border-b border-[rgba(141,168,195,0.2)]">
+            <div className="flex items-center gap-2">
+              <Scale className="w-5 h-5 text-purple-400" />
+              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Regulatory Intelligence &amp; Compliance Hub
+              </h2>
+            </div>
+            <span className="text-xs font-mono text-slate-400 bg-[#071c3f] px-2.5 py-1 rounded-md border border-[rgba(141,168,195,0.2)]">
+              {regulatoryRoutes.length} trackers
+            </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <Link
-              href="/regulatory/"
-              className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-purple-400/60 transition-all block group"
-            >
-              <h3 className="font-bold text-white group-hover:text-purple-300 transition-colors text-base">
-                Regulatory Hub Home →
-              </h3>
-              <p className="text-xs text-slate-300 mt-1">
-                UK & international legal framework for synthetic chemical research.
-              </p>
-            </Link>
-
-            <Link
-              href="/regulatory/mhra-tracker/"
-              className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-purple-400/60 transition-all block group"
-            >
-              <h3 className="font-bold text-white group-hover:text-purple-300 transition-colors text-base">
-                MHRA Enforcement Tracker →
-              </h3>
-              <p className="text-xs text-slate-300 mt-1">
-                Live compliance timeline, border seizures, and regulatory bulletins.
-              </p>
-            </Link>
-
-            <Link
-              href="/regulatory/uk-legal-status/"
-              className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-purple-400/60 transition-all block group"
-            >
-              <h3 className="font-bold text-white group-hover:text-purple-300 transition-colors text-base">
-                UK Legal Status Matrix →
-              </h3>
-              <p className="text-xs text-slate-300 mt-1">
-                Misuse of Drugs Act 1971, POM schedules, and GLP handling statutes.
-              </p>
-            </Link>
+            {regulatoryRoutes.map((r) => (
+              <Link
+                key={r.path}
+                href={r.path}
+                className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-purple-400/60 transition-all block group"
+              >
+                <h3 className="font-bold text-white group-hover:text-purple-300 transition-colors text-base">
+                  {r.title} →
+                </h3>
+                <p className="text-xs text-slate-300 mt-1 line-clamp-2">
+                  {r.description}
+                </p>
+                <div className="mt-3 text-[11px] font-mono text-purple-400">
+                  View Regulatory Tracker →
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
 
         {/* 6. Institutional Governance & Policies */}
         <section className="space-y-6">
-          <div className="flex items-center gap-2 pb-3 border-b border-[rgba(141,168,195,0.2)]">
-            <ShieldCheck className="w-5 h-5 text-sky-400" />
-            <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-              Institutional Governance & Legal Policies
-            </h2>
+          <div className="flex items-center justify-between pb-3 border-b border-[rgba(141,168,195,0.2)]">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-sky-400" />
+              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Institutional Governance &amp; Legal Policies
+              </h2>
+            </div>
+            <span className="text-xs font-mono text-slate-400 bg-[#071c3f] px-2.5 py-1 rounded-md border border-[rgba(141,168,195,0.2)]">
+              {governanceRoutes.length} policies
+            </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            <Link
-              href="/about/"
-              className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-all block group"
-            >
-              <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base">
-                About & Methodology →
-              </h3>
-              <p className="text-xs text-slate-300 mt-1">
-                Charter, 5-stage chemical protocol, and evidence tiering.
-              </p>
-            </Link>
-
-            <Link
-              href="/safety/"
-              className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-all block group"
-            >
-              <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base">
-                Research Safety Policy →
-              </h3>
-              <p className="text-xs text-slate-300 mt-1">
-                OECD GLP handling, cold-chain thresholds, and PPE.
-              </p>
-            </Link>
-
-            <Link
-              href="/contact/"
-              className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-all block group"
-            >
-              <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base">
-                Contact & Submissions →
-              </h3>
-              <p className="text-xs text-slate-300 mt-1">
-                Direct academic desk for errata, PMIDs, and collaborations.
-              </p>
-            </Link>
-
-            <Link
-              href="/privacy/"
-              className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-all block group"
-            >
-              <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base">
-                Privacy Policy →
-              </h3>
-              <p className="text-xs text-slate-300 mt-1">
-                UK GDPR data handling and analytical privacy notice.
-              </p>
-            </Link>
-
-            <Link
-              href="/terms/"
-              className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-all block group"
-            >
-              <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base">
-                Terms of Service →
-              </h3>
-              <p className="text-xs text-slate-300 mt-1">
-                Academic terms of access and research reagent disclaimer.
-              </p>
-            </Link>
-
-            <a
-              href="/sitemap.xml"
-              className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-all block group"
-            >
-              <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base">
-                XML Sitemap Feed →
-              </h3>
-              <p className="text-xs text-slate-300 mt-1">
-                Machine-readable XML index for search engine crawlers.
-              </p>
-            </a>
+            {governanceRoutes.map((r) => (
+              <Link
+                key={r.path}
+                href={r.path}
+                className="p-5 rounded-2xl bg-[#071c3f] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 transition-all block group"
+              >
+                <h3 className="font-bold text-white group-hover:text-sky-300 transition-colors text-base">
+                  {r.title} →
+                </h3>
+                <p className="text-xs text-slate-300 mt-1 line-clamp-2">
+                  {r.description}
+                </p>
+              </Link>
+            ))}
           </div>
         </section>
       </main>

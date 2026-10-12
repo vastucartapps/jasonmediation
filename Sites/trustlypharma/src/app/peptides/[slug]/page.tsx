@@ -176,7 +176,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
         name: `${compound.name} Research Peptide (CAS ${compound.casNumber})`,
         alternateName: compound.systematicName,
         description: compound.shortOverview,
-        image: 'https://trustlypharma.uk/icon.svg',
+        image: 'https://trustlypharma.uk/icon-512x512.png',
         sku: `CAS-${compound.casNumber}`,
         mpn: compound.casNumber,
         category: compound.categoryName,
@@ -279,7 +279,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
         '@id': `${pageUrl}#article`,
         headline: `${compound.name} (${compound.systematicName}) Chemical Reference & Evidence Analysis`,
         description: compound.shortOverview,
-        image: ['https://trustlypharma.uk/icon.svg'],
+        image: ['https://trustlypharma.uk/icon-512x512.png'],
         datePublished: '2025-01-15T08:00:00+00:00',
         dateModified: '2026-10-08T12:00:00+00:00',
         mainEntityOfPage: pageUrl,
@@ -295,7 +295,7 @@ export default async function PeptideDetailPage({ params }: PageProps) {
           url: 'https://trustlypharma.uk',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://trustlypharma.uk/icon.svg',
+            url: 'https://trustlypharma.uk/icon-512x512.png',
           },
         },
         citation: compound.citations.map((c) =>
