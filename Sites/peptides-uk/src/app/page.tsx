@@ -97,7 +97,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="space-y-16 md:space-y-24 pb-12">
+    <div className="space-y-10 md:space-y-14 pb-12">
       {/* Schema Injection */}
       <script
         type="application/ld+json"
