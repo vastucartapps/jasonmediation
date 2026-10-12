@@ -11,6 +11,30 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE_METADATA.url}/terms/`,
   },
+  openGraph: {
+    title: 'Terms of Service & Research Use Disclaimer | Peptides UK',
+    description:
+      'Terms of service and academic warranty disclaimer for Peptides-UK.org. Strictly in vitro scientific research only.',
+    url: `${SITE_METADATA.url}/terms/`,
+    siteName: SITE_METADATA.name,
+    locale: SITE_METADATA.locale,
+    type: 'website',
+    images: [
+      {
+        url: `${SITE_METADATA.url}/icon-512x512.png`,
+        width: 512,
+        height: 512,
+        alt: 'Peptides UK Terms of Service',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Terms of Service & Research Use Disclaimer | Peptides UK',
+    description:
+      'Terms of service and academic warranty disclaimer for Peptides-UK.org. Strictly in vitro scientific research only.',
+    images: [`${SITE_METADATA.url}/icon-512x512.png`],
+  },
 };
 
 export default function TermsPage() {

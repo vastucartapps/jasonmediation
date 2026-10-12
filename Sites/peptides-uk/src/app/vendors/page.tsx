@@ -103,7 +103,7 @@ export default function VendorsIndexPage() {
                 <a
                   href={vendor.baseUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold text-xs hover:bg-emerald-700 transition-colors shadow-sm inline-flex items-center gap-1.5"
                 >
                   <span>Visit Supplier Website</span>

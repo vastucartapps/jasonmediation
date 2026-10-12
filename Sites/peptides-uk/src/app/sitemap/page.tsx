@@ -22,6 +22,30 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE_METADATA.url}/sitemap/`,
   },
+  openGraph: {
+    title: 'Visual HTML Sitemap & Complete Page Index | Peptides UK',
+    description:
+      'Complete index of all canonical routes, chemical monographs, pre-clinical signaling pathways, and UK supplier dossiers on Peptides-UK.org.',
+    url: `${SITE_METADATA.url}/sitemap/`,
+    siteName: SITE_METADATA.name,
+    locale: SITE_METADATA.locale,
+    type: 'website',
+    images: [
+      {
+        url: `${SITE_METADATA.url}/icon-512x512.png`,
+        width: 512,
+        height: 512,
+        alt: 'Peptides UK Visual HTML Sitemap',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Visual HTML Sitemap & Complete Page Index | Peptides UK',
+    description:
+      'Complete index of all canonical routes, chemical monographs, pre-clinical signaling pathways, and UK supplier dossiers on Peptides-UK.org.',
+    images: [`${SITE_METADATA.url}/icon-512x512.png`],
+  },
 };
 
 export default function HtmlSitemapPage() {

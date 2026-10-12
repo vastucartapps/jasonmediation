@@ -10,6 +10,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE_METADATA.url}/privacy/`,
   },
+  openGraph: {
+    title: 'Privacy Policy & UK GDPR Compliance | Peptides UK',
+    description: 'Privacy policy for Peptides-UK.org detailing our compliance with UK GDPR and Data Protection Act 2018.',
+    url: `${SITE_METADATA.url}/privacy/`,
+    siteName: SITE_METADATA.name,
+    locale: SITE_METADATA.locale,
+    type: 'website',
+    images: [
+      {
+        url: `${SITE_METADATA.url}/icon-512x512.png`,
+        width: 512,
+        height: 512,
+        alt: 'Peptides UK Privacy Policy & Data Governance',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Privacy Policy & UK GDPR Compliance | Peptides UK',
+    description: 'Privacy policy for Peptides-UK.org detailing our compliance with UK GDPR and Data Protection Act 2018.',
+    images: [`${SITE_METADATA.url}/icon-512x512.png`],
+  },
 };
 
 export default function PrivacyPage() {

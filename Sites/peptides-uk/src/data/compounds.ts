@@ -48,7 +48,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/bpc-157/',
+        url: 'https://direct-peptides.com#bpc-157/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -59,7 +59,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/bpc-157/',
+        url: 'https://direct-sarms.com#bpc-157/',
         format: 'vial',
         puritySpecification: '≥98.8% (HPLC)',
         batchAssayVerification: true,
@@ -70,7 +70,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -158,7 +158,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/tb500/',
+        url: 'https://direct-peptides.com#tb500/',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -169,7 +169,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/tb500/',
+        url: 'https://direct-sarms.com#tb500/',
         format: 'vial',
         puritySpecification: '≥98.5% (HPLC)',
         batchAssayVerification: true,
@@ -180,7 +180,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥98.8% (HPLC)',
         batchAssayVerification: true,
@@ -259,7 +259,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/semax/',
+        url: 'https://direct-peptides.com#semax/',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -270,7 +270,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/semax/',
+        url: 'https://direct-sarms.com#semax/',
         format: 'spray',
         puritySpecification: '≥98.6% (HPLC)',
         batchAssayVerification: true,
@@ -281,7 +281,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -360,7 +360,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/ghk-cu/',
+        url: 'https://direct-peptides.com#ghk-cu/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -371,7 +371,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/ghk-cu/',
+        url: 'https://direct-sarms.com#ghk-cu/',
         format: 'vial',
         puritySpecification: '≥98.7% (HPLC)',
         batchAssayVerification: true,
@@ -382,7 +382,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -464,7 +464,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/cjc-1295-no-dac/',
+        url: 'https://direct-peptides.com#cjc-1295-no-dac/',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -475,7 +475,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/cjc-1295-dac/',
+        url: 'https://direct-sarms.com#cjc-1295-dac/',
         format: 'vial',
         puritySpecification: '≥98.6% (HPLC)',
         batchAssayVerification: true,
@@ -486,7 +486,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥98.8% (HPLC)',
         batchAssayVerification: true,
@@ -565,7 +565,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/ipamorelin/',
+        url: 'https://direct-peptides.com#ipamorelin/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -576,7 +576,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/ipamorelin/',
+        url: 'https://direct-sarms.com#ipamorelin/',
         format: 'vial',
         puritySpecification: '≥98.8% (HPLC)',
         batchAssayVerification: true,
@@ -587,7 +587,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -666,7 +666,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/aod-9604/',
+        url: 'https://direct-peptides.com#aod-9604/',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -677,7 +677,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/peptides/',
+        url: 'https://direct-sarms.com#peptides/',
         format: 'vial',
         puritySpecification: '≥98.5% (HPLC)',
         batchAssayVerification: true,
@@ -688,7 +688,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥98.7% (HPLC)',
         batchAssayVerification: true,
@@ -767,7 +767,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/selank/',
+        url: 'https://direct-peptides.com#selank/',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -778,7 +778,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/selank/',
+        url: 'https://direct-sarms.com#selank/',
         format: 'spray',
         puritySpecification: '≥98.6% (HPLC)',
         batchAssayVerification: true,
@@ -789,7 +789,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -868,7 +868,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/epithalon/',
+        url: 'https://direct-peptides.com#epithalon/',
         format: 'vial',
         puritySpecification: '≥99.2% (HPLC)',
         batchAssayVerification: true,
@@ -879,7 +879,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/epithalon/',
+        url: 'https://direct-sarms.com#epithalon/',
         format: 'vial',
         puritySpecification: '≥98.8% (HPLC)',
         batchAssayVerification: true,
@@ -890,7 +890,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -969,7 +969,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/mots-c/',
+        url: 'https://direct-peptides.com#mots-c/',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,
@@ -980,7 +980,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/mots-c/',
+        url: 'https://direct-sarms.com#mots-c/',
         format: 'vial',
         puritySpecification: '≥98.5% (HPLC)',
         batchAssayVerification: true,
@@ -991,7 +991,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥98.7% (HPLC)',
         batchAssayVerification: true,
@@ -1074,7 +1074,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/tirzepatide/',
+        url: 'https://direct-peptides.com#tirzepatide/',
         format: 'vial',
         puritySpecification: '≥99.2% (HPLC)',
         batchAssayVerification: true,
@@ -1085,7 +1085,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/tirzepatide/',
+        url: 'https://direct-sarms.com#tirzepatide/',
         format: 'vial',
         puritySpecification: '≥98.8% (HPLC)',
         batchAssayVerification: true,
@@ -1096,7 +1096,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥99.0% (HPLC)',
         batchAssayVerification: true,
@@ -1179,7 +1179,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-peptides',
         supplierName: 'Direct Peptides',
-        url: 'https://direct-peptides.com/product-category/semaglutide/',
+        url: 'https://direct-peptides.com#semaglutide/',
         format: 'vial',
         puritySpecification: '≥99.1% (HPLC)',
         batchAssayVerification: true,
@@ -1190,7 +1190,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'direct-sarms',
         supplierName: 'Direct Sarms',
-        url: 'https://direct-sarms.com/product-category/semaglutide/',
+        url: 'https://direct-sarms.com#semaglutide/',
         format: 'vial',
         puritySpecification: '≥98.7% (HPLC)',
         batchAssayVerification: true,
@@ -1201,7 +1201,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'peptide-works',
         supplierName: 'Peptide Works',
-        url: 'https://peptide-works.com/category/peptides/',
+        url: 'https://peptide-works.com',
         format: 'vial',
         puritySpecification: '≥98.9% (HPLC)',
         batchAssayVerification: true,

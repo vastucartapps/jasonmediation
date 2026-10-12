@@ -253,7 +253,7 @@ export default function MhraTrackerPage() {
                     <a
                       href={rec.url}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer nofollow"
                       className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-700 font-semibold"
                     >
                       <span>gov.uk</span>

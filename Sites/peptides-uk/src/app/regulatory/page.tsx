@@ -285,7 +285,7 @@ export default function RegulatoryHubPage() {
                 <a
                   href={reg.officialUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="inline-flex items-center gap-1 text-xs font-mono font-bold text-emerald-600 hover:text-emerald-700"
                 >
                   <span>gov.uk</span>
@@ -332,7 +332,7 @@ export default function RegulatoryHubPage() {
                 <a
                   href={stmt.url}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-700 font-bold"
                 >
                   <span>View Primary Government Record</span>
@@ -414,7 +414,7 @@ export default function RegulatoryHubPage() {
               key={idx}
               href={source.url}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               className="p-4 bg-white rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-xs transition-all flex flex-col justify-between group"
             >
               <div className="space-y-1">

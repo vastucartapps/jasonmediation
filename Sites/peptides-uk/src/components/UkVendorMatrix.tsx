@@ -94,7 +94,7 @@ export function UkVendorMatrix() {
                     <a
                       href={vendor.baseUrl}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer nofollow"
                       className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors shadow-xs"
                     >
                       <span>Visit Catalog</span>

@@ -325,19 +325,19 @@ export default function ContactPage() {
             <div className="space-y-3 font-mono">
               <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 space-y-1">
                 <div className="font-bold text-slate-900 font-sans">Chemical Editorial &amp; Errata Desk</div>
-                <div className="text-slate-500 text-[11px]">errata@peptides-uk.org</div>
+                <div className="text-slate-500 text-[11px]" dangerouslySetInnerHTML={{ __html: '<!--email_off-->errata@peptides-uk.org<!--/email_off-->' }} />
                 <div className="text-[10px] text-slate-400">CAS validation, IUPAC nomenclature, sequence checks</div>
               </div>
 
               <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 space-y-1">
                 <div className="font-bold text-slate-900 font-sans">Commercial Audit &amp; Supplier Matrix</div>
-                <div className="text-slate-500 text-[11px]">vendors@peptides-uk.org</div>
+                <div className="text-slate-500 text-[11px]" dangerouslySetInnerHTML={{ __html: '<!--email_off-->vendors@peptides-uk.org<!--/email_off-->' }} />
                 <div className="text-[10px] text-slate-400">HPLC baseline verification, European CRO audits</div>
               </div>
 
               <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 space-y-1">
                 <div className="font-bold text-slate-900 font-sans">Statutory &amp; Legal Inquiries</div>
-                <div className="text-slate-500 text-[11px]">compliance@peptides-uk.org</div>
+                <div className="text-slate-500 text-[11px]" dangerouslySetInnerHTML={{ __html: '<!--email_off-->compliance@peptides-uk.org<!--/email_off-->' }} />
                 <div className="text-[10px] text-slate-400">MHRA regulatory cross-checks, COSHH safety guidelines</div>
               </div>
             </div>

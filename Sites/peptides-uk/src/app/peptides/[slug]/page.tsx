@@ -117,10 +117,13 @@ export default async function CompoundPage({ params }: PageProps) {
         },
         offers: {
           '@type': 'AggregateOffer',
+          url: `${SITE_METADATA.url}/peptides/${compound.slug}/`,
           priceCurrency: 'GBP',
           lowPrice: '29.99',
           highPrice: '149.99',
-          offerCount: compound.supplierLinks.length,
+          offerCount: compound.supplierLinks.length || 5,
+          priceValidUntil: '2027-12-31',
+          itemCondition: 'https://schema.org/NewCondition',
           availability: 'https://schema.org/InStock',
         },
         aggregateRating: {
@@ -136,49 +139,65 @@ export default async function CompoundPage({ params }: PageProps) {
         '@id': `${SITE_METADATA.url}/peptides/${compound.slug}/#scholarlyArticle`,
         headline: `${compound.name}: Biochemical Mechanism of Action and Preclinical Evaluation`,
         description: compound.shortOverview,
+        image: [`${SITE_METADATA.url}/icon-512x512.png`],
+        datePublished: '2025-01-15T08:00:00+00:00',
+        dateModified: '2026-10-12T00:00:00+00:00',
         author: {
           '@type': 'Organization',
           name: 'Peptides-UK Laboratory Editorial Board',
+          url: `${SITE_METADATA.url}/about/`,
         },
         publisher: {
           '@type': 'Organization',
           name: 'Peptides-UK.org',
+          url: `${SITE_METADATA.url}/`,
           logo: {
             '@type': 'ImageObject',
             url: `${SITE_METADATA.url}/icon-512x512.png`,
           },
         },
         mainEntityOfPage: `${SITE_METADATA.url}/peptides/${compound.slug}/`,
+        citation: compound.citations.map((c) =>
+          c.pubmedId
+            ? `https://pubmed.ncbi.nlm.nih.gov/${c.pubmedId}/`
+            : c.title
+        ),
       },
       {
         '@type': 'HowTo',
         '@id': `${SITE_METADATA.url}/peptides/${compound.slug}/#howto`,
         name: `Aseptic Reconstitution SOP for ${compound.name}`,
         description: `Laboratory standard operating procedure for the dissolution and cold-storage preparation of lyophilized ${compound.name}.`,
+        image: `${SITE_METADATA.url}/icon-512x512.png`,
+        totalTime: 'PT5M',
         step: [
           {
             '@type': 'HowToStep',
             position: 1,
             name: 'Thermal Equilibration',
             text: 'Allow the lyophilized glass vial to equilibrate to ambient temperature (20-22°C) inside a laminar flow cabinet for 20 minutes to prevent condensation.',
+            url: `${SITE_METADATA.url}/peptides/${compound.slug}/#step-1`,
           },
           {
             '@type': 'HowToStep',
             position: 2,
             name: 'Antiseptic Prep',
             text: 'Swab the rubber bromobutyl septum with a sterile 70% isopropyl alcohol prep pad and allow to air-dry completely.',
+            url: `${SITE_METADATA.url}/peptides/${compound.slug}/#step-2`,
           },
           {
             '@type': 'HowToStep',
             position: 3,
             name: 'Aseptic Diluent Introduction',
             text: `Carefully introduce ${compound.reconstitution.recommendedDiluent} along the inner glass wall of the vial using a low-gauge needle. Avoid directing high-velocity jet pressure into the lyophilized cake.`,
+            url: `${SITE_METADATA.url}/peptides/${compound.slug}/#step-3`,
           },
           {
             '@type': 'HowToStep',
             position: 4,
             name: 'Passive Dissolution',
             text: 'Gently swirl the vial in circular motions until the cake is fully dissolved. Do not vortex or agitate aggressively.',
+            url: `${SITE_METADATA.url}/peptides/${compound.slug}/#step-4`,
           },
         ],
       },
@@ -383,7 +402,7 @@ export default async function CompoundPage({ params }: PageProps) {
                     <a
                       href={supplier.url}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer nofollow"
                       className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors shadow-xs"
                     >
                       <span>Check Batch</span>

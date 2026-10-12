@@ -119,7 +119,7 @@ export default async function VendorDetailPage({ params }: PageProps) {
           <a
             href={vendor.baseUrl}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
             className="px-6 py-3.5 rounded-xl bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 transition-colors shadow-md shadow-emerald-700/20 inline-flex items-center gap-2 flex-shrink-0"
           >
             <span>Visit Official {vendor.name} Store</span>
@@ -212,7 +212,7 @@ export default async function VendorDetailPage({ params }: PageProps) {
                 key={i}
                 href={catLink.url}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/30 transition-all flex items-center justify-between group"
               >
                 <span className="font-semibold text-xs text-slate-800 group-hover:text-emerald-700">
