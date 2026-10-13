@@ -274,12 +274,12 @@ export default async function PeptideDetailPage({ params }: PageProps) {
         ],
       },
       {
-        '@type': 'ChemicalSubstance',
+        '@type': 'MolecularEntity',
         '@id': `${pageUrl}#chemical`,
         name: compound.name,
         alternateName: compound.systematicName,
-        identifier: compound.casNumber,
-        chemicalFormula: compound.molecularFormula,
+        identifier: `CAS ${compound.casNumber}`,
+        molecularFormula: compound.molecularFormula,
         molecularWeight: compound.molecularWeight,
         sameAs: compound.pubchemCid
           ? `https://pubchem.ncbi.nlm.nih.gov/compound/${compound.pubchemCid}`

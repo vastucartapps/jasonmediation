@@ -6,6 +6,7 @@ import { ExternalLink, Store, FileText, Truck, Beaker, CheckCircle2 } from 'luci
 import { SupplierProductLink, DeliveryFormatType } from '../types';
 import { SUPPLIER_PROFILES } from '../data/suppliers';
 import { FORMAT_PROFILES } from '../data/formats';
+import { OutboundPartnerLink } from './OutboundPartnerLink';
 
 interface TopSuppliersMatrixProps {
   compoundName: string;
@@ -179,15 +180,13 @@ export function TopSuppliersMatrix({ compoundName, supplierLinks }: TopSuppliers
                   Vendor Profile
                 </Link>
 
-                <a
+                <OutboundPartnerLink
                   href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
                   className="gradient-bg px-6 py-2.5 rounded-xl font-bold text-xs text-slate-950 inline-flex items-center justify-center gap-1.5 shadow-md hover:shadow-xl transition-all"
                 >
                   <span>{link.linkType === 'category' ? 'Browse Partner Hub' : 'View Reagent Batch'}</span>
                   <ExternalLink className="w-3.5 h-3.5 shrink-0" />
-                </a>
+                </OutboundPartnerLink>
               </div>
             </div>
           );

@@ -18,6 +18,7 @@ import {
   Building2,
   Calendar,
 } from 'lucide-react';
+import { OutboundPartnerLink } from '../../../components/OutboundPartnerLink';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -226,15 +227,13 @@ export default async function VendorDetailPage({ params }: PageProps) {
 
               {/* Action Buttons */}
               <div className="pt-2 flex flex-wrap items-center gap-3">
-                <a
+                <OutboundPartnerLink
                   href={vendor.baseUrl}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
                   className="gradient-bg px-5 py-2.5 rounded-full font-mono text-xs font-bold text-white inline-flex items-center gap-2 shadow-lg hover:scale-[1.02] transition-transform"
                 >
                   <span>Visit {vendor.name} Official Portal</span>
                   <ExternalLink className="w-3.5 h-3.5" />
-                </a>
+                </OutboundPartnerLink>
 
                 <a
                   href="#catalogues"
@@ -338,12 +337,10 @@ export default async function VendorDetailPage({ params }: PageProps) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {vendor.officialCategoryLinks.map((cat, idx) => (
-              <a
+              <OutboundPartnerLink
                 key={idx}
                 href={cat.url}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                className="p-5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 hover:bg-[#041638] transition-all group flex flex-col justify-between space-y-4"
+                className="p-5 rounded-2xl bg-[#02102b] border border-[rgba(141,168,195,0.2)] hover:border-sky-400/60 hover:bg-[#041638] transition-all group flex flex-col justify-between space-y-4 text-left w-full"
               >
                 <div>
                   <span className="text-[10px] font-mono uppercase text-sky-400 font-semibold block mb-1">
@@ -357,7 +354,7 @@ export default async function VendorDetailPage({ params }: PageProps) {
                   <span>Open Catalogue</span>
                   <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-sky-400" />
                 </div>
-              </a>
+              </OutboundPartnerLink>
             ))}
           </div>
         </section>

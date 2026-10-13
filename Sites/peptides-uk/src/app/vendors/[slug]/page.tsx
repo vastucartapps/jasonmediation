@@ -19,6 +19,7 @@ import {
   Clock,
   MapPin,
 } from 'lucide-react';
+import { OutboundPartnerLink } from '@/components/OutboundPartnerLink';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -118,15 +119,13 @@ export default async function VendorDetailPage({ params }: PageProps) {
             </div>
           </div>
 
-          <a
+          <OutboundPartnerLink
             href={vendor.baseUrl}
-            target="_blank"
-            rel="noopener noreferrer nofollow"
             className="px-6 py-3.5 rounded-xl bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 transition-colors shadow-md shadow-emerald-700/20 inline-flex items-center gap-2 flex-shrink-0"
           >
             <span>Visit Official {vendor.name} Store</span>
             <ExternalLink className="w-4 h-4" />
-          </a>
+          </OutboundPartnerLink>
         </div>
 
         {/* Narrative Summary */}
@@ -210,18 +209,16 @@ export default async function VendorDetailPage({ params }: PageProps) {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
             {vendor.officialCategoryLinks.map((catLink, i) => (
-              <a
+              <OutboundPartnerLink
                 key={i}
                 href={catLink.url}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                className="p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/30 transition-all flex items-center justify-between group"
+                className="p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/30 transition-all flex items-center justify-between group text-left w-full"
               >
                 <span className="font-semibold text-xs text-slate-800 group-hover:text-emerald-700">
                   {catLink.categoryName}
                 </span>
                 <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-600" />
-              </a>
+              </OutboundPartnerLink>
             ))}
           </div>
         </section>

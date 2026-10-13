@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import { ReagentCard } from '@/components/ReagentCard';
 import { CompoundFaqSection, CompoundFaq } from '@/components/CompoundFaqSection';
+import { OutboundPartnerLink } from '@/components/OutboundPartnerLink';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -427,15 +428,13 @@ export default async function CompoundPage({ params }: PageProps) {
                     {supplier.notes}
                   </td>
                   <td className="py-3.5 px-4 text-right">
-                    <a
+                    <OutboundPartnerLink
                       href={supplier.url}
-                      target="_blank"
-                      rel="noopener noreferrer nofollow"
                       className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors shadow-xs"
                     >
                       <span>Check Batch</span>
                       <ExternalLink className="w-3 h-3" />
-                    </a>
+                    </OutboundPartnerLink>
                   </td>
                 </tr>
               ))}

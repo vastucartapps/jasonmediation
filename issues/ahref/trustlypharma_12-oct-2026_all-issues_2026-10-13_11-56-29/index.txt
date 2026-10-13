@@ -1,0 +1,11 @@
+Error-indexable-Page_has_links_to_broken_page-links.csv
+Error-indexable-Page_has_links_to_broken_page.csv
+Notice-Changed_pages_not_submitted_to_IndexNow.csv
+Notice-External_4XX-links.csv
+Notice-External_4XX.csv
+Notice-HTTP_to_HTTPS_redirect.csv
+Notice-Structured_data_has_schema.org_validation_error.csv
+Notice-indexable-Meta_description_changed.csv
+Notice-indexable-Word_count_changed.csv
+Warning-3XX_redirect.csv
+Warning-Slow_page.csv

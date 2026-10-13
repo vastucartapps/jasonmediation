@@ -51,7 +51,7 @@ export const REGULATORS: RegulatorInfo[] = [
     jurisdiction: 'International / Olympic & Professional Sport',
     statutoryBasis: 'World Anti-Doping Code & International Standard for the Prohibited List',
     mandate: 'Independent international agency dedicated to harmonizing anti-doping policies in sports.',
-    officialUrl: 'https://www.wada-ama.org/',
+    officialUrl: 'https://www.ukad.org.uk/athletes/whats-banned-sport-prohibited-list',
     keyEnforcementArea: 'Section S0 (Non-approved substances) and S2 (Peptide hormones, growth factors, related substances and mimetics).',
   },
   {
@@ -213,7 +213,7 @@ export const MHRA_FULL_90DAY_RECORDS: MhraRecordItem[] = [
     date: '2026-07-08',
     type: 'ANNOUNCEMENT',
     item: 'WADA Prohibited List annual harmonization: Reaffirming S0 and S2 classification for peptide secretagogues and growth factors',
-    url: 'https://www.wada-ama.org/en/prohibited-list',
+    url: 'https://www.ukad.org.uk/athletes/whats-banned-sport-prohibited-list',
     relevantHere: true,
     category: 'Anti-Doping Policy',
     summary: 'Confirmation that non-approved peptide fragments (BPC-157, TB-500, CJC-1295, Ipamorelin) remain prohibited at all times.',
@@ -296,7 +296,7 @@ export const UK_REGULATOR_STATEMENTS_2026 = [
     regulator: 'COURT',
     date: '2026-05-13',
     title: 'High Court issues injunction ordering UK ISPs to implement dynamic blocking on illicit unapproved peptide domains.',
-    url: 'https://www.legislation.gov.uk/uksi/2012/1916/contents/made',
+    url: 'https://www.legislation.gov.uk/uksi/2012/1916/contents',
     type: 'Court Order',
   },
   {
@@ -312,7 +312,7 @@ export const UK_REGULATOR_STATEMENTS_2026 = [
     regulator: 'GPHC',
     date: '2026-04-01',
     title: 'General Pharmaceutical Council releases clinical governance guidelines for regulated dispensing of synthetic peptide therapeutics.',
-    url: 'https://www.pharmacyregulation.org/',
+    url: 'https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency',
     type: 'Review',
   },
   {
@@ -378,13 +378,13 @@ export const OFFICIAL_REGULATORY_SOURCES = [
     authority: 'WORLD ANTI-DOPING AGENCY',
     title: 'WADA Prohibited List',
     desc: 'The annually updated list of substances and methods banned in sport. Many research peptides sit under S0 or S2. UK Anti-Doping enforces it on tested athletes.',
-    url: 'https://www.wada-ama.org/en/prohibited-list',
+    url: 'https://www.ukad.org.uk/athletes/whats-banned-sport-prohibited-list',
   },
   {
     authority: 'LEGISLATION.GOV.UK',
     title: 'Human Medicines Regulations 2012',
     desc: 'The legislation that defines what counts as a medicine in the UK, and what constitutes illegal supply. A product marketed with medicinal claims is regulated as a medicine regardless of how it is labelled.',
-    url: 'https://www.legislation.gov.uk/uksi/2012/1916/contents/made',
+    url: 'https://www.legislation.gov.uk/uksi/2012/1916/contents',
   },
 ];
 
