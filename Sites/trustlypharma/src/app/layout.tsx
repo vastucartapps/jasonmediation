@@ -136,7 +136,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd) }}
         />
-        <MatomoTracker />
       </head>
       <body className="min-h-screen bg-[#02102b] text-slate-100 flex flex-col antialiased selection:bg-amber-400 selection:text-slate-950 pb-16 lg:pb-0">
         <Header />
@@ -144,6 +143,7 @@ export default function RootLayout({
         <Footer />
         <CookieBanner />
         <MobileTrustBar />
+        <MatomoTracker />
       </body>
     </html>
   );

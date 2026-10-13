@@ -71,7 +71,7 @@ export const REGULATORS: RegulatorInfo[] = [
     jurisdiction: 'United States (Global Import Impact)',
     statutoryBasis: 'Federal Food, Drug, and Cosmetic Act (FD&C Act) / 503A & 503B Compounding Guidance',
     mandate: 'Protects public health by ensuring the safety, efficacy, and security of human drugs, biological products, and medical devices.',
-    officialUrl: 'https://www.usa.gov/agencies/food-and-drug-administration',
+    officialUrl: 'https://en.wikipedia.org/wiki/Food_and_Drug_Administration',
     keyEnforcementArea: 'Category 2 bulk substance classification and warning letters for unapproved peptide compounding.',
   },
   {
@@ -296,7 +296,7 @@ export const UK_REGULATOR_STATEMENTS_2026 = [
     regulator: 'COURT',
     date: '2026-05-13',
     title: 'High Court issues injunction ordering UK ISPs to implement dynamic blocking on illicit unapproved peptide domains.',
-    url: 'https://www.legislation.gov.uk/uksi/2012/1916/contents',
+    url: 'https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency',
     type: 'Court Order',
   },
   {
@@ -381,10 +381,10 @@ export const OFFICIAL_REGULATORY_SOURCES = [
     url: 'https://www.ukad.org.uk/athletes/whats-banned-sport-prohibited-list',
   },
   {
-    authority: 'LEGISLATION.GOV.UK',
-    title: 'Human Medicines Regulations 2012',
-    desc: 'The legislation that defines what counts as a medicine in the UK, and what constitutes illegal supply. A product marketed with medicinal claims is regulated as a medicine regardless of how it is labelled.',
-    url: 'https://www.legislation.gov.uk/uksi/2012/1916/contents',
+    authority: 'MHRA / GOV.UK',
+    title: 'Human Medicines Regulations 2012 Statutory Guidance',
+    desc: 'The official statutory guidance and legal enforcement framework governing medicinal product definitions, licensing requirements, and prohibitions on unlicensed supply across the UK.',
+    url: 'https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency',
   },
 ];
 
