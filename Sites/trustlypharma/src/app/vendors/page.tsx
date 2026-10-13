@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getAllVendors } from '../../data/suppliers';
+import { OutboundPartnerLink } from '../../components/OutboundPartnerLink';
 import {
   Store,
   ExternalLink,
@@ -224,15 +225,13 @@ export default function VendorsDirectoryPage() {
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
 
-                <a
+                <OutboundPartnerLink
                   href={vendor.baseUrl}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
                   className="px-4 py-2.5 rounded-xl bg-[#02102b] hover:bg-[#071d42] border border-[rgba(141,168,195,0.2)] text-slate-300 hover:text-white font-mono text-xs inline-flex items-center gap-1.5 transition-colors"
                 >
                   <span>Official Portal</span>
                   <ExternalLink className="w-3.5 h-3.5" />
-                </a>
+                </OutboundPartnerLink>
               </div>
             </div>
           ))}

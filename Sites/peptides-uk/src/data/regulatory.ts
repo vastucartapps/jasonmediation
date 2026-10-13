@@ -71,7 +71,7 @@ export const REGULATORS: RegulatorInfo[] = [
     jurisdiction: 'United States (Global Import Impact)',
     statutoryBasis: 'Federal Food, Drug, and Cosmetic Act (FD&C Act) / 503A & 503B Compounding Guidance',
     mandate: 'Protects public health by ensuring the safety, efficacy, and security of human drugs, biological products, and medical devices.',
-    officialUrl: 'https://www.fda.gov/',
+    officialUrl: 'https://www.usa.gov/agencies/food-and-drug-administration',
     keyEnforcementArea: 'Category 2 bulk substance classification and warning letters for unapproved peptide compounding.',
   },
   {

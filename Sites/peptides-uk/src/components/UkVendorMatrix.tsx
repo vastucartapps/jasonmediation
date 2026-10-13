@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { getAllVendors } from '@/data/suppliers';
+import { OutboundPartnerLink } from '@/components/OutboundPartnerLink';
 import { CheckCircle2, ExternalLink, ShieldCheck, Truck, FlaskConical, ArrowRight } from 'lucide-react';
 
 export function UkVendorMatrix() {
@@ -91,15 +92,13 @@ export function UkVendorMatrix() {
                 </td>
                 <td className="py-4 px-4 text-right">
                   <div className="flex flex-col items-end gap-1.5">
-                    <a
+                    <OutboundPartnerLink
                       href={vendor.baseUrl}
-                      target="_blank"
-                      rel="noopener noreferrer nofollow"
                       className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors shadow-xs"
                     >
                       <span>Visit Catalog</span>
                       <ExternalLink className="w-3 h-3" />
-                    </a>
+                    </OutboundPartnerLink>
                     <Link
                       href={`/vendors/${vendor.id}/`}
                       className="text-[11px] text-slate-500 hover:text-slate-800 underline"

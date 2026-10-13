@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getAllVendors } from '@/data/suppliers';
 import { SITE_METADATA } from '@/data/site';
+import { OutboundPartnerLink } from '@/components/OutboundPartnerLink';
 import {
   ShieldCheck,
   CheckCircle2,
@@ -100,15 +101,13 @@ export default function VendorsIndexPage() {
 
               {/* Action Buttons */}
               <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 lg:flex-col lg:items-end flex-shrink-0">
-                <a
+                <OutboundPartnerLink
                   href={vendor.baseUrl}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
                   className="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold text-xs hover:bg-emerald-700 transition-colors shadow-sm inline-flex items-center gap-1.5"
                 >
                   <span>Visit Supplier Website</span>
                   <ExternalLink className="w-3.5 h-3.5" />
-                </a>
+                </OutboundPartnerLink>
                 <Link
                   href={`/vendors/${vendor.id}/`}
                   className="px-5 py-2.5 rounded-xl bg-slate-100 text-slate-800 font-semibold text-xs hover:bg-slate-200 transition-colors inline-flex items-center gap-1"
