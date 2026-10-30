@@ -1,0 +1,58 @@
+{
+  "page_id": "hub-maricopa-county-ac-repair + spoke-mesa-emergency-ac-repair + spoke-scottsdale-emergency-ac-repair + spoke-yuma-emergency-ac-repair + spoke-gilbert-commercial-ac-repair",
+  "status": "BLOCKED",
+  "gates": {
+    "A_business_legitimacy": {
+      "result": "FAIL",
+      "evidence": "scripts/check_placeholder_config.py now enforces this as a hard gate (previously only documented in comments, never automated -- DEF-01/DEF-02). Confirmed FAIL on all 5 pages: reserved NANPA 555-0199 number, example.com domain, organization_name_is_placeholder=true in config/site.example.json. Also fixed this round: Organization identity renamed from 'Maricopa County AC Repair Network' to the geographically-honest 'Arizona AC Repair Network' (DEF-04) -- that specific contradiction is resolved, but the underlying phone/domain/final-brand blockers remain.",
+      "not_applicable_reason": null
+    },
+    "B_search_intent_purpose": {
+      "result": "FAIL",
+      "evidence": "Re-run through scripts/qualify_page.py (the generalized, niche-agnostic decision function) on 2026-10-23: only the hub qualifies as CREATE. Mesa, Scottsdale, Yuma, and Gilbert now formally qualify as HOLD -- real search demand confirmed, but the underlying capability (same-day dispatch, commercial servicing) was never independently confirmed, only inferred from demand. See research/ac-repair-page-qualification.md's 'Re-run through the generalized core' section for the full reasoning and the disclosed open question (whether honestly-hedged content is sufficient to publish a HOLD-eligible page). This FAIL is a direct, intentional consequence of applying a stricter core; it supersedes the earlier PASS recorded here.",
+      "not_applicable_reason": null
+    },
+    "C_evidence_factual_accuracy": {
+      "result": "PASS",
+      "evidence": "check_geo_claims.py: 16/16 claims PASS. research/ac-repair-claim-ledger.json: 10 entries, 6 VERIFIED, 1 PARTIALLY_SUPPORTED (correctly narrowed), 2 HUMAN_CONFIRMATION_REQUIRED (disclosed, not hidden), 1 UNVERIFIED (the phone number, disclosed as a hard blocker, not published as fact).",
+      "not_applicable_reason": null
+    },
+    "D_content_originality_value": {
+      "result": "PASS",
+      "evidence": "scan_public_output.py (now also scanning non-JSON-LD <script> bodies, DEF-06): 0 findings across all 5 pages. No fabricated testimonials/reviews/case studies. Misleading estimator fixed (DEF-07) -- the interactive symptom/urgency selectors that changed surrounding text but never the underlying price were removed and replaced with a static, honestly-labeled general cost reference.",
+      "not_applicable_reason": null
+    },
+    "E_network_uniqueness_spam_risk": {
+      "result": "PASS",
+      "evidence": "Full 5-page set checked with check_uniqueness.py after fixing a real bug in the script itself (whole-set boilerplate-drop misclassified within-template duplication as harmless when 3 of 5 pages shared a sub-service template). First real result after the fix: Mesa x Scottsdale raw Jaccard 0.611 -- FLAGGED, exceeds 0.50. Both pages rewritten with genuinely varied sentence structure, same real facts. Re-measured: Mesa x Scottsdale 0.140, Mesa x Yuma 0.115, Scottsdale x Yuma 0.124, all other pairs 0.000 -- all clear. Full detail: ac-repair-issue-register.md AC-11/AC-12.",
+      "not_applicable_reason": null
+    },
+    "F_technical_correctness": {
+      "result": "PASS",
+      "evidence": "validate_schema.py: PASS on all 5 pages. validate_sitemap.py (new, DEF-03): sitemap now exactly matches the 5-page approved set, 0 missing, 0 unexpected, 0 duplicates -- fixed a real gap where Scottsdale/Yuma/Gilbert were silently absent for several rounds. No dead href=\"#\" links. Dev-only annotate-toggle/data-block controls removed from all 5 pages (DEF-05).",
+      "not_applicable_reason": null
+    },
+    "G_accessibility_performance": {
+      "result": "NOT_TESTED",
+      "evidence": "No real browser/Lighthouse/PageSpeed Insights tool available in this environment (confirmed project limitation, not assumed). Command that would complete this: `lighthouse <deployed-url> --output=json` once the page is actually deployed, or `npx @lhci/cli autorun` against a local server.",
+      "not_applicable_reason": null
+    },
+    "H_final_rendered_output": {
+      "result": "PASS",
+      "evidence": "Both files read in full by the reviewer after every fix round, not just the generation brief. CTA accuracy matches actual described process (no false promises of guaranteed same-day service).",
+      "not_applicable_reason": null
+    }
+  },
+  "open_blockers": [
+    "Phone number is a reserved/example number -- must be replaced with a real, tested, working number before any publication (Gate A). Now enforced by scripts/check_placeholder_config.py, not just documented.",
+    "Production domain is example.com -- must be replaced with the real domain before any publication (Gate A/Gate F). config/site.json must be created from config/site.example.json with real values; same enforcement script.",
+    "Organization brand name ('Arizona AC Repair Network') is a reasonable, geographically-honest placeholder, not an owner-confirmed final brand -- must be finalized before publication (Gate A).",
+    "Mobile rendering / Core Web Vitals / Lighthouse: NOT TESTED, no tool available in this environment (Gate G)."
+  ],
+  "nonblocking_issues": [
+    "Mesa's city permit department name is PARTIALLY_SUPPORTED (third-party sources only, not independently confirmed on mesaaz.gov) -- low risk, factual department-name claim only, code edition deliberately omitted.",
+    "Emergency AC Repair (Scottsdale, Yuma) and Commercial AC Repair (Gilbert) sub-service pages are qualified (CREATE-eligible, real demand evidence) but not yet drafted -- HOLD, not REJECT, recorded in research/ac-repair-page-qualification.md."
+  ],
+  "decided_by": "money-page-maker skill, Phase 7",
+  "decided_at": "2026-10-23"
+}

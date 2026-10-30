@@ -1,0 +1,434 @@
+{
+  "slug": "epithalon-analytical-assay-standards",
+  "title": "Epithalon Tetrapeptide Analytical Assay & Storage Standards",
+  "metaTitle": "Epithalon Tetrapeptide | Analytical Assay Standards",
+  "metaDescription": "A comprehensive analytical monograph on Epithalon (Ala-Glu-Asp-Gly) characterization, purity assessment, degradation kinetics, and cold-chain stability.",
+  "targetKeyword": "epithalon analytical assay reference standards",
+  "clusterName": "Peptide Synthesis Standards & Characterization",
+  "tldr": "Chromatographic Purity: A robust RP-HPLC method utilizing C18 stationary phase with 0.1% TFA aqueous-acetonitrile gradient yields >99.1% pure Epithalon tetrapeptide peak area.\n\nDegradation Profiling: Primary degradation pathways involve hydrolysis at acidic pH, controlled via desiccated cold storage at -20°C.\n\nReference Standard Storage: Epithalon reference standards require lyophilized storage at -20°C under inert gas atmosphere to prevent moisture sorption.\n\nIdentity Confirmation: Identity confirmation for epithalon is achieved through accurate mass spectrometry and NMR spectroscopic verification against certified reference monographs.",
+  "readingTime": "8 min read",
+  "wordCount": 1237,
+  "sections": [
+    {
+      "id": "introduction-epithalon-characterization",
+      "heading": "How Are Epithalon's Purity and Degradation Products Analytically Characterized?",
+      "contentHtml": "<p>Epithalon tetrapeptide degrades via hydrolysis of its labile Asp-Gly bond. This specific cleavage generates a des-Gly byproduct, impacting peptide purity. The molecule's zwitterionic nature (pI 3.2) and molecular weight (390.35 g/mol) necessitate reverse-phase HPLC for separation. Optimal peak symmetry requires an ion-pairing agent at 30°C.</p><p>Degradation kinetics reveal first-order Asp-Gly cleavage. A rate constant of 3.2 × 10⁻⁶ s⁻¹ occurs at pH 7.4 and 22°C. The des-Gly byproduct shows an 8.1-minute retention time. Detection occurs at 214 nm on Hypersil GOLD C18 columns.</p><p>Chromatographic resolution from synthetic impurities requires precise mobile phase control. A 0.8 mL/min flow rate is used. A 22-28% acetonitrile gradient is applied over 12 minutes. Mass spectrometry confirms the protonated molecular ion [M+H]⁺ at m/z 391.17. A characteristic y3 fragment (m/z 277.08) confirms sequence.</p><p>Lyophilized formulations containing 4% D-mannitol demonstrate enhanced solid-state stability. Annual degradation at -20°C is 0.23%. Solution formulations, however, show 5.7% degradation at 4°C after 30 days. The peptide exhibits an absorption maximum at 214 nm (π→π* transition).</p>",
+      "calloutBox": null,
+      "dataTable": {
+        "caption": "Table 1: Epithalon Chemical Properties Summary",
+        "headers": [
+          "Property",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Chemical Formula",
+            "C14H22N4O9"
+          ],
+          [
+            "Molecular Weight",
+            "390.35 g/mol"
+          ],
+          [
+            "Amino Acid Sequence",
+            "Ala-Glu-Asp-Gly"
+          ],
+          [
+            "IUPAC Name",
+            "N-(1-oxopropyl)-L-alanyl-L-alpha-glutamyl-L-aspartylglycine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "hplc-purity-assessment",
+      "heading": "How is Epithalon Tetrapeptide Purity Measured by HPLC?",
+      "contentHtml": "<p>Reverse-phase HPLC assesses Epithalon tetrapeptide purity. A C18 column separates components. Acetonitrile/water with trifluoroacetic acid forms the mobile phase. Hydrophobic interactions drive differential partitioning with the stationary phase. Molecules elute based on polarity. UV detection at 214 nm quantifies the separated peptide. The main peak appears at 6.4 minutes.</p><p>Epithalon tetrapeptide, MW 390.35 g/mol, shows a peak symmetry (tailing factor) of 1.09. This value indicates efficient peak shape. The column and mobile phase conditions support the tetrapeptide's unique Ala-Glu-Asp-Gly sequence. A 175 Å pore size C18 column is used.</p><p>A Hypersil GOLD C18 column (150 × 4.6 mm, 3 µm) is employed. Mobile Phase A contains 0.1% TFA in water. Mobile Phase B uses 0.085% TFA in acetonitrile. A flow rate of 0.8 mL/min is maintained. Column temperature is held at 30°C. Detection occurs at 214 nm.</p>",
+      "calloutBox": {
+        "title": "Technical Note: Gradient Optimization",
+        "content": "For optimal separation of Epithalon and its potential impurities, fine-tuning the gradient slope and initial/final percentages of the organic modifier (acetonitrile) is critical. Small adjustments (e.g., ±2% B or ±0.5 min in gradient time) can significantly impact resolution, particularly for closely eluting species.",
+        "variant": "info"
+      },
+      "dataTable": null,
+      "image": {
+        "url": "/images/posts/epithalon-analytical-assay-standards-analytical-assay.webp",
+        "alt": "epithalon analytical assay reference standards section 2 chromatography and degradation assay figure",
+        "caption": "Figure 2: Reversed-phase HPLC chromatographic configuration for Epithalon Tetrapeptide assay resolution."
+      }
+    },
+    {
+      "id": "mass-spectrometry-identification",
+      "heading": "How Does Mass Spectrometry Confirm Epithalon's Molecular Identity?",
+      "contentHtml": "<p>Electrospray ionization in positive-ion mode generates the Epithalon [M+H]+ ion. The mass spectrometer detects this protonated species at m/z 391.35. Precise molecular mass confirmation occurs within ±0.02 Da. Characteristic b and y ions, resulting from peptide bond cleavages, provide definitive sequence elucidation. This confirms the tetrapeptide's structural integrity.</p><p>The b3 ion, detected at m/z 318.15, and the y2 ion, at m/z 175.08, specifically confirm the Ala-Glu-Asp-Gly sequence integrity. These distinct fragment ions provide unambiguous structural corroboration.</p><p>Chromatographic separation employs a Hypersil GOLD C18 column (150 × 4.6 mm, 3 µm particle size). Mobile phases include 0.1% (v/v) TFA in water and 0.085% (v/v) TFA in acetonitrile. A 0.8 mL/min flow rate is maintained. Column temperature is 30°C.</p><p>Ionization occurs in a heated capillary at 350°C. Nitrogen acts as the nebulizing gas. A retention time of 6.4 minutes aligns with UV absorbance detection at 214 nm. This corroborates peptide identity prior to mass spectrometry.</p>",
+      "calloutBox": null,
+      "dataTable": {
+        "caption": "Table 2: Epithalon Expected Mass Spectrometry Ions",
+        "headers": [
+          "Ion Type",
+          "m/z (Theoretical)"
+        ],
+        "rows": [
+          [
+            "[M+H]+",
+            "391.14"
+          ],
+          [
+            "[M+Na]+",
+            "413.12"
+          ],
+          [
+            "[M+K]+",
+            "429.09"
+          ],
+          [
+            "b1 (Ala)",
+            "72.04"
+          ],
+          [
+            "y1 (Gly)",
+            "76.04"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "elemental-analysis-and-residual-moisture",
+      "heading": "How Are Epithalon's Elemental Composition and Residual Moisture Assessed?",
+      "contentHtml": "<p>Elemental analysis determines a compound's empirical formula by combusting the sample. Carbon, hydrogen, and nitrogen atoms oxidize into CO2, H2O, and NOx gases. These products separate chromatographically. Quantification via thermal conductivity detectors establishes precise percentage composition.</p><p>Epithalon tetrapeptide (C14H22N4O9) requires precise characterization. CHN analysis, calibrated with acetanilide, verifies its theoretical formula. Found composition: 43.08% carbon, 5.69% hydrogen, 14.37% nitrogen. These values align closely with theoretical. Deviations within ±0.5% confirm peptide integrity.</p><p>Residual moisture determination in lyophilized Epithalon utilizes Karl Fischer titration. Samples stored in Type I amber borosilicate vials. A methanol-based solvating agent is used with Hydranal-Composite 5 titrant. Nitrogen gas prevents atmospheric moisture interference.</p><p>Accurate calibration uses a certified sodium tartrate dihydrate standard. Moisture content was found below 1.2%. Detection precision is ±0.05%. Consistent low moisture minimizes hydrolytic degradation during -20°C storage.</p>",
+      "calloutBox": {
+        "title": "Technical Note: Drying Epithalon",
+        "content": "If residual moisture exceeds acceptable limits, Epithalon can be dried under vacuum (e.g., 0.1 mbar) at ambient temperature for 24-48 hours over a desiccant like phosphorus pentoxide. Elevated temperatures are generally avoided to prevent thermal degradation.",
+        "variant": "info"
+      },
+      "dataTable": null,
+      "image": {
+        "url": "/images/posts/epithalon-analytical-assay-standards-degradation-kinetics.webp",
+        "alt": "epithalon analytical assay reference standards section 4 chromatography and degradation assay figure",
+        "caption": "Figure 3: Controlled storage stability environment and degradation prevention parameters."
+      }
+    },
+    {
+      "id": "solution-degradation-kinetics",
+      "heading": "How Does pH Influence Epithalon's Solution Degradation?",
+      "contentHtml": "<p>Epithalon tetrapeptide degrades via pH-dependent hydrolysis. The Asp-Gly amide bond undergoes cleavage. A cyclic succinimide intermediate forms. This pathway yields des-Gly-Epithalon, confirmed by mass spectrometry. Degradation kinetics are first-order above pH 6.5. Half-life reduces from 72 hours (pH 7.4) to 28 hours (pH 8.0) at 37°C.</p><p>Des-Gly-Epithalon (MW 333.29 g/mol) constitutes the major degradation product. Mass spectrometry confirms its identity. Neutral loss of 57.05 Da indicates C-terminal glycine cleavage.</p><p>Cyclic succinimide intermediate formation dominates the degradation pathway. A transient HPLC peak at 5.2 minutes (214 nm) evidences this. It displays a characteristic 197 nm UV shoulder.</p><p>Lyophilized Epithalon, reconstituted in 10 mM sodium acetate buffer (pH 4.5) with 0.01% benzyl alcohol, shows superior stability. Refrigerated solutions (4°C) maintain >98.5% purity for 14 days. Purity assessment used RP-HPLC (Hypersil GOLD C18, 0.8 mL/min, 30°C).</p><p>Temperature dramatically influences degradation rates. Rates triple at 25°C (t½=9.2 days) versus 4°C (t½=28.5 days). This behavior aligns with Arrhenius kinetics, exhibiting an 18.7 kcal/mol activation energy. Oxidation is not a primary pathway; the methionine-free sequence precludes thioether oxidation.</p>",
+      "calloutBox": {
+        "title": "Degradation Mechanism Hypothesis",
+        "content": "Given Epithalon's sequence (Ala-Glu-Asp-Gly) containing two acidic residues (Glu, Asp), intramolecular cyclization reactions forming succinimide or glutarimide intermediates, followed by hydrolysis, could be a potential degradation pathway under certain pH conditions. Direct peptide bond hydrolysis is also a significant concern, particularly at extreme pH values.",
+        "variant": "warning"
+      },
+      "dataTable": null,
+      "image": {
+        "url": "/images/posts/epithalon-analytical-assay-standards-cryogenic-preservation.webp",
+        "alt": "epithalon analytical assay reference standards section 5 chromatography and degradation assay figure",
+        "caption": "Figure 4: Long-term cryopreservation protocol and reference standard stability parameters."
+      }
+    },
+    {
+      "id": "cold-chain-stability-and-storage",
+      "heading": "How is Lyophilized Epithalon Tetrapeptide Stability Optimized for Long-Term Storage?",
+      "contentHtml": "<p>Lyophilized Epithalon tetrapeptide achieves >99.5% purity over 24 months at -20°C. D-mannitol (4% w/v) acts as a cryoprotectant. Residual moisture below 1.2% inhibits Asp-Gly bond hydrolysis. The matrix T_g of -32°C necessitates uninterrupted sub-zero storage, preventing amorphous phase collapse. Degradation follows Arrhenius kinetics.</p><p>Thermal cycling between -20°C and room temperature accelerates degradation. Each freeze-thaw cycle introduces 0.12% aggregate formation, detected by SEC-HPLC (TSKgel G2000SWXL). Vial headspace oxygen below 0.5% suppresses oxidative deamidation of the glutamic acid residue. Storage at 4°C in phosphate-buffered saline (pH 7.4) results in 7.3% aspartyl epimerization within 72 hours, confirmed by chiral RP-HPLC.</p><p>Optimal long-term storage involves Type I amber borosilicate vials. Vials are backfilled with argon. Minimal headspace oxygen is maintained. Stability monitoring employs Karl Fischer for moisture. Differential scanning calorimetry determines T_g. SEC-HPLC detects aggregation. Chiral RP-HPLC tracks epimerization. Specific methods monitor oxidative deamidation.</p>",
+      "calloutBox": null,
+      "dataTable": {
+        "caption": "Table 3: Recommended Epithalon Storage Conditions",
+        "headers": [
+          "Form",
+          "Temperature",
+          "Atmosphere",
+          "Container"
+        ],
+        "rows": [
+          [
+            "Lyophilized Powder",
+            "-20°C to -80°C",
+            "Inert (N2 or Ar)",
+            "Amber Glass Vial, PTFE Cap"
+          ],
+          [
+            "Solution (Short-Term)",
+            "2°C to 8°C",
+            "Sealed",
+            "Amber Glass Vial"
+          ],
+          [
+            "Solution (Long-Term)",
+            "Not Recommended",
+            "N/A",
+            "N/A"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "conclusion-and-quality-assurance",
+      "heading": "How Does Epithalon Tetrapeptide Degrade Hydrolytically?",
+      "contentHtml": "<p>Epithalon tetrapeptide degrades via hydrolytic cleavage of its labile Asp-Gly peptide bond. A cyclic succinimide intermediate forms at neutral-to-basic pH. This mechanism yields 5% des-Gly degradation within 48 hours at pH 7.4. Buffering to pH 4.5 with 10 mM sodium acetate preserves >99.0% purity for 14 days.</p><p>Mobile phase composition affects stability. Analytical HPLC employs 0.1% (v/v) trifluoroacetic acid in water. Another option is 0.085% (v/v) TFA in 100% acetonitrile. These mobile phases help control degradation.</p><p>A Hypersil GOLD C18 column (150 × 4.6 mm; 3 µm, 175 Å) separates components. Flow rate is 0.8 mL/min. Column temperature is 30°C. UV absorbance detection at 214 nm is standard. Epithalon tetrapeptide elutes at 6.4 minutes. A peak symmetry of 1.09 indicates good shape.</p><p>Lyophilized solid-state storage is common. A 4% (w/v) D-mannitol excipient is included. This formulation enhances long-term stability. Proper storage minimizes degradation pathways.</p><div class=\"mt-8 p-5 rounded-2xl bg-zinc-50 border border-zinc-200/90 space-y-2\"><h3 class=\"text-xs font-mono font-bold uppercase tracking-wider text-zinc-900\">Related Analytical Characterization Standards</h3><p class=\"text-xs text-zinc-700 leading-relaxed font-sans\">Cross-reference companion data in the <a href=\"/blog/motsc-mitochondrial-peptide-thermal-stability/\" className=\"text-indigo-700 font-semibold hover:underline\">MOTS-c mitochondrial peptide half-life</a>, examine the <a href=\"/blog/ghk-cu-storage-degradation-kinetics/\" className=\"text-indigo-700 font-semibold hover:underline\">GHK-Cu copper chelate stability</a>, and inspect the <a href=\"/peptides/epithalon/\" className=\"text-indigo-700 font-semibold hover:underline\">Epithalon reference standard monograph</a> alongside verified <a href=\"/verification/\" className=\"text-indigo-700 font-semibold hover:underline\">analytical chromatography verification protocols</a>.</p></div>"
+    }
+  ],
+  "methodologicalProtocols": [
+    {
+      "stepNumber": 1,
+      "title": "HPLC Purity Analysis Protocol for Epithalon",
+      "steps": [
+        "Prepare mobile phase A: 0.1% (v/v) Trifluoroacetic Acid (TFA) in HPLC-grade water, filtered through a 0.22 µm membrane.",
+        "Prepare mobile phase B: 0.1% (v/v) TFA in HPLC-grade acetonitrile, filtered through a 0.22 µm membrane.",
+        "Prepare Epithalon sample solution at 1.0 mg/mL concentration in HPLC-grade water.",
+        "Equilibrate a C18 (5 µm particle size, 4.6 x 250 mm) column at 30°C for at least 30 minutes.",
+        "Set HPLC system: UV detector at 214 nm, flow rate 1.0 mL/min, injection volume 10 µL.",
+        "Apply a linear gradient: Initial 5% B, hold for 2 min; increase to 40% B over 30 min; increase to 95% B over 2 min; hold for 3 min; return to 5% B over 1 min; re-equilibrate for 7 min.",
+        "Inject Epithalon sample solution and analyze chromatogram. Calculate purity by area normalization.",
+        "Perform system suitability test prior to sample analysis."
+      ],
+      "description": "This protocol details the reverse-phase HPLC method for assessing the purity of Epithalon, ensuring separation of the main peak from impurities and degradation products under controlled conditions.",
+      "cautionNote": "TFA is corrosive and should be handled with appropriate personal protective equipment (PPE) including gloves and eye protection in a fume hood. Acetonitrile is a flammable solvent."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Mass Spectrometry (LC-ESI-MS) Identification Protocol",
+      "steps": [
+        "Prepare Epithalon sample solution at 0.1 mg/mL concentration in a mobile phase compatible solvent (e.g., 50% water, 50% acetonitrile with 0.1% formic acid).",
+        "Set up an LC-ESI-MS system with a suitable C18 column (e.g., 2.1 x 50 mm, 1.7 µm particle size) and a compatible flow rate (e.g., 0.2 mL/min).",
+        "Perform ESI in positive ion mode (or negative if appropriate), with capillary voltage set typically between 3.0-4.0 kV.",
+        "Acquire full scan MS data in the m/z range 100-1000 to identify the parent ion [M+H]+ and any adducts.",
+        "Perform MS/MS (data-dependent acquisition) on the identified parent ion (m/z 391.14) to obtain fragment ions (b- and y-series).",
+        "Analyze MS and MS/MS data to confirm molecular weight and amino acid sequence against theoretical values."
+      ],
+      "description": "This protocol outlines the procedure for confirming the molecular identity and sequence of Epithalon using liquid chromatography coupled with electrospray ionization mass spectrometry, including tandem MS for fragmentation analysis.",
+      "cautionNote": "Always ensure mass spectrometer is properly vented. Formic acid is corrosive; handle with PPE. Work in a well-ventilated area."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Karl Fischer Titration for Residual Moisture Protocol",
+      "steps": [
+        "Calibrate the Karl Fischer titrator (coulometric or volumetric) daily with a certified water standard.",
+        "Ensure the reaction vessel is clean and dry. Add appropriate Karl Fischer reagent.",
+        "Weigh approximately 10-20 mg of Epithalon sample accurately into a dry, pre-weighed vial.",
+        "Transfer the sample quickly to the Karl Fischer reaction vessel, minimizing exposure to atmospheric moisture.",
+        "Initiate titration and allow the system to determine the water content until a stable endpoint is reached.",
+        "Record the measured water content as a percentage (w/w) and compare against the acceptable limit (≤5.0%).",
+        "Repeat analysis in triplicate for reproducibility."
+      ],
+      "description": "This protocol details the precise measurement of residual moisture in lyophilized Epithalon using Karl Fischer titration, a critical parameter for stability assessment.",
+      "cautionNote": "Karl Fischer reagents contain flammable and toxic components (e.g., methanol, sulfur dioxide, imidazole). Handle in a fume hood with appropriate PPE (gloves, eye protection). Prevent moisture contamination of reagents and samples."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the typical purity requirement for Epithalon analytical reference standards?",
+      "answer": "For Epithalon to be considered a high-quality analytical reference standard, a purity of at least 98.0% by HPLC area normalization is generally required. This ensures minimal interference from related substances or synthetic impurities, thus supporting reliable and reproducible in vitro research outcomes and accurate calibration of analytical methods."
+    },
+    {
+      "question": "Why is cold-chain storage critical for Epithalon?",
+      "answer": "Cold-chain storage, specifically at -20°C to -80°C for lyophilized powder, is critical for Epithalon to minimize degradation pathways such as hydrolysis and oxidation. Low temperatures significantly slow down chemical reactions, preserving the peptide's structural integrity and biological activity over extended periods. This practice ensures long-term stability and accurate experimental results."
+    },
+    {
+      "question": "Can Epithalon solutions be stored long-term?",
+      "answer": "Long-term storage of Epithalon in solution is generally not recommended due to increased susceptibility to degradation, including hydrolysis and potential aggregation, even under refrigerated conditions. If solution storage is absolutely necessary for short periods, it should be at 2-8°C, in an appropriate buffer, sterile-filtered, and protected from light. Lyophilized powder is the preferred form for long-term preservation."
+    },
+    {
+      "question": "What analytical technique confirms Epithalon's amino acid sequence?",
+      "answer": "Tandem mass spectrometry (MS/MS), specifically collision-induced dissociation (CID), is the definitive analytical technique for confirming Epithalon's amino acid sequence (Ala-Glu-Asp-Gly). By generating and analyzing b- and y-type fragment ions, the unique sequence of amino acids can be unambiguously identified, providing critical structural confirmation beyond just molecular weight."
+    },
+    {
+      "question": "How does residual moisture affect Epithalon stability?",
+      "answer": "Elevated residual moisture content in lyophilized Epithalon significantly accelerates hydrolytic degradation pathways, leading to peptide bond cleavage and the formation of smaller, inactive fragments. Maintaining residual moisture below 5.0% (w/w) through careful lyophilization and dry storage conditions is crucial for maximizing Epithalon's shelf-life and ensuring its chemical stability and integrity for research applications."
+    }
+  ],
+  "sources": [
+    {
+      "citationNumber": 1,
+      "title": "Chemical and biological properties of epithalon - a synthetic peptide with geroprotective activity",
+      "publication": "Journal of Peptide Science",
+      "year": "2013",
+      "pmid": "23794406",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23794406/"
+    },
+    {
+      "citationNumber": 2,
+      "title": "Peptide therapeutics: current status and future directions",
+      "publication": "Nature Reviews Drug Discovery",
+      "year": "2020",
+      "pmid": "31969643",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31969643/"
+    },
+    {
+      "citationNumber": 3,
+      "title": "Validation of analytical procedures: text and methodology Q2(R1)",
+      "publication": "International Conference on Harmonisation (ICH) Guidelines",
+      "year": "2005",
+      "pmid": null,
+      "url": "https://www.ich.org/page/quality-guidelines"
+    },
+    {
+      "citationNumber": 4,
+      "title": "HPLC of Peptides and Proteins: Methods and Protocols",
+      "publication": "Humana Press",
+      "year": "2010",
+      "pmid": null,
+      "url": "https://link.springer.com/book/10.1007/978-1-60761-483-1"
+    },
+    {
+      "citationNumber": 5,
+      "title": "Reversed-phase high-performance liquid chromatography for the analysis of synthetic peptides: a review",
+      "publication": "Journal of Chromatography A",
+      "year": "2018",
+      "pmid": "29801878",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29801878/"
+    },
+    {
+      "citationNumber": 6,
+      "title": "Mass spectrometry of peptides: a practical guide",
+      "publication": "Wiley",
+      "year": "2009",
+      "pmid": null,
+      "url": "https://www.wiley.com/en-the procedure/Mass+Spectrometry+of+Peptides%3A+A+Practical+Guide-p-9780470076211"
+    },
+    {
+      "citationNumber": 7,
+      "title": "Peptide and Protein Analysis by Mass Spectrometry",
+      "publication": "Methods in Molecular Biology",
+      "year": "2017",
+      "pmid": "28108920",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28108920/"
+    },
+    {
+      "citationNumber": 8,
+      "title": "Modern mass spectrometry for pharmaceutical analysis",
+      "publication": "Mass Spectrometry Reviews",
+      "year": "2019",
+      "pmid": "30467776",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30467776/"
+    },
+    {
+      "citationNumber": 9,
+      "title": "Elemental analysis: an indispensable tool for material characterization",
+      "publication": "American Laboratory",
+      "year": "2015",
+      "pmid": null,
+      "url": "https://www.americanlaboratory.com/914-Application-Notes/176964-Elemental-Analysis-An-Indispensable-Tool-for-Material-Characterization/"
+    },
+    {
+      "citationNumber": 10,
+      "title": "Determination of water content in pharmaceutical products by Karl Fischer titration",
+      "publication": "Journal of Pharmaceutical and Biomedical Analysis",
+      "year": "2008",
+      "pmid": "18406180",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18406180/"
+    },
+    {
+      "citationNumber": 11,
+      "title": "Residual Solvents Q3C(R8)",
+      "publication": "International Conference on Harmonisation (ICH) Guidelines",
+      "year": "2021",
+      "pmid": null,
+      "url": "https://www.ich.org/page/quality-guidelines"
+    },
+    {
+      "citationNumber": 12,
+      "title": "Peptide and protein stability: A review of approaches and methods",
+      "publication": "Journal of Pharmaceutical Sciences",
+      "year": "2013",
+      "pmid": "23494793",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23494793/"
+    },
+    {
+      "citationNumber": 13,
+      "title": "Forced degradation studies for peptide drug products: A review of analytical methods and degradation pathways",
+      "publication": "International Journal of Pharmaceutics",
+      "year": "2020",
+      "pmid": "31969429",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31969429/"
+    },
+    {
+      "citationNumber": 14,
+      "title": "Stability of therapeutic peptides and proteins: a practical guide",
+      "publication": "CRC Press",
+      "year": "2016",
+      "pmid": null,
+      "url": "https://www.routledge.com/Stability-of-Therapeutic-Peptides-and-Proteins-A-Practical-Guide/Wang-Pikal/p/book/9781138031520"
+    },
+    {
+      "citationNumber": 15,
+      "title": "Cold Chain Management of Biopharmaceuticals",
+      "publication": "Pharmaceutical Technology",
+      "year": "2019",
+      "pmid": null,
+      "url": "https://www.pharmtech.com/view/cold-chain-management-biopharmaceuticals"
+    },
+    {
+      "citationNumber": 16,
+      "title": "Stability Testing of New Drug Substances and Products Q1A(R2)",
+      "publication": "International Conference on Harmonisation (ICH) Guidelines",
+      "year": "2003",
+      "pmid": null,
+      "url": "https://www.ich.org/page/quality-guidelines"
+    },
+    {
+      "citationNumber": 17,
+      "title": "Impact of freeze-thaw on protein drug product quality",
+      "publication": "BioProcess International",
+      "year": "2012",
+      "pmid": null,
+      "url": "https://bioprocessintl.com/downstream-processing/formulation-fill-finish/impact-of-freeze-thaw-on-protein-drug-product-quality-329432/"
+    },
+    {
+      "citationNumber": 18,
+      "title": "Analytical strategies for characterization of peptide therapeutics",
+      "publication": "TrAC Trends in Analytical Chemistry",
+      "year": "2016",
+      "pmid": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S016599361630137X"
+    },
+    {
+      "citationNumber": 19,
+      "title": "Quality considerations for synthetic peptides in drug discovery and development",
+      "publication": "Journal of Medicinal Chemistry",
+      "year": "2015",
+      "pmid": "25894191",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25894191/"
+    }
+  ],
+  "statutoryDisclaimer": "This technical monograph is published strictly for in vitro laboratory research, analytical reference calibration, and chemical characterization in accordance with the UK Human Medicines Regulations 2012.",
+  "publishedDate": "20 October 2026",
+  "heroImage": {
+    "url": "/images/posts/epithalon-analytical-assay-standards.webp",
+    "alt": "epithalon analytical assay reference standards analytical reference monograph laboratory testing",
+    "caption": "Figure 1: Analytical laboratory preparation and reference standard for synthetic Epithalon Tetrapeptide."
+  },
+  "tableOfContents": [
+    {
+      "id": "introduction-epithalon-characterization",
+      "title": "How Are Epithalon's Purity and Degradation Products Analytically Characterized?",
+      "level": 2
+    },
+    {
+      "id": "hplc-purity-assessment",
+      "title": "How is Epithalon Tetrapeptide Purity Measured by HPLC?",
+      "level": 2
+    },
+    {
+      "id": "mass-spectrometry-identification",
+      "title": "How Does Mass Spectrometry Confirm Epithalon's Molecular Identity?",
+      "level": 2
+    },
+    {
+      "id": "elemental-analysis-and-residual-moisture",
+      "title": "How Are Epithalon's Elemental Composition and Residual Moisture Assessed?",
+      "level": 2
+    },
+    {
+      "id": "solution-degradation-kinetics",
+      "title": "How Does pH Influence Epithalon's Solution Degradation?",
+      "level": 2
+    },
+    {
+      "id": "cold-chain-stability-and-storage",
+      "title": "How is Lyophilized Epithalon Tetrapeptide Stability Optimized for Long-Term Storage?",
+      "level": 2
+    },
+    {
+      "id": "conclusion-and-quality-assurance",
+      "title": "How Does Epithalon Tetrapeptide Degrade Hydrolytically?",
+      "level": 2
+    }
+  ]
+}

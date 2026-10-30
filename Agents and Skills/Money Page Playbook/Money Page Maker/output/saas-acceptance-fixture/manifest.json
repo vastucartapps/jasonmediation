@@ -1,0 +1,31 @@
+{
+  "manifest_version": "1.0.0",
+  "pages": [
+    {
+      "page_id": "teamflow-sso-integration",
+      "business_model": "saas",
+      "route": "/features/sso/",
+      "page_type": "feature",
+      "decision": "CREATE",
+      "reasoning": "Real demand, distinct intent, sufficient evidence, confirmed capability, and a genuine reason to exist beyond the niche-specific name. All five qualification signals pass."
+    }
+  ],
+  "excluded": [
+    {
+      "page_id": "teamflow-ai-powered-everything",
+      "business_model": "saas",
+      "route": "/features/ai-powered/",
+      "page_type": "feature",
+      "decision": "REJECT",
+      "reasoning": "Removing the niche-specific name/location/product leaves no defensible reason for this page to exist -- a commodity/doorway pattern, not a genuine distinct page."
+    },
+    {
+      "page_id": "teamflow-unverified-mobile-app",
+      "business_model": "saas",
+      "route": "/features/mobile/",
+      "page_type": "feature",
+      "decision": "HOLD",
+      "reasoning": "material claims lack adequate evidence; the underlying capability is not confirmed (demand evidence alone is not capability evidence -- see claim-ledger.md)"
+    }
+  ]
+}

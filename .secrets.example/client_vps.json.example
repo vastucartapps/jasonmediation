@@ -1,0 +1,6 @@
+{
+  "host": "129.121.94.176",
+  "user": "root",
+  "pass": "REPLACE_WITH_ACTUAL_VPS_PASSWORD",
+  "port": 22
+}

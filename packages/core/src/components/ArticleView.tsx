@@ -172,6 +172,33 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
             </div>
           </section>
 
+          {/* Contextual Early CTA 1: Immediate Assistance Callout */}
+          <div className="bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="space-y-1">
+              <p className="text-sm sm:text-base font-serif font-bold text-slate-950">
+                Need Fast, Confidential Guidance on This Situation?
+              </p>
+              <p className="text-xs text-slate-600">
+                Our accredited mediators conduct confidential MIAM sessions within 24–48 hours to help you protect children and finances without court stress.
+              </p>
+            </div>
+            <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto">
+              <Link
+                href="/contact"
+                className="px-4 py-2 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs shadow-xs transition text-center w-full sm:w-auto"
+              >
+                Book Assessment
+              </Link>
+              <a
+                href={`tel:${brand.phone}`}
+                className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-full bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs border border-slate-300 transition whitespace-nowrap text-center w-full sm:w-auto"
+              >
+                <PhoneCallIcon className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                <span>{brand.formattedPhone}</span>
+              </a>
+            </div>
+          </div>
+
           {/* Section 2: Statutory Legal Framework */}
           <section id="legal-framework" className="scroll-mt-24 space-y-4">
             <div className="border-b border-slate-200 pb-3">
@@ -455,35 +482,6 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
             </section>
           )}
 
-          {/* Bottom Action Card with SSOT Telephone Link */}
-          <div className={`rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md ${
-            isAlderton ? 'bg-slate-950 text-white' : 'bg-emerald-950 text-white'
-          }`}>
-            <div className="space-y-2">
-              <h2 className="text-2xl font-serif font-bold text-white">
-                Book Your Confidential MIAM Consultation
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-200 font-medium max-w-lg leading-relaxed">
-                Take the first constructive step toward resolution. Individual pre-court assessment meetings conducted remotely or at regional centres.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto shrink-0">
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto text-center px-6 py-3.5 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs shadow-md transition"
-              >
-                Book Consultation
-              </Link>
-              <a
-                href={`tel:${brand.phone}`}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-center px-5 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-amber-300 font-bold text-xs border-2 border-slate-700 transition whitespace-nowrap shadow-xs"
-              >
-                <PhoneCallIcon className="w-4 h-4 text-amber-400 shrink-0" />
-                <span className="whitespace-nowrap tracking-wide">{brand.formattedPhone}</span>
-              </a>
-            </div>
-          </div>
-
         </div>
       </article>
 
@@ -494,6 +492,37 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           subtitle="Practical, legally sound answers from accredited UK family mediators on court procedures, rights, and negotiation strategies."
           faqs={post.faqs}
         />
+      </div>
+
+      {/* Final Action CTA 3: SSOT Telephone & Assessment Link immediately after FAQs */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-8">
+        <div className={`rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md ${
+          isAlderton ? 'bg-slate-950 text-white' : 'bg-emerald-950 text-white'
+        }`}>
+          <div className="space-y-2">
+            <h2 className="text-2xl font-serif font-bold text-white">
+              Book Your Confidential MIAM Consultation
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-200 font-medium max-w-lg leading-relaxed">
+              Take the first constructive step toward resolution. Individual pre-court assessment meetings conducted remotely or at regional centres.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto shrink-0">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto text-center px-6 py-3.5 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs shadow-md transition"
+            >
+              Book Consultation
+            </Link>
+            <a
+              href={`tel:${brand.phone}`}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-center px-5 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-amber-300 font-bold text-xs border-2 border-slate-700 transition whitespace-nowrap shadow-xs"
+            >
+              <PhoneCallIcon className="w-4 h-4 text-amber-400 shrink-0" />
+              <span className="whitespace-nowrap tracking-wide">{brand.formattedPhone}</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing & Artifacts
+coverage/
+.nyc_output/
+
+# Next.js Build Outputs
+.next/
+out/
+build/
+dist/
+
+# Environment and Secrets (CRITICAL: MUST NEVER GO TO REMOTE)
+.env
+.env*.local
+.env.production
+.secrets/
+*.pem
+*.key
+id_rsa*
+vps.env
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,58 @@
+{
+  "config_version": "1.0.0",
+  "project_id": "ac-repair-maricopa-benchmark",
+  "mode": "fixture",
+  "business_model": "local_service_lead_gen",
+  "niche_adapter": "home_services",
+  "jurisdiction": {
+    "country": "US",
+    "regions": ["AZ"],
+    "language": "en-US"
+  },
+  "identity": {
+    "organization_name": "Arizona AC Repair Network",
+    "organization_name_is_placeholder": true,
+    "production_domain": "example.com",
+    "primary_contact": {
+      "type": "phone",
+      "value": "+1-800-555-0199",
+      "verified_working": false
+    }
+  },
+  "conversion": {
+    "primary_action": "call"
+  },
+  "entities": {
+    "locations": [
+      {"name": "Phoenix, AZ", "jurisdiction_region": "Maricopa County", "verified_coverage": false},
+      {"name": "Mesa, AZ", "jurisdiction_region": "Maricopa County", "verified_coverage": false},
+      {"name": "Chandler, AZ", "jurisdiction_region": "Maricopa County", "verified_coverage": false},
+      {"name": "Gilbert, AZ", "jurisdiction_region": "Maricopa County", "verified_coverage": false},
+      {"name": "Scottsdale, AZ", "jurisdiction_region": "Maricopa County", "verified_coverage": false},
+      {"name": "Glendale, AZ", "jurisdiction_region": "Maricopa County", "verified_coverage": false},
+      {"name": "Peoria, AZ", "jurisdiction_region": "Maricopa County", "verified_coverage": false},
+      {"name": "Tempe, AZ", "jurisdiction_region": "Maricopa County", "verified_coverage": false},
+      {"name": "Surprise, AZ", "jurisdiction_region": "Maricopa County", "verified_coverage": false},
+      {"name": "Goodyear, AZ", "jurisdiction_region": "Maricopa County", "verified_coverage": false},
+      {"name": "Buckeye, AZ", "jurisdiction_region": "Maricopa County", "verified_coverage": false},
+      {"name": "Avondale, AZ", "jurisdiction_region": "Maricopa County", "verified_coverage": false},
+      {"name": "Queen Creek, AZ", "jurisdiction_region": "Maricopa County", "verified_coverage": false},
+      {"name": "Yuma, AZ", "jurisdiction_region": "Yuma County", "verified_coverage": false},
+      {"name": "Prescott Valley, AZ", "jurisdiction_region": "Yavapai County", "verified_coverage": false},
+      {"name": "Chandler Heights, AZ", "jurisdiction_region": "Maricopa County", "verified_coverage": false}
+    ],
+    "services": [
+      {"name": "AC Repair", "verified_capability": false},
+      {"name": "Emergency AC Repair", "verified_capability": false},
+      {"name": "Commercial AC Repair", "verified_capability": false}
+    ]
+  },
+  "evidence_sources": [
+    {"source_id": "homeadvisor-cost-2022", "url_or_ref": "https://www.homeadvisor.com/cost/heating-and-cooling/repair-an-ac-unit/", "claim_types_supported": ["pricing"], "date_checked": "2026-10-23"},
+    {"source_id": "nws-psr-2024-summer", "url_or_ref": "https://www.weather.gov/psr/", "claim_types_supported": ["climate_technical"], "date_checked": "2026-10-23"},
+    {"source_id": "energystar-20808", "url_or_ref": "https://www.energystar.gov/node/20808", "claim_types_supported": ["product_or_industry_guidance"], "date_checked": "2026-10-23"},
+    {"source_id": "epa-r22-phaseout", "url_or_ref": "https://www.epa.gov/sites/production/files/2018-08/documents/residential_air_conditioning_and_the_phaseout_of_hcfc-22_what_you_need_to_know.pdf", "claim_types_supported": ["regulation_permit"], "date_checked": "2026-10-23"},
+    {"source_id": "ktar-yuma-2024-summer", "url_or_ref": "https://ktar.com/arizona-news/hottest-summer-recorded-in-phoenix", "claim_types_supported": ["climate_technical"], "date_checked": "2026-10-23"},
+    {"source_id": "city-county-lookup", "url_or_ref": "Research Data/Geographic Reference/city_county_lookup.csv", "claim_types_supported": ["geography"], "date_checked": "2026-10-23"}
+  ]
+}

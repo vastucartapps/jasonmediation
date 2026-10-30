@@ -1,0 +1,146 @@
+/* Shared stylesheet for Money Page Playbook sample pages.
+   Light, high-trust contractor palette — deliberately NOT the project's internal dark
+   analytics theme (theme.py). Internal workbooks are for us; these pages are for a
+   worried homeowner deciding whether to call. Blue = trust, amber = urgency/CTA. */
+
+:root {
+  --ink: #16202b;
+  --ink-dim: #52606d;
+  --bg: #ffffff;
+  --bg-alt: #f4f7fb;
+  --line: #e1e8f0;
+  --blue: #0b4f8a;
+  --blue-dark: #083a66;
+  --amber: #e8610b;
+  --amber-dark: #c44f06;
+  --green: #1f7a4d;
+  --gated-bg: #fff8ec;
+  --gated-border: #e8a33d;
+  --radius: 10px;
+  --maxw: 880px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+  padding-bottom: 72px; /* room for sticky mobile bar */
+}
+
+a { color: var(--blue); }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+/* NOTE: an earlier version of this stylesheet included a dev-only "annotate
+   toggle" (a visible on-page button + CSS rules revealing internal section
+   labels). Removed per this project's public/private boundary policy
+   (Money Page Maker references/content-rules.md): a default-off UI control
+   is not an acceptable way to keep internal information out of a production
+   page -- it's still shipped code in the public build. Internal review notes
+   now live only in HTML comments (never rendered) and in the skill's own
+   reports/ directory, never as live, toggleable page UI. */
+
+/* ---------- header / breadcrumb / dispatch bar ---------- */
+.dispatch-bar {
+  background: var(--blue-dark); color: #fff; font-size: 13px;
+  padding: 7px 0;
+}
+.dispatch-bar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.dispatch-bar a.tel { color: #fff; font-weight: 700; text-decoration: none; }
+nav.breadcrumb {
+  font-size: 13px; color: var(--ink-dim); padding: 10px 0; border-bottom: 1px solid var(--line);
+}
+nav.breadcrumb a { color: var(--ink-dim); text-decoration: none; }
+nav.breadcrumb a:hover { text-decoration: underline; }
+
+/* ---------- hero ---------- */
+.hero { padding: 28px 0 20px; }
+.hero h1 { font-size: 28px; line-height: 1.25; margin: 0 0 12px; color: var(--blue-dark); }
+.tldr {
+  font-size: 14.5px; color: var(--ink-dim); background: #fff; border: 1px solid var(--line);
+  padding: 10px 14px; border-radius: 8px; margin: 0 0 14px;
+}
+.tldr strong { color: var(--blue-dark); }
+.aeo-summary {
+  font-size: 16px; color: var(--ink); background: var(--bg-alt);
+  border-left: 4px solid var(--blue); padding: 14px 16px; border-radius: 0 8px 8px 0; margin: 0 0 16px;
+}
+.proof-line { font-weight: 600; color: var(--green); margin: 0 0 16px; font-size: 14px; }
+.cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn {
+  display: inline-block; text-decoration: none; font-weight: 700; font-size: 16px;
+  padding: 13px 22px; border-radius: 999px;
+}
+.btn-primary { background: var(--amber); color: #fff; }
+.btn-primary:hover { background: var(--amber-dark); }
+.service-area-line { font-size: 13px; color: var(--ink-dim); margin-top: 14px; }
+
+/* ---------- accordions (progressive disclosure) ---------- */
+details {
+  border: 1px solid var(--line); border-radius: var(--radius); margin: 10px 0; overflow: hidden;
+  background: #fff;
+}
+details[open] { border-color: var(--blue); }
+summary {
+  cursor: pointer; font-weight: 700; padding: 14px 16px; list-style: none; position: relative;
+  background: var(--bg-alt);
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; position: absolute; right: 16px; top: 12px; font-size: 20px; color: var(--blue); }
+details[open] summary::after { content: "–"; }
+.details-body { padding: 14px 16px 18px; }
+
+/* ---------- tables ---------- */
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 8px 0; }
+caption { text-align: left; font-weight: 700; margin-bottom: 8px; color: var(--blue-dark); }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: var(--bg-alt); font-size: 12px; text-transform: uppercase; letter-spacing: .02em; color: var(--ink-dim); }
+tr:hover td { background: #fafcff; }
+.tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 999px; }
+.tag-easy { background: #e3f6ea; color: var(--green); }
+.tag-na { background: #eef1f4; color: var(--ink-dim); }
+.tag-real { background: #e6f0fb; color: var(--blue-dark); }
+
+/* ---------- link vectors ---------- */
+.link-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 14px 0; }
+@media (min-width: 640px) { .link-grid { grid-template-columns: 1fr 1fr; } }
+.link-card {
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; font-size: 13.5px;
+}
+.link-card h4 { margin: 0 0 6px; font-size: 12px; text-transform: uppercase; color: var(--ink-dim); }
+.link-card a.built { font-weight: 700; }
+.link-card .unbuilt { color: var(--ink-dim); font-style: italic; }
+
+/* ---------- FAQ ---------- */
+.faq-q { font-weight: 700; }
+
+/* ---------- sticky mobile call bar ---------- */
+.sticky-call {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 500;
+  background: var(--amber); color: #fff; text-align: center;
+  padding: 13px 10px; font-weight: 700; text-decoration: none; font-size: 15px;
+  box-shadow: 0 -4px 14px rgba(0,0,0,.15);
+}
+
+.estimator {
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 16px;
+  background: var(--bg-alt); margin: 10px 0;
+}
+.estimator label { display: block; font-weight: 700; font-size: 13px; margin: 10px 0 4px; }
+.estimator select {
+  width: 100%; padding: 9px 10px; border: 1px solid var(--line); border-radius: 6px;
+  font-size: 14px; background: #fff; margin-bottom: 4px;
+}
+.estimator-output { font-size: 13.5px; margin: 14px 0; }
+.estimator .btn { margin-top: 6px; }
+.source-list { font-size: 12.5px; color: var(--ink-dim); padding-left: 20px; }
+.source-list a { word-break: break-word; }
+sup a { text-decoration: none; font-size: 11px; }
+
+footer.site-foot {
+  margin-top: 30px; padding: 20px 0 40px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--ink-dim);
+}

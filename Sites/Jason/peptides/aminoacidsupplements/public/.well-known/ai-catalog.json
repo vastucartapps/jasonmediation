@@ -1,0 +1,46 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "AminoAcidSupplements Chemical Registry",
+    "identifier": "did:web:aminoacidsupplements.co",
+    "documentationUrl": "https://aminoacidsupplements.co/about/"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:aminoacidsupplements:agent:monograph-directory",
+      "displayName": "Chemical Monograph Registry Agent",
+      "type": "application/agent-card+json",
+      "url": "https://aminoacidsupplements.co/ai-catalog.json",
+      "description": "Analytical amino acid and synthetic peptide registry search agent providing CAS lookup, purity thresholds, and vendor audits.",
+      "representativeQueries": [
+        "Lookup CAS number and molecular weight for BPC-157",
+        "Find HPLC assay protocols for TB-500",
+        "Verify UK peptide supplier analytical certifications"
+      ]
+    },
+    {
+      "identifier": "urn:air:aminoacidsupplements:skill:peptide-standards",
+      "displayName": "Biochemical Analytical Standards Skill",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://aminoacidsupplements.co/llms.txt",
+      "description": "Procedural guidance and analytical assay constraints for evaluating research grade amino acid reagents in laboratory environments.",
+      "representativeQueries": [
+        "What are the HPLC chromatographic parameters for Semax",
+        "Reconstitution guidelines for lyophilized peptides with bacteriostatic water",
+        "UK Misuse of Drugs Act 1971 peptide reagent compliance check"
+      ]
+    },
+    {
+      "identifier": "urn:air:aminoacidsupplements:skill:technical-compendium",
+      "displayName": "Technical Chemical Compendium Skill",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://aminoacidsupplements.co/llms-full.txt",
+      "description": "Unabridged chemical monographs, molecular formulas, and stability profiles for 14 research compounds.",
+      "representativeQueries": [
+        "Complete amino acid sequence of AOD-9604",
+        "Degradation kinetics and thermal stability of MOTS-c",
+        "Epithalon analytical assay standard protocols"
+      ]
+    }
+  ]
+}

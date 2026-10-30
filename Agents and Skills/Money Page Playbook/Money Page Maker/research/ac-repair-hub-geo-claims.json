@@ -1,0 +1,18 @@
+[
+  {"city": "Phoenix", "state": "AZ", "claimed_county": "Maricopa"},
+  {"city": "Mesa", "state": "AZ", "claimed_county": "Maricopa"},
+  {"city": "Chandler", "state": "AZ", "claimed_county": "Maricopa"},
+  {"city": "Gilbert", "state": "AZ", "claimed_county": "Maricopa"},
+  {"city": "Scottsdale", "state": "AZ", "claimed_county": "Maricopa"},
+  {"city": "Glendale", "state": "AZ", "claimed_county": "Maricopa"},
+  {"city": "Peoria", "state": "AZ", "claimed_county": "Maricopa"},
+  {"city": "Tempe", "state": "AZ", "claimed_county": "Maricopa"},
+  {"city": "Surprise", "state": "AZ", "claimed_county": "Maricopa"},
+  {"city": "Goodyear", "state": "AZ", "claimed_county": "Maricopa"},
+  {"city": "Buckeye", "state": "AZ", "claimed_county": "Maricopa"},
+  {"city": "Avondale", "state": "AZ", "claimed_county": "Maricopa"},
+  {"city": "Queen Creek", "state": "AZ", "claimed_county": "Maricopa"},
+  {"city": "Yuma", "state": "AZ", "claimed_county": "Yuma"},
+  {"city": "Prescott Valley", "state": "AZ", "claimed_county": "Yavapai"},
+  {"city": "Chandler Heights", "state": "AZ", "claimed_county": "Maricopa"}
+]

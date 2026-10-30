@@ -1,0 +1,52 @@
+[
+  {
+    "page_id": "hub-maricopa-county-ac-repair",
+    "business_model": "local_service_lead_gen",
+    "real_demand_evidence": true,
+    "distinct_from_existing": true,
+    "evidence_sufficient": true,
+    "capability_confirmed": true,
+    "anti_commodity_passes": true,
+    "_note": "General AC repair service is a confirmed real business capability -- real network partners deliver real service, per the user's own explicit confirmation of the business model. This is the general, not sub-service-specific, claim."
+  },
+  {
+    "page_id": "spoke-mesa-emergency-ac-repair",
+    "business_model": "local_service_lead_gen",
+    "real_demand_evidence": true,
+    "distinct_from_existing": true,
+    "evidence_sufficient": true,
+    "capability_confirmed": false,
+    "anti_commodity_passes": true,
+    "_note": "Real, Ahrefs-confirmed SEARCH DEMAND for emergency/same-day service in Mesa specifically. The underlying CAPABILITY (same-day dispatch actually being staffed/available in Mesa) has never been independently confirmed -- only inferred from demand, which is exactly the AC-04 finding."
+  },
+  {
+    "page_id": "spoke-scottsdale-emergency-ac-repair",
+    "business_model": "local_service_lead_gen",
+    "real_demand_evidence": true,
+    "distinct_from_existing": true,
+    "evidence_sufficient": true,
+    "capability_confirmed": false,
+    "anti_commodity_passes": true,
+    "_note": "Same situation as Mesa."
+  },
+  {
+    "page_id": "spoke-yuma-emergency-ac-repair",
+    "business_model": "local_service_lead_gen",
+    "real_demand_evidence": true,
+    "distinct_from_existing": true,
+    "evidence_sufficient": true,
+    "capability_confirmed": false,
+    "anti_commodity_passes": true,
+    "_note": "Same situation, plus Yuma is geographically outside the hub's own county -- handled as a content/architecture question (DEF-04), not a qualification blocker, since the page discloses this honestly."
+  },
+  {
+    "page_id": "spoke-gilbert-commercial-ac-repair",
+    "business_model": "local_service_lead_gen",
+    "real_demand_evidence": true,
+    "distinct_from_existing": true,
+    "evidence_sufficient": true,
+    "capability_confirmed": false,
+    "anti_commodity_passes": true,
+    "_note": "Real, Ahrefs-confirmed demand for COMMERCIAL AC repair in Gilbert specifically. Commercial-specific operational capacity (rooftop units, business-hours response) has never been independently confirmed, same pattern as the emergency pages."
+  }
+]

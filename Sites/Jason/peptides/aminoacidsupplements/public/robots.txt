@@ -1,0 +1,25 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Explicit AI Search & Engine Crawlers Allow-list (GEO / AEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Canonical Sitemaps
+Sitemap: https://aminoacidsupplements.co/sitemap.xml
+
+# LLM Discovery Directives
+# See /llms.txt for machine-readable chemical registry index

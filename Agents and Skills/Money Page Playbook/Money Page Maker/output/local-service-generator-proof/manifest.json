@@ -1,0 +1,23 @@
+{
+  "manifest_version": "1.0.0",
+  "pages": [
+    {
+      "page_id": "mesa-emergency-regen-proof",
+      "business_model": "local_service_lead_gen",
+      "route": "/acceptance-test/mesa-emergency/",
+      "page_type": "local_service_page",
+      "decision": "CREATE",
+      "reasoning": "Real demand, distinct intent, sufficient evidence, confirmed capability, and a genuine reason to exist beyond the niche-specific name. All five qualification signals pass."
+    }
+  ],
+  "excluded": [
+    {
+      "page_id": "buckeye-generic-consolidate-proof",
+      "business_model": "local_service_lead_gen",
+      "route": "/acceptance-test/buckeye/",
+      "page_type": "local_service_page",
+      "decision": "CONSOLIDATE",
+      "reasoning": "An existing page already serves this intent at least as well; a separate page would duplicate it."
+    }
+  ]
+}

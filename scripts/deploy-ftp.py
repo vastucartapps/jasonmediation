@@ -169,9 +169,9 @@ def deploy_export(host, user, password, port, source_dir, target_dir="/", use_tl
 
 def main():
     parser = argparse.ArgumentParser(description="Deploy static Next.js export to cPanel via FTPS")
-    parser.add_argument("--host", default="s688.lon1.mysecurecloudhost.com", help="FTP Host")
-    parser.add_argument("--user", default="portfolio@mediationdirect.co.uk", help="FTP Username")
-    parser.add_argument("--password", default="eOfia5JLHt6D2qNhdgmLw35z", help="FTP Password")
+    parser.add_argument("--host", default=os.getenv("CPANEL_HOST", "s688.lon1.mysecurecloudhost.com"), help="FTP Host")
+    parser.add_argument("--user", default=os.getenv("CPANEL_USER", "portfolio@mediationdirect.co.uk"), help="FTP Username")
+    parser.add_argument("--password", default=os.getenv("CPANEL_PASS", ""), help="FTP Password")
     parser.add_argument("--port", type=int, default=21, help="FTP Port (default: 21)")
     parser.add_argument("--source", default="Sites/trustlypharma/out", help="Local export directory")
     parser.add_argument("--target-dir", default="/", help="Remote base directory (e.g. / or /trustlypharma.co.uk)")

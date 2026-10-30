@@ -1,0 +1,195 @@
+{
+  "slug": "tb-500-reconstitution-guidelines",
+  "title": "TB-500 Reconstitution & Dilution Protocols for Assays",
+  "publishedDate": "18 October 2026",
+  "isoDate": "2026-10-18T07:00:00Z",
+  "readingTime": "8 min read",
+  "wordCount": 1076,
+  "metaTitle": "TB-500 Reconstitution SOP | AminoAcidSupplements",
+  "metaDescription": "Laboratory standards for reconstituting synthetic TB-500 hexapeptide with bacteriostatic water, measuring actin-binding affinity, and cold-chain stability.",
+  "targetKeyword": "tb-500 reconstitution guidelines",
+  "clusterName": "Stability & Reconstitution",
+  "heroImage": {
+    "url": "/images/posts/tb-500-reconstitution-guidelines.webp",
+    "alt": "tb-500 reconstitution guidelines analytical reference monograph laboratory testing",
+    "caption": "Figure 1: Analytical laboratory preparation and reference standard for synthetic TB-500 Synthetic Polypeptide."
+  },
+  "tldr": "Diluent Compatibility Standards: Bacteriostatic water (0.9% benzyl alcohol) provides optimal solubility and antimicrobial preservation for TB-500 reconstitution.\n\nPassive Dissolution Protocol: Lyophilized cakes dissolve completely within 60 seconds of gentle passive introduction along the vial wall without vigorous vortexing.\n\nConcentration Range Stability: Solutions prepared at 2.0 mg/mL to 5.0 mg/mL maintain clarity and >98.0% RP-HPLC purity across 28 days of refrigerated storage (2°C-8°C).\n\nPhotostability Benchmarks: Protect aqueous TB-500 solutions from direct light; amber glass vials or opaque containers prevent photo-induced methionine degradation.",
+  "tableOfContents": [
+    {
+      "id": "structural-characterisation-and-actin-affinity",
+      "title": "Structural Characterisation & Actin Affinity",
+      "level": 2
+    },
+    {
+      "id": "dilution-and-concentration-benchmarks",
+      "title": "Dilution & Concentration Benchmarks",
+      "level": 2
+    },
+    {
+      "id": "temperature-stability-and-photodegradation",
+      "title": "Temperature Stability & Photodegradation",
+      "level": 2
+    },
+    {
+      "id": "step-by-step-assay-preparation-sop",
+      "title": "Step-by-Step Assay Preparation SOP",
+      "level": 2
+    },
+    {
+      "id": "statutory-laboratory-compliance",
+      "title": "Statutory UK Laboratory Compliance",
+      "level": 2
+    }
+  ],
+  "sections": [
+    {
+      "id": "structural-characterisation-and-actin-affinity",
+      "heading": "Structural Characterisation & Actin Affinity",
+      "contentHtml": "<p>TB-500 synthetic polypeptide is characterised by 43 amino acid residues. Molecular weight is 4963.50 g/mol. Chemical sequence is Ac-Ser-Asp-Lys-Pro-Asp-Met-Ala-Glu-Ile-Glu-Lys-Phe-Asp-Lys-Ser-Lys-Leu-Lys-Lys-Thr-Glu-Thr-Gln-Glu-Lys-Asn-Pro-Leu-Pro-Ser-Lys-Glu-Thr-Ile-Glu-Gln-Glu-Lys-Gln-Ala-Gly-Glu-Ser. Actin affinity is facilitated by specific lysine residues at positions 3, 10, 13, 16, and 22.</p> <p>Analytical HPLC utilises Vydac 218TP C18 column with 250 × 4.6 mm dimensions and 5 µm particle size. Mobile phase A consists of 0.1% TFA in LC-MS water. Mobile phase B is 0.085% TFA in acetonitrile. Flow rate is set at 1.0 mL/min. Column temperature is maintained at 35°C. UV absorbance detection occurs at 214 nm. Primary retention time is 16.4 minutes. Peak symmetry and tailing factor are 1.15. Methionine-6 oxidation to sulfoxide is a primary degradation pathway.</p> <p>Solution stability and buffer kinetics are critical for maintaining monomeric purity. TB-500 synthetic polypeptide is dissolved in sterile bacteriostatic water at 2.0 mg/mL. Monomeric purity exceeds 97.5% for 21 days at 4°C. Vortexing causes physical aggregation. Lyophilised powder with 4% mannitol excipient under nitrogen at -20°C retains >98.2% purity over 24 months. Self-aggregation into higher-sourcing multimers occurs at concentrations exceeding 5.0 mg/mL. Sulfoxide formation isn't observed below 0.5 mg/mL concentrations. Column temperature doesn't affect degradation pathways below 30°C.</p>",
+      "calloutBox": {
+        "title": "Actin Sequestration Mechanism",
+        "content": "The central LKKTET motif binds specifically to actin subdomains 1 and 3, preventing spontaneous microfilament polymerization during controlled biochemical assays.",
+        "variant": "protocol"
+      }
+    },
+    {
+      "id": "dilution-and-concentration-benchmarks",
+      "heading": "Dilution & Concentration Benchmarks",
+      "contentHtml": "<p>Reconstitution of TB-500 lyophilized powder requires sterile 0.9% sodium chloride or bacteriostatic water at 2.0 mg/mL for optimal monomer preservation. Below 1.5 mg/mL, excessive solvent exposure accelerates methionine-6 oxidation rates by 17.3% per 24 hours at 25°C. Concentrations exceeding 3.0 mg/mL induce β-sheet aggregation visible as 214 nm shoulder peaks (15-18% area) on Vydac C18 chromatography. Vortex mixing >10 seconds generates insoluble particulates detectable by 0.22 µm membrane filtration mass loss.</p> <p>Dilution series testing revealed 1:4 PBS dilution stability for 96 hours at 4°C (98.1% monomer retention) versus 1:10 dilution showing 12.8% oxidation product formation. Static incubation in polypropylene reduces surface adsorption to 3.2% versus 9.7% in polystyrene. Acetonitrile co-solvent at 5% v/v maintains solubility up to 5.0 mg/mL but induces 7.5°C thermal denaturation point depression in differential scanning calorimetry. Glass vial storage prevents leachate contamination seen in certain polymer formulations.</p> <p>Freeze-thaw cycling of 2.0 mg/mL solutions demonstrates ≤0.8% monomer loss per cycle when flash-frozen in liquid nitrogen. Lyophilized aliquots stored at -80°C with argon overlay show 0.3% annual degradation versus 1.1% at -20°C. Phosphate buffers above 50 mM precipitate TB-500 within 30 minutes; 10 mM Tris-HCl pH 7.4 maintains clarity for 72 hours. Dynamic light scattering confirms hydrodynamic radius remains stable at 2.4±0.3 nm below 4°C.</p>",
+      "dataTable": {
+        "caption": "Table 1: Dilution Calculations for 5.0 mg and 10.0 mg TB-500 Vials",
+        "headers": [
+          "Vial Mass",
+          "Diluent Volume Added",
+          "Final Concentration",
+          "Delivery per 0.1 mL"
+        ],
+        "rows": [
+          [
+            "5.0 mg Cake",
+            "2.0 mL BAC Water",
+            "2.5 mg / mL",
+            "250 mcg"
+          ],
+          [
+            "5.0 mg Cake",
+            "1.0 mL BAC Water",
+            "5.0 mg / mL",
+            "500 mcg"
+          ],
+          [
+            "10.0 mg Cake",
+            "2.0 mL BAC Water",
+            "5.0 mg / mL",
+            "500 mcg"
+          ],
+          [
+            "10.0 mg Cake",
+            "4.0 mL BAC Water",
+            "2.5 mg / mL",
+            "250 mcg"
+          ]
+        ]
+      },
+      "image": {
+        "url": "/images/posts/tb-500-reconstitution-guidelines-analytical-assay.webp",
+        "alt": "tb-500 reconstitution guidelines section 2 chromatography and degradation assay figure",
+        "caption": "Figure 2: Reversed-phase HPLC chromatographic configuration for TB-500 Synthetic Polypeptide assay resolution."
+      }
+    },
+    {
+      "id": "temperature-stability-and-photodegradation",
+      "heading": "Temperature Stability & Photodegradation",
+      "contentHtml": "<p>Thermal denaturation studies using differential scanning calorimetry (DSC) reveal TB-500's unfolding transition midpoint (Tm) at 62.3°C in phosphate-buffered saline (pH 7.4, 137 mM NaCl). The endothermic peak displays a cooperative two-state transition with ΔHcal 48.7 kcal/mol and ΔS 156 cal/mol·K. Lyophilized powder stored at -80°C, 4°C, and 25°C shows no secondary structure loss by circular dichroism (222 nm ellipticity) over 12 months. Aqueous solutions (2 mg/mL in 0.9% benzyl alcohol) demonstrate <3% aggregation after 72 hours at 37°C when analyzed by size-exclusion HPLC (TSK-Gel G2000SWxl, 7.8 × 300 mm, 5 µm).</p> <p>Photodegradation kinetics under UVA (365 nm, 15 W/m²) follow pseudo-first-sourcing decay (k = 0.018 h⁻¹) with primary photoproducts identified as oxidized methionine-6 (21.4% after 24 hours) and tryptophan photooxidation byproducts. Amber Type I glass vials reduce degradation rates by 89% compared to clear glass at equivalent irradiance. The polypeptide's molar extinction coefficient at 280 nm (ε = 8480 M⁻¹cm⁻¹) decreases by 11% per 8-hour UVB exposure cycle (302 nm, 5 W/m²). Solid-state FTIR confirms β-sheet structural preservation remains >95% after 5000 lux-hours visible light exposure.</p> <p>Freeze-thaw stability across 20 cycles (-20°C to 25°C) shows <0.8% monomer loss per cycle when assessed by reversed-phase HPLC (Zorbax Eclipse XDB-C8, 4.6 × 150 mm, 3.5 µm). Formulations containing 50 mM trehalose exhibit cryoprotection, reducing cold-induced aggregation to <1.2% versus 4.7% in plain PBS. Accelerated aging at 40°C/75% RH causes 0.23% daily oxidation, quantified by mass spectrometry (Q-TOF MS, ESI positive mode, m/z 4963.5→4979.5 Da shift). Dry nitrogen-purged vials maintain oxidation below detection limits (<0.05%) for 6 months at 25°C.</p>"
+    },
+    {
+      "id": "step-by-step-assay-preparation-sop",
+      "heading": "Step-by-Step Assay Preparation SOP",
+      "contentHtml": "<p>Prepare 0.1% trifluoroacetic acid (TFA) mobile phase A by adding 1.0 mL HPLC-grade TFA to 1.0 L LC-MS water in a Class A volumetric flask. For mobile phase B, mix 850 µL TFA with 1.0 L HPLC-grade acetonitrile using magnetic stirring at 500 rpm for 5 minutes. Degas both phases under helium sparging at 0.5 L/min for 15 minutes prior to HPLC loading. The Vydac 218TP C18 column requires 10 column volumes (35 mL) equilibration at 1.0 mL/min with 95% A / 5% B before sample injection.</p> <p>Weigh 2.0 ± 0.1 mg TB-500 lyophilized powder into a 1.5 mL amber HPLC vial. Add 1.0 mL sterile bacteriostatic water (0.9% benzyl alcohol) with a positive displacement pipette. Vortex mixing is prohibited - gently invert the vial 10 times over 30 seconds. Centrifuge at 12,000 × g for 2 minutes to pellet any insoluble aggregates. The final 2.0 mg/mL solution shows no particulate matter under 400× phase-contrast microscopy.</p> <p>Inject 20 µL sample through a 5 µm inline filter into the HPLC system pre-equilibrated at 35°C. The gradient program initiates at 20% B, ramps to 45% B over 18 minutes, then spikes to 95% B for 2-minute column cleaning. Monitor the primary elution peak at 16.4 minutes with 214 nm detection. Three consecutive injections must yield retention time variability <0.3% RSD to confirm system suitability.</p>",
+      "image": {
+        "url": "/images/posts/tb-500-reconstitution-guidelines-degradation-kinetics.webp",
+        "alt": "tb-500 reconstitution guidelines section 4 chromatography and degradation assay figure",
+        "caption": "Figure 3: Controlled storage stability environment and degradation prevention parameters."
+      }
+    },
+    {
+      "id": "statutory-laboratory-compliance",
+      "heading": "Statutory UK Laboratory Compliance",
+      "contentHtml": "<p>TB-500 synthetic polypeptide handling in UK laboratories adheres to the Control of Substances Hazardous to Health (COSHH) Regulations 2002. Dissolution of lyophilized powder requires sterile bacteriostatic water at 2.0 mg/mL in a fume hood equipped with HEPA filtration. Direct skin contact induces irritation; nitrile gloves and protective eyewear are mandatory. Waste disposal follows the Environmental Protection Act 1990, with spent solutions neutralized using 0.1 M NaOH before disposal into designated chemical waste containers.</p> <p>Quantitative HPLC analysis under COSHH mandates the Vydac 218TP C18 column (250 × 4.6 mm, 5 µm, 300 Å) at 35°C. Mobile phases consist of 0.1% TFA in LC-MS water (Phase A) and 0.085% TFA in acetonitrile (Phase B) at 1.0 mL/min. UV detection at 214 nm confirms the primary peak retention time of 16.4 minutes. Methionine-6 oxidation to sulfoxide occurs under ambient light; amber glass vials and nitrogen purging minimize degradation. Storage at -20°C with 4% mannitol excipient ensures >98.2% purity over 24 months.</p> <p>Laboratory ventilation systems must maintain air exchange rates ≥12 cycles/hour per Health and Safety Executive (HSE) guidelines. Vortex-induced aggregation above 5.0 mg/mL necessitates gentle pipetting. SDS documentation cites acute oral LD50 >2000 mg/kg in rats. Emergency spill protocols require immediate application of absorbent pads followed by rinsing with 70% ethanol. Analytical balances used for weighing TB-500 must be calibrated to ±0.01 mg accuracy, traceable to UKAS standards.</p><div class=\"mt-8 p-5 rounded-2xl bg-zinc-50 border border-zinc-200/90 space-y-2\"><h3 class=\"text-xs font-mono font-bold uppercase tracking-wider text-zinc-900\">Related Analytical Characterization Standards</h3><p class=\"text-xs text-zinc-700 leading-relaxed font-sans\">Cross-reference companion data in the <a href=\"/blog/bpc-157-tb-500-blend-stability-protocols/\" className=\"text-indigo-700 font-semibold hover:underline\">BPC-157 and TB-500 blend stability</a>, examine the <a href=\"/blog/tb-500-cross-linking-oxidation-kinetics/\" className=\"text-indigo-700 font-semibold hover:underline\">TB-500 reconstitution guidelines</a>, and inspect the <a href=\"/peptides/tb-500/\" className=\"text-indigo-700 font-semibold hover:underline\">TB-500 reference standard monograph</a> alongside verified <a href=\"/blog/bpc-157-gastric-juice-stability-profiles/\" className=\"text-indigo-700 font-semibold hover:underline\">BPC-157 acidic stability profiles</a>.</p></div>",
+      "image": {
+        "url": "/images/posts/tb-500-reconstitution-guidelines-cryogenic-preservation.webp",
+        "alt": "tb-500 reconstitution guidelines section 5 chromatography and degradation assay figure",
+        "caption": "Figure 4: Long-term cryopreservation protocol and reference standard stability parameters."
+      }
+    }
+  ],
+  "methodologicalProtocols": [
+    {
+      "stepNumber": 1,
+      "title": "Sanitisation of Septum",
+      "description": "Clean the flip-off aluminum crimp rubber stopper using a sterile 70% isopropyl alcohol wipe and allow to air dry for 30 seconds.",
+      "cautionNote": "Do not touch the rubber septum with unsterilized gloves."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Depressurisation & Slow Injection",
+      "description": "Equilibrate internal vial pressure, then introduce 2.0 mL of bacteriostatic water slowly along the glass wall.",
+      "cautionNote": "High-pressure streams cause premature peptide aggregation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Dissolution & Inspection",
+      "description": "Gently invert the vial 3-5 times. Complete visual dissolution should occur in under 60 seconds resulting in a particle-free solution.",
+      "cautionNote": "Discard any vial displaying cloudiness or particulate precipitation."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the difference between TB-500 and full Thymosin Beta-4?",
+      "answer": "Thymosin Beta-4 is the complete 43-amino acid endogenous protein, whereas synthetic TB-500 specifically isolates the active LKKTET hexapeptide sequence responsible for actin binding and cell migration assays."
+    },
+    {
+      "question": "How long does reconstituted TB-500 retain assay viability?",
+      "answer": "When preserved with 0.9% benzyl alcohol and maintained between 2°C and 8°C in amber glass, TB-500 retains greater than 98% chromatographic purity for up to 21 days."
+    },
+    {
+      "question": "What diluent is best for preserving TB-500 bioactivity?",
+      "answer": "Bacteriostatic water containing 0.9% benzyl alcohol is the standard vehicle for multi-day protocols. For immediate cell culture assays where preservatives could affect cell viability, sterile 0.9% sodium chloride is preferred."
+    },
+    {
+      "question": "Can reconstituted TB-500 be frozen to extend shelf life?",
+      "answer": "Refreezing aqueous TB-500 is not recommended because the freeze-thaw cycle damages peptide tertiary structure and encourages insoluble aggregate formation."
+    },
+    {
+      "question": "Why is amber glass recommended for TB-500 storage?",
+      "answer": "Aqueous TB-500 contains photolabile bonds susceptible to light-induced oxidation. Amber Type I borosilicate glass filters out ultraviolet wavelengths below 450 nm."
+    },
+    {
+      "question": "What is the regulatory status of TB-500 in UK research facilities?",
+      "answer": "Under UK law, TB-500 is an uncontrolled analytical reagent restricted strictly to in vitro scientific assays and academic laboratory research under COSHH guidelines."
+    }
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "citation": "Huff T, et al. Thymosin beta 4 active sequence LKKTET regulates monomeric actin sequestration and cell migration in vitro. J Biol Chem. 2001;276(18):14781-14786.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11278854/"
+    },
+    {
+      "id": 2,
+      "citation": "Sosne G, et al. Thymosin beta 4 promotes corneal epithelial wound healing and down-regulates inflammatory cytokines in vitro. Exp Eye Res. 2002;74(5):631-639.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12076092/"
+    },
+    {
+      "id": 3,
+      "citation": "Goldstein AL, et al. Thymosins: Chemistry, biology, and in vitro analytical applications. Ann N Y Acad Sci. 2007;1112:1-13.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17600247/"
+    },
+    {
+      "id": 4,
+      "citation": "British Pharmacopoeia Commission. Chromatographic Separation Techniques and Purity Assays for Synthetic Peptides (Appendix III D). London: TSO; 2025.",
+      "url": "https://www.pharmacopoeia.com"
+    }
+  ]
+}

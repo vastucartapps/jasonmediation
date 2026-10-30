@@ -1,0 +1,96 @@
+# AminoAcidSupplements Chemical Monograph Registry
+> British & Global analytical amino acid sequence and synthetic peptide research registry.
+
+## Core Mandate & Compliance
+All indexed entities are strictly for academic, educational, and laboratory analytical research in vitro.
+Substances are unapproved research chemicals governed under UK Human Medicines Regulations 2012 (SI 2012/1916).
+
+## Key Canonical Endpoints
+- Homepage: https://aminoacidsupplements.co/
+- Research Blog: https://aminoacidsupplements.co/blog/
+- Verified Supplier Audits: https://aminoacidsupplements.co/vendors/
+- UK MHRA Tracker: https://aminoacidsupplements.co/regulatory/mhra-tracker/
+- Misuse of Drugs Act 1971 Matrix: https://aminoacidsupplements.co/regulatory/uk-legal-status/
+- Full Discovery Manifest: https://aminoacidsupplements.co/llms-full.txt
+- Machine Sitemap: https://aminoacidsupplements.co/sitemap.xml
+
+## Indexed Chemical Monographs (14 Compounds)
+- [BPC-157 (CAS 137525-51-0)](https://aminoacidsupplements.co/peptides/bpc-157/): C62H98N16O22, 1419.55 g/mol
+- [TB-500 (CAS 77591-33-4)](https://aminoacidsupplements.co/peptides/tb-500/): C212H350N56O78S, 4963.50 g/mol
+- [Semax (CAS 80714-61-0)](https://aminoacidsupplements.co/peptides/semax/): C37H51N9O10S, 813.92 g/mol
+- [GHK-Cu (CAS 49557-75-7)](https://aminoacidsupplements.co/peptides/ghk-cu/): C14H24CuN6O4, 403.92 g/mol
+- [CJC-1295 (CAS 863288-34-0)](https://aminoacidsupplements.co/peptides/cjc-1295/): C152H252N44O42, 3367.97 g/mol
+- [Ipamorelin (CAS 170851-70-4)](https://aminoacidsupplements.co/peptides/ipamorelin/): C38H49N9O5, 711.86 g/mol
+- [AOD-9604 (CAS 221231-10-3)](https://aminoacidsupplements.co/peptides/aod-9604/): C78H123N23O23S2, 1815.12 g/mol
+- [Selank (CAS 129954-34-3)](https://aminoacidsupplements.co/peptides/selank/): C33H57N11O9, 751.88 g/mol
+- [Epithalon (CAS 307297-39-8)](https://aminoacidsupplements.co/peptides/epithalon/): C14H22N4O9, 390.35 g/mol
+- [MOTS-c (CAS 1627580-64-6)](https://aminoacidsupplements.co/peptides/mots-c/): C101H152N28O22S2, 2174.62 g/mol
+- [Tirzepatide (CAS 2023788-19-2)](https://aminoacidsupplements.co/peptides/tirzepatide/): C225H348N48O68, 4813.45 g/mol
+- [Semaglutide (CAS 910463-68-2)](https://aminoacidsupplements.co/peptides/semaglutide/): C187H291N45O59, 4113.58 g/mol
+- [KPV Tripeptide (CAS 67727-97-3)](https://aminoacidsupplements.co/peptides/kpv/): C16H31N5O4, 357.45 g/mol
+- [PT-141 (Bremelanotide) (CAS 189722-12-9)](https://aminoacidsupplements.co/peptides/pt-141/): C50H68N14O10, 1025.18 g/mol
+
+## Signaling Pathways (6 Categories)
+- [Tissue Repair & Angiogenesis](https://aminoacidsupplements.co/category/tissue-repair-recovery/): UK Laboratory Investigation into Cellular Migration & Microvascular Integrity
+- [Neuropeptides & CNS Signaling](https://aminoacidsupplements.co/category/neuropeptides-cognition/): Pre-Clinical Neurotrophic Expression & Central Synaptic Modulation
+- [Growth Hormone Secretagogues & GHRH](https://aminoacidsupplements.co/category/growth-hormone-secretagogues/): Anterior Pituitary Somatotroph Receptors & Pulsatile Endocrine Cascades
+- [Metabolic & Incretin Signaling](https://aminoacidsupplements.co/category/metabolic-regulation/): Dual Incretin Receptor Co-Agonism & Lipolytic Energy Dynamics
+- [Dermal & Extracellular Matrix](https://aminoacidsupplements.co/category/dermal-extracellular-matrix/): Copper Chelation Dynamics & Fibroblast Procollagen Remodeling
+- [Cellular Longevity & Mitochondrial Axis](https://aminoacidsupplements.co/category/cellular-longevity-mitochondrial/): Telomeric Chromatin Architecture & Mitochondrial-Derived Bioenergetics
+
+
+## Comprehensive Route Index
+- https://aminoacidsupplements.co/ (Home - Amino Acid Monograph Registry)
+- https://aminoacidsupplements.co/vendors/ (Verified Chemical Suppliers Directory)
+- https://aminoacidsupplements.co/regulatory/ (UK Regulatory & MHRA Compliance Hub)
+- https://aminoacidsupplements.co/regulatory/mhra-tracker/ (MHRA Statutory Enforcement & Alerts)
+- https://aminoacidsupplements.co/regulatory/uk-legal-status/ (Misuse of Drugs Act 1971 Legal Classification)
+- https://aminoacidsupplements.co/formats/ (Reagent Formats & Vial Specifications)
+- https://aminoacidsupplements.co/verification/ (HPLC & Mass Spectrometry Analytical Protocols)
+- https://aminoacidsupplements.co/about/ (About AminoAcidSupplements Governance)
+- https://aminoacidsupplements.co/contact/ (Laboratory Desk Contact & Enquiries)
+- https://aminoacidsupplements.co/safety/ (Laboratory Safety Standards & COSHH Protocols)
+- https://aminoacidsupplements.co/privacy/ (Privacy Policy & GDPR Compliance)
+- https://aminoacidsupplements.co/terms/ (Terms of Service & Research Use Warranty)
+- https://aminoacidsupplements.co/sitemap/ (Visual HTML Sitemap)
+- https://aminoacidsupplements.co/blog/ (Research Blog & Technical Monographs)
+- https://aminoacidsupplements.co/blog/aod-9604-chromatographic-separation-profiles/ (AOD-9604 Peptide High-Resolution Chromatography & Mass Accuracy Assays)
+- https://aminoacidsupplements.co/blog/bpc-157-gastric-juice-stability-profiles/ (BPC-157 Pentadecapeptide Acidic Stability Profiles in Simulated Gastric Fluid)
+- https://aminoacidsupplements.co/blog/kpv-tripeptide-chromatographic-purity-assays/ (KPV Tripeptide: Reversed-Phase HPLC Separation & Purity Assays)
+- https://aminoacidsupplements.co/blog/pt-141-lyophilization-stability-kinetics/ (PT-141 Bremelanotide Lyophilized Stability & Degradation Kinetics)
+- https://aminoacidsupplements.co/blog/selank-enzymatic-resistance-protocols/ (Selank Heptapeptide In Vitro Proteolytic Cleavage Resistance Protocols)
+- https://aminoacidsupplements.co/blog/tb-500-cross-linking-oxidation-kinetics/ (TB-500 Methionine Oxidation Kinetics & Multimerization Resistance)
+- https://aminoacidsupplements.co/blog/epithalon-analytical-assay-standards/ (Epithalon Tetrapeptide Analytical Assay & Storage Standards)
+- https://aminoacidsupplements.co/blog/motsc-mitochondrial-peptide-thermal-stability/ (MOTS-c Mitochondrial Peptide Solution Half-Life & Thermal Stability Profiles)
+- https://aminoacidsupplements.co/blog/bpc-157-stability-protocols/ (BPC-157 Lyophilized Stability Protocols in UK Laboratories)
+- https://aminoacidsupplements.co/blog/bpc-157-tb-500-blend-stability-protocols/ (BPC-157 & TB-500 Lyophilized Co-Storage & Blend Stability Protocols)
+- https://aminoacidsupplements.co/blog/cjc-1295-reconstitution-diluent-compatibility/ (CJC-1295 Reconstitution & Diluent Compatibility Profiles)
+- https://aminoacidsupplements.co/blog/ghk-cu-storage-degradation-kinetics/ (GHK-Cu Copper Chelate Stability & Storage Degradation Kinetics)
+- https://aminoacidsupplements.co/blog/ipamorelin-moisture-content-thermal-stability/ (Ipamorelin Lyophilization Moisture Content & Thermal Stability Analysis)
+- https://aminoacidsupplements.co/blog/semax-purity-testing-protocols/ (Semax Heptapeptide Purity Assays in UK Laboratories)
+- https://aminoacidsupplements.co/blog/tb-500-reconstitution-guidelines/ (TB-500 Reconstitution & Dilution Protocols for Assays)
+- https://aminoacidsupplements.co/peptides/bpc-157/ (BPC-157 Monograph & Lab Specs)
+- https://aminoacidsupplements.co/peptides/tb-500/ (TB-500 Monograph & Lab Specs)
+- https://aminoacidsupplements.co/peptides/semax/ (Semax Monograph & Lab Specs)
+- https://aminoacidsupplements.co/peptides/ghk-cu/ (GHK-Cu Monograph & Lab Specs)
+- https://aminoacidsupplements.co/peptides/cjc-1295/ (CJC-1295 Monograph & Lab Specs)
+- https://aminoacidsupplements.co/peptides/ipamorelin/ (Ipamorelin Monograph & Lab Specs)
+- https://aminoacidsupplements.co/peptides/aod-9604/ (AOD-9604 Monograph & Lab Specs)
+- https://aminoacidsupplements.co/peptides/selank/ (Selank Monograph & Lab Specs)
+- https://aminoacidsupplements.co/peptides/epithalon/ (Epithalon Monograph & Lab Specs)
+- https://aminoacidsupplements.co/peptides/mots-c/ (MOTS-c Monograph & Lab Specs)
+- https://aminoacidsupplements.co/peptides/tirzepatide/ (Tirzepatide Monograph & Lab Specs)
+- https://aminoacidsupplements.co/peptides/semaglutide/ (Semaglutide Monograph & Lab Specs)
+- https://aminoacidsupplements.co/peptides/kpv/ (KPV Tripeptide Monograph & Lab Specs)
+- https://aminoacidsupplements.co/peptides/pt-141/ (PT-141 (Bremelanotide) Monograph & Lab Specs)
+- https://aminoacidsupplements.co/category/tissue-repair-recovery/ (Tissue Repair & Angiogenesis Signaling Pathway Hub)
+- https://aminoacidsupplements.co/category/neuropeptides-cognition/ (Neuropeptides & CNS Signaling Signaling Pathway Hub)
+- https://aminoacidsupplements.co/category/growth-hormone-secretagogues/ (Growth Hormone Secretagogues & GHRH Signaling Pathway Hub)
+- https://aminoacidsupplements.co/category/metabolic-regulation/ (Metabolic & Incretin Signaling Signaling Pathway Hub)
+- https://aminoacidsupplements.co/category/dermal-extracellular-matrix/ (Dermal & Extracellular Matrix Signaling Pathway Hub)
+- https://aminoacidsupplements.co/category/cellular-longevity-mitochondrial/ (Cellular Longevity & Mitochondrial Axis Signaling Pathway Hub)
+- https://aminoacidsupplements.co/vendors/pharmagrade/ (PharmaGrade Store Verified Laboratory Profile)
+- https://aminoacidsupplements.co/vendors/direct-peptides/ (Direct Peptides Verified Laboratory Profile)
+- https://aminoacidsupplements.co/vendors/direct-sarms/ (Direct Sarms Verified Laboratory Profile)
+- https://aminoacidsupplements.co/vendors/peptide-works/ (Peptide Works Verified Laboratory Profile)
+- https://aminoacidsupplements.co/vendors/pharmalab-global/ (PharmaLab Global Verified Laboratory Profile)

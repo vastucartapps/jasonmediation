@@ -1,0 +1,23 @@
+# Real, minimal robots.txt — this is what actually has to exist for a bot to be ALLOWED
+# to crawl the site at all. It does not cause crawling or ranking by itself; it only
+# removes a block that would otherwise prevent it. Per Playbook §4.
+
+User-agent: *
+Allow: /
+
+# ChatGPT Search citation eligibility (separate from GPTBot training-data crawling —
+# Playbook §12a). Explicitly allowed, not just left to default.
+User-agent: OAI-SearchBot
+Allow: /
+
+# GPTBot governs training-data use only — allowed here by default (Allow: / above covers
+# it); block separately with "User-agent: GPTBot / Disallow: /" if that's ever a deliberate
+# choice to opt out of training-data inclusion. Not blocked in this sample.
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://example.com/sitemap.xml

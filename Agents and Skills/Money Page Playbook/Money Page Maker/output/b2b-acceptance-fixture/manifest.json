@@ -1,0 +1,23 @@
+{
+  "manifest_version": "1.0.0",
+  "pages": [
+    {
+      "page_id": "ledgerworks-seed-stage-bookkeeping",
+      "business_model": "b2b_professional_services",
+      "route": "/services/seed-stage-bookkeeping/",
+      "page_type": "claims_list",
+      "decision": "CREATE",
+      "reasoning": "Real demand, distinct intent, sufficient evidence, confirmed capability, and a genuine reason to exist beyond the niche-specific name. All five qualification signals pass."
+    }
+  ],
+  "excluded": [
+    {
+      "page_id": "ledgerworks-vanity-no-demand",
+      "business_model": "b2b_professional_services",
+      "route": "/services/generic-vanity-page/",
+      "page_type": "claims_list",
+      "decision": "REJECT",
+      "reasoning": "No real demand evidence -- a page is not justified by its existence in a spreadsheet, catalog, or keyword list alone."
+    }
+  ]
+}

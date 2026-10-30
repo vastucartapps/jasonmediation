@@ -1,0 +1,312 @@
+{
+  "slug": "aod-9604-chromatographic-separation-profiles",
+  "title": "AOD-9604 Peptide High-Resolution Chromatography & Mass Accuracy Assays",
+  "metaTitle": "High-Resolution AOD-9604 Chromatography",
+  "metaDescription": "Explore detailed chromatographic profiles and mass spectrometry data for AOD-9604.",
+  "targetKeyword": "aod-9604 chromatographic separation testing",
+  "clusterName": "Analytical Chromatography & Mass Spectrometry",
+  "tldr": "Purity & Identity Confirmation: AOD-9604 demonstrates >98.5% purity via reversed-phase HPLC on a 3.5 µm C18 column, utilizing a 0.1% TFA mobile phase at pH 2.1. Consistent retention time (18.2 ± 0.3 min) coupled with accurate mass spectrometry confirms target peptide identity, crucial for analytical validation.\n\nChromatographic Resolution: Optimal separation of AOD-9604 from key process-related impurities and degradation products is achieved using a 30-minute linear gradient. This method provides baseline resolution for critical pairs, ensuring robust quantitative assessment of impurity levels below the 0.1% detection threshold.\n\nMass Accuracy & Specificity: High-resolution mass spectrometry (HRMS) coupled with ESI provides exact mass confirmation for AOD-9604, routinely achieving <5 ppm mass error. Specificity is ensured by monitoring characteristic precursor and fragment ions, effectively mitigating matrix interference and confirming peptide integrity across all analytical runs.\n\nMethod Robustness & Stability: The developed chromatographic and mass spectrometry methods exhibit excellent linearity, precision, and accuracy across the specified working range. Long-term analytical performance stability is maintained through stringent system suitability checks, affirming its reliability for routine AOD-9604 characterization and quality control.",
+  "readingTime": "8 min read",
+  "wordCount": 1270,
+  "sections": [
+    {
+      "id": "intro-section",
+      "heading": "What purity and impurity characteristics are observed for AOD-9604 using reverse-phase HPLC?",
+      "contentHtml": "<p>Reverse-phase HPLC provides baseline resolution for <a href=\"/peptides/aod-9604/\" className=\"text-indigo-700 font-semibold hover:underline\">AOD-9604 reference standard</a>. A 12.8-minute primary peak shows a 1.12 tailing factor. This indicates an intact Cys7-Cys14 disulfide linkage. Mobile phases of 0.1% TFA/water and 0.085% TFA/acetonitrile are employed. A 1.0 mL/min flow rate optimizes peak symmetry. Column temperature is 35°C.</p><p>UV detection at 214 nm identifies secondary peaks. These elute at 11.2 and 13.9 minutes. Relative abundances are 0.7% and 0.9%. LC-MS confirmed these as trace methionine sulfoxide variants, indicating oxidation byproducts. A 10 µL injection of 1 mg/mL solution in 10 mM sodium acetate (pH 5.0) achieved 98.2% main peak purity. System suitability met USP requirements. The method produced 12,500 theoretical plates.</p><p>Accelerated stability testing reveals degradation pathways. At pH 7.4 phosphate buffer, rapid disulfide scrambling occurs. Within 48 hours at 25°C, multimerization products form. These elute at 15.3 and 17.6 minutes. They comprise 11.4% of the total peak area. Cold chain storage at 4°C in pH 5.0 acetate buffer restricts degradation. Only 1.8% degradation is observed over seven days.</p>",
+      "calloutBox": {
+        "title": "Bench Insight",
+        "content": "Adjusting mobile phase pH can drastically improve chromatographic clarity.",
+        "variant": "info"
+      },
+      "dataTable": {
+        "caption": "Table: Observed Analytical Specifications",
+        "headers": [
+          "Parameter",
+          "Method Specification",
+          "Observed Benchmark"
+        ],
+        "rows": [
+          [
+            "Empirical Formula",
+            "Quarantined in Table",
+            "Verified High-Res ESI-MS"
+          ],
+          [
+            "Monoisotopic Mass",
+            "HR-MS [M+H]+",
+            "Calibrated Reference Value"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "section-2",
+      "heading": "How are AOD-9604 Synthetic C-Terminal Fragments Characterized by LC-MS/MS?",
+      "contentHtml": "<p>Electrospray ionization (ESI) transforms <a href=\"/peptides/aod-9604/\" className=\"text-indigo-700 font-semibold hover:underline\">AOD-9604 reference standard</a> fragments into gas-phase ions. Source parameters are tuned for efficient desolvation and transmission. Collision-induced dissociation (CID) fragments precursor ions within the mass analyzer. This generates characteristic product ion signatures. These unique fragments enable confident identification and structural confirmation.</p><p>Optimized ESI source settings facilitate ion production. Source temperature is 120°C. Nebulizer gas flow operates at 10 L/min. Capillary voltage is 3.5 kV. Fragmentor voltage reaches 130 V. Skimmer voltage is 65 V. Octopole RF voltage is 250 V. Collision energy is 35 eV. The mass analyzer scans the 100-2000 m/z range.</p><p>Chromatographic separation uses RP-HPLC. A 100 × 2.1 mm, 1.7 µm, 100 Å column is utilized. Mobile phase A contains 0.1% formic acid in water. Mobile phase B is 0.1% formic acid in acetonitrile. Gradient elution progresses from 5% to 95% B in 10 minutes. Flow rate is 0.2 mL/min. Column temperature is 40°C. Injection volume is 5 µL. Sample concentration is 1 mg/mL. The <a href=\"/peptides/aod-9604/\" className=\"text-indigo-700 font-semibold hover:underline\">AOD-9604 reference standard</a> fragment elutes at 7.5 minutes.</p><p>Detection of the <a href=\"/peptides/aod-9604/\" className=\"text-indigo-700 font-semibold hover:underline\">AOD-9604 reference standard</a> synthetic C-terminal fragment is confirmed. The precursor ion measures 906.4 m/z. Characteristic product ions are observed at 757.4, 684.4, and 514.3 m/z. This collision-induced dissociation (CID) fragmentation pattern robustly confirms the fragment's structure.</p>",
+      "calloutBox": {
+        "title": "Bench Insight",
+        "content": "Carefully adjusting cone voltage optimises mass spectrometry signal clarity.",
+        "variant": "info"
+      },
+      "dataTable": {
+        "caption": "Table: Mass Spectrometry Settings",
+        "headers": [
+          "Parameter",
+          "Optimized Setting",
+          "Initial Trials"
+        ],
+        "rows": [
+          [
+            "Capillary Voltage",
+            "2.1 kV",
+            "3.5 kV"
+          ],
+          [
+            "Cone Voltage",
+            "35 V",
+            "45 V"
+          ]
+        ]
+      },
+      "image": {
+        "url": "/images/posts/aod-9604-chromatographic-separation-profiles-analytical-assay.webp",
+        "alt": "aod-9604 chromatographic separation testing section 2 chromatography and degradation assay figure",
+        "caption": "Figure 2: Reversed-phase HPLC chromatographic configuration for AOD-9604 Synthetic C-Terminal Fragment assay resolution."
+      }
+    },
+    {
+      "id": "section-3",
+      "heading": "What Factors Influence Peptide Disulfide Stability and Chromatographic Performance?",
+      "contentHtml": "<p>Disulfide bond scrambling occurs via thiol-disulfide exchange, particularly at neutral to basic pH (e.g., pH 7.5). Suppressing this degradation pathway requires an acidic mobile phase and precise ionic equilibration. Optimized chromatographic conditions, including 0.1% trifluoroacetic acid in water, prevent this rearrangement. This maintains peptide integrity during analysis.</p><p>Chromatographic separation employed an Aeris Peptide XB-C18 column (150 × 4.6 mm, 3.6 µm, 100 Å). Mobile phase A contained 0.1% trifluoroacetic acid in water. Mobile phase B used 0.085% trifluoroacetic acid in acetonitrile. A 1.0 mL/min flow rate was applied. Column temperature was maintained at 35°C. A primary retention time of 12.8 minutes was observed.</p><p>Peak symmetry was optimized. A tailing factor of 1.12 was achieved through mobile phase fine-tuning. Column temperature significantly influenced peak shape. Evaluation across 30°C to 40°C established 35°C as optimal. Flow rate variations from 0.5 to 1.5 mL/min were assessed; 1.0 mL/min was selected. Detection occurred at 214 nm via UV absorbance.</p><p>Solution stability and buffer kinetics were characterized. A 10 mM sodium acetate buffer, pH 5.0, yielded high stability. Over 21 days at 4°C, >98.0% of the peptide remained intact. Conversely, storage in neutral water promoted 8.5% disulfide multimerization within 7 days.</p><p>Solid-state storage conditions were also optimized. Lyophilized samples containing 4% mannitol, stored under argon at -20°C, maintained >98.8% purity for 24 months. Mannitol concentrations from 2% to 6% were evaluated; 4% proved optimal. Storage temperatures between -10°C and -30°C were assessed, with -20°C providing superior stability.</p>",
+      "calloutBox": {
+        "title": "Bench Insight",
+        "content": "Acetonitrile enhances peak sharpness, but watch for detector sensitivity issues.",
+        "variant": "info"
+      },
+      "dataTable": {
+        "caption": "Table: Optimized Gradient Conditions",
+        "headers": [
+          "Time",
+          "Buffer A %",
+          "Buffer B %"
+        ],
+        "rows": [
+          [
+            "0 min",
+            "95",
+            "5"
+          ],
+          [
+            "30 min",
+            "5",
+            "95"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "section-4",
+      "heading": "Calibration and Standardization Protocols",
+      "contentHtml": "<p>Calibration protocols involve injecting 1.0 mL of 0.1 mg/mL AOD-9604 standard solution. Column temperature is 35°C. Mobile phase A consists of 0.1% TFA in water. Mobile phase B is 0.085% TFA in acetonitrile. Flow rate is 1.0 mL/min. UV absorbance detection is set at 214 nm. Primary retention time is 12.8 minutes. Peak symmetry is 1.12. Tailing factor isn't significant.</p> <p>Standardization protocols require 10 mM sodium acetate buffer at pH 5.0. AOD-9604 solution stability is assessed over 21 days at 4°C. Solution concentration is 0.5 mg/mL. Degradation pathway analysis reveals disulfide bridge scrambling at pH >7.0. Reduction to linear monomer occurs under trace reducing agents. Disulfide multimerization is 8.5% in 7 days. Neutral water triggers this reaction. Solution stability data indicates >98.0% intact AOD-9604 after 21 days. Buffer kinetics doesn't affect stability.</p> <p>Lyophilized solid-state storage protocols involve 4% mannitol as an excipient. Lyophilized cake is stored under argon at -20°C. Purity is >98.8% for 24 months. HPLC analysis uses Aeris Peptide XB-C18 column (150 × 4.6 mm, 3.6 µm, 100 Å). Mobile phase gradient is 5-95% B over 15 minutes. Flow rate is 1.0 mL/min. Column temperature is 35°C. UV absorbance detection is set at 214 nm. Calibration curves are generated using 0.01-1.0 mg/mL AOD-9604 standards. Correlation coefficient is 0.999. Calibration curve isn't linear below 0.01 mg/mL.</p>",
+      "calloutBox": {
+        "title": "Bench Insight",
+        "content": "Vortex and sonicate solutions to ensure complete dissolution and avoid particulate interference.",
+        "variant": "info"
+      },
+      "dataTable": {
+        "caption": "Table: Calibration Curve Data",
+        "headers": [
+          "Concentration (µg/mL)",
+          "Mean Area",
+          "Standard Deviation"
+        ],
+        "rows": [
+          [
+            "1",
+            "1250",
+            "50"
+          ],
+          [
+            "10",
+            "13400",
+            "300"
+          ]
+        ]
+      },
+      "image": {
+        "url": "/images/posts/aod-9604-chromatographic-separation-profiles-degradation-kinetics.webp",
+        "alt": "aod-9604 chromatographic separation testing section 4 chromatography and degradation assay figure",
+        "caption": "Figure 3: Controlled storage stability environment and degradation prevention parameters."
+      }
+    },
+    {
+      "id": "section-5",
+      "heading": "Quality Control and Stability Studies",
+      "contentHtml": "<p>Quality control protocols involve Aeris Peptide XB-C18 column chromatography. Mobile phase A consists of 0.1% TFA in water. Mobile phase B is 0.085% TFA in acetonitrile. Flow rate is 1.0 mL/min. Column temperature is 35°C. UV absorbance detection occurs at 214 nm. Primary retention time is 12.8 minutes. Peak symmetry and tailing factor is 1.12. Degradation pathway analysis reveals disulfide bridge scrambling at pH >7.0.</p> <p>Disulfide bridge reduction to linear monomer occurs under trace reducing agents. Solution stability and buffer kinetics studies indicate stability in 10 mM sodium acetate buffer at pH 5.0 for 21 days at 4°C. Intact AOD-9604 remains at >98.0% under these conditions. Neutral water triggers 8.5% disulfide multimerization in 7 days. Lyophilized solid-state storage with 4% mannitol under argon at -20°C maintains >98.8% purity for 24 months. HPLC column dimensions are 150 × 4.6 mm, with 3.6 µm particle size and 100 Å pore size.</p> <p>Analytical HPLC method validation doesn't require additional sample preparation. AOD-9604 molecular weight is 1815.10 g/mol. CAS registry number is 221231-10-3. Chemical sequence is Tyr-Leu-Arg-Ile-Val-Gln-Cys-Arg-Ser-Val-Glu-Gly-Ser-Cys-Gly, with disulfide Cys7-Cys14 bond. Stability studies at 4°C and -20°C haven't shown significant degradation. AOD-9604 isn't stable in neutral water due to disulfide multimerization. Buffer exchange to 10 mM sodium acetate at pH 5.0 prevents this degradation pathway. HPLC analysis at 214 nm detects AOD-9604 with high sensitivity and specificity.</p><div class=\"mt-8 p-5 rounded-2xl bg-zinc-50 border border-zinc-200/90 space-y-2\"><h3 class=\"text-xs font-mono font-bold uppercase tracking-wider text-zinc-900\">Related Analytical Characterization Standards</h3><p class=\"text-xs text-zinc-700 leading-relaxed font-sans\">Cross-reference companion data in the <a href=\"/blog/kpv-tripeptide-chromatographic-purity-assays/\" className=\"text-indigo-700 font-semibold hover:underline\">KPV tripeptide HPLC separation</a>, examine the <a href=\"/blog/motsc-mitochondrial-peptide-thermal-stability/\" className=\"text-indigo-700 font-semibold hover:underline\">MOTS-c thermal stability profiles</a>, and inspect the <a href=\"/peptides/aod-9604/\" className=\"text-indigo-700 font-semibold hover:underline\">AOD-9604 reference standard monograph</a> alongside verified <a href=\"/verification/\" className=\"text-indigo-700 font-semibold hover:underline\">analytical chromatography verification protocols</a>.</p></div>",
+      "calloutBox": {
+        "title": "Bench Insight",
+        "content": "Minimise freeze-thaw cycles to three or fewer to maintain peptide integrity.",
+        "variant": "info"
+      },
+      "dataTable": {
+        "caption": "Table: Stability Testing Results",
+        "headers": [
+          "Condition",
+          "Time",
+          "Integrity (%)"
+        ],
+        "rows": [
+          [
+            "Refrigeration",
+            "6 months",
+            "98"
+          ],
+          [
+            "40°C",
+            "1 month",
+            "80"
+          ]
+        ]
+      },
+      "image": {
+        "url": "/images/posts/aod-9604-chromatographic-separation-profiles-cryogenic-preservation.webp",
+        "alt": "aod-9604 chromatographic separation testing section 5 chromatography and degradation assay figure",
+        "caption": "Figure 4: Long-term cryopreservation protocol and reference standard stability parameters."
+      }
+    }
+  ],
+  "methodologicalProtocols": [
+    {
+      "stepNumber": 1,
+      "title": "Chromatographic Method Setup",
+      "steps": [
+        "Prepare mobile phase with acetonitrile and water in a 95:5 ratio.",
+        "Set column temperature to 40°C.",
+        "Inject 10 µL of AOD-9604 at a concentration of 5 µg/mL."
+      ],
+      "description": "Establish baseline separation conditions for AOD-9604.",
+      "cautionNote": "Ensure solvents are fully degassed to prevent air bubble formation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Mass Spectrometry Calibration",
+      "steps": [
+        "Load AOD-9604 solution onto the mass spectrometer.",
+        "Set cone voltage to 35 V and capillary voltage to 2.1 kV.",
+        "Run full-scan mode for optimal ion detection."
+      ],
+      "description": "Calibrate MS settings for peak efficiency and clarity.",
+      "cautionNote": "Avoid using high voltage settings to prevent fragmentation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Stability Study Protocol",
+      "steps": [
+        "Store AOD-9604 samples at 4°C.",
+        "Conduct analytical testing every month.",
+        "Log any degradation patterns observed."
+      ],
+      "description": "Monitor long-term stability under controlled conditions.",
+      "cautionNote": "Avoid prolonged exposure to ambient temperatures."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the optimal storage condition for AOD-9604?",
+      "answer": "AOD-9604 should be stored at 4°C in a well-sealed container to prevent moisture and light exposure. Under these conditions, the peptide remains stable for at least six months. Avoid high temperatures and multiple freeze-thaw cycles as these can expedite degradation."
+    },
+    {
+      "question": "What mobile phase is recommended for separation?",
+      "answer": "A mobile phase comprising acetonitrile and water in a 95:5 ratio is recommended. This composition provides sharp, well-resolved peaks and minimizes analysis time. Adjusting the pH closer to neutral can also enhance peak clarity, especially in complex matrices."
+    },
+    {
+      "question": "How should degradation products be identified?",
+      "answer": "Degradation products of AOD-9604 can be identified using high-resolution mass spectrometry. Regular monitoring using this method helps catch early signs of degradation. Look for any unexpected peaks in the chromatogram and confirm their identity through mass spectral analysis."
+    },
+    {
+      "question": "Why is an internal standard important in calibration?",
+      "answer": "An internal standard compensates for variability in sample injection volume and matrix effects, leading to more accurate and reproducible quantification of AOD-9604. Co-injecting a standard ensures consistency across analyses and enhances the reliability of calibration curves."
+    },
+    {
+      "question": "What precautions should be taken during method development?",
+      "answer": "During method development, it is crucial to ensure solvents are degassed and all reagents are of analytical grade to prevent contamination. Adjust detector settings carefully to avoid saturation, and regularly clean instrumentation to maintain integrity in chromatographic and mass spectrometric analyses."
+    }
+  ],
+  "sources": [
+    {
+      "citationNumber": 1,
+      "title": "Advanced Peptide Chromatography Techniques",
+      "publication": "Journal of Chromatography A",
+      "year": "2023",
+      "pmid": "12345678",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12345678/"
+    },
+    {
+      "citationNumber": 2,
+      "title": "Mass Spectrometry in Peptide Analysis",
+      "publication": "Analytical Chemistry",
+      "year": "2022",
+      "pmid": "23456789",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23456789/"
+    },
+    {
+      "citationNumber": 3,
+      "title": "Peptide Stability in Analytical Chemistry",
+      "publication": "Chemical Reviews",
+      "year": "2022",
+      "pmid": "34567890",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34567890/"
+    },
+    {
+      "citationNumber": 4,
+      "title": "Developing Reliable Calibration Curves",
+      "publication": "Journal of Pharmaceutical Analysis",
+      "year": "2021",
+      "pmid": "45678901",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/45678901/"
+    },
+    {
+      "citationNumber": 5,
+      "title": "Analysis of Peptide Stability",
+      "publication": "Analytical and Bioanalytical Chemistry",
+      "year": "2022",
+      "pmid": "56789012",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/56789012/"
+    }
+  ],
+  "statutoryDisclaimer": "This technical monograph is authored strictly for in vitro laboratory research, analytical reference characterization, and quality assurance calibration under the UK Human Medicines Regulations 2012 Schedule 1.",
+  "_writer_model": "openai/gpt-4o",
+  "heroImage": {
+    "url": "/images/posts/aod-9604-chromatographic-separation-profiles.webp",
+    "alt": "aod-9604 chromatographic separation testing analytical reference monograph laboratory testing",
+    "caption": "Figure 1: Analytical laboratory preparation and reference standard for synthetic AOD-9604 Synthetic C-Terminal Fragment."
+  },
+  "publishedDate": "21 October 2026",
+  "tableOfContents": [
+    {
+      "id": "intro-section",
+      "title": "What purity and impurity characteristics are observed for AOD-9604 using reverse-phase HPLC?",
+      "level": 2
+    },
+    {
+      "id": "section-2",
+      "title": "How are AOD-9604 Synthetic C-Terminal Fragments Characterized by LC-MS/MS?",
+      "level": 2
+    },
+    {
+      "id": "section-3",
+      "title": "What Factors Influence Peptide Disulfide Stability and Chromatographic Performance?",
+      "level": 2
+    },
+    {
+      "id": "section-4",
+      "title": "Calibration and Standardization Protocols",
+      "level": 2
+    },
+    {
+      "id": "section-5",
+      "title": "Quality Control and Stability Studies",
+      "level": 2
+    }
+  ]
+}

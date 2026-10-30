@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Real, minimal sitemap — this is the literal file that tells Google "these pages exist,
+     go look at them." Without it (or an external link), a brand-new page can sit unindexed
+     indefinitely no matter how good the content is. Per Playbook §4/§11. Submitted via
+     Google Search Console, not just placed here — placement alone does nothing.
+     Generated to match the full set of CREATE-qualified pages exactly — reconciled with
+     scripts/validate_sitemap.py, which fails loudly if this ever drifts from that set again. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com/arizona/maricopa-county/ac-repair/</loc>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://example.com/arizona/maricopa-county/mesa/emergency-ac-repair/</loc>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://example.com/arizona/maricopa-county/scottsdale/emergency-ac-repair/</loc>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://example.com/arizona/yuma-county/yuma/emergency-ac-repair/</loc>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://example.com/arizona/maricopa-county/gilbert/commercial-ac-repair/</loc>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+</urlset>

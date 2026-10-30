@@ -37,7 +37,56 @@ Thumbs.db
 *.swo
 .vscode/
 .idea/
-# Backups
+# Backups and temporary site clones
 backups/
 Sites/Temporary Site Resources/
+Sites/*/Temporary Site Resources/
+test_*
+sample_*
+live_*
+*_clean.json
+*_full.txt
+scratch_*
+__pycache__/
+*.pyc
+*.tsbuildinfo
+Sites/node_modules
+
+# Automation runners and local benchmark scripts (Local Only - Never Push)
+runner*.py
+agent_runner*.py
+vps_runner*.py
+update_runner.py
+watchdog.sh
+scripts/run_ab_benchmark.py
+scripts/test_deepseek.py
+scripts/test_technical_rewrite.py
+scripts/upgrade_with_substance_v5.py
+evaluation/
+fix_and_rebuild_bpc.py
+test_*.py
+test_*
+sample_*
+live_*
+contentflow.logrotate
+docs/automation-handoff/
+AUTOMATION_HANDOFF.md
+Automation/
+CONTENT_AUTOMATION_PLAYBOOK.md
+.secrets/
+*.secrets*
+!.secrets.example
+!.secrets.example/**
+.secrets_vault/
+*.env*
+!.env.example
+*.pem
+*.key
+*vps*.json
+!*vps*.json.example
+*ftp*.json
+*credentials*
+auth*.json
+.env.cpanel
+
 

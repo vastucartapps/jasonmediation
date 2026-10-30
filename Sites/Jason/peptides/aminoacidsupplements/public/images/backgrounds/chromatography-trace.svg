@@ -1,0 +1,24 @@
+<svg width="800" height="260" viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="peakGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4338ca" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#6d28d9" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#4338ca" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+  <!-- Baseline grid -->
+  <line x1="50" y1="220" x2="750" y2="220" stroke="#71717a" stroke-width="1.5" stroke-opacity="0.3"/>
+  <line x1="50" y1="30" x2="50" y2="220" stroke="#71717a" stroke-width="1.5" stroke-opacity="0.3"/>
+  <!-- Chromatographic Peak Area -->
+  <path d="M 50,220 L 220,220 C 260,220 280,215 300,190 C 330,150 345,40 355,40 C 365,40 380,150 410,190 C 430,215 450,220 490,220 L 530,220 C 540,220 545,210 550,210 C 555,210 560,220 570,220 L 750,220" 
+        fill="url(#peakGrad)"/>
+  <!-- Chromatographic Curve Line -->
+  <path d="M 50,220 L 220,220 C 260,220 280,215 300,190 C 330,150 345,40 355,40 C 365,40 380,150 410,190 C 430,215 450,220 490,220 L 530,220 C 540,220 545,210 550,210 C 555,210 560,220 570,220 L 750,220" 
+        fill="none" stroke="#4338ca" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Annotation on major peak -->
+  <circle cx="355" cy="40" r="4.5" fill="#c2410c"/>
+  <text x="365" y="44" font-family="JetBrains Mono, monospace" font-size="12" font-weight="bold" fill="#312e81">99.4% Purity Main Peak (Rt: 8.42 min)</text>
+  <text x="60" y="240" font-family="JetBrains Mono, monospace" font-size="10" fill="#71717a">0.0 min</text>
+  <text x="345" y="240" font-family="JetBrains Mono, monospace" font-size="10" fill="#71717a">8.42 min</text>
+  <text x="710" y="240" font-family="JetBrains Mono, monospace" font-size="10" fill="#71717a">18.0 min</text>
+</svg>
