@@ -1,0 +1,841 @@
+## 1. Your Role and Mission
+
+Act as a senior software architect, AI systems engineer, research engineer, scientific fact-checker, editorial director, SEO content strategist, and quality-assurance engineer.
+
+Your task is to audit, repair, and substantially improve my existing automatic article-generation and publishing application.
+
+The application already exists and uses an OpenRouter API key to generate content. Its exact architecture, programming language, framework, data storage, publishing integrations, and workflow implementation must be discovered by inspecting the existing project. Do not assume these details.
+
+### Current problems
+
+The current automation has repeatedly produced unacceptable results despite more than two weeks of attempted fixes:
+
+- Grammarly reports very high AI-writing scores, sometimes exceeding 87%.
+- Articles have plagiarism and originality concerns.
+- The writing is generic, repetitive, artificial, and often poor quality.
+- Academic references may be invented, mismatched, or irrelevant.
+- Scientific and technical claims may be unsupported or internally inconsistent.
+- Articles repeat information across sections and contain filler.
+- Internal links are not reliably selected for the correct website.
+- Multiple websites must be managed independently without cross-site contamination.
+- The system does not reliably establish whether the content is factually correct before publication.
+
+I do not want another round of superficial prompt tweaks. I want a technically sound, maintainable, evidence-driven content production system.
+
+### Primary objective
+
+Build an automation that consistently produces original, well-researched, genuinely useful, publication-quality articles for multiple websites, with a reliable mechanism to identify and stop bad content before it is published.
+
+Optimize for quality, factual integrity, originality, editorial excellence, maintainability, and successful publication—not maximum output volume or minimum API cost.
+
+Target volume: approximately 30 articles per month across all configured websites.
+
+## 2. Non-Negotiable Engineering Rules
+
+1. Inspect the existing repository, application entry points, dependencies, configuration, database, prompts, model calls, publishing logic, and error handling before modifying anything.
+
+2. Preserve working functionality wherever possible. Do not rewrite the entire application merely because a different architecture looks attractive.
+
+3. Identify the actual causes of failure and produce a short technical audit before implementing changes.
+
+4. Use OpenRouter for model access. Do not assume that the current model is an OpenAI model or that any particular provider is already configured.
+
+5. Do not hard-code unverified model IDs, pricing, context limits, or capabilities.
+
+6. Do not invent source documents, research findings, experimental measurements, quotations, authors, references, URLs, internal links, or credentials.
+
+7. Never use an AI detector score as proof of authorship or as the sole criterion for content acceptance. Improve genuine editorial quality rather than using paraphrasing tricks or detector-evasion techniques.
+
+8. Never publish an article simply because generation completed successfully.
+
+9. Keep secrets out of prompts, article content, logs, generated reports, source-control commits, and user-visible output.
+
+10. Make the implementation testable. Add automated tests, failure scenarios, structured logs, configuration validation, and clear documentation.
+
+11. Do not claim that a feature works until it has been implemented and tested.
+
+12. If a required service, API key, database, or integration is unavailable, implement the appropriate interface or configuration and clearly identify what remains unverified. Never fabricate a successful test.
+
+## 3. Mandatory Initial Repository Audit
+
+Before coding, inspect the existing application and report:
+
+- Language, framework, runtime, and application structure.
+- Current OpenRouter integration and exact model IDs.
+- System prompts, user prompts, prompt templates, and generation parameters.
+- How topics, keywords, briefs, and article outlines are produced.
+- Whether web research is actually performed or the model relies on its existing knowledge.
+- How source URLs and academic references are generated and checked.
+- How article sections are created, assembled, revised, and stored.
+- How internal links and media URLs are selected.
+- How multiple websites and their settings are represented.
+- How content is sent to the publishing platform.
+- Current scheduling, retry, error handling, and duplicate-publication safeguards.
+- Available logs, database records, test fixtures, and existing quality checks.
+- Potential exposure of API keys, credentials, or private website information.
+- Known dependencies, security risks, and integration limitations.
+
+Trace the complete path from article request to published article.
+
+For each major failure, identify the likely cause, the evidence supporting that conclusion, the proposed fix, and the test that will prove the fix works.
+
+Do not assume that the model prompt is the only problem.
+
+## 4. Required Target Architecture
+
+Refactor the application into logically separate, testable components. Adapt the names and implementation to the existing codebase rather than forcing an unnecessary framework migration.
+
+The pipeline must include:
+
+1. Site configuration and isolation.
+2. Topic and content-inventory analysis.
+3. Research planning and source retrieval.
+4. Source validation and evidence extraction.
+5. Claim and evidence ledger.
+6. Article outline and editorial plan.
+7. Evidence-grounded article drafting.
+8. Whole-document editorial revision.
+9. Independent factual verification.
+10. Academic reference verification, where applicable.
+11. Plagiarism and similarity assessment.
+12. Internal-link selection and validation.
+13. SEO, metadata, and technical validation.
+14. Quality scoring and hard publication gates.
+15. Draft creation and controlled publication.
+16. Audit logs, metrics, monitoring, and recovery.
+
+Each stage must have a defined input, output schema, failure conditions, and retry policy.
+
+A failure in one stage must not silently turn into a successful publication.
+
+## 5. OpenRouter Model Discovery and Selection
+
+Implement a model-selection subsystem using OpenRouter's official model catalogue and documented API capabilities.
+
+Official documentation:
+- Model catalogue: https://openrouter.ai/docs/api/api-reference/models/get-models
+- API documentation: https://openrouter.ai/docs
+
+### Requirements
+
+At runtime or during a controlled configuration refresh:
+
+- Retrieve the current available model catalogue.
+- Record canonical model IDs, provider, supported parameters, context limits, pricing, and relevant capabilities when available.
+- Filter out models that cannot support the required task or output format.
+- Account for context limits, maximum output length, rate limits, and applicable provider restrictions.
+- Avoid assuming that a model supports web search, structured output, JSON Schema, or other tools unless its current capabilities and the configured endpoint support them.
+- Use explicit model IDs in production for reproducibility.
+- Record the model ID, configuration, prompt version, and relevant request metadata for each generation and verification operation.
+- Support configurable model selection and fallbacks.
+- Do not silently switch to a lower-quality model when a request fails.
+- When fallback is necessary, record the reason and reapply the appropriate quality gates.
+- Refresh catalogue data safely and preserve the last known valid configuration if discovery fails.
+
+### Benchmark model candidates
+
+Select a small shortlist of currently available OpenRouter models based on documented capabilities and preliminary tests.
+
+Evaluate candidates for:
+
+- Editorial writing quality.
+- Instruction following.
+- Evidence-grounded reasoning.
+- Source attribution.
+- Contradiction detection.
+- Structured output reliability.
+- Long-document consistency.
+- Revision quality.
+- Cost per accepted article.
+- Latency and operational reliability.
+
+Do not select a model based solely on popularity, general benchmark rankings, marketing claims, or its ability to produce fluent text.
+
+Run identical test cases through each candidate with the same brief, source pack, editorial rules, and relevant site inventory.
+
+Choose the best-performing model for each role. The drafting model and verification model may be different.
+
+Do not assume that two different models are statistically independent or that agreement between them proves a claim is true.
+
+## 6. Research Before Writing
+
+A major requirement is to prevent the model from inventing research after it has already written the article.
+
+### Research workflow
+
+1. Parse the topic, intended audience, target country, search intent, article type, and requested level of evidence.
+2. Retrieve the correct site's existing content inventory.
+3. Identify relevant primary sources, official documentation, original research, recognized professional guidance, and other suitable authoritative material.
+4. Retrieve the actual source content through supported research tools, APIs, or accessible documents.
+5. Store source metadata and the relevant supporting passages.
+6. Identify conflicting findings, missing evidence, publication dates, limitations, and potentially outdated guidance.
+7. Construct a research brief and evidence pack.
+8. Draft only after the research pack has passed basic validation.
+
+A search-result snippet alone is insufficient evidence for a detailed scientific, technical, medical, legal, or other high-impact claim.
+
+If a source cannot be accessed, mark it as inaccessible. Do not pretend to have read it.
+
+### Research source hierarchy
+
+Select sources according to the subject, including:
+
+- Original research and primary datasets.
+- Official government and regulatory publications.
+- Official technical documentation.
+- Systematic reviews and high-quality scholarly reviews.
+- Professional standards and recognized institutional guidance.
+- Reputable secondary sources for context where appropriate.
+
+Do not apply a rigid hierarchy without considering the question. A current official regulation may be more relevant than an older paper, while a primary experiment may be necessary to verify a particular experimental result.
+
+### Source record
+
+Each source record should include, when available:
+
+- Stable source ID.
+- Title.
+- Author or issuing organization.
+- Publication date and retrieval date.
+- Canonical URL.
+- DOI, PMID, or other bibliographic identifier.
+- Source type.
+- Relevant quoted or extracted passage.
+- Access and verification status.
+- Claims supported by the source.
+- Limitations and potential conflicts of interest.
+
+Keep source records separate from generated prose.
+
+## 7. Claim-Level Evidence and Hallucination Controls
+
+Implement a claim-and-evidence ledger for every article that requires factual verification.
+
+Each material factual claim must be represented in a structured record containing:
+
+- Claim ID.
+- Claim text.
+- Claim category.
+- Supporting source IDs.
+- Exact supporting passages or evidence locations.
+- Verification status.
+- Confidence or uncertainty notes.
+- Known limitations or conflicting evidence.
+- Reviewer or validation history where applicable.
+
+### Required claim statuses
+
+Use explicit statuses such as:
+
+- Supported.
+- Partially supported.
+- Contradicted.
+- Unsupported.
+- Unverified.
+- Not applicable to factual verification.
+
+Do not allow the model to label its own claim as verified merely because it generated a citation.
+
+The verification process must independently compare the claim with the retrieved evidence.
+
+### Mandatory rules
+
+- A reference must support the specific claim to which it is attached.
+- A real source that does not support the claim is a verification failure.
+- A plausible-sounding citation is not evidence.
+- A fabricated number must not be converted into a factual statement.
+- Conflicting source results must be disclosed, resolved with adequate evidence, or escalated.
+- Distinguish established findings from hypotheses, interpretations, and recommendations.
+- Never invent experimental data or present simulated values as measured results.
+- If a fact cannot be verified, omit it, qualify it appropriately, or hold the article.
+- Preserve material uncertainty and limitations.
+- Do not invent certainty to make the article sound authoritative.
+
+For empirical articles, every reported measurement must have traceable provenance. If original experimental records are not supplied, the article must not claim that the measurements were personally observed or experimentally confirmed.
+
+## 8. Academic Reference Verification
+
+This stage is mandatory for articles that cite academic literature.
+
+Implement bibliographic verification using suitable official or recognized metadata services, including:
+
+- Crossref REST API: https://api.crossref.org/
+- PubMed: https://pubmed.ncbi.nlm.nih.gov/
+- Europe PMC, where appropriate.
+- DOI resolution and publisher pages where available.
+
+### Verification procedure
+
+1. Extract every citation from the article.
+2. Resolve its DOI, PMID, or other supplied identifier.
+3. Retrieve the bibliographic record.
+4. Compare title, authors, journal, publication year, DOI, and identifier.
+5. Confirm that the source exists and is not merely a plausible reference.
+6. Retrieve and inspect the original paper, abstract, full text, or accessible authoritative record as appropriate.
+7. Check whether the cited source actually supports the associated claim.
+8. Flag retracted publications, corrections, expressions of concern, and significant limitations when detectable.
+9. Preserve a verification report for each reference.
+
+Do not invent missing bibliographic details.
+
+An unresolved source must remain unverified. It must not be silently accepted.
+
+If a source is behind a paywall, do not claim to have checked inaccessible full text. State what could be verified from the accessible metadata or abstract and what remains uncertain.
+
+## 9. Article Generation and Exceptional Editorial Quality
+
+The writing model must receive a structured evidence pack, an approved outline, the site's editorial configuration, and the intended audience.
+
+Do not rely on a generic instruction such as "write a comprehensive, human-sounding, SEO-optimized article."
+
+### Article planning
+
+Before drafting, determine:
+
+- The specific question the article must answer.
+- The reader's knowledge level and likely needs.
+- Search intent and expected information.
+- What the article can contribute that existing pages do not.
+- The necessary concepts, evidence, examples, and caveats.
+- What should be excluded because it is unsupported, redundant, or irrelevant.
+- The correct article type and appropriate structure.
+
+### Writing requirements
+
+Articles must:
+
+- Answer the reader's actual question early.
+- Explain concepts accurately and in a logical sequence.
+- Use concrete, topic-specific explanations rather than generic filler.
+- Include meaningful examples, comparisons, or implications when supported.
+- Preserve scientific and technical nuance.
+- Distinguish facts from interpretation.
+- Avoid repetitive introductions, summaries, and conclusions.
+- Avoid repeating the same information across headings.
+- Avoid fabricated quotations, anecdotes, case studies, or first-person experiences.
+- Avoid meaningless keyword repetition.
+- Avoid excessive headings, lists, tables, and formulaic "key takeaway" sections.
+- Use headings that accurately describe their contents.
+- Include citations close to the claims they support.
+- Maintain consistent terminology and numerical values throughout the document.
+- Avoid claiming expertise, research experience, or experimental work that the author did not perform.
+
+Do not impose arbitrary word counts. Article length must be justified by the topic, reader intent, evidence, and competing information needs.
+
+### Natural editorial quality
+
+The goal is genuinely good writing, not evasion of AI detectors.
+
+Require the system to remove:
+
+- Generic opening paragraphs that add no value.
+- Repetitive transitions.
+- Inflated or unnatural phrasing.
+- Empty claims about the importance of a topic.
+- Redundant conclusions.
+- Unnecessary restatement of headings.
+- Unsubstantiated superlatives.
+- Formulaic advice that could apply to almost any article.
+- Repeated sentences that differ only slightly in wording.
+
+Vary sentence structure where it improves readability, not merely to manipulate detection software.
+
+Do not use random errors, awkward prose, artificial personal anecdotes, deliberate misspellings, or synonym substitution as supposed solutions to AI detection.
+
+### Whole-document editing
+
+After all sections are assembled, perform a dedicated editorial pass across the entire article.
+
+Check for:
+
+- Duplicate explanations.
+- Contradictory claims.
+- Inconsistent terminology.
+- Conflicting figures, dates, units, and methods.
+- Broken logical progression.
+- Unnecessary sections.
+- Abrupt transitions.
+- Missing explanations.
+- Unjustified conclusions.
+- Inconsistent references.
+- Repeated or irrelevant internal links.
+
+A section that passes individually must still be reviewed in the context of the complete document.
+
+## 10. Plagiarism and Originality Checks
+
+Implement multiple complementary checks rather than relying on a single language model.
+
+### Required checks
+
+A. Compare the draft with its supplied source documents.
+
+B. Compare it against the relevant site's existing articles.
+
+C. Compare it against other articles produced or stored by the application, including other configured sites where authorized.
+
+D. Detect unusually similar passages, copied sentence sequences, repeated section structures, and near-duplicate paragraphs.
+
+E. Identify missing attribution for quotations and distinctive claims.
+
+F. Detect content that has merely rearranged or lightly paraphrased a source without contributing adequate original analysis.
+
+Where appropriate, integrate a dedicated text-similarity or plagiarism-detection service. Evaluate the service's coverage, licensing, privacy policy, API availability, and limitations before implementation.
+
+### Similarity reporting
+
+The report must distinguish:
+
+- Exact textual overlap.
+- Near-verbatim overlap.
+- Common terminology and standard expressions.
+- Properly attributed quotations.
+- Bibliographic references.
+- Template or boilerplate text.
+- Similarity with the site's own earlier content.
+- Potentially duplicated content across different websites.
+
+Do not treat a raw similarity percentage as definitive proof of plagiarism.
+
+There is no universal similarity threshold that makes every article safe. Calibrate thresholds against reviewed examples and use severity-based decisions.
+
+When suspicious overlap is found, return the relevant passage, matching source, similarity evidence, and recommended action.
+
+Do not automatically rewrite a suspicious passage merely to hide the similarity. Establish whether it is properly attributed, technically necessary, inaccurate, or genuinely derivative, then correct it appropriately.
+
+## 11. Site-Specific Knowledge and Isolation
+
+The application must support multiple websites without mixing their content, URLs, editorial settings, media, or publication identities.
+
+Every article job must explicitly identify its target site.
+
+### Per-site configuration
+
+Store and validate:
+
+- Site ID and canonical domain.
+- Brand identity and editorial voice.
+- Target geography and audience.
+- Subject-matter scope.
+- Content policies and prohibited claims.
+- Preferred and disallowed terminology.
+- SEO conventions.
+- Existing page inventory and sitemap.
+- Internal-link inventory.
+- Categories and tags.
+- Author and attribution rules.
+- Image and media rules.
+- Schema and metadata requirements.
+- Publishing destination and authorization.
+- Required approval policy.
+- Applicable legal or regulatory constraints.
+
+### Isolation requirements
+
+- Never use another site's URLs unless an explicitly authorized external reference is intended.
+- Never insert another site's internal links as if they belonged to the current site.
+- Never reuse another site's author identity, logo, image assets, or publishing credentials by accident.
+- Never assume that similar niches imply interchangeable content.
+- Never expose private configuration from one site in another site's job logs or generated articles.
+- Use site-scoped database queries and authorization checks.
+- Validate the target site again immediately before publication.
+
+Treat site isolation as an enforceable software rule, not a writing instruction.
+
+## 12. Internal-Link Intelligence
+
+Internal links must be selected from verified site data.
+
+Create or maintain a crawlable page inventory with:
+
+- Canonical URL.
+- Page title.
+- Main topic and related entities.
+- Page type.
+- Relevant target query or intent, where available.
+- HTTP status.
+- Canonical status.
+- Indexability where detectable.
+- Last verification time.
+- Existing link relationships.
+
+### Link selection
+
+1. Identify concepts in the article that deserve an internal link.
+2. Retrieve relevant destination candidates from the correct site's inventory.
+3. Rank candidates by topical relevance, reader value, page purpose, and contextual fit.
+4. Select a link only if it improves navigation or explanation.
+5. Generate descriptive anchor text that accurately represents the destination.
+6. Validate the destination and domain before accepting the link.
+7. Record the source page, destination page, anchor text, and validation result.
+
+Do not invent URLs. Do not force an arbitrary number of links into every article.
+
+Do not link every keyword, repeat the same anchor excessively, or use unrelated money pages simply to improve an SEO score.
+
+If no relevant internal page exists, leave the concept unlinked and record the opportunity. Never fabricate a destination to satisfy a link quota.
+
+External citations and internal links must be represented as separate link types.
+
+## 13. SEO and Technical Validation
+
+SEO should improve discoverability and usefulness without compromising the article.
+
+Validate:
+
+- Title and heading hierarchy.
+- Search intent alignment.
+- Accurate metadata.
+- Appropriate canonical URL.
+- Existing content overlap and cannibalization risks.
+- Relevant internal links.
+- Valid external citations.
+- Descriptive image alternative text where appropriate.
+- Valid schema for the actual page and content type.
+- Absence of unsupported structured-data claims.
+- Correct site, category, author, and publishing metadata.
+- Required technical fields for the publishing integration.
+
+Avoid keyword stuffing, fabricated author credentials, false experience claims, doorway-style pages, and near-identical articles differentiated only by location or keyword.
+
+Do not automatically generate schema fields that cannot be supported by actual content or site data.
+
+## 14. Automated Quality Gates
+
+Implement deterministic validation wherever possible, supplemented by independent model review and human review when necessary.
+
+### Gate A — Source integrity
+
+Check that required sources resolve and that their metadata matches the cited references.
+
+### Gate B — Evidence integrity
+
+Check that material claims have traceable support and that unsupported or contradicted claims are resolved or removed.
+
+### Gate C — Originality
+
+Run configured similarity checks and flag severe or unexplained overlap.
+
+### Gate D — Editorial quality
+
+Evaluate relevance, clarity, structure, completeness, repetition, specificity, and evidence use.
+
+### Gate E — Internal links
+
+Validate domain ownership, destination availability, canonicalization, topical relevance, and anchor text.
+
+### Gate F — Site integrity
+
+Confirm that the article, media, author, metadata, and publishing destination belong to the correct site.
+
+### Gate G — Technical completeness
+
+Validate the output schema, required sections, citations, headings, metadata, and publishing payload.
+
+### Gate H — Publication authorization
+
+Check approval status, site policy, duplicate-publication protection, and publishing permissions.
+
+### Publication rules
+
+A missing required field, invalid publishing payload, severe plagiarism concern, fabricated reference, critical unsupported claim, or cross-site contamination must block publication.
+
+A critical failure cannot be compensated for by a high average quality score.
+
+Use explicit statuses such as:
+
+- `RESEARCH_REQUIRED`
+- `DRAFTING`
+- `VALIDATION_PENDING`
+- `REVISION_REQUIRED`
+- `HUMAN_REVIEW_REQUIRED`
+- `APPROVED_FOR_DRAFT`
+- `APPROVED_FOR_PUBLICATION`
+- `PUBLISHED`
+- `PUBLICATION_FAILED`
+- `QUARANTINED`
+
+Adapt these statuses to the existing application, but preserve the underlying state transitions and safeguards.
+
+## 15. Scoring and Acceptance Criteria
+
+Implement a transparent, configurable quality score. Try to make it better, there is not a hard limit to make it fucking better
+
+Initial proposed weighting:
+
+| Criterion | Weight |
+|---|---:|
+| Factual accuracy and evidence support | 25% |
+| Originality and added value | 20% |
+| Editorial quality and readability | 20% |
+| Research depth and citation integrity | 15% |
+| Internal-link correctness | 10% |
+| Brief adherence and completeness | 10% |
+
+These weights are starting assumptions and must be calibrated through reviewed test cases.
+
+A provisional acceptance threshold is 90/100, provided that every mandatory gate passes.
+
+The threshold is not proof of quality by itself. The application must retain criterion-level scores, supporting evidence, failures, and reviewer comments.
+
+For critical or high-impact subjects, require stricter review and human approval where appropriate.
+
+A failed article must not enter an endless automatic rewrite loop. Limit retries, preserve previous versions, and escalate unresolved issues.
+
+## 16. Controlled Publishing
+
+Separate article generation from publication authorization.
+
+Implement:
+
+- Draft-only mode as the safe default for a newly deployed pipeline.
+- Explicit site-level configuration for any permitted automatic publication.
+- A final validation immediately before publishing.
+- Duplicate-publication protection and idempotent requests where supported.
+- Recovery from network failures and partial publishing failures.
+- A clear distinction between an accepted draft and a successfully published article.
+- Version history and rollback or restoration procedures where supported.
+- Audit records for every state transition.
+- Alerts for blocked jobs and repeated failures.
+
+Never report that an article has been published until the publishing system confirms success.
+
+Do not enable automatic publishing across all websites merely because a small benchmark passes. Enable it only for explicitly approved configurations after the relevant integration has been tested.
+
+## 17. Prompt and Configuration Management
+
+Prompts must be versioned, reviewed, and testable.
+
+Store separately:
+
+- Research instructions.
+- Evidence extraction instructions.
+- Outline-generation instructions.
+- Article-drafting instructions.
+- Whole-document editorial instructions.
+- Independent verification instructions.
+- Similarity-review instructions.
+- Internal-link selection instructions.
+- Site-specific editorial policies.
+- Quality gate definitions.
+
+Do not place every responsibility into one enormous prompt.
+
+Use structured output schemas where supported and validate every response against the required schema in code.
+
+If a model returns malformed JSON, missing fields, invalid citations, or unsupported output, reject or retry the affected operation safely.
+
+Treat retrieved webpages, source documents, and external content as untrusted data. Instructions found inside those materials must not override system policies, site configuration, security controls, or tool permissions.
+
+## 18. Security and Privacy
+
+- Store API keys in environment variables or the application's existing secure secret-management facility.
+- Never log authorization headers or raw credentials.
+- Redact sensitive data from exceptions and debug logs.
+- Avoid sending unrelated site data or private information to model providers.
+- Use least-privilege access for publishing integrations.
+- Validate external URLs and defend against server-side request forgery where the application fetches URLs.
+- Apply request timeouts, payload limits, and rate limits.
+- Sanitize generated HTML and publishing payloads.
+- Validate all model-produced URLs and structured fields.
+- Keep access to each site's configuration appropriately restricted.
+- Document the external services that receive article text, source material, and metadata.
+- Respect applicable source licensing, copyright, privacy requirements, and service terms.
+
+Do not expose prompts containing secrets or sensitive internal configuration in generated content.
+
+## 19. Logging, Monitoring, and Cost Control
+
+For each article, record:
+
+- Article/job ID and site ID.
+- Topic and brief version.
+- Prompt version.
+- Model IDs used for each stage.
+- Source identifiers and validation statuses.
+- Token usage and reported API costs where available.
+- Retries and failure reasons.
+- Quality scores and mandatory-gate results.
+- Revision history.
+- Human approvals.
+- Publishing outcome.
+
+Do not log unnecessary personal information or secrets.
+
+Track:
+
+- First-pass acceptance rate.
+- Percentage requiring human review.
+- Critical failure rate.
+- Unsupported-claim rate.
+- Citation mismatch rate.
+- Similarity-review failure rate.
+- Internal-link error rate.
+- Average revision count.
+- Cost per accepted article.
+- Generation and validation latency.
+- Publication success rate.
+
+The operating target is 30 articles per month, but quality gates must not be relaxed to meet the target.
+
+## 20. Required Test Suite
+
+Create automated unit, integration, regression, and end-to-end tests appropriate to the existing application.
+
+Include at least these scenarios:
+
+1. A valid article with verifiable sources passes all mandatory checks.
+2. A fabricated citation is rejected.
+3. A real citation that does not support the associated claim is rejected.
+4. A source that cannot be accessed remains unverified.
+5. Contradictory measurements across article sections are flagged.
+6. Unsupported experimental results cannot be published as observed findings.
+7. Near-duplicate passages trigger similarity review.
+8. Properly attributed quotations are not automatically classified as plagiarism.
+9. A nonexistent internal URL is rejected.
+10. An internal URL belonging to the wrong site is rejected.
+11. A cross-site image or author identity is rejected unless explicitly authorized.
+12. An article with missing required sections fails validation.
+13. Malformed model output cannot bypass validation.
+14. A model timeout does not trigger an unsafe publication.
+15. An OpenRouter fallback is recorded and still undergoes all mandatory checks.
+16. A publishing timeout does not create duplicate articles on retry.
+17. A failed verification cannot be overridden by a high editorial score.
+18. Retrieved content containing malicious instructions cannot override system policies.
+19. A secret is never included in logs or published output.
+20. A successful draft creation is not incorrectly reported as successful publication.
+
+Use mocked external services for deterministic automated tests and controlled live integration tests when credentials and services are available.
+
+## 21. Regression Test: The AOD-9604 Article
+
+Use the supplied failed article as a permanent regression fixture.
+
+The article is titled around AOD-9604 synthetic C-terminal fragment analysis and contains HPLC, mass-spectrometry, stability, calibration, storage, and academic-reference sections.
+
+Known issues to test include:
+
+- PubMed identifiers associated with titles that must be independently verified.
+- Conflicting chromatographic conditions and retention times.
+- Experimental measurements without traceable underlying data.
+- Repeated stability claims across multiple sections.
+- Incomplete tables and unclear technical descriptions.
+- Image URLs on a domain that may not belong to the intended scientific website.
+- Technical recommendations presented without adequate source support.
+
+Required outcome: the regression test must demonstrate that critical citation-integrity and evidence-integrity failures block publication. It must also detect the relevant internal consistency and site-isolation issues.
+
+Do not hard-code the expected conclusion that every scientific measurement is false. The purpose of the test is to verify evidence and flag unsupported or contradictory claims, not to replace one form of unsupported certainty with another.
+
+Keep the fixture private to the appropriate testing context and do not publish it.
+
+## 22. Benchmark and Deployment Plan
+
+Implement in stages.
+
+### Stage 1 — Audit
+
+Inspect the current application and document the real causes of failure.
+
+Deliverable: technical audit and implementation plan.
+
+### Stage 2 — Test fixtures
+
+Build a small benchmark set from six representative articles, including the supplied AOD-9604 failure and examples from different websites and article types.
+
+Deliverable: repeatable baseline evaluation.
+
+### Stage 3 — Model benchmark
+
+Compare suitable current OpenRouter models under identical conditions.
+
+Deliverable: evaluation report with quality, error rates, reliability, and cost per accepted article.
+
+### Stage 4 — Research and verification
+
+Implement source retrieval, evidence extraction, claim tracking, citation verification, and failure reporting.
+
+Deliverable: evidence-driven research pipeline.
+
+### Stage 5 — Drafting and editorial quality
+
+Implement outline approval, evidence-grounded drafting, whole-document editing, consistency checks, and similarity assessment.
+
+Deliverable: improved article generation and review stages.
+
+### Stage 6 — Multi-site isolation
+
+Implement site-scoped configuration, content inventory, internal-link validation, and media/domain checks.
+
+Deliverable: tested multi-site isolation.
+
+### Stage 7 — Quality gates and publication controls
+
+Implement hard failure rules, approval states, audit logs, and safe publication.
+
+Deliverable: publication-ready workflow with automatic publishing disabled by default.
+
+### Stage 8 — Regression and acceptance testing
+
+Run all tests and evaluate the six-article benchmark. Expand testing when failures or weak performance justify it.
+
+Deliverable: documented test results, remaining limitations, and deployment recommendation.
+
+### Stage 9 — Controlled rollout
+
+Enable the rebuilt pipeline in draft-only mode first. Observe real outputs, review failures, and enable automatic publishing only after explicit approval and successful integration tests.
+
+Deliverable: stable, monitored production system.
+
+## 23. Definition of Done
+
+The implementation is not complete until:
+
+- The original application has been audited.
+- The current OpenRouter model IDs and relevant capabilities have been verified.
+- Model selection is configurable and reproducible.
+- Research is separated from drafting.
+- Material factual claims can be traced to evidence.
+- Academic references are independently checked where applicable.
+- Originality and similarity checks are implemented.
+- Whole-document editing detects redundancy and inconsistencies.
+- Every job is isolated to the correct website.
+- Internal links and media URLs are validated.
+- Critical failures block publication.
+- Safe retries and duplicate-publication protection are tested.
+- Regression tests cover the supplied failed article.
+- Logs and reports explain why an article passed or failed.
+- Secrets are protected.
+- Documentation explains configuration, operation, recovery, and known limitations.
+- The six-article benchmark has been run and its results documented.
+- No unimplemented feature is presented as working.
+- Automatic publication remains disabled until explicitly authorized.
+
+Do not claim that the system guarantees zero hallucinations, zero plagiarism, or perfect human-like writing. Report measurable performance and known limitations honestly.
+
+## 24. Final Deliverables Required From You
+
+When the work is finished, provide:
+
+1. A summary of the original defects and their root causes.
+2. An architecture description showing the revised stages and data flow.
+3. A list of files created or modified and why.
+4. The selected OpenRouter model IDs and benchmark results.
+5. The implemented prompts and schemas, with sensitive configuration excluded.
+6. The research, evidence, citation, similarity, internal-link, and publishing validation rules.
+7. Automated test results and unresolved failures.
+8. The six-article benchmark report.
+9. Cost estimates based on measured usage, with assumptions clearly stated.
+10. Configuration and deployment instructions.
+11. Known limitations and required human-review cases.
+12. A clear statement of which features were actually tested and which remain unverified.
+
+## Final Instruction
+
+Start by auditing the existing implementation and identifying the root causes. Then implement the highest-priority corrections in small, testable stages.
+
+Do not stop after rewriting the prompts. Do not replace the current technology stack without justification. Do not invent research. Do not publish unverified content. Do not bypass quality gates to meet a deadline.
+
+The objective is a dependable content-production system that produces genuinely valuable articles, preserves source integrity, supports multiple websites safely, and catches failures before publication.
+
+**Quality is the release criterion. Publication is the final step, not the first assumption.**
