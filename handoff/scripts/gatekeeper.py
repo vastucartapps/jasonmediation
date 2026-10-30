@@ -74,6 +74,11 @@ def normalize_internal_path(href, current_file, site_dir):
         return path
 
 def audit_site(site_dir):
+    if os.path.isdir(os.path.join(site_dir, "out")):
+        site_dir = os.path.join(site_dir, "out")
+    elif os.path.isdir(os.path.join(site_dir, "dist")):
+        site_dir = os.path.join(site_dir, "dist")
+
     print("\n" + "=" * 76)
     print(f" 🛡️  MASTER 10-PILLAR SEO QUALITY GATEKEEPER (2026 ENTERPRISE AUDIT)")
     print(f" Target Directory: {site_dir}")
