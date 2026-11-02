@@ -91,7 +91,7 @@ export function FormatSelector({ availableFormats = ['vial', 'pen', 'spray', 'st
               <div className="flex items-center gap-2">
                 <span className={`w-2 h-2 rounded-full ${profile.reconstitutionNeeded ? 'bg-amber-400' : 'bg-emerald-400'}`}></span>
                 <span className="text-xs font-mono text-slate-200">
-                  {profile.reconstitutionNeeded ? 'Yes — Requires Bacteriostatic Diluent' : 'No — Pre-Solubilized Aqueous Matrix'}
+                  {profile.reconstitutionNeeded ? 'Yes - Requires Bacteriostatic Diluent' : 'No - Pre-Solubilized Aqueous Matrix'}
                 </span>
               </div>
             </div>

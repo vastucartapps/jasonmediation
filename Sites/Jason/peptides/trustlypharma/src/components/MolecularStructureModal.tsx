@@ -372,7 +372,7 @@ export function MolecularStructureModal({
               </span>
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-white mt-2">
-              {compound.name} — Molecular Structure & Spatial Conformation
+              {compound.name} - Molecular Structure & Spatial Conformation
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 mt-1">
               {compound.systematicName} · Empirical Formula:{' '}

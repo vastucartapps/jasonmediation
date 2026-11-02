@@ -1,0 +1,9 @@
+Error-indexable-Page_has_links_to_broken_page-links.csv
+Error-indexable-Page_has_links_to_broken_page.csv
+Notice-External_4XX-links.csv
+Notice-External_4XX.csv
+Notice-External_time_out-links.csv
+Notice-External_time_out.csv
+Notice-HTTP_to_HTTPS_redirect.csv
+Notice-indexable-Article_page_missing_Article_schema.csv
+Warning-3XX_redirect.csv

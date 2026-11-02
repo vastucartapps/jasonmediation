@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { Hero } from '../components/Hero';
 import { WhatThisIs } from '../components/WhatThisIs';
 import { GlanceBar } from '../components/GlanceBar';
@@ -9,6 +10,15 @@ import { SmarterBuyer } from '../components/SmarterBuyer';
 import { DataTrackers } from '../components/DataTrackers';
 import { FreshnessStamp } from '../components/FreshnessStamp';
 import { GovernanceBlock } from '../components/GovernanceBlock';
+
+export const metadata: Metadata = {
+  title: 'Trustly Pharma | UK & International Peptide Index & Chemical Encyclopedia',
+  description:
+    'Curated PubChem molecular profiles, verified laboratory standards, and independent vendor directories for synthetic peptide research.',
+  alternates: {
+    canonical: 'https://trustlypharma.uk/',
+  },
+};
 
 export default function HomePage() {
   const homeJsonLd = {

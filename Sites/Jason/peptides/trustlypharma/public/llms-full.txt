@@ -39,7 +39,7 @@
 - **Reconstitution Standard**: Diluent: Bacteriostatic Water with 0.9% Benzyl Alcohol USP | Lyophilized Storage: -20°C desiccated | Solution Storage: 2°C to 8°C refrigerated (stable 21 days) | Stability: Highly sensitive to excessive vortexing; gentle swirl recommended
 - **Documented Research Citations**: 3 indexed PubMed studies.
   * "Thymosin beta 4 promotes dermal healing and regulates actin sequestration" (Philp D, Badamchian M, Scheremeta B, Nguyen M, Goldstein AL., 2003) - PMID: 14617284
-  * "Thymosin beta 4 induces adult epicardial neovascularization" (Smart N, Risebro CA, Melville AA, Moses K, Schwartz RJ, et al., 2007) - PMID: 17898717
+  * "Thymosin beta 4 induces adult epicardial neovascularization" (Smart N, Risebro CA, Melville AA, Moses K, Schwartz RJ, et al., 2007) - PMID: 17108969
   * "Thymosin beta-4 protects against cellular apoptosis in ischemic cardiomyocytes" (Bock-Marquette I, Saxena A, White MD, DiMaio JM, Srivastava D., 2004) - PMID: 15537682
 
 ---

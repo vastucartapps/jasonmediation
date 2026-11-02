@@ -144,7 +144,7 @@ export default function PrivacyPage() {
               <ul className="space-y-1.5 list-disc pl-5 text-xs text-slate-400">
                 <li>Request access to any personal data retained in connection with an inquiry.</li>
                 <li>Request the rectification or permanent erasure of your correspondence records.</li>
-                <li>Lodge a complaint with the UK Information Commissioner&apos;s Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-sky-400 underline">ico.org.uk</a>.</li>
+                <li>Lodge a statutory complaint with the UK Information Commissioner&apos;s Office (ICO) via the official national portal (ico.org.uk).</li>
               </ul>
             </div>
           </div>

@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'Sites/trustlypharma/**'
+      - 'Sites/Jason/peptides/trustlypharma/**'
       - '.github/workflows/deploy-trustlypharma.yml'
   workflow_dispatch:
 
@@ -32,10 +32,10 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build Trustly Pharma Static Export
-        run: pnpm --filter "./Sites/trustlypharma" run build
+        run: pnpm --filter "./Sites/Jason/peptides/trustlypharma" run build
 
       - name: Copy .htaccess to Output
-        run: cp Sites/trustlypharma/public/.htaccess Sites/trustlypharma/out/.htaccess
+        run: cp Sites/Jason/peptides/trustlypharma/public/.htaccess Sites/Jason/peptides/trustlypharma/out/.htaccess
 
       - name: Sync Static Export to cPanel via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -46,5 +46,5 @@ jobs:
           protocol: ftps
           port: 21
           server-dir: /trustlypharma.uk/
-          local-dir: ./Sites/trustlypharma/out/
+          local-dir: ./Sites/Jason/peptides/trustlypharma/out/
           dangerous-clean-slate: false

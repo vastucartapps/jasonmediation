@@ -31,16 +31,16 @@ export const VENDOR_PROFILES: Record<string, VendorProfile> = {
         url: 'https://pharmagrade.store/category/weight-loss/',
       },
       {
-        categoryName: 'Growth Hormone Secretagogues',
-        url: 'https://pharmagrade.store/category/growth-hormone/',
+        categoryName: 'Research Peptides Catalog',
+        url: 'https://pharmagrade.store/category/peptides/',
       },
       {
-        categoryName: 'Tissue Repair & Angiogenesis Peptides',
-        url: 'https://pharmagrade.store/category/healing/',
+        categoryName: 'Analytical Reagents Shop',
+        url: 'https://pharmagrade.store/shop/',
       },
       {
-        categoryName: 'Neuropeptides & CNS Signaling Compounds',
-        url: 'https://pharmagrade.store/category/nootropics/',
+        categoryName: 'Direct Reagent Distributor Portal',
+        url: 'https://pharmagrade.store',
       },
     ],
     supportedCompoundSlugs: [
@@ -234,12 +234,8 @@ export const VENDOR_PROFILES: Record<string, VendorProfile> = {
     ],
     officialCategoryLinks: [
       {
-        categoryName: 'Full Peptides Inventory',
-        url: 'https://pharmalabglobal.com/product-category/peptides/',
-      },
-      {
-        categoryName: 'Pre-Mixed Cartridges & Pens',
-        url: 'https://pharmalabglobal.com/product-category/pre-mixed-pens/',
+        categoryName: 'Full Peptides & Reagents Shop',
+        url: 'https://pharmalabglobal.com/shop/',
       },
       {
         categoryName: 'Metered Nasal Spray Range',

@@ -93,7 +93,7 @@ export function EvidenceMap() {
             The Biological Signaling & Evidence Map
           </h2>
           <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-medium">
-            Every peptide in our encyclopedia is clustered by cellular mechanism and positioned by scientific proof tier — from in vitro assays to peer-reviewed clinical studies.
+            Every peptide in our encyclopedia is clustered by cellular mechanism and positioned by scientific proof tier - from in vitro assays to peer-reviewed clinical studies.
           </p>
         </div>
 

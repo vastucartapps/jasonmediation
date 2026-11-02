@@ -12,9 +12,6 @@ export const metadata: Metadata = {
     template: '%s',
     default: 'Trustly Pharma | UK & International Peptide Index',
   },
-  alternates: {
-    canonical: 'https://trustlypharma.uk/',
-  },
   description:
     'Peer-reviewed peptide research index, verified PubChem chemical structures, CAS registry numbers, and third-party commercial laboratory vendor directories.',
   keywords: [

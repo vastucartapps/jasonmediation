@@ -57,12 +57,13 @@ export default function UkLegalStatusPage() {
         name: 'Trustly Pharma',
       },
       {
-        '@type': 'MedicalWebPage',
+        '@type': ['MedicalWebPage', 'TechArticle'],
         '@id': 'https://trustlypharma.uk/regulatory/uk-legal-status/#webpage',
         url: 'https://trustlypharma.uk/regulatory/uk-legal-status/',
         name: 'UK Peptide Legal Status & Statutory Classification Matrix',
         description: 'Comprehensive statutory classification for synthetic peptides under UK law and WADA regulations.',
         isPartOf: { '@id': 'https://trustlypharma.uk/#website' },
+        inLanguage: 'en-GB',
       },
       {
         '@type': 'BreadcrumbList',

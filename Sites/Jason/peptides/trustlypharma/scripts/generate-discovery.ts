@@ -64,6 +64,24 @@ if (fs.existsSync(outDir)) {
     fs.copyFileSync(path.join(publicDir, indexNowKey), path.join(outDir, indexNowKey));
   }
   console.log('       Mirrored all 6 discovery endpoints into out/ successfully.');
+
+  // Sanitize 404 pages to guarantee no canonical tag is present (SEO Gatekeeper & Ahrefs compliance)
+  const fourOhFourPaths = [
+    path.join(outDir, '404.html'),
+    path.join(outDir, '404', 'index.html'),
+    path.join(outDir, '_not-found.html'),
+    path.join(outDir, '_not-found', 'index.html'),
+  ];
+  for (const p of fourOhFourPaths) {
+    if (fs.existsSync(p)) {
+      let content = fs.readFileSync(p, 'utf-8');
+      const sanitized = content.replace(/<link[^>]+rel=["']canonical["'][^>]*\/?>/gi, '');
+      if (sanitized !== content) {
+        fs.writeFileSync(p, sanitized, 'utf-8');
+        console.log(`[SANITIZE] Removed canonical link from ${path.relative(outDir, p)}`);
+      }
+    }
+  }
 }
 
 console.log('\nAll discovery assets generated successfully!');

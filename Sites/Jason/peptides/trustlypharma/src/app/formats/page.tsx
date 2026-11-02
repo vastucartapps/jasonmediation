@@ -53,11 +53,32 @@ export default function FormatsPage() {
         name: 'Trustly Pharma',
       },
       {
-        '@type': 'TechArticle',
+        '@type': ['Article', 'TechArticle'],
         '@id': 'https://trustlypharma.uk/formats/#article',
         headline: 'Peptide Delivery Formats & Laboratory Preparation Standards',
         description: 'Comprehensive technical reference for peptide formulation states, volumetric precision, and reconstitution SOPs.',
         isPartOf: { '@id': 'https://trustlypharma.uk/#website' },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': 'https://trustlypharma.uk/formats/',
+        },
+        inLanguage: 'en-GB',
+        datePublished: '2026-01-15T08:00:00Z',
+        dateModified: '2026-10-30T10:00:00Z',
+        author: {
+          '@type': 'Organization',
+          name: 'Trustly Pharma Editorial Team',
+          url: 'https://trustlypharma.uk/about/',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Trustly Pharma',
+          url: 'https://trustlypharma.uk/',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://trustlypharma.uk/icon-512x512.png',
+          },
+        },
       },
       {
         '@type': 'BreadcrumbList',

@@ -67,13 +67,14 @@ export default function MhraTrackerPage() {
         name: 'Trustly Pharma',
       },
       {
-        '@type': 'MedicalWebPage',
+        '@type': ['MedicalWebPage', 'TechArticle'],
         '@id': 'https://trustlypharma.uk/regulatory/mhra-tracker/#webpage',
         url: 'https://trustlypharma.uk/regulatory/mhra-tracker/',
         name: 'MHRA Enforcement and Safety Tracker',
         description:
           'Rolling 90-day archive of MHRA drug safety updates and enforcement actions regarding synthetic peptide compounds.',
         isPartOf: { '@id': 'https://trustlypharma.uk/#website' },
+        inLanguage: 'en-GB',
       },
       {
         '@type': 'BreadcrumbList',

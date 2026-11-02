@@ -218,7 +218,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
         journal: 'Nature',
         year: 2007,
         authors: 'Smart N, Risebro CA, Melville AA, Moses K, Schwartz RJ, et al.',
-        pubmedId: '17898717',
+        pubmedId: '17108969',
         keyFindings: 'Identified reactivated quiescent epicardial stem cells differentiating into functional cardiac vasculature.',
       },
       {
@@ -949,7 +949,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'pharmagrade',
         supplierName: 'PharmaGrade',
-        url: 'https://pharmagrade.store/product-category/epitalon/',
+        url: 'https://pharmagrade.store/category/peptides/',
         format: 'vial',
         puritySpecification: '≥99.2% (HPLC)',
         batchAssayVerification: true,
@@ -993,7 +993,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'pharmalab-global',
         supplierName: 'PharmaLab Global',
-        url: 'https://pharmalabglobal.com/product-category/epitalon/',
+        url: 'https://pharmalabglobal.com/shop/',
         format: 'vial',
         puritySpecification: '≥99.3% (HPLC)',
         batchAssayVerification: true,
@@ -1161,7 +1161,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'pharmagrade',
         supplierName: 'PharmaGrade',
-        url: 'https://pharmagrade.store/product-category/tirzepatide/',
+        url: 'https://pharmagrade.store/category/weight-loss/',
         format: 'vial',
         puritySpecification: '≥99.2% (HPLC)',
         batchAssayVerification: true,
@@ -1205,7 +1205,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'pharmalab-global',
         supplierName: 'PharmaLab Global',
-        url: 'https://pharmalabglobal.com/product-category/tirzepatide/',
+        url: 'https://pharmalabglobal.com/shop/',
         format: 'vial',
         puritySpecification: '≥99.3% (HPLC)',
         batchAssayVerification: true,
@@ -1267,7 +1267,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'pharmagrade',
         supplierName: 'PharmaGrade',
-        url: 'https://pharmagrade.store/product-category/semaglutide/',
+        url: 'https://pharmagrade.store/category/weight-loss/',
         format: 'vial',
         puritySpecification: '≥99.2% (HPLC)',
         batchAssayVerification: true,
@@ -1311,7 +1311,7 @@ export const PEPTIDE_COMPOUNDS: PeptideCompound[] = [
       {
         supplierId: 'pharmalab-global',
         supplierName: 'PharmaLab Global',
-        url: 'https://pharmalabglobal.com/product-category/semaglutide/',
+        url: 'https://pharmalabglobal.com/shop/',
         format: 'vial',
         puritySpecification: '≥99.3% (HPLC)',
         batchAssayVerification: true,

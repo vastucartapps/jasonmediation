@@ -33,6 +33,7 @@ ErrorDocument 404 /404.html
   RewriteRule ^sitemaps?_index\.xml$ /sitemap.xml [R=301,L]
   RewriteRule ^sitemaps\.xml$ /sitemap.xml [R=301,L]
   RewriteRule ^sitemap$ /sitemap/ [R=301,L]
+  RewriteRule ^suppliers/?$ /vendors/ [R=301,L]
 
   # If requested path with index.html exists, serve it
   RewriteCond %{REQUEST_FILENAME} -d

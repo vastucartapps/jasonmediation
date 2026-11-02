@@ -89,6 +89,35 @@ export default function SafetyPolicyPage() {
           },
         ],
       },
+      {
+        '@type': ['Article', 'TechArticle'],
+        '@id': `${pageUrl}#article`,
+        headline: 'Research Safety Policy & Chemical Handling SOP',
+        description:
+          'Good Laboratory Practice (GLP) standards, cold-chain storage thresholds, reconstitution protocols, and chemical PPE guidelines for research peptides.',
+        isPartOf: { '@id': 'https://trustlypharma.uk/#website' },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': pageUrl,
+        },
+        inLanguage: 'en-GB',
+        datePublished: '2026-01-15T08:00:00Z',
+        dateModified: '2026-10-30T10:00:00Z',
+        author: {
+          '@type': 'Organization',
+          name: 'Trustly Pharma Editorial Team',
+          url: 'https://trustlypharma.uk/about/',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Trustly Pharma',
+          url: 'https://trustlypharma.uk/',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://trustlypharma.uk/icon-512x512.png',
+          },
+        },
+      },
     ],
   };
 
